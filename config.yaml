@@ -1,0 +1,13 @@
+paths:
+  terminology: "terminology/"
+  raw_data: "data/raw/"
+  gold_data: "data/gold/"
+  outputs: "outputs/"
+
+models:
+  extraction_model: "placeholder_extraction_model_name"
+  retrieval_model: "placeholder_retrieval_model_name"
+
+parameters:
+  batch_size: 32
+  max_length: 512

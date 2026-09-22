@@ -1,0 +1,10 @@
+johnsnowlabs
+pyspark
+spark-nlp-jsl
+sentence-transformers
+faiss-cpu
+pandas
+scikit-learn
+numpy
+tqdm
+pyyaml
