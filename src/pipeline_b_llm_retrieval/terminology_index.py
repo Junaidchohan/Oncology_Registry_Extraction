@@ -138,10 +138,11 @@ class TerminologyIndex:
                 self._backend = "sentence_transformers"
             else:
                 from sklearn.feature_extraction.text import TfidfVectorizer
-                logger.info("Backend: sklearn TF-IDF (sentence_transformers unavailable)")
+                logger.info("Backend: sklearn TF-IDF with char n-grams (sentence_transformers unavailable)")
                 self._encoder = TfidfVectorizer(
-                    ngram_range=(1, 2),
-                    max_features=2048,
+                    analyzer='char_wb',
+                    ngram_range=(3, 5),
+                    max_features=10000,
                     sublinear_tf=True,
                 )
                 self._backend = "sklearn_tfidf"
