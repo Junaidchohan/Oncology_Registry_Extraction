@@ -8,3 +8,5 @@ scikit-learn
 numpy
 tqdm
 pyyaml
+openai>=1.0
+jsonschema>=4.0

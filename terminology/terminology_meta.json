@@ -1,0 +1,767 @@
+[
+  {
+    "concept_id": "T001",
+    "concept_name": "Invasive ductal carcinoma",
+    "terminology": "ICD-O-3",
+    "code": "8500/3",
+    "category": "morphology",
+    "description": "Invasive ductal carcinoma of breast NOS",
+    "synonyms": "IDC;NST;infiltrating ductal carcinoma;invasive ductal NOS"
+  },
+  {
+    "concept_id": "T002",
+    "concept_name": "Ductal carcinoma in situ",
+    "terminology": "ICD-O-3",
+    "code": "8500/2",
+    "category": "morphology",
+    "description": "Ductal carcinoma in situ of breast",
+    "synonyms": "DCIS;intraductal carcinoma"
+  },
+  {
+    "concept_id": "T003",
+    "concept_name": "Adenocarcinoma NOS",
+    "terminology": "ICD-O-3",
+    "code": "8140/3",
+    "category": "morphology",
+    "description": "Adenocarcinoma not otherwise specified",
+    "synonyms": "adenocarcinoma;glandular carcinoma"
+  },
+  {
+    "concept_id": "T004",
+    "concept_name": "Squamous cell carcinoma NOS",
+    "terminology": "ICD-O-3",
+    "code": "8070/3",
+    "category": "morphology",
+    "description": "Squamous cell carcinoma NOS",
+    "synonyms": "SCC;squamous carcinoma;epidermoid carcinoma"
+  },
+  {
+    "concept_id": "T005",
+    "concept_name": "Papillary adenocarcinoma",
+    "terminology": "ICD-O-3",
+    "code": "8260/3",
+    "category": "morphology",
+    "description": "Papillary adenocarcinoma",
+    "synonyms": "papillary carcinoma;papillary adenoca"
+  },
+  {
+    "concept_id": "T006",
+    "concept_name": "Mucinous adenocarcinoma",
+    "terminology": "ICD-O-3",
+    "code": "8480/3",
+    "category": "morphology",
+    "description": "Mucinous adenocarcinoma",
+    "synonyms": "colloid carcinoma;mucus-secreting carcinoma"
+  },
+  {
+    "concept_id": "T007",
+    "concept_name": "Lobular carcinoma in situ",
+    "terminology": "ICD-O-3",
+    "code": "8520/2",
+    "category": "morphology",
+    "description": "Lobular carcinoma in situ",
+    "synonyms": "LCIS"
+  },
+  {
+    "concept_id": "T008",
+    "concept_name": "Invasive lobular carcinoma",
+    "terminology": "ICD-O-3",
+    "code": "8520/3",
+    "category": "morphology",
+    "description": "Invasive lobular carcinoma",
+    "synonyms": "ILC;infiltrating lobular carcinoma"
+  },
+  {
+    "concept_id": "T009",
+    "concept_name": "Small cell carcinoma",
+    "terminology": "ICD-O-3",
+    "code": "8041/3",
+    "category": "morphology",
+    "description": "Small cell carcinoma",
+    "synonyms": "oat cell carcinoma;SCLC"
+  },
+  {
+    "concept_id": "T010",
+    "concept_name": "Large cell carcinoma of lung",
+    "terminology": "ICD-O-3",
+    "code": "8012/3",
+    "category": "morphology",
+    "description": "Large cell carcinoma of lung",
+    "synonyms": "large cell lung cancer;LCLC"
+  },
+  {
+    "concept_id": "T011",
+    "concept_name": "Upper outer quadrant of breast",
+    "terminology": "ICD-O-3",
+    "code": "C50.4",
+    "category": "topography",
+    "description": "Upper-outer quadrant of breast",
+    "synonyms": "UOQ breast;upper outer breast"
+  },
+  {
+    "concept_id": "T012",
+    "concept_name": "Upper inner quadrant of breast",
+    "terminology": "ICD-O-3",
+    "code": "C50.2",
+    "category": "topography",
+    "description": "Upper-inner quadrant of breast",
+    "synonyms": "UIQ breast;upper inner breast"
+  },
+  {
+    "concept_id": "T013",
+    "concept_name": "Lower outer quadrant of breast",
+    "terminology": "ICD-O-3",
+    "code": "C50.5",
+    "category": "topography",
+    "description": "Lower-outer quadrant of breast",
+    "synonyms": "LOQ breast"
+  },
+  {
+    "concept_id": "T014",
+    "concept_name": "Sigmoid colon",
+    "terminology": "ICD-O-3",
+    "code": "C18.7",
+    "category": "topography",
+    "description": "Sigmoid colon",
+    "synonyms": "sigmoid;pelvic colon"
+  },
+  {
+    "concept_id": "T015",
+    "concept_name": "Rectum NOS",
+    "terminology": "ICD-O-3",
+    "code": "C20.9",
+    "category": "topography",
+    "description": "Rectum NOS",
+    "synonyms": "rectum;rectal"
+  },
+  {
+    "concept_id": "T016",
+    "concept_name": "Cecum",
+    "terminology": "ICD-O-3",
+    "code": "C18.0",
+    "category": "topography",
+    "description": "Cecum",
+    "synonyms": "caecum"
+  },
+  {
+    "concept_id": "T017",
+    "concept_name": "Upper lobe bronchus and lung",
+    "terminology": "ICD-O-3",
+    "code": "C34.1",
+    "category": "topography",
+    "description": "Upper lobe bronchus and lung",
+    "synonyms": "upper lobe lung;ULL"
+  },
+  {
+    "concept_id": "T018",
+    "concept_name": "Lower lobe bronchus and lung",
+    "terminology": "ICD-O-3",
+    "code": "C34.3",
+    "category": "topography",
+    "description": "Lower lobe bronchus and lung",
+    "synonyms": "lower lobe lung;LLL"
+  },
+  {
+    "concept_id": "T019",
+    "concept_name": "Malignant neoplasm of breast",
+    "terminology": "ICD-10",
+    "code": "C50.9",
+    "category": "cancer_type",
+    "description": "Malignant neoplasm of breast unspecified",
+    "synonyms": "breast cancer;breast carcinoma"
+  },
+  {
+    "concept_id": "T020",
+    "concept_name": "Malignant neoplasm upper outer quadrant breast",
+    "terminology": "ICD-10",
+    "code": "C50.4",
+    "category": "cancer_type",
+    "description": "Malignant neoplasm of upper-outer quadrant of breast",
+    "synonyms": "UOQ breast cancer"
+  },
+  {
+    "concept_id": "T021",
+    "concept_name": "Malignant neoplasm upper inner quadrant breast",
+    "terminology": "ICD-10",
+    "code": "C50.2",
+    "category": "cancer_type",
+    "description": "Malignant neoplasm of upper-inner quadrant of breast",
+    "synonyms": "UIQ breast cancer"
+  },
+  {
+    "concept_id": "T022",
+    "concept_name": "Malignant neoplasm sigmoid colon",
+    "terminology": "ICD-10",
+    "code": "C18.7",
+    "category": "cancer_type",
+    "description": "Malignant neoplasm of sigmoid colon",
+    "synonyms": "sigmoid colon cancer;sigmoid adenocarcinoma"
+  },
+  {
+    "concept_id": "T023",
+    "concept_name": "Malignant neoplasm rectum",
+    "terminology": "ICD-10",
+    "code": "C20",
+    "category": "cancer_type",
+    "description": "Malignant neoplasm of rectum",
+    "synonyms": "rectal cancer;rectal adenocarcinoma"
+  },
+  {
+    "concept_id": "T024",
+    "concept_name": "Malignant neoplasm cecum",
+    "terminology": "ICD-10",
+    "code": "C18.0",
+    "category": "cancer_type",
+    "description": "Malignant neoplasm of cecum",
+    "synonyms": "cecal cancer;cecal carcinoma"
+  },
+  {
+    "concept_id": "T025",
+    "concept_name": "Malignant neoplasm upper lobe lung",
+    "terminology": "ICD-10",
+    "code": "C34.1",
+    "category": "cancer_type",
+    "description": "Malignant neoplasm of upper lobe bronchus and lung",
+    "synonyms": "upper lobe lung cancer"
+  },
+  {
+    "concept_id": "T026",
+    "concept_name": "Malignant neoplasm lower lobe lung",
+    "terminology": "ICD-10",
+    "code": "C34.3",
+    "category": "cancer_type",
+    "description": "Malignant neoplasm of lower lobe bronchus and lung",
+    "synonyms": "lower lobe lung cancer"
+  },
+  {
+    "concept_id": "T027",
+    "concept_name": "Secondary malignant neoplasm brain",
+    "terminology": "ICD-10",
+    "code": "C79.31",
+    "category": "cancer_type",
+    "description": "Secondary malignant neoplasm of brain",
+    "synonyms": "brain metastasis;brain mets;cerebral metastasis"
+  },
+  {
+    "concept_id": "T028",
+    "concept_name": "Secondary malignant neoplasm lymph nodes",
+    "terminology": "ICD-10",
+    "code": "C77.9",
+    "category": "cancer_type",
+    "description": "Secondary malignant neoplasm of lymph node unspecified",
+    "synonyms": "lymph node metastasis;nodal metastasis"
+  },
+  {
+    "concept_id": "T029",
+    "concept_name": "Invasive ductal carcinoma of breast",
+    "terminology": "SNOMED",
+    "code": "413448000",
+    "category": "cancer_type",
+    "description": "Invasive ductal carcinoma of breast",
+    "synonyms": "IDC breast;invasive ductal breast carcinoma"
+  },
+  {
+    "concept_id": "T030",
+    "concept_name": "Ductal carcinoma in situ of breast",
+    "terminology": "SNOMED",
+    "code": "397159002",
+    "category": "cancer_type",
+    "description": "Ductal carcinoma in situ of breast",
+    "synonyms": "DCIS;intraductal breast cancer"
+  },
+  {
+    "concept_id": "T031",
+    "concept_name": "Adenocarcinoma of colon",
+    "terminology": "SNOMED",
+    "code": "363346000",
+    "category": "cancer_type",
+    "description": "Adenocarcinoma of colon",
+    "synonyms": "colonic adenocarcinoma;colon cancer"
+  },
+  {
+    "concept_id": "T032",
+    "concept_name": "Adenocarcinoma of rectum",
+    "terminology": "SNOMED",
+    "code": "254527003",
+    "category": "cancer_type",
+    "description": "Adenocarcinoma of rectum",
+    "synonyms": "rectal adenocarcinoma"
+  },
+  {
+    "concept_id": "T033",
+    "concept_name": "Pulmonary adenocarcinoma",
+    "terminology": "SNOMED",
+    "code": "254637007",
+    "category": "cancer_type",
+    "description": "Adenocarcinoma of lung",
+    "synonyms": "lung adenocarcinoma;pulmonary adeno"
+  },
+  {
+    "concept_id": "T034",
+    "concept_name": "Squamous cell carcinoma of lung",
+    "terminology": "SNOMED",
+    "code": "254637007",
+    "category": "cancer_type",
+    "description": "Squamous cell carcinoma of bronchus and lung",
+    "synonyms": "lung SCC;pulmonary SCC"
+  },
+  {
+    "concept_id": "T035",
+    "concept_name": "Metastatic malignant neoplasm",
+    "terminology": "SNOMED",
+    "code": "128462008",
+    "category": "cancer_type",
+    "description": "Metastatic malignant neoplasm",
+    "synonyms": "metastasis;metastatic disease;distant metastasis"
+  },
+  {
+    "concept_id": "T036",
+    "concept_name": "Left breast structure",
+    "terminology": "SNOMED",
+    "code": "80248007",
+    "category": "anatomical_site",
+    "description": "Left breast",
+    "synonyms": "left breast"
+  },
+  {
+    "concept_id": "T037",
+    "concept_name": "Right breast structure",
+    "terminology": "SNOMED",
+    "code": "73056007",
+    "category": "anatomical_site",
+    "description": "Right breast",
+    "synonyms": "right breast"
+  },
+  {
+    "concept_id": "T038",
+    "concept_name": "Sigmoid colon structure",
+    "terminology": "SNOMED",
+    "code": "60184004",
+    "category": "anatomical_site",
+    "description": "Sigmoid colon",
+    "synonyms": "sigmoid colon"
+  },
+  {
+    "concept_id": "T039",
+    "concept_name": "Rectum structure",
+    "terminology": "SNOMED",
+    "code": "34402009",
+    "category": "anatomical_site",
+    "description": "Rectum",
+    "synonyms": "rectum;rectal region"
+  },
+  {
+    "concept_id": "T040",
+    "concept_name": "Cecum structure",
+    "terminology": "SNOMED",
+    "code": "32713005",
+    "category": "anatomical_site",
+    "description": "Cecum",
+    "synonyms": "cecum;caecum"
+  },
+  {
+    "concept_id": "T041",
+    "concept_name": "Right upper lobe of lung",
+    "terminology": "SNOMED",
+    "code": "72481006",
+    "category": "anatomical_site",
+    "description": "Right upper lobe of lung",
+    "synonyms": "RUL;right upper lobe"
+  },
+  {
+    "concept_id": "T042",
+    "concept_name": "Left upper lobe of lung",
+    "terminology": "SNOMED",
+    "code": "41224006",
+    "category": "anatomical_site",
+    "description": "Left upper lobe of lung",
+    "synonyms": "LUL;left upper lobe"
+  },
+  {
+    "concept_id": "T043",
+    "concept_name": "Right lower lobe of lung",
+    "terminology": "SNOMED",
+    "code": "77831004",
+    "category": "anatomical_site",
+    "description": "Right lower lobe of lung",
+    "synonyms": "RLL;right lower lobe"
+  },
+  {
+    "concept_id": "T044",
+    "concept_name": "Axillary lymph node",
+    "terminology": "SNOMED",
+    "code": "68171009",
+    "category": "anatomical_site",
+    "description": "Axillary lymph node structure",
+    "synonyms": "axillary node;axillary LN"
+  },
+  {
+    "concept_id": "T045",
+    "concept_name": "Modified radical mastectomy",
+    "terminology": "SNOMED",
+    "code": "172456002",
+    "category": "procedure",
+    "description": "Modified radical mastectomy",
+    "synonyms": "MRM;radical mastectomy"
+  },
+  {
+    "concept_id": "T046",
+    "concept_name": "Simple mastectomy",
+    "terminology": "SNOMED",
+    "code": "387701007",
+    "category": "procedure",
+    "description": "Simple mastectomy",
+    "synonyms": "total mastectomy"
+  },
+  {
+    "concept_id": "T047",
+    "concept_name": "Core needle biopsy",
+    "terminology": "SNOMED",
+    "code": "44578009",
+    "category": "procedure",
+    "description": "Core needle biopsy",
+    "synonyms": "CNB;core biopsy;tru-cut biopsy"
+  },
+  {
+    "concept_id": "T048",
+    "concept_name": "CT guided core biopsy",
+    "terminology": "SNOMED",
+    "code": "443989000",
+    "category": "procedure",
+    "description": "Computed tomography guided core needle biopsy",
+    "synonyms": "CT-guided biopsy;CT core biopsy"
+  },
+  {
+    "concept_id": "T049",
+    "concept_name": "Right hemicolectomy",
+    "terminology": "SNOMED",
+    "code": "173171007",
+    "category": "procedure",
+    "description": "Right hemicolectomy",
+    "synonyms": "right colectomy;right hemi"
+  },
+  {
+    "concept_id": "T050",
+    "concept_name": "Sigmoid colectomy",
+    "terminology": "SNOMED",
+    "code": "44946007",
+    "category": "procedure",
+    "description": "Sigmoid colectomy",
+    "synonyms": "sigmoidectomy;sigmoid resection"
+  },
+  {
+    "concept_id": "T051",
+    "concept_name": "Lobectomy of lung",
+    "terminology": "SNOMED",
+    "code": "173171007",
+    "category": "procedure",
+    "description": "Lobectomy of lung",
+    "synonyms": "lung lobectomy;pulmonary lobectomy"
+  },
+  {
+    "concept_id": "T052",
+    "concept_name": "Sentinel lymph node biopsy",
+    "terminology": "SNOMED",
+    "code": "396487001",
+    "category": "procedure",
+    "description": "Sentinel lymph node biopsy",
+    "synonyms": "SLNB;sentinel node biopsy"
+  },
+  {
+    "concept_id": "T053",
+    "concept_name": "Estrogen receptor measurement",
+    "terminology": "LOINC",
+    "code": "40556-3",
+    "category": "biomarker",
+    "description": "Estrogen receptor Ag [Presence] in Tissue by Immune stain",
+    "synonyms": "ER status;estrogen receptor;ER IHC"
+  },
+  {
+    "concept_id": "T054",
+    "concept_name": "Progesterone receptor measurement",
+    "terminology": "LOINC",
+    "code": "40557-1",
+    "category": "biomarker",
+    "description": "Progesterone receptor Ag [Presence] in Tissue by Immune stain",
+    "synonyms": "PR status;progesterone receptor;PgR"
+  },
+  {
+    "concept_id": "T055",
+    "concept_name": "HER2 IHC measurement",
+    "terminology": "LOINC",
+    "code": "85319-2",
+    "category": "biomarker",
+    "description": "HER2 [Presence] in Breast cancer specimen by Immune stain",
+    "synonyms": "HER2 IHC;HER2/neu;c-erbB2"
+  },
+  {
+    "concept_id": "T056",
+    "concept_name": "HER2 FISH measurement",
+    "terminology": "LOINC",
+    "code": "85318-4",
+    "category": "biomarker",
+    "description": "HER2 gene copy number/CEP17 copy number in Cancer specimen by FISH",
+    "synonyms": "HER2 FISH;HER2 amplification"
+  },
+  {
+    "concept_id": "T057",
+    "concept_name": "KRAS gene mutation analysis",
+    "terminology": "LOINC",
+    "code": "82457-2",
+    "category": "biomarker",
+    "description": "KRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
+    "synonyms": "KRAS mutation;KRAS testing;RAS mutation"
+  },
+  {
+    "concept_id": "T058",
+    "concept_name": "EGFR mutation analysis",
+    "terminology": "LOINC",
+    "code": "53049-3",
+    "category": "biomarker",
+    "description": "EGFR gene mutations found [Identifier] in Tissue by Molecular genetics method",
+    "synonyms": "EGFR mutation;EGFR testing;EGFR status"
+  },
+  {
+    "concept_id": "T059",
+    "concept_name": "EGFR exon 19 deletion",
+    "terminology": "LOINC",
+    "code": "81197-5",
+    "category": "biomarker",
+    "description": "EGFR gene exon 19 deletion [Presence] in Tissue by Molecular genetics method",
+    "synonyms": "EGFR ex19del;EGFR deletion exon 19;del E746-A750"
+  },
+  {
+    "concept_id": "T060",
+    "concept_name": "PD-L1 expression",
+    "terminology": "LOINC",
+    "code": "85147-7",
+    "category": "biomarker",
+    "description": "PD-L1 (22C3) [Presence] in Tissue by Immune stain",
+    "synonyms": "PD-L1;PD-L1 TPS;programmed death-ligand 1"
+  },
+  {
+    "concept_id": "T061",
+    "concept_name": "Ki-67 proliferation index",
+    "terminology": "LOINC",
+    "code": "30265-4",
+    "category": "biomarker",
+    "description": "Ki-67 Ag [Presence] in Tissue by Immune stain",
+    "synonyms": "Ki-67;proliferation index;MIB-1"
+  },
+  {
+    "concept_id": "T062",
+    "concept_name": "MLH1 mismatch repair",
+    "terminology": "LOINC",
+    "code": "81218-9",
+    "category": "biomarker",
+    "description": "MLH1 gene mutation [Presence] in Blood or Tissue by Molecular genetics method",
+    "synonyms": "MLH1;mismatch repair;MMR"
+  },
+  {
+    "concept_id": "T063",
+    "concept_name": "Microsatellite instability",
+    "terminology": "LOINC",
+    "code": "81695-8",
+    "category": "biomarker",
+    "description": "Microsatellite instability [Presence] in Cancer specimen",
+    "synonyms": "MSI;microsatellite instability;MSS;MSI-H"
+  },
+  {
+    "concept_id": "T064",
+    "concept_name": "Doxorubicin",
+    "terminology": "ATC",
+    "code": "L01DB01",
+    "category": "drug",
+    "description": "Doxorubicin (anthracycline antibiotic antineoplastic)",
+    "synonyms": "adriamycin;hydroxydaunorubicin;doxorubicin HCl"
+  },
+  {
+    "concept_id": "T065",
+    "concept_name": "Cyclophosphamide",
+    "terminology": "ATC",
+    "code": "L01AA01",
+    "category": "drug",
+    "description": "Cyclophosphamide (alkylating antineoplastic)",
+    "synonyms": "cytoxan;endoxan;neosar"
+  },
+  {
+    "concept_id": "T066",
+    "concept_name": "Paclitaxel",
+    "terminology": "ATC",
+    "code": "L01CD01",
+    "category": "drug",
+    "description": "Paclitaxel (taxane antineoplastic)",
+    "synonyms": "taxol;onxol"
+  },
+  {
+    "concept_id": "T067",
+    "concept_name": "Tamoxifen",
+    "terminology": "ATC",
+    "code": "L02BA01",
+    "category": "drug",
+    "description": "Tamoxifen (antiestrogen endocrine therapy)",
+    "synonyms": "nolvadex;tamoxifen citrate"
+  },
+  {
+    "concept_id": "T068",
+    "concept_name": "Letrozole",
+    "terminology": "ATC",
+    "code": "L02BG04",
+    "category": "drug",
+    "description": "Letrozole (aromatase inhibitor)",
+    "synonyms": "femara;letrozole"
+  },
+  {
+    "concept_id": "T069",
+    "concept_name": "Gefitinib",
+    "terminology": "ATC",
+    "code": "L01XE02",
+    "category": "drug",
+    "description": "Gefitinib (EGFR tyrosine kinase inhibitor)",
+    "synonyms": "iressa;EGFR TKI"
+  },
+  {
+    "concept_id": "T070",
+    "concept_name": "Erlotinib",
+    "terminology": "ATC",
+    "code": "L01XE03",
+    "category": "drug",
+    "description": "Erlotinib (EGFR tyrosine kinase inhibitor)",
+    "synonyms": "tarceva;EGFR inhibitor"
+  },
+  {
+    "concept_id": "T071",
+    "concept_name": "Pemetrexed",
+    "terminology": "ATC",
+    "code": "L01BA04",
+    "category": "drug",
+    "description": "Pemetrexed (antifolate antineoplastic)",
+    "synonyms": "alimta;lung cancer chemotherapy"
+  },
+  {
+    "concept_id": "T072",
+    "concept_name": "Bevacizumab",
+    "terminology": "ATC",
+    "code": "L01XC07",
+    "category": "drug",
+    "description": "Bevacizumab (anti-VEGF monoclonal antibody)",
+    "synonyms": "avastin;anti-angiogenic"
+  },
+  {
+    "concept_id": "T073",
+    "concept_name": "Trastuzumab",
+    "terminology": "ATC",
+    "code": "L01XC03",
+    "category": "drug",
+    "description": "Trastuzumab (anti-HER2 monoclonal antibody)",
+    "synonyms": "herceptin;HER2-targeted therapy"
+  },
+  {
+    "concept_id": "T074",
+    "concept_name": "Neoadjuvant chemotherapy",
+    "terminology": "SNOMED",
+    "code": "415070008",
+    "category": "procedure",
+    "description": "Neoadjuvant chemotherapy",
+    "synonyms": "pre-operative chemotherapy;induction chemotherapy;NACT"
+  },
+  {
+    "concept_id": "T075",
+    "concept_name": "Nottingham Grade 1",
+    "terminology": "SNOMED",
+    "code": "369782007",
+    "category": "staging",
+    "description": "Nottingham histological grade 1 (finding)",
+    "synonyms": "grade 1;well differentiated;low grade"
+  },
+  {
+    "concept_id": "T076",
+    "concept_name": "Nottingham Grade 2",
+    "terminology": "SNOMED",
+    "code": "369783002",
+    "category": "staging",
+    "description": "Nottingham histological grade 2 (finding)",
+    "synonyms": "grade 2;moderately differentiated;intermediate grade"
+  },
+  {
+    "concept_id": "T077",
+    "concept_name": "Nottingham Grade 3",
+    "terminology": "SNOMED",
+    "code": "369784008",
+    "category": "staging",
+    "description": "Nottingham histological grade 3 (finding)",
+    "synonyms": "grade 3;poorly differentiated;high grade"
+  },
+  {
+    "concept_id": "T078",
+    "concept_name": "AJCC Stage I",
+    "terminology": "SNOMED",
+    "code": "1229947003",
+    "category": "staging",
+    "description": "American Joint Commission on Cancer stage I",
+    "synonyms": "stage I;early stage"
+  },
+  {
+    "concept_id": "T079",
+    "concept_name": "AJCC Stage II",
+    "terminology": "SNOMED",
+    "code": "1229948008",
+    "category": "staging",
+    "description": "American Joint Commission on Cancer stage II",
+    "synonyms": "stage II;stage IIA;stage IIB"
+  },
+  {
+    "concept_id": "T080",
+    "concept_name": "AJCC Stage III",
+    "terminology": "SNOMED",
+    "code": "1229954009",
+    "category": "staging",
+    "description": "American Joint Commission on Cancer stage III",
+    "synonyms": "stage III;stage IIIA;stage IIIB;stage IIIC;locally advanced"
+  },
+  {
+    "concept_id": "T081",
+    "concept_name": "AJCC Stage IV",
+    "terminology": "SNOMED",
+    "code": "1229955005",
+    "category": "staging",
+    "description": "American Joint Commission on Cancer stage IV",
+    "synonyms": "stage IV;advanced;metastatic;stage IVA;stage IVB"
+  },
+  {
+    "concept_id": "T082",
+    "concept_name": "Lymphovascular invasion",
+    "terminology": "SNOMED",
+    "code": "1254905005",
+    "category": "pathology_feature",
+    "description": "Lymphovascular invasion",
+    "synonyms": "LVI;lymphovascular space invasion;angiolymphatic invasion"
+  },
+  {
+    "concept_id": "T083",
+    "concept_name": "Perineural invasion",
+    "terminology": "SNOMED",
+    "code": "281765004",
+    "category": "pathology_feature",
+    "description": "Perineural invasion",
+    "synonyms": "PNI;neural invasion"
+  },
+  {
+    "concept_id": "T084",
+    "concept_name": "Positive surgical margin",
+    "terminology": "SNOMED",
+    "code": "370052007",
+    "category": "pathology_feature",
+    "description": "Positive surgical margin",
+    "synonyms": "involved margin;positive margin;R1 resection"
+  },
+  {
+    "concept_id": "T085",
+    "concept_name": "Negative surgical margin",
+    "terminology": "SNOMED",
+    "code": "370053002",
+    "category": "pathology_feature",
+    "description": "Negative surgical margin",
+    "synonyms": "clear margin;free margin;R0 resection"
+  }
+]

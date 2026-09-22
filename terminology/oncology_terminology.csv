@@ -1,0 +1,86 @@
+concept_id,concept_name,terminology,code,category,description,synonyms
+T001,Invasive ductal carcinoma,ICD-O-3,8500/3,morphology,Invasive ductal carcinoma of breast NOS,IDC;NST;infiltrating ductal carcinoma;invasive ductal NOS
+T002,Ductal carcinoma in situ,ICD-O-3,8500/2,morphology,Ductal carcinoma in situ of breast,DCIS;intraductal carcinoma
+T003,Adenocarcinoma NOS,ICD-O-3,8140/3,morphology,Adenocarcinoma not otherwise specified,adenocarcinoma;glandular carcinoma
+T004,Squamous cell carcinoma NOS,ICD-O-3,8070/3,morphology,Squamous cell carcinoma NOS,SCC;squamous carcinoma;epidermoid carcinoma
+T005,Papillary adenocarcinoma,ICD-O-3,8260/3,morphology,Papillary adenocarcinoma,papillary carcinoma;papillary adenoca
+T006,Mucinous adenocarcinoma,ICD-O-3,8480/3,morphology,Mucinous adenocarcinoma,colloid carcinoma;mucus-secreting carcinoma
+T007,Lobular carcinoma in situ,ICD-O-3,8520/2,morphology,Lobular carcinoma in situ,LCIS
+T008,Invasive lobular carcinoma,ICD-O-3,8520/3,morphology,Invasive lobular carcinoma,ILC;infiltrating lobular carcinoma
+T009,Small cell carcinoma,ICD-O-3,8041/3,morphology,Small cell carcinoma,oat cell carcinoma;SCLC
+T010,Large cell carcinoma of lung,ICD-O-3,8012/3,morphology,Large cell carcinoma of lung,large cell lung cancer;LCLC
+T011,Upper outer quadrant of breast,ICD-O-3,C50.4,topography,Upper-outer quadrant of breast,UOQ breast;upper outer breast
+T012,Upper inner quadrant of breast,ICD-O-3,C50.2,topography,Upper-inner quadrant of breast,UIQ breast;upper inner breast
+T013,Lower outer quadrant of breast,ICD-O-3,C50.5,topography,Lower-outer quadrant of breast,LOQ breast
+T014,Sigmoid colon,ICD-O-3,C18.7,topography,Sigmoid colon,sigmoid;pelvic colon
+T015,Rectum NOS,ICD-O-3,C20.9,topography,Rectum NOS,rectum;rectal
+T016,Cecum,ICD-O-3,C18.0,topography,Cecum,caecum
+T017,Upper lobe bronchus and lung,ICD-O-3,C34.1,topography,Upper lobe bronchus and lung,upper lobe lung;ULL
+T018,Lower lobe bronchus and lung,ICD-O-3,C34.3,topography,Lower lobe bronchus and lung,lower lobe lung;LLL
+T019,Malignant neoplasm of breast,ICD-10,C50.9,cancer_type,Malignant neoplasm of breast unspecified,breast cancer;breast carcinoma
+T020,Malignant neoplasm upper outer quadrant breast,ICD-10,C50.4,cancer_type,Malignant neoplasm of upper-outer quadrant of breast,UOQ breast cancer
+T021,Malignant neoplasm upper inner quadrant breast,ICD-10,C50.2,cancer_type,Malignant neoplasm of upper-inner quadrant of breast,UIQ breast cancer
+T022,Malignant neoplasm sigmoid colon,ICD-10,C18.7,cancer_type,Malignant neoplasm of sigmoid colon,sigmoid colon cancer;sigmoid adenocarcinoma
+T023,Malignant neoplasm rectum,ICD-10,C20,cancer_type,Malignant neoplasm of rectum,rectal cancer;rectal adenocarcinoma
+T024,Malignant neoplasm cecum,ICD-10,C18.0,cancer_type,Malignant neoplasm of cecum,cecal cancer;cecal carcinoma
+T025,Malignant neoplasm upper lobe lung,ICD-10,C34.1,cancer_type,Malignant neoplasm of upper lobe bronchus and lung,upper lobe lung cancer
+T026,Malignant neoplasm lower lobe lung,ICD-10,C34.3,cancer_type,Malignant neoplasm of lower lobe bronchus and lung,lower lobe lung cancer
+T027,Secondary malignant neoplasm brain,ICD-10,C79.31,cancer_type,Secondary malignant neoplasm of brain,brain metastasis;brain mets;cerebral metastasis
+T028,Secondary malignant neoplasm lymph nodes,ICD-10,C77.9,cancer_type,Secondary malignant neoplasm of lymph node unspecified,lymph node metastasis;nodal metastasis
+T029,Invasive ductal carcinoma of breast,SNOMED,413448000,cancer_type,Invasive ductal carcinoma of breast,IDC breast;invasive ductal breast carcinoma
+T030,Ductal carcinoma in situ of breast,SNOMED,397159002,cancer_type,Ductal carcinoma in situ of breast,DCIS;intraductal breast cancer
+T031,Adenocarcinoma of colon,SNOMED,363346000,cancer_type,Adenocarcinoma of colon,colonic adenocarcinoma;colon cancer
+T032,Adenocarcinoma of rectum,SNOMED,254527003,cancer_type,Adenocarcinoma of rectum,rectal adenocarcinoma
+T033,Pulmonary adenocarcinoma,SNOMED,254637007,cancer_type,Adenocarcinoma of lung,lung adenocarcinoma;pulmonary adeno
+T034,Squamous cell carcinoma of lung,SNOMED,254637007,cancer_type,Squamous cell carcinoma of bronchus and lung,lung SCC;pulmonary SCC
+T035,Metastatic malignant neoplasm,SNOMED,128462008,cancer_type,Metastatic malignant neoplasm,metastasis;metastatic disease;distant metastasis
+T036,Left breast structure,SNOMED,80248007,anatomical_site,Left breast,left breast
+T037,Right breast structure,SNOMED,73056007,anatomical_site,Right breast,right breast
+T038,Sigmoid colon structure,SNOMED,60184004,anatomical_site,Sigmoid colon,sigmoid colon
+T039,Rectum structure,SNOMED,34402009,anatomical_site,Rectum,rectum;rectal region
+T040,Cecum structure,SNOMED,32713005,anatomical_site,Cecum,cecum;caecum
+T041,Right upper lobe of lung,SNOMED,72481006,anatomical_site,Right upper lobe of lung,RUL;right upper lobe
+T042,Left upper lobe of lung,SNOMED,41224006,anatomical_site,Left upper lobe of lung,LUL;left upper lobe
+T043,Right lower lobe of lung,SNOMED,77831004,anatomical_site,Right lower lobe of lung,RLL;right lower lobe
+T044,Axillary lymph node,SNOMED,68171009,anatomical_site,Axillary lymph node structure,axillary node;axillary LN
+T045,Modified radical mastectomy,SNOMED,172456002,procedure,Modified radical mastectomy,MRM;radical mastectomy
+T046,Simple mastectomy,SNOMED,387701007,procedure,Simple mastectomy,total mastectomy
+T047,Core needle biopsy,SNOMED,44578009,procedure,Core needle biopsy,CNB;core biopsy;tru-cut biopsy
+T048,CT guided core biopsy,SNOMED,443989000,procedure,Computed tomography guided core needle biopsy,CT-guided biopsy;CT core biopsy
+T049,Right hemicolectomy,SNOMED,173171007,procedure,Right hemicolectomy,right colectomy;right hemi
+T050,Sigmoid colectomy,SNOMED,44946007,procedure,Sigmoid colectomy,sigmoidectomy;sigmoid resection
+T051,Lobectomy of lung,SNOMED,173171007,procedure,Lobectomy of lung,lung lobectomy;pulmonary lobectomy
+T052,Sentinel lymph node biopsy,SNOMED,396487001,procedure,Sentinel lymph node biopsy,SLNB;sentinel node biopsy
+T053,Estrogen receptor measurement,LOINC,40556-3,biomarker,Estrogen receptor Ag [Presence] in Tissue by Immune stain,ER status;estrogen receptor;ER IHC
+T054,Progesterone receptor measurement,LOINC,40557-1,biomarker,Progesterone receptor Ag [Presence] in Tissue by Immune stain,PR status;progesterone receptor;PgR
+T055,HER2 IHC measurement,LOINC,85319-2,biomarker,HER2 [Presence] in Breast cancer specimen by Immune stain,HER2 IHC;HER2/neu;c-erbB2
+T056,HER2 FISH measurement,LOINC,85318-4,biomarker,HER2 gene copy number/CEP17 copy number in Cancer specimen by FISH,HER2 FISH;HER2 amplification
+T057,KRAS gene mutation analysis,LOINC,82457-2,biomarker,KRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal,KRAS mutation;KRAS testing;RAS mutation
+T058,EGFR mutation analysis,LOINC,53049-3,biomarker,EGFR gene mutations found [Identifier] in Tissue by Molecular genetics method,EGFR mutation;EGFR testing;EGFR status
+T059,EGFR exon 19 deletion,LOINC,81197-5,biomarker,EGFR gene exon 19 deletion [Presence] in Tissue by Molecular genetics method,EGFR ex19del;EGFR deletion exon 19;del E746-A750
+T060,PD-L1 expression,LOINC,85147-7,biomarker,PD-L1 (22C3) [Presence] in Tissue by Immune stain,PD-L1;PD-L1 TPS;programmed death-ligand 1
+T061,Ki-67 proliferation index,LOINC,30265-4,biomarker,Ki-67 Ag [Presence] in Tissue by Immune stain,Ki-67;proliferation index;MIB-1
+T062,MLH1 mismatch repair,LOINC,81218-9,biomarker,MLH1 gene mutation [Presence] in Blood or Tissue by Molecular genetics method,MLH1;mismatch repair;MMR
+T063,Microsatellite instability,LOINC,81695-8,biomarker,Microsatellite instability [Presence] in Cancer specimen,MSI;microsatellite instability;MSS;MSI-H
+T064,Doxorubicin,ATC,L01DB01,drug,Doxorubicin (anthracycline antibiotic antineoplastic),adriamycin;hydroxydaunorubicin;doxorubicin HCl
+T065,Cyclophosphamide,ATC,L01AA01,drug,Cyclophosphamide (alkylating antineoplastic),cytoxan;endoxan;neosar
+T066,Paclitaxel,ATC,L01CD01,drug,Paclitaxel (taxane antineoplastic),taxol;onxol
+T067,Tamoxifen,ATC,L02BA01,drug,Tamoxifen (antiestrogen endocrine therapy),nolvadex;tamoxifen citrate
+T068,Letrozole,ATC,L02BG04,drug,Letrozole (aromatase inhibitor),femara;letrozole
+T069,Gefitinib,ATC,L01XE02,drug,Gefitinib (EGFR tyrosine kinase inhibitor),iressa;EGFR TKI
+T070,Erlotinib,ATC,L01XE03,drug,Erlotinib (EGFR tyrosine kinase inhibitor),tarceva;EGFR inhibitor
+T071,Pemetrexed,ATC,L01BA04,drug,Pemetrexed (antifolate antineoplastic),alimta;lung cancer chemotherapy
+T072,Bevacizumab,ATC,L01XC07,drug,Bevacizumab (anti-VEGF monoclonal antibody),avastin;anti-angiogenic
+T073,Trastuzumab,ATC,L01XC03,drug,Trastuzumab (anti-HER2 monoclonal antibody),herceptin;HER2-targeted therapy
+T074,Neoadjuvant chemotherapy,SNOMED,415070008,procedure,Neoadjuvant chemotherapy,pre-operative chemotherapy;induction chemotherapy;NACT
+T075,Nottingham Grade 1,SNOMED,369782007,staging,Nottingham histological grade 1 (finding),grade 1;well differentiated;low grade
+T076,Nottingham Grade 2,SNOMED,369783002,staging,Nottingham histological grade 2 (finding),grade 2;moderately differentiated;intermediate grade
+T077,Nottingham Grade 3,SNOMED,369784008,staging,Nottingham histological grade 3 (finding),grade 3;poorly differentiated;high grade
+T078,AJCC Stage I,SNOMED,1229947003,staging,American Joint Commission on Cancer stage I,stage I;early stage
+T079,AJCC Stage II,SNOMED,1229948008,staging,American Joint Commission on Cancer stage II,stage II;stage IIA;stage IIB
+T080,AJCC Stage III,SNOMED,1229954009,staging,American Joint Commission on Cancer stage III,stage III;stage IIIA;stage IIIB;stage IIIC;locally advanced
+T081,AJCC Stage IV,SNOMED,1229955005,staging,American Joint Commission on Cancer stage IV,stage IV;advanced;metastatic;stage IVA;stage IVB
+T082,Lymphovascular invasion,SNOMED,1254905005,pathology_feature,Lymphovascular invasion,LVI;lymphovascular space invasion;angiolymphatic invasion
+T083,Perineural invasion,SNOMED,281765004,pathology_feature,Perineural invasion,PNI;neural invasion
+T084,Positive surgical margin,SNOMED,370052007,pathology_feature,Positive surgical margin,involved margin;positive margin;R1 resection
+T085,Negative surgical margin,SNOMED,370053002,pathology_feature,Negative surgical margin,clear margin;free margin;R0 resection
