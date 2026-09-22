@@ -1,0 +1,226 @@
+{
+  "report_id": "report_008",
+  "cancer_type": "Colorectal",
+  "procedure": "Right hemicolectomy",
+  "annotations": {
+    "primary_site": {
+      "value": "Cecum",
+      "unit": null,
+      "state": "present",
+      "evidence": "cecal mass... tumor identified at the cecum",
+      "span": [
+        85,
+        120
+      ],
+      "codes": {
+        "ICD-O-3": "C18.0"
+      }
+    },
+    "histology_type": {
+      "value": "Colorectal adenocarcinoma",
+      "unit": null,
+      "state": "present",
+      "evidence": "moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma",
+      "span": [
+        420,
+        490
+      ],
+      "codes": {
+        "ICD-O-3-M": "8140/3"
+      }
+    },
+    "tumor_grade": {
+      "value": "Grade 2-3 (mixed, moderately to poorly differentiated)",
+      "unit": null,
+      "state": "ambiguous",
+      "evidence": "moderately to poorly differentiated (Grade 2-3, mixed)",
+      "span": [
+        420,
+        468
+      ],
+      "codes": {}
+    },
+    "clinical_stage": {
+      "value": "Not fully staged (no pre-op chest CT)",
+      "unit": null,
+      "state": "uncertain",
+      "evidence": "no pre-operative staging CT of chest available",
+      "span": [
+        155,
+        195
+      ],
+      "codes": {}
+    },
+    "pathologic_stage": {
+      "value": "pT3 pN2a pMx -- Stage IIIC (provisional)",
+      "unit": null,
+      "state": "uncertain",
+      "evidence": "pT3 pN2a pMx -- Stage IIIC (provisional; molecular pending)",
+      "span": [
+        870,
+        930
+      ],
+      "codes": {}
+    },
+    "tumor_size": {
+      "value": "5.5",
+      "unit": "cm",
+      "state": "present",
+      "evidence": "fungating, partially obstructing tumor measuring 5.5 x 4.8 x 2.1 cm",
+      "span": [
+        326,
+        375
+      ],
+      "codes": {}
+    },
+    "laterality": {
+      "value": "Not applicable",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": "Cecum -- laterality not applicable for colon",
+      "span": null,
+      "codes": {}
+    },
+    "surgical_margins": {
+      "value": "CRM positive (tumor at inked margin <1 mm)",
+      "unit": "mm",
+      "state": "present",
+      "evidence": "CRM: involved (tumor at inked surface, <1 mm)",
+      "span": [
+        625,
+        670
+      ],
+      "codes": {}
+    },
+    "lymph_nodes_examined": {
+      "value": "12",
+      "unit": null,
+      "state": "present",
+      "evidence": "Of 12 lymph nodes examined",
+      "span": [
+        672,
+        696
+      ],
+      "codes": {}
+    },
+    "lymph_nodes_positive": {
+      "value": "5",
+      "unit": null,
+      "state": "present",
+      "evidence": "5 are positive for metastatic adenocarcinoma with extranodal extension",
+      "span": [
+        697,
+        755
+      ],
+      "codes": {}
+    },
+    "lymphovascular_invasion": {
+      "value": "Indeterminate (suspicious but not confirmed)",
+      "unit": null,
+      "state": "uncertain",
+      "evidence": "endothelial-lined spaces adjacent to tumor are suspicious",
+      "span": [
+        550,
+        615
+      ],
+      "codes": {}
+    },
+    "perineural_invasion": {
+      "value": "Absent",
+      "unit": null,
+      "state": "absent",
+      "evidence": "Perineural invasion: absent",
+      "span": [
+        617,
+        642
+      ],
+      "codes": {}
+    },
+    "distant_metastasis": {
+      "value": "Not assessed (pMx)",
+      "unit": null,
+      "state": "uncertain",
+      "evidence": "Distant metastasis: not assessed (no pre-op chest CT; tissue-based M stage unknown)",
+      "span": [
+        756,
+        820
+      ],
+      "codes": {}
+    },
+    "er_status": {
+      "value": "Not applicable",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": "Colorectal cancer -- ER not applicable",
+      "span": null,
+      "codes": {}
+    },
+    "pr_status": {
+      "value": "Not applicable",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": "Colorectal cancer -- PR not applicable",
+      "span": null,
+      "codes": {}
+    },
+    "her2_status": {
+      "value": "Not applicable",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": "Colorectal cancer -- HER2 not applicable",
+      "span": null,
+      "codes": {}
+    },
+    "kras_mutation": {
+      "value": "Pending",
+      "unit": null,
+      "state": "uncertain",
+      "evidence": "KRAS, NRAS, BRAF, MMR status: pending",
+      "span": [
+        822,
+        860
+      ],
+      "codes": {}
+    },
+    "egfr_mutation": {
+      "value": "Not applicable",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": "Colorectal cancer -- EGFR not routinely tested",
+      "span": null,
+      "codes": {}
+    },
+    "procedure_type": {
+      "value": "Right hemicolectomy",
+      "unit": null,
+      "state": "present",
+      "evidence": "Referred urgently for right hemicolectomy",
+      "span": [
+        195,
+        220
+      ],
+      "codes": {
+        "CPT": "44160"
+      }
+    },
+    "prior_treatment": {
+      "value": "None reported",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No prior treatment mentioned",
+      "span": null,
+      "codes": {}
+    },
+    "tumor_multiplicity": {
+      "value": "Single lesion",
+      "unit": null,
+      "state": "absent",
+      "evidence": "single fungating mass at cecum",
+      "span": [
+        326,
+        390
+      ],
+      "codes": {}
+    }
+  }
+}

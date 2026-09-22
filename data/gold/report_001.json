@@ -1,0 +1,237 @@
+{
+  "report_id": "report_001",
+  "cancer_type": "Breast",
+  "procedure": "Modified radical mastectomy",
+  "annotations": {
+    "primary_site": {
+      "value": "Left breast, upper outer quadrant",
+      "unit": null,
+      "state": "present",
+      "evidence": "firm, stellate, grey-white mass... in the upper outer quadrant",
+      "span": [
+        318,
+        376
+      ],
+      "codes": {
+        "ICD-O-3": "C50.4"
+      }
+    },
+    "histology_type": {
+      "value": "Invasive ductal carcinoma, NST (no special type)",
+      "unit": null,
+      "state": "present",
+      "evidence": "infiltrating ductal carcinoma (IDC), no special type (NST)",
+      "span": [
+        612,
+        660
+      ],
+      "codes": {
+        "ICD-O-3-M": "8500/3"
+      }
+    },
+    "tumor_grade": {
+      "value": "Nottingham Grade 2",
+      "unit": null,
+      "state": "present",
+      "evidence": "Nottingham Grade 2 (tubule formation 3, nuclear pleomorphism 2, mitotic count 1; score 6/9)",
+      "span": [
+        662,
+        750
+      ],
+      "codes": {}
+    },
+    "clinical_stage": {
+      "value": "Not mentioned",
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_stage": {
+      "value": "pT2 pN1a pM0 -- Stage IIB",
+      "unit": null,
+      "state": "present",
+      "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
+      "span": [
+        1350,
+        1412
+      ],
+      "codes": {
+        "AJCC": "Stage IIB"
+      }
+    },
+    "tumor_size": {
+      "value": "2.3",
+      "unit": "cm",
+      "state": "present",
+      "evidence": "mass measuring 2.3 x 2.1 x 1.8 cm",
+      "span": [
+        307,
+        340
+      ],
+      "codes": {}
+    },
+    "laterality": {
+      "value": "Left",
+      "unit": null,
+      "state": "present",
+      "evidence": "Left modified radical mastectomy specimen",
+      "span": [
+        241,
+        280
+      ],
+      "codes": {}
+    },
+    "surgical_margins": {
+      "value": "Negative (closest margin 2.0 cm, deep)",
+      "unit": "cm",
+      "state": "present",
+      "evidence": "all other margins are negative",
+      "span": [
+        770,
+        795
+      ],
+      "codes": {}
+    },
+    "lymph_nodes_examined": {
+      "value": "18",
+      "unit": null,
+      "state": "present",
+      "evidence": "Of the 18 axillary lymph nodes examined",
+      "span": [
+        797,
+        835
+      ],
+      "codes": {}
+    },
+    "lymph_nodes_positive": {
+      "value": "4",
+      "unit": null,
+      "state": "present",
+      "evidence": "4 contain metastatic carcinoma",
+      "span": [
+        836,
+        865
+      ],
+      "codes": {}
+    },
+    "lymphovascular_invasion": {
+      "value": "Present",
+      "unit": null,
+      "state": "present",
+      "evidence": "Lymphovascular invasion is identified within the tumor periphery",
+      "span": [
+        751,
+        812
+      ],
+      "codes": {}
+    },
+    "perineural_invasion": {
+      "value": "Absent",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No perineural invasion is seen",
+      "span": [
+        753,
+        782
+      ],
+      "codes": {}
+    },
+    "distant_metastasis": {
+      "value": "pM0 -- no distant metastasis",
+      "unit": null,
+      "state": "absent",
+      "evidence": "pT2 pN1a pM0",
+      "span": [
+        1370,
+        1385
+      ],
+      "codes": {}
+    },
+    "er_status": {
+      "value": "Positive (Allred 8/8, >95%, 3+)",
+      "unit": null,
+      "state": "present",
+      "evidence": "ER positive (Allred score 8/8, >95% cells, 3+ intensity)",
+      "span": [
+        955,
+        1010
+      ],
+      "codes": {}
+    },
+    "pr_status": {
+      "value": "Positive (Allred 6/8, 60%, 2+)",
+      "unit": null,
+      "state": "present",
+      "evidence": "PR positive (Allred score 6/8, 60% cells, 2+ intensity)",
+      "span": [
+        1011,
+        1062
+      ],
+      "codes": {}
+    },
+    "her2_status": {
+      "value": "Negative (1+ IHC)",
+      "unit": null,
+      "state": "absent",
+      "evidence": "HER2 score 1+ (negative by IHC)",
+      "span": [
+        1063,
+        1094
+      ],
+      "codes": {}
+    },
+    "kras_mutation": {
+      "value": "Not applicable",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": "Breast cancer -- KRAS not tested or applicable",
+      "span": null,
+      "codes": {}
+    },
+    "egfr_mutation": {
+      "value": "Not applicable",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": "Breast cancer -- EGFR not tested or applicable",
+      "span": null,
+      "codes": {}
+    },
+    "procedure_type": {
+      "value": "Modified radical mastectomy",
+      "unit": null,
+      "state": "present",
+      "evidence": "Left modified radical mastectomy",
+      "span": [
+        241,
+        270
+      ],
+      "codes": {
+        "CPT": "19307"
+      }
+    },
+    "prior_treatment": {
+      "value": "None reported",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No prior breast surgery",
+      "span": [
+        72,
+        92
+      ],
+      "codes": {}
+    },
+    "tumor_multiplicity": {
+      "value": "Single lesion",
+      "unit": null,
+      "state": "absent",
+      "evidence": "a firm, stellate, grey-white mass (single mass described)",
+      "span": [
+        295,
+        320
+      ],
+      "codes": {}
+    }
+  }
+}
