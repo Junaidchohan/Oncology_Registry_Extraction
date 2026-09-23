@@ -1,0 +1,190 @@
+{
+  "report_id": "report_002",
+  "pipeline": "pipeline_a_classical",
+  "run_timestamp": "2026-09-22T08:42:47.444071+00:00",
+  "model_versions": {
+    "mode": "heuristic_demo",
+    "note": "JSL license not configured. Set JSL_LICENSE_PATH to use pretrained Healthcare NLP models."
+  },
+  "fields": {
+    "primary_site": {
+      "value": "colon",
+      "unit": null,
+      "state": "present",
+      "evidence": "colon",
+      "span": null,
+      "codes": {
+        "ICD-O-3": "C18.7",
+        "ICD-10": "C18.7"
+      }
+    },
+    "histology_type": {
+      "value": "adenocarcinoma",
+      "unit": null,
+      "state": "present",
+      "evidence": "adenocarcinoma",
+      "span": null,
+      "codes": {
+        "ICD-O-3": "8140/3"
+      }
+    },
+    "tumor_grade": {
+      "value": "moderately differentiated",
+      "unit": null,
+      "state": "present",
+      "evidence": "moderately differentiated",
+      "span": null,
+      "codes": {
+        "SNOMED": "369783002"
+      }
+    },
+    "clinical_stage": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_stage": {
+      "value": "pT3 pN1b pM0 -- Stage IIIB",
+      "unit": null,
+      "state": "present",
+      "evidence": "pT3 pN1b pM0 -- Stage IIIB",
+      "span": null,
+      "codes": {}
+    },
+    "tumor_size": {
+      "value": "28",
+      "unit": "cm",
+      "state": "present",
+      "evidence": "28 cm",
+      "span": null,
+      "codes": {}
+    },
+    "laterality": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "surgical_margins": {
+      "value": "Negative",
+      "unit": null,
+      "state": "present",
+      "evidence": "margins are free",
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_examined": {
+      "value": "24",
+      "unit": null,
+      "state": "present",
+      "evidence": "3/24",
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_positive": {
+      "value": "3",
+      "unit": null,
+      "state": "present",
+      "evidence": "3/24",
+      "span": null,
+      "codes": {}
+    },
+    "lymphovascular_invasion": {
+      "value": "Present",
+      "unit": null,
+      "state": "present",
+      "evidence": "Lymphovascular invasion is present",
+      "span": null,
+      "codes": {}
+    },
+    "perineural_invasion": {
+      "value": "Present",
+      "unit": null,
+      "state": "present",
+      "evidence": "Perineural invasion is identified",
+      "span": null,
+      "codes": {}
+    },
+    "distant_metastasis": {
+      "value": "Absent",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No distant metastasis documented",
+      "span": null,
+      "codes": {}
+    },
+    "er_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pr_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "her2_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "kras_mutation": {
+      "value": "detected (p",
+      "unit": null,
+      "state": "present",
+      "evidence": "detected (p",
+      "span": null,
+      "codes": {
+        "LOINC": "82457-2"
+      }
+    },
+    "egfr_mutation": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "procedure_type": {
+      "value": "evated). Referred for sigmoid colectomy.",
+      "unit": null,
+      "state": "present",
+      "evidence": "evated). Referred for sigmoid colectomy.",
+      "span": null,
+      "codes": {
+        "SNOMED": "173171007"
+      }
+    },
+    "prior_treatment": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_multiplicity": {
+      "value": "Single",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No multiplicity cues detected",
+      "span": null,
+      "codes": {}
+    }
+  }
+}

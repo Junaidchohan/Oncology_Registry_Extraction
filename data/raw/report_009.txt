@@ -1,0 +1,32 @@
+CLINICAL HISTORY:
+69-year-old male, ex-smoker (20 pack-years, quit 15 years ago), with right lower lobe nodule
+(1.8 cm) found on surveillance CT following prior left lobectomy for squamous cell carcinoma 3 years
+ago. PET scan: mildly FDG-avid (SUVmax 2.8), indeterminate. Radiologist comment: "suspicious for
+malignancy, though inflammatory etiology cannot be excluded." Referred for CT-guided core biopsy.
+
+GROSS DESCRIPTION:
+Received: CT-guided core needle biopsy, right lower lobe. 2 cores measuring 1.1 x 0.1 cm and
+0.9 x 0.1 cm. Tissue is tan-grey and fragile.
+
+MICROSCOPIC DESCRIPTION:
+Sections show atypical epithelial proliferation with architectural disarray, nuclear enlargement,
+and focal nucleolar prominence within a background of fibrosis and chronic inflammation. The
+morphology is suspicious for adenocarcinoma, but definitive malignant criteria are not fully met
+on the available material. An inflammatory/reactive process (e.g., organizing pneumonia) cannot
+be entirely excluded. No squamous differentiation identified; no clear carcinoma in situ.
+Immunohistochemistry: TTF-1 -- focally and weakly positive (equivocal). Napsin-A: negative.
+p40: negative. CK7: focally positive. Ki-67: 8% (low; does not exclude malignancy).
+Special stains: GMS and PAS stains negative for fungal organisms. AFB: negative.
+Molecular: EGFR mutation analysis: pending (insufficient tissue extracted for reliable result).
+KRAS: not tested. Note: Prior left-sided SCC history documented.
+
+FINAL DIAGNOSIS:
+Right lower lobe, CT-guided core needle biopsy:
+- Atypical epithelial proliferation, suspicious for adenocarcinoma
+- Definitive diagnosis of malignancy cannot be rendered on current material
+- Differential diagnosis includes: pulmonary adenocarcinoma vs reactive/inflammatory process
+- Recommend: repeat biopsy or surgical excision for definitive diagnosis
+- Clinical history of prior left-sided squamous cell carcinoma noted; metastasis less likely
+  given morphologic differences, but cannot be excluded
+- EGFR: result pending | KRAS: not tested
+- Stage: cannot be determined

@@ -1,0 +1,191 @@
+{
+  "report_id": "report_006",
+  "pipeline": "pipeline_a_classical",
+  "run_timestamp": "2026-09-22T08:42:47.663400+00:00",
+  "model_versions": {
+    "mode": "heuristic_demo",
+    "note": "JSL license not configured. Set JSL_LICENSE_PATH to use pretrained Healthcare NLP models."
+  },
+  "fields": {
+    "primary_site": {
+      "value": "left upper lobe",
+      "unit": null,
+      "state": "present",
+      "evidence": "left upper lobe",
+      "span": null,
+      "codes": {}
+    },
+    "histology_type": {
+      "value": "squamous cell carcinoma (SCC)",
+      "unit": null,
+      "state": "present",
+      "evidence": "squamous cell carcinoma (SCC)",
+      "span": null,
+      "codes": {
+        "ICD-O-3": "8070/3"
+      }
+    },
+    "tumor_grade": {
+      "value": "Poorly differentiated",
+      "unit": null,
+      "state": "present",
+      "evidence": "Poorly differentiated",
+      "span": null,
+      "codes": {
+        "SNOMED": "369784008"
+      }
+    },
+    "clinical_stage": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_stage": {
+      "value": "pT3 pN0 pM0 -- Stage IIB",
+      "unit": null,
+      "state": "present",
+      "evidence": "pT3 pN0 pM0 -- Stage IIB",
+      "span": null,
+      "codes": {}
+    },
+    "tumor_size": {
+      "value": "18",
+      "unit": "cm",
+      "state": "present",
+      "evidence": "18 cm",
+      "span": null,
+      "codes": {}
+    },
+    "laterality": {
+      "value": "Left",
+      "unit": null,
+      "state": "present",
+      "evidence": "left upper lobe",
+      "span": null,
+      "codes": {}
+    },
+    "surgical_margins": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_examined": {
+      "value": "12",
+      "unit": null,
+      "state": "present",
+      "evidence": "0/12",
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_positive": {
+      "value": "0",
+      "unit": null,
+      "state": "present",
+      "evidence": "0/12",
+      "span": null,
+      "codes": {}
+    },
+    "lymphovascular_invasion": {
+      "value": "Absent",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No lymphovascular invasion",
+      "span": null,
+      "codes": {}
+    },
+    "perineural_invasion": {
+      "value": "Absent",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No perineural invasion",
+      "span": null,
+      "codes": {}
+    },
+    "distant_metastasis": {
+      "value": "Absent",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No distant metastasis documented",
+      "span": null,
+      "codes": {}
+    },
+    "er_status": {
+      "value": "lobe lesion: Poorly differentiated squamous cell carcinoma (SCC), Nottingham",
+      "unit": null,
+      "state": "present",
+      "evidence": "lobe lesion: Poorly differentiated squamous cell carcinoma (SCC), Nottingham",
+      "span": null,
+      "codes": {
+        "LOINC": "40556-3"
+      }
+    },
+    "pr_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "her2_status": {
+      "value": "than an independent second primary",
+      "unit": null,
+      "state": "present",
+      "evidence": "than an independent second primary",
+      "span": null,
+      "codes": {
+        "LOINC": "85319-2"
+      }
+    },
+    "kras_mutation": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "egfr_mutation": {
+      "value": "not applicable (squamous cell carcinoma)",
+      "unit": null,
+      "state": "present",
+      "evidence": "not applicable (squamous cell carcinoma)",
+      "span": null,
+      "codes": {
+        "LOINC": "53049-3"
+      }
+    },
+    "procedure_type": {
+      "value": "ases. Referred for left upper lobectomy.",
+      "unit": null,
+      "state": "present",
+      "evidence": "ases. Referred for left upper lobectomy.",
+      "span": null,
+      "codes": {
+        "SNOMED": "173171007"
+      }
+    },
+    "prior_treatment": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_multiplicity": {
+      "value": "Multiple",
+      "unit": null,
+      "state": "present",
+      "evidence": "satellite nodule",
+      "span": null,
+      "codes": {}
+    }
+  }
+}

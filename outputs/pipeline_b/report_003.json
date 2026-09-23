@@ -1,0 +1,198 @@
+{
+  "report_id": "report_003",
+  "pipeline": "pipeline_b_llm_retrieval",
+  "run_timestamp": "2026-09-22T09:07:57.157766+00:00",
+  "model_versions": {
+    "extractor": "DeterministicExtractor",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "faiss_index": "terminology_index.faiss",
+    "grounding": "GroundingEngine-v1"
+  },
+  "fields": {
+    "primary_site": {
+      "value": "right upper lobe",
+      "unit": null,
+      "state": "present",
+      "evidence": "right upper lobe",
+      "span": null,
+      "codes": {
+        "ICD-O-3": "C34.1",
+        "SNOMED": "72481006"
+      }
+    },
+    "histology_type": {
+      "value": "adenocarcinoma",
+      "unit": null,
+      "state": "present",
+      "evidence": "adenocarcinoma",
+      "span": null,
+      "codes": {
+        "ICD-O-3": "8140/3",
+        "ICD-10": "C20"
+      }
+    },
+    "tumor_grade": {
+      "value": "moderately differentiated",
+      "unit": null,
+      "state": "present",
+      "evidence": "moderately differentiated",
+      "span": null,
+      "codes": {
+        "SNOMED": "369783002"
+      }
+    },
+    "clinical_stage": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_stage": {
+      "value": "cT2a cN2 cM1b -- Stage IVA",
+      "unit": null,
+      "state": "present",
+      "evidence": "cT2a cN2 cM1b -- Stage IVA",
+      "span": null,
+      "codes": {
+        "SNOMED": "1229955005"
+      }
+    },
+    "tumor_size": {
+      "value": "0.1",
+      "unit": "cm",
+      "state": "present",
+      "evidence": "0.1 cm",
+      "span": null,
+      "codes": {}
+    },
+    "laterality": {
+      "value": "Right",
+      "unit": null,
+      "state": "present",
+      "evidence": "right upper lobe",
+      "span": null,
+      "codes": {}
+    },
+    "surgical_margins": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_examined": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_positive": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "lymphovascular_invasion": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "perineural_invasion": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "distant_metastasis": {
+      "value": "Present",
+      "unit": null,
+      "state": "present",
+      "evidence": "brain metastas",
+      "span": null,
+      "codes": {
+        "ICD-10": "C50.4",
+        "SNOMED": "396487001"
+      }
+    },
+    "er_status": {
+      "value": "lobe, CT-guided core needle biopsy:",
+      "unit": null,
+      "state": "present",
+      "evidence": "lobe, CT-guided core needle biopsy:",
+      "span": null,
+      "codes": {}
+    },
+    "pr_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "her2_status": {
+      "value": "not applicable for pulmonary adenocarcinoma",
+      "unit": null,
+      "state": "present",
+      "evidence": "not applicable for pulmonary adenocarcinoma",
+      "span": null,
+      "codes": {}
+    },
+    "kras_mutation": {
+      "value": "wild-type",
+      "unit": null,
+      "state": "absent",
+      "evidence": "wild-type",
+      "span": null,
+      "codes": {}
+    },
+    "egfr_mutation": {
+      "value": "exon 19 deletion detected (Del E746-A750)",
+      "unit": null,
+      "state": "present",
+      "evidence": "exon 19 deletion detected (Del E746-A750)",
+      "span": null,
+      "codes": {
+        "LOINC": "81197-5"
+      }
+    },
+    "procedure_type": {
+      "value": "red for CT-guided core needle biopsy of the lung mass.",
+      "unit": null,
+      "state": "present",
+      "evidence": "red for CT-guided core needle biopsy of the lung mass.",
+      "span": null,
+      "codes": {
+        "SNOMED": "443989000"
+      }
+    },
+    "prior_treatment": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_multiplicity": {
+      "value": "Single",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No multiplicity cues detected",
+      "span": null,
+      "codes": {}
+    }
+  }
+}

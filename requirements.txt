@@ -1,12 +1,12 @@
-johnsnowlabs
-pyspark
-spark-nlp-jsl
+spark-nlp==5.4.0
+pyspark==3.4.0
+spark-nlp-display
 sentence-transformers
 faiss-cpu
+openai
+python-dotenv
 pandas
 scikit-learn
 numpy
 tqdm
 pyyaml
-openai>=1.0
-jsonschema>=4.0

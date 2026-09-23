@@ -1,21 +1,33 @@
-# Byte-compiled / optimized / DLL files
+# Python artifacts
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
 
-# Environments
-.env
-.venv
-env/
+# Virtual environments
+.venv/
 venv/
+env/
 ENV/
 
-# Data folders
-data/raw/
-outputs/
-evaluation/
-report/
+# IDE
+.idea/
+.vscode/
 
-# OS specific
+# Secrets — NEVER commit (credentials live here)
+secrets/
+*.env
+.env
+
+# OS
 .DS_Store
 Thumbs.db
+
+# ML caches and Spark runtime
+models_cache/
+spark-warehouse/
+metastore_db/
+*.log
+
+# NOTE: data/raw/, data/gold/, outputs/, evaluation/, report/, terminology/
+# are intentionally NOT ignored so all deliverables are visible to reviewers.

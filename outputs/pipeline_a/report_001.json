@@ -1,0 +1,189 @@
+{
+  "report_id": "report_001",
+  "pipeline": "pipeline_a_classical",
+  "run_timestamp": "2026-09-22T08:42:47.381579+00:00",
+  "model_versions": {
+    "mode": "heuristic_demo",
+    "note": "JSL license not configured. Set JSL_LICENSE_PATH to use pretrained Healthcare NLP models."
+  },
+  "fields": {
+    "primary_site": {
+      "value": "left breast ",
+      "unit": null,
+      "state": "present",
+      "evidence": "left breast ",
+      "span": null,
+      "codes": {}
+    },
+    "histology_type": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_grade": {
+      "value": "Nottingham Grade 2",
+      "unit": null,
+      "state": "present",
+      "evidence": "Nottingham Grade 2",
+      "span": null,
+      "codes": {
+        "SNOMED": "369783002"
+      }
+    },
+    "clinical_stage": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_stage": {
+      "value": "pT2 pN1a pM0 -- Stage IIB",
+      "unit": null,
+      "state": "present",
+      "evidence": "pT2 pN1a pM0 -- Stage IIB",
+      "span": null,
+      "codes": {}
+    },
+    "tumor_size": {
+      "value": "17.0",
+      "unit": "cm",
+      "state": "present",
+      "evidence": "17.0 cm",
+      "span": null,
+      "codes": {}
+    },
+    "laterality": {
+      "value": "Left",
+      "unit": null,
+      "state": "present",
+      "evidence": "left breast ",
+      "span": null,
+      "codes": {}
+    },
+    "surgical_margins": {
+      "value": "Negative",
+      "unit": null,
+      "state": "present",
+      "evidence": "margins are negative",
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_examined": {
+      "value": "9",
+      "unit": null,
+      "state": "present",
+      "evidence": "6/9",
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_positive": {
+      "value": "6",
+      "unit": null,
+      "state": "present",
+      "evidence": "6/9",
+      "span": null,
+      "codes": {}
+    },
+    "lymphovascular_invasion": {
+      "value": "Present",
+      "unit": null,
+      "state": "present",
+      "evidence": "Lymphovascular invasion is identified",
+      "span": null,
+      "codes": {}
+    },
+    "perineural_invasion": {
+      "value": "Absent",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No perineural invasion",
+      "span": null,
+      "codes": {}
+    },
+    "distant_metastasis": {
+      "value": "Absent",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No distant metastasis documented",
+      "span": null,
+      "codes": {}
+    },
+    "er_status": {
+      "value": "margins are negative",
+      "unit": null,
+      "state": "absent",
+      "evidence": "margins are negative",
+      "span": null,
+      "codes": {
+        "LOINC": "40556-3"
+      }
+    },
+    "pr_status": {
+      "value": "positive",
+      "unit": null,
+      "state": "present",
+      "evidence": "positive",
+      "span": null,
+      "codes": {
+        "LOINC": "40557-1"
+      }
+    },
+    "her2_status": {
+      "value": "margins are negative",
+      "unit": null,
+      "state": "absent",
+      "evidence": "margins are negative",
+      "span": null,
+      "codes": {
+        "LOINC": "85319-2"
+      }
+    },
+    "kras_mutation": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "egfr_mutation": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "procedure_type": {
+      "value": "Referred for modified radical mastectomy.",
+      "unit": null,
+      "state": "present",
+      "evidence": "Referred for modified radical mastectomy.",
+      "span": null,
+      "codes": {
+        "SNOMED": "172456002"
+      }
+    },
+    "prior_treatment": {
+      "value": "None reported",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No prior treatment documented",
+      "span": null,
+      "codes": {}
+    },
+    "tumor_multiplicity": {
+      "value": "Single",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No multiplicity cues detected",
+      "span": null,
+      "codes": {}
+    }
+  }
+}

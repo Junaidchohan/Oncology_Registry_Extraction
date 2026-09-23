@@ -1,0 +1,32 @@
+CLINICAL HISTORY:
+55-year-old female with known right breast invasive ductal carcinoma (ER+/PR+/HER2-), diagnosed
+18 months ago via core biopsy. She received neoadjuvant chemotherapy (AC-T regimen, 6 cycles) and
+endocrine therapy. Post-treatment MRI showed near-complete response. Referred for right mastectomy
+with sentinel lymph node biopsy.
+
+GROSS DESCRIPTION:
+Received: Right mastectomy specimen weighing 378 g. The breast measures 15 x 12 x 5 cm. On serial
+sectioning, the site of the prior tumor (upper outer quadrant, marked with surgical clip) shows a
+3.0 x 2.5 cm area of fibrosis and scarring, but no grossly visible residual tumor. A titanium clip
+is present. Sentinel lymph nodes: 3 nodes identified, 0.8-1.5 cm.
+
+MICROSCOPIC DESCRIPTION:
+Sections from the clip site and surrounding fibrotic area show extensive hyalinized fibrosis,
+foamy histiocytes, hemosiderin deposits, and occasional clusters of tumor cells within the fibrous
+stroma -- representing residual invasive carcinoma with treatment effect (ypT1a, residual focus
+approximately 1 mm). No in situ carcinoma identified. All surgical margins are negative (closest
+margin >3 cm). No lymphovascular invasion in current specimen. Sentinel lymph nodes (3/3): no
+metastatic carcinoma identified; treatment effect (fibrosis) noted in 1 node (ypN0).
+Immunohistochemistry on residual tumor: ER positive (Allred 7/8, 80%, 3+ intensity). PR positive
+(Allred 5/8, 30%, 2+ intensity). HER2: 1+ (negative). Ki-67: approximately 5% (reduced from prior).
+
+FINAL DIAGNOSIS:
+Right breast, mastectomy (post-neoadjuvant therapy):
+- Residual invasive ductal carcinoma, NST (treatment effect present), 1 mm (ypT1a)
+- Prior diagnosis: Invasive ductal carcinoma, ER+/PR+/HER2-, right breast (18 months ago)
+- Near-complete pathologic response; Miller-Payne Grade 4
+- Surgical margins: all negative
+- No lymphovascular invasion
+- Sentinel lymph nodes: 0/3 (ypN0)
+- ER: positive | PR: positive | HER2: negative
+- Post-treatment pathologic stage: ypT1a ypN0 ypM0

@@ -1,0 +1,34 @@
+CLINICAL HISTORY:
+61-year-old male, 45-pack-year smoking history, with left upper lobe mass on CT (3.5 cm) and
+a separate 1.2 cm nodule in the left lower lobe. Bronchoscopy non-diagnostic. PET scan: both lesions
+FDG-avid; no mediastinal adenopathy; no distant metastases. Referred for left upper lobectomy.
+
+GROSS DESCRIPTION:
+Received: Left upper lobectomy specimen weighing 290 g. The lobe measures 18 x 10 x 5 cm.
+A firm, grey-white tumor measuring 3.5 x 3.2 x 3.0 cm is identified in the upper lobe, 2.5 cm
+from the bronchial margin. A second distinct nodule measuring 12 x 10 x 9 mm is present in the
+lingula, grossly separate from the primary tumor. Hilar and interlobar lymph nodes identified.
+Visceral pleura appears involved by the primary tumor (pleural puckering noted).
+
+MICROSCOPIC DESCRIPTION:
+Primary left upper lobe lesion: Poorly differentiated squamous cell carcinoma (SCC), Nottingham
+equivalent Grade 3. Tumor invades visceral pleura (PL1). No lymphovascular invasion identified.
+Perineural invasion: absent. Bronchial resection margin: negative (3.5 cm from tumor).
+Second nodule (lingular): Sections show a focus of moderately differentiated squamous cell carcinoma
+with identical morphology and immunoprofile to the primary tumor (p40+, CK5/6+, TTF-1 negative),
+consistent with a satellite nodule of the same primary rather than an independent second primary.
+Lymph nodes: 12 hilar and interlobar lymph nodes examined; no metastatic carcinoma identified (0/12).
+Immunohistochemistry: p40 positive (diffuse). CK5/6 positive. TTF-1 negative. Napsin-A negative.
+PD-L1 TPS: 60% (22C3 assay). EGFR, KRAS, ALK: not tested (squamous histology, guideline-based).
+
+FINAL DIAGNOSIS:
+Left lung, left upper lobectomy:
+- Lesion 1: Poorly differentiated squamous cell carcinoma, 3.5 cm, visceral pleural invasion (PL1)
+- Lesion 2: Satellite nodule (squamous cell carcinoma, 12 mm, lingula) -- same lobe, same primary
+- No lymphovascular invasion | No perineural invasion
+- Bronchial margin: negative
+- Lymph nodes: 0/12 (pN0)
+- No evidence of distant metastasis
+- PD-L1 TPS 60%
+- Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB
+- ER, PR, HER2, KRAS, EGFR: not applicable (squamous cell carcinoma)

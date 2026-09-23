@@ -1,0 +1,200 @@
+{
+  "report_id": "report_008",
+  "pipeline": "pipeline_b_llm_retrieval",
+  "run_timestamp": "2026-09-22T09:07:57.414357+00:00",
+  "model_versions": {
+    "extractor": "DeterministicExtractor",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "faiss_index": "terminology_index.faiss",
+    "grounding": "GroundingEngine-v1"
+  },
+  "fields": {
+    "primary_site": {
+      "value": "colon",
+      "unit": null,
+      "state": "present",
+      "evidence": "colon",
+      "span": null,
+      "codes": {
+        "ICD-O-3": "C18.7",
+        "SNOMED": "60184004"
+      }
+    },
+    "histology_type": {
+      "value": "adenocarcinoma",
+      "unit": null,
+      "state": "present",
+      "evidence": "adenocarcinoma",
+      "span": null,
+      "codes": {
+        "ICD-O-3": "8140/3",
+        "ICD-10": "C20"
+      }
+    },
+    "tumor_grade": {
+      "value": "poorly differentiated",
+      "unit": null,
+      "state": "present",
+      "evidence": "poorly differentiated",
+      "span": null,
+      "codes": {
+        "SNOMED": "369784008"
+      }
+    },
+    "clinical_stage": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_stage": {
+      "value": "Stage IIIC",
+      "unit": null,
+      "state": "present",
+      "evidence": "Stage IIIC",
+      "span": null,
+      "codes": {
+        "SNOMED": "1229954009"
+      }
+    },
+    "tumor_size": {
+      "value": "35",
+      "unit": "cm",
+      "state": "present",
+      "evidence": "35 cm",
+      "span": null,
+      "codes": {}
+    },
+    "laterality": {
+      "value": "Right",
+      "unit": null,
+      "state": "present",
+      "evidence": "Right",
+      "span": null,
+      "codes": {}
+    },
+    "surgical_margins": {
+      "value": "Positive",
+      "unit": null,
+      "state": "present",
+      "evidence": "tumor at inked",
+      "span": null,
+      "codes": {
+        "SNOMED": "370052007"
+      }
+    },
+    "lymph_nodes_examined": {
+      "value": "12",
+      "unit": null,
+      "state": "present",
+      "evidence": "5/12",
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_positive": {
+      "value": "5",
+      "unit": null,
+      "state": "present",
+      "evidence": "5/12",
+      "span": null,
+      "codes": {}
+    },
+    "lymphovascular_invasion": {
+      "value": "Present",
+      "unit": null,
+      "state": "present",
+      "evidence": "lymphovascular invasion\nidentified",
+      "span": null,
+      "codes": {
+        "SNOMED": "396487001"
+      }
+    },
+    "perineural_invasion": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "distant_metastasis": {
+      "value": "Present",
+      "unit": null,
+      "state": "present",
+      "evidence": "Distant metastas",
+      "span": null,
+      "codes": {
+        "ICD-10": "C50.4",
+        "SNOMED": "396487001"
+      }
+    },
+    "er_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pr_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "her2_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "kras_mutation": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "egfr_mutation": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "procedure_type": {
+      "value": ". Referred urgently for right hemicolectomy due to near-obstructing lesio",
+      "unit": null,
+      "state": "present",
+      "evidence": ". Referred urgently for right hemicolectomy due to near-obstructing lesio",
+      "span": null,
+      "codes": {
+        "SNOMED": "173171007"
+      }
+    },
+    "prior_treatment": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_multiplicity": {
+      "value": "Single",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No multiplicity cues detected",
+      "span": null,
+      "codes": {}
+    }
+  }
+}

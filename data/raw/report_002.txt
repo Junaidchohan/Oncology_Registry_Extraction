@@ -1,0 +1,33 @@
+CLINICAL HISTORY:
+67-year-old male, colonoscopy revealed a 4.5 cm mass at the sigmoid colon. CT chest/abdomen/pelvis
+showed no distant metastases. CEA: 8.2 ng/mL (elevated). Referred for sigmoid colectomy.
+
+GROSS DESCRIPTION:
+Received: Sigmoid colectomy specimen, 28 cm in length. An ulcerated, fungating tumor measuring
+4.5 x 3.8 x 1.2 cm is identified 8 cm from the distal resection margin and 22 cm from the
+proximal margin. Tumor penetrates through the muscularis propria into the pericolorectal fat.
+Regional mesentery contains 24 lymph nodes, ranging 0.3-2.1 cm. No evidence of perforation.
+
+MICROSCOPIC DESCRIPTION:
+Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma. The tumor invades
+through the full thickness of the muscularis propria into pericolorectal adipose tissue (pT3).
+Lymphovascular invasion is present. Perineural invasion is identified in 2 foci. Of 24 lymph
+nodes examined, 3 are positive for metastatic adenocarcinoma (pN1b). Proximal and distal
+resection margins are free of tumor (proximal 22 cm, distal 8 cm). The circumferential radial
+margin (CRM) is negative (closest point 2.5 mm). No distant metastatic disease was identified
+in the specimen; CT correlation confirms no metastases.
+Molecular: KRAS mutation detected (p.G12D, codon 12). NRAS wild-type. BRAF V600E: wild-type.
+Microsatellite status: MSS (microsatellite stable) by IHC (MLH1+, MSH2+, MSH6+, PMS2+).
+
+FINAL DIAGNOSIS:
+Sigmoid colon, sigmoid colectomy:
+- Moderately differentiated adenocarcinoma, Grade 2
+- Tumor size: 4.5 cm
+- Invasion: through muscularis propria into pericolorectal fat (pT3)
+- Lymphovascular invasion: present
+- Perineural invasion: present
+- Margins: all negative (CRM 2.5 mm)
+- Lymph nodes: 3/24 positive (pN1b)
+- No distant metastasis
+- KRAS mutant (p.G12D) | NRAS wild-type | BRAF wild-type | MSS
+- Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB

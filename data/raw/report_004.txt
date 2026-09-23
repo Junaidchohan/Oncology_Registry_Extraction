@@ -1,0 +1,28 @@
+CLINICAL HISTORY:
+44-year-old female with incidentally discovered right breast mass on screening mammography, BI-RADS 4C.
+Ultrasound-guided core biopsy performed. No family history of breast cancer. No prior breast procedures.
+
+GROSS DESCRIPTION:
+Received: Ultrasound-guided core needle biopsy, right breast, upper inner quadrant. 4 cores,
+each 1.2-1.4 x 0.1 cm. Cores are grey-white and firm.
+
+MICROSCOPIC DESCRIPTION:
+Sections show a high-grade invasive carcinoma with solid growth pattern, marked nuclear pleomorphism,
+and brisk mitotic activity (>20/10 HPF). Necrosis is present. The morphology is consistent with
+invasive ductal carcinoma (IDC), NST, Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic
+score 3; total 9/9). No in situ component is identified in the biopsy material.
+Immunohistochemistry: ER -- equivocal result, 5% cells weakly positive (1+ intensity); result
+borderline, recommend repeat testing or clinical correlation per ASCO/CAP guidelines.
+PR: negative (0% cells). HER2: 3+ (positive by IHC; strong complete membrane staining in >10%
+of tumor cells). FISH confirmation recommended per institutional protocol.
+Ki-67: approximately 70%.
+
+FINAL DIAGNOSIS:
+Right breast, upper inner quadrant, core needle biopsy:
+- Invasive ductal carcinoma, NST, Nottingham Grade 3
+- ER: borderline/equivocal (5%, 1+) -- recommend repeat testing
+- PR: negative
+- HER2: positive (3+ IHC)
+- Ki-67: ~70% (high proliferative index)
+- Pathologic staging: cannot be determined on biopsy alone
+- Note: Clinical staging, margins, lymph node status: not applicable on core biopsy specimen

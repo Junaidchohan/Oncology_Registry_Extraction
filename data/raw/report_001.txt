@@ -1,0 +1,31 @@
+CLINICAL HISTORY:
+58-year-old female with a palpable left breast mass, 2.3 cm on imaging. No prior breast surgery.
+Family history of breast cancer (mother, age 62). Referred for modified radical mastectomy.
+
+GROSS DESCRIPTION:
+Received: Left modified radical mastectomy specimen weighing 412 g. The breast measures
+17.0 x 13.0 x 5.5 cm. On serial sectioning, a firm, stellate, grey-white mass measuring
+2.3 x 2.1 x 1.8 cm is identified in the upper outer quadrant, 2.0 cm from the closest
+(deep) margin. Axillary contents contain 18 lymph nodes, the largest measuring 1.5 cm.
+No gross evidence of skin involvement or nipple retraction.
+
+MICROSCOPIC DESCRIPTION:
+Sections from the primary mass show infiltrating ductal carcinoma (IDC), no special type (NST),
+Nottingham Grade 2 (tubule formation 3, nuclear pleomorphism 2, mitotic count 1; score 6/9).
+Lymphovascular invasion is identified within the tumor periphery. No perineural invasion is
+seen. The deep surgical margin is 2.0 cm from the tumor; all other margins are negative.
+Of the 18 axillary lymph nodes examined, 4 contain metastatic carcinoma (largest deposit 8 mm).
+No evidence of extranodal extension. The overlying skin and nipple are unremarkable.
+Immunohistochemistry: ER positive (Allred score 8/8, >95% cells, 3+ intensity). PR positive
+(Allred score 6/8, 60% cells, 2+ intensity). HER2 score 1+ (negative by IHC).
+
+FINAL DIAGNOSIS:
+Left breast, modified radical mastectomy:
+- Invasive ductal carcinoma, NST, Nottingham Grade 2
+- Tumor size: 2.3 cm (greatest dimension)
+- Lymphovascular invasion: present
+- Perineural invasion: absent
+- Surgical margins: negative (closest margin 2.0 cm, deep)
+- Lymph nodes: 4/18 positive for metastatic carcinoma
+- ER: positive | PR: positive | HER2: negative (1+ IHC)
+- Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB

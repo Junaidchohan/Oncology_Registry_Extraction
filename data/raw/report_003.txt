@@ -1,0 +1,29 @@
+CLINICAL HISTORY:
+52-year-old female, never-smoker, presenting with persistent cough and hemoptysis. CT chest revealed
+a 3.1 cm spiculated right upper lobe mass with ipsilateral mediastinal lymphadenopathy. PET scan
+showed FDG-avid lesion in the right upper lobe and multiple FDG-avid brain lesions (up to 1.2 cm).
+Referred for CT-guided core needle biopsy of the lung mass.
+
+GROSS DESCRIPTION:
+Received: CT-guided core needle biopsy, right upper lobe, 3 cores each measuring approximately
+1.5 x 0.1 cm. Cores are tan-grey and firm.
+
+MICROSCOPIC DESCRIPTION:
+Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns
+with focal mucin production, consistent with pulmonary adenocarcinoma. Tumor cells show moderate
+nuclear pleomorphism, prominent nucleoli, and scattered mitoses. No squamous differentiation or
+neuroendocrine features identified.
+Immunohistochemistry: TTF-1 positive (diffuse, strong). Napsin-A positive. CK7 positive. CK20 negative.
+p40 negative. Synaptophysin negative.
+Molecular: EGFR exon 19 deletion detected (Del E746-A750). KRAS wild-type. ALK: negative by IHC.
+ROS1: negative by IHC. PD-L1 TPS: 15% (22C3 assay). BRAF: not tested.
+Clinical correlation: Brain lesions identified on PET/CT are consistent with metastatic disease.
+
+FINAL DIAGNOSIS:
+Right upper lobe, CT-guided core needle biopsy:
+- Pulmonary adenocarcinoma, moderately differentiated
+- EGFR exon 19 deletion positive
+- KRAS wild-type | ALK negative | ROS1 negative
+- PD-L1 TPS 15%
+- Clinical stage: cT2a cN2 cM1b -- Stage IVA (brain metastases per PET/CT correlation)
+- Note: ER, PR, HER2 not applicable for pulmonary adenocarcinoma

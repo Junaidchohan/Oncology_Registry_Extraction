@@ -1,0 +1,189 @@
+{
+  "report_id": "report_009",
+  "pipeline": "pipeline_a_classical",
+  "run_timestamp": "2026-09-22T08:42:47.898609+00:00",
+  "model_versions": {
+    "mode": "heuristic_demo",
+    "note": "JSL license not configured. Set JSL_LICENSE_PATH to use pretrained Healthcare NLP models."
+  },
+  "fields": {
+    "primary_site": {
+      "value": "right lower lobe",
+      "unit": null,
+      "state": "present",
+      "evidence": "right lower lobe",
+      "span": null,
+      "codes": {}
+    },
+    "histology_type": {
+      "value": "adenocarcinoma",
+      "unit": null,
+      "state": "present",
+      "evidence": "adenocarcinoma",
+      "span": null,
+      "codes": {
+        "ICD-O-3": "8140/3"
+      }
+    },
+    "tumor_grade": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "clinical_stage": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_stage": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_size": {
+      "value": "0.1",
+      "unit": "cm",
+      "state": "present",
+      "evidence": "0.1 cm",
+      "span": null,
+      "codes": {}
+    },
+    "laterality": {
+      "value": "Right",
+      "unit": null,
+      "state": "present",
+      "evidence": "right lower lobe",
+      "span": null,
+      "codes": {}
+    },
+    "surgical_margins": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_examined": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_positive": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "lymphovascular_invasion": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "perineural_invasion": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "distant_metastasis": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "er_status": {
+      "value": "lobe, CT-guided core needle biopsy:",
+      "unit": null,
+      "state": "present",
+      "evidence": "lobe, CT-guided core needle biopsy:",
+      "span": null,
+      "codes": {
+        "LOINC": "40556-3"
+      }
+    },
+    "pr_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "her2_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "kras_mutation": {
+      "value": "not tested",
+      "unit": null,
+      "state": "present",
+      "evidence": "not tested",
+      "span": null,
+      "codes": {
+        "LOINC": "82457-2"
+      }
+    },
+    "egfr_mutation": {
+      "value": "analysis: pending (insufficient tissue extracted for reliable result)",
+      "unit": null,
+      "state": "uncertain",
+      "evidence": "analysis: pending (insufficient tissue extracted for reliable result)",
+      "span": null,
+      "codes": {
+        "LOINC": "53049-3"
+      }
+    },
+    "procedure_type": {
+      "value": "lance CT following prior left lobectomy for squamous cell carcinoma 3",
+      "unit": null,
+      "state": "present",
+      "evidence": "lance CT following prior left lobectomy for squamous cell carcinoma 3",
+      "span": null,
+      "codes": {
+        "SNOMED": "173171007"
+      }
+    },
+    "prior_treatment": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_multiplicity": {
+      "value": "Single",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No multiplicity cues detected",
+      "span": null,
+      "codes": {}
+    }
+  }
+}

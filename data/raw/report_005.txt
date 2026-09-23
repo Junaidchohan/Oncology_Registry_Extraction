@@ -1,0 +1,28 @@
+CLINICAL HISTORY:
+73-year-old male with rectal bleeding and change in bowel habits. Colonoscopy showed a 2.8 cm
+sessile polyp in the rectum at 10 cm from the anal verge. CT chest/abdomen/pelvis: no evidence
+of distant metastatic disease. Referred for endoscopic mucosal resection biopsy.
+
+GROSS DESCRIPTION:
+Received: Rectal biopsy, 10 cm from anal verge, multiple fragments aggregating 1.8 x 1.2 x 0.4 cm.
+Tissue is tan-pink and soft. Submitted entirely in 2 cassettes.
+
+MICROSCOPIC DESCRIPTION:
+Sections show well-differentiated (Grade 1) adenocarcinoma of the rectum. The tumor is confined
+to the submucosa with no evidence of muscularis propria invasion (pT1). No lymphovascular invasion
+is identified. Perineural invasion is absent. The deep biopsy margin appears uninvolved, though
+assessment is limited by the fragmented nature of the specimen.
+No evidence of metastasis in this specimen. Molecular: KRAS codon 12/13: wild-type. NRAS wild-type.
+BRAF V600E: wild-type. MLH1/MSH2/MSH6/PMS2: all retained (MSS). ER, PR, HER2: not applicable.
+Helicobacter pylori: not applicable.
+
+FINAL DIAGNOSIS:
+Rectum, biopsy:
+- Well-differentiated adenocarcinoma, Grade 1
+- Invasion limited to submucosa (pT1)
+- No lymphovascular invasion
+- No perineural invasion
+- No evidence of metastasis (specimen-based; radiologic correlation: no distant disease)
+- KRAS wild-type | NRAS wild-type | BRAF wild-type | MSS
+- Lymph nodes: not assessed (biopsy specimen)
+- Stage: pT1 Nx (biopsy; full staging after definitive resection)
