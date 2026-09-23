@@ -1,6 +1,6 @@
 # Oncology Registry Extraction
 
-> **Gold Standard Disclaimer:** The gold annotations in `data/gold/` were created by the candidate using `gpt-4o-mini` to author synthetic reports and their reference values. Both pipelines were run with `llama3.1:8b` via Ollama. Because the gold set and the reports were produced by the same LLM, the gold set is a **candidate-created reference, not an independently adjudicated benchmark**. The gold annotations are a candidate-created reference set, not an independently adjudicated benchmark. Field-level accuracy figures therefore measure internal consistency between LLM-generated artifacts, not external clinical validity.
+> **Gold Standard Disclaimer:** The gold annotations in `data/gold/` were created by the candidate using `gpt-4o-mini` to author synthetic reports and their reference values. Both pipelines were run with `llama3.1:8b` via Ollama. Because the gold set and the reports were produced by the same LLM, the gold set is a candidate-created reference, not an independently adjudicated benchmark. Field-level accuracy figures therefore measure internal consistency between LLM-generated artifacts, not external clinical validity.
 >
 > **Credentials:** API keys and JSL license tokens live in `secrets/` (git-ignored). Never committed.
 

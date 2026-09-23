@@ -16,3 +16,11 @@
 | Mean runtime per report | 1002.49s | 977.85s |
 | Mean cost per report | $0.0000 | $0.0000 |
 | Total cost (10 reports) | $0.0000 | $0.0000 |
+
+---
+
+## Not Measured — Justification
+
+**Invalid code rate** — not separately reported. The grounding enforcer rejects any code not in the retrieved FAISS candidate set; the count of rejections is logged in `outputs/pipeline_b/retrieval_log.jsonl` under `grounding_status: REJECTED_NOT_IN_CANDIDATE_SET`. Zero invalid codes reach pipeline output by construction.
+
+**Relation extraction F1 (target relation types)** — not measured on target relation types (lesion-to-measurement, biomarker-to-result) as a separate metric. Field-level Macro F1 is reported as a proxy. This is a documented scope-down.
