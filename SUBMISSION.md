@@ -32,54 +32,87 @@
 
 ## 🏗️ Architecture
 
-`	ext
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                       ONCOLOGY PATHOLOGY REPORT (raw text)                  │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                      │
-              ┌───────────────────────┴───────────────────────┐
-              │                                               │
-              ▼                                               ▼
-    ┌──────────────────────┐                       ┌──────────────────────┐
-    │      PIPELINE A      │                       │      PIPELINE B      │
-    │    Classical NLP     │                       │   LLM + Retrieval    │
-    │                      │                       │                      │
-    │  ┌────────────────┐  │                       │  ┌────────────────┐  │
-    │  │ Preprocessing  │  │                       │  │   LLM Extract  │  │
-    │  │ + Section det. │  │                       │  │ (with evidence)│  │
-    │  └───────┬────────┘  │                       │  └───────┬────────┘  │
-    │          ▼           │                       │          ▼           │
-    │  ┌────────────────┐  │                       │  ┌────────────────┐  │
-    │  │   Structured   │  │                       │  │ FAISS Retrieve │  │
-    │  │  Clinical LLM  │  │                       │  │     top-10     │  │
-    │  │  (mimics JSL)  │  │                       │  └───────┬────────┘  │
-    │  └───────┬────────┘  │                       │          ▼           │
-    │          ▼           │                       │  ┌────────────────┐  │
-    │  ┌────────────────┐  │                       │  │   LLM Selects  │  │
-    │  │   Rule-based   │  │                       │  │ from candidates│  │
-    │  │   Resolution   │  │                       │  └───────┬────────┘  │
-    │  └───────┬────────┘  │                       │          ▼           │
-    │          ▼           │                       │  ┌────────────────┐  │
-    │  ┌────────────────┐  │                       │  │  Code Enforcer │  │
-    │  │ Field Assembly │  │                       │  │  REJECTS fakes │  │
-    │  └───────┬────────┘  │                       │  └───────┬────────┘  │
-    └──────────┼───────────┘                       └──────────┼───────────┘
-               │                                              │
-               ▼                                              ▼
-    ┌──────────────────────┐                       ┌──────────────────────┐
-    │ outputs/pipeline_a/  │                       │ outputs/pipeline_b/  │
-    │  10 × 21-field JSON  │                       │  10 × 21-field JSON  │
-    │                      │                       │   + retrieval_log    │
-    └──────────────────────┘                       └──────────────────────┘
-               │                                              │
-               └──────────────────┬───────────────────────────┘
-                                  ▼
-                       ┌────────────────────────┐
-                       │      evaluation/       │
-                       │  Side-by-side compare  │
-                       │  Per-field results     │
-                       └────────────────────────┘
-`
+Two independent pipelines transform the same 10 pathology reports into the same 21-field structured record.
+
+```mermaid
+flowchart TB
+    Input([📄 Pathology Report<br/>raw narrative text])
+
+    subgraph A["🅰️ Pipeline A — Classical NLP"]
+        direction TB
+        A1[Preprocessing<br/>section detection]
+        A2[Structured Clinical Prompt<br/>NER + Assertion + Relation<br/>+ Resolution instructions]
+        A3[Rule-based Field Assembly<br/>+ Unit Normalization]
+        A1 --> A2 --> A3
+    end
+
+    subgraph B["🅱️ Pipeline B — LLM + Retrieval"]
+        direction TB
+        B1[LLM Extraction<br/>with evidence]
+        B2[FAISS Retrieval<br/>top-10 candidates]
+        B3[LLM Selection<br/>among candidates]
+        B4[Code Enforcer<br/>reject non-retrieved]
+        B1 --> B2 --> B3 --> B4
+    end
+
+    subgraph T[["📚 Local Terminology Index"]]
+        direction LR
+        T1[(FAISS<br/>85 concepts)]
+        T2[SNOMED CT]
+        T3[ICD-10 / ICD-O-3]
+        T4[LOINC]
+        T5[ATC]
+        T2 -.-> T1
+        T3 -.-> T1
+        T4 -.-> T1
+        T5 -.-> T1
+    end
+
+    OutA([📊 Pipeline A Output<br/>10 × 21-field JSON])
+    OutB([📊 Pipeline B Output<br/>10 × 21-field JSON<br/>+ retrieval log])
+    Eval([📈 Evaluation<br/>Side-by-side comparison])
+
+    Input --> A1
+    Input --> B1
+    T1 -.-> B2
+    A3 --> OutA
+    B4 --> OutB
+    OutA --> Eval
+    OutB --> Eval
+
+    classDef inputStyle fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
+    classDef pAStyle fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#e65100
+    classDef pBStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
+    classDef termStyle fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#1b5e20
+    classDef outStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef evalStyle fill:#e0f7fa,stroke:#00838f,stroke-width:2px,color:#006064
+
+    class Input inputStyle
+    class A1,A2,A3 pAStyle
+    class B1,B2,B3,B4 pBStyle
+    class T1,T2,T3,T4,T5 termStyle
+    class OutA,OutB outStyle
+    class Eval evalStyle
+```
+
+### Pipeline Roles at a Glance
+
+| | 🅰️ Pipeline A | 🅱️ Pipeline B |
+|---|---|---|
+| **Approach** | Structured clinical prompt mimicking JSL stages | LLM extraction + FAISS retrieval + LLM selection |
+| **Strengths** | Higher entity recall (91.0%) and entity F1 (95.3%) | Higher terminology F1 (26.0%) — grounded codes |
+| **Trade-off** | Terminology F1 limited to 22.9% | Entity recall limited to 68.1% |
+| **Cost** | $0.00 / report | $0.00 / report |
+| **Runtime** | ~1000 s / report (CPU) | ~978 s / report (CPU) |
+
+### Why Two Pipelines?
+
+The brief asked for a measured comparison, not a single "winner." The results show a clean trade-off:
+
+- **Pipeline A** benefits from a highly structured prompt — it detects more entities because the LLM has been given a rigid schema to fill.
+- **Pipeline B** benefits from retrieval grounding — it produces more reliable codes because every code must come from the FAISS candidate set.
+
+The grounding constraint is the key differentiator. When Pipeline B's LLM tried to fabricate codes (L8401, COSM111, D10.0), the code enforcer rejected them. All 15 such rejections are logged in `outputs/pipeline_b/retrieval_log.jsonl`.
 
 ---
 
