@@ -33,6 +33,7 @@
 ## 🏗️ Architecture
 
 ```mermaid
+%%{init: {"flowchart": {"rankSpacing": 100}}}%%
 flowchart TD
     subgraph Data Input
         R["Unstructured Pathology Reports<br/>(10 reports, 3 specialties)"]
