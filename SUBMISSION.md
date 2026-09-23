@@ -182,6 +182,9 @@ ull. Span recalculation is documented as future work.
 3. **Terminology index size.** The FAISS index contains 85 curated concepts — a documented subset, as permitted by Section 04. Several retrieval misses on receptor-status and variant-level codes are attributable to this scope.
 4. **Relation F1 not measured separately.** Field-level Macro F1 is reported as a proxy. Measuring relation F1 on target types is documented as future work.
 5. **Gold set is candidate-created.** Both the synthetic reports and the gold annotations were authored by the candidate using gpt-4o-mini. The gold set is **not** an independently adjudicated benchmark. Accuracy figures measure internal consistency between LLM-generated artifacts, not external clinical validity.
+7. **Pipeline B evidence quality.** Some evidence fields contain section labels rather than source text (9 of 21 fields in report_001). Documented as future work; re-running the pipeline was outside the time budget for this submission.
+8. **Pipeline A stage implementation.** Stages are implemented as structured instructions within a single LLM prompt rather than as separate chained components. Output schema and workflow match the intended stage sequence.
+9. **Evidence match rate not measured.** Listed as a required metric in the brief; not computed in `evaluate_full.py`. Documented as a scope-down.
 
 ---
 
