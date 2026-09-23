@@ -1,5 +1,3 @@
----
-
 # 🧬 Oncology Registry Extraction
 
 ### Classical Healthcare NLP vs. LLM + Retrieval-Grounded Terminology
@@ -37,23 +35,23 @@
 ```mermaid
 flowchart TD
     subgraph Data Input
-        R[Unstructured Pathology Reports\n(10 reports, 3 specialties)]
+        R["Unstructured Pathology Reports<br/>(10 reports, 3 specialties)"]
     end
 
     subgraph Pipeline A: Classical NLP
-        A1[Section Detection\nRegex] --> A2[NER\nLLM Prompt]
-        A2 --> A3[Assertion Status\nLLM Prompt]
-        A3 --> A4[Entity Resolution\nLLM Prompt]
-        A4 --> A_Out[Structured JSON]
+        A1["Section Detection<br/>Regex"] --> A2["NER<br/>LLM Prompt"]
+        A2 --> A3["Assertion Status<br/>LLM Prompt"]
+        A3 --> A4["Entity Resolution<br/>LLM Prompt"]
+        A4 --> A_Out["Structured JSON"]
     end
 
     subgraph Pipeline B: LLM + Retrieval
-        B1[Information Extraction\nllama3.1:8b] --> B2[Candidate Retrieval\nFAISS, 85 concepts]
-        B2 --> B3[Code Grounding\nllama3.1:8b + extract_code_token]
-        B3 --> B4{Grounding Enforcer\nCode in candidates?}
-        B4 -- Yes --> B5_A[Accept Code]
-        B4 -- No --> B5_B[Reject/Abstain\nLog event]
-        B5_A --> B_Out[Structured JSON]
+        B1["Information Extraction<br/>llama3.1:8b"] --> B2["Candidate Retrieval<br/>FAISS, 85 concepts"]
+        B2 --> B3["Code Grounding<br/>llama3.1:8b + extract_code_token"]
+        B3 --> B4{"Grounding Enforcer<br/>Code in candidates?"}
+        B4 -- Yes --> B5_A["Accept Code"]
+        B4 -- No --> B5_B["Reject/Abstain<br/>Log event"]
+        B5_A --> B_Out["Structured JSON"]
         B5_B --> B_Out
     end
     
