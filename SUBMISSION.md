@@ -55,7 +55,7 @@ flowchart TB
         B1 --> B2 --> B3 --> B4
     end
 
-    subgraph T[["📚 Local Terminology Index"]]
+    subgraph T["📚 Local Terminology Index"]
         direction LR
         T1[(FAISS<br/>85 concepts)]
         T2[SNOMED CT]
