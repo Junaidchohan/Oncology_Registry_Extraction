@@ -439,12 +439,12 @@
       "total": 210
     },
     "terminology": {
-      "code_precision": 0.0,
-      "code_recall": 0.0,
-      "code_f1": 0,
-      "match_count": 0,
+      "code_precision": 0.2031,
+      "code_recall": 0.3611,
+      "code_f1": 0.26,
+      "match_count": 13,
       "total_gold_codes": 36,
-      "total_pred_codes": 45
+      "total_pred_codes": 64
     },
     "grounding_integrity": {
       "unsupported_field_rate": 0.0,
@@ -464,9 +464,9 @@
         "total": 10,
         "state_match": 9,
         "total_states": 10,
-        "code_matches": 0,
+        "code_matches": 5,
         "total_codes_gold": 10,
-        "total_codes_pred": 1
+        "total_codes_pred": 9
       },
       "histology_type": {
         "ner_tp": 10,
@@ -476,9 +476,9 @@
         "total": 10,
         "state_match": 9,
         "total_states": 10,
-        "code_matches": 0,
+        "code_matches": 8,
         "total_codes_gold": 9,
-        "total_codes_pred": 0
+        "total_codes_pred": 10
       },
       "tumor_grade": {
         "ner_tp": 9,
@@ -670,7 +670,7 @@
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 1,
-        "total_codes_pred": 0
+        "total_codes_pred": 1
       },
       "procedure_type": {
         "ner_tp": 10,
@@ -720,7 +720,9 @@
         ],
         "pred_value": "breast",
         "pred_state": "present",
-        "pred_codes": [],
+        "pred_codes": [
+          "C50.4"
+        ],
         "evidence": "Left breast"
       },
       {
@@ -733,7 +735,9 @@
         ],
         "pred_value": "infiltrating ductal carcinoma",
         "pred_state": "present",
-        "pred_codes": [],
+        "pred_codes": [
+          "8500/3"
+        ],
         "evidence": "MICROSCOPIC DESCRIPTION"
       },
       {

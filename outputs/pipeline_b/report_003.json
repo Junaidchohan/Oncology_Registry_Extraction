@@ -18,7 +18,9 @@
       "state": "present",
       "evidence": "Right upper lobe, CT-guided core needle biopsy",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "8012/3"
+      }
     },
     "histology_type": {
       "value": "adenocarcinoma",
@@ -26,7 +28,9 @@
       "state": "present",
       "evidence": "Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns with focal mucin production, consistent with pulmonary adenocarcinoma.",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "8140/3"
+      }
     },
     "tumor_grade": {
       "value": "moderately differentiated",
@@ -160,7 +164,9 @@
       "state": "present",
       "evidence": "EGFR exon 19 deletion detected (Del E746-A750)",
       "span": null,
-      "codes": {}
+      "codes": {
+        "LOINC": "81197-5"
+      }
     },
     "procedure_type": {
       "value": "core needle biopsy",

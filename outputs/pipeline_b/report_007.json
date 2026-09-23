@@ -18,7 +18,9 @@
       "state": "present",
       "evidence": "Right breast, mastectomy (post-neoadjuvant therapy)",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "C50.4"
+      }
     },
     "histology_type": {
       "value": "invasive ductal carcinoma",
@@ -26,7 +28,9 @@
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "8500/3"
+      }
     },
     "tumor_grade": {
       "value": "4",

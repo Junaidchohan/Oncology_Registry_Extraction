@@ -28,7 +28,9 @@
       "state": "present",
       "evidence": null,
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "8070/3"
+      }
     },
     "tumor_grade": {
       "value": "3",

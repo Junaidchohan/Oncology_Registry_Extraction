@@ -40,6 +40,7 @@ sys.path.insert(0, str(_ROOT / "src" / "pipeline_b_llm_retrieval"))
 
 # Load config (pulls secrets/.env)
 from config import OPENAI_API_KEY, LLM_API_BASE, LLM_MODEL  # noqa
+from grounding import extract_code_token  # noqa  — canonical code-token parser
 
 logger.info("Config: model=%s  base=%s  key_prefix=%s", LLM_MODEL, LLM_API_BASE, OPENAI_API_KEY[:6])
 
@@ -157,19 +158,9 @@ def _grounding_call(client, field_name: str, value: str, candidates: dict,
 
     selected_code = sel.get("selected_code", "NONE")
 
-    # Normalise: LLM sometimes returns "TERM | CODE | Name" instead of bare code.
-    # Extract the bare code if it is present in valid_codes anywhere in the string.
-    if selected_code and selected_code.upper() != "NONE":
-        if selected_code not in valid_codes:
-            # Try to find a valid code embedded in the string (e.g. "ICD-O-3 | 8140/3 | ...")
-            for vc in valid_codes:
-                if vc in selected_code:
-                    logger.info(
-                        "Grounding code normalised for %s/%s: '%s' → '%s'",
-                        report_id, field_name, selected_code, vc
-                    )
-                    selected_code = vc
-                    break
+    # Use the canonical extract_code_token helper to normalise the LLM's selection.
+    # Handles formats like "SNOMED | 369783002 | Name" -> "369783002"
+    code_token = extract_code_token(selected_code)
 
     log_entry = {
         "report_id": report_id,
@@ -186,19 +177,22 @@ def _grounding_call(client, field_name: str, value: str, candidates: dict,
     }
 
     result = {}
-    if selected_code and selected_code.upper() != "NONE":
-        if selected_code in valid_codes:
-            meta = code_map[selected_code]
-            result = {meta["terminology"]: selected_code}
-            log_entry["grounding_status"] = "ACCEPTED"
-        else:
-            logger.warning(
-                "GROUNDING REJECTION: '%s' not in candidate set for %s/%s. Candidate set: %s",
-                selected_code, report_id, field_name, valid_codes
-            )
-            log_entry["grounding_status"] = "REJECTED_NOT_IN_CANDIDATE_SET"
-    else:
+    if code_token == "NONE":
         log_entry["grounding_status"] = "ABSTAINED"
+    elif code_token in valid_codes:
+        meta = code_map[code_token]
+        result = {meta["terminology"]: code_token}
+        log_entry["grounding_status"] = "ACCEPTED"
+        logger.info(
+            "GROUNDING ACCEPTED: '%s' for %s/%s (raw: '%s')",
+            code_token, report_id, field_name, selected_code,
+        )
+    else:
+        logger.warning(
+            "GROUNDING REJECTION: normalised token '%s' (raw: '%s') not in candidate set for %s/%s.",
+            code_token, selected_code, report_id, field_name,
+        )
+        log_entry["grounding_status"] = "REJECTED_NOT_IN_CANDIDATE_SET"
 
     rid_log.append(log_entry)
     return result

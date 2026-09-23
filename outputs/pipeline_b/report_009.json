@@ -18,7 +18,9 @@
       "state": "present",
       "evidence": "Right lower lobe",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "8012/3"
+      }
     },
     "histology_type": {
       "value": "adenocarcinoma",
@@ -26,7 +28,9 @@
       "state": "present",
       "evidence": "suspicious for adenocarcinoma",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "8140/3"
+      }
     },
     "tumor_grade": {
       "value": null,

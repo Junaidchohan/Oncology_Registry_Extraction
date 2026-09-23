@@ -18,7 +18,9 @@
       "state": "present",
       "evidence": "Cecum, right hemicolectomy",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "C18.0"
+      }
     },
     "histology_type": {
       "value": "moderately to poorly differentiated adenocarcinoma",
@@ -26,7 +28,9 @@
       "state": "present",
       "evidence": "Sections show moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma.",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "8140/3"
+      }
     },
     "tumor_grade": {
       "value": "2-3",

@@ -18,7 +18,9 @@
       "state": "present",
       "evidence": null,
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "C20.9"
+      }
     },
     "histology_type": {
       "value": "Adenocarcinoma",
@@ -26,7 +28,9 @@
       "state": "present",
       "evidence": null,
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "8140/3"
+      }
     },
     "tumor_grade": {
       "value": "1",

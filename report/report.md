@@ -1,6 +1,6 @@
 # Technical Report: Oncology Registry Extraction System
 
-*Candidate-created reference set disclaimer: The gold annotations in `data/gold/` were created by the candidate using the same LLM (`gpt-4o-mini`) that generated the synthetic reports. They are NOT an independently adjudicated benchmark and should be treated as a candidate-created reference set only.*
+*Candidate-created reference set disclaimer: The gold annotations in `data/gold/` were created by the candidate using `gpt-4o-mini` to author synthetic reports and their reference values. Both pipelines were run with `llama3.1:8b` via Ollama. Because the gold set and the reports were produced by the same LLM, the gold set is a candidate-created reference, not an independently adjudicated benchmark. Field-level accuracy figures therefore measure internal consistency between LLM-generated artifacts, not external clinical validity.*
 
 ---
 
@@ -68,9 +68,9 @@ These metrics represent the full execution of both pipelines using the `llama3.1
 | Field value exact accuracy | 28.1% (59/210) | 23.3% (49/210) |
 | Assertion / State accuracy | 57.1% (120/210) | 55.7% (117/210) |
 | Relation / Macro F1 (field-level) | 95.3% | 81.0% |
-| Terminology code precision | 17.4% (12/69) | 0.0% (0/45) |
-| Terminology code recall (Recall@K) | 33.3% (12/36) | 0.0% (0/36) |
-| Terminology F1 | 22.9% | 0.0% |
+| Terminology code precision | 17.4% (12/69) | 20.3% (13/64) |
+| Terminology code recall (Recall@K) | 33.3% (12/36) | 36.1% (13/36) |
+| Terminology F1 | 22.9% | 26.0% |
 | Unsupported field rate | 0.0% (0 fields) | 0.0% (0 fields) |
 | Mean runtime per report | 1002.49s | 977.85s |
 | Mean cost per report | $0.0000 (Local) | $0.0000 (Local) |
@@ -198,3 +198,4 @@ At 1M reports/year (~2,740/day, ~115/hour), a production system would require:
 3. **FAISS index covers only 85 concepts** — a production index would require the full SNOMED, ICD-10, and ICD-O-3 releases (hundreds of thousands of concepts) with GPU-accelerated embeddings
 4. **LLM hallucination risk** — mitigated by grounding enforcement; Pipeline B cannot attach a code that was not in the FAISS-retrieved candidate set
 5. **No relation extraction** — temporal and treatment-response relations (e.g., "after chemotherapy, tumor reduced") are not extracted in the current schema
+6. **Pipeline B grounding enforcer — initial bug and fix.** The first execution of Pipeline B returned 0% terminology precision and recall because the grounding enforcer performed an exact string match on the LLM's `selected_code` field. The local llama3.1:8b model returns selections formatted as `"SNOMED | 369783002 | Nottingham Grade 2"` rather than the bare code `"369783002"`. All selections were therefore rejected. A `extract_code_token()` helper was added to parse the code token from the LLM's response before validation. After re-applying the fixed grounding logic to the existing extraction outputs, Pipeline B's terminology precision improved to **20.3%** and recall to **36.1%** (F1 26.0%). The grounding constraint itself was functioning correctly throughout — no fabricated codes reached the output at any point.

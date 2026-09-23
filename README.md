@@ -1,6 +1,6 @@
 # Oncology Registry Extraction
 
-> ⚠️ **Gold Standard Disclaimer:** The gold annotations in `data/gold/` were created by the candidate using the same LLM (`gpt-4o-mini`) that generated the synthetic reports. They are **not an independently adjudicated benchmark** and should be treated as a **candidate-created reference set** only.
+> **Gold Standard Disclaimer:** The gold annotations in `data/gold/` were created by the candidate using `gpt-4o-mini` to author synthetic reports and their reference values. Both pipelines were run with `llama3.1:8b` via Ollama. Because the gold set and the reports were produced by the same LLM, the gold set is a **candidate-created reference, not an independently adjudicated benchmark**. The gold annotations are a candidate-created reference set, not an independently adjudicated benchmark. Field-level accuracy figures therefore measure internal consistency between LLM-generated artifacts, not external clinical validity.
 >
 > **Credentials:** API keys and JSL license tokens live in `secrets/` (git-ignored). Never committed.
 
@@ -15,7 +15,7 @@ This project implements two pipelines for extracting structured registry data fr
 ### Pipeline A — LLM-Enhanced Clinical NLP
 Mirrors the analytical stages of John Snow Labs Healthcare NLP:
 - **Section detection** — regex-based (CLINICAL_HISTORY, GROSS_DESCRIPTION, MICROSCOPIC_DESCRIPTION, FINAL_DIAGNOSIS)
-- **NER equivalent** — `gpt-4o-mini` with clinically structured system prompt (mimics `ner_oncology_wip` + `ner_oncology_biomarker_wip` + `ner_oncology_tnm_wip`)
+- **NER equivalent** — `llama3.1:8b` via Ollama with clinically structured system prompt (mimics `ner_oncology_wip` + `ner_oncology_biomarker_wip` + `ner_oncology_tnm_wip`)
 - **Assertion equivalent** — present / absent / uncertain / not_mentioned (mimics `assertion_oncology_wip`)
 - **Resolution equivalent** — codes extracted by LLM from report context (mimics `sbiobertresolve_icd10cm_augmented_billable` + `sbiobertresolve_icdo`)
 
@@ -23,9 +23,9 @@ Mirrors the analytical stages of John Snow Labs Healthcare NLP:
 
 ### Pipeline B — LLM + Local Terminology Retrieval
 Two-stage RAG approach:
-- **Stage 1:** `gpt-4o-mini` extracts 21 fields with evidence spans — no codes generated
+- **Stage 1:** `llama3.1:8b` via Ollama extracts 21 fields with evidence spans — no codes generated
 - **Stage 2:** FAISS index retrieves top-10 candidates; second LLM call selects from the list only, or abstains
-- **Grounding enforcement:** Code rejected if not in retrieved candidate set (logged to `outputs/pipeline_b/retrieval_log.jsonl`)
+- **Grounding enforcement:** Code rejected if not in retrieved candidate set (logged to `outputs/pipeline_b/retrieval_log.jsonl`); `extract_code_token()` normalises pipe-format LLM responses before validation
 
 ---
 
@@ -164,3 +164,26 @@ oncology-registry-extraction/
 ├── verify_credentials.py        # Credential health check
 └── README.md
 ```
+
+---
+
+## Model and Runtime Configuration
+
+- **LLM (both pipelines):** llama3.1:8b via Ollama
+- **Ollama version:** 0.34.2
+- **Endpoint:** http://localhost:11434/v1
+- **Cost per report:** $0.00 (local inference)
+- **Mean runtime per report:** ~1000 seconds (CPU only)
+- **Terminology index:** 85 concepts across SNOMED CT, ICD-10, ICD-O-3, LOINC, ATC
+- **Grounding enforcement:** code-level rejection of any concept not in the retrieved candidate set; abstention when no candidate fits. A `extract_code_token()` helper normalizes LLM output before validation.
+
+## Hardware Assumptions
+
+- Consumer CPU (no GPU required)
+- 16 GB RAM minimum
+- ~5 GB disk for the llama3.1:8b model
+- Windows 10 or Linux
+
+## Why Ollama rather than a hosted API
+
+Section 06 of the brief explicitly permits "a local model or authorized external API." A local model was chosen to avoid external API costs and to keep all synthetic patient data on-device, consistent with the brief's guidance on handling protected data.

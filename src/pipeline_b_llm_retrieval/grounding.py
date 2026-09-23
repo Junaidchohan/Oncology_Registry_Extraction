@@ -47,11 +47,63 @@ tumor_multiplicity   → (no code)
 from __future__ import annotations
 
 import logging
+import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set
 
 logger = logging.getLogger(__name__)
+
+
+# ---------------------------------------------------------------------------
+# Code-token extraction helper
+# ---------------------------------------------------------------------------
+
+def extract_code_token(selection: str) -> str:
+    """Extract the pure code from an LLM selection string.
+
+    Handles formats such as:
+      - "369783002"
+      - "SNOMED | 369783002 | Nottingham Grade 2"
+      - "SNOMED | 369783002"
+      - "ICD-O-3 | 8500/3 | Invasive ductal carcinoma"
+      - "LOINC | 81197-5"
+      - "369783002 | Nottingham Grade 2"
+      - "ICD-10 | C50.4 | ..."
+      - "ICD-10-CM | C50.4"
+      - "NONE" / "ABSTAIN" (abstention — returned as-is)
+    """
+    if not selection:
+        return ""
+    s = str(selection).strip()
+    if s.upper() == "NONE" or s.upper().startswith("ABSTAIN"):
+        return "NONE"
+
+    # Known terminology name tokens to skip (they contain digits but are NOT codes)
+    _TERMINOLOGY_NAMES = {
+        "ICD-O-3", "ICD-10", "ICD-10-CM", "ICD-O", "SNOMED", "LOINC", "ATC",
+        "ICD-9", "ICD-9-CM", "ICDO", "ICDO3", "SNOMEDCT",
+    }
+
+    # Split on pipe and pick the first segment containing a digit and no spaces
+    # that is not a known terminology name token.
+    if "|" in s:
+        for part in [p.strip() for p in s.split("|")]:
+            if (
+                part
+                and any(c.isdigit() for c in part)
+                and " " not in part
+                and part.upper() not in _TERMINOLOGY_NAMES
+            ):
+                return part
+
+    # Otherwise: try to match a code-like token (letters, digits, dots, slashes, hyphens)
+    m = re.search(r"([A-Za-z]?\d[\w\.\-/]*)", s)
+    if m:
+        return m.group(1)
+    return s
+
+
 
 # ---------------------------------------------------------------------------
 # Field → terminologies to retrieve from
@@ -140,9 +192,11 @@ class GroundingEngine:
         Select the best code per terminology from candidates.
 
         Strategy:
-        1. If llm_selected provides a code that IS in the candidate set → use it.
+        1. If llm_selected provides a code (after token extraction) that IS in
+           the candidate set → use it.
         2. If llm_selected code is NOT in candidate set → reject (log warning).
-        3. If no llm_selected → use top-1 by FAISS score for each terminology.
+           No fallback to top-1 — grounding enforcer must be strict.
+        3. If no llm_selected → abstain for that terminology.
 
         Parameters
         ----------
@@ -164,20 +218,24 @@ class GroundingEngine:
             candidate_codes: Set[str] = {c["code"] for c in cand_list}
 
             if llm_selected and terminology in llm_selected:
-                proposed = llm_selected[terminology]
-                if proposed in candidate_codes:
+                raw_proposed = llm_selected[terminology]
+                proposed = extract_code_token(raw_proposed)
+
+                if proposed == "NONE":
+                    # LLM explicitly abstained
+                    logger.info(
+                        "GROUNDING ABSTAIN: LLM abstained for %s.",
+                        terminology,
+                    )
+                elif proposed in candidate_codes:
                     codes[terminology] = proposed
                 else:
                     logger.warning(
-                        "GROUNDING REJECTION: LLM proposed code '%s' for %s "
-                        "is not in candidate set %s. Using top-1 fallback.",
-                        proposed, terminology, candidate_codes,
+                        "GROUNDING REJECTION: normalised code '%s' (raw: '%s') for %s "
+                        "is not in candidate set %s.",
+                        proposed, raw_proposed, terminology, candidate_codes,
                     )
-                    # Fallback to top-1
-                    codes[terminology] = cand_list[0]["code"]
-            else:
-                # No LLM selection → top-1 by score
-                codes[terminology] = cand_list[0]["code"]
+                    # No fallback — strict grounding enforcer
 
         return codes
 

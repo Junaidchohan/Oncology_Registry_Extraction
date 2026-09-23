@@ -18,7 +18,9 @@
       "state": "present",
       "evidence": "Left breast",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "C50.4"
+      }
     },
     "histology_type": {
       "value": "infiltrating ductal carcinoma",
@@ -26,7 +28,9 @@
       "state": "present",
       "evidence": "MICROSCOPIC DESCRIPTION",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD-O-3": "8500/3"
+      }
     },
     "tumor_grade": {
       "value": "2",
