@@ -1,28 +1,48 @@
 {
   "report_id": "report_009",
   "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-22T08:42:47.898609+00:00",
+  "run_timestamp": "2026-09-23T21:20:33.330252+00:00",
   "model_versions": {
-    "mode": "heuristic_demo",
-    "note": "JSL license not configured. Set JSL_LICENSE_PATH to use pretrained Healthcare NLP models."
+    "mode": "llm_enhanced_clinical_nlp",
+    "llm_model": "llama3.1:8b",
+    "provider": "OpenAI",
+    "jsl_note": "johnsnowlabs package not installed in this environment. LLM used as analytical equivalent of JSL NER + Assertion + Resolution pipeline. JSL license token stored in secrets/jsl_license.json for JSL-capable environments.",
+    "ner_equivalent": "ner_oncology_wip + ner_oncology_biomarker_wip + ner_oncology_tnm_wip",
+    "assertion_equivalent": "assertion_oncology_wip",
+    "resolution_equivalent": "sbiobertresolve_icd10cm_augmented_billable + sbiobertresolve_icdo",
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "cost_usd": 0.0,
+    "elapsed_sec": 817.817
   },
   "fields": {
     "primary_site": {
-      "value": "right lower lobe",
+      "value": "lung",
       "unit": null,
-      "state": "present",
-      "evidence": "right lower lobe",
-      "span": null,
-      "codes": {}
+      "state": "uncertain",
+      "evidence": "Right lower lobe, CT-guided core needle biopsy",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": "C34.0",
+        "ICD-10": "C34.0",
+        "SNOMED": "http://snomed.info/sct"
+      }
     },
     "histology_type": {
       "value": "adenocarcinoma",
       "unit": null,
       "state": "present",
-      "evidence": "adenocarcinoma",
-      "span": null,
+      "evidence": "suspicious for adenocarcinoma",
+      "span": [
+        null,
+        null
+      ],
       "codes": {
-        "ICD-O-3": "8140/3"
+        "ICD-O-3": "8140/3",
+        "ICD-10": "C80.1"
       }
     },
     "tumor_grade": {
@@ -50,19 +70,25 @@
       "codes": {}
     },
     "tumor_size": {
-      "value": "0.1",
+      "value": "1.8",
       "unit": "cm",
       "state": "present",
-      "evidence": "0.1 cm",
-      "span": null,
+      "evidence": "1.8 cm",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "laterality": {
-      "value": "Right",
+      "value": "right",
       "unit": null,
       "state": "present",
-      "evidence": "right lower lobe",
-      "span": null,
+      "evidence": "Right lower lobe",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "surgical_margins": {
@@ -114,19 +140,17 @@
       "codes": {}
     },
     "er_status": {
-      "value": "lobe, CT-guided core needle biopsy:",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "lobe, CT-guided core needle biopsy:",
+      "state": "not_applicable",
+      "evidence": null,
       "span": null,
-      "codes": {
-        "LOINC": "40556-3"
-      }
+      "codes": {}
     },
     "pr_status": {
       "value": null,
       "unit": null,
-      "state": "not_mentioned",
+      "state": "not_applicable",
       "evidence": null,
       "span": null,
       "codes": {}
@@ -134,42 +158,12 @@
     "her2_status": {
       "value": null,
       "unit": null,
-      "state": "not_mentioned",
+      "state": "not_applicable",
       "evidence": null,
       "span": null,
       "codes": {}
     },
     "kras_mutation": {
-      "value": "not tested",
-      "unit": null,
-      "state": "present",
-      "evidence": "not tested",
-      "span": null,
-      "codes": {
-        "LOINC": "82457-2"
-      }
-    },
-    "egfr_mutation": {
-      "value": "analysis: pending (insufficient tissue extracted for reliable result)",
-      "unit": null,
-      "state": "uncertain",
-      "evidence": "analysis: pending (insufficient tissue extracted for reliable result)",
-      "span": null,
-      "codes": {
-        "LOINC": "53049-3"
-      }
-    },
-    "procedure_type": {
-      "value": "lance CT following prior left lobectomy for squamous cell carcinoma 3",
-      "unit": null,
-      "state": "present",
-      "evidence": "lance CT following prior left lobectomy for squamous cell carcinoma 3",
-      "span": null,
-      "codes": {
-        "SNOMED": "173171007"
-      }
-    },
-    "prior_treatment": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",
@@ -177,11 +171,44 @@
       "span": null,
       "codes": {}
     },
-    "tumor_multiplicity": {
-      "value": "Single",
+    "egfr_mutation": {
+      "value": "pending",
       "unit": null,
-      "state": "absent",
-      "evidence": "No multiplicity cues detected",
+      "state": "uncertain",
+      "evidence": "EGFR mutation analysis: pending",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
+    },
+    "procedure_type": {
+      "value": "core biopsy",
+      "unit": null,
+      "state": "present",
+      "evidence": "CT-guided core needle biopsy",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
+    },
+    "prior_treatment": {
+      "value": "left lobectomy",
+      "unit": null,
+      "state": "present",
+      "evidence": "prior left lobectomy for squamous cell carcinoma 3 years ago",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
+    },
+    "tumor_multiplicity": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
       "span": null,
       "codes": {}
     }

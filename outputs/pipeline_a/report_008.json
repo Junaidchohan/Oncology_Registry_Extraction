@@ -1,187 +1,258 @@
 {
   "report_id": "report_008",
   "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-22T08:42:47.818507+00:00",
+  "run_timestamp": "2026-09-23T21:06:55.401318+00:00",
   "model_versions": {
-    "mode": "heuristic_demo",
-    "note": "JSL license not configured. Set JSL_LICENSE_PATH to use pretrained Healthcare NLP models."
+    "mode": "llm_enhanced_clinical_nlp",
+    "llm_model": "llama3.1:8b",
+    "provider": "OpenAI",
+    "jsl_note": "johnsnowlabs package not installed in this environment. LLM used as analytical equivalent of JSL NER + Assertion + Resolution pipeline. JSL license token stored in secrets/jsl_license.json for JSL-capable environments.",
+    "ner_equivalent": "ner_oncology_wip + ner_oncology_biomarker_wip + ner_oncology_tnm_wip",
+    "assertion_equivalent": "assertion_oncology_wip",
+    "resolution_equivalent": "sbiobertresolve_icd10cm_augmented_billable + sbiobertresolve_icdo",
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "cost_usd": 0.0,
+    "elapsed_sec": 1097.871
   },
   "fields": {
     "primary_site": {
-      "value": "colon",
+      "value": "cecum",
       "unit": null,
       "state": "present",
-      "evidence": "colon",
-      "span": null,
+      "evidence": "Cecum, right hemicolectomy:",
+      "span": [
+        null,
+        null
+      ],
       "codes": {
-        "ICD-O-3": "C18.7",
-        "ICD-10": "C18.7"
+        "ICD-O-3": "C18.0",
+        "ICD-10": "C18.0",
+        "SNOMED": "http://snomed.info/sct"
       }
     },
     "histology_type": {
-      "value": "adenocarcinoma",
+      "value": "moderately to poorly differentiated adenocarcinoma",
       "unit": null,
       "state": "present",
-      "evidence": "adenocarcinoma",
-      "span": null,
+      "evidence": "Sections show moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {
-        "ICD-O-3": "8140/3"
+        "ICD-O-3": "8140/3",
+        "ICD-10": "C18.0",
+        "SNOMED": "http://snomed.info/sct"
       }
     },
     "tumor_grade": {
-      "value": "poorly differentiated",
+      "value": "2-3",
       "unit": null,
       "state": "present",
-      "evidence": "poorly differentiated",
-      "span": null,
-      "codes": {
-        "SNOMED": "369784008"
-      }
+      "evidence": "Sections show moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma.",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
     },
     "clinical_stage": {
-      "value": null,
+      "value": "not assessed",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "not_applicable",
+      "evidence": "Distant metastasis: not assessed (no pre-op chest CT; tissue-based M stage unknown)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "pathologic_stage": {
-      "value": "Stage IIIC",
+      "value": "pT3 pN2a pMx -- Stage IIIC (provisional; molecular pending)",
       "unit": null,
       "state": "present",
-      "evidence": "Stage IIIC",
-      "span": null,
+      "evidence": "Pathologic stage: pT3 pN2a pMx -- Stage IIIC (provisional; molecular pending)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "tumor_size": {
-      "value": "35",
+      "value": "5.5",
       "unit": "cm",
       "state": "present",
-      "evidence": "35 cm",
-      "span": null,
+      "evidence": "Tumor size: 5.5 cm",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "laterality": {
-      "value": "Right",
+      "value": "right",
       "unit": null,
       "state": "present",
-      "evidence": "Right",
-      "span": null,
+      "evidence": "Right hemicolectomy specimen",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "surgical_margins": {
-      "value": "Positive",
+      "value": "negative",
       "unit": null,
       "state": "present",
-      "evidence": "tumor at inked",
-      "span": null,
+      "evidence": "Proximal and distal margins: negative",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "12",
       "unit": null,
       "state": "present",
-      "evidence": "5/12",
-      "span": null,
+      "evidence": "Of 12 lymph nodes examined",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "lymph_nodes_positive": {
       "value": "5",
       "unit": null,
       "state": "present",
-      "evidence": "5/12",
-      "span": null,
+      "evidence": "5 are positive for metastatic adenocarcinoma with extranodal extension",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "Present",
+      "value": "suspicious",
       "unit": null,
-      "state": "present",
-      "evidence": "lymphovascular invasion\nidentified",
-      "span": null,
+      "state": "uncertain",
+      "evidence": "No definite lymphovascular invasion identified, though endothelial-lined spaces adjacent to tumor are suspicious",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "perineural_invasion": {
-      "value": null,
+      "value": "absent",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "present",
+      "evidence": "Perineural invasion: absent",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "distant_metastasis": {
-      "value": "Present",
+      "value": "not assessed",
       "unit": null,
-      "state": "present",
-      "evidence": "Distant metastas",
-      "span": null,
+      "state": "not_applicable",
+      "evidence": "Distant metastasis: not assessed (no pre-op chest CT; tissue-based M stage unknown)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "er_status": {
-      "value": null,
+      "value": "not reported",
       "unit": null,
       "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "evidence": "CEA and CA 19-9 not reported (results pending at time of surgery)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "pr_status": {
-      "value": null,
+      "value": "not reported",
       "unit": null,
       "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "evidence": "CEA and CA 19-9 not reported (results pending at time of surgery)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "her2_status": {
-      "value": null,
+      "value": "not reported",
       "unit": null,
       "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "evidence": "CEA and CA 19-9 not reported (results pending at time of surgery)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "kras_mutation": {
-      "value": null,
+      "value": "pending",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "uncertain",
+      "evidence": "KRAS, NRAS, BRAF, MMR status: pending",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "egfr_mutation": {
-      "value": null,
+      "value": "not reported",
       "unit": null,
       "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "evidence": "CEA and CA 19-9 not reported (results pending at time of surgery)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "procedure_type": {
-      "value": ". Referred urgently for right hemicolectomy due to near-obstructing lesio",
+      "value": "right hemicolectomy",
       "unit": null,
       "state": "present",
-      "evidence": ". Referred urgently for right hemicolectomy due to near-obstructing lesio",
-      "span": null,
-      "codes": {
-        "SNOMED": "173171007"
-      }
+      "evidence": "Right hemicolectomy specimen",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
     },
     "prior_treatment": {
-      "value": null,
+      "value": "none",
       "unit": null,
       "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "evidence": "No pre-operative staging CT of chest available",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "Single",
+      "value": "single",
       "unit": null,
-      "state": "absent",
-      "evidence": "No multiplicity cues detected",
-      "span": null,
+      "state": "not_mentioned",
+      "evidence": "Appendix is present and unremarkable",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     }
   }

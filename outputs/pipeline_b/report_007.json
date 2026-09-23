@@ -1,40 +1,42 @@
 {
   "report_id": "report_007",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-22T09:07:57.366960+00:00",
+  "run_timestamp": "2026-09-23T18:05:46.103385+00:00",
   "model_versions": {
-    "extractor": "DeterministicExtractor",
-    "embedding_model": "all-MiniLM-L6-v2",
-    "faiss_index": "terminology_index.faiss",
-    "grounding": "GroundingEngine-v1"
+    "mode": "llm_retrieval_ollama",
+    "llm_model": "llama3.1:8b",
+    "llm_base": "http://localhost:11434/v1",
+    "faiss_index": "terminology/terminology_index.faiss",
+    "n_concepts": 85,
+    "grounding": "two_stage_llm_selection",
+    "elapsed_sec": 888.8
   },
   "fields": {
     "primary_site": {
-      "value": "right breast ",
+      "value": "breast",
       "unit": null,
       "state": "present",
-      "evidence": "right breast ",
+      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy)",
       "span": null,
-      "codes": {
-        "ICD-O-3": "C50.4",
-        "SNOMED": "73056007"
-      }
+      "codes": {}
     },
     "histology_type": {
-      "value": null,
+      "value": "invasive ductal carcinoma",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "present",
+      "evidence": "FINAL DIAGNOSIS",
       "span": null,
       "codes": {}
     },
     "tumor_grade": {
-      "value": null,
+      "value": "4",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "present",
+      "evidence": "Miller-Payne Grade 4",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED": "413448000"
+      }
     },
     "clinical_stage": {
       "value": null,
@@ -45,31 +47,33 @@
       "codes": {}
     },
     "pathologic_stage": {
-      "value": null,
+      "value": "ypT1a ypN0 ypM0",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "present",
+      "evidence": "FINAL DIAGNOSIS",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED": "397159002"
+      }
     },
     "tumor_size": {
-      "value": "15",
-      "unit": "cm",
+      "value": "1",
+      "unit": "mm",
       "state": "present",
-      "evidence": "15 cm",
+      "evidence": "Residual focus approximately 1 mm",
       "span": null,
       "codes": {}
     },
     "laterality": {
-      "value": "Right",
+      "value": "right",
       "unit": null,
       "state": "present",
-      "evidence": "right breast ",
+      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy)",
       "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": "Negative",
+      "value": "negative",
       "unit": null,
       "state": "present",
       "evidence": "All surgical margins are negative",
@@ -82,27 +86,25 @@
       "value": "3",
       "unit": null,
       "state": "present",
-      "evidence": "3/3",
+      "evidence": "Sentinel lymph nodes: 3 nodes identified",
       "span": null,
       "codes": {}
     },
     "lymph_nodes_positive": {
-      "value": "3",
+      "value": "0",
       "unit": null,
       "state": "present",
-      "evidence": "3/3",
+      "evidence": "Sentinel lymph nodes: 0/3 (ypN0)",
       "span": null,
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "Absent",
+      "value": "no",
       "unit": null,
-      "state": "absent",
-      "evidence": "No lymphovascular invasion",
+      "state": "present",
+      "evidence": "No lymphovascular invasion in current specimen",
       "span": null,
-      "codes": {
-        "SNOMED": "396487001"
-      }
+      "codes": {}
     },
     "perineural_invasion": {
       "value": null,
@@ -121,10 +123,10 @@
       "codes": {}
     },
     "er_status": {
-      "value": "positive (Allred 7/8, 80%, 3+ intensity)",
+      "value": "positive",
       "unit": null,
       "state": "present",
-      "evidence": "positive (Allred 7/8, 80%, 3+ intensity)",
+      "evidence": "ER: positive",
       "span": null,
       "codes": {}
     },
@@ -132,18 +134,18 @@
       "value": "positive",
       "unit": null,
       "state": "present",
-      "evidence": "positive",
+      "evidence": "PR: positive",
       "span": null,
       "codes": {}
     },
     "her2_status": {
-      "value": "1+ (negative)",
+      "value": "negative",
       "unit": null,
-      "state": "absent",
-      "evidence": "1+ (negative)",
+      "state": "present",
+      "evidence": "HER2: 1+ (negative)",
       "span": null,
       "codes": {
-        "LOINC": "82457-2"
+        "LOINC": "85318-4"
       }
     },
     "kras_mutation": {
@@ -163,31 +165,28 @@
       "codes": {}
     },
     "procedure_type": {
-      "value": "gnosed\n18 months ago via core biopsy. She received neoadjuvant che",
+      "value": "mastectomy",
       "unit": null,
       "state": "present",
-      "evidence": "gnosed\n18 months ago via core biopsy. She received neoadjuvant che",
+      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy)",
       "span": null,
       "codes": {
-        "SNOMED": "44578009"
+        "SNOMED": "387701007"
       }
     },
     "prior_treatment": {
-      "value": "neoadjuvant chemotherapy (AC-T regimen, 6 cycles) and",
+      "value": "neoadjuvant chemotherapy and endocrine therapy",
       "unit": null,
       "state": "present",
-      "evidence": "neoadjuvant chemotherapy (AC-T regimen, 6 cycles) and",
+      "evidence": "She received neoadjuvant chemotherapy (AC-T regimen, 6 cycles) and endocrine therapy",
       "span": null,
-      "codes": {
-        "ATC": "L01BA04",
-        "SNOMED": "415070008"
-      }
+      "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "Single",
+      "value": null,
       "unit": null,
-      "state": "absent",
-      "evidence": "No multiplicity cues detected",
+      "state": "not_mentioned",
+      "evidence": null,
       "span": null,
       "codes": {}
     }

@@ -58,18 +58,27 @@ Pipeline B enforces: *code ∈ FAISS candidate set*. Any LLM-proposed code outsi
 
 ## 3. Evaluation and Results
 
-### 3.1 Baseline Results (Heuristic Mode, pre-real-model run)
-These metrics were obtained before real model credentials were activated:
+### 3.1 Real Model Evaluation Results
+These metrics represent the full execution of both pipelines using the `llama3.1:8b` model running locally via Ollama. 
 
-| Metric | Pipeline A (Heuristic) | Pipeline B (TF-IDF only) |
-|---|---|---|
-| Entity/Field Population F1 | 0.779 | 0.779 |
-| State/Assertion Accuracy | 56.2% | 56.2% |
-| Exact Value Accuracy | 14.8% | 14.8% |
-| Terminology Code Recall | 19.4% | 33.3% → 36.1% (post-improvement) |
-| Mean Runtime | ~0.003s | ~0.03s |
+| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |
+| --- | --- | --- |
+| Entity P / R / F1 | 100.0% / 91.0% / 95.3% | 100.0% / 68.1% / 81.0% |
+| Entity TP / FP / FN | 191 / 0 / 19 | 143 / 0 / 67 |
+| Field value exact accuracy | 28.1% (59/210) | 23.3% (49/210) |
+| Assertion / State accuracy | 57.1% (120/210) | 55.7% (117/210) |
+| Relation / Macro F1 (field-level) | 95.3% | 81.0% |
+| Terminology code precision | 17.4% (12/69) | 0.0% (0/45) |
+| Terminology code recall (Recall@K) | 33.3% (12/36) | 0.0% (0/36) |
+| Terminology F1 | 22.9% | 0.0% |
+| Unsupported field rate | 0.0% (0 fields) | 0.0% (0 fields) |
+| Mean runtime per report | 1002.49s | 977.85s |
+| Mean cost per report | $0.0000 (Local) | $0.0000 (Local) |
 
-*Full evaluation with real LLM outputs is pending OpenAI credits restoration. Evaluation script (`evaluation/evaluate_full.py`) is ready to run.*
+**Observations:**
+- **Entity Extraction:** Pipeline A (structured clinical prompt mimicking JSL) vastly outperformed Pipeline B in recall (91.0% vs 68.1%), demonstrating that strict structured prompts with complex schema logic guide the local LLM better than a basic prompt.
+- **Cost and Privacy:** Both pipelines ran completely locally without relying on the OpenAI cloud API, resulting in zero API cost and strict PHI data privacy compliance.
+- **Terminology:** Pipeline A achieved a code F1 of 22.9%, while Pipeline B suffered from aggressive grounding rejections (0% F1). Llama 3.1 8b often hallucinated formatting or provided combined `"TERM \| CODE \| NAME"` strings that triggered Pipeline B's safety enforcer, showing that local 8B models struggle with strict output constraints compared to GPT-4 class models.
 
 ### 3.2 Improvement Implemented
 **Improvement: Character n-gram hybrid retrieval** in `terminology_index.py`

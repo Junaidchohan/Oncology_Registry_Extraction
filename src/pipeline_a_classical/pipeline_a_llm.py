@@ -127,20 +127,26 @@ PATHOLOGY REPORT:
 # ---------------------------------------------------------------------------
 
 def _get_client():
+    from config import LLM_API_BASE, OPENAI_API_KEY
     if not OPENAI_API_KEY:
         raise RuntimeError(
             "OPENAI_API_KEY is not set. Cannot run Pipeline A in LLM-enhanced mode. "
             "Set OPENAI_API_KEY in secrets/.env or as an environment variable."
         )
     from openai import OpenAI
-    return OpenAI(api_key=OPENAI_API_KEY)
+    import httpx
+    # Generous timeout for local CPU execution
+    _timeout = httpx.Timeout(connect=10.0, read=900.0, write=30.0, pool=10.0)
+    return OpenAI(api_key=OPENAI_API_KEY, base_url=LLM_API_BASE, http_client=httpx.Client(timeout=_timeout))
 
 
 def _call_llm(client, report_text: str, report_id: str) -> Dict[str, Any]:
-    """Make the extraction API call and parse JSON."""
+    """Make the extraction API call via streaming and parse JSON."""
     user_msg = _USER_TEMPLATE.format(report_text=report_text)
     t0 = time.time()
-    response = client.chat.completions.create(
+    
+    chunks = []
+    with client.chat.completions.create(
         model=LLM_MODEL,
         messages=[
             {"role": "system", "content": _SYSTEM_PROMPT},
@@ -148,21 +154,24 @@ def _call_llm(client, report_text: str, report_id: str) -> Dict[str, Any]:
         ],
         temperature=0.0,
         max_tokens=4096,
-        response_format={"type": "json_object"},
-    )
+        stream=True,
+    ) as stream:
+        for chunk in stream:
+            delta = chunk.choices[0].delta.content if chunk.choices else None
+            if delta:
+                chunks.append(delta)
+    
     elapsed = time.time() - t0
-    raw = response.choices[0].message.content
-    usage = response.usage
+    raw = "".join(chunks).strip()
 
     logger.info(
-        "[%s] LLM call: model=%s tokens_in=%d tokens_out=%d elapsed=%.2fs",
-        report_id, LLM_MODEL,
-        usage.prompt_tokens, usage.completion_tokens, elapsed,
+        "[%s] LLM call: model=%s elapsed=%.2fs",
+        report_id, LLM_MODEL, elapsed,
     )
 
     # Parse
     import re
-    raw = re.sub(r"^```(?:json)?\s*", "", raw.strip())
+    raw = re.sub(r"^```(?:json)?\s*", "", raw)
     raw = re.sub(r"\s*```$", "", raw)
     try:
         data = json.loads(raw)
@@ -170,9 +179,9 @@ def _call_llm(client, report_text: str, report_id: str) -> Dict[str, Any]:
         m = re.search(r"\{.*\}", raw, re.DOTALL)
         data = json.loads(m.group(0)) if m else {}
 
-    cost_estimate = (usage.prompt_tokens / 1_000_000) * 0.15 + \
-                    (usage.completion_tokens / 1_000_000) * 0.60
-    return data, elapsed, cost_estimate, usage
+    cost_estimate = 0.0 # Local LLM is free
+    usage_mock = type('Usage', (), {'prompt_tokens': 0, 'completion_tokens': 0})()
+    return data, elapsed, cost_estimate, usage_mock
 
 
 def _normalise_state(s: Any) -> str:

@@ -1,41 +1,40 @@
 {
   "report_id": "report_006",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-22T09:07:57.314002+00:00",
+  "run_timestamp": "2026-09-23T17:50:57.244487+00:00",
   "model_versions": {
-    "extractor": "DeterministicExtractor",
-    "embedding_model": "all-MiniLM-L6-v2",
-    "faiss_index": "terminology_index.faiss",
-    "grounding": "GroundingEngine-v1"
+    "mode": "llm_retrieval_ollama",
+    "llm_model": "llama3.1:8b",
+    "llm_base": "http://localhost:11434/v1",
+    "faiss_index": "terminology/terminology_index.faiss",
+    "n_concepts": 85,
+    "grounding": "two_stage_llm_selection",
+    "elapsed_sec": 1131.206
   },
   "fields": {
     "primary_site": {
-      "value": "left upper lobe",
+      "value": "left lung",
       "unit": null,
       "state": "present",
-      "evidence": "left upper lobe",
+      "evidence": null,
       "span": null,
       "codes": {
-        "ICD-O-3": "C34.1",
         "SNOMED": "41224006"
       }
     },
     "histology_type": {
-      "value": "squamous cell carcinoma (SCC)",
+      "value": "squamous cell carcinoma",
       "unit": null,
       "state": "present",
-      "evidence": "squamous cell carcinoma (SCC)",
+      "evidence": null,
       "span": null,
-      "codes": {
-        "ICD-O-3": "8070/3",
-        "ICD-10": "C18.0"
-      }
+      "codes": {}
     },
     "tumor_grade": {
-      "value": "Poorly differentiated",
+      "value": "3",
       "unit": null,
       "state": "present",
-      "evidence": "Poorly differentiated",
+      "evidence": "Nottingham equivalent Grade 3",
       "span": null,
       "codes": {
         "SNOMED": "369784008"
@@ -50,44 +49,46 @@
       "codes": {}
     },
     "pathologic_stage": {
-      "value": "pT3 pN0 pM0 -- Stage IIB",
+      "value": "IIB",
       "unit": null,
       "state": "present",
-      "evidence": "pT3 pN0 pM0 -- Stage IIB",
+      "evidence": "pT3 pN0 pM0 (satellite nodule)",
       "span": null,
       "codes": {
         "SNOMED": "1229948008"
       }
     },
     "tumor_size": {
-      "value": "18",
+      "value": "3.5",
       "unit": "cm",
       "state": "present",
-      "evidence": "18 cm",
+      "evidence": null,
       "span": null,
       "codes": {}
     },
     "laterality": {
-      "value": "Left",
+      "value": "left",
       "unit": null,
       "state": "present",
-      "evidence": "left upper lobe",
+      "evidence": null,
       "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": null,
+      "value": "negative",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "present",
+      "evidence": "3.5 cm from tumor",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED": "370053002"
+      }
     },
     "lymph_nodes_examined": {
       "value": "12",
       "unit": null,
       "state": "present",
-      "evidence": "0/12",
+      "evidence": null,
       "span": null,
       "codes": {}
     },
@@ -100,86 +101,79 @@
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "Absent",
+      "value": "no",
       "unit": null,
       "state": "absent",
-      "evidence": "No lymphovascular invasion",
+      "evidence": "No lymphovascular invasion identified",
       "span": null,
-      "codes": {
-        "SNOMED": "396487001"
-      }
+      "codes": {}
     },
     "perineural_invasion": {
-      "value": "Absent",
+      "value": "no",
       "unit": null,
       "state": "absent",
-      "evidence": "No perineural invasion",
+      "evidence": "Perineural invasion: absent",
       "span": null,
-      "codes": {
-        "SNOMED": "396487001"
-      }
+      "codes": {}
     },
     "distant_metastasis": {
-      "value": "Absent",
+      "value": "no",
       "unit": null,
       "state": "absent",
-      "evidence": "No distant metastasis documented",
+      "evidence": "no distant metastases",
       "span": null,
       "codes": {
-        "ICD-10": "C50.4",
-        "SNOMED": "396487001"
+        "ICD-10": "C77.9"
       }
     },
     "er_status": {
-      "value": "lobe lesion: Poorly differentiated squamous cell carcinoma (SCC), Nottingham",
+      "value": "not applicable",
       "unit": null,
-      "state": "present",
-      "evidence": "lobe lesion: Poorly differentiated squamous cell carcinoma (SCC), Nottingham",
+      "state": "not_applicable",
+      "evidence": "squamous cell carcinoma",
       "span": null,
       "codes": {}
     },
     "pr_status": {
-      "value": null,
+      "value": "not applicable",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "not_applicable",
+      "evidence": "squamous cell carcinoma",
       "span": null,
       "codes": {}
     },
     "her2_status": {
-      "value": "than an independent second primary",
+      "value": "not applicable",
       "unit": null,
-      "state": "present",
-      "evidence": "than an independent second primary",
+      "state": "not_applicable",
+      "evidence": "squamous cell carcinoma",
       "span": null,
-      "codes": {
-        "LOINC": "30265-4"
-      }
+      "codes": {}
     },
     "kras_mutation": {
-      "value": null,
+      "value": "not tested",
       "unit": null,
       "state": "not_mentioned",
-      "evidence": null,
+      "evidence": "EGFR, KRAS, ALK: not tested",
       "span": null,
       "codes": {}
     },
     "egfr_mutation": {
-      "value": "not applicable (squamous cell carcinoma)",
+      "value": "not tested",
       "unit": null,
-      "state": "present",
-      "evidence": "not applicable (squamous cell carcinoma)",
+      "state": "not_mentioned",
+      "evidence": "EGFR, KRAS, ALK: not tested",
       "span": null,
       "codes": {}
     },
     "procedure_type": {
-      "value": "ases. Referred for left upper lobectomy.",
+      "value": "left upper lobectomy",
       "unit": null,
       "state": "present",
-      "evidence": "ases. Referred for left upper lobectomy.",
+      "evidence": null,
       "span": null,
       "codes": {
-        "SNOMED": "41224006"
+        "SNOMED": "173171007"
       }
     },
     "prior_treatment": {
@@ -191,10 +185,10 @@
       "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "Multiple",
+      "value": "2",
       "unit": null,
       "state": "present",
-      "evidence": "satellite nodule",
+      "evidence": "two distinct nodules",
       "span": null,
       "codes": {}
     }

@@ -1,44 +1,41 @@
 {
   "report_id": "report_008",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-22T09:07:57.414357+00:00",
+  "run_timestamp": "2026-09-23T18:24:38.867528+00:00",
   "model_versions": {
-    "extractor": "DeterministicExtractor",
-    "embedding_model": "all-MiniLM-L6-v2",
-    "faiss_index": "terminology_index.faiss",
-    "grounding": "GroundingEngine-v1"
+    "mode": "llm_retrieval_ollama",
+    "llm_model": "llama3.1:8b",
+    "llm_base": "http://localhost:11434/v1",
+    "faiss_index": "terminology/terminology_index.faiss",
+    "n_concepts": 85,
+    "grounding": "two_stage_llm_selection",
+    "elapsed_sec": 1132.68
   },
   "fields": {
     "primary_site": {
-      "value": "colon",
+      "value": "cecum",
       "unit": null,
       "state": "present",
-      "evidence": "colon",
+      "evidence": "Cecum, right hemicolectomy",
       "span": null,
-      "codes": {
-        "ICD-O-3": "C18.7",
-        "SNOMED": "60184004"
-      }
+      "codes": {}
     },
     "histology_type": {
-      "value": "adenocarcinoma",
+      "value": "moderately to poorly differentiated adenocarcinoma",
       "unit": null,
       "state": "present",
-      "evidence": "adenocarcinoma",
+      "evidence": "Sections show moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma.",
       "span": null,
-      "codes": {
-        "ICD-O-3": "8140/3",
-        "ICD-10": "C20"
-      }
+      "codes": {}
     },
     "tumor_grade": {
-      "value": "poorly differentiated",
+      "value": "2-3",
       "unit": null,
       "state": "present",
-      "evidence": "poorly differentiated",
+      "evidence": "Sections show moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma.",
       "span": null,
       "codes": {
-        "SNOMED": "369784008"
+        "SNOMED": "413448000"
       }
     },
     "clinical_stage": {
@@ -50,46 +47,46 @@
       "codes": {}
     },
     "pathologic_stage": {
-      "value": "Stage IIIC",
+      "value": "pT3 pN2a pMx -- Stage IIIC",
       "unit": null,
       "state": "present",
-      "evidence": "Stage IIIC",
+      "evidence": "Pathologic stage: pT3 pN2a pMx -- Stage IIIC (provisional; molecular pending)",
       "span": null,
       "codes": {
         "SNOMED": "1229954009"
       }
     },
     "tumor_size": {
-      "value": "35",
+      "value": "5.5",
       "unit": "cm",
       "state": "present",
-      "evidence": "35 cm",
+      "evidence": "Tumor size: 5.5 cm",
       "span": null,
       "codes": {}
     },
     "laterality": {
-      "value": "Right",
+      "value": "right",
       "unit": null,
       "state": "present",
-      "evidence": "Right",
+      "evidence": "Right hemicolectomy specimen",
       "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": "Positive",
+      "value": "negative",
       "unit": null,
       "state": "present",
-      "evidence": "tumor at inked",
+      "evidence": "Proximal and distal margins: negative.",
       "span": null,
       "codes": {
-        "SNOMED": "370052007"
+        "SNOMED": "370053002"
       }
     },
     "lymph_nodes_examined": {
       "value": "12",
       "unit": null,
       "state": "present",
-      "evidence": "5/12",
+      "evidence": "Of 12 lymph nodes examined",
       "span": null,
       "codes": {}
     },
@@ -97,38 +94,35 @@
       "value": "5",
       "unit": null,
       "state": "present",
-      "evidence": "5/12",
+      "evidence": "5 are positive for metastatic adenocarcinoma with extranodal extension.",
       "span": null,
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "Present",
+      "value": "indeterminate",
       "unit": null,
-      "state": "present",
-      "evidence": "lymphovascular invasion\nidentified",
+      "state": "uncertain",
+      "evidence": "No definite lymphovascular invasion identified, though endothelial-lined spaces adjacent to tumor are suspicious.",
       "span": null,
       "codes": {
-        "SNOMED": "396487001"
+        "SNOMED": "1254905005"
       }
     },
     "perineural_invasion": {
-      "value": null,
+      "value": "absent",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "present",
+      "evidence": "Perineural invasion: absent.",
       "span": null,
       "codes": {}
     },
     "distant_metastasis": {
-      "value": "Present",
+      "value": "not assessed",
       "unit": null,
-      "state": "present",
-      "evidence": "Distant metastas",
+      "state": "not_mentioned",
+      "evidence": "Distant metastasis: not assessed (no pre-op chest CT; tissue-based M stage unknown)",
       "span": null,
-      "codes": {
-        "ICD-10": "C50.4",
-        "SNOMED": "396487001"
-      }
+      "codes": {}
     },
     "er_status": {
       "value": null,
@@ -155,12 +149,14 @@
       "codes": {}
     },
     "kras_mutation": {
-      "value": null,
+      "value": "pending",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "present",
+      "evidence": "KRAS, NRAS, BRAF, MMR status: pending.",
       "span": null,
-      "codes": {}
+      "codes": {
+        "LOINC": "82457-2"
+      }
     },
     "egfr_mutation": {
       "value": null,
@@ -171,10 +167,10 @@
       "codes": {}
     },
     "procedure_type": {
-      "value": ". Referred urgently for right hemicolectomy due to near-obstructing lesio",
+      "value": "right hemicolectomy",
       "unit": null,
       "state": "present",
-      "evidence": ". Referred urgently for right hemicolectomy due to near-obstructing lesio",
+      "evidence": "Right hemicolectomy specimen",
       "span": null,
       "codes": {
         "SNOMED": "173171007"
@@ -189,10 +185,10 @@
       "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "Single",
+      "value": null,
       "unit": null,
-      "state": "absent",
-      "evidence": "No multiplicity cues detected",
+      "state": "not_mentioned",
+      "evidence": null,
       "span": null,
       "codes": {}
     }

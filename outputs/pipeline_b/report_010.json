@@ -1,50 +1,47 @@
 {
   "report_id": "report_010",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-22T09:07:57.482999+00:00",
+  "run_timestamp": "2026-09-23T18:47:27.131455+00:00",
   "model_versions": {
-    "extractor": "DeterministicExtractor",
-    "embedding_model": "all-MiniLM-L6-v2",
-    "faiss_index": "terminology_index.faiss",
-    "grounding": "GroundingEngine-v1"
+    "mode": "llm_retrieval_ollama",
+    "llm_model": "llama3.1:8b",
+    "llm_base": "http://localhost:11434/v1",
+    "faiss_index": "terminology/terminology_index.faiss",
+    "n_concepts": 85,
+    "grounding": "two_stage_llm_selection",
+    "elapsed_sec": 680.789
   },
   "fields": {
     "primary_site": {
-      "value": "left breast ",
+      "value": "breast",
       "unit": null,
       "state": "present",
-      "evidence": "left breast ",
+      "evidence": null,
       "span": null,
-      "codes": {
-        "ICD-O-3": "C50.4",
-        "SNOMED": "80248007"
-      }
+      "codes": {}
     },
     "histology_type": {
-      "value": "invasive ductal carcinoma (IDC)",
+      "value": "invasive ductal carcinoma",
       "unit": null,
       "state": "present",
-      "evidence": "invasive ductal carcinoma (IDC)",
+      "evidence": null,
       "span": null,
-      "codes": {
-        "ICD-O-3": "8500/3",
-        "ICD-10": "C20"
-      }
+      "codes": {}
     },
     "tumor_grade": {
-      "value": "Nottingham Grade 3",
+      "value": "3",
       "unit": null,
       "state": "present",
-      "evidence": "Nottingham Grade 3",
+      "evidence": "Nottingham 8/9",
       "span": null,
       "codes": {
-        "SNOMED": "369782007"
+        "SNOMED": "369784008"
       }
     },
     "clinical_stage": {
       "value": null,
       "unit": null,
-      "state": "not_mentioned",
+      "state": "not_applicable",
       "evidence": null,
       "span": null,
       "codes": {}
@@ -52,24 +49,24 @@
     "pathologic_stage": {
       "value": null,
       "unit": null,
-      "state": "not_mentioned",
+      "state": "not_applicable",
       "evidence": null,
       "span": null,
       "codes": {}
     },
     "tumor_size": {
-      "value": "0.1",
-      "unit": "cm",
+      "value": "18",
+      "unit": "mm",
       "state": "present",
-      "evidence": "0.1 cm",
+      "evidence": null,
       "span": null,
       "codes": {}
     },
     "laterality": {
-      "value": "Left",
+      "value": "left",
       "unit": null,
       "state": "present",
-      "evidence": "left breast ",
+      "evidence": null,
       "span": null,
       "codes": {}
     },
@@ -82,18 +79,18 @@
       "codes": {}
     },
     "lymph_nodes_examined": {
-      "value": "9",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "8/9",
+      "state": "not_mentioned",
+      "evidence": null,
       "span": null,
       "codes": {}
     },
     "lymph_nodes_positive": {
-      "value": "8",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "8/9",
+      "state": "not_mentioned",
+      "evidence": null,
       "span": null,
       "codes": {}
     },
@@ -122,32 +119,28 @@
       "codes": {}
     },
     "er_status": {
-      "value": "Outer Quadrant):",
+      "value": "positive",
       "unit": null,
       "state": "present",
-      "evidence": "Outer Quadrant):",
+      "evidence": "Allred 7/8, 70%, 3+ intensity",
       "span": null,
-      "codes": {
-        "LOINC": "40557-1"
-      }
+      "codes": {}
     },
     "pr_status": {
-      "value": "equivocal (10%, 1+ intensity);",
+      "value": "equivocal",
       "unit": null,
-      "state": "uncertain",
-      "evidence": "equivocal (10%, 1+ intensity);",
+      "state": "present",
+      "evidence": "10%, 1+ intensity",
       "span": null,
       "codes": {}
     },
     "her2_status": {
-      "value": "2+ (equivocal by IHC);",
+      "value": "equivocal",
       "unit": null,
-      "state": "uncertain",
-      "evidence": "2+ (equivocal by IHC);",
+      "state": "present",
+      "evidence": "2+ (equivocal by IHC)",
       "span": null,
-      "codes": {
-        "LOINC": "85319-2"
-      }
+      "codes": {}
     },
     "kras_mutation": {
       "value": null,
@@ -166,13 +159,13 @@
       "codes": {}
     },
     "procedure_type": {
-      "value": "e testing). Stereotactic core biopsy\nperformed of both lesions sep",
+      "value": "stereotactic core biopsy",
       "unit": null,
       "state": "present",
-      "evidence": "e testing). Stereotactic core biopsy\nperformed of both lesions sep",
+      "evidence": null,
       "span": null,
       "codes": {
-        "SNOMED": "44578009"
+        "SNOMED": "443989000"
       }
     },
     "prior_treatment": {
@@ -184,10 +177,10 @@
       "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "Multiple",
+      "value": "synchronous multifocal disease",
       "unit": null,
       "state": "present",
-      "evidence": "Lesion A",
+      "evidence": null,
       "span": null,
       "codes": {}
     }

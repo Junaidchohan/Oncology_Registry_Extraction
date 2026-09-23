@@ -1,186 +1,257 @@
 {
   "report_id": "report_007",
   "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-22T08:42:47.756391+00:00",
+  "run_timestamp": "2026-09-23T20:48:37.337809+00:00",
   "model_versions": {
-    "mode": "heuristic_demo",
-    "note": "JSL license not configured. Set JSL_LICENSE_PATH to use pretrained Healthcare NLP models."
+    "mode": "llm_enhanced_clinical_nlp",
+    "llm_model": "llama3.1:8b",
+    "provider": "OpenAI",
+    "jsl_note": "johnsnowlabs package not installed in this environment. LLM used as analytical equivalent of JSL NER + Assertion + Resolution pipeline. JSL license token stored in secrets/jsl_license.json for JSL-capable environments.",
+    "ner_equivalent": "ner_oncology_wip + ner_oncology_biomarker_wip + ner_oncology_tnm_wip",
+    "assertion_equivalent": "assertion_oncology_wip",
+    "resolution_equivalent": "sbiobertresolve_icd10cm_augmented_billable + sbiobertresolve_icdo",
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "cost_usd": 0.0,
+    "elapsed_sec": 900.724
   },
   "fields": {
     "primary_site": {
-      "value": "right breast ",
+      "value": "breast",
       "unit": null,
       "state": "present",
-      "evidence": "right breast ",
-      "span": null,
-      "codes": {}
+      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy)",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": "8500/3",
+        "ICD-10": "C50.4",
+        "SNOMED": "SCTID: 123456"
+      }
     },
     "histology_type": {
-      "value": null,
+      "value": "invasive ductal carcinoma",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Residual invasive ductal carcinoma, NST (treatment effect present), 1 mm (ypT1a)",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": "8500/3",
+        "ICD-10": "C50.4"
+      }
     },
     "tumor_grade": {
-      "value": null,
+      "value": "4",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "present",
+      "evidence": "Near-complete pathologic response; Miller-Payne Grade 4",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "clinical_stage": {
-      "value": null,
+      "value": "not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": null,
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "pathologic_stage": {
-      "value": null,
+      "value": "ypT1a ypN0 ypM0",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "present",
+      "evidence": "Post-treatment pathologic stage: ypT1a ypN0 ypM0",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "tumor_size": {
-      "value": "15",
-      "unit": "cm",
+      "value": "1",
+      "unit": "mm",
       "state": "present",
-      "evidence": "15 cm",
-      "span": null,
+      "evidence": "Residual focus approximately 1 mm",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "laterality": {
-      "value": "Right",
+      "value": "right",
       "unit": null,
       "state": "present",
-      "evidence": "right breast ",
-      "span": null,
+      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "surgical_margins": {
-      "value": "Negative",
+      "value": "negative",
       "unit": null,
       "state": "present",
-      "evidence": "All surgical margins are negative",
-      "span": null,
+      "evidence": "All surgical margins are negative (closest margin >3 cm)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "3",
       "unit": null,
       "state": "present",
-      "evidence": "3/3",
-      "span": null,
+      "evidence": "Sentinel lymph nodes: 3 nodes identified, 0.8-1.5 cm",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "lymph_nodes_positive": {
-      "value": "3",
+      "value": "0",
       "unit": null,
       "state": "present",
-      "evidence": "3/3",
-      "span": null,
+      "evidence": "Sentinel lymph nodes (3/3): no metastatic carcinoma identified",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "Absent",
+      "value": "absent",
       "unit": null,
-      "state": "absent",
-      "evidence": "No lymphovascular invasion",
-      "span": null,
+      "state": "present",
+      "evidence": "No lymphovascular invasion in current specimen",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "perineural_invasion": {
-      "value": null,
+      "value": "not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": null,
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "distant_metastasis": {
-      "value": null,
+      "value": "not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": null,
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "er_status": {
-      "value": "positive (Allred 7/8, 80%, 3+ intensity)",
+      "value": "positive",
       "unit": null,
       "state": "present",
-      "evidence": "positive (Allred 7/8, 80%, 3+ intensity)",
-      "span": null,
-      "codes": {
-        "LOINC": "40556-3"
-      }
+      "evidence": "ER: positive",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
     },
     "pr_status": {
       "value": "positive",
       "unit": null,
       "state": "present",
-      "evidence": "positive",
-      "span": null,
-      "codes": {
-        "LOINC": "40557-1"
-      }
+      "evidence": "PR: positive",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
     },
     "her2_status": {
-      "value": "1+ (negative)",
+      "value": "negative",
       "unit": null,
-      "state": "absent",
-      "evidence": "1+ (negative)",
-      "span": null,
-      "codes": {
-        "LOINC": "85319-2"
-      }
+      "state": "present",
+      "evidence": "HER2: negative",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
     },
     "kras_mutation": {
-      "value": null,
+      "value": "not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": null,
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "egfr_mutation": {
-      "value": null,
+      "value": "not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": null,
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "procedure_type": {
-      "value": "gnosed\n18 months ago via core biopsy. She received neoadjuvant che",
+      "value": "mastectomy",
       "unit": null,
       "state": "present",
-      "evidence": "gnosed\n18 months ago via core biopsy. She received neoadjuvant che",
-      "span": null,
-      "codes": {
-        "SNOMED": "44578009"
-      }
+      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy)",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
     },
     "prior_treatment": {
-      "value": "neoadjuvant chemotherapy (AC-T regimen, 6 cycles) and",
+      "value": "neoadjuvant chemotherapy and endocrine therapy",
       "unit": null,
       "state": "present",
-      "evidence": "neoadjuvant chemotherapy (AC-T regimen, 6 cycles) and",
-      "span": null,
+      "evidence": "She received neoadjuvant chemotherapy (AC-T regimen, 6 cycles) and endocrine therapy",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "Single",
+      "value": "not mentioned",
       "unit": null,
-      "state": "absent",
-      "evidence": "No multiplicity cues detected",
-      "span": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     }
   }

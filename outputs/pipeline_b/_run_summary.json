@@ -1,0 +1,101 @@
+{
+  "pipeline": "Pipeline B (LLM + Local Terminology Retrieval)",
+  "llm_model": "llama3.1:8b",
+  "llm_base": "http://localhost:11434/v1",
+  "n_reports": 10,
+  "mean_runtime_sec": 977.848,
+  "mean_fields_populated": 14.3,
+  "mean_fields_coded": 4.5,
+  "per_report": [
+    {
+      "report_id": "report_001",
+      "fields_populated": 21,
+      "fields_coded": 7,
+      "grounding_accepted": 7,
+      "grounding_abstained": 1,
+      "grounding_rejected": 4,
+      "elapsed_sec": 1138.847
+    },
+    {
+      "report_id": "report_002",
+      "fields_populated": 15,
+      "fields_coded": 7,
+      "grounding_accepted": 7,
+      "grounding_abstained": 1,
+      "grounding_rejected": 3,
+      "elapsed_sec": 1232.122
+    },
+    {
+      "report_id": "report_003",
+      "fields_populated": 15,
+      "fields_coded": 4,
+      "grounding_accepted": 4,
+      "grounding_abstained": 0,
+      "grounding_rejected": 5,
+      "elapsed_sec": 1225.248
+    },
+    {
+      "report_id": "report_004",
+      "fields_populated": 8,
+      "fields_coded": 2,
+      "grounding_accepted": 2,
+      "grounding_abstained": 1,
+      "grounding_rejected": 4,
+      "elapsed_sec": 753.281
+    },
+    {
+      "report_id": "report_005",
+      "fields_populated": 18,
+      "fields_coded": 5,
+      "grounding_accepted": 5,
+      "grounding_abstained": 2,
+      "grounding_rejected": 3,
+      "elapsed_sec": 908.195
+    },
+    {
+      "report_id": "report_006",
+      "fields_populated": 19,
+      "fields_coded": 6,
+      "grounding_accepted": 6,
+      "grounding_abstained": 2,
+      "grounding_rejected": 1,
+      "elapsed_sec": 1131.206
+    },
+    {
+      "report_id": "report_007",
+      "fields_populated": 15,
+      "fields_coded": 5,
+      "grounding_accepted": 5,
+      "grounding_abstained": 1,
+      "grounding_rejected": 5,
+      "elapsed_sec": 888.8
+    },
+    {
+      "report_id": "report_008",
+      "fields_populated": 14,
+      "fields_coded": 6,
+      "grounding_accepted": 6,
+      "grounding_abstained": 1,
+      "grounding_rejected": 2,
+      "elapsed_sec": 1132.68
+    },
+    {
+      "report_id": "report_009",
+      "fields_populated": 8,
+      "fields_coded": 1,
+      "grounding_accepted": 1,
+      "grounding_abstained": 3,
+      "grounding_rejected": 2,
+      "elapsed_sec": 687.316
+    },
+    {
+      "report_id": "report_010",
+      "fields_populated": 10,
+      "fields_coded": 2,
+      "grounding_accepted": 2,
+      "grounding_abstained": 0,
+      "grounding_rejected": 5,
+      "elapsed_sec": 680.789
+    }
+  ]
+}

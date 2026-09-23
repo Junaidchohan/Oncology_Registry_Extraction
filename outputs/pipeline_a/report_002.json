@@ -1,190 +1,335 @@
 {
   "report_id": "report_002",
   "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-22T08:42:47.444071+00:00",
+  "run_timestamp": "2026-09-23T19:32:45.181147+00:00",
   "model_versions": {
-    "mode": "heuristic_demo",
-    "note": "JSL license not configured. Set JSL_LICENSE_PATH to use pretrained Healthcare NLP models."
+    "mode": "llm_enhanced_clinical_nlp",
+    "llm_model": "llama3.1:8b",
+    "provider": "OpenAI",
+    "jsl_note": "johnsnowlabs package not installed in this environment. LLM used as analytical equivalent of JSL NER + Assertion + Resolution pipeline. JSL license token stored in secrets/jsl_license.json for JSL-capable environments.",
+    "ner_equivalent": "ner_oncology_wip + ner_oncology_biomarker_wip + ner_oncology_tnm_wip",
+    "assertion_equivalent": "assertion_oncology_wip",
+    "resolution_equivalent": "sbiobertresolve_icd10cm_augmented_billable + sbiobertresolve_icdo",
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "cost_usd": 0.0,
+    "elapsed_sec": 1685.633
   },
   "fields": {
     "primary_site": {
-      "value": "colon",
+      "value": "sigmoid colon",
       "unit": null,
       "state": "present",
-      "evidence": "colon",
-      "span": null,
+      "evidence": "Sigmoid colon, sigmoid colectomy:",
+      "span": [
+        null,
+        null
+      ],
       "codes": {
-        "ICD-O-3": "C18.7",
-        "ICD-10": "C18.7"
+        "ICD-O-3": "C18.0",
+        "ICD-10": "C18.0",
+        "SNOMED": "73211009"
       }
     },
     "histology_type": {
-      "value": "adenocarcinoma",
+      "value": "moderately differentiated adenocarcinoma",
       "unit": null,
       "state": "present",
-      "evidence": "adenocarcinoma",
-      "span": null,
+      "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {
-        "ICD-O-3": "8140/3"
+        "ICD-O-3": "8140/3",
+        "ICD-10": "C18.0",
+        "SNOMED": "71338006"
       }
     },
     "tumor_grade": {
-      "value": "moderately differentiated",
+      "value": "2",
       "unit": null,
       "state": "present",
-      "evidence": "moderately differentiated",
-      "span": null,
+      "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {
-        "SNOMED": "369783002"
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
       }
     },
     "clinical_stage": {
-      "value": null,
+      "value": "IIIB",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     },
     "pathologic_stage": {
-      "value": "pT3 pN1b pM0 -- Stage IIIB",
+      "value": "pT3 pN1b pM0",
       "unit": null,
       "state": "present",
-      "evidence": "pT3 pN1b pM0 -- Stage IIIB",
-      "span": null,
-      "codes": {}
+      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     },
     "tumor_size": {
-      "value": "28",
+      "value": "4.5",
       "unit": "cm",
       "state": "present",
-      "evidence": "28 cm",
-      "span": null,
-      "codes": {}
+      "evidence": "Tumor size: 4.5 cm",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     },
     "laterality": {
-      "value": null,
+      "value": "null",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": null,
-      "codes": {}
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     },
     "surgical_margins": {
-      "value": "Negative",
+      "value": "negative",
       "unit": null,
       "state": "present",
-      "evidence": "margins are free",
-      "span": null,
-      "codes": {}
+      "evidence": "Margins: all negative (CRM 2.5 mm)",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     },
     "lymph_nodes_examined": {
       "value": "24",
       "unit": null,
       "state": "present",
-      "evidence": "3/24",
-      "span": null,
-      "codes": {}
+      "evidence": "Of 24 lymph nodes examined, 3 are positive for metastatic adenocarcinoma (pN1b).",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     },
     "lymph_nodes_positive": {
       "value": "3",
       "unit": null,
       "state": "present",
-      "evidence": "3/24",
-      "span": null,
-      "codes": {}
+      "evidence": "Of 24 lymph nodes examined, 3 are positive for metastatic adenocarcinoma (pN1b).",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     },
     "lymphovascular_invasion": {
-      "value": "Present",
+      "value": "present",
       "unit": null,
       "state": "present",
-      "evidence": "Lymphovascular invasion is present",
-      "span": null,
-      "codes": {}
+      "evidence": "Lymphovascular invasion is present.",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     },
     "perineural_invasion": {
-      "value": "Present",
+      "value": "present",
       "unit": null,
       "state": "present",
-      "evidence": "Perineural invasion is identified",
-      "span": null,
-      "codes": {}
+      "evidence": "Perineural invasion is identified in 2 foci.",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     },
     "distant_metastasis": {
-      "value": "Absent",
-      "unit": null,
-      "state": "absent",
-      "evidence": "No distant metastasis documented",
-      "span": null,
-      "codes": {}
-    },
-    "er_status": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pr_status": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "her2_status": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "kras_mutation": {
-      "value": "detected (p",
+      "value": "absent",
       "unit": null,
       "state": "present",
-      "evidence": "detected (p",
-      "span": null,
+      "evidence": "No distant metastatic disease was identified in the specimen; CT correlation confirms no metastases.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {
-        "LOINC": "82457-2"
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
+    },
+    "er_status": {
+      "value": "not_applicable",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": null,
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
+    },
+    "pr_status": {
+      "value": "not_applicable",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": null,
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
+    },
+    "her2_status": {
+      "value": "not_applicable",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": null,
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
+    },
+    "kras_mutation": {
+      "value": "present",
+      "unit": null,
+      "state": "present",
+      "evidence": "KRAS mutation detected (p.G12D, codon 12).",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
       }
     },
     "egfr_mutation": {
-      "value": null,
+      "value": "not_applicable",
       "unit": null,
-      "state": "not_mentioned",
+      "state": "not_applicable",
       "evidence": null,
-      "span": null,
-      "codes": {}
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     },
     "procedure_type": {
-      "value": "evated). Referred for sigmoid colectomy.",
+      "value": "sigmoid colectomy",
       "unit": null,
       "state": "present",
-      "evidence": "evated). Referred for sigmoid colectomy.",
-      "span": null,
+      "evidence": "Received: Sigmoid colectomy specimen, 28 cm in length.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {
-        "SNOMED": "173171007"
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
       }
     },
     "prior_treatment": {
-      "value": null,
+      "value": "not_applicable",
       "unit": null,
-      "state": "not_mentioned",
+      "state": "not_applicable",
       "evidence": null,
-      "span": null,
-      "codes": {}
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     },
     "tumor_multiplicity": {
-      "value": "Single",
+      "value": "not_applicable",
       "unit": null,
-      "state": "absent",
-      "evidence": "No multiplicity cues detected",
-      "span": null,
-      "codes": {}
+      "state": "not_applicable",
+      "evidence": null,
+      "span": [
+        null,
+        null
+      ],
+      "codes": {
+        "ICD-O-3": null,
+        "ICD-10": null,
+        "SNOMED": null
+      }
     }
   }
 }

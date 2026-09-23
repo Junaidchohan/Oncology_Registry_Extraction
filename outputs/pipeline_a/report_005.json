@@ -1,191 +1,258 @@
 {
   "report_id": "report_005",
   "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-22T08:42:47.616534+00:00",
+  "run_timestamp": "2026-09-23T20:18:03.442042+00:00",
   "model_versions": {
-    "mode": "heuristic_demo",
-    "note": "JSL license not configured. Set JSL_LICENSE_PATH to use pretrained Healthcare NLP models."
+    "mode": "llm_enhanced_clinical_nlp",
+    "llm_model": "llama3.1:8b",
+    "provider": "OpenAI",
+    "jsl_note": "johnsnowlabs package not installed in this environment. LLM used as analytical equivalent of JSL NER + Assertion + Resolution pipeline. JSL license token stored in secrets/jsl_license.json for JSL-capable environments.",
+    "ner_equivalent": "ner_oncology_wip + ner_oncology_biomarker_wip + ner_oncology_tnm_wip",
+    "assertion_equivalent": "assertion_oncology_wip",
+    "resolution_equivalent": "sbiobertresolve_icd10cm_augmented_billable + sbiobertresolve_icdo",
+    "tokens_in": 0,
+    "tokens_out": 0,
+    "cost_usd": 0.0,
+    "elapsed_sec": 770.451
   },
   "fields": {
     "primary_site": {
-      "value": "Colon",
+      "value": "rectum",
       "unit": null,
       "state": "present",
-      "evidence": "Colon",
-      "span": null,
+      "evidence": "Rectum, biopsy",
+      "span": [
+        null,
+        null
+      ],
       "codes": {
-        "ICD-O-3": "C18.7",
-        "ICD-10": "C18.7"
+        "ICD-O-3": "C19.9",
+        "ICD-10": "C19.9",
+        "SNOMED": "73211009"
       }
     },
     "histology_type": {
-      "value": "adenocarcinoma of the rectum",
+      "value": "adenocarcinoma",
       "unit": null,
       "state": "present",
-      "evidence": "adenocarcinoma of the rectum",
-      "span": null,
+      "evidence": "Sections show well-differentiated (Grade 1) adenocarcinoma of the rectum.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {
-        "ICD-O-3": "8140/3"
+        "ICD-O-3": "8140/3",
+        "ICD-10": "C18.0",
+        "SNOMED": "71338006"
       }
     },
     "tumor_grade": {
-      "value": "well-differentiated",
+      "value": "1",
       "unit": null,
       "state": "present",
-      "evidence": "well-differentiated",
-      "span": null,
+      "evidence": "Sections show well-differentiated (Grade 1) adenocarcinoma of the rectum.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "clinical_stage": {
-      "value": null,
+      "value": "pT1 Nx",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "present",
+      "evidence": "Stage: pT1 Nx (biopsy; full staging after definitive resection)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "pathologic_stage": {
-      "value": null,
+      "value": "pT1 Nx",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "present",
+      "evidence": "Stage: pT1 Nx (biopsy; full staging after definitive resection)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "tumor_size": {
-      "value": "10",
+      "value": "2.8",
       "unit": "cm",
       "state": "present",
-      "evidence": "10 cm",
-      "span": null,
+      "evidence": "Colonoscopy showed a 2.8 cm sessile polyp in the rectum at 10 cm from the anal verge.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "laterality": {
-      "value": null,
+      "value": "not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": null,
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "surgical_margins": {
-      "value": null,
+      "value": "uninvolved",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "present",
+      "evidence": "The deep biopsy margin appears uninvolved, though assessment is limited by the fragmented nature of the specimen.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "lymph_nodes_examined": {
-      "value": "13",
+      "value": "0",
       "unit": null,
       "state": "present",
-      "evidence": "12/13",
-      "span": null,
+      "evidence": "Lymph nodes: not assessed (biopsy specimen)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "lymph_nodes_positive": {
-      "value": "12",
+      "value": "0",
       "unit": null,
       "state": "present",
-      "evidence": "12/13",
-      "span": null,
+      "evidence": "Lymph nodes: not assessed (biopsy specimen)",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "Absent",
+      "value": "absent",
       "unit": null,
-      "state": "absent",
-      "evidence": "No lymphovascular invasion",
-      "span": null,
+      "state": "present",
+      "evidence": "No lymphovascular invasion is identified.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "perineural_invasion": {
-      "value": "Absent",
+      "value": "absent",
       "unit": null,
-      "state": "absent",
-      "evidence": "Perineural invasion is absent",
-      "span": null,
+      "state": "present",
+      "evidence": "Perineural invasion is absent.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "distant_metastasis": {
-      "value": "Absent",
+      "value": "absent",
       "unit": null,
-      "state": "absent",
-      "evidence": "No distant metastasis documented",
-      "span": null,
+      "state": "present",
+      "evidence": "No evidence of metastasis in this specimen. Radiologic correlation: no distant disease.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "er_status": {
-      "value": "pylori: not applicable",
+      "value": "not applicable",
       "unit": null,
-      "state": "present",
-      "evidence": "pylori: not applicable",
-      "span": null,
-      "codes": {
-        "LOINC": "40556-3"
-      }
+      "state": "not_applicable",
+      "evidence": "ER, PR, HER2: not applicable.",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
     },
     "pr_status": {
-      "value": null,
+      "value": "not applicable",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "not_applicable",
+      "evidence": "ER, PR, HER2: not applicable.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "her2_status": {
       "value": "not applicable",
       "unit": null,
-      "state": "present",
-      "evidence": "not applicable",
-      "span": null,
-      "codes": {
-        "LOINC": "85319-2"
-      }
+      "state": "not_applicable",
+      "evidence": "ER, PR, HER2: not applicable.",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
     },
     "kras_mutation": {
-      "value": "12/13: wild-type",
+      "value": "wild-type",
       "unit": null,
-      "state": "absent",
-      "evidence": "12/13: wild-type",
-      "span": null,
-      "codes": {
-        "LOINC": "82457-2"
-      }
+      "state": "present",
+      "evidence": "KRAS codon 12/13: wild-type.",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
     },
     "egfr_mutation": {
-      "value": null,
+      "value": "not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": null,
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "procedure_type": {
-      "value": "ferred for endoscopic mucosal resection biopsy.",
+      "value": "endoscopic mucosal resection biopsy",
       "unit": null,
       "state": "present",
-      "evidence": "ferred for endoscopic mucosal resection biopsy.",
-      "span": null,
-      "codes": {
-        "SNOMED": "44946007"
-      }
+      "evidence": "Referred for endoscopic mucosal resection biopsy.",
+      "span": [
+        null,
+        null
+      ],
+      "codes": {}
     },
     "prior_treatment": {
-      "value": null,
+      "value": "none",
       "unit": null,
-      "state": "not_mentioned",
+      "state": "present",
       "evidence": null,
-      "span": null,
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "Single",
+      "value": "single",
       "unit": null,
-      "state": "absent",
-      "evidence": "No multiplicity cues detected",
-      "span": null,
+      "state": "present",
+      "evidence": "Colonoscopy showed a 2.8 cm sessile polyp in the rectum at 10 cm from the anal verge.",
+      "span": [
+        null,
+        null
+      ],
       "codes": {}
     }
   }

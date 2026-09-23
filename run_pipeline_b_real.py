@@ -123,7 +123,12 @@ def _grounding_call(client, field_name: str, value: str, candidates: dict,
 
     t0 = time.time()
     try:
-        resp = client.chat.completions.create(
+        import httpx
+        import re as _re
+        _timeout = httpx.Timeout(connect=10.0, read=300.0, write=30.0, pool=10.0)
+        # Use streaming for grounding calls too to avoid read timeouts
+        chunks = []
+        with client.chat.completions.create(
             model=LLM_MODEL,
             messages=[
                 {"role": "system", "content": _GROUNDING_SYSTEM},
@@ -131,13 +136,17 @@ def _grounding_call(client, field_name: str, value: str, candidates: dict,
             ],
             temperature=0.0,
             max_tokens=200,
-        )
+            stream=True,
+        ) as stream:
+            for chunk in stream:
+                delta = chunk.choices[0].delta.content if chunk.choices else None
+                if delta:
+                    chunks.append(delta)
         elapsed = time.time() - t0
-        raw = resp.choices[0].message.content.strip()
+        raw = "".join(chunks).strip()
         # Strip markdown fences if present
-        import re
-        raw = re.sub(r"^```(?:json)?\s*", "", raw, flags=re.IGNORECASE)
-        raw = re.sub(r"\s*```\s*$", "", raw)
+        raw = _re.sub(r"^```(?:json)?\s*", "", raw, flags=re.IGNORECASE)
+        raw = _re.sub(r"\s*```\s*$", "", raw)
         sel = json.loads(raw)
     except json.JSONDecodeError as e:
         logger.warning("Grounding JSON parse error for %s/%s: %s | raw: %s", report_id, field_name, e, raw[:200])
@@ -147,6 +156,20 @@ def _grounding_call(client, field_name: str, value: str, candidates: dict,
         raise RuntimeError(f"Grounding LLM call failed for {report_id}/{field_name}: {e}") from e
 
     selected_code = sel.get("selected_code", "NONE")
+
+    # Normalise: LLM sometimes returns "TERM | CODE | Name" instead of bare code.
+    # Extract the bare code if it is present in valid_codes anywhere in the string.
+    if selected_code and selected_code.upper() != "NONE":
+        if selected_code not in valid_codes:
+            # Try to find a valid code embedded in the string (e.g. "ICD-O-3 | 8140/3 | ...")
+            for vc in valid_codes:
+                if vc in selected_code:
+                    logger.info(
+                        "Grounding code normalised for %s/%s: '%s' → '%s'",
+                        report_id, field_name, selected_code, vc
+                    )
+                    selected_code = vc
+                    break
 
     log_entry = {
         "report_id": report_id,

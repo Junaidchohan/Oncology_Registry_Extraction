@@ -1,85 +1,84 @@
 {
   "report_id": "report_002",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-22T09:07:57.110899+00:00",
+  "run_timestamp": "2026-09-23T16:43:58.998491+00:00",
   "model_versions": {
-    "extractor": "DeterministicExtractor",
-    "embedding_model": "all-MiniLM-L6-v2",
-    "faiss_index": "terminology_index.faiss",
-    "grounding": "GroundingEngine-v1"
+    "mode": "llm_retrieval_ollama",
+    "llm_model": "llama3.1:8b",
+    "llm_base": "http://localhost:11434/v1",
+    "faiss_index": "terminology/terminology_index.faiss",
+    "n_concepts": 85,
+    "grounding": "two_stage_llm_selection",
+    "elapsed_sec": 1232.122
   },
   "fields": {
     "primary_site": {
-      "value": "colon",
+      "value": "sigmoid colon",
       "unit": null,
       "state": "present",
-      "evidence": "colon",
+      "evidence": "sigmoid colectomy specimen",
       "span": null,
-      "codes": {
-        "ICD-O-3": "C18.7",
-        "SNOMED": "60184004"
-      }
+      "codes": {}
     },
     "histology_type": {
-      "value": "adenocarcinoma",
+      "value": "moderately differentiated adenocarcinoma",
       "unit": null,
       "state": "present",
-      "evidence": "adenocarcinoma",
+      "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
       "span": null,
-      "codes": {
-        "ICD-O-3": "8140/3",
-        "ICD-10": "C20"
-      }
+      "codes": {}
     },
     "tumor_grade": {
-      "value": "moderately differentiated",
+      "value": "2",
       "unit": null,
       "state": "present",
-      "evidence": "moderately differentiated",
+      "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
       "span": null,
       "codes": {
         "SNOMED": "369783002"
       }
     },
     "clinical_stage": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_stage": {
-      "value": "pT3 pN1b pM0 -- Stage IIIB",
+      "value": "IIIB",
       "unit": null,
       "state": "present",
-      "evidence": "pT3 pN1b pM0 -- Stage IIIB",
+      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
       "span": null,
       "codes": {
         "SNOMED": "1229954009"
       }
     },
+    "pathologic_stage": {
+      "value": "pT3 pN1b pM0",
+      "unit": null,
+      "state": "present",
+      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition)",
+      "span": null,
+      "codes": {
+        "SNOMED": "413448000"
+      }
+    },
     "tumor_size": {
-      "value": "28",
+      "value": "4.5",
       "unit": "cm",
       "state": "present",
-      "evidence": "28 cm",
+      "evidence": "Tumor size: 4.5 cm",
       "span": null,
       "codes": {}
     },
     "laterality": {
-      "value": null,
+      "value": "left",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "present",
+      "evidence": "sigmoid colon",
       "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": "Negative",
+      "value": "negative",
       "unit": null,
       "state": "present",
-      "evidence": "margins are free",
+      "evidence": "Margins: all negative (CRM 2.5 mm)",
       "span": null,
       "codes": {
         "SNOMED": "370053002"
@@ -89,7 +88,7 @@
       "value": "24",
       "unit": null,
       "state": "present",
-      "evidence": "3/24",
+      "evidence": "Of 24 lymph nodes examined",
       "span": null,
       "codes": {}
     },
@@ -97,40 +96,37 @@
       "value": "3",
       "unit": null,
       "state": "present",
-      "evidence": "3/24",
+      "evidence": "3 are positive for metastatic adenocarcinoma (pN1b)",
       "span": null,
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "Present",
+      "value": "present",
       "unit": null,
       "state": "present",
-      "evidence": "Lymphovascular invasion is present",
+      "evidence": "Lymphovascular invasion is present.",
       "span": null,
       "codes": {
-        "SNOMED": "396487001"
+        "SNOMED": "128462008"
       }
     },
     "perineural_invasion": {
-      "value": "Present",
+      "value": "present",
       "unit": null,
       "state": "present",
-      "evidence": "Perineural invasion is identified",
+      "evidence": "Perineural invasion is identified in 2 foci.",
       "span": null,
       "codes": {
-        "SNOMED": "396487001"
+        "SNOMED": "370052007"
       }
     },
     "distant_metastasis": {
-      "value": "Absent",
+      "value": "absent",
       "unit": null,
-      "state": "absent",
-      "evidence": "No distant metastasis documented",
+      "state": "present",
+      "evidence": "No distant metastatic disease was identified in the specimen; CT correlation confirms no metastases.",
       "span": null,
-      "codes": {
-        "ICD-10": "C50.4",
-        "SNOMED": "396487001"
-      }
+      "codes": {}
     },
     "er_status": {
       "value": null,
@@ -157,14 +153,12 @@
       "codes": {}
     },
     "kras_mutation": {
-      "value": "detected (p",
+      "value": "p.G12D",
       "unit": null,
       "state": "present",
-      "evidence": "detected (p",
+      "evidence": "KRAS mutation detected (p.G12D, codon 12)",
       "span": null,
-      "codes": {
-        "LOINC": "81197-5"
-      }
+      "codes": {}
     },
     "egfr_mutation": {
       "value": null,
@@ -175,10 +169,10 @@
       "codes": {}
     },
     "procedure_type": {
-      "value": "evated). Referred for sigmoid colectomy.",
+      "value": "sigmoid colectomy",
       "unit": null,
       "state": "present",
-      "evidence": "evated). Referred for sigmoid colectomy.",
+      "evidence": "sigmoid colectomy specimen",
       "span": null,
       "codes": {
         "SNOMED": "44946007"
@@ -193,10 +187,10 @@
       "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "Single",
+      "value": null,
       "unit": null,
-      "state": "absent",
-      "evidence": "No multiplicity cues detected",
+      "state": "not_mentioned",
+      "evidence": null,
       "span": null,
       "codes": {}
     }
