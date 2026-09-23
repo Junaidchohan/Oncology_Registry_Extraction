@@ -38,14 +38,14 @@ flowchart TD
         R["Unstructured Pathology Reports<br/>(10 reports, 3 specialties)"]
     end
 
-    subgraph Pipeline A: Classical NLP
+    subgraph Pipeline_A [Pipeline A: Classical NLP]
         A1["Section Detection<br/>Regex"] --> A2["NER<br/>LLM Prompt"]
         A2 --> A3["Assertion Status<br/>LLM Prompt"]
         A3 --> A4["Entity Resolution<br/>LLM Prompt"]
         A4 --> A_Out["Structured JSON"]
     end
 
-    subgraph Pipeline B: LLM + Retrieval
+    subgraph Pipeline_B [Pipeline B: LLM + Retrieval]
         B1["Information Extraction<br/>llama3.1:8b"] --> B2["Candidate Retrieval<br/>FAISS, 85 concepts"]
         B2 --> B3["Code Grounding<br/>llama3.1:8b + extract_code_token"]
         B3 --> B4{"Grounding Enforcer<br/>Code in candidates?"}
@@ -55,8 +55,8 @@ flowchart TD
         B5_B --> B_Out
     end
     
-    R --> Pipeline A
-    R --> Pipeline B
+    R --> Pipeline_A
+    R --> Pipeline_B
 ```
 
 ---
