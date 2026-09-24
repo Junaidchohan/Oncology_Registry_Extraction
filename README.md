@@ -10,6 +10,32 @@ This project implements two pipelines for extracting structured registry data fr
 
 ---
 
+## 📸 Proof of Execution
+
+Both pipelines ran end-to-end with a real local LLM (`llama3.1:8b` via Ollama) on all 10 reports. The screenshots below show the actual output files produced.
+
+### Pipeline A — All 10 Reports Processed
+
+![Pipeline A outputs](docs/screenshots/07_pipeline_a_outputs.png)
+
+### Pipeline B — All 10 Reports Processed
+
+![Pipeline B outputs](docs/screenshots/08_pipeline_b_outputs.png)
+
+### Extracted Values
+
+**Pipeline A — primary site and histology per report:**
+
+![Pipeline A preview](docs/screenshots/09_pipeline_a_preview.png)
+
+**Pipeline B — primary site and histology per report:**
+
+![Pipeline B preview](docs/screenshots/10_pipeline_b_preview.png)
+
+Full evidence of execution, evaluation results, and the retrieval log are shown in [`SUBMISSION.md`](SUBMISSION.md).
+
+---
+
 ## Pipelines
 
 ### Pipeline A — LLM-Enhanced Clinical NLP

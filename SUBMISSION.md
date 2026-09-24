@@ -160,6 +160,84 @@ Pipeline B ███████████████████████
 
 ---
 
+## 📸 Evidence of Execution
+
+The following screenshots were captured from the local environment after both pipelines completed. They show the actual output files, run summaries, and extracted values — not simulated data.
+
+### 📁 Repository Structure
+
+![Repository structure](docs/screenshots/01_repo_structure.png)
+
+### 📄 Input Data
+
+| Reports | Gold Annotations |
+|---|---|
+| ![Input reports](docs/screenshots/02_input_reports.png) | ![Gold annotations](docs/screenshots/03_gold_annotations.png) |
+
+### 📝 Provenance and Sample Report
+
+![Provenance](docs/screenshots/04_provenance.png)
+
+![Sample raw report](docs/screenshots/05_sample_report.png)
+
+### 🅰️ Pipeline A — All 10 Reports Processed
+
+Every report from report_001 through report_010 was processed. Each file contains 21 populated fields.
+
+![Pipeline A outputs](docs/screenshots/07_pipeline_a_outputs.png)
+
+### 🅱️ Pipeline B — All 10 Reports Processed
+
+Every report was processed with LLM extraction, FAISS retrieval, and grounding enforcement.
+
+![Pipeline B outputs](docs/screenshots/08_pipeline_b_outputs.png)
+
+### 🔍 Extracted Values Preview
+
+These tables show the primary site and histology extracted from each of the 10 reports by each pipeline.
+
+**Pipeline A:**
+
+![Pipeline A preview](docs/screenshots/09_pipeline_a_preview.png)
+
+**Pipeline B:**
+
+![Pipeline B preview](docs/screenshots/10_pipeline_b_preview.png)
+
+### 🔍 Retrieval and Grounding Log
+
+| Log entries | Line count |
+|---|---|
+| ![Retrieval log](docs/screenshots/11_retrieval_log.png) | ![Retrieval log count](docs/screenshots/12_retrieval_log_count.png) |
+
+### 📋 Evaluation Results
+
+![Comparison table](docs/screenshots/13_comparison_table.png)
+
+![Per-field results](docs/screenshots/14_per_field_results.png)
+
+### 📖 Documentation
+
+| Technical report | README |
+|---|---|
+| ![Technical report](docs/screenshots/15_technical_report.png) | ![README](docs/screenshots/16_readme.png) |
+
+### 🔧 Environment
+
+| Ollama models | Git log |
+|---|---|
+| ![Ollama list](docs/screenshots/17_ollama_list.png) | ![Git log](docs/screenshots/18_git_log.png) |
+
+### ✅ Repository Hygiene
+
+| Working tree | Secrets check |
+|---|---|
+| ![Git status](docs/screenshots/19_git_status.png) | ![Secrets check](docs/screenshots/20_secrets_check.png) |
+
+The secrets check screenshot confirms that no credentials (`secrets/`, `.env`) are tracked in the repository. All key material is stored locally and excluded by `.gitignore`.
+
+---
+
 ## 📦 Deliverables Map
 
 | What | Where |
