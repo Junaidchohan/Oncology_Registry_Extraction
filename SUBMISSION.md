@@ -250,6 +250,7 @@ ull. Span recalculation is documented as future work.
 7. **Pipeline B evidence quality.** Some evidence fields contain section labels rather than source text (9 of 21 fields in report_001). Documented as future work; re-running the pipeline was outside the time budget for this submission.
 8. **Pipeline A stage implementation.** Stages are implemented as structured instructions within a single LLM prompt rather than as separate chained components. Output schema and workflow match the intended stage sequence.
 9. **Evidence match rate not measured.** Listed as a required metric in the brief; not computed in `evaluate_full.py`. Documented as a scope-down.
+10. **Invalid code rate not separately reported.** Listed as a required metric in the brief; not computed in `evaluate_full.py`. The grounding enforcer rejects any code not in the FAISS candidate set, so invalid code rate is zero by construction. Rejection counts are available in `outputs/pipeline_b/retrieval_log.jsonl`.
 
 ---
 
