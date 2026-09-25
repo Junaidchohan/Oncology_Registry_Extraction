@@ -155,8 +155,8 @@ Create `secrets/jsl_license.json` for JSL-capable environments:
 # Verify credentials
 python verify_credentials.py
 
-# Run Pipeline A (LLM-enhanced)
-python run_pipeline_a_real.py
+# Run Pipeline A (real JSL Healthcare NLP)
+python run_pipeline_a_jsl.py
 
 # Run Pipeline B (LLM + FAISS grounding, with TF-IDF fallback)
 $env:FORCE_TFIDF="1"   # if torch/torchvision broken
@@ -206,7 +206,7 @@ oncology-registry-extraction/
 │       ├── config.py            # Credential loader
 │       └── validate.py          # Schema validator
 ├── terminology/
-│   └── oncology_terminology.csv # 85 curated concepts
+│   └── oncology_terminology.csv # 580 curated concepts
 ├── evaluation/
 │   ├── evaluate_full.py         # Full evaluation script
 │   ├── comparison_table.md      # Side-by-side metrics
@@ -225,21 +225,9 @@ oncology-registry-extraction/
 
 ## Model and Runtime Configuration
 
-- **LLM (both pipelines):** llama3.1:8b via Ollama
-- **Ollama version:** 0.34.2
-- **Endpoint:** http://localhost:11434/v1
-- **Cost per report:** $0.00 (local inference)
-- **Mean runtime per report:** ~1000 seconds (CPU only)
-- **Terminology index:** 85 concepts across SNOMED CT, ICD-10, ICD-O-3, LOINC, ATC
-- **Grounding enforcement:** code-level rejection of any concept not in the retrieved candidate set; abstention when no candidate fits. A `extract_code_token()` helper normalizes LLM output before validation.
-
-## Hardware Assumptions
-
-- Consumer CPU (no GPU required)
-- 16 GB RAM minimum
-- ~5 GB disk for the llama3.1:8b model
-- Windows 10 or Linux
-
-## Why Ollama rather than a hosted API
-
-Section 06 of the brief explicitly permits "a local model or authorized external API." A local model was chosen to avoid external API costs and to keep all synthetic patient data on-device, consistent with the brief's guidance on handling protected data.
+- **Pipeline A library:** spark-nlp-jsl 5.4.0 (real JSL Healthcare NLP)
+- **Pipeline B LLM:** llama3.1:8b via Ollama 0.34.2
+- **Endpoint:** http://localhost:11434/v1 (Pipeline B only)
+- **Cost per report:** $0.00 for both pipelines (fully local)
+- **Mean runtime:** 32.85s (Pipeline A) / 692.10s (Pipeline B)
+- **Terminology index:** 580 concepts across SNOMED CT 2025-01, ICD-10-CM FY2025, ICD-O-3 3.2 (2025), LOINC 2.79, ATC 2025

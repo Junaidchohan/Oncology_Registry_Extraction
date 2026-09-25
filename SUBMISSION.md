@@ -139,7 +139,7 @@ Each pipeline has a role: Pipeline A for fast, precise extraction; Pipeline B fo
 | Cost per report | $0.00 | $0.00 |
 
 ### What This Shows
-- **Pipeline A wins on entity detection** — the structured clinical prompt guides the LLM more precisely.
+- **Pipeline A wins on code precision when it resolves** — the JSL annotator chain produces higher code precision (50.0%). Pipeline B wins on terminology recall (30.6%) through the 580-concept FAISS retrieval.
 - **Pipeline B wins on terminology grounding** — the FAISS retrieval + code-level enforcement produce more reliable codes.
 - **Neither is universally better.** Each has a role. This is the intended outcome of the comparison.
 
@@ -200,7 +200,7 @@ eport/report.md |
 | 10 reports + provenance + gold annotations | ✅ |
 | Runnable Pipeline A code | ✅ |
 | Runnable Pipeline B code | ✅ |
-| Local terminology index | ✅ 85 concepts |
+| Local terminology index | ✅ 580 concepts |
 | Structured JSON outputs (both pipelines) | ✅ |
 | Schema + validation | ✅ |
 | Evaluation scripts | ✅ |
