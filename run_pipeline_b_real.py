@@ -65,22 +65,22 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 RETRIEVAL_LOG = OUTPUT_DIR / "retrieval_log.jsonl"
 
 FIELD_TERMINOLOGIES = {
-    "primary_site":             ["ICD-O-3", "SNOMED"],
-    "histology_type":           ["ICD-O-3", "ICD-10"],
-    "tumor_grade":              ["SNOMED"],
-    "clinical_stage":           ["SNOMED"],
-    "pathologic_stage":         ["SNOMED"],
-    "surgical_margins":         ["SNOMED"],
-    "lymphovascular_invasion":  ["SNOMED"],
-    "perineural_invasion":      ["SNOMED"],
-    "distant_metastasis":       ["ICD-10", "SNOMED"],
+    "primary_site":             ["ICD_O_3", "SNOMED_CT"],
+    "histology_type":           ["ICD_O_3", "ICD_10_CM"],
+    "tumor_grade":              ["SNOMED_CT"],
+    "clinical_stage":           ["SNOMED_CT"],
+    "pathologic_stage":         ["SNOMED_CT"],
+    "surgical_margins":         ["SNOMED_CT"],
+    "lymphovascular_invasion":  ["SNOMED_CT"],
+    "perineural_invasion":      ["SNOMED_CT"],
+    "distant_metastasis":       ["ICD_10_CM", "SNOMED_CT"],
     "er_status":                ["LOINC"],
     "pr_status":                ["LOINC"],
     "her2_status":              ["LOINC"],
     "kras_mutation":            ["LOINC"],
     "egfr_mutation":            ["LOINC"],
-    "procedure_type":           ["SNOMED"],
-    "prior_treatment":          ["ATC", "SNOMED"],
+    "procedure_type":           ["SNOMED_CT"],
+    "prior_treatment":          ["ATC", "SNOMED_CT"],
 }
 
 _GROUNDING_SYSTEM = """\
@@ -146,7 +146,7 @@ def _grounding_call(client, field_name: str, value: str, candidates: dict,
         elapsed = time.time() - t0
         raw = "".join(chunks).strip()
         # Strip markdown fences if present
-        raw = _re.sub(r"^```(?:json)?\s*", "", raw, flags=re.IGNORECASE)
+        raw = _re.sub(r"^```(?:json)?\s*", "", raw, flags=_re.IGNORECASE)
         raw = _re.sub(r"\s*```\s*$", "", raw)
         sel = json.loads(raw)
     except json.JSONDecodeError as e:
@@ -242,8 +242,14 @@ def main():
         t_start = time.time()
 
         # --- Stage 1: LLM extraction ---
-        logger.info("[%s] Stage 1: LLM field extraction...", rid)
-        fields = extractor.extract(text)  # raises RuntimeError if LLM fails
+        out_path = OUTPUT_DIR / (rid + ".json")
+        if out_path.exists():
+            logger.info("[%s] Stage 1: Loading cached LLM field extraction...", rid)
+            with open(out_path, "r", encoding="utf-8") as f:
+                fields = json.load(f).get("fields", {})
+        else:
+            logger.info("[%s] Stage 1: LLM field extraction...", rid)
+            fields = extractor.extract(text)  # raises RuntimeError if LLM fails
 
         # --- Stage 2+3: FAISS retrieval + LLM grounding per codeable field ---
         logger.info("[%s] Stage 2-3: Terminology retrieval + grounding...", rid)

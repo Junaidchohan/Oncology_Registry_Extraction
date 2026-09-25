@@ -1,7 +1,7 @@
 {
   "report_id": "report_010",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-23T18:47:27.131455+00:00",
+  "run_timestamp": "2026-09-25T17:48:21.728049+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 680.789
+    "elapsed_sec": 327.726
   },
   "fields": {
     "primary_site": {
@@ -19,7 +19,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "ICD-O-3": "C50.4"
+        "ICD-O-3": "C50.9"
       }
     },
     "histology_type": {
@@ -39,7 +39,7 @@
       "evidence": "Nottingham 8/9",
       "span": null,
       "codes": {
-        "SNOMED": "369784008"
+        "SNOMED": "363346003"
       }
     },
     "clinical_stage": {
@@ -136,7 +136,9 @@
       "state": "present",
       "evidence": "10%, 1+ intensity",
       "span": null,
-      "codes": {}
+      "codes": {
+        "LOINC": "94077-5"
+      }
     },
     "her2_status": {
       "value": "equivocal",
@@ -169,7 +171,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "SNOMED": "443989000"
+        "SNOMED": "44578009"
       }
     },
     "prior_treatment": {

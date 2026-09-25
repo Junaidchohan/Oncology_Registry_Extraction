@@ -304,20 +304,16 @@ def annotate(light_pipeline: Any, text: str) -> Dict[str, Any]:
             "entity2":  rel.metadata.get("chunk2", ""),
         })
 
-    # Build code maps
-    icd10_codes: Dict[str, str] = {}
-    icdo_codes:  Dict[str, str] = {}
-    for res_ann in results.get("icd10_resolution", []):
-        icd10_codes[res_ann.metadata.get("chunk", res_ann.result)] = res_ann.result
-    for res_ann in results.get("icdo_resolution", []):
-        icdo_codes[res_ann.metadata.get("chunk", res_ann.result)] = res_ann.result
-
-    for chunk in chunks:
+    # Build code maps by index (1-to-1 with chunks)
+    icd10_anns = results.get("icd10_resolution", [])
+    icdo_anns = results.get("icdo_resolution", [])
+    
+    for i, chunk in enumerate(chunks):
         codes: Dict[str, str] = {}
-        if chunk["text"] in icd10_codes:
-            codes["ICD-10-CM"] = icd10_codes[chunk["text"]]
-        if chunk["text"] in icdo_codes:
-            codes["ICD-O-3"] = icdo_codes[chunk["text"]]
+        if i < len(icd10_anns):
+            codes["ICD-10-CM"] = icd10_anns[i].result
+        if i < len(icdo_anns):
+            codes["ICD-O-3"] = icdo_anns[i].result
         chunk["codes"] = codes
 
     return {"chunks": chunks, "relations": relations}

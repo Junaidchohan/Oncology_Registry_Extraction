@@ -1,7 +1,7 @@
 {
   "report_id": "report_005",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-23T17:32:05.967284+00:00",
+  "run_timestamp": "2026-09-25T17:02:51.702351+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 908.195
+    "elapsed_sec": 697.603
   },
   "fields": {
     "primary_site": {
@@ -39,7 +39,7 @@
       "evidence": "well-differentiated",
       "span": null,
       "codes": {
-        "SNOMED": "369782007"
+        "SNOMED": "363346001"
       }
     },
     "clinical_stage": {
@@ -57,7 +57,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "SNOMED": "397159002"
+        "SNOMED": "1229946007"
       }
     },
     "tumor_size": {
@@ -109,7 +109,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "SNOMED": "396487001"
+        "SNOMED": "245294001"
       }
     },
     "perineural_invasion": {
@@ -126,7 +126,9 @@
       "state": "present",
       "evidence": "no evidence of distant metastatic disease",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED": "1229966003"
+      }
     },
     "er_status": {
       "value": "not applicable",
@@ -175,7 +177,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "SNOMED": "44578009"
+        "SNOMED": "65801008"
       }
     },
     "prior_treatment": {

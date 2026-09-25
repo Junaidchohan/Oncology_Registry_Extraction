@@ -1,26 +1,18 @@
 # Pipeline Evaluation: Side-by-Side Comparison
 
-*Generated: 2026-09-23T21:52:02.474726Z*
+*Generated: 2026-09-25T17:48:26.993975Z*
 
 | Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |
 | --- | --- | --- |
-| Entity P / R / F1 | 100.0% / 91.0% / 95.3% | 100.0% / 68.1% / 81.0% |
-| Entity TP / FP / FN | 191 / 0 / 19 | 143 / 0 / 67 |
-| Field value exact accuracy | 28.1% (59/210) | 23.3% (49/210) |
-| Assertion / State accuracy | 57.1% (120/210) | 55.7% (117/210) |
-| Relation / Macro F1 (field-level) | 95.3% | 81.0% |
-| Terminology code precision | 17.4% (12/69) | 20.3% (13/64) |
-| Terminology code recall (Recall@K) | 33.3% (12/36) | 36.1% (13/36) |
-| Terminology F1 | 22.9% | 26.0% |
+| Entity P / R / F1 | 100.0% / 65.2% / 79.0% | 100.0% / 68.1% / 81.0% |
+| Entity TP / FP / FN | 137 / 0 / 73 | 143 / 0 / 67 |
+| Field value exact accuracy | 11.9% (25/210) | 23.3% (49/210) |
+| Assertion / State accuracy | 49.0% (103/210) | 55.7% (117/210) |
+| Relation / Macro F1 (field-level) | 79.0% | 81.0% |
+| Terminology code precision | 40.0% (2/5) | 17.7% (11/62) |
+| Terminology code recall (Recall@K) | 5.6% (2/36) | 30.6% (11/36) |
+| Terminology F1 | 9.8% | 22.4% |
 | Unsupported field rate | 0.0% (0 fields) | 0.0% (0 fields) |
-| Mean runtime per report | 1002.49s | 977.85s |
+| Mean runtime per report | 32.85s | 692.10s |
 | Mean cost per report | $0.0000 | $0.0000 |
 | Total cost (10 reports) | $0.0000 | $0.0000 |
-
----
-
-## Not Measured — Justification
-
-**Invalid code rate** — not separately reported. The grounding enforcer rejects any code not in the retrieved FAISS candidate set; the count of rejections is logged in `outputs/pipeline_b/retrieval_log.jsonl` under `grounding_status: REJECTED_NOT_IN_CANDIDATE_SET`. Zero invalid codes reach pipeline output by construction.
-
-**Relation extraction F1 (target relation types)** — not measured on target relation types (lesion-to-measurement, biomarker-to-result) as a separate metric. Field-level Macro F1 is reported as a proxy. This is a documented scope-down.

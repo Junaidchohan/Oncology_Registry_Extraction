@@ -1,7 +1,7 @@
 {
   "report_id": "report_007",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-23T18:05:46.103385+00:00",
+  "run_timestamp": "2026-09-25T17:26:29.681705+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 888.8
+    "elapsed_sec": 586.32
   },
   "fields": {
     "primary_site": {
@@ -19,7 +19,7 @@
       "evidence": "Right breast, mastectomy (post-neoadjuvant therapy)",
       "span": null,
       "codes": {
-        "ICD-O-3": "C50.4"
+        "ICD-O-3": "C50.9"
       }
     },
     "histology_type": {
@@ -39,7 +39,7 @@
       "evidence": "Miller-Payne Grade 4",
       "span": null,
       "codes": {
-        "SNOMED": "413448000"
+        "SNOMED": "363346004"
       }
     },
     "clinical_stage": {
@@ -57,7 +57,7 @@
       "evidence": "FINAL DIAGNOSIS",
       "span": null,
       "codes": {
-        "SNOMED": "397159002"
+        "SNOMED": "1229946007"
       }
     },
     "tumor_size": {
@@ -82,9 +82,7 @@
       "state": "present",
       "evidence": "All surgical margins are negative",
       "span": null,
-      "codes": {
-        "SNOMED": "370053002"
-      }
+      "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "3",
@@ -108,7 +106,9 @@
       "state": "present",
       "evidence": "No lymphovascular invasion in current specimen",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED": "1229953003"
+      }
     },
     "perineural_invasion": {
       "value": null,
@@ -148,9 +148,7 @@
       "state": "present",
       "evidence": "HER2: 1+ (negative)",
       "span": null,
-      "codes": {
-        "LOINC": "85318-4"
-      }
+      "codes": {}
     },
     "kras_mutation": {
       "value": null,

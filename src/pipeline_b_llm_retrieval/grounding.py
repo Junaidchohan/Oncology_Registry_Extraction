@@ -83,6 +83,7 @@ def extract_code_token(selection: str) -> str:
     _TERMINOLOGY_NAMES = {
         "ICD-O-3", "ICD-10", "ICD-10-CM", "ICD-O", "SNOMED", "LOINC", "ATC",
         "ICD-9", "ICD-9-CM", "ICDO", "ICDO3", "SNOMEDCT",
+        "ICD_O_3", "ICD_10_CM", "SNOMED_CT",
     }
 
     # Split on pipe and pick the first segment containing a digit and no spaces

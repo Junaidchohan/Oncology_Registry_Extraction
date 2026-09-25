@@ -1,7 +1,7 @@
 {
   "report_id": "report_009",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-23T18:36:06.240512+00:00",
+  "run_timestamp": "2026-09-25T17:42:53.972960+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 687.316
+    "elapsed_sec": 272.158
   },
   "fields": {
     "primary_site": {
@@ -19,7 +19,7 @@
       "evidence": "Right lower lobe",
       "span": null,
       "codes": {
-        "ICD-O-3": "8012/3"
+        "SNOMED": "254626000"
       }
     },
     "histology_type": {

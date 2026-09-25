@@ -1,7 +1,7 @@
 {
   "report_id": "report_006",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-23T17:50:57.244487+00:00",
+  "run_timestamp": "2026-09-25T17:16:43.351630+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 1131.206
+    "elapsed_sec": 831.639
   },
   "fields": {
     "primary_site": {
@@ -39,7 +39,7 @@
       "evidence": "Nottingham equivalent Grade 3",
       "span": null,
       "codes": {
-        "SNOMED": "369784008"
+        "SNOMED": "363346003"
       }
     },
     "clinical_stage": {
@@ -57,7 +57,7 @@
       "evidence": "pT3 pN0 pM0 (satellite nodule)",
       "span": null,
       "codes": {
-        "SNOMED": "1229948008"
+        "SNOMED": "1229956006"
       }
     },
     "tumor_size": {
@@ -82,9 +82,7 @@
       "state": "present",
       "evidence": "3.5 cm from tumor",
       "span": null,
-      "codes": {
-        "SNOMED": "370053002"
-      }
+      "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "12",
@@ -108,7 +106,9 @@
       "state": "absent",
       "evidence": "No lymphovascular invasion identified",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED": "1229953003"
+      }
     },
     "perineural_invasion": {
       "value": "no",
@@ -116,7 +116,9 @@
       "state": "absent",
       "evidence": "Perineural invasion: absent",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED": "1229953003"
+      }
     },
     "distant_metastasis": {
       "value": "no",
@@ -125,7 +127,7 @@
       "evidence": "no distant metastases",
       "span": null,
       "codes": {
-        "ICD-10": "C77.9"
+        "SNOMED": "1229965004"
       }
     },
     "er_status": {
@@ -175,7 +177,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "SNOMED": "173171007"
+        "SNOMED": "51030005"
       }
     },
     "prior_treatment": {

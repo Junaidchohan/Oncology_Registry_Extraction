@@ -1,7 +1,7 @@
 {
   "report_id": "report_001",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-23T16:23:26.769685+00:00",
+  "run_timestamp": "2026-09-25T16:17:10.681000+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 1138.847
+    "elapsed_sec": 1450.217
   },
   "fields": {
     "primary_site": {
@@ -19,7 +19,7 @@
       "evidence": "Left breast",
       "span": null,
       "codes": {
-        "ICD-O-3": "C50.4"
+        "ICD-O-3": "C50.9"
       }
     },
     "histology_type": {
@@ -36,30 +36,30 @@
       "value": "2",
       "unit": null,
       "state": "present",
-      "evidence": "Nottingham Grade 2",
+      "evidence": "MICROSCOPIC DESCRIPTION",
       "span": null,
       "codes": {
-        "SNOMED": "369783002"
+        "SNOMED": "363346002"
       }
     },
     "clinical_stage": {
       "value": "IIB",
       "unit": null,
       "state": "present",
-      "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition)",
+      "evidence": "FINAL DIAGNOSIS",
       "span": null,
       "codes": {
-        "SNOMED": "1229948008"
+        "SNOMED": "1229956006"
       }
     },
     "pathologic_stage": {
       "value": "pT2 pN1a pM0",
       "unit": null,
       "state": "present",
-      "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition)",
+      "evidence": "FINAL DIAGNOSIS",
       "span": null,
       "codes": {
-        "SNOMED": "413448000"
+        "SNOMED": "1229965004"
       }
     },
     "tumor_size": {
@@ -74,7 +74,7 @@
       "value": "left",
       "unit": null,
       "state": "present",
-      "evidence": "Left breast",
+      "evidence": "FINAL DIAGNOSIS",
       "span": null,
       "codes": {}
     },
@@ -84,9 +84,7 @@
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
       "span": null,
-      "codes": {
-        "SNOMED": "370053002"
-      }
+      "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "18",
@@ -111,7 +109,7 @@
       "evidence": "FINAL DIAGNOSIS",
       "span": null,
       "codes": {
-        "SNOMED": "128462008"
+        "SNOMED": "245294001"
       }
     },
     "perineural_invasion": {
@@ -134,7 +132,7 @@
       "value": "positive",
       "unit": null,
       "state": "present",
-      "evidence": "Immunohistochemistry: ER positive (Allred score 8/8, >95% cells, 3+ intensity)",
+      "evidence": "FINAL DIAGNOSIS",
       "span": null,
       "codes": {}
     },
@@ -142,7 +140,7 @@
       "value": "positive",
       "unit": null,
       "state": "present",
-      "evidence": "Immunohistochemistry: PR positive (Allred score 6/8, 60% cells, 2+ intensity)",
+      "evidence": "FINAL DIAGNOSIS",
       "span": null,
       "codes": {}
     },
@@ -150,14 +148,12 @@
       "value": "negative",
       "unit": null,
       "state": "present",
-      "evidence": "Immunohistochemistry: HER2 score 1+ (negative by IHC)",
+      "evidence": "FINAL DIAGNOSIS",
       "span": null,
-      "codes": {
-        "LOINC": "85318-4"
-      }
+      "codes": {}
     },
     "kras_mutation": {
-      "value": "not_mentioned",
+      "value": "not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -165,7 +161,7 @@
       "codes": {}
     },
     "egfr_mutation": {
-      "value": "not_mentioned",
+      "value": "not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -186,7 +182,7 @@
       "value": "none",
       "unit": null,
       "state": "not_mentioned",
-      "evidence": "CLINICAL HISTORY",
+      "evidence": null,
       "span": null,
       "codes": {}
     },

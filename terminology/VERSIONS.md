@@ -3,7 +3,7 @@
 This file tracks the versions of the standard vocabularies used in the oncology registry terminology inventory.
 
 ## Current Build (Expanded Set)
-- **Total Concepts:** 334
+- **Total Concepts:** 580
 - **Date Built:** September 2026
 
 ## Included Terminologies & Versions

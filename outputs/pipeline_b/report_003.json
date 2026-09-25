@@ -1,7 +1,7 @@
 {
   "report_id": "report_003",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-23T17:04:24.343872+00:00",
+  "run_timestamp": "2026-09-25T16:44:21.656908+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 1225.248
+    "elapsed_sec": 819.605
   },
   "fields": {
     "primary_site": {
@@ -19,7 +19,7 @@
       "evidence": "Right upper lobe, CT-guided core needle biopsy",
       "span": null,
       "codes": {
-        "ICD-O-3": "8012/3"
+        "SNOMED": "254626000"
       }
     },
     "histology_type": {
@@ -49,7 +49,7 @@
       "evidence": "Clinical stage: cT2a cN2 cM1b -- Stage IVA (brain metastases per PET/CT correlation)",
       "span": null,
       "codes": {
-        "SNOMED": "1229955005"
+        "SNOMED": "1229961008"
       }
     },
     "pathologic_stage": {

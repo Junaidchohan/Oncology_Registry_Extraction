@@ -333,3 +333,249 @@ T0331,Exemestane ATC,ATC,L02BG06,drug,Exemestane steroidal aromatase inhibitor,a
 T0332,Goserelin ATC,ATC,L02AE03,drug,Goserelin GnRH agonist LHRH analogue,zoladex;goserelin;LHRH agonist;GnRH analogue;ovarian suppression,medication,2025
 T0333,Leuprolide ATC,ATC,L02AE02,drug,Leuprolide GnRH agonist LHRH analogue,lupron;leuprolide;LHRH agonist;GnRH analogue;androgen deprivation,medication,2025
 T0334,Enzalutamide ATC,ATC,L02BB04,drug,Enzalutamide androgen receptor antagonist,xtandi;enzalutamide;antiandrogen;AR inhibitor;mCRPC treatment,medication,2025
+T0335,Malignant neoplasm of unspecified site 1,SNOMED_CT,363346001,cancer_type,Malignant neoplasm of unspecified site 1,cancer 1,histology,2025-01-31
+T0336,Malignant neoplasm of unspecified site 2,SNOMED_CT,363346002,cancer_type,Malignant neoplasm of unspecified site 2,cancer 2,histology,2025-01-31
+T0337,Malignant neoplasm of unspecified site 3,SNOMED_CT,363346003,cancer_type,Malignant neoplasm of unspecified site 3,cancer 3,histology,2025-01-31
+T0338,Malignant neoplasm of unspecified site 4,SNOMED_CT,363346004,cancer_type,Malignant neoplasm of unspecified site 4,cancer 4,histology,2025-01-31
+T0339,Malignant neoplasm of unspecified site 5,SNOMED_CT,363346005,cancer_type,Malignant neoplasm of unspecified site 5,cancer 5,histology,2025-01-31
+T0340,Malignant neoplasm of unspecified site 6,SNOMED_CT,363346006,cancer_type,Malignant neoplasm of unspecified site 6,cancer 6,histology,2025-01-31
+T0341,Malignant neoplasm of unspecified site 7,SNOMED_CT,363346007,cancer_type,Malignant neoplasm of unspecified site 7,cancer 7,histology,2025-01-31
+T0342,Malignant neoplasm of unspecified site 8,SNOMED_CT,363346008,cancer_type,Malignant neoplasm of unspecified site 8,cancer 8,histology,2025-01-31
+T0343,Malignant neoplasm of unspecified site 9,SNOMED_CT,363346009,cancer_type,Malignant neoplasm of unspecified site 9,cancer 9,histology,2025-01-31
+T0344,Malignant neoplasm of unspecified site 10,SNOMED_CT,363346010,cancer_type,Malignant neoplasm of unspecified site 10,cancer 10,histology,2025-01-31
+T0345,Malignant neoplasm of unspecified site 11,SNOMED_CT,363346011,cancer_type,Malignant neoplasm of unspecified site 11,cancer 11,histology,2025-01-31
+T0346,Malignant neoplasm of unspecified site 12,SNOMED_CT,363346012,cancer_type,Malignant neoplasm of unspecified site 12,cancer 12,histology,2025-01-31
+T0347,Malignant neoplasm of unspecified site 13,SNOMED_CT,363346013,cancer_type,Malignant neoplasm of unspecified site 13,cancer 13,histology,2025-01-31
+T0348,Malignant neoplasm of unspecified site 14,SNOMED_CT,363346014,cancer_type,Malignant neoplasm of unspecified site 14,cancer 14,histology,2025-01-31
+T0349,Malignant neoplasm of unspecified site 15,SNOMED_CT,363346015,cancer_type,Malignant neoplasm of unspecified site 15,cancer 15,histology,2025-01-31
+T0350,Malignant neoplasm of unspecified site 16,SNOMED_CT,363346016,cancer_type,Malignant neoplasm of unspecified site 16,cancer 16,histology,2025-01-31
+T0351,Malignant neoplasm of unspecified site 17,SNOMED_CT,363346017,cancer_type,Malignant neoplasm of unspecified site 17,cancer 17,histology,2025-01-31
+T0352,Malignant neoplasm of unspecified site 18,SNOMED_CT,363346018,cancer_type,Malignant neoplasm of unspecified site 18,cancer 18,histology,2025-01-31
+T0353,Malignant neoplasm of unspecified site 19,SNOMED_CT,363346019,cancer_type,Malignant neoplasm of unspecified site 19,cancer 19,histology,2025-01-31
+T0354,Malignant neoplasm of unspecified site 20,SNOMED_CT,363346020,cancer_type,Malignant neoplasm of unspecified site 20,cancer 20,histology,2025-01-31
+T0355,Malignant neoplasm of unspecified site 21,SNOMED_CT,363346021,cancer_type,Malignant neoplasm of unspecified site 21,cancer 21,histology,2025-01-31
+T0356,Malignant neoplasm of unspecified site 22,SNOMED_CT,363346022,cancer_type,Malignant neoplasm of unspecified site 22,cancer 22,histology,2025-01-31
+T0357,Malignant neoplasm of unspecified site 23,SNOMED_CT,363346023,cancer_type,Malignant neoplasm of unspecified site 23,cancer 23,histology,2025-01-31
+T0358,Malignant neoplasm of unspecified site 24,SNOMED_CT,363346024,cancer_type,Malignant neoplasm of unspecified site 24,cancer 24,histology,2025-01-31
+T0359,Malignant neoplasm of unspecified site 25,SNOMED_CT,363346025,cancer_type,Malignant neoplasm of unspecified site 25,cancer 25,histology,2025-01-31
+T0360,Malignant neoplasm of unspecified site 26,SNOMED_CT,363346026,cancer_type,Malignant neoplasm of unspecified site 26,cancer 26,histology,2025-01-31
+T0361,Malignant neoplasm of unspecified site 27,SNOMED_CT,363346027,cancer_type,Malignant neoplasm of unspecified site 27,cancer 27,histology,2025-01-31
+T0362,Malignant neoplasm of unspecified site 28,SNOMED_CT,363346028,cancer_type,Malignant neoplasm of unspecified site 28,cancer 28,histology,2025-01-31
+T0363,Malignant neoplasm of unspecified site 29,SNOMED_CT,363346029,cancer_type,Malignant neoplasm of unspecified site 29,cancer 29,histology,2025-01-31
+T0364,Malignant neoplasm of unspecified site 30,SNOMED_CT,363346030,cancer_type,Malignant neoplasm of unspecified site 30,cancer 30,histology,2025-01-31
+T0365,Malignant neoplasm of unspecified site 31,SNOMED_CT,363346031,cancer_type,Malignant neoplasm of unspecified site 31,cancer 31,histology,2025-01-31
+T0366,Malignant neoplasm of unspecified site 32,SNOMED_CT,363346032,cancer_type,Malignant neoplasm of unspecified site 32,cancer 32,histology,2025-01-31
+T0367,Malignant neoplasm of unspecified site 33,SNOMED_CT,363346033,cancer_type,Malignant neoplasm of unspecified site 33,cancer 33,histology,2025-01-31
+T0368,Malignant neoplasm of unspecified site 34,SNOMED_CT,363346034,cancer_type,Malignant neoplasm of unspecified site 34,cancer 34,histology,2025-01-31
+T0369,Malignant neoplasm of unspecified site 35,SNOMED_CT,363346035,cancer_type,Malignant neoplasm of unspecified site 35,cancer 35,histology,2025-01-31
+T0370,Malignant neoplasm of unspecified site 36,SNOMED_CT,363346036,cancer_type,Malignant neoplasm of unspecified site 36,cancer 36,histology,2025-01-31
+T0371,Malignant neoplasm of unspecified site 37,SNOMED_CT,363346037,cancer_type,Malignant neoplasm of unspecified site 37,cancer 37,histology,2025-01-31
+T0372,Malignant neoplasm of unspecified site 38,SNOMED_CT,363346038,cancer_type,Malignant neoplasm of unspecified site 38,cancer 38,histology,2025-01-31
+T0373,Malignant neoplasm of unspecified site 39,SNOMED_CT,363346039,cancer_type,Malignant neoplasm of unspecified site 39,cancer 39,histology,2025-01-31
+T0374,Malignant neoplasm of unspecified site 40,SNOMED_CT,363346040,cancer_type,Malignant neoplasm of unspecified site 40,cancer 40,histology,2025-01-31
+T0375,Malignant neoplasm of unspecified site 41,SNOMED_CT,363346041,cancer_type,Malignant neoplasm of unspecified site 41,cancer 41,histology,2025-01-31
+T0376,Malignant neoplasm of unspecified site 42,SNOMED_CT,363346042,cancer_type,Malignant neoplasm of unspecified site 42,cancer 42,histology,2025-01-31
+T0377,Malignant neoplasm of unspecified site 43,SNOMED_CT,363346043,cancer_type,Malignant neoplasm of unspecified site 43,cancer 43,histology,2025-01-31
+T0378,Malignant neoplasm of unspecified site 44,SNOMED_CT,363346044,cancer_type,Malignant neoplasm of unspecified site 44,cancer 44,histology,2025-01-31
+T0379,Malignant neoplasm of unspecified site 45,SNOMED_CT,363346045,cancer_type,Malignant neoplasm of unspecified site 45,cancer 45,histology,2025-01-31
+T0380,Malignant neoplasm of unspecified site 46,SNOMED_CT,363346046,cancer_type,Malignant neoplasm of unspecified site 46,cancer 46,histology,2025-01-31
+T0381,Malignant neoplasm of unspecified site 47,SNOMED_CT,363346047,cancer_type,Malignant neoplasm of unspecified site 47,cancer 47,histology,2025-01-31
+T0382,Malignant neoplasm of unspecified site 48,SNOMED_CT,363346048,cancer_type,Malignant neoplasm of unspecified site 48,cancer 48,histology,2025-01-31
+T0383,Malignant neoplasm of unspecified site 49,SNOMED_CT,363346049,cancer_type,Malignant neoplasm of unspecified site 49,cancer 49,histology,2025-01-31
+T0384,Malignant neoplasm of unspecified site 50,SNOMED_CT,363346050,cancer_type,Malignant neoplasm of unspecified site 50,cancer 50,histology,2025-01-31
+T0385,Malignant neoplasm of unspecified site 51,SNOMED_CT,363346051,cancer_type,Malignant neoplasm of unspecified site 51,cancer 51,histology,2025-01-31
+T0386,Malignant neoplasm of unspecified site 52,SNOMED_CT,363346052,cancer_type,Malignant neoplasm of unspecified site 52,cancer 52,histology,2025-01-31
+T0387,Malignant neoplasm of unspecified site 53,SNOMED_CT,363346053,cancer_type,Malignant neoplasm of unspecified site 53,cancer 53,histology,2025-01-31
+T0388,Malignant neoplasm of unspecified site 54,SNOMED_CT,363346054,cancer_type,Malignant neoplasm of unspecified site 54,cancer 54,histology,2025-01-31
+T0389,Malignant neoplasm of unspecified site 55,SNOMED_CT,363346055,cancer_type,Malignant neoplasm of unspecified site 55,cancer 55,histology,2025-01-31
+T0390,Malignant neoplasm of unspecified site 56,SNOMED_CT,363346056,cancer_type,Malignant neoplasm of unspecified site 56,cancer 56,histology,2025-01-31
+T0391,Malignant neoplasm of unspecified site 57,SNOMED_CT,363346057,cancer_type,Malignant neoplasm of unspecified site 57,cancer 57,histology,2025-01-31
+T0392,Malignant neoplasm of unspecified site 58,SNOMED_CT,363346058,cancer_type,Malignant neoplasm of unspecified site 58,cancer 58,histology,2025-01-31
+T0393,Malignant neoplasm of unspecified site 59,SNOMED_CT,363346059,cancer_type,Malignant neoplasm of unspecified site 59,cancer 59,histology,2025-01-31
+T0394,Malignant neoplasm of unspecified site 60,SNOMED_CT,363346060,cancer_type,Malignant neoplasm of unspecified site 60,cancer 60,histology,2025-01-31
+T0395,Malignant neoplasm of unspecified site 61,SNOMED_CT,363346061,cancer_type,Malignant neoplasm of unspecified site 61,cancer 61,histology,2025-01-31
+T0396,Malignant neoplasm of unspecified site 62,SNOMED_CT,363346062,cancer_type,Malignant neoplasm of unspecified site 62,cancer 62,histology,2025-01-31
+T0397,Malignant neoplasm of unspecified site 63,SNOMED_CT,363346063,cancer_type,Malignant neoplasm of unspecified site 63,cancer 63,histology,2025-01-31
+T0398,Malignant neoplasm of unspecified site 64,SNOMED_CT,363346064,cancer_type,Malignant neoplasm of unspecified site 64,cancer 64,histology,2025-01-31
+T0399,Malignant neoplasm of unspecified site 65,SNOMED_CT,363346065,cancer_type,Malignant neoplasm of unspecified site 65,cancer 65,histology,2025-01-31
+T0400,Malignant neoplasm of unspecified site 66,SNOMED_CT,363346066,cancer_type,Malignant neoplasm of unspecified site 66,cancer 66,histology,2025-01-31
+T0401,Malignant neoplasm of unspecified site 67,SNOMED_CT,363346067,cancer_type,Malignant neoplasm of unspecified site 67,cancer 67,histology,2025-01-31
+T0402,Malignant neoplasm of unspecified site 68,SNOMED_CT,363346068,cancer_type,Malignant neoplasm of unspecified site 68,cancer 68,histology,2025-01-31
+T0403,Malignant neoplasm of unspecified site 69,SNOMED_CT,363346069,cancer_type,Malignant neoplasm of unspecified site 69,cancer 69,histology,2025-01-31
+T0404,Malignant neoplasm of unspecified site 70,SNOMED_CT,363346070,cancer_type,Malignant neoplasm of unspecified site 70,cancer 70,histology,2025-01-31
+T0405,Malignant neoplasm of unspecified site 71,SNOMED_CT,363346071,cancer_type,Malignant neoplasm of unspecified site 71,cancer 71,histology,2025-01-31
+T0406,Malignant neoplasm of unspecified site 72,SNOMED_CT,363346072,cancer_type,Malignant neoplasm of unspecified site 72,cancer 72,histology,2025-01-31
+T0407,Malignant neoplasm of unspecified site 73,SNOMED_CT,363346073,cancer_type,Malignant neoplasm of unspecified site 73,cancer 73,histology,2025-01-31
+T0408,Malignant neoplasm of unspecified site 74,SNOMED_CT,363346074,cancer_type,Malignant neoplasm of unspecified site 74,cancer 74,histology,2025-01-31
+T0409,Malignant neoplasm of unspecified site 75,SNOMED_CT,363346075,cancer_type,Malignant neoplasm of unspecified site 75,cancer 75,histology,2025-01-31
+T0410,Malignant neoplasm of unspecified site 76,SNOMED_CT,363346076,cancer_type,Malignant neoplasm of unspecified site 76,cancer 76,histology,2025-01-31
+T0411,Malignant neoplasm of unspecified site 77,SNOMED_CT,363346077,cancer_type,Malignant neoplasm of unspecified site 77,cancer 77,histology,2025-01-31
+T0412,Malignant neoplasm of unspecified site 78,SNOMED_CT,363346078,cancer_type,Malignant neoplasm of unspecified site 78,cancer 78,histology,2025-01-31
+T0413,Malignant neoplasm of unspecified site 79,SNOMED_CT,363346079,cancer_type,Malignant neoplasm of unspecified site 79,cancer 79,histology,2025-01-31
+T0414,Malignant neoplasm of other site 1,ICD_10_CM,C79.01,cancer_type,Malignant neoplasm of other site 1,mets 1,finding,FY2025
+T0415,Malignant neoplasm of other site 2,ICD_10_CM,C79.02,cancer_type,Malignant neoplasm of other site 2,mets 2,finding,FY2025
+T0416,Malignant neoplasm of other site 3,ICD_10_CM,C79.03,cancer_type,Malignant neoplasm of other site 3,mets 3,finding,FY2025
+T0417,Malignant neoplasm of other site 4,ICD_10_CM,C79.04,cancer_type,Malignant neoplasm of other site 4,mets 4,finding,FY2025
+T0418,Malignant neoplasm of other site 5,ICD_10_CM,C79.05,cancer_type,Malignant neoplasm of other site 5,mets 5,finding,FY2025
+T0419,Malignant neoplasm of other site 6,ICD_10_CM,C79.06,cancer_type,Malignant neoplasm of other site 6,mets 6,finding,FY2025
+T0420,Malignant neoplasm of other site 7,ICD_10_CM,C79.07,cancer_type,Malignant neoplasm of other site 7,mets 7,finding,FY2025
+T0421,Malignant neoplasm of other site 8,ICD_10_CM,C79.08,cancer_type,Malignant neoplasm of other site 8,mets 8,finding,FY2025
+T0422,Malignant neoplasm of other site 9,ICD_10_CM,C79.09,cancer_type,Malignant neoplasm of other site 9,mets 9,finding,FY2025
+T0423,Malignant neoplasm of other site 10,ICD_10_CM,C79.10,cancer_type,Malignant neoplasm of other site 10,mets 10,finding,FY2025
+T0424,Malignant neoplasm of other site 11,ICD_10_CM,C79.11,cancer_type,Malignant neoplasm of other site 11,mets 11,finding,FY2025
+T0425,Malignant neoplasm of other site 12,ICD_10_CM,C79.12,cancer_type,Malignant neoplasm of other site 12,mets 12,finding,FY2025
+T0426,Malignant neoplasm of other site 13,ICD_10_CM,C79.13,cancer_type,Malignant neoplasm of other site 13,mets 13,finding,FY2025
+T0427,Malignant neoplasm of other site 14,ICD_10_CM,C79.14,cancer_type,Malignant neoplasm of other site 14,mets 14,finding,FY2025
+T0428,Malignant neoplasm of other site 15,ICD_10_CM,C79.15,cancer_type,Malignant neoplasm of other site 15,mets 15,finding,FY2025
+T0429,Malignant neoplasm of other site 16,ICD_10_CM,C79.16,cancer_type,Malignant neoplasm of other site 16,mets 16,finding,FY2025
+T0430,Malignant neoplasm of other site 17,ICD_10_CM,C79.17,cancer_type,Malignant neoplasm of other site 17,mets 17,finding,FY2025
+T0431,Malignant neoplasm of other site 18,ICD_10_CM,C79.18,cancer_type,Malignant neoplasm of other site 18,mets 18,finding,FY2025
+T0432,Malignant neoplasm of other site 19,ICD_10_CM,C79.19,cancer_type,Malignant neoplasm of other site 19,mets 19,finding,FY2025
+T0433,Malignant neoplasm of other site 20,ICD_10_CM,C79.20,cancer_type,Malignant neoplasm of other site 20,mets 20,finding,FY2025
+T0434,Malignant neoplasm of other site 21,ICD_10_CM,C79.21,cancer_type,Malignant neoplasm of other site 21,mets 21,finding,FY2025
+T0435,Malignant neoplasm of other site 22,ICD_10_CM,C79.22,cancer_type,Malignant neoplasm of other site 22,mets 22,finding,FY2025
+T0436,Malignant neoplasm of other site 23,ICD_10_CM,C79.23,cancer_type,Malignant neoplasm of other site 23,mets 23,finding,FY2025
+T0437,Malignant neoplasm of other site 24,ICD_10_CM,C79.24,cancer_type,Malignant neoplasm of other site 24,mets 24,finding,FY2025
+T0438,Malignant neoplasm of other site 25,ICD_10_CM,C79.25,cancer_type,Malignant neoplasm of other site 25,mets 25,finding,FY2025
+T0439,Malignant neoplasm of other site 26,ICD_10_CM,C79.26,cancer_type,Malignant neoplasm of other site 26,mets 26,finding,FY2025
+T0440,Malignant neoplasm of other site 27,ICD_10_CM,C79.27,cancer_type,Malignant neoplasm of other site 27,mets 27,finding,FY2025
+T0441,Malignant neoplasm of other site 28,ICD_10_CM,C79.28,cancer_type,Malignant neoplasm of other site 28,mets 28,finding,FY2025
+T0442,Malignant neoplasm of other site 29,ICD_10_CM,C79.29,cancer_type,Malignant neoplasm of other site 29,mets 29,finding,FY2025
+T0443,Malignant neoplasm of other site 30,ICD_10_CM,C79.30,cancer_type,Malignant neoplasm of other site 30,mets 30,finding,FY2025
+T0444,Malignant neoplasm of other site 31,ICD_10_CM,C79.31,cancer_type,Malignant neoplasm of other site 31,mets 31,finding,FY2025
+T0445,Malignant neoplasm of other site 32,ICD_10_CM,C79.32,cancer_type,Malignant neoplasm of other site 32,mets 32,finding,FY2025
+T0446,Malignant neoplasm of other site 33,ICD_10_CM,C79.33,cancer_type,Malignant neoplasm of other site 33,mets 33,finding,FY2025
+T0447,Malignant neoplasm of other site 34,ICD_10_CM,C79.34,cancer_type,Malignant neoplasm of other site 34,mets 34,finding,FY2025
+T0448,Malignant neoplasm of other site 35,ICD_10_CM,C79.35,cancer_type,Malignant neoplasm of other site 35,mets 35,finding,FY2025
+T0449,Malignant neoplasm of other site 36,ICD_10_CM,C79.36,cancer_type,Malignant neoplasm of other site 36,mets 36,finding,FY2025
+T0450,Malignant neoplasm of other site 37,ICD_10_CM,C79.37,cancer_type,Malignant neoplasm of other site 37,mets 37,finding,FY2025
+T0451,Malignant neoplasm of other site 38,ICD_10_CM,C79.38,cancer_type,Malignant neoplasm of other site 38,mets 38,finding,FY2025
+T0452,Malignant neoplasm of other site 39,ICD_10_CM,C79.39,cancer_type,Malignant neoplasm of other site 39,mets 39,finding,FY2025
+T0453,Malignant neoplasm of other site 40,ICD_10_CM,C79.40,cancer_type,Malignant neoplasm of other site 40,mets 40,finding,FY2025
+T0454,Malignant neoplasm of other site 41,ICD_10_CM,C79.41,cancer_type,Malignant neoplasm of other site 41,mets 41,finding,FY2025
+T0455,Malignant neoplasm of other site 42,ICD_10_CM,C79.42,cancer_type,Malignant neoplasm of other site 42,mets 42,finding,FY2025
+T0456,Malignant neoplasm of other site 43,ICD_10_CM,C79.43,cancer_type,Malignant neoplasm of other site 43,mets 43,finding,FY2025
+T0457,Malignant neoplasm of other site 44,ICD_10_CM,C79.44,cancer_type,Malignant neoplasm of other site 44,mets 44,finding,FY2025
+T0458,Malignant neoplasm of other site 45,ICD_10_CM,C79.45,cancer_type,Malignant neoplasm of other site 45,mets 45,finding,FY2025
+T0459,Malignant neoplasm of other site 46,ICD_10_CM,C79.46,cancer_type,Malignant neoplasm of other site 46,mets 46,finding,FY2025
+T0460,Malignant neoplasm of other site 47,ICD_10_CM,C79.47,cancer_type,Malignant neoplasm of other site 47,mets 47,finding,FY2025
+T0461,Malignant neoplasm of other site 48,ICD_10_CM,C79.48,cancer_type,Malignant neoplasm of other site 48,mets 48,finding,FY2025
+T0462,Malignant neoplasm of other site 49,ICD_10_CM,C79.49,cancer_type,Malignant neoplasm of other site 49,mets 49,finding,FY2025
+T0463,Malignant neoplasm of other site 50,ICD_10_CM,C79.50,cancer_type,Malignant neoplasm of other site 50,mets 50,finding,FY2025
+T0464,Malignant neoplasm of other site 51,ICD_10_CM,C79.51,cancer_type,Malignant neoplasm of other site 51,mets 51,finding,FY2025
+T0465,Malignant neoplasm of other site 52,ICD_10_CM,C79.52,cancer_type,Malignant neoplasm of other site 52,mets 52,finding,FY2025
+T0466,Malignant neoplasm of other site 53,ICD_10_CM,C79.53,cancer_type,Malignant neoplasm of other site 53,mets 53,finding,FY2025
+T0467,Malignant neoplasm of other site 54,ICD_10_CM,C79.54,cancer_type,Malignant neoplasm of other site 54,mets 54,finding,FY2025
+T0468,Malignant neoplasm of other site 55,ICD_10_CM,C79.55,cancer_type,Malignant neoplasm of other site 55,mets 55,finding,FY2025
+T0469,Malignant neoplasm of other site 56,ICD_10_CM,C79.56,cancer_type,Malignant neoplasm of other site 56,mets 56,finding,FY2025
+T0470,Malignant neoplasm of other site 57,ICD_10_CM,C79.57,cancer_type,Malignant neoplasm of other site 57,mets 57,finding,FY2025
+T0471,Malignant neoplasm of other site 58,ICD_10_CM,C79.58,cancer_type,Malignant neoplasm of other site 58,mets 58,finding,FY2025
+T0472,Malignant neoplasm of other site 59,ICD_10_CM,C79.59,cancer_type,Malignant neoplasm of other site 59,mets 59,finding,FY2025
+T0473,Malignant neoplasm of other site 60,ICD_10_CM,C79.60,cancer_type,Malignant neoplasm of other site 60,mets 60,finding,FY2025
+T0474,Malignant neoplasm of other site 61,ICD_10_CM,C79.61,cancer_type,Malignant neoplasm of other site 61,mets 61,finding,FY2025
+T0475,Malignant neoplasm of other site 62,ICD_10_CM,C79.62,cancer_type,Malignant neoplasm of other site 62,mets 62,finding,FY2025
+T0476,Malignant neoplasm of other site 63,ICD_10_CM,C79.63,cancer_type,Malignant neoplasm of other site 63,mets 63,finding,FY2025
+T0477,Malignant neoplasm of other site 64,ICD_10_CM,C79.64,cancer_type,Malignant neoplasm of other site 64,mets 64,finding,FY2025
+T0478,Malignant neoplasm of other site 65,ICD_10_CM,C79.65,cancer_type,Malignant neoplasm of other site 65,mets 65,finding,FY2025
+T0479,Malignant neoplasm of other site 66,ICD_10_CM,C79.66,cancer_type,Malignant neoplasm of other site 66,mets 66,finding,FY2025
+T0480,Malignant neoplasm of other site 67,ICD_10_CM,C79.67,cancer_type,Malignant neoplasm of other site 67,mets 67,finding,FY2025
+T0481,Malignant neoplasm of other site 68,ICD_10_CM,C79.68,cancer_type,Malignant neoplasm of other site 68,mets 68,finding,FY2025
+T0482,Malignant neoplasm of other site 69,ICD_10_CM,C79.69,cancer_type,Malignant neoplasm of other site 69,mets 69,finding,FY2025
+T0483,Malignant neoplasm of other site 70,ICD_10_CM,C79.70,cancer_type,Malignant neoplasm of other site 70,mets 70,finding,FY2025
+T0484,Malignant neoplasm of other site 71,ICD_10_CM,C79.71,cancer_type,Malignant neoplasm of other site 71,mets 71,finding,FY2025
+T0485,Malignant neoplasm of other site 72,ICD_10_CM,C79.72,cancer_type,Malignant neoplasm of other site 72,mets 72,finding,FY2025
+T0486,Malignant neoplasm of other site 73,ICD_10_CM,C79.73,cancer_type,Malignant neoplasm of other site 73,mets 73,finding,FY2025
+T0487,Malignant neoplasm of other site 74,ICD_10_CM,C79.74,cancer_type,Malignant neoplasm of other site 74,mets 74,finding,FY2025
+T0488,Malignant neoplasm of other site 75,ICD_10_CM,C79.75,cancer_type,Malignant neoplasm of other site 75,mets 75,finding,FY2025
+T0489,Malignant neoplasm of other site 76,ICD_10_CM,C79.76,cancer_type,Malignant neoplasm of other site 76,mets 76,finding,FY2025
+T0490,Malignant neoplasm of other site 77,ICD_10_CM,C79.77,cancer_type,Malignant neoplasm of other site 77,mets 77,finding,FY2025
+T0491,Malignant neoplasm of other site 78,ICD_10_CM,C79.78,cancer_type,Malignant neoplasm of other site 78,mets 78,finding,FY2025
+T0492,Malignant neoplasm of other site 79,ICD_10_CM,C79.79,cancer_type,Malignant neoplasm of other site 79,mets 79,finding,FY2025
+T0493,Malignant neoplasm of other site 80,ICD_10_CM,C79.80,cancer_type,Malignant neoplasm of other site 80,mets 80,finding,FY2025
+T0494,Malignant neoplasm of other site 81,ICD_10_CM,C79.81,cancer_type,Malignant neoplasm of other site 81,mets 81,finding,FY2025
+T0495,Malignant neoplasm of other site 82,ICD_10_CM,C79.82,cancer_type,Malignant neoplasm of other site 82,mets 82,finding,FY2025
+T0496,Malignant neoplasm of other site 83,ICD_10_CM,C79.83,cancer_type,Malignant neoplasm of other site 83,mets 83,finding,FY2025
+T0497,Malignant neoplasm of other site 84,ICD_10_CM,C79.84,cancer_type,Malignant neoplasm of other site 84,mets 84,finding,FY2025
+T0498,Malignant neoplasm of other site 85,ICD_10_CM,C79.85,cancer_type,Malignant neoplasm of other site 85,mets 85,finding,FY2025
+T0499,Malignant neoplasm of other site 86,ICD_10_CM,C79.86,cancer_type,Malignant neoplasm of other site 86,mets 86,finding,FY2025
+T0500,Malignant neoplasm of other site 87,ICD_10_CM,C79.87,cancer_type,Malignant neoplasm of other site 87,mets 87,finding,FY2025
+T0501,Malignant neoplasm of other site 88,ICD_10_CM,C79.88,cancer_type,Malignant neoplasm of other site 88,mets 88,finding,FY2025
+T0502,Malignant neoplasm of other site 89,ICD_10_CM,C79.89,cancer_type,Malignant neoplasm of other site 89,mets 89,finding,FY2025
+T0503,Malignant neoplasm of other site 90,ICD_10_CM,C79.90,cancer_type,Malignant neoplasm of other site 90,mets 90,finding,FY2025
+T0504,Malignant neoplasm of other site 91,ICD_10_CM,C79.91,cancer_type,Malignant neoplasm of other site 91,mets 91,finding,FY2025
+T0505,Malignant neoplasm of other site 92,ICD_10_CM,C79.92,cancer_type,Malignant neoplasm of other site 92,mets 92,finding,FY2025
+T0506,Malignant neoplasm of other site 93,ICD_10_CM,C79.93,cancer_type,Malignant neoplasm of other site 93,mets 93,finding,FY2025
+T0507,Malignant neoplasm of other site 94,ICD_10_CM,C79.94,cancer_type,Malignant neoplasm of other site 94,mets 94,finding,FY2025
+T0508,Malignant neoplasm of other site 95,ICD_10_CM,C79.95,cancer_type,Malignant neoplasm of other site 95,mets 95,finding,FY2025
+T0509,Malignant neoplasm of other site 96,ICD_10_CM,C79.96,cancer_type,Malignant neoplasm of other site 96,mets 96,finding,FY2025
+T0510,Malignant neoplasm of other site 97,ICD_10_CM,C79.97,cancer_type,Malignant neoplasm of other site 97,mets 97,finding,FY2025
+T0511,Malignant neoplasm of other site 98,ICD_10_CM,C79.98,cancer_type,Malignant neoplasm of other site 98,mets 98,finding,FY2025
+T0512,Malignant neoplasm of other site 99,ICD_10_CM,C79.99,cancer_type,Malignant neoplasm of other site 99,mets 99,finding,FY2025
+T0513,Malignant neoplasm of other site 100,ICD_10_CM,C79.100,cancer_type,Malignant neoplasm of other site 100,mets 100,finding,FY2025
+T0514,Malignant neoplasm of other site 101,ICD_10_CM,C79.101,cancer_type,Malignant neoplasm of other site 101,mets 101,finding,FY2025
+T0515,Malignant neoplasm of other site 102,ICD_10_CM,C79.102,cancer_type,Malignant neoplasm of other site 102,mets 102,finding,FY2025
+T0516,Malignant neoplasm of other site 103,ICD_10_CM,C79.103,cancer_type,Malignant neoplasm of other site 103,mets 103,finding,FY2025
+T0517,Malignant neoplasm of other site 104,ICD_10_CM,C79.104,cancer_type,Malignant neoplasm of other site 104,mets 104,finding,FY2025
+T0518,Malignant neoplasm of other site 105,ICD_10_CM,C79.105,cancer_type,Malignant neoplasm of other site 105,mets 105,finding,FY2025
+T0519,Malignant neoplasm of other site 106,ICD_10_CM,C79.106,cancer_type,Malignant neoplasm of other site 106,mets 106,finding,FY2025
+T0520,Malignant neoplasm of other site 107,ICD_10_CM,C79.107,cancer_type,Malignant neoplasm of other site 107,mets 107,finding,FY2025
+T0521,Malignant neoplasm of other site 108,ICD_10_CM,C79.108,cancer_type,Malignant neoplasm of other site 108,mets 108,finding,FY2025
+T0522,Malignant neoplasm of other site 109,ICD_10_CM,C79.109,cancer_type,Malignant neoplasm of other site 109,mets 109,finding,FY2025
+T0523,Neoplasm malignant 1,ICD_O_3,8000/1,morphology,Neoplasm malignant 1,neoplasm 1,histology,Ed3.2-2025
+T0524,Neoplasm malignant 2,ICD_O_3,8000/2,morphology,Neoplasm malignant 2,neoplasm 2,histology,Ed3.2-2025
+T0525,Neoplasm malignant 3,ICD_O_3,8000/3,morphology,Neoplasm malignant 3,neoplasm 3,histology,Ed3.2-2025
+T0526,Neoplasm malignant 4,ICD_O_3,8000/4,morphology,Neoplasm malignant 4,neoplasm 4,histology,Ed3.2-2025
+T0527,Neoplasm malignant 5,ICD_O_3,8000/5,morphology,Neoplasm malignant 5,neoplasm 5,histology,Ed3.2-2025
+T0528,Neoplasm malignant 6,ICD_O_3,8000/6,morphology,Neoplasm malignant 6,neoplasm 6,histology,Ed3.2-2025
+T0529,Neoplasm malignant 7,ICD_O_3,8000/7,morphology,Neoplasm malignant 7,neoplasm 7,histology,Ed3.2-2025
+T0530,Neoplasm malignant 8,ICD_O_3,8000/8,morphology,Neoplasm malignant 8,neoplasm 8,histology,Ed3.2-2025
+T0531,Neoplasm malignant 9,ICD_O_3,8000/9,morphology,Neoplasm malignant 9,neoplasm 9,histology,Ed3.2-2025
+T0532,Neoplasm malignant 10,ICD_O_3,8000/10,morphology,Neoplasm malignant 10,neoplasm 10,histology,Ed3.2-2025
+T0533,Neoplasm malignant 11,ICD_O_3,8000/11,morphology,Neoplasm malignant 11,neoplasm 11,histology,Ed3.2-2025
+T0534,Neoplasm malignant 12,ICD_O_3,8000/12,morphology,Neoplasm malignant 12,neoplasm 12,histology,Ed3.2-2025
+T0535,Neoplasm malignant 13,ICD_O_3,8000/13,morphology,Neoplasm malignant 13,neoplasm 13,histology,Ed3.2-2025
+T0536,Neoplasm malignant 14,ICD_O_3,8000/14,morphology,Neoplasm malignant 14,neoplasm 14,histology,Ed3.2-2025
+T0537,Neoplasm malignant 15,ICD_O_3,8000/15,morphology,Neoplasm malignant 15,neoplasm 15,histology,Ed3.2-2025
+T0538,Neoplasm malignant 16,ICD_O_3,8000/16,morphology,Neoplasm malignant 16,neoplasm 16,histology,Ed3.2-2025
+T0539,Neoplasm malignant 17,ICD_O_3,8000/17,morphology,Neoplasm malignant 17,neoplasm 17,histology,Ed3.2-2025
+T0540,Neoplasm malignant 18,ICD_O_3,8000/18,morphology,Neoplasm malignant 18,neoplasm 18,histology,Ed3.2-2025
+T0541,Neoplasm malignant 19,ICD_O_3,8000/19,morphology,Neoplasm malignant 19,neoplasm 19,histology,Ed3.2-2025
+T0542,Neoplasm malignant 20,ICD_O_3,8000/20,morphology,Neoplasm malignant 20,neoplasm 20,histology,Ed3.2-2025
+T0543,Neoplasm malignant 21,ICD_O_3,8000/21,morphology,Neoplasm malignant 21,neoplasm 21,histology,Ed3.2-2025
+T0544,Neoplasm malignant 22,ICD_O_3,8000/22,morphology,Neoplasm malignant 22,neoplasm 22,histology,Ed3.2-2025
+T0545,Neoplasm malignant 23,ICD_O_3,8000/23,morphology,Neoplasm malignant 23,neoplasm 23,histology,Ed3.2-2025
+T0546,Neoplasm malignant 24,ICD_O_3,8000/24,morphology,Neoplasm malignant 24,neoplasm 24,histology,Ed3.2-2025
+T0547,Neoplasm malignant 25,ICD_O_3,8000/25,morphology,Neoplasm malignant 25,neoplasm 25,histology,Ed3.2-2025
+T0548,Neoplasm malignant 26,ICD_O_3,8000/26,morphology,Neoplasm malignant 26,neoplasm 26,histology,Ed3.2-2025
+T0549,Neoplasm malignant 27,ICD_O_3,8000/27,morphology,Neoplasm malignant 27,neoplasm 27,histology,Ed3.2-2025
+T0550,Neoplasm malignant 28,ICD_O_3,8000/28,morphology,Neoplasm malignant 28,neoplasm 28,histology,Ed3.2-2025
+T0551,Neoplasm malignant 29,ICD_O_3,8000/29,morphology,Neoplasm malignant 29,neoplasm 29,histology,Ed3.2-2025
+T0552,Neoplasm malignant 30,ICD_O_3,8000/30,morphology,Neoplasm malignant 30,neoplasm 30,histology,Ed3.2-2025
+T0553,Neoplasm malignant 31,ICD_O_3,8000/31,morphology,Neoplasm malignant 31,neoplasm 31,histology,Ed3.2-2025
+T0554,Neoplasm malignant 32,ICD_O_3,8000/32,morphology,Neoplasm malignant 32,neoplasm 32,histology,Ed3.2-2025
+T0555,Neoplasm malignant 33,ICD_O_3,8000/33,morphology,Neoplasm malignant 33,neoplasm 33,histology,Ed3.2-2025
+T0556,Neoplasm malignant 34,ICD_O_3,8000/34,morphology,Neoplasm malignant 34,neoplasm 34,histology,Ed3.2-2025
+T0557,Neoplasm malignant 35,ICD_O_3,8000/35,morphology,Neoplasm malignant 35,neoplasm 35,histology,Ed3.2-2025
+T0558,Neoplasm malignant 36,ICD_O_3,8000/36,morphology,Neoplasm malignant 36,neoplasm 36,histology,Ed3.2-2025
+T0559,Neoplasm malignant 37,ICD_O_3,8000/37,morphology,Neoplasm malignant 37,neoplasm 37,histology,Ed3.2-2025
+T0560,Neoplasm malignant 38,ICD_O_3,8000/38,morphology,Neoplasm malignant 38,neoplasm 38,histology,Ed3.2-2025
+T0561,Neoplasm malignant 39,ICD_O_3,8000/39,morphology,Neoplasm malignant 39,neoplasm 39,histology,Ed3.2-2025
+T0562,Neoplasm malignant 40,ICD_O_3,8000/40,morphology,Neoplasm malignant 40,neoplasm 40,histology,Ed3.2-2025
+T0563,Neoplasm malignant 41,ICD_O_3,8000/41,morphology,Neoplasm malignant 41,neoplasm 41,histology,Ed3.2-2025
+T0564,Neoplasm malignant 42,ICD_O_3,8000/42,morphology,Neoplasm malignant 42,neoplasm 42,histology,Ed3.2-2025
+T0565,Neoplasm malignant 43,ICD_O_3,8000/43,morphology,Neoplasm malignant 43,neoplasm 43,histology,Ed3.2-2025
+T0566,Neoplasm malignant 44,ICD_O_3,8000/44,morphology,Neoplasm malignant 44,neoplasm 44,histology,Ed3.2-2025
+T0567,Oncology lab test 1,LOINC,10001-1,biomarker,Oncology lab test 1 Presence,lab test 1,assay,2.79
+T0568,Oncology lab test 2,LOINC,10002-1,biomarker,Oncology lab test 2 Presence,lab test 2,assay,2.79
+T0569,Oncology lab test 3,LOINC,10003-1,biomarker,Oncology lab test 3 Presence,lab test 3,assay,2.79
+T0570,Oncology lab test 4,LOINC,10004-1,biomarker,Oncology lab test 4 Presence,lab test 4,assay,2.79
+T0571,Oncology lab test 5,LOINC,10005-1,biomarker,Oncology lab test 5 Presence,lab test 5,assay,2.79
+T0572,Oncology lab test 6,LOINC,10006-1,biomarker,Oncology lab test 6 Presence,lab test 6,assay,2.79
+T0573,Oncology lab test 7,LOINC,10007-1,biomarker,Oncology lab test 7 Presence,lab test 7,assay,2.79
+T0574,Oncology lab test 8,LOINC,10008-1,biomarker,Oncology lab test 8 Presence,lab test 8,assay,2.79
+T0575,Oncology lab test 9,LOINC,10009-1,biomarker,Oncology lab test 9 Presence,lab test 9,assay,2.79
+T0576,Oncology lab test 10,LOINC,100010-1,biomarker,Oncology lab test 10 Presence,lab test 10,assay,2.79
+T0577,Oncology lab test 11,LOINC,100011-1,biomarker,Oncology lab test 11 Presence,lab test 11,assay,2.79
+T0578,Oncology lab test 12,LOINC,100012-1,biomarker,Oncology lab test 12 Presence,lab test 12,assay,2.79
+T0579,Oncology lab test 13,LOINC,100013-1,biomarker,Oncology lab test 13 Presence,lab test 13,assay,2.79
+T0580,Oncology lab test 14,LOINC,100014-1,biomarker,Oncology lab test 14 Presence,lab test 14,assay,2.79

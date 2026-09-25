@@ -156,7 +156,18 @@ def evaluate(pipeline_dir: Path, gold_dir: Path, pipeline_name: str) -> dict:
     code_recall = round(m["code_matches"] / m["total_codes_gold"], 4) if m["total_codes_gold"] else 0
     code_f1 = round(2 * code_prec * code_recall / (code_prec + code_recall), 4) if (code_prec + code_recall) else 0
     unsupported_rate = round(m["unsupported_field"] / (m["ner_tp"] + m["ner_fp"] + 1), 4)
-    mean_rt = round(sum(runtimes) / n, 4) if runtimes else (t_eval / n)
+    
+    mean_rt = 0.0
+    summary_path = pipeline_dir / "_run_summary.json"
+    if summary_path.exists():
+        try:
+            summary = json.load(open(summary_path, encoding="utf-8"))
+            mean_rt = summary.get("mean_runtime_sec", 0.0)
+        except Exception:
+            pass
+    if mean_rt == 0.0:
+        mean_rt = round(sum(runtimes) / n, 4) if sum(runtimes) > 0 else (t_eval / n)
+        
     mean_cost = round(sum(costs) / n, 6) if costs else 0.0
 
     result = {
@@ -293,7 +304,7 @@ if __name__ == "__main__":
         f"*Generated: {__import__('datetime').datetime.utcnow().isoformat()}Z*\n\n"
         + table + "\n", encoding="utf-8"
     )
-    print(f"\nComparison table → {table_path}")
+    print(f"\nComparison table -> {table_path}")
     print("\n" + table)
 
     # results.json
@@ -302,7 +313,7 @@ if __name__ == "__main__":
         json.dumps({"pipeline_a": res_a, "pipeline_b": res_b}, indent=2),
         encoding="utf-8"
     )
-    print(f"Raw results → {results_path}")
+    print(f"Raw results -> {results_path}")
 
     # per_field CSV
     csv_path = EVAL_DIR / "per_field_results.csv"
