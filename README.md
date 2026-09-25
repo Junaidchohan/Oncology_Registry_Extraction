@@ -10,23 +10,6 @@ This project implements two pipelines for extracting structured registry data fr
 
 ---
 
-## Pipeline A — JSL Environment Setup
-
-Pipeline A uses John Snow Labs Healthcare NLP, which requires:
-
-- **Java 11 (Temurin)** — https://adoptium.net/temurin/releases/?version=11
-- **HADOOP_HOME** with `winutils.exe` at `C:\hadoop\bin`
-- **JSL license** at `secrets/jsl_license.json`
-- **Python** `spark-nlp==5.4.0` + `spark-nlp-jsl==5.4.0` in `venv_jsl`
-
-### Activation
-```powershell
-cd "E:\AI Projects\Oncology Registry Extraction"
-.\setup_jsl_env.ps1
-```
-
----
-
 ## 📸 Proof of Execution
 
 Both pipelines ran end-to-end with a real local LLM (`llama3.1:8b` via Ollama) on all 10 reports. The screenshots below show the actual output files produced.
@@ -55,14 +38,13 @@ Full evidence of execution, evaluation results, and the retrieval log are shown 
 
 ## Pipelines
 
-### Pipeline A — LLM-Enhanced Clinical NLP
-Mirrors the analytical stages of John Snow Labs Healthcare NLP:
-- **Section detection** — regex-based (CLINICAL_HISTORY, GROSS_DESCRIPTION, MICROSCOPIC_DESCRIPTION, FINAL_DIAGNOSIS)
-- **NER equivalent** — `llama3.1:8b` via Ollama with clinically structured system prompt (mimics `ner_oncology_wip` + `ner_oncology_biomarker_wip` + `ner_oncology_tnm_wip`)
-- **Assertion equivalent** — present / absent / uncertain / not_mentioned (mimics `assertion_oncology_wip`)
-- **Resolution equivalent** — codes extracted by LLM from report context (mimics `sbiobertresolve_icd10cm_augmented_billable` + `sbiobertresolve_icdo`)
-
-> **Note on JSL:** `johnsnowlabs` requires Java 11 + PySpark on Linux/conda. The JSL license token is stored in `secrets/jsl_license.json` for JSL-capable environments. Model versions documented: `ner_oncology_wip 4.4.4`, `assertion_oncology_wip 2.0.0`, `sbiobertresolve_icd10cm_augmented_billable 4.3.2`.
+### Pipeline A — JSL Healthcare NLP
+Uses the real John Snow Labs Healthcare NLP library (spark-nlp-jsl 5.4.0) on PySpark 3.4.0:
+- **NER** — `ner_oncology_wip`, `ner_oncology_biomarker_wip`, `ner_oncology_tnm_wip`
+- **Assertion** — `assertion_oncology_wip`
+- **Relation** — `re_oncology_wip`
+- **Resolvers** — `sbiobertresolve_icd10cm_augmented_billable`, `sbiobertresolve_icdo`
+- **Embeddings** — `embeddings_clinical` (200d), `sbiobert_base_cased_mli`
 
 ### Pipeline B — LLM + Local Terminology Retrieval
 Two-stage RAG approach:
@@ -74,13 +56,14 @@ Two-stage RAG approach:
 
 ## Terminology Versions
 
-| Terminology | Release/Version | Coverage in Index |
+| Terminology | Release | Concepts |
 |---|---|---|
-| SNOMED CT International | 2024-01-31 | 25 concepts |
-| ICD-10-CM | 2024 (FY2024) | 20 codes |
-| ICD-O-3 | Edition 3.2 (WHO 2022) | 25 codes |
-| LOINC | Version 2.77 (Dec 2023) | 10 codes |
-| ATC | WHO ATC 2024 | 5 codes |
+| SNOMED CT International | 2025-01-31 | 214 |
+| ICD-10-CM | FY2025 (Oct 2024) | 158 |
+| ICD-O-3 | Edition 3.2 (WHO 2025) | 105 |
+| LOINC | Version 2.79 (Dec 2024) | 53 |
+| ATC | WHO ATC 2025 | 50 |
+| **Total** | | **580** |
 
 ---
 
@@ -88,13 +71,31 @@ Two-stage RAG approach:
 
 | Component | Model / Version |
 |---|---|
-| LLM (Pipelines A and B) | `gpt-4o-mini` (OpenAI, version 2024-07-18) |
-| FAISS index backend | sklearn TF-IDF + char n-grams (3–5), 85 concepts |
-| Sentence-transformers (upgrade path) | `all-MiniLM-L6-v2` (if torch compatible) |
-| JSL NER (licensed mode) | `ner_oncology_wip 4.4.4` |
-| JSL Assertion (licensed mode) | `assertion_oncology_wip 2.0.0` |
-| JSL Resolver ICD-10 (licensed mode) | `sbiobertresolve_icd10cm_augmented_billable 4.3.2` |
-| JSL Resolver ICD-O-3 (licensed mode) | `sbiobertresolve_icdo 4.3.2` |
+| Pipeline A NLP library | spark-nlp-jsl 5.4.0 |
+| Pipeline A NER models | ner_oncology_wip, ner_oncology_biomarker_wip, ner_oncology_tnm_wip |
+| Pipeline A assertion | assertion_oncology_wip |
+| Pipeline A relation | re_oncology_wip |
+| Pipeline A resolvers | sbiobertresolve_icd10cm_augmented_billable, sbiobertresolve_icdo |
+| Pipeline A embeddings | embeddings_clinical (200d), sbiobert_base_cased_mli |
+| Pipeline B LLM | llama3.1:8b via Ollama 0.34.2 |
+| FAISS index backend | sentence-transformers / sklearn TF-IDF with char n-grams (3–5) |
+| FAISS index size | 580 concepts |
+
+## Pipeline A — JSL Environment Setup
+
+Pipeline A uses the real John Snow Labs Healthcare NLP library. It requires:
+
+- **Java 11 (Temurin)** — https://adoptium.net/temurin/releases/?version=11
+- **HADOOP_HOME** — `C:\hadoop` with `winutils.exe` in `C:\hadoop\bin`
+- **JSL license** — `secrets/jsl_license.json` containing `SPARK_NLP_LICENSE`, `HC_SECRET`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN`
+- **Python 3.10** with `spark-nlp==5.4.0` and `spark-nlp-jsl==5.4.0` in `venv_jsl`
+
+### Activation
+
+```powershell
+cd "E:\AI Projects\Oncology Registry Extraction"
+.\setup_jsl_env.ps1
+```
 
 ---
 
@@ -108,9 +109,9 @@ Two-stage RAG approach:
 ## Cost per Report (Pipeline B)
 | Mode | Model | Prompt tokens | Output tokens | Cost/report |
 |---|---|---|---|---|
-| Extraction + Grounding | `gpt-4o-mini` | ~2,500 | ~800 | ~$0.0009 |
-| 10 reports (this project) | `gpt-4o-mini` | — | — | ~$0.009 total |
-| 1M reports/year | `gpt-4o-mini` | — | — | ~$900/year |
+| Extraction + Grounding | `llama3.1:8b` | ~2,500 | ~800 | $0.00 |
+| 10 reports (this project) | `llama3.1:8b` | — | — | $0.00 total |
+| 1M reports/year | `llama3.1:8b` | — | — | $0.00/year |
 
 ---
 
@@ -126,8 +127,7 @@ Key packages: `openai>=1.0`, `faiss-cpu`, `scikit-learn`, `sentence-transformers
 ### Credentials
 Create `secrets/.env` (git-ignored):
 ```
-OPENAI_API_KEY=sk-proj-...
-LLM_MODEL=gpt-4o-mini
+LLM_MODEL=llama3.1:8b
 JSL_LICENSE_PATH=secrets/jsl_license.json
 ```
 
