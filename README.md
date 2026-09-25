@@ -1,6 +1,6 @@
 # Oncology Registry Extraction
 
-> **Gold Standard Disclaimer:** The gold annotations in data/gold/ were created by the candidate using gpt-4o-mini to author synthetic reports and their reference values. Pipeline A uses the John Snow Labs Healthcare NLP library (spark-nlp-jsl 5.4.0). Pipeline B uses llama3.1:8b via Ollama. Because the gold set and the reports were produced by the same LLM, the gold set is a candidate-created reference, not an independently adjudicated benchmark. Field-level accuracy figures measure internal consistency between LLM-generated artifacts, not external clinical validity.
+> **Gold Standard Disclaimer:** The gold annotations in data/gold/ were authored by the candidate using a local LLM to produce the synthetic reports and their reference values. Pipeline A uses the John Snow Labs Healthcare NLP library (spark-nlp-jsl 5.4.0). Pipeline B uses llama3.1:8b via Ollama. Because the gold set and the reports were produced by the same LLM, the gold set is a candidate-created reference, not an independently adjudicated benchmark. Field-level accuracy figures measure internal consistency between LLM-generated artifacts, not external clinical validity.
 >
 > **Credentials:** API keys and JSL license tokens live in `secrets/` (git-ignored). Never committed.
 
@@ -37,7 +37,7 @@ Uses the real John Snow Labs Healthcare NLP library (spark-nlp-jsl 5.4.0) on PyS
 - **NER** — `ner_oncology_wip`, `ner_oncology_biomarker_wip`, `ner_oncology_tnm_wip`
 - **Assertion** — `assertion_oncology_wip`
 - **Relation** — `re_oncology_wip`
-- **Resolvers** — `sbiobertresolve_icd10cm_augmented_billable`, `sbiobertresolve_icdo`
+- **Resolvers** — `sbiobertresolve_icd10cm`, `sbiobertresolve_icdo_base`
 - **Embeddings** — `embeddings_clinical` (200d), `sbiobert_base_cased_mli`
 
 ### Pipeline B — LLM + Local Terminology Retrieval
@@ -69,7 +69,7 @@ Two-stage RAG approach:
 | Pipeline A NER models | ner_oncology_wip, ner_oncology_biomarker_wip, ner_oncology_tnm_wip |
 | Pipeline A assertion | assertion_oncology_wip |
 | Pipeline A relation | re_oncology_wip |
-| Pipeline A resolvers | sbiobertresolve_icd10cm_augmented_billable, sbiobertresolve_icdo |
+| Pipeline A resolvers | sbiobertresolve_icd10cm, sbiobertresolve_icdo_base |
 | Pipeline A embeddings | embeddings_clinical (200d), sbiobert_base_cased_mli |
 | Pipeline B LLM | llama3.1:8b via Ollama 0.34.2 |
 | FAISS index backend | sentence-transformers / sklearn TF-IDF char n-grams (3-5) |

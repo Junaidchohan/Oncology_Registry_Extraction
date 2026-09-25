@@ -19,8 +19,8 @@
     "assertion_oncology_wip",
     "re_oncology_wip",
     "sbiobert_base_cased_mli",
-    "sbiobertresolve_icd10cm_augmented_billable",
-    "sbiobertresolve_icdo"
+    "sbiobertresolve_icd10cm",
+    "sbiobertresolve_icdo_base"
   ],
   "run_timestamp": "2026-09-25T10:16:36.104879+00:00"
 }

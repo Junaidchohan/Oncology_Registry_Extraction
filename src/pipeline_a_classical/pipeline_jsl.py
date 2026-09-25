@@ -18,8 +18,8 @@ Stage chain
 6.  AssertionDLModel           (assertion_oncology_wip)
 7.  RelationExtractionModel    (re_oncology_wip)
     PerceptronModel (POS)  + DependencyParserModel  (required by RE)
-8a. SentenceEntityResolverModel (sbiobertresolve_icd10cm_augmented_billable)
-8b. SentenceEntityResolverModel (sbiobertresolve_icdo)
+8a. SentenceEntityResolverModel (sbiobertresolve_icd10cm)
+8b. SentenceEntityResolverModel (sbiobertresolve_icdo_base)
     BertSentenceEmbeddings     (sbiobert_base_cased_mli)
     Chunk2Doc                  -- adaptor for sentence embeddings
 9.  Field assembly into 21-field schema (src/common/schema.py)

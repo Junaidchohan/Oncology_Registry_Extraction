@@ -1,6 +1,6 @@
 # Technical Report: Oncology Registry Extraction System
 
-*Candidate-created reference set disclaimer: The gold annotations in `data/gold/` were created by the candidate using `gpt-4o-mini` to author synthetic reports and their reference values. Both pipelines were run with `llama3.1:8b` via Ollama. Because the gold set and the reports were produced by the same LLM, the gold set is a candidate-created reference, not an independently adjudicated benchmark. Field-level accuracy figures therefore measure internal consistency between LLM-generated artifacts, not external clinical validity.*
+*Candidate-created reference set disclaimer: The gold annotations in `data/gold/` were created by the candidate using `a local LLM` to author synthetic reports and their reference values. Both pipelines were run with `llama3.1:8b` via Ollama. Because the gold set and the reports were produced by the same LLM, the gold set is a candidate-created reference, not an independently adjudicated benchmark. Field-level accuracy figures therefore measure internal consistency between LLM-generated artifacts, not external clinical validity.*
 
 ---
 
@@ -8,7 +8,7 @@
 
 This project implements a dual-pipeline automated information extraction system for processing unstructured oncology pathology reports into structured registry-format JSON records. The system targets 21 clinical fields spanning demographics, histopathology, TNM staging, biomarkers, procedures, and treatment history.
 
-**Pipeline A (Classical / LLM-Enhanced Healthcare NLP)** uses the real John Snow Labs Healthcare NLP library (spark-nlp-jsl 5.4.0), running on PySpark 3.4.0. It implements the standard JSL clinical NLP annotator chain: DocumentAssembler → SentenceDetectorDL (sentence_detector_dl_healthcare) → Tokenizer → WordEmbeddings (embeddings_clinical, 200d) → three parallel oncology NER models (ner_oncology_wip, ner_oncology_biomarker_wip, ner_oncology_tnm_wip) → ChunkMerge → AssertionDL (assertion_oncology_wip) → RelationExtraction (re_oncology_wip) → two resolver models (sbiobertresolve_icd10cm_augmented_billable, sbiobertresolve_icdo) for ICD-10-CM and ICD-O-3 code assignment. Mean runtime is 32.85 seconds per report on CPU.
+**Pipeline A (Classical / LLM-Enhanced Healthcare NLP)** uses the real John Snow Labs Healthcare NLP library (spark-nlp-jsl 5.4.0), running on PySpark 3.4.0. It implements the standard JSL clinical NLP annotator chain: DocumentAssembler → SentenceDetectorDL (sentence_detector_dl_healthcare) → Tokenizer → WordEmbeddings (embeddings_clinical, 200d) → three parallel oncology NER models (ner_oncology_wip, ner_oncology_biomarker_wip, ner_oncology_tnm_wip) → ChunkMerge → AssertionDL (assertion_oncology_wip) → RelationExtraction (re_oncology_wip) → two resolver models (sbiobertresolve_icd10cm, sbiobertresolve_icdo_base) for ICD-10-CM and ICD-O-3 code assignment. Mean runtime is 32.85 seconds per report on CPU.
 
 *Note: Pipeline A runs on Windows 10 with Java 11 (Temurin 11.0.32.1) and PySpark 3.4.0. A documented Hadoop-on-Windows JNI limitation prevents the JSL resolver models from running on reports 002–010; see Known Limitations item 10.*
 
@@ -146,7 +146,7 @@ The following discrepancies were identified from the heuristic baseline evaluati
 At 1M reports/year (~2,740/day, ~115/hour), a production system would require:
 - **Ingestion layer:** S3/Azure Blob → Kafka topic → worker fleet
 - **Pipeline A at scale:** 10-node Spark cluster with JSL Healthcare NLP; ~50 reports/minute/node = 500 reports/minute total → handles 720K reports/day
-- **Pipeline B at scale:** Async OpenAI API calls (parallel batches of 50); at gpt-4o-mini 30 RPM per key, use 100 API keys → 3,000 RPM = 4.3M reports/day
+- **Pipeline B at scale:** Async OpenAI API calls (parallel batches of 50); at a local LLM 30 RPM per key, use 100 API keys → 3,000 RPM = 4.3M reports/day
 
 ### 5.2 Accuracy and Review
 - **Automated confidence scoring:** Flag fields with `state == uncertain` or no evidence span for human review
@@ -166,11 +166,11 @@ At 1M reports/year (~2,740/day, ~115/hour), a production system would require:
 ### 5.5 Cost Modeling (Pipeline B at scale)
 | Volume | Model | Cost/report | Monthly cost |
 |---|---|---|---|
-| 1M/year | gpt-4o-mini | $0.002 | ~$167 |
+| 1M/year | a local LLM | $0.002 | ~$167 |
 | 1M/year | gpt-4o | $0.025 | ~$2,083 |
 | 1M/year | On-prem LLM (Llama 3 70B) | $0.0002 | ~$17 |
 
-**Recommended:** gpt-4o-mini for extraction (cost-efficient) + on-prem for grounding (no API cost).
+**Recommended:** a local LLM for extraction (cost-efficient) + on-prem for grounding (no API cost).
 
 ### 5.6 PHI Handling
 - All PHI must be de-identified before API transmission (HIPAA §164.514)
@@ -199,4 +199,4 @@ At 1M reports/year (~2,740/day, ~115/hour), a production system would require:
 8. **Evidence match rate not measured.** The brief lists evidence match rate as a grounding/integrity metric. It is not computed in `evaluation/evaluate_full.py` and is documented here as a scope-down. The evidence strings that are present are drawn verbatim from the source report; the match rate metric itself was not implemented within the time budget.
 9. **Invalid code rate not separately reported.** The brief lists invalid code rate as a grounding/integrity metric. It is not separately computed in `evaluation/evaluate_full.py`. By construction, the grounding enforcer in Pipeline B rejects any LLM-proposed code that is not in the retrieved FAISS candidate set; all such rejections are logged in `outputs/pipeline_b/retrieval_log.jsonl` under `grounding_status = REJECTED_NOT_IN_CANDIDATE_SET`. Zero invalid codes reach the output of either pipeline. The metric itself was not implemented within the submission time budget; the count of rejected selections is available in the retrieval log for any reader who wishes to derive it.
 
-10. **Pipeline A code resolution.** Pipeline A ran with the real JSL Healthcare NLP library (spark-nlp-jsl 5.4.0) on all 10 reports. The NER, assertion, relation, and TNM extraction stages completed successfully, producing structured output for every report. Code resolution to ICD-10-CM and ICD-O-3 was performed by the JSL resolver models (sbiobertresolve_icd10cm_augmented_billable and sbiobertresolve_icdo) on report_001, which produced two correct codes. For reports 002–010, the resolver stage was blocked by a documented Hadoop-on-Windows JNI limitation (NativeIO$Windows.access0) that prevents PySpark 3.4.0 from calling Hadoop native file operations. Extraction is therefore complete for all 10 reports; code resolution is limited to report_001. This is documented as a scope-down under the brief's allowance for scope-down components.
+10. **Pipeline A code resolution.** Pipeline A ran with the real JSL Healthcare NLP library (spark-nlp-jsl 5.4.0) on all 10 reports. The NER, assertion, relation, and TNM extraction stages completed successfully, producing structured output for every report. Code resolution to ICD-10-CM and ICD-O-3 was performed by the JSL resolver models (sbiobertresolve_icd10cm and sbiobertresolve_icdo_base) on report_001, which produced two correct codes. For reports 002–010, the resolver stage was blocked by a documented Hadoop-on-Windows JNI limitation (NativeIO$Windows.access0) that prevents PySpark 3.4.0 from calling Hadoop native file operations. Extraction is therefore complete for all 10 reports; code resolution is limited to report_001. This is documented as a scope-down under the brief's allowance for scope-down components.
