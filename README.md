@@ -26,6 +26,8 @@ This project implements two pipelines for extracting structured registry data fr
 | Mean runtime per report | 32.85s | 692.10s |
 | Cost per report | $0.00 | $0.00 |
 
+![Comparison table](docs/screenshots/13_comparison_table.png)
+
 ---
 
 ## Pipelines

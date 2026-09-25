@@ -163,6 +163,8 @@ Final evaluation results after running both pipelines on all 10 reports:
 | Mean runtime per report | 32.85s | 692.10s |
 | Cost per report | $0.00 | $0.00 |
 
+![Comparison table](docs/screenshots/13_comparison_table.png)
+
 
 
 ---
