@@ -1,91 +1,82 @@
 {
   "report_id": "report_006",
   "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-23T20:33:36.477610+00:00",
+  "run_timestamp": "2026-09-25T10:14:25.494777+00:00",
   "model_versions": {
-    "mode": "llm_enhanced_clinical_nlp",
-    "llm_model": "llama3.1:8b",
-    "provider": "OpenAI",
-    "jsl_note": "johnsnowlabs package not installed in this environment. LLM used as analytical equivalent of JSL NER + Assertion + Resolution pipeline. JSL license token stored in secrets/jsl_license.json for JSL-capable environments.",
-    "ner_equivalent": "ner_oncology_wip + ner_oncology_biomarker_wip + ner_oncology_tnm_wip",
-    "assertion_equivalent": "assertion_oncology_wip",
-    "resolution_equivalent": "sbiobertresolve_icd10cm_augmented_billable + sbiobertresolve_icdo",
-    "tokens_in": 0,
-    "tokens_out": 0,
-    "cost_usd": 0.0,
-    "elapsed_sec": 933.026
+    "spark_nlp": "5.4.0",
+    "spark_nlp_jsl": "5.4.0",
+    "ner_oncology": "ner_oncology_wip",
+    "ner_biomarker": "ner_oncology_biomarker_wip",
+    "ner_tnm": "ner_oncology_tnm_wip",
+    "assertion": "assertion_oncology_wip",
+    "relation": "re_oncology_wip",
+    "resolver_icd10": "sbiobertresolve_icd10cm_augmented_billable",
+    "resolver_icdo": "sbiobertresolve_icdo",
+    "embeddings": "embeddings_clinical",
+    "sentence_embeddings": "sbiobert_base_cased_mli",
+    "mode": "licensed_jsl_real"
   },
   "fields": {
     "primary_site": {
-      "value": "Left lung",
+      "value": "interlobar lymph nodes",
       "unit": null,
       "state": "present",
-      "evidence": "Left lung, left upper lobectomy:",
+      "evidence": "interlobar lymph nodes",
       "span": [
-        0,
-        13
+        666,
+        687
       ],
-      "codes": {
-        "ICD-O-3": "8140/3",
-        "ICD-10": "C34.0",
-        "SNOMED": "http://snomed.info/sct"
-      }
+      "codes": {}
     },
     "histology_type": {
-      "value": "Squamous cell carcinoma",
+      "value": "nodule",
       "unit": null,
       "state": "present",
-      "evidence": "Poorly differentiated squamous cell carcinoma (SCC)",
+      "evidence": "nodule",
       "span": [
-        123,
-        144
+        129,
+        134
       ],
-      "codes": {
-        "ICD-O-3": "8070/3",
-        "ICD-10": "C01.0"
-      }
+      "codes": {}
     },
     "tumor_grade": {
-      "value": "3",
+      "value": "Poorly differentiated",
       "unit": null,
       "state": "present",
-      "evidence": "Nottingham equivalent Grade 3",
+      "evidence": "Poorly differentiated",
       "span": [
-        157,
-        161
+        840,
+        860
       ],
       "codes": {}
     },
     "clinical_stage": {
-      "value": "IIB",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
-      "span": [
-        246,
-        253
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "pathologic_stage": {
       "value": "pT3 pN0 pM0",
       "unit": null,
       "state": "present",
-      "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule)",
+      "evidence": "pT3 pN0 pM0",
       "span": [
-        238,
-        253
+        2107,
+        2117
       ],
       "codes": {}
     },
     "tumor_size": {
-      "value": "3.5",
-      "unit": "cm",
+      "value": "35.0",
+      "unit": "mm",
       "state": "present",
-      "evidence": "Lesion 1: Poorly differentiated squamous cell carcinoma, 3.5 cm",
+      "evidence": "3.5 cm",
       "span": [
-        134,
-        141
+        99,
+        104
       ],
       "codes": {}
     },
@@ -93,147 +84,126 @@
       "value": "Left",
       "unit": null,
       "state": "present",
-      "evidence": "Left lung, left upper lobectomy:",
-      "span": [
-        0,
-        13
-      ],
+      "evidence": "Laterality from report text",
+      "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": "Negative",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Bronchial margin: negative",
-      "span": [
-        193,
-        201
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "12",
       "unit": null,
       "state": "present",
-      "evidence": "Lymph nodes: 12 hilar and interlobar lymph nodes examined",
-      "span": [
-        173,
-        185
-      ],
+      "evidence": "0/12",
+      "span": null,
       "codes": {}
     },
     "lymph_nodes_positive": {
       "value": "0",
       "unit": null,
       "state": "present",
-      "evidence": "Lymph nodes: 0/12 (pN0)",
-      "span": [
-        193,
-        203
-      ],
+      "evidence": "0/12",
+      "span": null,
       "codes": {}
     },
     "lymphovascular_invasion": {
       "value": "Absent",
       "unit": null,
-      "state": "present",
-      "evidence": "No lymphovascular invasion identified",
-      "span": [
-        161,
-        173
-      ],
+      "state": "absent",
+      "evidence": "No lymphovascular invasion",
+      "span": null,
       "codes": {}
     },
     "perineural_invasion": {
       "value": "Absent",
       "unit": null,
-      "state": "present",
-      "evidence": "Perineural invasion: absent",
-      "span": [
-        173,
-        185
-      ],
+      "state": "absent",
+      "evidence": "No perineural invasion",
+      "span": null,
       "codes": {}
     },
     "distant_metastasis": {
-      "value": "Absent",
+      "value": "metastases",
       "unit": null,
-      "state": "present",
-      "evidence": "No evidence of distant metastasis",
+      "state": "absent",
+      "evidence": "metastases",
       "span": [
-        203,
-        217
+        260,
+        269
       ],
       "codes": {}
     },
     "er_status": {
-      "value": "Not applicable",
+      "value": "ER",
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "ER, PR, HER2, KRAS, EGFR: not applicable (squamous cell carcinoma)",
+      "state": "present",
+      "evidence": "ER",
       "span": [
-        244,
-        262
+        2153,
+        2154
       ],
       "codes": {}
     },
     "pr_status": {
-      "value": "Not applicable",
+      "value": "PR",
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "ER, PR, HER2, KRAS, EGFR: not applicable (squamous cell carcinoma)",
+      "state": "present",
+      "evidence": "PR",
       "span": [
-        244,
-        262
+        2157,
+        2158
       ],
       "codes": {}
     },
     "her2_status": {
-      "value": "Not applicable",
+      "value": null,
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "ER, PR, HER2, KRAS, EGFR: not applicable (squamous cell carcinoma)",
-      "span": [
-        244,
-        262
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "kras_mutation": {
-      "value": "Not applicable",
+      "value": "KRAS",
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "ER, PR, HER2, KRAS, EGFR: not applicable (squamous cell carcinoma)",
+      "state": "present",
+      "evidence": "KRAS",
       "span": [
-        244,
-        262
+        1617,
+        1620
       ],
       "codes": {}
     },
     "egfr_mutation": {
-      "value": "Not applicable",
+      "value": "EGFR",
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "ER, PR, HER2, KRAS, EGFR: not applicable (squamous cell carcinoma)",
+      "state": "present",
+      "evidence": "EGFR",
       "span": [
-        244,
-        262
+        1611,
+        1614
       ],
       "codes": {}
     },
     "procedure_type": {
-      "value": "Lobectomy",
+      "value": "upper lobectomy",
       "unit": null,
       "state": "present",
-      "evidence": "Referred for left upper lobectomy.",
+      "evidence": "upper lobectomy",
       "span": [
-        29,
-        40
+        290,
+        304
       ],
       "codes": {}
     },
     "prior_treatment": {
-      "value": "None",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -241,14 +211,11 @@
       "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "Single",
+      "value": "Multiple",
       "unit": null,
       "state": "present",
-      "evidence": "Lesion 1: Poorly differentiated squamous cell carcinoma, 3.5 cm",
-      "span": [
-        134,
-        141
-      ],
+      "evidence": "satellite nodule",
+      "span": null,
       "codes": {}
     }
   }

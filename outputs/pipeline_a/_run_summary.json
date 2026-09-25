@@ -1,101 +1,26 @@
 {
-  "pipeline": "Pipeline A (LLM-Enhanced Clinical NLP)",
-  "model": "llama3.1:8b",
+  "pipeline": "pipeline_a_classical_jsl",
   "n_reports": 10,
-  "total_cost_usd": 0.0,
-  "mean_cost_per_report_usd": 0.0,
-  "mean_runtime_sec": 1002.5357495069504,
-  "mean_fields_populated": 19.1,
-  "per_report": [
-    {
-      "report_id": "report_001",
-      "fields_populated": 21,
-      "fields_coded": 2,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0,
-      "elapsed_sec": 1002.937262058258
-    },
-    {
-      "report_id": "report_002",
-      "fields_populated": 21,
-      "fields_coded": 21,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0,
-      "elapsed_sec": 1685.680606842041
-    },
-    {
-      "report_id": "report_003",
-      "fields_populated": 19,
-      "fields_coded": 2,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0,
-      "elapsed_sec": 1275.7621381282806
-    },
-    {
-      "report_id": "report_004",
-      "fields_populated": 18,
-      "fields_coded": 2,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0,
-      "elapsed_sec": 671.9434480667114
-    },
-    {
-      "report_id": "report_005",
-      "fields_populated": 21,
-      "fields_coded": 2,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0,
-      "elapsed_sec": 770.4535953998566
-    },
-    {
-      "report_id": "report_006",
-      "fields_populated": 21,
-      "fields_coded": 2,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0,
-      "elapsed_sec": 933.0273489952087
-    },
-    {
-      "report_id": "report_007",
-      "fields_populated": 21,
-      "fields_coded": 2,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0,
-      "elapsed_sec": 900.8526184558868
-    },
-    {
-      "report_id": "report_008",
-      "fields_populated": 21,
-      "fields_coded": 2,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0,
-      "elapsed_sec": 1097.9853847026825
-    },
-    {
-      "report_id": "report_009",
-      "fields_populated": 7,
-      "fields_coded": 2,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0,
-      "elapsed_sec": 817.8870596885681
-    },
-    {
-      "report_id": "report_010",
-      "fields_populated": 21,
-      "fields_coded": 2,
-      "tokens_in": 0,
-      "tokens_out": 0,
-      "cost_usd": 0.0,
-      "elapsed_sec": 868.8280327320099
-    }
-  ]
+  "n_success": 10,
+  "n_failure": 0,
+  "failed_reports": [],
+  "mean_runtime_sec": 32.85,
+  "mean_fields_populated": 13.2,
+  "cost_usd": 0.0,
+  "model_name": "llama3.1:8b",
+  "spark_nlp_version": "5.4.0",
+  "spark_nlp_jsl_version": "5.4.0",
+  "models_used": [
+    "sentence_detector_dl_healthcare",
+    "embeddings_clinical",
+    "ner_oncology_wip",
+    "ner_oncology_biomarker_wip",
+    "ner_oncology_tnm_wip",
+    "assertion_oncology_wip",
+    "re_oncology_wip",
+    "sbiobert_base_cased_mli",
+    "sbiobertresolve_icd10cm_augmented_billable",
+    "sbiobertresolve_icdo"
+  ],
+  "run_timestamp": "2026-09-25T10:16:36.104879+00:00"
 }

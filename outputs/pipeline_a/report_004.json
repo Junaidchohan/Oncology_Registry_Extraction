@@ -1,84 +1,56 @@
 {
   "report_id": "report_004",
   "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-23T20:05:12.975031+00:00",
+  "run_timestamp": "2026-09-25T10:13:14.259740+00:00",
   "model_versions": {
-    "mode": "llm_enhanced_clinical_nlp",
-    "llm_model": "llama3.1:8b",
-    "provider": "OpenAI",
-    "jsl_note": "johnsnowlabs package not installed in this environment. LLM used as analytical equivalent of JSL NER + Assertion + Resolution pipeline. JSL license token stored in secrets/jsl_license.json for JSL-capable environments.",
-    "ner_equivalent": "ner_oncology_wip + ner_oncology_biomarker_wip + ner_oncology_tnm_wip",
-    "assertion_equivalent": "assertion_oncology_wip",
-    "resolution_equivalent": "sbiobertresolve_icd10cm_augmented_billable + sbiobertresolve_icdo",
-    "tokens_in": 0,
-    "tokens_out": 0,
-    "cost_usd": 0.0,
-    "elapsed_sec": 671.941
+    "spark_nlp": "5.4.0",
+    "spark_nlp_jsl": "5.4.0",
+    "ner_oncology": "ner_oncology_wip",
+    "ner_biomarker": "ner_oncology_biomarker_wip",
+    "ner_tnm": "ner_oncology_tnm_wip",
+    "assertion": "assertion_oncology_wip",
+    "relation": "re_oncology_wip",
+    "resolver_icd10": "sbiobertresolve_icd10cm_augmented_billable",
+    "resolver_icdo": "sbiobertresolve_icdo",
+    "embeddings": "embeddings_clinical",
+    "sentence_embeddings": "sbiobert_base_cased_mli",
+    "mode": "licensed_jsl_real"
   },
   "fields": {
     "primary_site": {
       "value": "breast",
       "unit": null,
       "state": "present",
-      "evidence": "Right breast, upper inner quadrant",
+      "evidence": "breast",
       "span": [
-        null,
-        null
+        72,
+        77
       ],
-      "codes": {
-        "ICD-O-3": "8500/3",
-        "ICD-10": "C50.4",
-        "SNOMED": "http://snomed.info/sct"
-      }
+      "codes": {}
     },
     "histology_type": {
-      "value": "invasive ductal carcinoma",
+      "value": "mass",
       "unit": null,
       "state": "present",
-      "evidence": "The morphology is consistent with invasive ductal carcinoma (IDC), NST",
+      "evidence": "mass",
       "span": [
-        null,
-        null
+        79,
+        82
       ],
-      "codes": {
-        "ICD-O-3": "8500/3",
-        "ICD-10": "C50.4"
-      }
+      "codes": {}
     },
     "tumor_grade": {
-      "value": "3",
+      "value": "Nottingham Grade 3",
       "unit": null,
       "state": "present",
       "evidence": "Nottingham Grade 3",
       "span": [
-        null,
-        null
+        656,
+        673
       ],
       "codes": {}
     },
     "clinical_stage": {
-      "value": "not_applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Note: Clinical staging, margins, lymph node status: not applicable on core biopsy specimen",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "pathologic_stage": {
-      "value": "not_applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Pathologic staging: cannot be determined on biopsy alone",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "tumor_size": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",
@@ -86,46 +58,59 @@
       "span": null,
       "codes": {}
     },
-    "laterality": {
-      "value": "right",
-      "unit": null,
-      "state": "present",
-      "evidence": "Right breast, upper inner quadrant",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "not_applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Note: Clinical staging, margins, lymph node status: not applicable on core biopsy specimen",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
+    "pathologic_stage": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_size": {
+      "value": "1.0",
+      "unit": "mm",
+      "state": "present",
+      "evidence": "1.2-1.4 x 0.1 cm",
+      "span": [
+        345,
+        360
+      ],
+      "codes": {}
+    },
+    "laterality": {
+      "value": "Right",
+      "unit": null,
+      "state": "present",
+      "evidence": "Laterality from report text",
+      "span": null,
+      "codes": {}
+    },
+    "surgical_margins": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_examined": {
+      "value": "10",
+      "unit": null,
+      "state": "present",
+      "evidence": "20/10",
       "span": null,
       "codes": {}
     },
     "lymph_nodes_positive": {
-      "value": null,
+      "value": "20",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "present",
+      "evidence": "20/10",
       "span": null,
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "not_mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -133,7 +118,7 @@
       "codes": {}
     },
     "perineural_invasion": {
-      "value": "not_mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -141,7 +126,7 @@
       "codes": {}
     },
     "distant_metastasis": {
-      "value": "not_mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -149,40 +134,37 @@
       "codes": {}
     },
     "er_status": {
-      "value": "equivocal",
+      "value": "ER",
       "unit": null,
-      "state": "uncertain",
-      "evidence": "ER: borderline/equivocal (5%, 1+) -- recommend repeat testing",
+      "state": "present",
+      "evidence": "ER",
       "span": [
-        null,
-        null
+        819,
+        820
       ],
       "codes": {}
     },
     "pr_status": {
-      "value": "negative",
+      "value": "PR",
       "unit": null,
       "state": "present",
-      "evidence": "PR: negative (0% cells)",
+      "evidence": "PR",
       "span": [
-        null,
-        null
+        977,
+        978
       ],
       "codes": {}
     },
     "her2_status": {
-      "value": "positive",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "HER2: positive (3+ IHC)",
-      "span": [
-        null,
-        null
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "kras_mutation": {
-      "value": "not_mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -190,7 +172,7 @@
       "codes": {}
     },
     "egfr_mutation": {
-      "value": "not_mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -198,32 +180,26 @@
       "codes": {}
     },
     "procedure_type": {
-      "value": "core biopsy",
-      "unit": null,
-      "state": "present",
-      "evidence": "Ultrasound-guided core biopsy performed",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "prior_treatment": {
-      "value": "none",
-      "unit": null,
-      "state": "present",
-      "evidence": "No prior breast procedures",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "tumor_multiplicity": {
-      "value": "not_mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "prior_treatment": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_multiplicity": {
+      "value": "Single",
+      "unit": null,
+      "state": "absent",
+      "evidence": "No multiplicity cues detected",
       "span": null,
       "codes": {}
     }

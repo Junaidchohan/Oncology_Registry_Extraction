@@ -1,258 +1,203 @@
 {
   "report_id": "report_010",
   "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-23T21:35:02.205122+00:00",
+  "run_timestamp": "2026-09-25T10:16:36.104879+00:00",
   "model_versions": {
-    "mode": "llm_enhanced_clinical_nlp",
-    "llm_model": "llama3.1:8b",
-    "provider": "OpenAI",
-    "jsl_note": "johnsnowlabs package not installed in this environment. LLM used as analytical equivalent of JSL NER + Assertion + Resolution pipeline. JSL license token stored in secrets/jsl_license.json for JSL-capable environments.",
-    "ner_equivalent": "ner_oncology_wip + ner_oncology_biomarker_wip + ner_oncology_tnm_wip",
-    "assertion_equivalent": "assertion_oncology_wip",
-    "resolution_equivalent": "sbiobertresolve_icd10cm_augmented_billable + sbiobertresolve_icdo",
-    "tokens_in": 0,
-    "tokens_out": 0,
-    "cost_usd": 0.0,
-    "elapsed_sec": 868.794
+    "spark_nlp": "5.4.0",
+    "spark_nlp_jsl": "5.4.0",
+    "ner_oncology": "ner_oncology_wip",
+    "ner_biomarker": "ner_oncology_biomarker_wip",
+    "ner_tnm": "ner_oncology_tnm_wip",
+    "assertion": "assertion_oncology_wip",
+    "relation": "re_oncology_wip",
+    "resolver_icd10": "sbiobertresolve_icd10cm_augmented_billable",
+    "resolver_icdo": "sbiobertresolve_icdo",
+    "embeddings": "embeddings_clinical",
+    "sentence_embeddings": "sbiobert_base_cased_mli",
+    "mode": "licensed_jsl_real"
   },
   "fields": {
     "primary_site": {
       "value": "breast",
       "unit": null,
       "state": "present",
-      "evidence": "Left breast, stereotactic core biopsy (two separate specimens)",
+      "evidence": "breast",
       "span": [
-        null,
-        null
+        100,
+        105
       ],
-      "codes": {
-        "ICD-O-3": "8500/3",
-        "ICD-10": "C50.4",
-        "SNOMED": "http://snomed.info/sct"
-      }
+      "codes": {}
     },
     "histology_type": {
-      "value": "invasive ductal carcinoma",
+      "value": "lesions",
       "unit": null,
       "state": "present",
-      "evidence": "Specimen A -- Upper outer quadrant (18 mm lesion):",
+      "evidence": "lesions",
       "span": [
-        null,
-        null
+        157,
+        163
       ],
-      "codes": {
-        "ICD-O-3": "8500/3",
-        "ICD-10": "C50.4",
-        "SNOMED": "http://snomed.info/sct"
-      }
+      "codes": {}
     },
     "tumor_grade": {
-      "value": "3",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Sections show invasive ductal carcinoma (IDC), NST, Nottingham Grade 3 (score 8/9).",
-      "span": [
-        null,
-        null
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "clinical_stage": {
-      "value": "not applicable",
+      "value": null,
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "Full staging: not applicable on core biopsy",
-      "span": [
-        null,
-        null
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "pathologic_stage": {
-      "value": "not applicable",
+      "value": null,
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "Full staging: not applicable on core biopsy",
-      "span": [
-        null,
-        null
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "tumor_size": {
       "value": "18",
       "unit": "mm",
       "state": "present",
-      "evidence": "Lesion A -- 18 mm mass in the upper outer quadrant;",
+      "evidence": "18 mm",
       "span": [
-        null,
-        null
+        178,
+        182
       ],
       "codes": {}
     },
     "laterality": {
-      "value": "left",
+      "value": "Left",
       "unit": null,
       "state": "present",
-      "evidence": "Left breast, stereotactic core biopsy (two separate specimens):",
-      "span": [
-        null,
-        null
-      ],
+      "evidence": "Laterality from report text",
+      "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "span": null,
       "codes": {}
     },
     "lymph_nodes_examined": {
-      "value": "not mentioned",
+      "value": "9",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "state": "present",
+      "evidence": "8/9",
+      "span": null,
       "codes": {}
     },
     "lymph_nodes_positive": {
-      "value": "not mentioned",
+      "value": "8",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "state": "present",
+      "evidence": "8/9",
+      "span": null,
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "span": null,
       "codes": {}
     },
     "perineural_invasion": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "span": null,
       "codes": {}
     },
     "distant_metastasis": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "span": null,
       "codes": {}
     },
     "er_status": {
-      "value": "positive",
+      "value": "ER",
       "unit": null,
       "state": "present",
-      "evidence": "ER: positive",
+      "evidence": "ER",
       "span": [
-        null,
-        null
+        914,
+        915
       ],
       "codes": {}
     },
     "pr_status": {
-      "value": "equivocal",
+      "value": "PR",
       "unit": null,
-      "state": "uncertain",
-      "evidence": "PR: equivocal (recommend repeat)",
+      "state": "present",
+      "evidence": "PR",
       "span": [
-        null,
-        null
+        959,
+        960
       ],
       "codes": {}
     },
     "her2_status": {
-      "value": "equivocal",
+      "value": null,
       "unit": null,
-      "state": "uncertain",
-      "evidence": "HER2: equivocal (FISH recommended)",
-      "span": [
-        null,
-        null
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "kras_mutation": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "span": null,
       "codes": {}
     },
     "egfr_mutation": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "span": null,
       "codes": {}
     },
     "procedure_type": {
-      "value": "stereotactic core biopsy",
-      "unit": null,
-      "state": "present",
-      "evidence": "Stereotactic core biopsy performed of both lesions separately.",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "prior_treatment": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "span": null,
+      "codes": {}
+    },
+    "prior_treatment": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "synchronous multifocal disease",
+      "value": "Multiple",
       "unit": null,
       "state": "present",
-      "evidence": "Synchronous multifocal disease: present (two lesions, 4 cm apart)",
-      "span": [
-        null,
-        null
-      ],
+      "evidence": "Lesion A",
+      "span": null,
       "codes": {}
     }
   }

@@ -1,257 +1,215 @@
 {
   "report_id": "report_007",
   "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-23T20:48:37.337809+00:00",
+  "run_timestamp": "2026-09-25T10:14:57.821549+00:00",
   "model_versions": {
-    "mode": "llm_enhanced_clinical_nlp",
-    "llm_model": "llama3.1:8b",
-    "provider": "OpenAI",
-    "jsl_note": "johnsnowlabs package not installed in this environment. LLM used as analytical equivalent of JSL NER + Assertion + Resolution pipeline. JSL license token stored in secrets/jsl_license.json for JSL-capable environments.",
-    "ner_equivalent": "ner_oncology_wip + ner_oncology_biomarker_wip + ner_oncology_tnm_wip",
-    "assertion_equivalent": "assertion_oncology_wip",
-    "resolution_equivalent": "sbiobertresolve_icd10cm_augmented_billable + sbiobertresolve_icdo",
-    "tokens_in": 0,
-    "tokens_out": 0,
-    "cost_usd": 0.0,
-    "elapsed_sec": 900.724
+    "spark_nlp": "5.4.0",
+    "spark_nlp_jsl": "5.4.0",
+    "ner_oncology": "ner_oncology_wip",
+    "ner_biomarker": "ner_oncology_biomarker_wip",
+    "ner_tnm": "ner_oncology_tnm_wip",
+    "assertion": "assertion_oncology_wip",
+    "relation": "re_oncology_wip",
+    "resolver_icd10": "sbiobertresolve_icd10cm_augmented_billable",
+    "resolver_icdo": "sbiobertresolve_icdo",
+    "embeddings": "embeddings_clinical",
+    "sentence_embeddings": "sbiobert_base_cased_mli",
+    "mode": "licensed_jsl_real"
   },
   "fields": {
     "primary_site": {
-      "value": "breast",
+      "value": "sentinel lymph node",
       "unit": null,
       "state": "present",
-      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy)",
+      "evidence": "sentinel lymph node",
       "span": [
-        null,
-        null
-      ],
-      "codes": {
-        "ICD-O-3": "8500/3",
-        "ICD-10": "C50.4",
-        "SNOMED": "SCTID: 123456"
-      }
-    },
-    "histology_type": {
-      "value": "invasive ductal carcinoma",
-      "unit": null,
-      "state": "present",
-      "evidence": "Residual invasive ductal carcinoma, NST (treatment effect present), 1 mm (ypT1a)",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {
-        "ICD-O-3": "8500/3",
-        "ICD-10": "C50.4"
-      }
-    },
-    "tumor_grade": {
-      "value": "4",
-      "unit": null,
-      "state": "present",
-      "evidence": "Near-complete pathologic response; Miller-Payne Grade 4",
-      "span": [
-        null,
-        null
+        316,
+        334
       ],
       "codes": {}
     },
-    "clinical_stage": {
-      "value": "not mentioned",
+    "histology_type": {
+      "value": "invasive",
+      "unit": null,
+      "state": "present",
+      "evidence": "invasive",
+      "span": [
+        61,
+        68
+      ],
+      "codes": {}
+    },
+    "tumor_grade": {
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "span": null,
+      "codes": {}
+    },
+    "clinical_stage": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "pathologic_stage": {
-      "value": "ypT1a ypN0 ypM0",
+      "value": "ypT1a",
       "unit": null,
       "state": "present",
-      "evidence": "Post-treatment pathologic stage: ypT1a ypN0 ypM0",
+      "evidence": "ypT1a",
       "span": [
-        null,
-        null
+        1018,
+        1022
       ],
       "codes": {}
     },
     "tumor_size": {
-      "value": "1",
+      "value": "150.0",
       "unit": "mm",
       "state": "present",
-      "evidence": "Residual focus approximately 1 mm",
+      "evidence": "15 x 12 x 5 cm",
       "span": [
-        null,
-        null
+        436,
+        449
       ],
       "codes": {}
     },
     "laterality": {
-      "value": "right",
+      "value": "Right",
       "unit": null,
       "state": "present",
-      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy)",
-      "span": [
-        null,
-        null
-      ],
+      "evidence": "Laterality from report text",
+      "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": "negative",
+      "value": "Negative",
       "unit": null,
       "state": "present",
-      "evidence": "All surgical margins are negative (closest margin >3 cm)",
-      "span": [
-        null,
-        null
-      ],
+      "evidence": "All surgical margins are negative",
+      "span": null,
       "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "3",
       "unit": null,
       "state": "present",
-      "evidence": "Sentinel lymph nodes: 3 nodes identified, 0.8-1.5 cm",
-      "span": [
-        null,
-        null
-      ],
+      "evidence": "3/3",
+      "span": null,
       "codes": {}
     },
     "lymph_nodes_positive": {
-      "value": "0",
+      "value": "3",
       "unit": null,
       "state": "present",
-      "evidence": "Sentinel lymph nodes (3/3): no metastatic carcinoma identified",
-      "span": [
-        null,
-        null
-      ],
+      "evidence": "3/3",
+      "span": null,
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "absent",
+      "value": "Absent",
       "unit": null,
-      "state": "present",
-      "evidence": "No lymphovascular invasion in current specimen",
-      "span": [
-        null,
-        null
-      ],
+      "state": "absent",
+      "evidence": "No lymphovascular invasion",
+      "span": null,
       "codes": {}
     },
     "perineural_invasion": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "span": null,
       "codes": {}
     },
     "distant_metastasis": {
-      "value": "not mentioned",
+      "value": "metastatic",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "absent",
+      "evidence": "metastatic",
       "span": [
-        null,
-        null
+        1231,
+        1240
       ],
       "codes": {}
     },
     "er_status": {
-      "value": "positive",
+      "value": "ER",
       "unit": null,
       "state": "present",
-      "evidence": "ER: positive",
+      "evidence": "ER",
       "span": [
-        null,
-        null
+        1356,
+        1357
       ],
       "codes": {}
     },
     "pr_status": {
-      "value": "positive",
+      "value": "PR",
       "unit": null,
       "state": "present",
-      "evidence": "PR: positive",
+      "evidence": "PR",
       "span": [
-        null,
-        null
+        1401,
+        1402
       ],
       "codes": {}
     },
     "her2_status": {
-      "value": "negative",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "HER2: negative",
-      "span": [
-        null,
-        null
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "kras_mutation": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "span": null,
       "codes": {}
     },
     "egfr_mutation": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "span": null,
       "codes": {}
     },
     "procedure_type": {
       "value": "mastectomy",
       "unit": null,
       "state": "present",
-      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy)",
+      "evidence": "mastectomy",
       "span": [
-        null,
-        null
+        300,
+        309
       ],
       "codes": {}
     },
     "prior_treatment": {
-      "value": "neoadjuvant chemotherapy and endocrine therapy",
+      "value": "neoadjuvant chemotherapy",
       "unit": null,
       "state": "present",
-      "evidence": "She received neoadjuvant chemotherapy (AC-T regimen, 6 cycles) and endocrine therapy",
+      "evidence": "neoadjuvant chemotherapy",
       "span": [
-        null,
-        null
+        158,
+        181
       ],
       "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "not mentioned",
+      "value": "Single",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": [
-        null,
-        null
-      ],
+      "state": "absent",
+      "evidence": "No multiplicity cues detected",
+      "span": null,
       "codes": {}
     }
   }

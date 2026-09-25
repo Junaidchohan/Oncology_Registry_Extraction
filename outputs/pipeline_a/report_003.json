@@ -1,69 +1,63 @@
 {
   "report_id": "report_003",
   "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-23T19:54:00.984711+00:00",
+  "run_timestamp": "2026-09-25T10:12:51.341788+00:00",
   "model_versions": {
-    "mode": "llm_enhanced_clinical_nlp",
-    "llm_model": "llama3.1:8b",
-    "provider": "OpenAI",
-    "jsl_note": "johnsnowlabs package not installed in this environment. LLM used as analytical equivalent of JSL NER + Assertion + Resolution pipeline. JSL license token stored in secrets/jsl_license.json for JSL-capable environments.",
-    "ner_equivalent": "ner_oncology_wip + ner_oncology_biomarker_wip + ner_oncology_tnm_wip",
-    "assertion_equivalent": "assertion_oncology_wip",
-    "resolution_equivalent": "sbiobertresolve_icd10cm_augmented_billable + sbiobertresolve_icdo",
-    "tokens_in": 0,
-    "tokens_out": 0,
-    "cost_usd": 0.0,
-    "elapsed_sec": 1275.731
+    "spark_nlp": "5.4.0",
+    "spark_nlp_jsl": "5.4.0",
+    "ner_oncology": "ner_oncology_wip",
+    "ner_biomarker": "ner_oncology_biomarker_wip",
+    "ner_tnm": "ner_oncology_tnm_wip",
+    "assertion": "assertion_oncology_wip",
+    "relation": "re_oncology_wip",
+    "resolver_icd10": "sbiobertresolve_icd10cm_augmented_billable",
+    "resolver_icdo": "sbiobertresolve_icdo",
+    "embeddings": "embeddings_clinical",
+    "sentence_embeddings": "sbiobert_base_cased_mli",
+    "mode": "licensed_jsl_real"
   },
   "fields": {
     "primary_site": {
-      "value": "lung",
+      "value": "upper lobe",
       "unit": null,
       "state": "present",
-      "evidence": "Right upper lobe, CT-guided core needle biopsy:",
+      "evidence": "upper lobe",
       "span": [
-        0,
-        13
+        145,
+        154
       ],
-      "codes": {
-        "ICD-O-3": "8140/3",
-        "ICD-10": "C34.2",
-        "SNOMED": "SCTID: 123456"
-      }
+      "codes": {}
     },
     "histology_type": {
-      "value": "adenocarcinoma",
+      "value": "mass",
       "unit": null,
       "state": "present",
-      "evidence": "Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns with focal mucin production, consistent with pulmonary adenocarcinoma.",
+      "evidence": "mass",
       "span": [
-        123,
-        155
+        156,
+        159
       ],
-      "codes": {
-        "ICD-O-3": "8140/3",
-        "ICD-10": "C34.2"
-      }
+      "codes": {}
     },
     "tumor_grade": {
       "value": "moderately differentiated",
       "unit": null,
       "state": "present",
-      "evidence": "Pulmonary adenocarcinoma, moderately differentiated",
+      "evidence": "moderately differentiated",
       "span": [
-        161,
-        183
+        1386,
+        1410
       ],
       "codes": {}
     },
     "clinical_stage": {
-      "value": "cT2a cN2 cM1b -- Stage IVA",
+      "value": "cT2a cN2 cM1b",
       "unit": null,
-      "state": "present",
-      "evidence": "Clinical stage: cT2a cN2 cM1b -- Stage IVA (brain metastases per PET/CT correlation)",
+      "state": "uncertain",
+      "evidence": "cT2a cN2 cM1b",
       "span": [
-        206,
-        234
+        1527,
+        1539
       ],
       "codes": {}
     },
@@ -71,37 +65,31 @@
       "value": "cT2a cN2 cM1b -- Stage IVA",
       "unit": null,
       "state": "present",
-      "evidence": "Clinical stage: cT2a cN2 cM1b -- Stage IVA (brain metastases per PET/CT correlation)",
-      "span": [
-        206,
-        234
-      ],
+      "evidence": "cT2a cN2 cM1b -- Stage IVA",
+      "span": null,
       "codes": {}
     },
     "tumor_size": {
-      "value": "3.1",
-      "unit": "cm",
+      "value": "31.0",
+      "unit": "mm",
       "state": "present",
-      "evidence": "CT chest revealed a 3.1 cm spiculated right upper lobe mass",
+      "evidence": "3.1 cm",
       "span": [
-        34,
-        48
+        121,
+        126
       ],
       "codes": {}
     },
     "laterality": {
-      "value": "right",
+      "value": "Left",
       "unit": null,
       "state": "present",
-      "evidence": "Right upper lobe, CT-guided core needle biopsy:",
-      "span": [
-        0,
-        13
-      ],
+      "evidence": "Laterality from report text",
+      "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -125,7 +113,7 @@
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -133,7 +121,7 @@
       "codes": {}
     },
     "perineural_invasion": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -141,84 +129,78 @@
       "codes": {}
     },
     "distant_metastasis": {
-      "value": "present",
+      "value": "metastatic disease",
       "unit": null,
       "state": "present",
-      "evidence": "Clinical correlation: Brain lesions identified on PET/CT are consistent with metastatic disease.",
+      "evidence": "metastatic disease",
       "span": [
-        245,
-        265
+        1272,
+        1289
       ],
       "codes": {}
     },
     "er_status": {
-      "value": "not applicable",
+      "value": "ER",
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "Note: ER, PR, HER2 not applicable for pulmonary adenocarcinoma",
+      "state": "present",
+      "evidence": "ER",
       "span": [
-        276,
-        294
+        1604,
+        1605
       ],
       "codes": {}
     },
     "pr_status": {
-      "value": "not applicable",
+      "value": "PR",
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "Note: ER, PR, HER2 not applicable for pulmonary adenocarcinoma",
+      "state": "present",
+      "evidence": "PR",
       "span": [
-        276,
-        294
+        1608,
+        1609
       ],
       "codes": {}
     },
     "her2_status": {
-      "value": "not applicable",
+      "value": null,
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "Note: ER, PR, HER2 not applicable for pulmonary adenocarcinoma",
-      "span": [
-        276,
-        294
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "kras_mutation": {
-      "value": "wild-type",
+      "value": "KRAS",
       "unit": null,
       "state": "present",
-      "evidence": "KRAS wild-type",
+      "evidence": "KRAS",
       "span": [
-        134,
-        141
+        1087,
+        1090
       ],
       "codes": {}
     },
     "egfr_mutation": {
-      "value": "positive",
+      "value": "EGFR",
       "unit": null,
       "state": "present",
-      "evidence": "EGFR exon 19 deletion positive",
+      "evidence": "EGFR",
       "span": [
-        130,
-        143
+        1039,
+        1042
       ],
       "codes": {}
     },
     "procedure_type": {
-      "value": "core needle biopsy",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "CT-guided core needle biopsy of the lung mass",
-      "span": [
-        22,
-        41
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "prior_treatment": {
-      "value": "not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -226,10 +208,10 @@
       "codes": {}
     },
     "tumor_multiplicity": {
-      "value": "not mentioned",
+      "value": "Single",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "absent",
+      "evidence": "No multiplicity cues detected",
       "span": null,
       "codes": {}
     }
