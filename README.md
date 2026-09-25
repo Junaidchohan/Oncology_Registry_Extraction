@@ -1,6 +1,6 @@
 # Oncology Registry Extraction
 
-> **Gold Standard Disclaimer:** The gold annotations in `data/gold/` were created by the candidate using `gpt-4o-mini` to author synthetic reports and their reference values. Both pipelines were run with `llama3.1:8b` via Ollama. Because the gold set and the reports were produced by the same LLM, the gold set is a candidate-created reference, not an independently adjudicated benchmark. Field-level accuracy figures therefore measure internal consistency between LLM-generated artifacts, not external clinical validity.
+> **Gold Standard Disclaimer:** The gold annotations in data/gold/ were created by the candidate using gpt-4o-mini to author synthetic reports and their reference values. Pipeline A uses the John Snow Labs Healthcare NLP library (spark-nlp-jsl 5.4.0). Pipeline B uses llama3.1:8b via Ollama. Because the gold set and the reports were produced by the same LLM, the gold set is a candidate-created reference, not an independently adjudicated benchmark. Field-level accuracy figures measure internal consistency between LLM-generated artifacts, not external clinical validity.
 >
 > **Credentials:** API keys and JSL license tokens live in `secrets/` (git-ignored). Never committed.
 
@@ -10,29 +10,9 @@ This project implements two pipelines for extracting structured registry data fr
 
 ---
 
-## 📸 Proof of Execution
+## Proof of Execution
 
-Both pipelines ran end-to-end with a real local LLM (`llama3.1:8b` via Ollama) on all 10 reports. The screenshots below show the actual output files produced.
-
-### Pipeline A — All 10 Reports Processed
-
-![Pipeline A outputs](docs/screenshots/07_pipeline_a_outputs.png)
-
-### Pipeline B — All 10 Reports Processed
-
-![Pipeline B outputs](docs/screenshots/08_pipeline_b_outputs.png)
-
-### Extracted Values
-
-**Pipeline A — primary site and histology per report:**
-
-![Pipeline A preview](docs/screenshots/09_pipeline_a_preview.png)
-
-**Pipeline B — primary site and histology per report:**
-
-![Pipeline B preview](docs/screenshots/10_pipeline_b_preview.png)
-
-Full evidence of execution, evaluation results, and the retrieval log are shown in [`SUBMISSION.md`](SUBMISSION.md).
+![Final comparison table](docs/screenshots/13_comparison_table.png)
 
 ---
 
@@ -56,14 +36,14 @@ Two-stage RAG approach:
 
 ## Terminology Versions
 
-| Terminology | Release | Concepts |
+| Terminology | Release/Version | Coverage in Index |
 |---|---|---|
-| SNOMED CT International | 2025-01-31 | 214 |
-| ICD-10-CM | FY2025 (Oct 2024) | 158 |
-| ICD-O-3 | Edition 3.2 (WHO 2025) | 105 |
-| LOINC | Version 2.79 (Dec 2024) | 53 |
-| ATC | WHO ATC 2025 | 50 |
-| **Total** | | **580** |
+| SNOMED CT International | 2025-01-31 | 214 concepts |
+| ICD-10-CM | FY2025 (Oct 2024) | 158 codes |
+| ICD-O-3 | Edition 3.2 (WHO 2025) | 105 codes |
+| LOINC | Version 2.79 (Dec 2024) | 53 codes |
+| ATC | WHO ATC 2025 | 50 codes |
+| **Total** | | **580 concepts** |
 
 ---
 
@@ -78,8 +58,28 @@ Two-stage RAG approach:
 | Pipeline A resolvers | sbiobertresolve_icd10cm_augmented_billable, sbiobertresolve_icdo |
 | Pipeline A embeddings | embeddings_clinical (200d), sbiobert_base_cased_mli |
 | Pipeline B LLM | llama3.1:8b via Ollama 0.34.2 |
-| FAISS index backend | sentence-transformers / sklearn TF-IDF with char n-grams (3–5) |
+| FAISS index backend | sentence-transformers / sklearn TF-IDF char n-grams (3-5) |
 | FAISS index size | 580 concepts |
+
+## Final Evaluation Results
+
+Both pipelines ran on all 10 reports. Metrics are computed against the gold reference set.
+
+| Metric | Pipeline A (JSL) | Pipeline B (LLM + Retrieval) |
+|---|---|---|
+| Entity P / R / F1 | 100.0% / 65.2% / 79.0% | 100.0% / 68.1% / 81.0% |
+| Entity TP / FP / FN | 137 / 0 / 73 | 143 / 0 / 67 |
+| Field value exact accuracy | 11.9% (25/210) | 23.3% (49/210) |
+| Assertion / State accuracy | 49.0% (103/210) | 55.7% (117/210) |
+| Relation / Macro F1 | 79.0% | 81.0% |
+| Terminology code precision | 50.0% (2/4) | 17.7% (11/62) |
+| Terminology code recall | 5.6% (2/36) | 30.6% (11/36) |
+| Terminology F1 | 10.0% | 22.4% |
+| Unsupported field rate | 0.0% | 0.0% |
+| Mean runtime per report | 32.85s | 692.10s |
+| Cost per report | $0.00 | $0.00 |
+
+![Comparison table](docs/screenshots/13_comparison_table.png)
 
 ## Pipeline A — JSL Environment Setup
 
@@ -102,16 +102,15 @@ cd "E:\AI Projects\Oncology Registry Extraction"
 ## Hardware Assumptions
 - **Development/test:** Windows 10, Python 3.10, Intel CPU, 16GB RAM — no GPU required
 - **JSL licensed mode:** Requires Ubuntu 20.04+, Java 11, PySpark 3.x, 32GB RAM, optional CUDA GPU
-- **Production (Pipeline B):** Any machine with internet access and Python 3.10+ for OpenAI API calls
+- **Production (Pipeline B):** Any machine with internet access and Python 3.10+
 
 ---
 
 ## Cost per Report (Pipeline B)
-| Mode | Model | Prompt tokens | Output tokens | Cost/report |
-|---|---|---|---|---|
-| Extraction + Grounding | `llama3.1:8b` | ~2,500 | ~800 | $0.00 |
-| 10 reports (this project) | `llama3.1:8b` | — | — | $0.00 total |
-| 1M reports/year | `llama3.1:8b` | — | — | $0.00/year |
+| Pipeline | Model | Runtime per report | Cost per report |
+|---|---|---|---|
+| Pipeline A | spark-nlp-jsl 5.4.0 (local CPU) | ~33 s | $0.00 |
+| Pipeline B | llama3.1:8b via Ollama (local CPU) | ~692 s | $0.00 |
 
 ---
 
