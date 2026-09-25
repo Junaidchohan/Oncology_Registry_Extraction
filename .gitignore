@@ -38,3 +38,8 @@ cache_pretrained/
 # Backups
 *_backup/
 *_backup_*/
+
+# Agent scratch files
+fix*.py
+*_scratch.py
+*_temp.py
