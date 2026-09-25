@@ -10,6 +10,23 @@ This project implements two pipelines for extracting structured registry data fr
 
 ---
 
+## Pipeline A — JSL Environment Setup
+
+Pipeline A uses John Snow Labs Healthcare NLP, which requires:
+
+- **Java 11 (Temurin)** — https://adoptium.net/temurin/releases/?version=11
+- **HADOOP_HOME** with `winutils.exe` at `C:\hadoop\bin`
+- **JSL license** at `secrets/jsl_license.json`
+- **Python** `spark-nlp==5.4.0` + `spark-nlp-jsl==5.4.0` in `venv_jsl`
+
+### Activation
+```powershell
+cd "E:\AI Projects\Oncology Registry Extraction"
+.\setup_jsl_env.ps1
+```
+
+---
+
 ## 📸 Proof of Execution
 
 Both pipelines ran end-to-end with a real local LLM (`llama3.1:8b` via Ollama) on all 10 reports. The screenshots below show the actual output files produced.

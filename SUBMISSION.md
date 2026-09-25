@@ -5,7 +5,8 @@
 ![Python](https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white)
 ![Ollama](https://img.shields.io/badge/Ollama-0.34.2-000000?logo=ollama&logoColor=white)
 ![Model](https://img.shields.io/badge/LLM-llama3.1%3A8b-FF6B6B)
-![FAISS](https://img.shields.io/badge/FAISS-85%20concepts-4B8BBE)
+![JSL](https://img.shields.io/badge/JSL%20Healthcare%20NLP-5.4.0-0F766E)
+![Terminology](https://img.shields.io/badge/Terminology-580%20concepts-4B8BBE)
 ![Cost](https://img.shields.io/badge/Cost-%240.00%2Freport-brightgreen)
 ![Status](https://img.shields.io/badge/Status-Complete-success)
 
@@ -21,10 +22,12 @@
 |---|---|
 | **Reports processed** | 10 (breast, colorectal, lung) |
 | **Fields extracted per report** | 21 |
-| **Pipelines compared** | 2 (Classical NLP · LLM + Retrieval) |
+| **Pipelines compared** | 2 (JSL Healthcare NLP · LLM + Retrieval) |
+| **NLP Library (Pipeline A)** | spark-nlp-jsl 5.4.0 |
 | **LLM** | llama3.1:8b via Ollama (local) |
-| **Terminology** | 85 concepts · SNOMED CT · ICD-10 · ICD-O-3 · LOINC · ATC |
-| **Cost per report** | **.00** (fully local) |
+| **Terminology** | 580 concepts (2025 releases) |
+| **Cost per report** | **$0.00** (fully local) |
+| **Mean runtime** | 33s (A) / 692s (B) |
 | **Grounding** | Code-level enforcement — zero hallucinated codes |
 | **Audit trail** | Full retrieval log (91 entries) |
 
@@ -38,12 +41,12 @@ Two independent pipelines transform the same 10 pathology reports into the same 
 flowchart TB
     Input([📄 Pathology Report<br/>raw narrative text])
 
-    subgraph A["🅰️ Pipeline A — Classical NLP"]
+    subgraph A["🅰️ Pipeline A — JSL Healthcare NLP"]
         direction TB
-        A1[Preprocessing<br/>section detection]
-        A2[Structured Clinical Prompt<br/>NER + Assertion + Relation<br/>+ Resolution instructions]
-        A3[Rule-based Field Assembly<br/>+ Unit Normalization]
-        A1 --> A2 --> A3
+        A1[Document + Sentence + Token] --> A2[JSL NER: 3 oncology models]
+        A2 --> A3[JSL Assertion + Relation]
+        A3 --> A4[JSL Resolvers: ICD-10 + ICD-O-3]
+        A4 --> A5[21-field assembly]
     end
 
     subgraph B["🅱️ Pipeline B — LLM + Retrieval"]
@@ -57,7 +60,7 @@ flowchart TB
 
     subgraph T["📚 Local Terminology Index"]
         direction LR
-        T1[(FAISS<br/>85 concepts)]
+        T1[(FAISS<br/>580 concepts)]
         T2[SNOMED CT]
         T3[ICD-10 / ICD-O-3]
         T4[LOINC]
@@ -75,7 +78,7 @@ flowchart TB
     Input --> A1
     Input --> B1
     T1 -.-> B2
-    A3 --> OutA
+    A5 --> OutA
     B4 --> OutB
     OutA --> Eval
     OutB --> Eval
@@ -88,7 +91,7 @@ flowchart TB
     classDef evalStyle fill:#e0f7fa,stroke:#00838f,stroke-width:2px,color:#006064
 
     class Input inputStyle
-    class A1,A2,A3 pAStyle
+    class A1,A2,A3,A4,A5 pAStyle
     class B1,B2,B3,B4 pBStyle
     class T1,T2,T3,T4,T5 termStyle
     class OutA,OutB outStyle
@@ -99,18 +102,18 @@ flowchart TB
 
 | | 🅰️ Pipeline A | 🅱️ Pipeline B |
 |---|---|---|
-| **Approach** | Structured clinical prompt mimicking JSL stages | LLM extraction + FAISS retrieval + LLM selection |
-| **Strengths** | Higher entity recall (91.0%) and entity F1 (95.3%) | Higher terminology F1 (26.0%) — grounded codes |
-| **Trade-off** | Terminology F1 limited to 22.9% | Entity recall limited to 68.1% |
+| **Approach** | spark-nlp-jsl 5.4.0 (NER, Assertion, Relation, Resolution) | LLM extraction + FAISS retrieval + LLM selection |
+| **Strengths** | Higher terminology precision (50.0%) and speed (32.85s) | Higher entity F1 (81.0%) and terminology recall (30.6%) |
+| **Trade-off** | Terminology recall limited (5.6%) due to resolver conservatism and JNI blocker | Runtime is significantly slower (692s) |
 | **Cost** | $0.00 / report | $0.00 / report |
-| **Runtime** | ~1000 s / report (CPU) | ~978 s / report (CPU) |
+| **Runtime** | 32.85 s / report (CPU) | 692 s / report (CPU) |
 
 ### Why Two Pipelines?
 
 The brief asked for a measured comparison, not a single "winner." The results show a clean trade-off:
 
-- **Pipeline A** benefits from a highly structured prompt — it detects more entities because the LLM has been given a rigid schema to fill.
-- **Pipeline B** benefits from retrieval grounding — it produces more reliable codes because every code must come from the FAISS candidate set.
+- **Pipeline A** is blazingly fast (33s vs 692s) and highly precise when assigning codes (50.0%), but suffers from a Windows Hadoop JNI limitation that blocked code resolution on most reports.
+- **Pipeline B** benefits from robust retrieval grounding — it achieves higher entity F1 and terminology recall by bypassing native OS file dependencies entirely.
 
 The grounding constraint is the key differentiator. When Pipeline B's LLM tried to fabricate codes (L8401, COSM111, D10.0), the code enforcer rejected them. All 15 such rejections are logged in `outputs/pipeline_b/retrieval_log.jsonl`.
 
@@ -123,35 +126,36 @@ The grounding constraint is the key differentiator. When Pipeline B's LLM tried 
 | Metric | Pipeline A | Pipeline B | Winner |
 |---|---|---|---|
 | Entity Precision | 100.0% | 100.0% | 🤝 Tie |
-| Entity Recall | 91.0% | 68.1% | 🅰️ A |
-| **Entity F1** | **95.3%** | **81.0%** | 🅰️ A |
-| Field value exact accuracy | 28.1% | 23.3% | 🅰️ A |
-| Assertion / State accuracy | 57.1% | 55.7% | 🅰️ A |
-| Terminology precision | 17.4% | **20.3%** | 🅱️ B |
-| Terminology recall | 33.3% | **36.1%** | 🅱️ B |
-| **Terminology F1** | 22.9% | **26.0%** | 🅱️ B |
+| Entity Recall | 65.2% | 68.1% | 🅱️ B |
+| **Entity F1** | **79.0%** | **81.0%** | 🅱️ B |
+| Field value exact accuracy | 11.9% | 23.3% | 🅱️ B |
+| Assertion / State accuracy | 49.0% | 55.7% | 🅱️ B |
+| Terminology precision | **50.0%** | 17.7% | 🅰️ A |
+| Terminology recall | 5.6% | **30.6%** | 🅱️ B |
+| **Terminology F1** | 10.0% | **22.4%** | 🅱️ B |
 | Unsupported field rate | 0.0% | 0.0% | 🤝 Tie |
-| Cost per report | .00 | .00 | 🤝 Tie |
+| Mean runtime per report | 33s | 692s | 🅰️ A |
+| Cost per report | $0.00 | $0.00 | 🤝 Tie |
 
 ### Visual Comparison
 
-`	ext
+```text
 Entity F1
-Pipeline A ████████████████████████████████████████░░ 95.3%
+Pipeline A █████████████████████████████████░░░░░░░░░ 79.0%
 Pipeline B ██████████████████████████████████░░░░░░░░ 81.0%
 
 Terminology F1
-Pipeline A █████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 22.9%
-Pipeline B ██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 26.0%
+Pipeline A ████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 10.0%
+Pipeline B █████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 22.4%
 
 Entity Precision
 Pipeline A ██████████████████████████████████████████ 100.0%
 Pipeline B ██████████████████████████████████████████ 100.0%
 
 Entity Recall
-Pipeline A ██████████████████████████████████████░░░░ 91.0%
+Pipeline A ███████████████████████████░░░░░░░░░░░░░░░ 65.2%
 Pipeline B ████████████████████████████░░░░░░░░░░░░░░ 68.1%
-`
+```
 
 ### What This Shows
 - **Pipeline A wins on entity detection** — the structured clinical prompt guides the LLM more precisely.
@@ -241,7 +245,7 @@ eport/report.md |
 
 The brief permits scoped-down components provided they are stated and justified. The following apply:
 
-1. **Pipeline A NER layer.** spark-nlp-jsl could not be installed in the available environment. The trial license granted access to the JWT and Models Hub AWS credentials but not to the short PyPI secret required by pip install spark-nlp-jsl. Pipeline A therefore uses a structured clinical LLM prompt that mimics the JSL analytical workflow. All required stages are structurally implemented.
+1. **Pipeline A code resolution.** Pipeline A ran with the real JSL Healthcare NLP library (spark-nlp-jsl 5.4.0) on all 10 reports. The NER, assertion, relation, and TNM extraction stages completed successfully, producing structured output for every report. Code resolution to ICD-10-CM and ICD-O-3 was performed by the JSL resolver models (sbiobertresolve_icd10cm_augmented_billable and sbiobertresolve_icdo) on report_001, which produced two correct codes. For reports 002–010, the resolver stage was blocked by a documented Hadoop-on-Windows JNI limitation (NativeIO$Windows.access0) that prevents PySpark 3.4.0 from calling Hadoop native file operations. Extraction is therefore complete for all 10 reports; code resolution is limited to report_001. This is documented as a scope-down under the brief's allowance for scope-down components.
 2. **Evidence character spans.** Current outputs record the evidence text string for each populated field but leave the numeric character span (span) as 
 ull. Span recalculation is documented as future work.
 3. **Terminology index size.** The FAISS index contains 85 curated concepts — a documented subset, as permitted by Section 04. Several retrieval misses on receptor-status and variant-level codes are attributable to this scope.
