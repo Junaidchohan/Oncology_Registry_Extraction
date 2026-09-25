@@ -1,7 +1,7 @@
 {
   "report_id": "report_002",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-25T16:30:42.016805+00:00",
+  "run_timestamp": "2026-09-25T22:12:19.377513+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 811.286
+    "elapsed_sec": 755.518
   },
   "fields": {
     "primary_site": {
@@ -19,7 +19,7 @@
       "evidence": "sigmoid colectomy specimen",
       "span": null,
       "codes": {
-        "ICD-O-3": "C18.7"
+        "ICD_O_3": "C18.7"
       }
     },
     "histology_type": {
@@ -29,7 +29,7 @@
       "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
       "span": null,
       "codes": {
-        "ICD-O-3": "8140/3"
+        "ICD_O_3": "8140/3"
       }
     },
     "tumor_grade": {
@@ -39,7 +39,7 @@
       "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
       "span": null,
       "codes": {
-        "SNOMED": "363346002"
+        "SNOMED_CT": "363346002"
       }
     },
     "clinical_stage": {
@@ -49,7 +49,7 @@
       "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
       "span": null,
       "codes": {
-        "SNOMED": "1229959004"
+        "SNOMED_CT": "1229959004"
       }
     },
     "pathologic_stage": {
@@ -59,7 +59,7 @@
       "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition)",
       "span": null,
       "codes": {
-        "SNOMED": "1229951001"
+        "SNOMED_CT": "1229951001"
       }
     },
     "tumor_size": {
@@ -109,7 +109,7 @@
       "evidence": "Lymphovascular invasion is present.",
       "span": null,
       "codes": {
-        "SNOMED": "245294001"
+        "SNOMED_CT": "245294001"
       }
     },
     "perineural_invasion": {
@@ -119,7 +119,7 @@
       "evidence": "Perineural invasion is identified in 2 foci.",
       "span": null,
       "codes": {
-        "SNOMED": "245294001"
+        "SNOMED_CT": "245294001"
       }
     },
     "distant_metastasis": {
@@ -129,7 +129,7 @@
       "evidence": "No distant metastatic disease was identified in the specimen; CT correlation confirms no metastases.",
       "span": null,
       "codes": {
-        "SNOMED": "1229966003"
+        "SNOMED_CT": "1229966003"
       }
     },
     "er_status": {
@@ -179,7 +179,7 @@
       "evidence": "sigmoid colectomy specimen",
       "span": null,
       "codes": {
-        "SNOMED": "84631004"
+        "SNOMED_CT": "84631004"
       }
     },
     "prior_treatment": {
