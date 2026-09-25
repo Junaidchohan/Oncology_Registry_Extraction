@@ -304,16 +304,22 @@ def annotate(light_pipeline: Any, text: str) -> Dict[str, Any]:
             "entity2":  rel.metadata.get("chunk2", ""),
         })
 
-    # Build code maps by index (1-to-1 with chunks)
+    # Build code maps by chunk begin offset
     icd10_anns = results.get("icd10_resolution", [])
     icdo_anns = results.get("icdo_resolution", [])
     
-    for i, chunk in enumerate(chunks):
+    icd10_map = {ann.begin: ann.result for ann in icd10_anns}
+    icdo_map = {ann.begin: ann.result for ann in icdo_anns}
+    
+    for chunk in chunks:
         codes: Dict[str, str] = {}
-        if i < len(icd10_anns):
-            codes["ICD-10-CM"] = icd10_anns[i].result
-        if i < len(icdo_anns):
-            codes["ICD-O-3"] = icdo_anns[i].result
+        begin = chunk["begin"]
+        
+        if begin in icd10_map:
+            codes["ICD-10-CM"] = icd10_map[begin]
+        if begin in icdo_map:
+            codes["ICD-O-3"] = icdo_map[begin]
+            
         chunk["codes"] = codes
 
     return {"chunks": chunks, "relations": relations}
@@ -641,7 +647,28 @@ def start_spark(
         )
 
     import sparknlp_jsl
-    _spark_session = sparknlp_jsl.start(secret=secret, gpu=gpu)
+
+    os.environ["HADOOP_HOME"] = "C:\\hadoop"
+    os.environ.setdefault("JAVA_HOME",
+                          r"C:\Program Files\Eclipse Adoptium\jdk-11.0.32.101-hotspot")
+
+    # C: drive is 100% full (0 bytes free). Redirect everything to E: drive.
+    os.environ["IVY_HOME"] = "E:\\tmp\\.ivy2"
+    os.environ["SPARK_NLP_CACHE_FOLDER"] = "E:\\tmp\\cache_pretrained"
+    _jvm_opts = "-Djava.io.tmpdir=E:/tmp"
+
+    params = {
+        "spark.master": "local[1]",
+        "spark.driver.host": "127.0.0.1",
+        "spark.sql.warehouse.dir": "E:\\tmp\\hive",
+        "spark.local.dir": "E:/tmp/spark",
+        "spark.driver.extraJavaOptions": _jvm_opts,
+        "spark.executor.extraJavaOptions": _jvm_opts,
+        "spark.jsl.settings.pretrained.cache_folder": "file:///E:/tmp/cache_pretrained",
+        "spark.jsl.settings.storage.cluster_tmp_dir": "file:///E:/tmp/cache_pretrained"
+    }
+
+    _spark_session = sparknlp_jsl.start(secret=secret, gpu=gpu, params=params)
     logger.info("JSL Spark session ready (Spark %s)", _spark_session.version)
     return _spark_session
 

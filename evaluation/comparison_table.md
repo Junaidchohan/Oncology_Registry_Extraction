@@ -1,6 +1,6 @@
 # Pipeline Evaluation: Side-by-Side Comparison
 
-*Generated: 2026-09-25T17:48:26.993975Z*
+*Generated: 2026-09-25T20:54:19.064334Z*
 
 | Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |
 | --- | --- | --- |
@@ -9,9 +9,9 @@
 | Field value exact accuracy | 11.9% (25/210) | 23.3% (49/210) |
 | Assertion / State accuracy | 49.0% (103/210) | 55.7% (117/210) |
 | Relation / Macro F1 (field-level) | 79.0% | 81.0% |
-| Terminology code precision | 40.0% (2/5) | 17.7% (11/62) |
+| Terminology code precision | 50.0% (2/4) | 17.7% (11/62) |
 | Terminology code recall (Recall@K) | 5.6% (2/36) | 30.6% (11/36) |
-| Terminology F1 | 9.8% | 22.4% |
+| Terminology F1 | 10.0% | 22.4% |
 | Unsupported field rate | 0.0% (0 fields) | 0.0% (0 fields) |
 | Mean runtime per report | 32.85s | 692.10s |
 | Mean cost per report | $0.0000 | $0.0000 |

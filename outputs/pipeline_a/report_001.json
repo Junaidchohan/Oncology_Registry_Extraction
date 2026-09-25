@@ -27,8 +27,7 @@
       ],
       "codes": {
         "ICD-O-3": "8500/3",
-        "ICD-10": "C50.4",
-        "SNOMED": "http://snomed.info/sct"
+        "ICD-10": "C50.4"
       }
     },
     "histology_type": {

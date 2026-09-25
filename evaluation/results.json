@@ -21,12 +21,12 @@
       "total": 210
     },
     "terminology": {
-      "code_precision": 0.4,
+      "code_precision": 0.5,
       "code_recall": 0.0556,
-      "code_f1": 0.0976,
+      "code_f1": 0.1001,
       "match_count": 2,
       "total_gold_codes": 36,
-      "total_pred_codes": 5
+      "total_pred_codes": 4
     },
     "grounding_integrity": {
       "unsupported_field_rate": 0.0,
@@ -48,7 +48,7 @@
         "total_states": 10,
         "code_matches": 1,
         "total_codes_gold": 10,
-        "total_codes_pred": 3
+        "total_codes_pred": 2
       },
       "histology_type": {
         "ner_tp": 10,
@@ -304,8 +304,7 @@
         "pred_state": "present",
         "pred_codes": [
           "8500/3",
-          "C50.4",
-          "http://snomed.info/sct"
+          "C50.4"
         ],
         "evidence": "Left breast, modified radical mastectomy"
       },
