@@ -767,7 +767,7 @@ def run_all(
         "mean_runtime_sec":       round(sum(runtimes) / len(runtimes), 2) if runtimes else 0,
         "mean_fields_populated":  round(sum(field_counts) / len(field_counts), 1) if field_counts else 0,
         "cost_usd":               0.0,
-        "model_name":             "llama3.1:8b",
+        "model_name":             "spark-nlp-jsl-5.4.0",
         "spark_nlp_version":      "5.4.0",
         "spark_nlp_jsl_version":  "5.4.0",
         "models_used": [

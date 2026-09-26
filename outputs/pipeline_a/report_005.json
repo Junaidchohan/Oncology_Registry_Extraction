@@ -1,219 +1,261 @@
 {
-  "report_id": "report_005",
-  "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-25T10:13:38.578400+00:00",
-  "model_versions": {
-    "spark_nlp": "5.4.0",
-    "spark_nlp_jsl": "5.4.0",
-    "ner_oncology": "ner_oncology_wip",
-    "ner_biomarker": "ner_oncology_biomarker_wip",
-    "ner_tnm": "ner_oncology_tnm_wip",
-    "assertion": "assertion_oncology_wip",
-    "relation": "re_oncology_wip",
-    "resolver_icd10": "sbiobertresolve_icd10cm_augmented_billable",
-    "resolver_icdo": "sbiobertresolve_icdo",
-    "embeddings": "embeddings_clinical",
-    "sentence_embeddings": "sbiobert_base_cased_mli",
-    "mode": "licensed_jsl_real"
-  },
-  "fields": {
-    "primary_site": {
-      "value": "Lymph nodes",
-      "unit": null,
-      "state": "present",
-      "evidence": "Lymph nodes",
-      "span": [
-        1403,
-        1413
-      ],
-      "codes": {}
-    },
-    "histology_type": {
-      "value": "polyp",
-      "unit": null,
-      "state": "present",
-      "evidence": "polyp",
-      "span": [
-        120,
-        124
-      ],
-      "codes": {}
-    },
-    "tumor_grade": {
-      "value": "Grade 1",
-      "unit": null,
-      "state": "present",
-      "evidence": "Grade 1",
-      "span": [
-        532,
-        538
-      ],
-      "codes": {}
-    },
-    "clinical_stage": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_stage": {
-      "value": "pT1",
-      "unit": null,
-      "state": "present",
-      "evidence": "pT1",
-      "span": [
-        659,
-        661
-      ],
-      "codes": {}
-    },
-    "tumor_size": {
-      "value": "28.0",
-      "unit": "mm",
-      "state": "present",
-      "evidence": "2.8 cm",
-      "span": [
-        105,
-        110
-      ],
-      "codes": {}
-    },
-    "laterality": {
-      "value": null,
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "13",
-      "unit": null,
-      "state": "present",
-      "evidence": "12/13",
-      "span": null,
-      "codes": {}
-    },
-    "lymph_nodes_positive": {
-      "value": "12",
-      "unit": null,
-      "state": "present",
-      "evidence": "12/13",
-      "span": null,
-      "codes": {}
-    },
-    "lymphovascular_invasion": {
-      "value": "Absent",
-      "unit": null,
-      "state": "absent",
-      "evidence": "No lymphovascular invasion",
-      "span": null,
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "Absent",
-      "unit": null,
-      "state": "absent",
-      "evidence": "Perineural invasion is absent",
-      "span": null,
-      "codes": {}
-    },
-    "distant_metastasis": {
-      "value": "metastatic disease",
-      "unit": null,
-      "state": "absent",
-      "evidence": "metastatic disease",
-      "span": [
-        218,
-        235
-      ],
-      "codes": {}
-    },
-    "er_status": {
-      "value": "ER",
-      "unit": null,
-      "state": "present",
-      "evidence": "ER",
-      "span": [
-        1016,
-        1017
-      ],
-      "codes": {}
-    },
-    "pr_status": {
-      "value": "PR",
-      "unit": null,
-      "state": "present",
-      "evidence": "PR",
-      "span": [
-        1020,
-        1021
-      ],
-      "codes": {}
-    },
-    "her2_status": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "kras_mutation": {
-      "value": "KRAS codon 12/13",
-      "unit": null,
-      "state": "present",
-      "evidence": "KRAS codon 12/13",
-      "span": [
-        907,
-        922
-      ],
-      "codes": {}
-    },
-    "egfr_mutation": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "procedure_type": {
-      "value": "resection",
-      "unit": null,
-      "state": "present",
-      "evidence": "resection",
-      "span": [
-        1502,
-        1510
-      ],
-      "codes": {}
-    },
-    "prior_treatment": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_multiplicity": {
-      "value": "Single",
-      "unit": null,
-      "state": "absent",
-      "evidence": "No multiplicity cues detected",
-      "span": null,
-      "codes": {}
-    }
-  }
+    "report_id":  "report_005",
+    "pipeline":  "pipeline_a_classical",
+    "run_timestamp":  "2026-09-25T10:13:38.578400+00:00",
+    "model_versions":  {
+                           "spark_nlp":  "5.4.0",
+                           "spark_nlp_jsl":  "5.4.0",
+                           "ner_oncology":  "ner_oncology_wip",
+                           "ner_biomarker":  "ner_oncology_biomarker_wip",
+                           "ner_tnm":  "ner_oncology_tnm_wip",
+                           "assertion":  "assertion_oncology_wip",
+                           "relation":  "re_oncology_wip",
+                           "resolver_icd10":  "sbiobertresolve_icd10cm",
+                           "resolver_icdo":  "sbiobertresolve_icdo_base",
+                           "embeddings":  "embeddings_clinical",
+                           "sentence_embeddings":  "sbiobert_base_cased_mli",
+                           "mode":  "licensed_jsl_real"
+                       },
+    "fields":  {
+                   "primary_site":  {
+                                        "value":  "Lymph nodes",
+                                        "unit":  null,
+                                        "state":  "present",
+                                        "evidence":  "Lymph nodes",
+                                        "span":  [
+                                                     1403,
+                                                     1413
+                                                 ],
+                                        "codes":  {
+
+                                                  }
+                                    },
+                   "histology_type":  {
+                                          "value":  "polyp",
+                                          "unit":  null,
+                                          "state":  "present",
+                                          "evidence":  "polyp",
+                                          "span":  [
+                                                       120,
+                                                       124
+                                                   ],
+                                          "codes":  {
+
+                                                    }
+                                      },
+                   "tumor_grade":  {
+                                       "value":  "Grade 1",
+                                       "unit":  null,
+                                       "state":  "present",
+                                       "evidence":  "Grade 1",
+                                       "span":  [
+                                                    532,
+                                                    538
+                                                ],
+                                       "codes":  {
+
+                                                 }
+                                   },
+                   "clinical_stage":  {
+                                          "value":  null,
+                                          "unit":  null,
+                                          "state":  "not_mentioned",
+                                          "evidence":  null,
+                                          "span":  null,
+                                          "codes":  {
+
+                                                    }
+                                      },
+                   "pathologic_stage":  {
+                                            "value":  "pT1",
+                                            "unit":  null,
+                                            "state":  "present",
+                                            "evidence":  "pT1",
+                                            "span":  [
+                                                         659,
+                                                         661
+                                                     ],
+                                            "codes":  {
+
+                                                      }
+                                        },
+                   "tumor_size":  {
+                                      "value":  "28.0",
+                                      "unit":  "mm",
+                                      "state":  "present",
+                                      "evidence":  "2.8 cm",
+                                      "span":  [
+                                                   105,
+                                                   110
+                                               ],
+                                      "codes":  {
+
+                                                }
+                                  },
+                   "laterality":  {
+                                      "value":  null,
+                                      "unit":  null,
+                                      "state":  "not_applicable",
+                                      "evidence":  null,
+                                      "span":  null,
+                                      "codes":  {
+
+                                                }
+                                  },
+                   "surgical_margins":  {
+                                            "value":  null,
+                                            "unit":  null,
+                                            "state":  "not_mentioned",
+                                            "evidence":  null,
+                                            "span":  null,
+                                            "codes":  {
+
+                                                      }
+                                        },
+                   "lymph_nodes_examined":  {
+                                                "value":  "13",
+                                                "unit":  null,
+                                                "state":  "present",
+                                                "evidence":  "12/13",
+                                                "span":  null,
+                                                "codes":  {
+
+                                                          }
+                                            },
+                   "lymph_nodes_positive":  {
+                                                "value":  "12",
+                                                "unit":  null,
+                                                "state":  "present",
+                                                "evidence":  "12/13",
+                                                "span":  null,
+                                                "codes":  {
+
+                                                          }
+                                            },
+                   "lymphovascular_invasion":  {
+                                                   "value":  "Absent",
+                                                   "unit":  null,
+                                                   "state":  "absent",
+                                                   "evidence":  "No lymphovascular invasion",
+                                                   "span":  null,
+                                                   "codes":  {
+
+                                                             }
+                                               },
+                   "perineural_invasion":  {
+                                               "value":  "Absent",
+                                               "unit":  null,
+                                               "state":  "absent",
+                                               "evidence":  "Perineural invasion is absent",
+                                               "span":  null,
+                                               "codes":  {
+
+                                                         }
+                                           },
+                   "distant_metastasis":  {
+                                              "value":  "metastatic disease",
+                                              "unit":  null,
+                                              "state":  "absent",
+                                              "evidence":  "metastatic disease",
+                                              "span":  [
+                                                           218,
+                                                           235
+                                                       ],
+                                              "codes":  {
+
+                                                        }
+                                          },
+                   "er_status":  {
+                                     "value":  "ER",
+                                     "unit":  null,
+                                     "state":  "present",
+                                     "evidence":  "ER",
+                                     "span":  [
+                                                  1016,
+                                                  1017
+                                              ],
+                                     "codes":  {
+
+                                               }
+                                 },
+                   "pr_status":  {
+                                     "value":  "PR",
+                                     "unit":  null,
+                                     "state":  "present",
+                                     "evidence":  "PR",
+                                     "span":  [
+                                                  1020,
+                                                  1021
+                                              ],
+                                     "codes":  {
+
+                                               }
+                                 },
+                   "her2_status":  {
+                                       "value":  null,
+                                       "unit":  null,
+                                       "state":  "not_mentioned",
+                                       "evidence":  null,
+                                       "span":  null,
+                                       "codes":  {
+
+                                                 }
+                                   },
+                   "kras_mutation":  {
+                                         "value":  "KRAS codon 12/13",
+                                         "unit":  null,
+                                         "state":  "present",
+                                         "evidence":  "KRAS codon 12/13",
+                                         "span":  [
+                                                      907,
+                                                      922
+                                                  ],
+                                         "codes":  {
+
+                                                   }
+                                     },
+                   "egfr_mutation":  {
+                                         "value":  null,
+                                         "unit":  null,
+                                         "state":  "not_mentioned",
+                                         "evidence":  null,
+                                         "span":  null,
+                                         "codes":  {
+
+                                                   }
+                                     },
+                   "procedure_type":  {
+                                          "value":  "resection",
+                                          "unit":  null,
+                                          "state":  "present",
+                                          "evidence":  "resection",
+                                          "span":  [
+                                                       1502,
+                                                       1510
+                                                   ],
+                                          "codes":  {
+
+                                                    }
+                                      },
+                   "prior_treatment":  {
+                                           "value":  null,
+                                           "unit":  null,
+                                           "state":  "not_mentioned",
+                                           "evidence":  null,
+                                           "span":  null,
+                                           "codes":  {
+
+                                                     }
+                                       },
+                   "tumor_multiplicity":  {
+                                              "value":  "Single",
+                                              "unit":  null,
+                                              "state":  "absent",
+                                              "evidence":  "No multiplicity cues detected",
+                                              "span":  null,
+                                              "codes":  {
+
+                                                        }
+                                          }
+               }
 }

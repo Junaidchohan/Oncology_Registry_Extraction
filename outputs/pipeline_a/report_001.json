@@ -10,8 +10,8 @@
                            "ner_tnm":  "ner_oncology_tnm_wip",
                            "assertion":  "assertion_oncology_wip",
                            "relation":  "re_oncology_wip",
-                           "resolver_icd10":  "sbiobertresolve_icd10cm_augmented_billable",
-                           "resolver_icdo":  "sbiobertresolve_icdo",
+                           "resolver_icd10":  "sbiobertresolve_icd10cm",
+                           "resolver_icdo":  "sbiobertresolve_icdo_base",
                            "embeddings":  "embeddings_clinical",
                            "sentence_embeddings":  "sbiobert_base_cased_mli",
                            "mode":  "licensed_jsl_real"
