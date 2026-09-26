@@ -232,3 +232,35 @@ oncology-registry-extraction/
 - **Cost per report:** $0.00 for both pipelines (fully local)
 - **Mean runtime:** 32.85s (Pipeline A) / 692.10s (Pipeline B)
 - **Terminology index:** 580 concepts across SNOMED CT 2025-01, ICD-10-CM FY2025, ICD-O-3 3.2 (2025), LOINC 2.79, ATC 2025
+
+## Proof of Execution
+
+All screenshots captured from the local Windows environment after the final JSL rebuild and evaluation.
+
+### 🅰️ Pipeline A — JSL Healthcare NLP 5.4.0
+
+All 10 reports processed with real JSL annotators (mode=licensed_jsl_real, spark_nlp_jsl=5.4.0):
+
+![All 10 Pipeline A outputs are JSL](docs/screenshots/01_pipeline_a_all_jsl.png)
+
+Sample output from report_001 showing real JSL models and ICD-10 / ICD-O-3 codes on primary_site and histology_type:
+
+![Pipeline A sample output with codes](docs/screenshots/02_pipeline_a_sample.png)
+
+### 🅱️ Pipeline B — Grounding Enforcement
+
+Retrieval log showing the grounding enforcer accepting, abstaining, and rejecting codes:
+
+![Retrieval log with grounding decisions](docs/screenshots/03_retrieval_log.png)
+
+### 📚 Terminology — 580 concepts (2025 releases)
+
+Terminology inventory containing 580 curated concepts across SNOMED CT 2025-01, ICD-10-CM FY2025, ICD-O-3 3.2 (2025), LOINC 2.79, and ATC 2025:
+
+![Terminology 580 concepts and 2025 releases](docs/screenshots/04_terminology_580.png)
+
+### 📋 Evaluation
+
+Final side-by-side comparison after running both pipelines on all 10 reports:
+
+![Comparison table](docs/screenshots/05_comparison_table.png)

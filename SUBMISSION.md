@@ -146,28 +146,31 @@ Each pipeline has a role: Pipeline A for fast, precise extraction; Pipeline B fo
 
 ## 📸 Proof of Execution
 
-Final evaluation results after running both pipelines on all 10 reports:
+All screenshots captured from the local Windows environment after the final JSL rebuild and evaluation.
 
-| Metric | Pipeline A (JSL) | Pipeline B (LLM + Retrieval) |
-|---|---|---|
-| Entity P / R / F1 | 100.0% / 65.2% / 79.0% | 100.0% / 68.1% / 81.0% |
-| Entity TP / FP / FN | 137 / 0 / 73 | 143 / 0 / 67 |
-| Field value exact accuracy | 11.9% (25/210) | 23.3% (49/210) |
-| Assertion / State accuracy | 49.0% (103/210) | 55.7% (117/210) |
-| Relation / Macro F1 | 79.0% | 81.0% |
-| Terminology code precision | 50.0% (2/4) | 17.7% (11/62) |
-| Terminology code recall | 5.6% (2/36) | 30.6% (11/36) |
-| Terminology F1 | 10.0% | 22.4% |
-| Unsupported field rate | 0.0% | 0.0% |
-| Mean runtime per report | 32.85s | 692.10s |
-| Cost per report | $0.00 | $0.00 |
+### 🅰️ Pipeline A — JSL Healthcare NLP 5.4.0
 
-![Comparison table](docs/screenshots/13_comparison_table.png)
+All 10 reports processed with real JSL annotators (mode=licensed_jsl_real, spark_nlp_jsl=5.4.0):
 
+![All 10 Pipeline A outputs are JSL](docs/screenshots/01_pipeline_a_all_jsl.png)
 
+Sample output from report_001 showing real JSL models and ICD-10 / ICD-O-3 codes:
 
----
+![Pipeline A sample output with codes](docs/screenshots/02_pipeline_a_sample.png)
 
+### 🅱️ Pipeline B — Grounding Enforcement
+
+Retrieval log showing the grounding enforcer accepting, abstaining, and rejecting codes:
+
+![Retrieval log with grounding decisions](docs/screenshots/03_retrieval_log.png)
+
+### 📚 Terminology — 580 concepts (2025 releases)
+
+![Terminology 580 concepts and 2025 releases](docs/screenshots/04_terminology_580.png)
+
+### 📋 Evaluation
+
+![Comparison table](docs/screenshots/05_comparison_table.png)
 ## 📦 Deliverables Map
 
 | What | Where |
