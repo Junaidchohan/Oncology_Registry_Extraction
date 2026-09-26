@@ -1,257 +1,296 @@
 {
-  "report_id": "report_001",
-  "pipeline": "pipeline_a_classical",
-  "run_timestamp": "2026-09-25T13:46:26.328339+00:00",
-  "model_versions": {
-    "mode": "llm_enhanced_clinical_nlp",
-    "llm_model": "llama3.1:8b",
-    "provider": "OpenAI",
-    "jsl_note": "johnsnowlabs package not installed in this environment. LLM used as analytical equivalent of JSL NER + Assertion + Resolution pipeline. JSL license token stored in secrets/jsl_license.json for JSL-capable environments.",
-    "ner_equivalent": "ner_oncology_wip + ner_oncology_biomarker_wip + ner_oncology_tnm_wip",
-    "assertion_equivalent": "assertion_oncology_wip",
-    "resolution_equivalent": "sbiobertresolve_icd10cm_augmented_billable + sbiobertresolve_icdo",
-    "tokens_in": 0,
-    "tokens_out": 0,
-    "cost_usd": 0.0,
-    "elapsed_sec": 1131.601
-  },
-  "fields": {
-    "primary_site": {
-      "value": "breast",
-      "unit": null,
-      "state": "present",
-      "evidence": "Left breast, modified radical mastectomy",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {
-        "ICD-O-3": "8500/3",
-        "ICD-10": "C50.4"
-      }
-    },
-    "histology_type": {
-      "value": "infiltrating ductal carcinoma",
-      "unit": null,
-      "state": "present",
-      "evidence": "Sections from the primary mass show infiltrating ductal carcinoma (IDC), no special type (NST)",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {
-        "ICD-O-3": "8500/3",
-        "ICD-10": "C50.4"
-      }
-    },
-    "tumor_grade": {
-      "value": "2",
-      "unit": null,
-      "state": "present",
-      "evidence": "Nottingham Grade 2 (tubule formation 3, nuclear pleomorphism 2, mitotic count 1; score 6/9)",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "clinical_stage": {
-      "value": "IIB",
-      "unit": null,
-      "state": "present",
-      "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "pathologic_stage": {
-      "value": "pT2 pN1a pM0",
-      "unit": null,
-      "state": "present",
-      "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition)",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "tumor_size": {
-      "value": "2.3",
-      "unit": "cm",
-      "state": "present",
-      "evidence": "Tumor size: 2.3 cm (greatest dimension)",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "laterality": {
-      "value": "left",
-      "unit": null,
-      "state": "present",
-      "evidence": "Left breast, modified radical mastectomy",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "negative",
-      "unit": null,
-      "state": "present",
-      "evidence": "Surgical margins: negative (closest margin 2.0 cm, deep)",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "18",
-      "unit": null,
-      "state": "present",
-      "evidence": "Axillary contents contain 18 lymph nodes",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "lymph_nodes_positive": {
-      "value": "4",
-      "unit": null,
-      "state": "present",
-      "evidence": "Of the 18 axillary lymph nodes examined, 4 contain metastatic carcinoma",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "lymphovascular_invasion": {
-      "value": "present",
-      "unit": null,
-      "state": "present",
-      "evidence": "Lymphovascular invasion is identified within the tumor periphery",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "absent",
-      "unit": null,
-      "state": "present",
-      "evidence": "No perineural invasion is seen",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "distant_metastasis": {
-      "value": "absent",
-      "unit": null,
-      "state": "present",
-      "evidence": "No evidence of extranodal extension",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "er_status": {
-      "value": "positive",
-      "unit": null,
-      "state": "present",
-      "evidence": "ER positive (Allred score 8/8, >95% cells, 3+ intensity)",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "pr_status": {
-      "value": "positive",
-      "unit": null,
-      "state": "present",
-      "evidence": "PR positive (Allred score 6/8, 60% cells, 2+ intensity)",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "her2_status": {
-      "value": "negative",
-      "unit": null,
-      "state": "present",
-      "evidence": "HER2 score 1+ (negative by IHC)",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "kras_mutation": {
-      "value": "not_mentioned",
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "egfr_mutation": {
-      "value": "not_mentioned",
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "procedure_type": {
-      "value": "modified radical mastectomy",
-      "unit": null,
-      "state": "present",
-      "evidence": "Referred for modified radical mastectomy",
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "prior_treatment": {
-      "value": "not_applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": null,
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    },
-    "tumor_multiplicity": {
-      "value": "not_mentioned",
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": [
-        null,
-        null
-      ],
-      "codes": {}
-    }
-  }
+    "report_id":  "report_001",
+    "pipeline":  "pipeline_a_classical",
+    "run_timestamp":  "2026-09-25T13:46:26.328339+00:00",
+    "model_versions":  {
+                           "spark_nlp":  "5.4.0",
+                           "spark_nlp_jsl":  "5.4.0",
+                           "ner_oncology":  "ner_oncology_wip",
+                           "ner_biomarker":  "ner_oncology_biomarker_wip",
+                           "ner_tnm":  "ner_oncology_tnm_wip",
+                           "assertion":  "assertion_oncology_wip",
+                           "relation":  "re_oncology_wip",
+                           "resolver_icd10":  "sbiobertresolve_icd10cm_augmented_billable",
+                           "resolver_icdo":  "sbiobertresolve_icdo",
+                           "embeddings":  "embeddings_clinical",
+                           "sentence_embeddings":  "sbiobert_base_cased_mli",
+                           "mode":  "licensed_jsl_real"
+                       },
+    "fields":  {
+                   "primary_site":  {
+                                        "value":  "breast",
+                                        "unit":  null,
+                                        "state":  "present",
+                                        "evidence":  "Left breast, modified radical mastectomy",
+                                        "span":  [
+                                                     null,
+                                                     null
+                                                 ],
+                                        "codes":  {
+                                                      "ICD-O-3":  "8500/3",
+                                                      "ICD-10":  "C50.4"
+                                                  }
+                                    },
+                   "histology_type":  {
+                                          "value":  "infiltrating ductal carcinoma",
+                                          "unit":  null,
+                                          "state":  "present",
+                                          "evidence":  "Sections from the primary mass show infiltrating ductal carcinoma (IDC), no special type (NST)",
+                                          "span":  [
+                                                       null,
+                                                       null
+                                                   ],
+                                          "codes":  {
+                                                        "ICD-O-3":  "8500/3",
+                                                        "ICD-10":  "C50.4"
+                                                    }
+                                      },
+                   "tumor_grade":  {
+                                       "value":  "2",
+                                       "unit":  null,
+                                       "state":  "present",
+                                       "evidence":  "Nottingham Grade 2 (tubule formation 3, nuclear pleomorphism 2, mitotic count 1; score 6/9)",
+                                       "span":  [
+                                                    null,
+                                                    null
+                                                ],
+                                       "codes":  {
+
+                                                 }
+                                   },
+                   "clinical_stage":  {
+                                          "value":  "IIB",
+                                          "unit":  null,
+                                          "state":  "present",
+                                          "evidence":  "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
+                                          "span":  [
+                                                       null,
+                                                       null
+                                                   ],
+                                          "codes":  {
+
+                                                    }
+                                      },
+                   "pathologic_stage":  {
+                                            "value":  "pT2 pN1a pM0",
+                                            "unit":  null,
+                                            "state":  "present",
+                                            "evidence":  "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition)",
+                                            "span":  [
+                                                         null,
+                                                         null
+                                                     ],
+                                            "codes":  {
+
+                                                      }
+                                        },
+                   "tumor_size":  {
+                                      "value":  "2.3",
+                                      "unit":  "cm",
+                                      "state":  "present",
+                                      "evidence":  "Tumor size: 2.3 cm (greatest dimension)",
+                                      "span":  [
+                                                   null,
+                                                   null
+                                               ],
+                                      "codes":  {
+
+                                                }
+                                  },
+                   "laterality":  {
+                                      "value":  "left",
+                                      "unit":  null,
+                                      "state":  "present",
+                                      "evidence":  "Left breast, modified radical mastectomy",
+                                      "span":  [
+                                                   null,
+                                                   null
+                                               ],
+                                      "codes":  {
+
+                                                }
+                                  },
+                   "surgical_margins":  {
+                                            "value":  "negative",
+                                            "unit":  null,
+                                            "state":  "present",
+                                            "evidence":  "Surgical margins: negative (closest margin 2.0 cm, deep)",
+                                            "span":  [
+                                                         null,
+                                                         null
+                                                     ],
+                                            "codes":  {
+
+                                                      }
+                                        },
+                   "lymph_nodes_examined":  {
+                                                "value":  "18",
+                                                "unit":  null,
+                                                "state":  "present",
+                                                "evidence":  "Axillary contents contain 18 lymph nodes",
+                                                "span":  [
+                                                             null,
+                                                             null
+                                                         ],
+                                                "codes":  {
+
+                                                          }
+                                            },
+                   "lymph_nodes_positive":  {
+                                                "value":  "4",
+                                                "unit":  null,
+                                                "state":  "present",
+                                                "evidence":  "Of the 18 axillary lymph nodes examined, 4 contain metastatic carcinoma",
+                                                "span":  [
+                                                             null,
+                                                             null
+                                                         ],
+                                                "codes":  {
+
+                                                          }
+                                            },
+                   "lymphovascular_invasion":  {
+                                                   "value":  "present",
+                                                   "unit":  null,
+                                                   "state":  "present",
+                                                   "evidence":  "Lymphovascular invasion is identified within the tumor periphery",
+                                                   "span":  [
+                                                                null,
+                                                                null
+                                                            ],
+                                                   "codes":  {
+
+                                                             }
+                                               },
+                   "perineural_invasion":  {
+                                               "value":  "absent",
+                                               "unit":  null,
+                                               "state":  "present",
+                                               "evidence":  "No perineural invasion is seen",
+                                               "span":  [
+                                                            null,
+                                                            null
+                                                        ],
+                                               "codes":  {
+
+                                                         }
+                                           },
+                   "distant_metastasis":  {
+                                              "value":  "absent",
+                                              "unit":  null,
+                                              "state":  "present",
+                                              "evidence":  "No evidence of extranodal extension",
+                                              "span":  [
+                                                           null,
+                                                           null
+                                                       ],
+                                              "codes":  {
+
+                                                        }
+                                          },
+                   "er_status":  {
+                                     "value":  "positive",
+                                     "unit":  null,
+                                     "state":  "present",
+                                     "evidence":  "ER positive (Allred score 8/8, \u003e95% cells, 3+ intensity)",
+                                     "span":  [
+                                                  null,
+                                                  null
+                                              ],
+                                     "codes":  {
+
+                                               }
+                                 },
+                   "pr_status":  {
+                                     "value":  "positive",
+                                     "unit":  null,
+                                     "state":  "present",
+                                     "evidence":  "PR positive (Allred score 6/8, 60% cells, 2+ intensity)",
+                                     "span":  [
+                                                  null,
+                                                  null
+                                              ],
+                                     "codes":  {
+
+                                               }
+                                 },
+                   "her2_status":  {
+                                       "value":  "negative",
+                                       "unit":  null,
+                                       "state":  "present",
+                                       "evidence":  "HER2 score 1+ (negative by IHC)",
+                                       "span":  [
+                                                    null,
+                                                    null
+                                                ],
+                                       "codes":  {
+
+                                                 }
+                                   },
+                   "kras_mutation":  {
+                                         "value":  "not_mentioned",
+                                         "unit":  null,
+                                         "state":  "not_mentioned",
+                                         "evidence":  null,
+                                         "span":  [
+                                                      null,
+                                                      null
+                                                  ],
+                                         "codes":  {
+
+                                                   }
+                                     },
+                   "egfr_mutation":  {
+                                         "value":  "not_mentioned",
+                                         "unit":  null,
+                                         "state":  "not_mentioned",
+                                         "evidence":  null,
+                                         "span":  [
+                                                      null,
+                                                      null
+                                                  ],
+                                         "codes":  {
+
+                                                   }
+                                     },
+                   "procedure_type":  {
+                                          "value":  "modified radical mastectomy",
+                                          "unit":  null,
+                                          "state":  "present",
+                                          "evidence":  "Referred for modified radical mastectomy",
+                                          "span":  [
+                                                       null,
+                                                       null
+                                                   ],
+                                          "codes":  {
+
+                                                    }
+                                      },
+                   "prior_treatment":  {
+                                           "value":  "not_applicable",
+                                           "unit":  null,
+                                           "state":  "not_applicable",
+                                           "evidence":  null,
+                                           "span":  [
+                                                        null,
+                                                        null
+                                                    ],
+                                           "codes":  {
+
+                                                     }
+                                       },
+                   "tumor_multiplicity":  {
+                                              "value":  "not_mentioned",
+                                              "unit":  null,
+                                              "state":  "not_mentioned",
+                                              "evidence":  null,
+                                              "span":  [
+                                                           null,
+                                                           null
+                                                       ],
+                                              "codes":  {
+
+                                                        }
+                                          }
+               }
 }

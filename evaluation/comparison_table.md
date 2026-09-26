@@ -1,6 +1,6 @@
 # Pipeline Evaluation: Side-by-Side Comparison
 
-*Generated: 2026-09-26T08:02:23.500282Z*
+*Generated: 2026-09-26T08:18:11.888927Z*
 
 | Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |
 | --- | --- | --- |

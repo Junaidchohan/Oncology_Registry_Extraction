@@ -35,7 +35,7 @@
     "operations": {
       "mean_runtime_sec": 32.85,
       "mean_cost_usd": 0.0,
-      "total_cost_usd": 0.0
+      "total_cost_usd": 0
     },
     "field_metrics": {
       "primary_site": {
