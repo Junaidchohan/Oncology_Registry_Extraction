@@ -1,226 +1,226 @@
 {
-  "report_id": "report_001",
-  "annotations": {
-    "primary_tumor_site": {
-      "value": "Left breast, upper outer quadrant",
-      "state": "present",
-      "evidence": "firm, stellate, grey-white mass... in the upper outer quadrant",
-      "span": [
-        318,
-        376
-      ],
-      "codes": {
-        "ICD-O-3": "C50.4"
-      }
-    },
-    "histological_type": {
-      "value": "Invasive ductal carcinoma, NST (no special type)",
-      "state": "present",
-      "evidence": "infiltrating ductal carcinoma (IDC), no special type (NST)",
-      "span": [
-        612,
-        660
-      ],
-      "codes": {
-        "ICD-O-3-M": "8500/3"
-      }
-    },
-    "procedure": {
-      "value": "Modified radical mastectomy",
-      "state": "present",
-      "evidence": "Left modified radical mastectomy",
-      "span": [
-        241,
-        270
-      ],
-      "codes": {
-        "CPT": "19307"
-      }
-    },
-    "laterality": {
-      "value": "Left",
-      "state": "present",
-      "evidence": "Left modified radical mastectomy specimen",
-      "span": [
-        241,
-        280
-      ],
-      "codes": {}
-    },
-    "tumor_grade": {
-      "value": "Nottingham Grade 2",
-      "state": "present",
-      "evidence": "Nottingham Grade 2 (tubule formation 3, nuclear pleomorphism 2, mitotic count 1; score 6/9)",
-      "span": [
-        662,
-        750
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1"
-    },
-    "tumor_size": {
-      "value": "2.3",
-      "state": "present",
-      "evidence": "mass measuring 2.3 x 2.1 x 1.8 cm",
-      "span": [
-        307,
-        340
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1",
-      "unit": "cm"
-    },
-    "tumor_focality": {
-      "value": "Single lesion",
-      "state": "present",
-      "evidence": "a firm, stellate, grey-white mass (single mass described)",
-      "span": [
-        295,
-        320
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1"
-    },
-    "lymphovascular_invasion": {
-      "value": "Present",
-      "state": "present",
-      "evidence": "Lymphovascular invasion is identified within the tumor periphery",
-      "span": [
-        751,
-        812
-      ],
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "Absent",
-      "state": "negative",
-      "evidence": "No perineural invasion is seen",
-      "span": [
-        753,
-        782
-      ],
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "Negative (closest margin 2.0 cm, deep)",
-      "state": "present",
-      "evidence": "all other margins are negative",
-      "span": [
-        770,
-        795
-      ],
-      "codes": {},
-      "unit": "cm"
-    },
-    "lymph_nodes_examined": {
-      "value": "18",
-      "state": "present",
-      "evidence": "Of the 18 axillary lymph nodes examined",
-      "span": [
-        797,
-        835
-      ],
-      "codes": {}
-    },
-    "positive_lymph_nodes": {
-      "value": "4",
-      "state": "present",
-      "evidence": "4 contain metastatic carcinoma",
-      "span": [
-        836,
-        865
-      ],
-      "codes": {}
-    },
-    "pathologic_t": {
-      "value": "pT2",
-      "state": "present",
-      "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
-      "span": [
-        1350,
-        1412
-      ],
-      "codes": {
-        "AJCC": "Stage IIB"
-      }
-    },
-    "pathologic_n": {
-      "value": "pN1a",
-      "state": "present",
-      "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
-      "span": [
-        1350,
-        1412
-      ],
-      "codes": {
-        "AJCC": "Stage IIB"
-      }
-    },
-    "pathologic_m": {
-      "value": "pM0",
-      "state": "present",
-      "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
-      "span": [
-        1350,
-        1412
-      ],
-      "codes": {
-        "AJCC": "Stage IIB"
-      }
-    },
-    "specimen": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_behavior": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_extension": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "anticancer_medication": [],
-    "biomarkers": [
-      {
-        "assay": "ER",
-        "result": "Positive (Allred 8/8, >95%, 3+)",
-        "lesion_id": "lesion_1",
-        "evidence": "ER positive (Allred score 8/8, >95% cells, 3+ intensity)",
-        "span": [
-          955,
-          1010
+    "report_id": "report_001",
+    "annotations": {
+        "primary_tumor_site": {
+            "value": "Left breast, upper outer quadrant",
+            "state": "present",
+            "evidence": "firm, stellate, grey-white mass... in the upper outer quadrant",
+            "span": [
+                53,
+                64
+            ],
+            "codes": {
+                "ICD-O-3": "C50.4"
+            }
+        },
+        "histological_type": {
+            "value": "Invasive ductal carcinoma, NST (no special type)",
+            "state": "present",
+            "evidence": "infiltrating ductal carcinoma (IDC), no special type (NST)",
+            "span": [
+                698,
+                750
+            ],
+            "codes": {
+                "ICD-O-3-M": "8500/3"
+            }
+        },
+        "procedure": {
+            "value": "Modified radical mastectomy",
+            "state": "present",
+            "evidence": "Left modified radical mastectomy",
+            "span": [
+                178,
+                205
+            ],
+            "codes": {
+                "CPT": "19307"
+            }
+        },
+        "laterality": {
+            "value": "Left",
+            "state": "present",
+            "evidence": "Left modified radical mastectomy specimen",
+            "span": [
+                237,
+                241
+            ],
+            "codes": {}
+        },
+        "tumor_grade": {
+            "value": "Nottingham Grade 2",
+            "state": "present",
+            "evidence": "Nottingham Grade 2 (tubule formation 3, nuclear pleomorphism 2, mitotic count 1; score 6/9)",
+            "span": [
+                758,
+                776
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1"
+        },
+        "tumor_size": {
+            "value": "2.3",
+            "state": "present",
+            "evidence": "mass measuring 2.3 x 2.1 x 1.8 cm",
+            "span": [
+                71,
+                74
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1",
+            "unit": "cm"
+        },
+        "tumor_focality": {
+            "value": "Single lesion",
+            "state": "present",
+            "evidence": "a firm, stellate, grey-white mass (single mass described)",
+            "span": [
+                680,
+                692
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1"
+        },
+        "lymphovascular_invasion": {
+            "value": "Present",
+            "state": "present",
+            "evidence": "Lymphovascular invasion is identified within the tumor periphery",
+            "span": [
+                1540,
+                1572
+            ],
+            "codes": {}
+        },
+        "perineural_invasion": {
+            "value": "Absent",
+            "state": "negative",
+            "evidence": "No perineural invasion is seen",
+            "span": [
+                753,
+                782
+            ],
+            "codes": {}
+        },
+        "surgical_margins": {
+            "value": "Negative (closest margin 2.0 cm, deep)",
+            "state": "present",
+            "evidence": "all other margins are negative",
+            "span": [
+                1623,
+                1661
+            ],
+            "codes": {},
+            "unit": "cm"
+        },
+        "lymph_nodes_examined": {
+            "value": "18",
+            "state": "present",
+            "evidence": "Of the 18 axillary lymph nodes examined",
+            "span": [
+                530,
+                532
+            ],
+            "codes": {}
+        },
+        "positive_lymph_nodes": {
+            "value": "4",
+            "state": "present",
+            "evidence": "4 contain metastatic carcinoma",
+            "span": [
+                288,
+                289
+            ],
+            "codes": {}
+        },
+        "pathologic_t": {
+            "value": "pT2",
+            "state": "present",
+            "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
+            "span": [
+                1792,
+                1795
+            ],
+            "codes": {
+                "AJCC": "Stage IIB"
+            }
+        },
+        "pathologic_n": {
+            "value": "pN1a",
+            "state": "present",
+            "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
+            "span": [
+                1796,
+                1800
+            ],
+            "codes": {
+                "AJCC": "Stage IIB"
+            }
+        },
+        "pathologic_m": {
+            "value": "pM0",
+            "state": "present",
+            "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
+            "span": [
+                1801,
+                1804
+            ],
+            "codes": {
+                "AJCC": "Stage IIB"
+            }
+        },
+        "specimen": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_behavior": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_extension": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "anticancer_medication": [],
+        "biomarkers": [
+            {
+                "assay": "ER",
+                "result": "Positive (Allred 8/8, >95%, 3+)",
+                "lesion_id": "lesion_1",
+                "evidence": "ER positive (Allred score 8/8, >95% cells, 3+ intensity)",
+                "span": [
+                    955,
+                    1010
+                ]
+            },
+            {
+                "assay": "PR",
+                "result": "Positive (Allred 6/8, 60%, 2+)",
+                "lesion_id": "lesion_1",
+                "evidence": "PR positive (Allred score 6/8, 60% cells, 2+ intensity)",
+                "span": [
+                    1011,
+                    1062
+                ]
+            },
+            {
+                "assay": "HER2",
+                "result": "Negative (1+ IHC)",
+                "lesion_id": "lesion_1",
+                "evidence": "HER2 score 1+ (negative by IHC)",
+                "span": [
+                    1063,
+                    1094
+                ]
+            }
         ]
-      },
-      {
-        "assay": "PR",
-        "result": "Positive (Allred 6/8, 60%, 2+)",
-        "lesion_id": "lesion_1",
-        "evidence": "PR positive (Allred score 6/8, 60% cells, 2+ intensity)",
-        "span": [
-          1011,
-          1062
-        ]
-      },
-      {
-        "assay": "HER2",
-        "result": "Negative (1+ IHC)",
-        "lesion_id": "lesion_1",
-        "evidence": "HER2 score 1+ (negative by IHC)",
-        "span": [
-          1063,
-          1094
-        ]
-      }
-    ]
-  }
+    }
 }

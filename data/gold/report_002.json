@@ -1,237 +1,237 @@
 {
-  "report_id": "report_002",
-  "annotations": {
-    "primary_tumor_site": {
-      "value": "Sigmoid colon",
-      "state": "present",
-      "evidence": "a 4.5 cm mass at the sigmoid colon",
-      "span": [
-        96,
-        130
-      ],
-      "codes": {
-        "ICD-O-3": "C18.7"
-      }
-    },
-    "histological_type": {
-      "value": "Colorectal adenocarcinoma",
-      "state": "present",
-      "evidence": "moderately differentiated (Grade 2) colorectal adenocarcinoma",
-      "span": [
-        510,
-        570
-      ],
-      "codes": {
-        "ICD-O-3-M": "8140/3"
-      }
-    },
-    "procedure": {
-      "value": "Sigmoid colectomy",
-      "state": "present",
-      "evidence": "Sigmoid colectomy specimen",
-      "span": [
-        215,
-        240
-      ],
-      "codes": {
-        "CPT": "44210"
-      }
-    },
-    "laterality": {
-      "value": "Not applicable",
-      "state": "not_applicable",
-      "evidence": "Sigmoid colon -- laterality not applicable for colon",
-      "span": null,
-      "codes": {}
-    },
-    "tumor_grade": {
-      "value": "Grade 2 (moderately differentiated)",
-      "state": "present",
-      "evidence": "moderately differentiated (Grade 2)",
-      "span": [
-        510,
-        542
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1"
-    },
-    "tumor_size": {
-      "value": "4.5",
-      "state": "present",
-      "evidence": "ulcerated, fungating tumor measuring 4.5 x 3.8 x 1.2 cm",
-      "span": [
-        339,
-        395
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1",
-      "unit": "cm"
-    },
-    "tumor_focality": {
-      "value": "Single lesion",
-      "state": "present",
-      "evidence": "single ulcerated fungating tumor described",
-      "span": [
-        330,
-        360
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1"
-    },
-    "lymphovascular_invasion": {
-      "value": "Present",
-      "state": "present",
-      "evidence": "Lymphovascular invasion is present",
-      "span": [
-        580,
-        614
-      ],
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "Present (2 foci)",
-      "state": "present",
-      "evidence": "Perineural invasion is identified in 2 foci",
-      "span": [
-        615,
-        655
-      ],
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "Negative (CRM 2.5 mm)",
-      "state": "present",
-      "evidence": "circumferential radial margin (CRM) is negative (closest point 2.5 mm)",
-      "span": [
-        662,
-        715
-      ],
-      "codes": {},
-      "unit": "mm"
-    },
-    "lymph_nodes_examined": {
-      "value": "24",
-      "state": "present",
-      "evidence": "Of 24 lymph nodes examined",
-      "span": [
-        718,
-        742
-      ],
-      "codes": {}
-    },
-    "positive_lymph_nodes": {
-      "value": "3",
-      "state": "present",
-      "evidence": "3 are positive for metastatic adenocarcinoma (pN1b)",
-      "span": [
-        743,
-        790
-      ],
-      "codes": {}
-    },
-    "pathologic_t": {
-      "value": "pT3",
-      "state": "present",
-      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
-      "span": [
-        1210,
-        1275
-      ],
-      "codes": {
-        "AJCC": "Stage IIIB"
-      }
-    },
-    "pathologic_n": {
-      "value": "pN1b",
-      "state": "present",
-      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
-      "span": [
-        1210,
-        1275
-      ],
-      "codes": {
-        "AJCC": "Stage IIIB"
-      }
-    },
-    "pathologic_m": {
-      "value": "pM0",
-      "state": "present",
-      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
-      "span": [
-        1210,
-        1275
-      ],
-      "codes": {
-        "AJCC": "Stage IIIB"
-      }
-    },
-    "specimen": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_behavior": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_extension": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "anticancer_medication": [],
-    "biomarkers": [
-      {
-        "assay": "ER",
-        "result": "Not applicable",
-        "lesion_id": "lesion_1",
-        "evidence": "Colorectal cancer -- ER not applicable",
-        "span": null
-      },
-      {
-        "assay": "PR",
-        "result": "Not applicable",
-        "lesion_id": "lesion_1",
-        "evidence": "Colorectal cancer -- PR not applicable",
-        "span": null
-      },
-      {
-        "assay": "KRAS",
-        "result": "Mutant (p.G12D, codon 12)",
-        "lesion_id": "lesion_1",
-        "evidence": "KRAS mutation detected (p.G12D, codon 12)",
-        "span": [
-          882,
-          920
+    "report_id": "report_002",
+    "annotations": {
+        "primary_tumor_site": {
+            "value": "Sigmoid colon",
+            "state": "present",
+            "evidence": "a 4.5 cm mass at the sigmoid colon",
+            "span": [
+                1438,
+                1451
+            ],
+            "codes": {
+                "ICD-O-3": "C18.7"
+            }
+        },
+        "histological_type": {
+            "value": "Colorectal adenocarcinoma",
+            "state": "present",
+            "evidence": "moderately differentiated (Grade 2) colorectal adenocarcinoma",
+            "span": [
+                673,
+                698
+            ],
+            "codes": {
+                "ICD-O-3-M": "8140/3"
+            }
+        },
+        "procedure": {
+            "value": "Sigmoid colectomy",
+            "state": "present",
+            "evidence": "Sigmoid colectomy specimen",
+            "span": [
+                236,
+                253
+            ],
+            "codes": {
+                "CPT": "44210"
+            }
+        },
+        "laterality": {
+            "value": "Not applicable",
+            "state": "not_applicable",
+            "evidence": "Sigmoid colon -- laterality not applicable for colon",
+            "span": null,
+            "codes": {}
+        },
+        "tumor_grade": {
+            "value": "Grade 2 (moderately differentiated)",
+            "state": "present",
+            "evidence": "moderately differentiated (Grade 2)",
+            "span": [
+                637,
+                672
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1"
+        },
+        "tumor_size": {
+            "value": "4.5",
+            "state": "present",
+            "evidence": "ulcerated, fungating tumor measuring 4.5 x 3.8 x 1.2 cm",
+            "span": [
+                59,
+                62
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1",
+            "unit": "cm"
+        },
+        "tumor_focality": {
+            "value": "Single lesion",
+            "state": "present",
+            "evidence": "single ulcerated fungating tumor described",
+            "span": [
+                330,
+                360
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1"
+        },
+        "lymphovascular_invasion": {
+            "value": "Present",
+            "state": "present",
+            "evidence": "Lymphovascular invasion is present",
+            "span": [
+                813,
+                847
+            ],
+            "codes": {}
+        },
+        "perineural_invasion": {
+            "value": "Present (2 foci)",
+            "state": "present",
+            "evidence": "Perineural invasion is identified in 2 foci",
+            "span": [
+                849,
+                892
+            ],
+            "codes": {}
+        },
+        "surgical_margins": {
+            "value": "Negative (CRM 2.5 mm)",
+            "state": "present",
+            "evidence": "circumferential radial margin (CRM) is negative (closest point 2.5 mm)",
+            "span": [
+                1695,
+                1716
+            ],
+            "codes": {},
+            "unit": "mm"
+        },
+        "lymph_nodes_examined": {
+            "value": "24",
+            "state": "present",
+            "evidence": "Of 24 lymph nodes examined",
+            "span": [
+                533,
+                535
+            ],
+            "codes": {}
+        },
+        "positive_lymph_nodes": {
+            "value": "3",
+            "state": "present",
+            "evidence": "3 are positive for metastatic adenocarcinoma (pN1b)",
+            "span": [
+                327,
+                328
+            ],
+            "codes": {}
+        },
+        "pathologic_t": {
+            "value": "pT3",
+            "state": "present",
+            "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
+            "span": [
+                807,
+                810
+            ],
+            "codes": {
+                "AJCC": "Stage IIIB"
+            }
+        },
+        "pathologic_n": {
+            "value": "pN1b",
+            "state": "present",
+            "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
+            "span": [
+                968,
+                972
+            ],
+            "codes": {
+                "AJCC": "Stage IIIB"
+            }
+        },
+        "pathologic_m": {
+            "value": "pM0",
+            "state": "present",
+            "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
+            "span": [
+                1869,
+                1872
+            ],
+            "codes": {
+                "AJCC": "Stage IIIB"
+            }
+        },
+        "specimen": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_behavior": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_extension": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "anticancer_medication": [],
+        "biomarkers": [
+            {
+                "assay": "ER",
+                "result": "Not applicable",
+                "lesion_id": "lesion_1",
+                "evidence": "Colorectal cancer -- ER not applicable",
+                "span": null
+            },
+            {
+                "assay": "PR",
+                "result": "Not applicable",
+                "lesion_id": "lesion_1",
+                "evidence": "Colorectal cancer -- PR not applicable",
+                "span": null
+            },
+            {
+                "assay": "KRAS",
+                "result": "Mutant (p.G12D, codon 12)",
+                "lesion_id": "lesion_1",
+                "evidence": "KRAS mutation detected (p.G12D, codon 12)",
+                "span": [
+                    882,
+                    920
+                ]
+            },
+            {
+                "assay": "BRAF",
+                "result": "V600E",
+                "lesion_id": "lesion_1",
+                "evidence": "BRAF V600E",
+                "span": [
+                    1309,
+                    1319
+                ]
+            },
+            {
+                "assay": "NRAS",
+                "result": "wild-type",
+                "lesion_id": "lesion_1",
+                "evidence": "NRAS wild-type",
+                "span": [
+                    1293,
+                    1307
+                ]
+            }
         ]
-      },
-      {
-        "assay": "BRAF",
-        "result": "V600E",
-        "lesion_id": "lesion_1",
-        "evidence": "BRAF V600E",
-        "span": [
-          1309,
-          1319
-        ]
-      },
-      {
-        "assay": "NRAS",
-        "result": "wild-type",
-        "lesion_id": "lesion_1",
-        "evidence": "NRAS wild-type",
-        "span": [
-          1293,
-          1307
-        ]
-      }
-    ]
-  }
+    }
 }

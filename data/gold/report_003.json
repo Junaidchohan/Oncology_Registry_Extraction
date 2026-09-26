@@ -1,216 +1,216 @@
 {
-  "report_id": "report_003",
-  "annotations": {
-    "primary_tumor_site": {
-      "value": "Right upper lobe, lung",
-      "state": "present",
-      "evidence": "3.1 cm spiculated right upper lobe mass",
-      "span": [
-        130,
-        165
-      ],
-      "codes": {
-        "ICD-O-3": "C34.1"
-      }
-    },
-    "histological_type": {
-      "value": "Pulmonary adenocarcinoma",
-      "state": "present",
-      "evidence": "consistent with pulmonary adenocarcinoma",
-      "span": [
-        510,
-        545
-      ],
-      "codes": {
-        "ICD-O-3-M": "8140/3"
-      }
-    },
-    "procedure": {
-      "value": "CT-guided core needle biopsy",
-      "state": "present",
-      "evidence": "CT-guided core needle biopsy of the lung mass",
-      "span": [
-        258,
-        295
-      ],
-      "codes": {
-        "CPT": "32405"
-      }
-    },
-    "laterality": {
-      "value": "Right",
-      "state": "present",
-      "evidence": "right upper lobe mass",
-      "span": [
-        142,
-        158
-      ],
-      "codes": {}
-    },
-    "tumor_grade": {
-      "value": "Moderately differentiated",
-      "state": "present",
-      "evidence": "Pulmonary adenocarcinoma, moderately differentiated",
-      "span": [
-        905,
-        950
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1"
-    },
-    "tumor_size": {
-      "value": "3.1",
-      "state": "present",
-      "evidence": "3.1 cm spiculated right upper lobe mass",
-      "span": [
-        130,
-        165
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1",
-      "unit": "cm"
-    },
-    "tumor_focality": {
-      "value": "Single primary; multiple brain metastases",
-      "state": "present",
-      "evidence": "single lung primary with multiple brain metastases",
-      "span": [
-        200,
-        245
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1"
-    },
-    "lymphovascular_invasion": {
-      "value": "Not assessable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core biopsy -- LVI not assessable",
-      "span": null,
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "Not assessable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core biopsy -- PNI not assessable",
-      "span": null,
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "Not applicable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core needle biopsy -- margins not assessable",
-      "span": null,
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "Not applicable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core biopsy only -- lymph nodes not sampled",
-      "span": null,
-      "codes": {}
-    },
-    "positive_lymph_nodes": {
-      "value": "Ipsilateral mediastinal adenopathy (imaging)",
-      "state": "present",
-      "evidence": "ipsilateral mediastinal lymphadenopathy",
-      "span": [
-        163,
-        199
-      ],
-      "codes": {}
-    },
-    "pathologic_t": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_n": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_m": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "specimen": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_behavior": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_extension": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "anticancer_medication": [],
-    "biomarkers": [
-      {
-        "assay": "ER",
-        "result": "Not applicable",
-        "lesion_id": "lesion_1",
-        "evidence": "Pulmonary adenocarcinoma -- ER not applicable",
-        "span": null
-      },
-      {
-        "assay": "PR",
-        "result": "Not applicable",
-        "lesion_id": "lesion_1",
-        "evidence": "Pulmonary adenocarcinoma -- PR not applicable",
-        "span": null
-      },
-      {
-        "assay": "HER2",
-        "result": "Not applicable",
-        "lesion_id": "lesion_1",
-        "evidence": "Pulmonary adenocarcinoma -- HER2 not applicable",
-        "span": null
-      },
-      {
-        "assay": "KRAS",
-        "result": "Wild-type",
-        "lesion_id": "lesion_1",
-        "evidence": "KRAS wild-type",
-        "span": [
-          720,
-          736
+    "report_id": "report_003",
+    "annotations": {
+        "primary_tumor_site": {
+            "value": "Right upper lobe, lung",
+            "state": "present",
+            "evidence": "3.1 cm spiculated right upper lobe mass",
+            "span": [
+                1310,
+                1326
+            ],
+            "codes": {
+                "ICD-O-3": "C34.1"
+            }
+        },
+        "histological_type": {
+            "value": "Pulmonary adenocarcinoma",
+            "state": "present",
+            "evidence": "consistent with pulmonary adenocarcinoma",
+            "span": [
+                1360,
+                1384
+            ],
+            "codes": {
+                "ICD-O-3-M": "8140/3"
+            }
+        },
+        "procedure": {
+            "value": "CT-guided core needle biopsy",
+            "state": "present",
+            "evidence": "CT-guided core needle biopsy of the lung mass",
+            "span": [
+                328,
+                356
+            ],
+            "codes": {
+                "CPT": "32405"
+            }
+        },
+        "laterality": {
+            "value": "Right",
+            "state": "present",
+            "evidence": "right upper lobe mass",
+            "span": [
+                1310,
+                1315
+            ],
+            "codes": {}
+        },
+        "tumor_grade": {
+            "value": "Moderately differentiated",
+            "state": "present",
+            "evidence": "Pulmonary adenocarcinoma, moderately differentiated",
+            "span": [
+                1386,
+                1411
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1"
+        },
+        "tumor_size": {
+            "value": "3.1",
+            "state": "present",
+            "evidence": "3.1 cm spiculated right upper lobe mass",
+            "span": [
+                121,
+                124
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1",
+            "unit": "cm"
+        },
+        "tumor_focality": {
+            "value": "Single primary; multiple brain metastases",
+            "state": "present",
+            "evidence": "single lung primary with multiple brain metastases",
+            "span": [
+                1555,
+                1571
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1"
+        },
+        "lymphovascular_invasion": {
+            "value": "Not assessable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core biopsy -- LVI not assessable",
+            "span": null,
+            "codes": {}
+        },
+        "perineural_invasion": {
+            "value": "Not assessable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core biopsy -- PNI not assessable",
+            "span": null,
+            "codes": {}
+        },
+        "surgical_margins": {
+            "value": "Not applicable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core needle biopsy -- margins not assessable",
+            "span": null,
+            "codes": {}
+        },
+        "lymph_nodes_examined": {
+            "value": "Not applicable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core biopsy only -- lymph nodes not sampled",
+            "span": null,
+            "codes": {}
+        },
+        "positive_lymph_nodes": {
+            "value": "Ipsilateral mediastinal adenopathy (imaging)",
+            "state": "present",
+            "evidence": "ipsilateral mediastinal lymphadenopathy",
+            "span": [
+                166,
+                205
+            ],
+            "codes": {}
+        },
+        "pathologic_t": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_n": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_m": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "specimen": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_behavior": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_extension": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "anticancer_medication": [],
+        "biomarkers": [
+            {
+                "assay": "ER",
+                "result": "Not applicable",
+                "lesion_id": "lesion_1",
+                "evidence": "Pulmonary adenocarcinoma -- ER not applicable",
+                "span": null
+            },
+            {
+                "assay": "PR",
+                "result": "Not applicable",
+                "lesion_id": "lesion_1",
+                "evidence": "Pulmonary adenocarcinoma -- PR not applicable",
+                "span": null
+            },
+            {
+                "assay": "HER2",
+                "result": "Not applicable",
+                "lesion_id": "lesion_1",
+                "evidence": "Pulmonary adenocarcinoma -- HER2 not applicable",
+                "span": null
+            },
+            {
+                "assay": "KRAS",
+                "result": "Wild-type",
+                "lesion_id": "lesion_1",
+                "evidence": "KRAS wild-type",
+                "span": [
+                    720,
+                    736
+                ]
+            },
+            {
+                "assay": "EGFR",
+                "result": "Exon 19 deletion (Del E746-A750)",
+                "lesion_id": "lesion_1",
+                "evidence": "EGFR exon 19 deletion detected (Del E746-A750)",
+                "span": [
+                    700,
+                    750
+                ]
+            },
+            {
+                "assay": "BRAF",
+                "result": "wild-type",
+                "lesion_id": "lesion_1",
+                "evidence": "BRAF wild-type",
+                "span": null
+            }
         ]
-      },
-      {
-        "assay": "EGFR",
-        "result": "Exon 19 deletion (Del E746-A750)",
-        "lesion_id": "lesion_1",
-        "evidence": "EGFR exon 19 deletion detected (Del E746-A750)",
-        "span": [
-          700,
-          750
-        ]
-      },
-      {
-        "assay": "BRAF",
-        "result": "wild-type",
-        "lesion_id": "lesion_1",
-        "evidence": "BRAF wild-type",
-        "span": null
-      }
-    ]
-  }
+    }
 }

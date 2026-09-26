@@ -1,191 +1,191 @@
 {
-  "report_id": "report_004",
-  "annotations": {
-    "primary_tumor_site": {
-      "value": "Right breast, upper inner quadrant",
-      "state": "present",
-      "evidence": "right breast mass... upper inner quadrant",
-      "span": [
-        86,
-        125
-      ],
-      "codes": {
-        "ICD-O-3": "C50.2"
-      }
-    },
-    "histological_type": {
-      "value": "Invasive ductal carcinoma, NST",
-      "state": "present",
-      "evidence": "invasive ductal carcinoma (IDC), NST, Nottingham Grade 3",
-      "span": [
-        412,
-        455
-      ],
-      "codes": {
-        "ICD-O-3-M": "8500/3"
-      }
-    },
-    "procedure": {
-      "value": "Ultrasound-guided core needle biopsy",
-      "state": "present",
-      "evidence": "Ultrasound-guided core needle biopsy performed",
-      "span": [
-        120,
-        160
-      ],
-      "codes": {
-        "CPT": "19083"
-      }
-    },
-    "laterality": {
-      "value": "Right",
-      "state": "present",
-      "evidence": "right breast mass",
-      "span": [
-        86,
-        97
-      ],
-      "codes": {}
-    },
-    "tumor_grade": {
-      "value": "Nottingham Grade 3",
-      "state": "present",
-      "evidence": "Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9)",
-      "span": [
-        455,
-        528
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1"
-    },
-    "tumor_size": {
-      "value": "Not assessable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Imaging: mass described; biopsy cannot measure full tumor size",
-      "span": null,
-      "codes": {},
-      "lesion_id": "lesion_1"
-    },
-    "tumor_focality": {
-      "value": "Single lesion",
-      "state": "present",
-      "evidence": "Single right breast mass described",
-      "span": [
-        86,
-        115
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1"
-    },
-    "lymphovascular_invasion": {
-      "value": "Not assessable",
-      "state": "not_applicable",
-      "evidence": "Core biopsy -- LVI not assessable",
-      "span": null,
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "Not assessable",
-      "state": "not_applicable",
-      "evidence": "Core biopsy -- PNI not assessable",
-      "span": null,
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "Not applicable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core needle biopsy",
-      "span": null,
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "Not applicable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core biopsy -- lymph nodes not sampled",
-      "span": null,
-      "codes": {}
-    },
-    "positive_lymph_nodes": {
-      "value": "Not applicable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core biopsy -- lymph nodes not sampled",
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_t": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_n": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_m": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "specimen": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_behavior": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_extension": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "anticancer_medication": [],
-    "biomarkers": [
-      {
-        "assay": "PR",
-        "result": "Negative (0%)",
-        "lesion_id": "lesion_1",
-        "evidence": "PR: negative (0% cells)",
-        "span": [
-          636,
-          660
+    "report_id": "report_004",
+    "annotations": {
+        "primary_tumor_site": {
+            "value": "Right breast, upper inner quadrant",
+            "state": "present",
+            "evidence": "right breast mass... upper inner quadrant",
+            "span": [
+                1190,
+                1224
+            ],
+            "codes": {
+                "ICD-O-3": "C50.2"
+            }
+        },
+        "histological_type": {
+            "value": "Invasive ductal carcinoma, NST",
+            "state": "present",
+            "evidence": "invasive ductal carcinoma (IDC), NST, Nottingham Grade 3",
+            "span": [
+                1248,
+                1278
+            ],
+            "codes": {
+                "ICD-O-3-M": "8500/3"
+            }
+        },
+        "procedure": {
+            "value": "Ultrasound-guided core needle biopsy",
+            "state": "present",
+            "evidence": "Ultrasound-guided core needle biopsy performed",
+            "span": [
+                257,
+                293
+            ],
+            "codes": {
+                "CPT": "19083"
+            }
+        },
+        "laterality": {
+            "value": "Right",
+            "state": "present",
+            "evidence": "right breast mass",
+            "span": [
+                1190,
+                1195
+            ],
+            "codes": {}
+        },
+        "tumor_grade": {
+            "value": "Nottingham Grade 3",
+            "state": "present",
+            "evidence": "Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9)",
+            "span": [
+                656,
+                674
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1"
+        },
+        "tumor_size": {
+            "value": "Not assessable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Imaging: mass described; biopsy cannot measure full tumor size",
+            "span": null,
+            "codes": {},
+            "lesion_id": "lesion_1"
+        },
+        "tumor_focality": {
+            "value": "Single lesion",
+            "state": "present",
+            "evidence": "Single right breast mass described",
+            "span": [
+                79,
+                83
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1"
+        },
+        "lymphovascular_invasion": {
+            "value": "Not assessable",
+            "state": "not_applicable",
+            "evidence": "Core biopsy -- LVI not assessable",
+            "span": null,
+            "codes": {}
+        },
+        "perineural_invasion": {
+            "value": "Not assessable",
+            "state": "not_applicable",
+            "evidence": "Core biopsy -- PNI not assessable",
+            "span": null,
+            "codes": {}
+        },
+        "surgical_margins": {
+            "value": "Not applicable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core needle biopsy",
+            "span": null,
+            "codes": {}
+        },
+        "lymph_nodes_examined": {
+            "value": "Not applicable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core biopsy -- lymph nodes not sampled",
+            "span": null,
+            "codes": {}
+        },
+        "positive_lymph_nodes": {
+            "value": "Not applicable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core biopsy -- lymph nodes not sampled",
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_t": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_n": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_m": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "specimen": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_behavior": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_extension": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "anticancer_medication": [],
+        "biomarkers": [
+            {
+                "assay": "PR",
+                "result": "Negative (0%)",
+                "lesion_id": "lesion_1",
+                "evidence": "PR: negative (0% cells)",
+                "span": [
+                    636,
+                    660
+                ]
+            },
+            {
+                "assay": "HER2",
+                "result": "Positive (3+ IHC)",
+                "lesion_id": "lesion_1",
+                "evidence": "HER2: 3+ (positive by IHC)",
+                "span": [
+                    661,
+                    700
+                ]
+            },
+            {
+                "assay": "Ki-67",
+                "result": "70%",
+                "lesion_id": "lesion_1",
+                "evidence": "Ki-67: approximately 70%",
+                "span": [
+                    1146,
+                    1170
+                ]
+            }
         ]
-      },
-      {
-        "assay": "HER2",
-        "result": "Positive (3+ IHC)",
-        "lesion_id": "lesion_1",
-        "evidence": "HER2: 3+ (positive by IHC)",
-        "span": [
-          661,
-          700
-        ]
-      },
-      {
-        "assay": "Ki-67",
-        "result": "70%",
-        "lesion_id": "lesion_1",
-        "evidence": "Ki-67: approximately 70%",
-        "span": [
-          1146,
-          1170
-        ]
-      }
-    ]
-  }
+    }
 }

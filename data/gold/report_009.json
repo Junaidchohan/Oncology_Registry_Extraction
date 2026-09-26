@@ -1,181 +1,181 @@
 {
-  "report_id": "report_009",
-  "annotations": {
-    "primary_tumor_site": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "histological_type": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "procedure": {
-      "value": "CT-guided core needle biopsy",
-      "state": "present",
-      "evidence": "Referred for CT-guided core biopsy",
-      "span": [
-        218,
-        248
-      ],
-      "codes": {
-        "CPT": "32405"
-      }
-    },
-    "laterality": {
-      "value": "Right",
-      "state": "present",
-      "evidence": "right lower lobe",
-      "span": [
-        95,
-        112
-      ],
-      "codes": {}
-    },
-    "tumor_grade": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_size": {
-      "value": "1.8",
-      "state": "present",
-      "evidence": "right lower lobe nodule (1.8 cm)",
-      "span": [
-        95,
-        115
-      ],
-      "codes": {},
-      "lesion_id": "lesion_1",
-      "unit": "cm"
-    },
-    "tumor_focality": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "lymphovascular_invasion": {
-      "value": "Not applicable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core biopsy",
-      "span": null,
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "Not applicable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core biopsy",
-      "span": null,
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "Not applicable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core biopsy",
-      "span": null,
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "Not applicable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core biopsy",
-      "span": null,
-      "codes": {}
-    },
-    "positive_lymph_nodes": {
-      "value": "Not applicable (biopsy)",
-      "state": "not_applicable",
-      "evidence": "Core biopsy",
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_t": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_n": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_m": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "specimen": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_behavior": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_extension": {
-      "value": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "anticancer_medication": [],
-    "biomarkers": [
-      {
-        "assay": "ER",
-        "result": "Not applicable",
-        "lesion_id": "lesion_1",
-        "evidence": "Lung (suspected) -- ER not applicable",
-        "span": null
-      },
-      {
-        "assay": "PR",
-        "result": "Not applicable",
-        "lesion_id": "lesion_1",
-        "evidence": "Lung (suspected) -- PR not applicable",
-        "span": null
-      },
-      {
-        "assay": "EGFR",
-        "result": "mutation",
-        "lesion_id": "lesion_1",
-        "evidence": "EGFR mutation",
-        "span": [
-          1334,
-          1347
+    "report_id": "report_009",
+    "annotations": {
+        "primary_tumor_site": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "histological_type": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "procedure": {
+            "value": "CT-guided core needle biopsy",
+            "state": "present",
+            "evidence": "Referred for CT-guided core biopsy",
+            "span": [
+                437,
+                465
+            ],
+            "codes": {
+                "CPT": "32405"
+            }
+        },
+        "laterality": {
+            "value": "Right",
+            "state": "present",
+            "evidence": "right lower lobe",
+            "span": [
+                1502,
+                1507
+            ],
+            "codes": {}
+        },
+        "tumor_grade": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_size": {
+            "value": "1.8",
+            "state": "present",
+            "evidence": "right lower lobe nodule (1.8 cm)",
+            "span": [
+                112,
+                115
+            ],
+            "codes": {},
+            "lesion_id": "lesion_1",
+            "unit": "cm"
+        },
+        "tumor_focality": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "lymphovascular_invasion": {
+            "value": "Not applicable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core biopsy",
+            "span": null,
+            "codes": {}
+        },
+        "perineural_invasion": {
+            "value": "Not applicable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core biopsy",
+            "span": null,
+            "codes": {}
+        },
+        "surgical_margins": {
+            "value": "Not applicable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core biopsy",
+            "span": null,
+            "codes": {}
+        },
+        "lymph_nodes_examined": {
+            "value": "Not applicable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core biopsy",
+            "span": null,
+            "codes": {}
+        },
+        "positive_lymph_nodes": {
+            "value": "Not applicable (biopsy)",
+            "state": "not_applicable",
+            "evidence": "Core biopsy",
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_t": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_n": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_m": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "specimen": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_behavior": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_extension": {
+            "value": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "anticancer_medication": [],
+        "biomarkers": [
+            {
+                "assay": "ER",
+                "result": "Not applicable",
+                "lesion_id": "lesion_1",
+                "evidence": "Lung (suspected) -- ER not applicable",
+                "span": null
+            },
+            {
+                "assay": "PR",
+                "result": "Not applicable",
+                "lesion_id": "lesion_1",
+                "evidence": "Lung (suspected) -- PR not applicable",
+                "span": null
+            },
+            {
+                "assay": "EGFR",
+                "result": "mutation",
+                "lesion_id": "lesion_1",
+                "evidence": "EGFR mutation",
+                "span": [
+                    1334,
+                    1347
+                ]
+            },
+            {
+                "assay": "Ki-67",
+                "result": "8%",
+                "lesion_id": "lesion_1",
+                "evidence": "Ki-67: 8%",
+                "span": [
+                    1196,
+                    1205
+                ]
+            }
         ]
-      },
-      {
-        "assay": "Ki-67",
-        "result": "8%",
-        "lesion_id": "lesion_1",
-        "evidence": "Ki-67: 8%",
-        "span": [
-          1196,
-          1205
-        ]
-      }
-    ]
-  }
+    }
 }
