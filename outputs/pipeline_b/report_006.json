@@ -12,7 +12,7 @@
     "elapsed_sec": 831.639
   },
   "fields": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "left lung",
       "unit": null,
       "state": "present",
@@ -22,7 +22,7 @@
         "SNOMED": "41224006"
       }
     },
-    "histology_type": {
+    "histological_type": {
       "value": "squamous cell carcinoma",
       "unit": null,
       "state": "present",
@@ -50,9 +50,26 @@
       "span": null,
       "codes": {}
     },
-    "pathologic_stage": {
-      "value": "IIB",
-      "unit": null,
+    "pathologic_t": {
+      "value": null,
+      "state": "present",
+      "evidence": "pT3 pN0 pM0 (satellite nodule)",
+      "span": null,
+      "codes": {
+        "SNOMED": "1229956006"
+      }
+    },
+    "pathologic_n": {
+      "value": null,
+      "state": "present",
+      "evidence": "pT3 pN0 pM0 (satellite nodule)",
+      "span": null,
+      "codes": {
+        "SNOMED": "1229956006"
+      }
+    },
+    "pathologic_m": {
+      "value": null,
       "state": "present",
       "evidence": "pT3 pN0 pM0 (satellite nodule)",
       "span": null,
@@ -92,7 +109,7 @@
       "span": null,
       "codes": {}
     },
-    "lymph_nodes_positive": {
+    "positive_lymph_nodes": {
       "value": "0",
       "unit": null,
       "state": "present",
@@ -103,7 +120,7 @@
     "lymphovascular_invasion": {
       "value": "no",
       "unit": null,
-      "state": "absent",
+      "state": "negative",
       "evidence": "No lymphovascular invasion identified",
       "span": null,
       "codes": {
@@ -113,7 +130,7 @@
     "perineural_invasion": {
       "value": "no",
       "unit": null,
-      "state": "absent",
+      "state": "negative",
       "evidence": "Perineural invasion: absent",
       "span": null,
       "codes": {
@@ -123,7 +140,7 @@
     "distant_metastasis": {
       "value": "no",
       "unit": null,
-      "state": "absent",
+      "state": "negative",
       "evidence": "no distant metastases",
       "span": null,
       "codes": {
@@ -170,7 +187,7 @@
       "span": null,
       "codes": {}
     },
-    "procedure_type": {
+    "procedure": {
       "value": "left upper lobectomy",
       "unit": null,
       "state": "present",
@@ -188,7 +205,7 @@
       "span": null,
       "codes": {}
     },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": "2",
       "unit": null,
       "state": "present",

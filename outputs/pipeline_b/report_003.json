@@ -12,7 +12,7 @@
     "elapsed_sec": 721.788
   },
   "fields": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "lung",
       "unit": null,
       "state": "present",
@@ -22,7 +22,7 @@
         "SNOMED_CT": "254626000"
       }
     },
-    "histology_type": {
+    "histological_type": {
       "value": "adenocarcinoma",
       "unit": null,
       "state": "present",
@@ -52,9 +52,22 @@
         "SNOMED_CT": "1229961008"
       }
     },
-    "pathologic_stage": {
-      "value": "IVA",
-      "unit": null,
+    "pathologic_t": {
+      "value": null,
+      "state": "present",
+      "evidence": "Clinical stage: cT2a cN2 cM1b -- Stage IVA (brain metastases per PET/CT correlation)",
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_n": {
+      "value": null,
+      "state": "present",
+      "evidence": "Clinical stage: cT2a cN2 cM1b -- Stage IVA (brain metastases per PET/CT correlation)",
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_m": {
+      "value": null,
       "state": "present",
       "evidence": "Clinical stage: cT2a cN2 cM1b -- Stage IVA (brain metastases per PET/CT correlation)",
       "span": null,
@@ -92,7 +105,7 @@
       "span": null,
       "codes": {}
     },
-    "lymph_nodes_positive": {
+    "positive_lymph_nodes": {
       "value": "0",
       "unit": null,
       "state": "not_mentioned",
@@ -168,7 +181,7 @@
         "LOINC": "81197-5"
       }
     },
-    "procedure_type": {
+    "procedure": {
       "value": "core needle biopsy",
       "unit": null,
       "state": "present",
@@ -186,7 +199,7 @@
       "span": null,
       "codes": {}
     },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",

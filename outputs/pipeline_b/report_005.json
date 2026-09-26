@@ -12,7 +12,7 @@
     "elapsed_sec": 704.373
   },
   "fields": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "Rectum",
       "unit": null,
       "state": "present",
@@ -22,7 +22,7 @@
         "ICD_O_3": "C20.9"
       }
     },
-    "histology_type": {
+    "histological_type": {
       "value": "Adenocarcinoma",
       "unit": null,
       "state": "present",
@@ -50,9 +50,26 @@
       "span": null,
       "codes": {}
     },
-    "pathologic_stage": {
-      "value": "pT1 Nx",
-      "unit": null,
+    "pathologic_t": {
+      "value": "pT1",
+      "state": "present",
+      "evidence": null,
+      "span": null,
+      "codes": {
+        "SNOMED_CT": "1229946007"
+      }
+    },
+    "pathologic_n": {
+      "value": null,
+      "state": "present",
+      "evidence": null,
+      "span": null,
+      "codes": {
+        "SNOMED_CT": "1229946007"
+      }
+    },
+    "pathologic_m": {
+      "value": null,
       "state": "present",
       "evidence": null,
       "span": null,
@@ -94,7 +111,7 @@
       "span": null,
       "codes": {}
     },
-    "lymph_nodes_positive": {
+    "positive_lymph_nodes": {
       "value": "0",
       "unit": null,
       "state": "present",
@@ -170,7 +187,7 @@
       "span": null,
       "codes": {}
     },
-    "procedure_type": {
+    "procedure": {
       "value": "biopsy",
       "unit": null,
       "state": "present",
@@ -188,7 +205,7 @@
       "span": null,
       "codes": {}
     },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": "single",
       "unit": null,
       "state": "present",

@@ -63,7 +63,7 @@ logger = logging.getLogger(__name__)
 # Compact system prompt — avoids token overflow on small local models
 _SYSTEM_PROMPT = """You are a clinical data extractor for an oncology cancer registry. 
 Extract exactly 20 fields (plus repeatable arrays) from pathology reports. Reply ONLY with valid JSON, no markdown.
-States: present|absent|uncertain|not_mentioned|not_applicable|ambiguous.
+States: present|negative|not_assessed|not_mentioned|not_applicable|ambiguous.
 For tumor_size: numeric value only, unit in 'unit' field (cm or mm).
 For lymph node counts: integers only. Do NOT generate codes."""
 
@@ -238,7 +238,7 @@ def _parse_llm_json(raw: str) -> Dict[str, Any]:
 
 def _normalise_state(state: Any) -> str:
     """Normalise a raw state string to a valid schema state."""
-    VALID = {"present", "absent", "uncertain", "not_mentioned", "not_applicable", "ambiguous"}
+    VALID = {"present", "negative", "not_assessed", "not_mentioned", "not_applicable", "ambiguous"}
     if not isinstance(state, str):
         return "not_mentioned"
     s = state.lower().strip().replace(" ", "_").replace("-", "_")
@@ -246,15 +246,15 @@ def _normalise_state(state: Any) -> str:
         return s
     aliases = {
         "yes": "present",
-        "no": "absent",
+        "no": "negative",
         "positive": "present",
-        "negative": "absent",
+        "negative": "negative",
         "n/a": "not_applicable",
         "na": "not_applicable",
         "not_available": "not_mentioned",
         "unknown": "not_mentioned",
-        "possible": "uncertain",
-        "suspected": "uncertain",
+        "possible": "ambiguous",
+        "suspected": "ambiguous",
         "not_stated": "not_mentioned",
         "missing": "not_mentioned",
     }

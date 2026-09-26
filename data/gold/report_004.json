@@ -1,7 +1,5 @@
 {
   "report_id": "report_004",
-  "cancer_type": "Breast",
-  "procedure": "Ultrasound-guided core needle biopsy",
   "annotations": {
     "primary_tumor_site": {
       "value": "Right breast, upper inner quadrant",
@@ -10,7 +8,10 @@
       "span": [
         86,
         125
-      ]
+      ],
+      "codes": {
+        "ICD-O-3": "C50.2"
+      }
     },
     "histological_type": {
       "value": "Invasive ductal carcinoma, NST",
@@ -19,7 +20,10 @@
       "span": [
         412,
         455
-      ]
+      ],
+      "codes": {
+        "ICD-O-3-M": "8500/3"
+      }
     },
     "procedure": {
       "value": "Ultrasound-guided core needle biopsy",
@@ -28,7 +32,10 @@
       "span": [
         120,
         160
-      ]
+      ],
+      "codes": {
+        "CPT": "19083"
+      }
     },
     "laterality": {
       "value": "Right",
@@ -37,7 +44,8 @@
       "span": [
         86,
         97
-      ]
+      ],
+      "codes": {}
     },
     "tumor_grade": {
       "value": "Nottingham Grade 3",
@@ -47,103 +55,107 @@
         455,
         528
       ],
+      "codes": {},
       "lesion_id": "lesion_1"
     },
     "tumor_size": {
       "value": "Not assessable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Imaging: mass described; biopsy cannot measure full tumor size",
       "span": null,
+      "codes": {},
       "lesion_id": "lesion_1"
     },
     "tumor_focality": {
       "value": "Single lesion",
-      "state": "absent",
+      "state": "present",
       "evidence": "Single right breast mass described",
       "span": [
         86,
         115
       ],
+      "codes": {},
       "lesion_id": "lesion_1"
     },
     "lymphovascular_invasion": {
       "value": "Not assessable",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy -- LVI not assessable",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "perineural_invasion": {
       "value": "Not assessable",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy -- PNI not assessable",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "surgical_margins": {
       "value": "Not applicable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core needle biopsy",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "Not applicable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy -- lymph nodes not sampled",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "positive_lymph_nodes": {
       "value": "Not applicable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy -- lymph nodes not sampled",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "pathologic_t": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "pathologic_n": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "pathologic_m": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "specimen": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "tumor_behavior": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "tumor_extension": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "anticancer_medication": [],
     "biomarkers": [
-      {
-        "assay": "ER",
-        "result": "Equivocal / borderline (5%, 1+ intensity)",
-        "lesion_id": "lesion_1",
-        "evidence": "ER -- equivocal result, 5% cells weakly positive (1+ intensity); borderline",
-        "span": [
-          555,
-          635
-        ]
-      },
       {
         "assay": "PR",
         "result": "Negative (0%)",
@@ -165,18 +177,14 @@
         ]
       },
       {
-        "assay": "KRAS",
-        "result": "Not applicable",
+        "assay": "Ki-67",
+        "result": "70%",
         "lesion_id": "lesion_1",
-        "evidence": "Breast cancer -- KRAS not applicable",
-        "span": null
-      },
-      {
-        "assay": "EGFR",
-        "result": "Not applicable",
-        "lesion_id": "lesion_1",
-        "evidence": "Breast cancer -- EGFR not applicable",
-        "span": null
+        "evidence": "Ki-67: approximately 70%",
+        "span": [
+          1146,
+          1170
+        ]
       }
     ]
   }

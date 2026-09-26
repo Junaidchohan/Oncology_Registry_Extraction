@@ -3,34 +3,34 @@
     "pipeline": "Pipeline A (LLM-Enhanced Clinical NLP)",
     "n_reports": 10,
     "entity_ner": {
-      "precision": 1.0,
-      "recall": 0.3615,
-      "f1": 0.5311,
-      "tp": 47,
-      "fp": 0,
-      "fn": 83
+      "precision": 0.885,
+      "recall": 0.8065,
+      "f1": 0.8439,
+      "tp": 100,
+      "fp": 13,
+      "fn": 24
     },
     "field_value_accuracy": {
-      "exact": 0.3833,
-      "match_count": 69,
+      "exact": 0.4611,
+      "match_count": 83,
       "total": 180
     },
     "assertion_accuracy": {
-      "accuracy": 0.2167,
-      "match_count": 39,
+      "accuracy": 0.5333,
+      "match_count": 96,
       "total": 180
     },
     "terminology": {
-      "code_precision": 0,
-      "code_recall": 0,
-      "code_f1": 0,
-      "match_count": 0,
-      "total_gold_codes": 0,
-      "total_pred_codes": 0
+      "code_precision": 0.5,
+      "code_recall": 0.0541,
+      "code_f1": 0.0976,
+      "match_count": 2,
+      "total_gold_codes": 37,
+      "total_pred_codes": 4
     },
     "grounding_integrity": {
-      "unsupported_field_rate": 0.0,
-      "unsupported_count": 0
+      "unsupported_field_rate": 0.114,
+      "unsupported_count": 13
     },
     "operations": {
       "mean_runtime_sec": 32.85,
@@ -39,39 +39,39 @@
     },
     "field_metrics": {
       "primary_tumor_site": {
-        "ner_tp": 0,
-        "ner_fp": 0,
-        "ner_fn": 10,
+        "ner_tp": 9,
+        "ner_fp": 1,
+        "ner_fn": 0,
         "value_match": 0,
         "total": 10,
-        "state_match": 0,
+        "state_match": 9,
         "total_states": 10,
-        "code_matches": 0,
-        "total_codes_gold": 0,
-        "total_codes_pred": 0
+        "code_matches": 1,
+        "total_codes_gold": 9,
+        "total_codes_pred": 2
       },
       "histological_type": {
-        "ner_tp": 0,
-        "ner_fp": 0,
-        "ner_fn": 10,
+        "ner_tp": 9,
+        "ner_fp": 1,
+        "ner_fn": 0,
         "value_match": 0,
         "total": 10,
-        "state_match": 0,
+        "state_match": 9,
         "total_states": 10,
-        "code_matches": 0,
-        "total_codes_gold": 0,
-        "total_codes_pred": 0
+        "code_matches": 1,
+        "total_codes_gold": 9,
+        "total_codes_pred": 2
       },
       "procedure": {
-        "ner_tp": 0,
+        "ner_tp": 7,
         "ner_fp": 0,
-        "ner_fn": 10,
-        "value_match": 0,
+        "ner_fn": 3,
+        "value_match": 2,
         "total": 10,
-        "state_match": 0,
+        "state_match": 7,
         "total_states": 10,
         "code_matches": 0,
-        "total_codes_gold": 0,
+        "total_codes_gold": 10,
         "total_codes_pred": 0
       },
       "laterality": {
@@ -80,7 +80,7 @@
         "ner_fn": 2,
         "value_match": 5,
         "total": 10,
-        "state_match": 7,
+        "state_match": 9,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
@@ -89,10 +89,10 @@
       "tumor_grade": {
         "ner_tp": 7,
         "ner_fp": 0,
-        "ner_fn": 2,
-        "value_match": 3,
+        "ner_fn": 1,
+        "value_match": 4,
         "total": 10,
-        "state_match": 6,
+        "state_match": 8,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
@@ -111,20 +111,20 @@
         "total_codes_pred": 0
       },
       "tumor_focality": {
-        "ner_tp": 0,
-        "ner_fp": 0,
-        "ner_fn": 10,
+        "ner_tp": 9,
+        "ner_fp": 1,
+        "ner_fn": 0,
         "value_match": 0,
         "total": 10,
-        "state_match": 0,
+        "state_match": 2,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
         "total_codes_pred": 0
       },
       "lymphovascular_invasion": {
-        "ner_tp": 6,
-        "ner_fp": 0,
+        "ner_tp": 5,
+        "ner_fp": 1,
         "ner_fn": 4,
         "value_match": 4,
         "total": 10,
@@ -140,7 +140,7 @@
         "ner_fn": 5,
         "value_match": 4,
         "total": 10,
-        "state_match": 3,
+        "state_match": 4,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
@@ -149,10 +149,10 @@
       "surgical_margins": {
         "ner_tp": 4,
         "ner_fp": 0,
-        "ner_fn": 6,
-        "value_match": 0,
+        "ner_fn": 5,
+        "value_match": 1,
         "total": 10,
-        "state_match": 4,
+        "state_match": 5,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
@@ -171,51 +171,51 @@
         "total_codes_pred": 0
       },
       "positive_lymph_nodes": {
-        "ner_tp": 0,
+        "ner_tp": 8,
         "ner_fp": 0,
-        "ner_fn": 10,
-        "value_match": 0,
+        "ner_fn": 2,
+        "value_match": 4,
         "total": 10,
-        "state_match": 0,
+        "state_match": 3,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
         "total_codes_pred": 0
       },
       "pathologic_t": {
-        "ner_tp": 0,
-        "ner_fp": 0,
-        "ner_fn": 4,
-        "value_match": 6,
+        "ner_tp": 4,
+        "ner_fp": 3,
+        "ner_fn": 0,
+        "value_match": 8,
         "total": 10,
-        "state_match": 0,
+        "state_match": 7,
         "total_states": 10,
         "code_matches": 0,
-        "total_codes_gold": 0,
+        "total_codes_gold": 3,
         "total_codes_pred": 0
       },
       "pathologic_n": {
-        "ner_tp": 0,
-        "ner_fp": 0,
-        "ner_fn": 4,
-        "value_match": 6,
+        "ner_tp": 4,
+        "ner_fp": 3,
+        "ner_fn": 0,
+        "value_match": 8,
         "total": 10,
-        "state_match": 0,
+        "state_match": 7,
         "total_states": 10,
         "code_matches": 0,
-        "total_codes_gold": 0,
+        "total_codes_gold": 3,
         "total_codes_pred": 0
       },
       "pathologic_m": {
-        "ner_tp": 0,
-        "ner_fp": 0,
-        "ner_fn": 4,
-        "value_match": 6,
+        "ner_tp": 4,
+        "ner_fp": 3,
+        "ner_fn": 0,
+        "value_match": 8,
         "total": 10,
-        "state_match": 0,
+        "state_match": 7,
         "total_states": 10,
         "code_matches": 0,
-        "total_codes_gold": 0,
+        "total_codes_gold": 3,
         "total_codes_pred": 0
       },
       "specimen": {
@@ -261,33 +261,45 @@
         "field": "primary_tumor_site",
         "gold_value": "Left breast, upper outer quadrant",
         "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
-        "pred_codes": [],
-        "evidence": ""
+        "gold_codes": [
+          "C50.4"
+        ],
+        "pred_value": "breast",
+        "pred_state": "present",
+        "pred_codes": [
+          "8500/3",
+          "C50.4"
+        ],
+        "evidence": "Left breast, modified radical mastectomy"
       },
       {
         "report": "report_001.json",
         "field": "histological_type",
         "gold_value": "Invasive ductal carcinoma, NST (no special type)",
         "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
-        "pred_codes": [],
-        "evidence": ""
+        "gold_codes": [
+          "8500/3"
+        ],
+        "pred_value": "infiltrating ductal carcinoma",
+        "pred_state": "present",
+        "pred_codes": [
+          "8500/3",
+          "C50.4"
+        ],
+        "evidence": "Sections from the primary mass show infiltrating ductal carcinoma (IDC), no special type (NST)"
       },
       {
         "report": "report_001.json",
         "field": "procedure",
         "gold_value": "Modified radical mastectomy",
         "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
+        "gold_codes": [
+          "19307"
+        ],
+        "pred_value": "modified radical mastectomy",
+        "pred_state": "present",
         "pred_codes": [],
-        "evidence": ""
+        "evidence": "Referred for modified radical mastectomy"
       },
       {
         "report": "report_001.json",
@@ -304,18 +316,18 @@
         "report": "report_001.json",
         "field": "tumor_focality",
         "gold_value": "Single lesion",
-        "gold_state": "absent",
+        "gold_state": "present",
         "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
+        "pred_value": "not_mentioned",
+        "pred_state": "not_mentioned",
         "pred_codes": [],
-        "evidence": ""
+        "evidence": null
       },
       {
         "report": "report_001.json",
         "field": "perineural_invasion",
         "gold_value": "Absent",
-        "gold_state": "absent",
+        "gold_state": "negative",
         "gold_codes": [],
         "pred_value": "absent",
         "pred_state": "present",
@@ -335,36 +347,42 @@
       },
       {
         "report": "report_001.json",
-        "field": "positive_lymph_nodes",
-        "gold_value": "4",
-        "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
-        "pred_codes": [],
-        "evidence": ""
-      },
-      {
-        "report": "report_001.json",
         "field": "pathologic_t",
         "gold_value": "pT2",
         "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
+        "gold_codes": [
+          "Stage IIB"
+        ],
+        "pred_value": "pT2",
+        "pred_state": "present",
         "pred_codes": [],
-        "evidence": ""
+        "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition)"
       },
       {
         "report": "report_001.json",
         "field": "pathologic_n",
         "gold_value": "pN1a",
         "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
+        "gold_codes": [
+          "Stage IIB"
+        ],
+        "pred_value": "pN1a",
+        "pred_state": "present",
         "pred_codes": [],
-        "evidence": ""
+        "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition)"
+      },
+      {
+        "report": "report_001.json",
+        "field": "pathologic_m",
+        "gold_value": "pM0",
+        "gold_state": "present",
+        "gold_codes": [
+          "Stage IIB"
+        ],
+        "pred_value": "pM0",
+        "pred_state": "present",
+        "pred_codes": [],
+        "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition)"
       }
     ]
   },
@@ -372,34 +390,34 @@
     "pipeline": "Pipeline B (LLM + Local Terminology Retrieval)",
     "n_reports": 10,
     "entity_ner": {
-      "precision": 1.0,
-      "recall": 0.3923,
-      "f1": 0.5635,
-      "tp": 51,
-      "fp": 0,
-      "fn": 79
+      "precision": 0.8761,
+      "recall": 0.7984,
+      "f1": 0.8354,
+      "tp": 99,
+      "fp": 14,
+      "fn": 25
     },
     "field_value_accuracy": {
-      "exact": 0.4111,
-      "match_count": 74,
+      "exact": 0.5222,
+      "match_count": 94,
       "total": 180
     },
     "assertion_accuracy": {
-      "accuracy": 0.2167,
-      "match_count": 39,
+      "accuracy": 0.5278,
+      "match_count": 95,
       "total": 180
     },
     "terminology": {
-      "code_precision": 0.0,
-      "code_recall": 0,
-      "code_f1": 0,
-      "match_count": 0,
-      "total_gold_codes": 0,
-      "total_pred_codes": 16
+      "code_precision": 0.1719,
+      "code_recall": 0.2973,
+      "code_f1": 0.2178,
+      "match_count": 11,
+      "total_gold_codes": 37,
+      "total_pred_codes": 64
     },
     "grounding_integrity": {
-      "unsupported_field_rate": 0.0,
-      "unsupported_count": 0
+      "unsupported_field_rate": 0.1228,
+      "unsupported_count": 14
     },
     "operations": {
       "mean_runtime_sec": 692.096,
@@ -408,40 +426,40 @@
     },
     "field_metrics": {
       "primary_tumor_site": {
-        "ner_tp": 0,
-        "ner_fp": 0,
-        "ner_fn": 10,
-        "value_match": 0,
+        "ner_tp": 9,
+        "ner_fp": 1,
+        "ner_fn": 0,
+        "value_match": 2,
         "total": 10,
-        "state_match": 0,
+        "state_match": 9,
         "total_states": 10,
-        "code_matches": 0,
-        "total_codes_gold": 0,
-        "total_codes_pred": 0
+        "code_matches": 3,
+        "total_codes_gold": 9,
+        "total_codes_pred": 10
       },
       "histological_type": {
-        "ner_tp": 0,
-        "ner_fp": 0,
-        "ner_fn": 10,
-        "value_match": 0,
+        "ner_tp": 9,
+        "ner_fp": 1,
+        "ner_fn": 0,
+        "value_match": 2,
         "total": 10,
-        "state_match": 0,
+        "state_match": 9,
         "total_states": 10,
-        "code_matches": 0,
-        "total_codes_gold": 0,
-        "total_codes_pred": 0
+        "code_matches": 8,
+        "total_codes_gold": 9,
+        "total_codes_pred": 10
       },
       "procedure": {
-        "ner_tp": 0,
+        "ner_tp": 10,
         "ner_fp": 0,
-        "ner_fn": 10,
-        "value_match": 0,
+        "ner_fn": 0,
+        "value_match": 4,
         "total": 10,
-        "state_match": 0,
+        "state_match": 10,
         "total_states": 10,
         "code_matches": 0,
-        "total_codes_gold": 0,
-        "total_codes_pred": 0
+        "total_codes_gold": 10,
+        "total_codes_pred": 10
       },
       "laterality": {
         "ner_tp": 10,
@@ -456,12 +474,12 @@
         "total_codes_pred": 0
       },
       "tumor_grade": {
-        "ner_tp": 9,
-        "ner_fp": 0,
+        "ner_tp": 8,
+        "ner_fp": 1,
         "ner_fn": 0,
         "value_match": 2,
         "total": 10,
-        "state_match": 7,
+        "state_match": 8,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
@@ -480,24 +498,24 @@
         "total_codes_pred": 0
       },
       "tumor_focality": {
-        "ner_tp": 0,
+        "ner_tp": 4,
         "ner_fp": 0,
-        "ner_fn": 10,
-        "value_match": 0,
+        "ner_fn": 5,
+        "value_match": 1,
         "total": 10,
-        "state_match": 0,
+        "state_match": 5,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
         "total_codes_pred": 0
       },
       "lymphovascular_invasion": {
-        "ner_tp": 6,
-        "ner_fp": 0,
+        "ner_tp": 5,
+        "ner_fp": 1,
         "ner_fn": 4,
         "value_match": 3,
         "total": 10,
-        "state_match": 4,
+        "state_match": 3,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
@@ -509,19 +527,19 @@
         "ner_fn": 4,
         "value_match": 4,
         "total": 10,
-        "state_match": 2,
+        "state_match": 3,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
         "total_codes_pred": 2
       },
       "surgical_margins": {
-        "ner_tp": 6,
-        "ner_fp": 0,
+        "ner_tp": 5,
+        "ner_fp": 1,
         "ner_fn": 4,
         "value_match": 0,
         "total": 10,
-        "state_match": 5,
+        "state_match": 8,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
@@ -533,59 +551,59 @@
         "ner_fn": 4,
         "value_match": 4,
         "total": 10,
-        "state_match": 5,
+        "state_match": 6,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
         "total_codes_pred": 0
       },
       "positive_lymph_nodes": {
-        "ner_tp": 0,
+        "ner_tp": 7,
         "ner_fp": 0,
-        "ner_fn": 10,
-        "value_match": 0,
+        "ner_fn": 3,
+        "value_match": 5,
         "total": 10,
-        "state_match": 0,
+        "state_match": 3,
         "total_states": 10,
         "code_matches": 0,
         "total_codes_gold": 0,
         "total_codes_pred": 0
       },
       "pathologic_t": {
-        "ner_tp": 0,
-        "ner_fp": 0,
-        "ner_fn": 4,
-        "value_match": 6,
+        "ner_tp": 4,
+        "ner_fp": 3,
+        "ner_fn": 0,
+        "value_match": 7,
         "total": 10,
-        "state_match": 0,
+        "state_match": 5,
         "total_states": 10,
         "code_matches": 0,
-        "total_codes_gold": 0,
-        "total_codes_pred": 0
+        "total_codes_gold": 3,
+        "total_codes_pred": 6
       },
       "pathologic_n": {
-        "ner_tp": 0,
-        "ner_fp": 0,
-        "ner_fn": 4,
-        "value_match": 6,
+        "ner_tp": 4,
+        "ner_fp": 3,
+        "ner_fn": 0,
+        "value_match": 8,
         "total": 10,
-        "state_match": 0,
+        "state_match": 5,
         "total_states": 10,
         "code_matches": 0,
-        "total_codes_gold": 0,
-        "total_codes_pred": 0
+        "total_codes_gold": 3,
+        "total_codes_pred": 6
       },
       "pathologic_m": {
-        "ner_tp": 0,
-        "ner_fp": 0,
-        "ner_fn": 4,
-        "value_match": 6,
+        "ner_tp": 4,
+        "ner_fp": 3,
+        "ner_fn": 0,
+        "value_match": 9,
         "total": 10,
-        "state_match": 0,
+        "state_match": 5,
         "total_states": 10,
         "code_matches": 0,
-        "total_codes_gold": 0,
-        "total_codes_pred": 0
+        "total_codes_gold": 3,
+        "total_codes_pred": 6
       },
       "specimen": {
         "ner_tp": 0,
@@ -630,33 +648,45 @@
         "field": "primary_tumor_site",
         "gold_value": "Left breast, upper outer quadrant",
         "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
-        "pred_codes": [],
-        "evidence": ""
+        "gold_codes": [
+          "C50.4"
+        ],
+        "pred_value": "breast",
+        "pred_state": "present",
+        "pred_codes": [
+          "C50.9"
+        ],
+        "evidence": "Left breast"
       },
       {
         "report": "report_001.json",
         "field": "histological_type",
         "gold_value": "Invasive ductal carcinoma, NST (no special type)",
         "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
-        "pred_codes": [],
-        "evidence": ""
+        "gold_codes": [
+          "8500/3"
+        ],
+        "pred_value": "infiltrating ductal carcinoma",
+        "pred_state": "present",
+        "pred_codes": [
+          "8500/3"
+        ],
+        "evidence": "MICROSCOPIC DESCRIPTION"
       },
       {
         "report": "report_001.json",
         "field": "procedure",
         "gold_value": "Modified radical mastectomy",
         "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
-        "pred_codes": [],
-        "evidence": ""
+        "gold_codes": [
+          "19307"
+        ],
+        "pred_value": "modified radical mastectomy",
+        "pred_state": "present",
+        "pred_codes": [
+          "172456002"
+        ],
+        "evidence": "CLINICAL HISTORY"
       },
       {
         "report": "report_001.json",
@@ -675,18 +705,18 @@
         "report": "report_001.json",
         "field": "tumor_focality",
         "gold_value": "Single lesion",
-        "gold_state": "absent",
+        "gold_state": "present",
         "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
+        "pred_value": "single",
+        "pred_state": "present",
         "pred_codes": [],
-        "evidence": ""
+        "evidence": "FINAL DIAGNOSIS"
       },
       {
         "report": "report_001.json",
         "field": "perineural_invasion",
         "gold_value": "Absent",
-        "gold_state": "absent",
+        "gold_state": "negative",
         "gold_codes": [],
         "pred_value": "absent",
         "pred_state": "present",
@@ -706,36 +736,48 @@
       },
       {
         "report": "report_001.json",
-        "field": "positive_lymph_nodes",
-        "gold_value": "4",
-        "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
-        "pred_codes": [],
-        "evidence": ""
-      },
-      {
-        "report": "report_001.json",
         "field": "pathologic_t",
         "gold_value": "pT2",
         "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
-        "pred_codes": [],
-        "evidence": ""
+        "gold_codes": [
+          "Stage IIB"
+        ],
+        "pred_value": "pT2",
+        "pred_state": "present",
+        "pred_codes": [
+          "1229965004"
+        ],
+        "evidence": "FINAL DIAGNOSIS"
       },
       {
         "report": "report_001.json",
         "field": "pathologic_n",
         "gold_value": "pN1a",
         "gold_state": "present",
-        "gold_codes": [],
-        "pred_value": null,
-        "pred_state": null,
-        "pred_codes": [],
-        "evidence": ""
+        "gold_codes": [
+          "Stage IIB"
+        ],
+        "pred_value": "pN1a",
+        "pred_state": "present",
+        "pred_codes": [
+          "1229965004"
+        ],
+        "evidence": "FINAL DIAGNOSIS"
+      },
+      {
+        "report": "report_001.json",
+        "field": "pathologic_m",
+        "gold_value": "pM0",
+        "gold_state": "present",
+        "gold_codes": [
+          "Stage IIB"
+        ],
+        "pred_value": "pM0",
+        "pred_state": "present",
+        "pred_codes": [
+          "1229965004"
+        ],
+        "evidence": "FINAL DIAGNOSIS"
       }
     ]
   }

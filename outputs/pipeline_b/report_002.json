@@ -12,7 +12,7 @@
     "elapsed_sec": 779.222
   },
   "fields": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "sigmoid colon",
       "unit": null,
       "state": "present",
@@ -22,7 +22,7 @@
         "ICD_O_3": "C18.7"
       }
     },
-    "histology_type": {
+    "histological_type": {
       "value": "moderately differentiated adenocarcinoma",
       "unit": null,
       "state": "present",
@@ -52,9 +52,26 @@
         "SNOMED_CT": "1229959004"
       }
     },
-    "pathologic_stage": {
-      "value": "pT3 pN1b pM0",
-      "unit": null,
+    "pathologic_t": {
+      "value": "pT3",
+      "state": "present",
+      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition)",
+      "span": null,
+      "codes": {
+        "SNOMED_CT": "1229951001"
+      }
+    },
+    "pathologic_n": {
+      "value": "pN1b",
+      "state": "present",
+      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition)",
+      "span": null,
+      "codes": {
+        "SNOMED_CT": "1229951001"
+      }
+    },
+    "pathologic_m": {
+      "value": "pM0",
       "state": "present",
       "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition)",
       "span": null,
@@ -94,7 +111,7 @@
       "span": null,
       "codes": {}
     },
-    "lymph_nodes_positive": {
+    "positive_lymph_nodes": {
       "value": "3",
       "unit": null,
       "state": "present",
@@ -172,7 +189,7 @@
       "span": null,
       "codes": {}
     },
-    "procedure_type": {
+    "procedure": {
       "value": "sigmoid colectomy",
       "unit": null,
       "state": "present",
@@ -190,7 +207,7 @@
       "span": null,
       "codes": {}
     },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",

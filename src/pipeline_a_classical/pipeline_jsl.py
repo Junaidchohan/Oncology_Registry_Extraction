@@ -93,10 +93,10 @@ RESOLVER_ICDO   = "sbiobertresolve_icdo_base"
 # ---------------------------------------------------------------------------
 _ASSERTION_STATE: Dict[str, str] = {
     "Present":                      "present",
-    "Absent":                       "absent",
-    "Possible":                     "uncertain",
-    "Conditional":                  "uncertain",
-    "Hypothetical":                 "uncertain",
+    "Negative":                       "negative",
+    "Possible":                     "ambiguous",
+    "Conditional":                  "ambiguous",
+    "Hypothetical":                 "ambiguous",
     "Associated_with_someone_else": "not_mentioned",
 }
 
@@ -515,7 +515,7 @@ def assemble(
         m = _LVI_NEG_RE.search(combined)
         if m:
             fields["lymphovascular_invasion"] = make_field(
-                value="Absent", state="absent", evidence=m.group(0)
+                value="Negative", state="negative", evidence=m.group(0)
             )
         else:
             m = _LVI_POS_RE.search(combined)
@@ -529,7 +529,7 @@ def assemble(
         m = _PNI_NEG_RE.search(combined)
         if m:
             fields["perineural_invasion"] = make_field(
-                value="Absent", state="absent", evidence=m.group(0)
+                value="Negative", state="negative", evidence=m.group(0)
             )
         else:
             m = _PNI_POS_RE.search(combined)
@@ -561,7 +561,7 @@ def assemble(
             )
         else:
             fields["tumor_focality"] = make_field(
-                value="Single", state="absent",
+                value="Single", state="negative",
                 evidence="No multiplicity cues detected"
             )
 

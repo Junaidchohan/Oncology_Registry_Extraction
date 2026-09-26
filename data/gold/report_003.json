@@ -1,7 +1,5 @@
 {
   "report_id": "report_003",
-  "cancer_type": "Lung",
-  "procedure": "CT-guided core needle biopsy",
   "annotations": {
     "primary_tumor_site": {
       "value": "Right upper lobe, lung",
@@ -10,7 +8,10 @@
       "span": [
         130,
         165
-      ]
+      ],
+      "codes": {
+        "ICD-O-3": "C34.1"
+      }
     },
     "histological_type": {
       "value": "Pulmonary adenocarcinoma",
@@ -19,7 +20,10 @@
       "span": [
         510,
         545
-      ]
+      ],
+      "codes": {
+        "ICD-O-3-M": "8140/3"
+      }
     },
     "procedure": {
       "value": "CT-guided core needle biopsy",
@@ -28,7 +32,10 @@
       "span": [
         258,
         295
-      ]
+      ],
+      "codes": {
+        "CPT": "32405"
+      }
     },
     "laterality": {
       "value": "Right",
@@ -37,7 +44,8 @@
       "span": [
         142,
         158
-      ]
+      ],
+      "codes": {}
     },
     "tumor_grade": {
       "value": "Moderately differentiated",
@@ -47,6 +55,7 @@
         905,
         950
       ],
+      "codes": {},
       "lesion_id": "lesion_1"
     },
     "tumor_size": {
@@ -57,6 +66,7 @@
         130,
         165
       ],
+      "codes": {},
       "lesion_id": "lesion_1",
       "unit": "cm"
     },
@@ -68,31 +78,36 @@
         200,
         245
       ],
+      "codes": {},
       "lesion_id": "lesion_1"
     },
     "lymphovascular_invasion": {
       "value": "Not assessable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy -- LVI not assessable",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "perineural_invasion": {
       "value": "Not assessable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy -- PNI not assessable",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "surgical_margins": {
       "value": "Not applicable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core needle biopsy -- margins not assessable",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "Not applicable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy only -- lymph nodes not sampled",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "positive_lymph_nodes": {
       "value": "Ipsilateral mediastinal adenopathy (imaging)",
@@ -101,43 +116,50 @@
       "span": [
         163,
         199
-      ]
+      ],
+      "codes": {}
     },
     "pathologic_t": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "pathologic_n": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "pathologic_m": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "specimen": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "tumor_behavior": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "tumor_extension": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "anticancer_medication": [],
     "biomarkers": [
@@ -181,6 +203,13 @@
           700,
           750
         ]
+      },
+      {
+        "assay": "BRAF",
+        "result": "wild-type",
+        "lesion_id": "lesion_1",
+        "evidence": "BRAF wild-type",
+        "span": null
       }
     ]
   }

@@ -240,7 +240,7 @@ def build_comparison_table(a: dict, b: dict) -> str:
         ("Assertion / State accuracy",
          f"{pct(a['assertion_accuracy']['accuracy'])} ({cnt(a['assertion_accuracy']['match_count'], a['assertion_accuracy']['total'])})",
          f"{pct(b['assertion_accuracy']['accuracy'])} ({cnt(b['assertion_accuracy']['match_count'], b['assertion_accuracy']['total'])})"),
-        ("Relation / Macro F1 (field-level)", pct(a['entity_ner']['f1']), pct(b['entity_ner']['f1'])),
+        ("Relation F1 (not implemented — deferred to Phase 2)", "—", "—"),
         ("Terminology code precision",
          f"{pct(a['terminology']['code_precision'])} ({cnt(a['terminology']['match_count'], a['terminology']['total_pred_codes'])})",
          f"{pct(b['terminology']['code_precision'])} ({cnt(b['terminology']['match_count'], b['terminology']['total_pred_codes'])})"),
@@ -309,7 +309,9 @@ if __name__ == "__main__":
     table_path.write_text(
         "# Pipeline Evaluation: Side-by-Side Comparison\n\n"
         f"*Generated: {__import__('datetime').datetime.utcnow().isoformat()}Z*\n\n"
-        + table + "\n", encoding="utf-8"
+        "Denominator: 180/200 fields evaluated (20 fields x 10 reports = 200; biomarkers and anticancer_medication arrays deferred to Phase 2)\n\n"
+        + table + "\n\n"
+        "Array fields (biomarkers, anticancer_medication) are not scored in this table. Phase 2 will add per-assay comparison and per-drug comparison.\n", encoding="utf-8"
     )
     print(f"\nComparison table -> {table_path}")
     print("\n" + table)

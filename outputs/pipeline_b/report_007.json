@@ -12,7 +12,7 @@
     "elapsed_sec": 586.32
   },
   "fields": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "breast",
       "unit": null,
       "state": "present",
@@ -22,7 +22,7 @@
         "ICD-O-3": "C50.9"
       }
     },
-    "histology_type": {
+    "histological_type": {
       "value": "invasive ductal carcinoma",
       "unit": null,
       "state": "present",
@@ -50,9 +50,26 @@
       "span": null,
       "codes": {}
     },
-    "pathologic_stage": {
-      "value": "ypT1a ypN0 ypM0",
-      "unit": null,
+    "pathologic_t": {
+      "value": "ypT1a",
+      "state": "present",
+      "evidence": "FINAL DIAGNOSIS",
+      "span": null,
+      "codes": {
+        "SNOMED": "1229946007"
+      }
+    },
+    "pathologic_n": {
+      "value": "ypN0",
+      "state": "present",
+      "evidence": "FINAL DIAGNOSIS",
+      "span": null,
+      "codes": {
+        "SNOMED": "1229946007"
+      }
+    },
+    "pathologic_m": {
+      "value": "ypM0",
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
       "span": null,
@@ -92,7 +109,7 @@
       "span": null,
       "codes": {}
     },
-    "lymph_nodes_positive": {
+    "positive_lymph_nodes": {
       "value": "0",
       "unit": null,
       "state": "present",
@@ -166,7 +183,7 @@
       "span": null,
       "codes": {}
     },
-    "procedure_type": {
+    "procedure": {
       "value": "mastectomy",
       "unit": null,
       "state": "present",
@@ -184,7 +201,7 @@
       "span": null,
       "codes": {}
     },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",

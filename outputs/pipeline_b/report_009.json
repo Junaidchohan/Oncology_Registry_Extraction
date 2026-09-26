@@ -12,7 +12,7 @@
     "elapsed_sec": 272.158
   },
   "fields": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "lung",
       "unit": null,
       "state": "present",
@@ -22,7 +22,7 @@
         "SNOMED": "254626000"
       }
     },
-    "histology_type": {
+    "histological_type": {
       "value": "adenocarcinoma",
       "unit": null,
       "state": "present",
@@ -48,9 +48,22 @@
       "span": null,
       "codes": {}
     },
-    "pathologic_stage": {
+    "pathologic_t": {
       "value": null,
-      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_n": {
+      "value": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_m": {
+      "value": null,
       "state": "not_mentioned",
       "evidence": null,
       "span": null,
@@ -88,7 +101,7 @@
       "span": null,
       "codes": {}
     },
-    "lymph_nodes_positive": {
+    "positive_lymph_nodes": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",
@@ -160,7 +173,7 @@
       "span": null,
       "codes": {}
     },
-    "procedure_type": {
+    "procedure": {
       "value": "core needle biopsy",
       "unit": null,
       "state": "present",
@@ -178,7 +191,7 @@
       "span": null,
       "codes": {}
     },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",

@@ -56,9 +56,9 @@ FIELD_NAMES: List[str] = [
 
 VALID_STATES: frozenset[str] = frozenset({
     "present",
-    "absent",
-    "uncertain",
     "not_mentioned",
+    "negative",
+    "not_assessed",
     "not_applicable",
     "ambiguous",
 })

@@ -12,7 +12,7 @@
     "elapsed_sec": 408.33
   },
   "fields": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "breast",
       "unit": null,
       "state": "present",
@@ -22,7 +22,7 @@
         "ICD_O_3": "C50.9"
       }
     },
-    "histology_type": {
+    "histological_type": {
       "value": "invasive ductal carcinoma",
       "unit": null,
       "state": "present",
@@ -50,9 +50,22 @@
       "span": null,
       "codes": {}
     },
-    "pathologic_stage": {
+    "pathologic_t": {
       "value": null,
-      "unit": null,
+      "state": "not_applicable",
+      "evidence": "FINAL DIAGNOSIS",
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_n": {
+      "value": null,
+      "state": "not_applicable",
+      "evidence": "FINAL DIAGNOSIS",
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_m": {
+      "value": null,
       "state": "not_applicable",
       "evidence": "FINAL DIAGNOSIS",
       "span": null,
@@ -90,7 +103,7 @@
       "span": null,
       "codes": {}
     },
-    "lymph_nodes_positive": {
+    "positive_lymph_nodes": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",
@@ -164,7 +177,7 @@
       "span": null,
       "codes": {}
     },
-    "procedure_type": {
+    "procedure": {
       "value": "core needle biopsy",
       "unit": null,
       "state": "present",
@@ -182,7 +195,7 @@
       "span": null,
       "codes": {}
     },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",

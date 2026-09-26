@@ -1,7 +1,5 @@
 {
   "report_id": "report_010",
-  "cancer_type": "Breast",
-  "procedure": "Stereotactic core biopsy (two specimens)",
   "annotations": {
     "primary_tumor_site": {
       "value": "Left breast (upper outer and lower outer quadrants)",
@@ -10,7 +8,10 @@
       "span": [
         120,
         220
-      ]
+      ],
+      "codes": {
+        "ICD-O-3": "C50.4"
+      }
     },
     "histological_type": {
       "value": "Specimen A: IDC NST + DCIS; Specimen B: DCIS only",
@@ -19,7 +20,10 @@
       "span": [
         430,
         620
-      ]
+      ],
+      "codes": {
+        "ICD-O-3-M": "8500/3 (IDC); 8500/2 (DCIS)"
+      }
     },
     "procedure": {
       "value": "Stereotactic core biopsy (two separate specimens)",
@@ -28,7 +32,10 @@
       "span": [
         230,
         270
-      ]
+      ],
+      "codes": {
+        "CPT": "19081"
+      }
     },
     "laterality": {
       "value": "Left",
@@ -37,7 +44,8 @@
       "span": [
         72,
         90
-      ]
+      ],
+      "codes": {}
     },
     "tumor_grade": {
       "value": "Specimen A: Grade 3 (Nottingham 8/9); Specimen B: high-grade DCIS",
@@ -47,6 +55,7 @@
         460,
         510
       ],
+      "codes": {},
       "lesion_id": "lesion_1"
     },
     "tumor_size": {
@@ -57,6 +66,7 @@
         150,
         195
       ],
+      "codes": {},
       "lesion_id": "lesion_1",
       "unit": "mm"
     },
@@ -68,73 +78,85 @@
         845,
         900
       ],
+      "codes": {},
       "lesion_id": "lesion_1"
     },
     "lymphovascular_invasion": {
       "value": "Not assessable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "perineural_invasion": {
       "value": "Not assessable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "surgical_margins": {
       "value": "Not applicable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "Not applicable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "positive_lymph_nodes": {
       "value": "Not applicable (biopsy)",
-      "state": "not applicable",
+      "state": "not_applicable",
       "evidence": "Core biopsy",
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "pathologic_t": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "pathologic_n": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "pathologic_m": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "specimen": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "tumor_behavior": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "tumor_extension": {
       "value": null,
-      "state": "not mentioned",
+      "state": "not_mentioned",
       "evidence": null,
-      "span": null
+      "span": null,
+      "codes": {}
     },
     "anticancer_medication": [],
     "biomarkers": [
@@ -159,28 +181,14 @@
         ]
       },
       {
-        "assay": "HER2",
-        "result": "Specimen A: Equivocal (2+ IHC, FISH recommended); Specimen B: Negative (1+)",
+        "assay": "Ki-67",
+        "result": "55%",
         "lesion_id": "lesion_1",
-        "evidence": "HER2: 2+ (equivocal by IHC); FISH recommended; HER2: 1+ (negative)",
+        "evidence": "Ki-67: 55%",
         "span": [
-          701,
-          780
+          1108,
+          1118
         ]
-      },
-      {
-        "assay": "KRAS",
-        "result": "Not applicable",
-        "lesion_id": "lesion_1",
-        "evidence": "Breast cancer -- KRAS not applicable",
-        "span": null
-      },
-      {
-        "assay": "EGFR",
-        "result": "Not applicable",
-        "lesion_id": "lesion_1",
-        "evidence": "Breast cancer -- EGFR not applicable",
-        "span": null
       }
     ]
   }

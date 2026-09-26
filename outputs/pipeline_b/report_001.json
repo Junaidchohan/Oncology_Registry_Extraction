@@ -12,7 +12,7 @@
     "elapsed_sec": 835.473
   },
   "fields": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "breast",
       "unit": null,
       "state": "present",
@@ -22,7 +22,7 @@
         "ICD_O_3": "C50.9"
       }
     },
-    "histology_type": {
+    "histological_type": {
       "value": "infiltrating ductal carcinoma",
       "unit": null,
       "state": "present",
@@ -52,9 +52,26 @@
         "SNOMED_CT": "1229956006"
       }
     },
-    "pathologic_stage": {
-      "value": "pT2 pN1a pM0",
-      "unit": null,
+    "pathologic_t": {
+      "value": "pT2",
+      "state": "present",
+      "evidence": "FINAL DIAGNOSIS",
+      "span": null,
+      "codes": {
+        "SNOMED_CT": "1229965004"
+      }
+    },
+    "pathologic_n": {
+      "value": "pN1a",
+      "state": "present",
+      "evidence": "FINAL DIAGNOSIS",
+      "span": null,
+      "codes": {
+        "SNOMED_CT": "1229965004"
+      }
+    },
+    "pathologic_m": {
+      "value": "pM0",
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
       "span": null,
@@ -94,7 +111,7 @@
       "span": null,
       "codes": {}
     },
-    "lymph_nodes_positive": {
+    "positive_lymph_nodes": {
       "value": "4",
       "unit": null,
       "state": "present",
@@ -168,7 +185,7 @@
       "span": null,
       "codes": {}
     },
-    "procedure_type": {
+    "procedure": {
       "value": "modified radical mastectomy",
       "unit": null,
       "state": "present",
@@ -186,7 +203,7 @@
       "span": null,
       "codes": {}
     },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": "single",
       "unit": null,
       "state": "present",

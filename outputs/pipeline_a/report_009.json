@@ -1,252 +1,223 @@
 {
-    "report_id":  "report_009",
-    "pipeline":  "pipeline_a_classical",
-    "run_timestamp":  "2026-09-25T10:15:52.290151+00:00",
-    "model_versions":  {
-                           "spark_nlp":  "5.4.0",
-                           "spark_nlp_jsl":  "5.4.0",
-                           "ner_oncology":  "ner_oncology_wip",
-                           "ner_biomarker":  "ner_oncology_biomarker_wip",
-                           "ner_tnm":  "ner_oncology_tnm_wip",
-                           "assertion":  "assertion_oncology_wip",
-                           "relation":  "re_oncology_wip",
-                           "resolver_icd10":  "sbiobertresolve_icd10cm",
-                           "resolver_icdo":  "sbiobertresolve_icdo_base",
-                           "embeddings":  "embeddings_clinical",
-                           "sentence_embeddings":  "sbiobert_base_cased_mli",
-                           "mode":  "licensed_jsl_real"
-                       },
-    "fields":  {
-                   "primary_site":  {
-                                        "value":  "lower lobe",
-                                        "unit":  null,
-                                        "state":  "present",
-                                        "evidence":  "lower lobe",
-                                        "span":  [
-                                                     93,
-                                                     102
-                                                 ],
-                                        "codes":  {
-
-                                                  }
-                                    },
-                   "histology_type":  {
-                                          "value":  "nodule",
-                                          "unit":  null,
-                                          "state":  "present",
-                                          "evidence":  "nodule",
-                                          "span":  [
-                                                       104,
-                                                       109
-                                                   ],
-                                          "codes":  {
-
-                                                    }
-                                      },
-                   "tumor_grade":  {
-                                       "value":  null,
-                                       "unit":  null,
-                                       "state":  "not_mentioned",
-                                       "evidence":  null,
-                                       "span":  null,
-                                       "codes":  {
-
-                                                 }
-                                   },
-                   "clinical_stage":  {
-                                          "value":  null,
-                                          "unit":  null,
-                                          "state":  "not_mentioned",
-                                          "evidence":  null,
-                                          "span":  null,
-                                          "codes":  {
-
-                                                    }
-                                      },
-                   "pathologic_stage":  {
-                                            "value":  null,
-                                            "unit":  null,
-                                            "state":  "not_mentioned",
-                                            "evidence":  null,
-                                            "span":  null,
-                                            "codes":  {
-
-                                                      }
-                                        },
-                   "tumor_size":  {
-                                      "value":  "1.0",
-                                      "unit":  "mm",
-                                      "state":  "present",
-                                      "evidence":  "1.1 x 0.1 cm",
-                                      "span":  [
-                                                   503,
-                                                   514
-                                               ],
-                                      "codes":  {
-
-                                                }
-                                  },
-                   "laterality":  {
-                                      "value":  "Left",
-                                      "unit":  null,
-                                      "state":  "present",
-                                      "evidence":  "Laterality from report text",
-                                      "span":  null,
-                                      "codes":  {
-
-                                                }
-                                  },
-                   "surgical_margins":  {
-                                            "value":  null,
-                                            "unit":  null,
-                                            "state":  "not_mentioned",
-                                            "evidence":  null,
-                                            "span":  null,
-                                            "codes":  {
-
-                                                      }
-                                        },
-                   "lymph_nodes_examined":  {
-                                                "value":  null,
-                                                "unit":  null,
-                                                "state":  "not_mentioned",
-                                                "evidence":  null,
-                                                "span":  null,
-                                                "codes":  {
-
-                                                          }
-                                            },
-                   "lymph_nodes_positive":  {
-                                                "value":  null,
-                                                "unit":  null,
-                                                "state":  "not_mentioned",
-                                                "evidence":  null,
-                                                "span":  null,
-                                                "codes":  {
-
-                                                          }
-                                            },
-                   "lymphovascular_invasion":  {
-                                                   "value":  null,
-                                                   "unit":  null,
-                                                   "state":  "not_mentioned",
-                                                   "evidence":  null,
-                                                   "span":  null,
-                                                   "codes":  {
-
-                                                             }
-                                               },
-                   "perineural_invasion":  {
-                                               "value":  null,
-                                               "unit":  null,
-                                               "state":  "not_mentioned",
-                                               "evidence":  null,
-                                               "span":  null,
-                                               "codes":  {
-
-                                                         }
-                                           },
-                   "distant_metastasis":  {
-                                              "value":  "metastasis",
-                                              "unit":  null,
-                                              "state":  "present",
-                                              "evidence":  "metastasis",
-                                              "span":  [
-                                                           1929,
-                                                           1938
-                                                       ],
-                                              "codes":  {
-
-                                                        }
-                                          },
-                   "er_status":  {
-                                     "value":  null,
-                                     "unit":  null,
-                                     "state":  "not_mentioned",
-                                     "evidence":  null,
-                                     "span":  null,
-                                     "codes":  {
-
-                                               }
-                                 },
-                   "pr_status":  {
-                                     "value":  null,
-                                     "unit":  null,
-                                     "state":  "not_mentioned",
-                                     "evidence":  null,
-                                     "span":  null,
-                                     "codes":  {
-
-                                               }
-                                 },
-                   "her2_status":  {
-                                       "value":  null,
-                                       "unit":  null,
-                                       "state":  "not_mentioned",
-                                       "evidence":  null,
-                                       "span":  null,
-                                       "codes":  {
-
-                                                 }
-                                   },
-                   "kras_mutation":  {
-                                         "value":  "KRAS",
-                                         "unit":  null,
-                                         "state":  "present",
-                                         "evidence":  "KRAS",
-                                         "span":  [
-                                                      1419,
-                                                      1422
-                                                  ],
-                                         "codes":  {
-
-                                                   }
-                                     },
-                   "egfr_mutation":  {
-                                         "value":  "EGFR",
-                                         "unit":  null,
-                                         "state":  "present",
-                                         "evidence":  "EGFR",
-                                         "span":  [
-                                                      1334,
-                                                      1337
-                                                  ],
-                                         "codes":  {
-
-                                                   }
-                                     },
-                   "procedure_type":  {
-                                          "value":  "lobectomy",
-                                          "unit":  null,
-                                          "state":  "present",
-                                          "evidence":  "lobectomy",
-                                          "span":  [
-                                                       166,
-                                                       174
-                                                   ],
-                                          "codes":  {
-
-                                                    }
-                                      },
-                   "prior_treatment":  {
-                                           "value":  null,
-                                           "unit":  null,
-                                           "state":  "not_mentioned",
-                                           "evidence":  null,
-                                           "span":  null,
-                                           "codes":  {
-
-                                                     }
-                                       },
-                   "tumor_multiplicity":  {
-                                              "value":  "Single",
-                                              "unit":  null,
-                                              "state":  "absent",
-                                              "evidence":  "No multiplicity cues detected",
-                                              "span":  null,
-                                              "codes":  {
-
-                                                        }
-                                          }
-               }
+  "report_id": "report_009",
+  "pipeline": "pipeline_a_classical",
+  "run_timestamp": "2026-09-25T10:15:52.290151+00:00",
+  "model_versions": {
+    "spark_nlp": "5.4.0",
+    "spark_nlp_jsl": "5.4.0",
+    "ner_oncology": "ner_oncology_wip",
+    "ner_biomarker": "ner_oncology_biomarker_wip",
+    "ner_tnm": "ner_oncology_tnm_wip",
+    "assertion": "assertion_oncology_wip",
+    "relation": "re_oncology_wip",
+    "resolver_icd10": "sbiobertresolve_icd10cm",
+    "resolver_icdo": "sbiobertresolve_icdo_base",
+    "embeddings": "embeddings_clinical",
+    "sentence_embeddings": "sbiobert_base_cased_mli",
+    "mode": "licensed_jsl_real"
+  },
+  "fields": {
+    "primary_tumor_site": {
+      "value": "lower lobe",
+      "unit": null,
+      "state": "present",
+      "evidence": "lower lobe",
+      "span": [
+        93,
+        102
+      ],
+      "codes": {}
+    },
+    "histological_type": {
+      "value": "nodule",
+      "unit": null,
+      "state": "present",
+      "evidence": "nodule",
+      "span": [
+        104,
+        109
+      ],
+      "codes": {}
+    },
+    "tumor_grade": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "clinical_stage": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_t": {
+      "value": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_n": {
+      "value": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_m": {
+      "value": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_size": {
+      "value": "1.0",
+      "unit": "mm",
+      "state": "present",
+      "evidence": "1.1 x 0.1 cm",
+      "span": [
+        503,
+        514
+      ],
+      "codes": {}
+    },
+    "laterality": {
+      "value": "Left",
+      "unit": null,
+      "state": "present",
+      "evidence": "Laterality from report text",
+      "span": null,
+      "codes": {}
+    },
+    "surgical_margins": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "lymph_nodes_examined": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "positive_lymph_nodes": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "lymphovascular_invasion": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "perineural_invasion": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "distant_metastasis": {
+      "value": "metastasis",
+      "unit": null,
+      "state": "present",
+      "evidence": "metastasis",
+      "span": [
+        1929,
+        1938
+      ],
+      "codes": {}
+    },
+    "er_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "pr_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "her2_status": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "kras_mutation": {
+      "value": "KRAS",
+      "unit": null,
+      "state": "present",
+      "evidence": "KRAS",
+      "span": [
+        1419,
+        1422
+      ],
+      "codes": {}
+    },
+    "egfr_mutation": {
+      "value": "EGFR",
+      "unit": null,
+      "state": "present",
+      "evidence": "EGFR",
+      "span": [
+        1334,
+        1337
+      ],
+      "codes": {}
+    },
+    "procedure": {
+      "value": "lobectomy",
+      "unit": null,
+      "state": "present",
+      "evidence": "lobectomy",
+      "span": [
+        166,
+        174
+      ],
+      "codes": {}
+    },
+    "prior_treatment": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_focality": {
+      "value": "Single",
+      "unit": null,
+      "state": "negative",
+      "evidence": "No multiplicity cues detected",
+      "span": null,
+      "codes": {}
+    }
+  }
 }
