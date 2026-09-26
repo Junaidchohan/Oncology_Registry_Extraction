@@ -54,21 +54,21 @@ _PROJECT_ROOT = _HERE.parents[1]
 sys.path.insert(0, str(_PROJECT_ROOT / "src" / "common"))
 sys.path.insert(0, str(_HERE))
 
-from schema import (  # noqa: E402
+from src.common.schema import (  # noqa: E402
     PIPELINE_A,
     FIELD_NAMES,
     empty_output,
     make_field,
 )
-from stages.preprocessing import preprocess  # noqa: E402
-from stages.assembly import (               # noqa: E402
+from src.pipeline_a_classical.stages.preprocessing import preprocess  # noqa: E402
+from src.pipeline_a_classical.stages.assembly import (               # noqa: E402
     _extract_tumor_size, _extract_laterality, _extract_ln_counts,
     _MARGIN_POS_RE, _MARGIN_NEG_RE,
     _LVI_POS_RE, _LVI_NEG_RE,
     _PNI_POS_RE, _PNI_NEG_RE,
     _MULTI_RE, _infer_biomarker_field,
 )
-from stages.resolution import extract_tnm_stage, extract_ajcc_stage  # noqa: E402
+from src.pipeline_a_classical.stages.resolution import extract_tnm_stage, extract_ajcc_stage  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
@@ -109,12 +109,12 @@ def build_full_pipeline(spark: Any) -> Any:
     Build and return a fitted Spark NLP PipelineModel.
     Downloads pretrained models on first call (~1-2 GB total).
     """
-    from sparknlp.base import DocumentAssembler, Pipeline as SparkPipeline
-    from sparknlp.annotator import (
+    from sparknlp.base import DocumentAssembler, Pipeline as SparkPipeline  # type: ignore
+    from sparknlp.annotator import (  # type: ignore
         SentenceDetectorDLModel, Tokenizer, WordEmbeddingsModel,
         BertSentenceEmbeddings, PerceptronModel, DependencyParserModel,
     )
-    from sparknlp_jsl.annotator import (
+    from sparknlp_jsl.annotator import (  # type: ignore
         MedicalNerModel, NerConverterInternal, ChunkMergeApproach,
         AssertionDLModel, RelationExtractionModel,
         SentenceEntityResolverModel, Chunk2Doc,
@@ -262,7 +262,7 @@ def build_full_pipeline(spark: Any) -> Any:
 
 
 def make_light_pipeline(model: Any) -> Any:
-    from sparknlp.base import LightPipeline
+    from sparknlp.base import LightPipeline  # type: ignore
     return LightPipeline(model)
 
 
@@ -646,7 +646,7 @@ def start_spark(
             "JSL license file not found — ensure SPARK_NLP_LICENSE is set in environment."
         )
 
-    import sparknlp_jsl
+    import sparknlp_jsl  # type: ignore
 
     os.environ["HADOOP_HOME"] = "C:\\hadoop"
     os.environ.setdefault("JAVA_HOME",

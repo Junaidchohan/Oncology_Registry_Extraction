@@ -1,7 +1,7 @@
 {
   "report_id": "report_005",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-25T17:02:51.702351+00:00",
+  "run_timestamp": "2026-09-26T07:29:29.659139+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 697.603
+    "elapsed_sec": 704.373
   },
   "fields": {
     "primary_site": {
@@ -19,7 +19,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "ICD-O-3": "C20.9"
+        "ICD_O_3": "C20.9"
       }
     },
     "histology_type": {
@@ -29,7 +29,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "ICD-O-3": "8140/3"
+        "ICD_O_3": "8140/3"
       }
     },
     "tumor_grade": {
@@ -39,7 +39,7 @@
       "evidence": "well-differentiated",
       "span": null,
       "codes": {
-        "SNOMED": "363346001"
+        "SNOMED_CT": "363346001"
       }
     },
     "clinical_stage": {
@@ -57,7 +57,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "SNOMED": "1229946007"
+        "SNOMED_CT": "1229946007"
       }
     },
     "tumor_size": {
@@ -83,7 +83,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "SNOMED": "370052007"
+        "SNOMED_CT": "370052007"
       }
     },
     "lymph_nodes_examined": {
@@ -109,7 +109,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "SNOMED": "245294001"
+        "SNOMED_CT": "245294001"
       }
     },
     "perineural_invasion": {
@@ -127,7 +127,7 @@
       "evidence": "no evidence of distant metastatic disease",
       "span": null,
       "codes": {
-        "SNOMED": "1229966003"
+        "SNOMED_CT": "1229966003"
       }
     },
     "er_status": {
@@ -177,7 +177,7 @@
       "evidence": null,
       "span": null,
       "codes": {
-        "SNOMED": "65801008"
+        "SNOMED_CT": "65801008"
       }
     },
     "prior_treatment": {
