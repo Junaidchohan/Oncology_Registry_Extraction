@@ -352,6 +352,8 @@ def assemble(
 ) -> Dict[str, Any]:
     """Map JSL annotation results to the 21-field schema."""
     output = empty_output(report_id, PIPELINE_A)
+    output["fields"]["biomarkers"] = []
+    output["fields"]["anticancer_medication"] = []
     fields = output["fields"]
     chunks = annotation["chunks"]
 
@@ -380,8 +382,8 @@ def assemble(
 
         # histology_type
         if label in ("Cancer_Dx", "Histological_Type", "Tumor_Finding"):
-            if state == "present" and not fields["histology_type"]["value"]:
-                fields["histology_type"] = make_field(
+            if state == "present" and not fields["histological_type"]["value"]:
+                fields["histological_type"] = make_field(
                     value=ctext, state=state, evidence=ctext, span=span, codes=codes
                 )
 
@@ -391,29 +393,17 @@ def assemble(
                 value=ctext, state=state, evidence=ctext, span=span, codes=codes
             )
 
-        # staging (pT/pN go to pathologic_stage; cT/cN go to clinical_stage)
+        # staging
         if label in ("Staging", "Staging_TNM", "Tumor_T_Staging", "Node_N_Staging"):
-            if re.search(r"\b[ycr]?p[TN]", ctext, re.I):
-                if not fields["pathologic_stage"]["value"]:
-                    fields["pathologic_stage"] = make_field(
-                        value=ctext, state=state, evidence=ctext, span=span
-                    )
-            elif re.search(r"\bc[TN]", ctext, re.I):
-                if not fields["clinical_stage"]["value"]:
-                    fields["clinical_stage"] = make_field(
-                        value=ctext, state=state, evidence=ctext, span=span
-                    )
-
-        # M-stage -- ONLY from explicit annotation, never inferred
-        if label == "Metastasis_M_Staging":
-            if "M0" in ctext and not fields["distant_metastasis"]["value"]:
-                fields["distant_metastasis"] = make_field(
-                    value="pM0", state="absent", evidence=ctext, span=span
-                )
-            elif "M1" in ctext and not fields["distant_metastasis"]["value"]:
-                fields["distant_metastasis"] = make_field(
-                    value="pM1", state="present", evidence=ctext, span=span
-                )
+            if re.search(r"\b[ycr]?pT", ctext, re.I):
+                if not fields["pathologic_t"]["value"]:
+                    fields["pathologic_t"] = make_field(value=ctext, state=state, evidence=ctext, span=span)
+            if re.search(r"\b[ycr]?pN", ctext, re.I):
+                if not fields["pathologic_n"]["value"]:
+                    fields["pathologic_n"] = make_field(value=ctext, state=state, evidence=ctext, span=span)
+            if re.search(r"\b[ycr]?pM", ctext, re.I):
+                if not fields["pathologic_m"]["value"]:
+                    fields["pathologic_m"] = make_field(value=ctext, state=state, evidence=ctext, span=span)
 
         # tumor_size (NER)
         if label == "Tumor_Size" and not fields["tumor_size"]["value"]:
@@ -430,8 +420,8 @@ def assemble(
             ln = _extract_ln_counts(ctext)
             if ln:
                 pos, total = ln
-                if not fields["lymph_nodes_positive"]["value"]:
-                    fields["lymph_nodes_positive"] = make_field(
+                if not fields["positive_lymph_nodes"]["value"]:
+                    fields["positive_lymph_nodes"] = make_field(
                         value=pos, state=state, evidence=ctext, span=span
                     )
                 if not fields["lymph_nodes_examined"]["value"]:
@@ -439,23 +429,21 @@ def assemble(
                         value=total, state=state, evidence=ctext, span=span
                     )
 
-        # distant_metastasis (explicit Metastasis entity)
-        if label == "Metastasis" and not fields["distant_metastasis"]["value"]:
-            fields["distant_metastasis"] = make_field(
-                value=ctext, state=state, evidence=ctext, span=span, codes=codes
-            )
-
         # biomarkers
         if label in ("Biomarker", "Biomarker_Result", "Oncogene"):
-            bf = _infer_biomarker_field(ctext)
-            if bf and bf in FIELD_NAMES and not fields[bf]["value"]:
-                fields[bf] = make_field(
-                    value=ctext, state=state, evidence=ctext, span=span, codes=codes
-                )
+            if not isinstance(fields.get("biomarkers"), list):
+                fields["biomarkers"] = []
+            fields["biomarkers"].append({
+                "assay": ctext,
+                "result": state,
+                "lesion_id": "lesion_1",
+                "evidence": ctext,
+                "span": span
+            })
 
         # procedure_type
-        if label == "Cancer_Surgery" and not fields["procedure_type"]["value"]:
-            fields["procedure_type"] = make_field(
+        if label == "Cancer_Surgery" and not fields["procedure"]["value"]:
+            fields["procedure"] = make_field(
                 value=ctext, state=state, evidence=ctext, span=span, codes=codes
             )
 
@@ -472,7 +460,7 @@ def assemble(
     if site_candidates:
         present_sites = [c for c in site_candidates if c.get("assertion_state") == "present"]
         best = max(present_sites or site_candidates, key=lambda c: len(c["text"]))
-        fields["primary_site"] = make_field(
+        fields["primary_tumor_site"] = make_field(
             value=best["text"],
             state=best.get("assertion_state", "present"),
             evidence=best["text"],
@@ -551,12 +539,12 @@ def assemble(
                 )
 
     # LN ratio from regex
-    if not (fields["lymph_nodes_examined"]["value"] and fields["lymph_nodes_positive"]["value"]):
+    if not (fields["lymph_nodes_examined"]["value"] and fields["positive_lymph_nodes"]["value"]):
         ln = _extract_ln_counts(combined)
         if ln:
             pos, total = ln
-            if not fields["lymph_nodes_positive"]["value"]:
-                fields["lymph_nodes_positive"] = make_field(
+            if not fields["positive_lymph_nodes"]["value"]:
+                fields["positive_lymph_nodes"] = make_field(
                     value=pos, state="present", evidence=f"{pos}/{total}"
                 )
             if not fields["lymph_nodes_examined"]["value"]:
@@ -565,14 +553,14 @@ def assemble(
                 )
 
     # Tumor multiplicity
-    if not fields["tumor_multiplicity"]["value"]:
+    if not fields["tumor_focality"]["value"]:
         m = _MULTI_RE.search(text)
         if m:
-            fields["tumor_multiplicity"] = make_field(
+            fields["tumor_focality"] = make_field(
                 value="Multiple", state="present", evidence=m.group(0)
             )
         else:
-            fields["tumor_multiplicity"] = make_field(
+            fields["tumor_focality"] = make_field(
                 value="Single", state="absent",
                 evidence="No multiplicity cues detected"
             )

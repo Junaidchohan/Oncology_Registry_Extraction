@@ -56,3 +56,7 @@ Reports were specifically designed to include the following phenomena to stress-
 3. **Code format check** — ICD-O-3 morphology codes verified as `XXXX/X` format; ICD-10 codes as `C##.#` format
 4. **PHI review** — Confirmed no real names, DOBs, MRNs, provider names, or facility names
 5. **Report structure check** — All 10 reports contain the 4 required sections: CLINICAL HISTORY, GROSS DESCRIPTION, MICROSCOPIC DESCRIPTION, FINAL DIAGNOSIS
+
+## Schema Update
+
+The schema was updated to match the assessment brief's exact 21 fields. Re-annotation was performed by the candidate and was not independently adjudicated.

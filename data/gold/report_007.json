@@ -3,224 +3,204 @@
   "cancer_type": "Breast",
   "procedure": "Right mastectomy (post-neoadjuvant)",
   "annotations": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "Right breast, upper outer quadrant",
-      "unit": null,
       "state": "present",
       "evidence": "right breast invasive ductal carcinoma... upper outer quadrant",
       "span": [
         72,
         145
-      ],
-      "codes": {
-        "ICD-O-3": "C50.4"
-      }
+      ]
     },
-    "histology_type": {
+    "histological_type": {
       "value": "Invasive ductal carcinoma, NST (residual, post-treatment)",
-      "unit": null,
       "state": "present",
       "evidence": "residual invasive carcinoma with treatment effect (ypT1a)",
       "span": [
         618,
         670
-      ],
-      "codes": {
-        "ICD-O-3-M": "8500/3"
-      }
+      ]
+    },
+    "procedure": {
+      "value": "Right mastectomy with sentinel lymph node biopsy",
+      "state": "present",
+      "evidence": "Referred for right mastectomy with sentinel lymph node biopsy",
+      "span": [
+        195,
+        248
+      ]
+    },
+    "laterality": {
+      "value": "Right",
+      "state": "present",
+      "evidence": "Right mastectomy",
+      "span": [
+        238,
+        255
+      ]
     },
     "tumor_grade": {
       "value": "Not re-gradable (treatment effect present)",
-      "unit": null,
       "state": "uncertain",
       "evidence": "residual invasive carcinoma with treatment effect -- grade not assignable post-treatment",
       "span": null,
-      "codes": {}
-    },
-    "clinical_stage": {
-      "value": "Not provided (post-neoadjuvant context)",
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": "No clinical TNM staging mentioned in report",
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_stage": {
-      "value": "ypT1a ypN0 ypM0",
-      "unit": null,
-      "state": "present",
-      "evidence": "Post-treatment pathologic stage: ypT1a ypN0 ypM0",
-      "span": [
-        1000,
-        1040
-      ],
-      "codes": {}
+      "lesion_id": "lesion_1"
     },
     "tumor_size": {
       "value": "1",
-      "unit": "mm",
       "state": "present",
       "evidence": "residual focus approximately 1 mm",
       "span": [
         660,
         688
       ],
-      "codes": {}
+      "lesion_id": "lesion_1",
+      "unit": "mm"
     },
-    "laterality": {
-      "value": "Right",
-      "unit": null,
-      "state": "present",
-      "evidence": "Right mastectomy",
-      "span": [
-        238,
-        255
-      ],
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "Negative (closest margin >3 cm)",
-      "unit": "cm",
-      "state": "present",
-      "evidence": "All surgical margins are negative (closest margin >3 cm)",
-      "span": [
-        690,
-        735
-      ],
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "3 (sentinel)",
-      "unit": null,
-      "state": "present",
-      "evidence": "Sentinel lymph nodes (3/3): no metastatic carcinoma",
-      "span": [
-        760,
-        805
-      ],
-      "codes": {}
-    },
-    "lymph_nodes_positive": {
-      "value": "0",
-      "unit": null,
-      "state": "absent",
-      "evidence": "0/3 sentinel lymph nodes positive (ypN0)",
-      "span": [
-        760,
-        810
-      ],
-      "codes": {}
-    },
-    "lymphovascular_invasion": {
-      "value": "Absent (current specimen)",
-      "unit": null,
-      "state": "absent",
-      "evidence": "No lymphovascular invasion in current specimen",
-      "span": [
-        738,
-        775
-      ],
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "Not mentioned",
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": "PNI not mentioned in current report",
-      "span": null,
-      "codes": {}
-    },
-    "distant_metastasis": {
-      "value": "Not mentioned",
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": "No distant metastasis information provided",
-      "span": null,
-      "codes": {}
-    },
-    "er_status": {
-      "value": "Positive (Allred 7/8, 80%, 3+)",
-      "unit": null,
-      "state": "present",
-      "evidence": "ER positive (Allred 7/8, 80%, 3+ intensity)",
-      "span": [
-        840,
-        890
-      ],
-      "codes": {}
-    },
-    "pr_status": {
-      "value": "Positive (Allred 5/8, 30%, 2+)",
-      "unit": null,
-      "state": "present",
-      "evidence": "PR positive (Allred 5/8, 30%, 2+ intensity)",
-      "span": [
-        891,
-        940
-      ],
-      "codes": {}
-    },
-    "her2_status": {
-      "value": "Negative (1+ IHC)",
-      "unit": null,
-      "state": "absent",
-      "evidence": "HER2: 1+ (negative)",
-      "span": [
-        941,
-        960
-      ],
-      "codes": {}
-    },
-    "kras_mutation": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Breast cancer -- KRAS not applicable",
-      "span": null,
-      "codes": {}
-    },
-    "egfr_mutation": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Breast cancer -- EGFR not applicable",
-      "span": null,
-      "codes": {}
-    },
-    "procedure_type": {
-      "value": "Right mastectomy with sentinel lymph node biopsy",
-      "unit": null,
-      "state": "present",
-      "evidence": "Referred for right mastectomy with sentinel lymph node biopsy",
-      "span": [
-        195,
-        248
-      ],
-      "codes": {
-        "CPT": "19303"
-      }
-    },
-    "prior_treatment": {
-      "value": "Neoadjuvant chemotherapy (AC-T, 6 cycles) + endocrine therapy",
-      "unit": null,
-      "state": "present",
-      "evidence": "received neoadjuvant chemotherapy (AC-T regimen, 6 cycles) and endocrine therapy",
-      "span": [
-        148,
-        215
-      ],
-      "codes": {}
-    },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": "Single lesion (residual)",
-      "unit": null,
       "state": "absent",
       "evidence": "single residual focus at clip site",
       "span": [
         618,
         660
       ],
-      "codes": {}
-    }
+      "lesion_id": "lesion_1"
+    },
+    "lymphovascular_invasion": {
+      "value": "Absent (current specimen)",
+      "state": "absent",
+      "evidence": "No lymphovascular invasion in current specimen",
+      "span": [
+        738,
+        775
+      ]
+    },
+    "perineural_invasion": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "surgical_margins": {
+      "value": "Negative (closest margin >3 cm)",
+      "state": "present",
+      "evidence": "All surgical margins are negative (closest margin >3 cm)",
+      "span": [
+        690,
+        735
+      ],
+      "unit": "cm"
+    },
+    "lymph_nodes_examined": {
+      "value": "3 (sentinel)",
+      "state": "present",
+      "evidence": "Sentinel lymph nodes (3/3): no metastatic carcinoma",
+      "span": [
+        760,
+        805
+      ]
+    },
+    "positive_lymph_nodes": {
+      "value": "0",
+      "state": "absent",
+      "evidence": "0/3 sentinel lymph nodes positive (ypN0)",
+      "span": [
+        760,
+        810
+      ]
+    },
+    "pathologic_t": {
+      "value": "ypT1a",
+      "state": "present",
+      "evidence": "Post-treatment pathologic stage: ypT1a ypN0 ypM0",
+      "span": [
+        1000,
+        1040
+      ]
+    },
+    "pathologic_n": {
+      "value": "ypN0",
+      "state": "present",
+      "evidence": "Post-treatment pathologic stage: ypT1a ypN0 ypM0",
+      "span": [
+        1000,
+        1040
+      ]
+    },
+    "pathologic_m": {
+      "value": "ypM0",
+      "state": "present",
+      "evidence": "Post-treatment pathologic stage: ypT1a ypN0 ypM0",
+      "span": [
+        1000,
+        1040
+      ]
+    },
+    "specimen": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "tumor_behavior": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "tumor_extension": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "anticancer_medication": [],
+    "biomarkers": [
+      {
+        "assay": "ER",
+        "result": "Positive (Allred 7/8, 80%, 3+)",
+        "lesion_id": "lesion_1",
+        "evidence": "ER positive (Allred 7/8, 80%, 3+ intensity)",
+        "span": [
+          840,
+          890
+        ]
+      },
+      {
+        "assay": "PR",
+        "result": "Positive (Allred 5/8, 30%, 2+)",
+        "lesion_id": "lesion_1",
+        "evidence": "PR positive (Allred 5/8, 30%, 2+ intensity)",
+        "span": [
+          891,
+          940
+        ]
+      },
+      {
+        "assay": "HER2",
+        "result": "Negative (1+ IHC)",
+        "lesion_id": "lesion_1",
+        "evidence": "HER2: 1+ (negative)",
+        "span": [
+          941,
+          960
+        ]
+      },
+      {
+        "assay": "KRAS",
+        "result": "Not applicable",
+        "lesion_id": "lesion_1",
+        "evidence": "Breast cancer -- KRAS not applicable",
+        "span": null
+      },
+      {
+        "assay": "EGFR",
+        "result": "Not applicable",
+        "lesion_id": "lesion_1",
+        "evidence": "Breast cancer -- EGFR not applicable",
+        "span": null
+      }
+    ]
   }
 }

@@ -3,232 +3,187 @@
   "cancer_type": "Lung",
   "procedure": "Left upper lobectomy",
   "annotations": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "Left upper lobe, lung",
-      "unit": null,
       "state": "present",
       "evidence": "left upper lobe mass on CT (3.5 cm)",
       "span": [
         72,
         100
-      ],
-      "codes": {
-        "ICD-O-3": "C34.1"
-      }
+      ]
     },
-    "histology_type": {
+    "histological_type": {
       "value": "Squamous cell carcinoma",
-      "unit": null,
       "state": "present",
       "evidence": "Poorly differentiated squamous cell carcinoma (SCC)",
       "span": [
         510,
         560
-      ],
-      "codes": {
-        "ICD-O-3-M": "8070/3"
-      }
+      ]
+    },
+    "procedure": {
+      "value": "Left upper lobectomy",
+      "state": "present",
+      "evidence": "Left upper lobectomy specimen",
+      "span": [
+        330,
+        355
+      ]
+    },
+    "laterality": {
+      "value": "Left",
+      "state": "present",
+      "evidence": "Left upper lobectomy specimen",
+      "span": [
+        330,
+        360
+      ]
     },
     "tumor_grade": {
       "value": "Grade 3 (poorly differentiated)",
-      "unit": null,
       "state": "present",
       "evidence": "Poorly differentiated squamous cell carcinoma, Nottingham equivalent Grade 3",
       "span": [
         510,
         575
       ],
-      "codes": {}
-    },
-    "clinical_stage": {
-      "value": "Not assigned pre-operatively",
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": "PET scan: both lesions FDG-avid; no mediastinal adenopathy; no distant metastases",
-      "span": [
-        155,
-        215
-      ],
-      "codes": {}
-    },
-    "pathologic_stage": {
-      "value": "pT3 pN0 pM0 -- Stage IIB",
-      "unit": null,
-      "state": "present",
-      "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
-      "span": [
-        1080,
-        1140
-      ],
-      "codes": {
-        "AJCC": "Stage IIB"
-      }
+      "lesion_id": "lesion_1"
     },
     "tumor_size": {
       "value": "3.5",
-      "unit": "cm",
       "state": "present",
       "evidence": "firm, grey-white tumor measuring 3.5 x 3.2 x 3.0 cm",
       "span": [
         380,
         425
       ],
-      "codes": {}
+      "lesion_id": "lesion_1",
+      "unit": "cm"
     },
-    "laterality": {
-      "value": "Left",
-      "unit": null,
-      "state": "present",
-      "evidence": "Left upper lobectomy specimen",
-      "span": [
-        330,
-        360
-      ],
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "Negative (bronchial margin 3.5 cm)",
-      "unit": "cm",
-      "state": "present",
-      "evidence": "Bronchial resection margin: negative (3.5 cm from tumor)",
-      "span": [
-        620,
-        668
-      ],
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "12",
-      "unit": null,
-      "state": "present",
-      "evidence": "12 hilar and interlobar lymph nodes examined",
-      "span": [
-        700,
-        745
-      ],
-      "codes": {}
-    },
-    "lymph_nodes_positive": {
-      "value": "0",
-      "unit": null,
-      "state": "absent",
-      "evidence": "no metastatic carcinoma identified (0/12)",
-      "span": [
-        746,
-        785
-      ],
-      "codes": {}
-    },
-    "lymphovascular_invasion": {
-      "value": "Absent",
-      "unit": null,
-      "state": "absent",
-      "evidence": "No lymphovascular invasion identified",
-      "span": [
-        580,
-        615
-      ],
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "Absent",
-      "unit": null,
-      "state": "absent",
-      "evidence": "Perineural invasion: absent",
-      "span": [
-        617,
-        642
-      ],
-      "codes": {}
-    },
-    "distant_metastasis": {
-      "value": "No evidence",
-      "unit": null,
-      "state": "absent",
-      "evidence": "No evidence of distant metastasis; PET: no distant lesions",
-      "span": [
-        195,
-        220
-      ],
-      "codes": {}
-    },
-    "er_status": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Squamous cell carcinoma -- ER not applicable",
-      "span": null,
-      "codes": {}
-    },
-    "pr_status": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Squamous cell carcinoma -- PR not applicable",
-      "span": null,
-      "codes": {}
-    },
-    "her2_status": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Squamous cell carcinoma -- HER2 not applicable",
-      "span": null,
-      "codes": {}
-    },
-    "kras_mutation": {
-      "value": "Not tested (squamous, guideline-based)",
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": "EGFR, KRAS, ALK: not tested (squamous histology, guideline-based)",
-      "span": [
-        800,
-        855
-      ],
-      "codes": {}
-    },
-    "egfr_mutation": {
-      "value": "Not tested (squamous, guideline-based)",
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": "EGFR, KRAS, ALK: not tested (squamous histology, guideline-based)",
-      "span": [
-        800,
-        855
-      ],
-      "codes": {}
-    },
-    "procedure_type": {
-      "value": "Left upper lobectomy",
-      "unit": null,
-      "state": "present",
-      "evidence": "Left upper lobectomy specimen",
-      "span": [
-        330,
-        355
-      ],
-      "codes": {
-        "CPT": "32480"
-      }
-    },
-    "prior_treatment": {
-      "value": "None reported",
-      "unit": null,
-      "state": "absent",
-      "evidence": "No prior treatment mentioned",
-      "span": null,
-      "codes": {}
-    },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": "Multiple (primary + satellite nodule in lingula)",
-      "unit": null,
       "state": "present",
       "evidence": "second distinct nodule measuring 12 x 10 x 9 mm in the lingula -- satellite nodule",
       "span": [
         450,
         520
       ],
-      "codes": {}
-    }
+      "lesion_id": "lesion_1"
+    },
+    "lymphovascular_invasion": {
+      "value": "Absent",
+      "state": "absent",
+      "evidence": "No lymphovascular invasion identified",
+      "span": [
+        580,
+        615
+      ]
+    },
+    "perineural_invasion": {
+      "value": "Absent",
+      "state": "absent",
+      "evidence": "Perineural invasion: absent",
+      "span": [
+        617,
+        642
+      ]
+    },
+    "surgical_margins": {
+      "value": "Negative (bronchial margin 3.5 cm)",
+      "state": "present",
+      "evidence": "Bronchial resection margin: negative (3.5 cm from tumor)",
+      "span": [
+        620,
+        668
+      ],
+      "unit": "cm"
+    },
+    "lymph_nodes_examined": {
+      "value": "12",
+      "state": "present",
+      "evidence": "12 hilar and interlobar lymph nodes examined",
+      "span": [
+        700,
+        745
+      ]
+    },
+    "positive_lymph_nodes": {
+      "value": "0",
+      "state": "absent",
+      "evidence": "no metastatic carcinoma identified (0/12)",
+      "span": [
+        746,
+        785
+      ]
+    },
+    "pathologic_t": {
+      "value": "pT3",
+      "state": "present",
+      "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
+      "span": [
+        1080,
+        1140
+      ]
+    },
+    "pathologic_n": {
+      "value": "pN0",
+      "state": "present",
+      "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
+      "span": [
+        1080,
+        1140
+      ]
+    },
+    "pathologic_m": {
+      "value": "pM0",
+      "state": "present",
+      "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
+      "span": [
+        1080,
+        1140
+      ]
+    },
+    "specimen": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "tumor_behavior": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "tumor_extension": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "anticancer_medication": [],
+    "biomarkers": [
+      {
+        "assay": "ER",
+        "result": "Not applicable",
+        "lesion_id": "lesion_1",
+        "evidence": "Squamous cell carcinoma -- ER not applicable",
+        "span": null
+      },
+      {
+        "assay": "PR",
+        "result": "Not applicable",
+        "lesion_id": "lesion_1",
+        "evidence": "Squamous cell carcinoma -- PR not applicable",
+        "span": null
+      },
+      {
+        "assay": "HER2",
+        "result": "Not applicable",
+        "lesion_id": "lesion_1",
+        "evidence": "Squamous cell carcinoma -- HER2 not applicable",
+        "span": null
+      }
+    ]
   }
 }

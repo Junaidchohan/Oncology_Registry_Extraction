@@ -32,27 +32,26 @@ PIPELINE_B: str = "pipeline_b_llm_retrieval"
 VALID_PIPELINES: frozenset[str] = frozenset({PIPELINE_A, PIPELINE_B})
 
 FIELD_NAMES: List[str] = [
-    "primary_site",
-    "histology_type",
-    "tumor_grade",
-    "clinical_stage",
-    "pathologic_stage",
-    "tumor_size",
+    "specimen",
+    "procedure",
+    "primary_tumor_site",
     "laterality",
-    "surgical_margins",
-    "lymph_nodes_examined",
-    "lymph_nodes_positive",
+    "histological_type",
+    "tumor_behavior",
+    "tumor_grade",
+    "tumor_size",
+    "tumor_focality",
+    "tumor_extension",
     "lymphovascular_invasion",
     "perineural_invasion",
-    "distant_metastasis",
-    "er_status",
-    "pr_status",
-    "her2_status",
-    "kras_mutation",
-    "egfr_mutation",
-    "procedure_type",
-    "prior_treatment",
-    "tumor_multiplicity",
+    "surgical_margins",
+    "lymph_nodes_examined",
+    "positive_lymph_nodes",
+    "pathologic_t",
+    "pathologic_n",
+    "pathologic_m",
+    "biomarkers",
+    "anticancer_medication",
 ]
 
 VALID_STATES: frozenset[str] = frozenset({
@@ -175,7 +174,11 @@ OUTPUT_JSON_SCHEMA: Dict[str, Any] = {
             "description": "Extracted oncology fields",
             "required": FIELD_NAMES,
             "additionalProperties": False,
-            "properties": {name: _FIELD_SCHEMA for name in FIELD_NAMES},
+            "properties": {
+                **{name: _FIELD_SCHEMA for name in FIELD_NAMES if name not in ("biomarkers", "anticancer_medication")},
+                "biomarkers": {"type": "array"},
+                "anticancer_medication": {"type": "array"}
+            },
         },
     },
 }

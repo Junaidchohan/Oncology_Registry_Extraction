@@ -3,212 +3,185 @@
   "cancer_type": "Breast",
   "procedure": "Stereotactic core biopsy (two specimens)",
   "annotations": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "Left breast (upper outer and lower outer quadrants)",
-      "unit": null,
       "state": "present",
       "evidence": "two distinct suspicious lesions... upper outer quadrant; lower outer quadrant",
       "span": [
         120,
         220
-      ],
-      "codes": {
-        "ICD-O-3": "C50.4"
-      }
+      ]
     },
-    "histology_type": {
+    "histological_type": {
       "value": "Specimen A: IDC NST + DCIS; Specimen B: DCIS only",
-      "unit": null,
       "state": "present",
       "evidence": "Specimen A: invasive ductal carcinoma + high-grade DCIS; Specimen B: high-grade DCIS only",
       "span": [
         430,
         620
-      ],
-      "codes": {
-        "ICD-O-3-M": "8500/3 (IDC); 8500/2 (DCIS)"
-      }
+      ]
+    },
+    "procedure": {
+      "value": "Stereotactic core biopsy (two separate specimens)",
+      "state": "present",
+      "evidence": "Stereotactic core biopsy performed of both lesions separately",
+      "span": [
+        230,
+        270
+      ]
+    },
+    "laterality": {
+      "value": "Left",
+      "state": "present",
+      "evidence": "left breast microcalcifications",
+      "span": [
+        72,
+        90
+      ]
     },
     "tumor_grade": {
       "value": "Specimen A: Grade 3 (Nottingham 8/9); Specimen B: high-grade DCIS",
-      "unit": null,
       "state": "present",
       "evidence": "Nottingham Grade 3 (score 8/9); high-grade DCIS",
       "span": [
         460,
         510
       ],
-      "codes": {}
-    },
-    "clinical_stage": {
-      "value": "Not applicable on biopsy",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Full staging: not applicable on core biopsy",
-      "span": [
-        870,
-        910
-      ],
-      "codes": {}
-    },
-    "pathologic_stage": {
-      "value": "Not applicable on biopsy",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Full staging: not applicable on core biopsy",
-      "span": null,
-      "codes": {}
+      "lesion_id": "lesion_1"
     },
     "tumor_size": {
       "value": "Specimen A: 18 mm; Specimen B: 9 mm (imaging)",
-      "unit": "mm",
       "state": "present",
       "evidence": "Lesion A -- 18 mm mass; Lesion B -- 9 mm mass",
       "span": [
         150,
         195
       ],
-      "codes": {}
+      "lesion_id": "lesion_1",
+      "unit": "mm"
     },
-    "laterality": {
-      "value": "Left",
-      "unit": null,
-      "state": "present",
-      "evidence": "left breast microcalcifications",
-      "span": [
-        72,
-        90
-      ],
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "Not applicable (biopsy)",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Core biopsy",
-      "span": null,
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "Not applicable (biopsy)",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Core biopsy",
-      "span": null,
-      "codes": {}
-    },
-    "lymph_nodes_positive": {
-      "value": "Not applicable (biopsy)",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Core biopsy",
-      "span": null,
-      "codes": {}
-    },
-    "lymphovascular_invasion": {
-      "value": "Not assessable (biopsy)",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Core biopsy",
-      "span": null,
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "Not assessable (biopsy)",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Core biopsy",
-      "span": null,
-      "codes": {}
-    },
-    "distant_metastasis": {
-      "value": "Not mentioned",
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": "No staging imaging described",
-      "span": null,
-      "codes": {}
-    },
-    "er_status": {
-      "value": "Specimen A: Positive (Allred 7/8, 70%); Specimen B: Positive (Allred 6/8, 50%)",
-      "unit": null,
-      "state": "present",
-      "evidence": "ER positive (Allred 7/8, 70%, 3+); ER positive (Allred 6/8, 50%, 2+)",
-      "span": [
-        520,
-        620
-      ],
-      "codes": {}
-    },
-    "pr_status": {
-      "value": "Specimen A: Equivocal (10%, 1+); Specimen B: Positive (Allred 5/8, 30%)",
-      "unit": null,
-      "state": "ambiguous",
-      "evidence": "PR: equivocal (10%, 1+); PR positive (Allred 5/8, 30%, 2+)",
-      "span": [
-        621,
-        700
-      ],
-      "codes": {}
-    },
-    "her2_status": {
-      "value": "Specimen A: Equivocal (2+ IHC, FISH recommended); Specimen B: Negative (1+)",
-      "unit": null,
-      "state": "uncertain",
-      "evidence": "HER2: 2+ (equivocal by IHC); FISH recommended; HER2: 1+ (negative)",
-      "span": [
-        701,
-        780
-      ],
-      "codes": {}
-    },
-    "kras_mutation": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Breast cancer -- KRAS not applicable",
-      "span": null,
-      "codes": {}
-    },
-    "egfr_mutation": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Breast cancer -- EGFR not applicable",
-      "span": null,
-      "codes": {}
-    },
-    "procedure_type": {
-      "value": "Stereotactic core biopsy (two separate specimens)",
-      "unit": null,
-      "state": "present",
-      "evidence": "Stereotactic core biopsy performed of both lesions separately",
-      "span": [
-        230,
-        270
-      ],
-      "codes": {
-        "CPT": "19081"
-      }
-    },
-    "prior_treatment": {
-      "value": "None reported",
-      "unit": null,
-      "state": "absent",
-      "evidence": "No prior treatment mentioned",
-      "span": null,
-      "codes": {}
-    },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": "Multifocal (two lesions, 4 cm apart)",
-      "unit": null,
       "state": "present",
       "evidence": "Synchronous multifocal disease: present (two lesions, 4 cm apart)",
       "span": [
         845,
         900
       ],
-      "codes": {}
-    }
+      "lesion_id": "lesion_1"
+    },
+    "lymphovascular_invasion": {
+      "value": "Not assessable (biopsy)",
+      "state": "not applicable",
+      "evidence": "Core biopsy",
+      "span": null
+    },
+    "perineural_invasion": {
+      "value": "Not assessable (biopsy)",
+      "state": "not applicable",
+      "evidence": "Core biopsy",
+      "span": null
+    },
+    "surgical_margins": {
+      "value": "Not applicable (biopsy)",
+      "state": "not applicable",
+      "evidence": "Core biopsy",
+      "span": null
+    },
+    "lymph_nodes_examined": {
+      "value": "Not applicable (biopsy)",
+      "state": "not applicable",
+      "evidence": "Core biopsy",
+      "span": null
+    },
+    "positive_lymph_nodes": {
+      "value": "Not applicable (biopsy)",
+      "state": "not applicable",
+      "evidence": "Core biopsy",
+      "span": null
+    },
+    "pathologic_t": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "pathologic_n": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "pathologic_m": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "specimen": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "tumor_behavior": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "tumor_extension": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "anticancer_medication": [],
+    "biomarkers": [
+      {
+        "assay": "ER",
+        "result": "Specimen A: Positive (Allred 7/8, 70%); Specimen B: Positive (Allred 6/8, 50%)",
+        "lesion_id": "lesion_1",
+        "evidence": "ER positive (Allred 7/8, 70%, 3+); ER positive (Allred 6/8, 50%, 2+)",
+        "span": [
+          520,
+          620
+        ]
+      },
+      {
+        "assay": "PR",
+        "result": "Specimen A: Equivocal (10%, 1+); Specimen B: Positive (Allred 5/8, 30%)",
+        "lesion_id": "lesion_1",
+        "evidence": "PR: equivocal (10%, 1+); PR positive (Allred 5/8, 30%, 2+)",
+        "span": [
+          621,
+          700
+        ]
+      },
+      {
+        "assay": "HER2",
+        "result": "Specimen A: Equivocal (2+ IHC, FISH recommended); Specimen B: Negative (1+)",
+        "lesion_id": "lesion_1",
+        "evidence": "HER2: 2+ (equivocal by IHC); FISH recommended; HER2: 1+ (negative)",
+        "span": [
+          701,
+          780
+        ]
+      },
+      {
+        "assay": "KRAS",
+        "result": "Not applicable",
+        "lesion_id": "lesion_1",
+        "evidence": "Breast cancer -- KRAS not applicable",
+        "span": null
+      },
+      {
+        "assay": "EGFR",
+        "result": "Not applicable",
+        "lesion_id": "lesion_1",
+        "evidence": "Breast cancer -- EGFR not applicable",
+        "span": null
+      }
+    ]
   }
 }

@@ -62,22 +62,25 @@ logger = logging.getLogger(__name__)
 
 # Compact system prompt — avoids token overflow on small local models
 _SYSTEM_PROMPT = """You are a clinical data extractor for an oncology cancer registry. 
-Extract exactly 21 fields from pathology reports. Reply ONLY with valid JSON, no markdown.
+Extract exactly 20 fields (plus repeatable arrays) from pathology reports. Reply ONLY with valid JSON, no markdown.
 States: present|absent|uncertain|not_mentioned|not_applicable|ambiguous.
 For tumor_size: numeric value only, unit in 'unit' field (cm or mm).
 For lymph node counts: integers only. Do NOT generate codes."""
 
 # Minimal user prompt — no field descriptions, no template JSON, keeps tokens low
-_USER_PROMPT_TEMPLATE = """Extract these 21 fields from the oncology pathology report below.
-Return ONLY a flat JSON object. Use null for missing values.
+_USER_PROMPT_TEMPLATE = """Extract these 20 fields from the oncology pathology report below.
+Return ONLY a flat JSON object (with biomarkers and anticancer_medication as arrays). Use null for missing values.
 
-Fields: primary_site, histology_type, tumor_grade, clinical_stage, pathologic_stage,
-tumor_size (value+unit), laterality, surgical_margins, lymph_nodes_examined,
-lymph_nodes_positive, lymphovascular_invasion, perineural_invasion, distant_metastasis,
-er_status, pr_status, her2_status, kras_mutation, egfr_mutation,
-procedure_type, prior_treatment, tumor_multiplicity.
+Fields: specimen, procedure, primary_tumor_site, laterality, histological_type,
+tumor_behavior, tumor_grade, tumor_size (value+unit), tumor_focality,
+tumor_extension, lymphovascular_invasion, perineural_invasion, surgical_margins,
+lymph_nodes_examined, positive_lymph_nodes, pathologic_t, pathologic_n, pathologic_m.
 
-Each field: {{"value": ..., "unit": null, "state": "...", "evidence": "verbatim quote or null"}}
+Array fields:
+- biomarkers: array of objects {{"assay": "...", "result": "...", "lesion_id": "...", "evidence": "...", "span": null}}
+- anticancer_medication: array of strings or objects
+
+Each non-array field: {{"value": ..., "unit": null, "state": "...", "evidence": "verbatim quote or null"}}
 
 REPORT:
 {report_text}"""

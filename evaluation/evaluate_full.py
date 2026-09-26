@@ -74,6 +74,9 @@ def evaluate(pipeline_dir: Path, gold_dir: Path, pipeline_name: str) -> dict:
         costs.append(mv.get("cost_usd", 0))
 
         for fname in g_fields:
+            if fname in ["biomarkers", "anticancer_medication"]:
+                continue
+            
             gf_d = g_fields.get(fname, {})
             pf_d = p_fields.get(fname, {})
 

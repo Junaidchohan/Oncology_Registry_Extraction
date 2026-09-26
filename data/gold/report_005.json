@@ -3,224 +3,191 @@
   "cancer_type": "Colorectal",
   "procedure": "Endoscopic mucosal resection biopsy",
   "annotations": {
-    "primary_site": {
+    "primary_tumor_site": {
       "value": "Rectum, 10 cm from anal verge",
-      "unit": null,
       "state": "present",
       "evidence": "sessile polyp in the rectum at 10 cm from the anal verge",
       "span": [
         115,
         165
-      ],
-      "codes": {
-        "ICD-O-3": "C20.9"
-      }
+      ]
     },
-    "histology_type": {
+    "histological_type": {
       "value": "Adenocarcinoma",
-      "unit": null,
       "state": "present",
       "evidence": "well-differentiated (Grade 1) adenocarcinoma of the rectum",
       "span": [
         368,
         415
-      ],
-      "codes": {
-        "ICD-O-3-M": "8140/3"
-      }
+      ]
+    },
+    "procedure": {
+      "value": "Endoscopic mucosal resection biopsy",
+      "state": "present",
+      "evidence": "Referred for endoscopic mucosal resection biopsy",
+      "span": [
+        226,
+        268
+      ]
+    },
+    "laterality": {
+      "value": "Not applicable",
+      "state": "not applicable",
+      "evidence": "Rectum -- laterality not applicable",
+      "span": null
     },
     "tumor_grade": {
       "value": "Grade 1 (well-differentiated)",
-      "unit": null,
       "state": "present",
       "evidence": "well-differentiated (Grade 1)",
       "span": [
         368,
         398
       ],
-      "codes": {}
-    },
-    "clinical_stage": {
-      "value": "No distant metastasis on CT (pre-biopsy)",
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": "CT: no evidence of distant metastatic disease",
-      "span": [
-        163,
-        225
-      ],
-      "codes": {}
-    },
-    "pathologic_stage": {
-      "value": "pT1 Nx (biopsy; full staging after resection)",
-      "unit": null,
-      "state": "uncertain",
-      "evidence": "Stage: pT1 Nx (biopsy; full staging after definitive resection)",
-      "span": [
-        645,
-        700
-      ],
-      "codes": {}
+      "lesion_id": "lesion_1"
     },
     "tumor_size": {
       "value": "2.8",
-      "unit": "cm",
       "state": "present",
       "evidence": "2.8 cm sessile polyp",
       "span": [
         100,
         120
       ],
-      "codes": {}
+      "lesion_id": "lesion_1",
+      "unit": "cm"
     },
-    "laterality": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Rectum -- laterality not applicable",
-      "span": null,
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "Appears uninvolved (limited assessment)",
-      "unit": null,
-      "state": "uncertain",
-      "evidence": "deep biopsy margin appears uninvolved, though assessment is limited by fragmented nature",
-      "span": [
-        480,
-        560
-      ],
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "Not assessed (biopsy)",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Lymph nodes: not assessed (biopsy specimen)",
-      "span": [
-        636,
-        670
-      ],
-      "codes": {}
-    },
-    "lymph_nodes_positive": {
-      "value": "Not assessed (biopsy)",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Lymph nodes: not assessed (biopsy specimen)",
-      "span": [
-        636,
-        670
-      ],
-      "codes": {}
-    },
-    "lymphovascular_invasion": {
-      "value": "Absent",
-      "unit": null,
-      "state": "absent",
-      "evidence": "No lymphovascular invasion is identified",
-      "span": [
-        415,
-        455
-      ],
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "Absent",
-      "unit": null,
-      "state": "absent",
-      "evidence": "Perineural invasion is absent",
-      "span": [
-        456,
-        482
-      ],
-      "codes": {}
-    },
-    "distant_metastasis": {
-      "value": "No evidence (CT and specimen)",
-      "unit": null,
-      "state": "absent",
-      "evidence": "No evidence of metastasis in this specimen; CT: no distant disease",
-      "span": [
-        562,
-        625
-      ],
-      "codes": {}
-    },
-    "er_status": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Colorectal cancer -- ER not applicable",
-      "span": null,
-      "codes": {}
-    },
-    "pr_status": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Colorectal cancer -- PR not applicable",
-      "span": null,
-      "codes": {}
-    },
-    "her2_status": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Colorectal cancer -- HER2 not applicable",
-      "span": null,
-      "codes": {}
-    },
-    "kras_mutation": {
-      "value": "Wild-type",
-      "unit": null,
-      "state": "absent",
-      "evidence": "KRAS codon 12/13: wild-type",
-      "span": [
-        628,
-        655
-      ],
-      "codes": {}
-    },
-    "egfr_mutation": {
-      "value": "Not applicable",
-      "unit": null,
-      "state": "not_applicable",
-      "evidence": "Colorectal cancer -- EGFR not routinely tested",
-      "span": null,
-      "codes": {}
-    },
-    "procedure_type": {
-      "value": "Endoscopic mucosal resection biopsy",
-      "unit": null,
-      "state": "present",
-      "evidence": "Referred for endoscopic mucosal resection biopsy",
-      "span": [
-        226,
-        268
-      ],
-      "codes": {
-        "CPT": "45171"
-      }
-    },
-    "prior_treatment": {
-      "value": "None reported",
-      "unit": null,
-      "state": "absent",
-      "evidence": "No prior treatment mentioned",
-      "span": null,
-      "codes": {}
-    },
-    "tumor_multiplicity": {
+    "tumor_focality": {
       "value": "Single lesion",
-      "unit": null,
       "state": "absent",
       "evidence": "single 2.8 cm sessile polyp described",
       "span": [
         100,
         165
       ],
-      "codes": {}
-    }
+      "lesion_id": "lesion_1"
+    },
+    "lymphovascular_invasion": {
+      "value": "Absent",
+      "state": "absent",
+      "evidence": "No lymphovascular invasion is identified",
+      "span": [
+        415,
+        455
+      ]
+    },
+    "perineural_invasion": {
+      "value": "Absent",
+      "state": "absent",
+      "evidence": "Perineural invasion is absent",
+      "span": [
+        456,
+        482
+      ]
+    },
+    "surgical_margins": {
+      "value": "Appears uninvolved (limited assessment)",
+      "state": "uncertain",
+      "evidence": "deep biopsy margin appears uninvolved, though assessment is limited by fragmented nature",
+      "span": [
+        480,
+        560
+      ]
+    },
+    "lymph_nodes_examined": {
+      "value": "Not assessed (biopsy)",
+      "state": "not applicable",
+      "evidence": "Lymph nodes: not assessed (biopsy specimen)",
+      "span": [
+        636,
+        670
+      ]
+    },
+    "positive_lymph_nodes": {
+      "value": "Not assessed (biopsy)",
+      "state": "not applicable",
+      "evidence": "Lymph nodes: not assessed (biopsy specimen)",
+      "span": [
+        636,
+        670
+      ]
+    },
+    "pathologic_t": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "pathologic_n": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "pathologic_m": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "specimen": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "tumor_behavior": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "tumor_extension": {
+      "value": null,
+      "state": "not mentioned",
+      "evidence": null,
+      "span": null
+    },
+    "anticancer_medication": [],
+    "biomarkers": [
+      {
+        "assay": "ER",
+        "result": "Not applicable",
+        "lesion_id": "lesion_1",
+        "evidence": "Colorectal cancer -- ER not applicable",
+        "span": null
+      },
+      {
+        "assay": "PR",
+        "result": "Not applicable",
+        "lesion_id": "lesion_1",
+        "evidence": "Colorectal cancer -- PR not applicable",
+        "span": null
+      },
+      {
+        "assay": "HER2",
+        "result": "Not applicable",
+        "lesion_id": "lesion_1",
+        "evidence": "Colorectal cancer -- HER2 not applicable",
+        "span": null
+      },
+      {
+        "assay": "KRAS",
+        "result": "Wild-type",
+        "lesion_id": "lesion_1",
+        "evidence": "KRAS codon 12/13: wild-type",
+        "span": [
+          628,
+          655
+        ]
+      },
+      {
+        "assay": "EGFR",
+        "result": "Not applicable",
+        "lesion_id": "lesion_1",
+        "evidence": "Colorectal cancer -- EGFR not routinely tested",
+        "span": null
+      }
+    ]
   }
 }
