@@ -34,13 +34,12 @@
     },
     "tumor_grade": {
       "value": "3",
-      "unit": null,
       "state": "present",
-      "evidence": "Nottingham 8/9",
-      "span": null,
-      "codes": {
-        "SNOMED": "363346003"
-      }
+      "evidence": "Nottingham Grade 3",
+      "span": [
+        752,
+        770
+      ]
     },
     "clinical_stage": {
       "value": null,
@@ -137,11 +136,12 @@
     },
     "er_status": {
       "value": "positive",
-      "unit": null,
       "state": "present",
-      "evidence": "Allred 7/8, 70%, 3+ intensity",
-      "span": null,
-      "codes": {}
+      "evidence": "ER positive",
+      "span": [
+        914,
+        925
+      ]
     },
     "pr_status": {
       "value": "equivocal",

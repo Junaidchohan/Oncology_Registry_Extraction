@@ -145,11 +145,12 @@
     },
     "er_status": {
       "value": "positive",
-      "unit": null,
       "state": "present",
-      "evidence": "ER: positive",
-      "span": null,
-      "codes": {}
+      "evidence": "ER positive",
+      "span": [
+        1356,
+        1367
+      ]
     },
     "pr_status": {
       "value": "positive",

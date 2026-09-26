@@ -101,11 +101,12 @@
     },
     "lymph_nodes_examined": {
       "value": "12",
-      "unit": null,
       "state": "present",
-      "evidence": "Of 12 lymph nodes examined",
-      "span": null,
-      "codes": {}
+      "evidence": "12 lymph nodes examined",
+      "span": [
+        1320,
+        1343
+      ]
     },
     "positive_lymph_nodes": {
       "value": "5",

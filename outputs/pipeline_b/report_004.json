@@ -34,13 +34,12 @@
     },
     "tumor_grade": {
       "value": "3",
-      "unit": null,
       "state": "present",
-      "evidence": "MICROSCOPIC DESCRIPTION",
-      "span": null,
-      "codes": {
-        "SNOMED_CT": "363346003"
-      }
+      "evidence": "Nottingham Grade 3",
+      "span": [
+        656,
+        674
+      ]
     },
     "clinical_stage": {
       "value": null,

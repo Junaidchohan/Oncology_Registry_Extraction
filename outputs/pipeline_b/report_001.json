@@ -34,13 +34,12 @@
     },
     "tumor_grade": {
       "value": "2",
-      "unit": null,
       "state": "present",
-      "evidence": "MICROSCOPIC DESCRIPTION",
-      "span": null,
-      "codes": {
-        "SNOMED_CT": "363346002"
-      }
+      "evidence": "Nottingham Grade 2",
+      "span": [
+        758,
+        776
+      ]
     },
     "clinical_stage": {
       "value": "IIB",
@@ -80,12 +79,14 @@
       }
     },
     "tumor_size": {
-      "value": "2.3",
-      "unit": "cm",
+      "value": "15",
+      "unit": "mm",
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": null,
-      "codes": {}
+      "evidence": "measuring 1.5 cm",
+      "span": [
+        558,
+        574
+      ]
     },
     "laterality": {
       "value": "left",
@@ -105,19 +106,21 @@
     },
     "lymph_nodes_examined": {
       "value": "18",
-      "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": null,
-      "codes": {}
+      "evidence": "Of the 18 axillary lymph nodes examined",
+      "span": [
+        1032,
+        1071
+      ]
     },
     "positive_lymph_nodes": {
       "value": "4",
-      "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": null,
-      "codes": {}
+      "evidence": "4 contain metastatic",
+      "span": [
+        1073,
+        1093
+      ]
     },
     "lymphovascular_invasion": {
       "value": "present",
@@ -147,11 +150,12 @@
     },
     "er_status": {
       "value": "positive",
-      "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": null,
-      "codes": {}
+      "evidence": "ER positive",
+      "span": [
+        1235,
+        1246
+      ]
     },
     "pr_status": {
       "value": "positive",

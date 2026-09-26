@@ -108,7 +108,7 @@ def main() -> None:
             entry["grounding_status"] = "ACCEPTED"
             entry["reapply_note"] = (
                 f"Accepted after extract_code_token normalisation: "
-                f"'{raw_selection}' → '{code_token}'"
+                f"'{raw_selection}' -> '{code_token}'"
             )
             n_newly_accepted += 1
             logger.info(
@@ -152,8 +152,8 @@ def main() -> None:
     print(f"  Total log entries processed:  {n_total}")
     print(f"  Already accepted:             {n_already_accepted}")
     print(f"  Previously rejected:          {n_rejected}")
-    print(f"    → Newly accepted (fixed):   {n_newly_accepted}")
-    print(f"    → Still rejected:           {n_still_rejected}")
+    print(f"    -> Newly accepted (fixed):   {n_newly_accepted}")
+    print(f"    -> Still rejected:           {n_still_rejected}")
     print(f"  Abstained (unchanged):        {n_abstained}")
     print(f"  Retrieval log rewritten to:   {RETRIEVAL_LOG}")
     print(f"  Report JSONs updated:         {len(report_cache)}")

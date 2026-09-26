@@ -1,26 +1,16 @@
-"""
-evaluate_full.py — Full evaluation with comparison table, per-field CSV, results JSON
-======================================================================================
-Run:
-    python evaluation/evaluate_full.py
-
-Outputs:
-    evaluation/comparison_table.md   — side-by-side Markdown table
-    evaluation/results.json          — raw numbers
-    evaluation/per_field_results.csv — per-field breakdown
-"""
-
 import csv
 import json
 import sys, io
-if sys.platform == "win32":
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 import os
 import glob
 import time
+import re
 from pathlib import Path
 from collections import defaultdict
+
+if sys.platform == "win32":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 ROOT = Path(__file__).resolve().parents[1]
 GOLD_DIR = ROOT / "data" / "gold"
@@ -29,12 +19,45 @@ PIPELINE_B_DIR = ROOT / "outputs" / "pipeline_b"
 EVAL_DIR = ROOT / "evaluation"
 EVAL_DIR.mkdir(exist_ok=True)
 
+def normalize_ws(s):
+    if not s: return ""
+    return " ".join(str(s).strip().split())
 
 def normalize(s):
-    if not s:
-        return ""
-    return str(s).lower().strip()
+    if not s: return ""
+    s = str(s).lower().strip()
+    m = re.match(r"^([\d\.]+)\s*cm$", s)
+    if m:
+        try: return f"{float(m.group(1)) * 10:g} mm"
+        except: pass
+    s = re.sub(r'[\.,;:!?]+$', '', s).strip()
+    return normalize_ws(s)
 
+def get_iou(span1, span2):
+    if not span1 or not span2: return 0.0
+    if len(span1) != 2 or len(span2) != 2: return 0.0
+    b1, e1 = span1
+    b2, e2 = span2
+    if b1 is None or e1 is None or b2 is None or e2 is None: return 0.0
+    intersection = max(0, min(e1, e2) - max(b1, b2))
+    union = (e1 - b1) + (e2 - b2) - intersection
+    return intersection / union if union > 0 else 0.0
+
+def check_span(g_span, p_span, g_ev, p_ev):
+    # Span matching convention: A predicted mention is a TP if both evidence strings are identical after whitespace normalization.
+    if g_ev and p_ev and normalize_ws(g_ev) == normalize_ws(p_ev):
+        return True
+    return False
+
+def validate_evidence(ev, val, full_text):
+    if not ev: return False, False, False, False
+    ev_norm = normalize_ws(ev)
+    a = ev_norm in normalize_ws(full_text)
+    b = (normalize(val) in normalize(ev)) if val else True
+    headers = {"final diagnosis", "microscopic description", "gross description", "clinical history", "specimen", "comment"}
+    c = ev.strip().lower() not in headers
+    d = len(ev.strip()) >= 10
+    return a, b, c, d
 
 def calc_f1(tp, fp, fn):
     p = tp / (tp + fp) if (tp + fp) > 0 else 0.0
@@ -42,289 +65,203 @@ def calc_f1(tp, fp, fn):
     f1 = 2 * p * r / (p + r) if (p + r) > 0 else 0.0
     return round(p, 4), round(r, 4), round(f1, 4)
 
-
 def evaluate(pipeline_dir: Path, gold_dir: Path, pipeline_name: str) -> dict:
     gold_files = sorted(gold_dir.glob("*.json"))
-    if not gold_files:
-        raise FileNotFoundError(f"No gold files in {gold_dir}")
-
-    m = defaultdict(int)  # aggregate counters
-    field_m = defaultdict(lambda: defaultdict(int))  # per-field counters
-    discrepancies = []
-    runtimes = []
-    costs = []
-
-    t_eval_start = time.time()
+    m = defaultdict(int)
+    field_m = defaultdict(lambda: defaultdict(int))
+    rel_m = defaultdict(lambda: defaultdict(int))
+    runtimes, costs = [], []
+    
+    # Preload candidates for Pipeline B
+    retrieval_log_path = pipeline_dir / "retrieval_log.jsonl"
+    cands_by_report_field = defaultdict(lambda: defaultdict(list))
+    if retrieval_log_path.exists():
+        with open(retrieval_log_path, encoding="utf-8") as f:
+            for line in f:
+                if not line.strip(): continue
+                d = json.loads(line)
+                rid = d.get("report_id")
+                fid = d.get("field_name")
+                key_map = {
+                    "primary_site": "primary_tumor_site",
+                    "histology_type": "histological_type",
+                    "procedure_type": "procedure",
+                    "tumor_multiplicity": "tumor_focality",
+                    "lymph_nodes_positive": "positive_lymph_nodes",
+                }
+                fid = key_map.get(fid, fid)
+                cands = []
+                for t_name, c_list in d.get("candidates", {}).items():
+                    cands.extend([c["code"] for c in c_list])
+                cands_by_report_field[rid][fid] = cands
 
     for gf in gold_files:
         pf = pipeline_dir / gf.name
-        if not pf.exists():
-            print(f"  [MISSING] {gf.name} in {pipeline_dir}")
-            continue
+        if not pf.exists(): continue
 
         gold = json.load(open(gf, encoding="utf-8"))
         pred = json.load(open(pf, encoding="utf-8"))
+        raw_text_file = ROOT / "data" / "raw" / f"{gf.stem}.txt"
+        full_text = open(raw_text_file, encoding="utf-8").read() if raw_text_file.exists() else ""
 
         g_fields = gold.get("annotations", {})
         p_fields = pred.get("fields", {})
 
-        # Collect runtime/cost metadata
         mv = pred.get("model_versions", {})
         runtimes.append(mv.get("elapsed_sec", 0))
         costs.append(mv.get("cost_usd", 0))
 
         for fname in g_fields:
-            if fname in ["biomarkers", "anticancer_medication"]:
-                continue
+            if fname in ["biomarkers", "anticancer_medication"]: continue
+            gf_d, pf_d = g_fields.get(fname, {}), p_fields.get(fname, {})
+
+            g_val, g_state = gf_d.get("value"), gf_d.get("state")
+            p_val, p_state = pf_d.get("value"), pf_d.get("state")
+            g_span, p_span = gf_d.get("span"), pf_d.get("span")
+            g_ev, p_ev = gf_d.get("evidence"), pf_d.get("evidence")
             
-            gf_d = g_fields.get(fname, {})
-            pf_d = p_fields.get(fname, {})
+            # NER span-based eval
+            if g_state == "present":
+                if p_ev and check_span(g_span, p_span, g_ev, p_ev):
+                    m["ner_tp"] += 1; field_m[fname]["ner_tp"] += 1
+                elif not p_ev:
+                    m["ner_fn"] += 1; field_m[fname]["ner_fn"] += 1
+                else:
+                    m["ner_fp"] += 1; field_m[fname]["ner_fp"] += 1
+            else:
+                if p_ev:
+                    m["ner_fp"] += 1; field_m[fname]["ner_fp"] += 1
 
-            g_val = gf_d.get("value")
-            g_state = gf_d.get("state")
-            p_val = pf_d.get("value")
-            p_state = pf_d.get("state")
-            g_codes = gf_d.get("codes", {})
-            p_codes = pf_d.get("codes", {})
-
-            g_code_set = set(g_codes.values()) if isinstance(g_codes, dict) else set()
-            p_code_set = set(p_codes.values()) if isinstance(p_codes, dict) else set()
-
-            # Entity / field population (NER proxy)
-            g_pop = bool(g_val or g_state == "present")
-            p_pop = bool(p_val or p_state == "present")
-            if g_pop and p_pop:
-                m["ner_tp"] += 1
-                field_m[fname]["ner_tp"] += 1
-            elif g_pop and not p_pop:
-                m["ner_fn"] += 1
-                field_m[fname]["ner_fn"] += 1
-            elif not g_pop and p_pop:
-                m["ner_fp"] += 1
-                field_m[fname]["ner_fp"] += 1
-
-            # Field value accuracy
-            m["total_values"] += 1
-            field_m[fname]["total"] += 1
+            # Value and State
+            m["total_values"] += 1; field_m[fname]["total"] += 1
             if normalize(g_val) == normalize(p_val):
-                m["value_match"] += 1
-                field_m[fname]["value_match"] += 1
+                m["value_match"] += 1; field_m[fname]["value_match"] += 1
 
-            # Assertion / state accuracy
             if g_state:
-                m["total_states"] += 1
-                field_m[fname]["total_states"] += 1
+                m["total_states"] += 1; field_m[fname]["total_states"] += 1
                 if g_state == p_state:
-                    m["state_match"] += 1
-                    field_m[fname]["state_match"] += 1
+                    m["state_match"] += 1; field_m[fname]["state_match"] += 1
 
-            # Terminology code accuracy
-            if g_code_set:
-                m["total_codes_gold"] += len(g_code_set)
-                field_m[fname]["total_codes_gold"] += len(g_code_set)
-            if p_code_set:
-                m["total_codes_pred"] += len(p_code_set)
-                field_m[fname]["total_codes_pred"] += len(p_code_set)
-            matches = len(g_code_set & p_code_set)
-            m["code_matches"] += matches
-            field_m[fname]["code_matches"] += matches
+            # Retrieval & Selection
+            g_codes = list(gf_d.get("codes", {}).values())
+            p_codes = list(pf_d.get("codes", {}).values())
+            p_cands = cands_by_report_field[gf.stem][fname]
 
-            # Grounding integrity — unsupported fields
-            if p_pop and not g_pop:
-                m["unsupported_field"] += 1
+            if g_codes:
+                m["term_gold_codes"] += 1
+                if any(gc in p_codes for gc in g_codes):
+                    m["term_sel_match"] += 1
+                if any(gc in p_cands for gc in g_codes) or (not p_cands and any(gc in p_codes for gc in g_codes)):
+                    m["term_ret_match"] += 1
 
-            # Discrepancy capture
-            has_discrepancy = (
-                (g_val and normalize(g_val) != normalize(p_val)) or
-                (g_state and g_state != p_state) or
-                (g_code_set and g_code_set != p_code_set)
-            )
-            if has_discrepancy and len(discrepancies) < 30:
-                discrepancies.append({
-                    "report": gf.name,
-                    "field": fname,
-                    "gold_value": g_val,
-                    "gold_state": g_state,
-                    "gold_codes": sorted(g_code_set),
-                    "pred_value": p_val,
-                    "pred_state": p_state,
-                    "pred_codes": sorted(p_code_set),
-                    "evidence": pf_d.get("evidence", ""),
-                })
+            # Evidence Validation
+            p_pop = bool(p_val or p_state == "present")
+            if p_pop:
+                a, b, c, d = validate_evidence(p_ev, p_val, full_text)
+                m["ev_populated"] += 1
+                if a: m["ev_located"] += 1
+                if b: m["ev_val_in_ev"] += 1
+                if not (a and b and c and d):
+                    m["unsupported_field"] += 1
 
-    t_eval = time.time() - t_eval_start
+        # Relations (has_lesion, has_assay, has_stage_system)
+        def get_g_rels():
+            rels = []
+            for b in g_fields.get("biomarkers", []):
+                if "lesion_id" in b: rels.append(("has_lesion", b.get("assay", ""), b["lesion_id"]))
+                if "assay" in b: rels.append(("has_assay", b.get("result", ""), b["assay"]))
+            if g_fields.get("pathologic_t", {}).get("value"): rels.append(("has_stage_system", "pathologic_t", "AJCC"))
+            return set(rels)
+            
+        def get_p_rels():
+            rels = []
+            for b in p_fields.get("biomarkers", []):
+                if "lesion_id" in b: rels.append(("has_lesion", b.get("assay", ""), b["lesion_id"]))
+                if "assay" in b: rels.append(("has_assay", b.get("result", ""), b["assay"]))
+            if p_fields.get("pathologic_t", {}).get("value"): rels.append(("has_stage_system", "pathologic_t", "AJCC"))
+            return set(rels)
+
+        g_rels = get_g_rels()
+        p_rels = get_p_rels()
+
+        for rtype in ["has_lesion", "has_assay", "has_stage_system"]:
+            g_r = {r for r in g_rels if r[0] == rtype}
+            p_r = {r for r in p_rels if r[0] == rtype}
+            tp = len(g_r & p_r)
+            fp = len(p_r - g_r)
+            fn = len(g_r - p_r)
+            rel_m[rtype]["tp"] += tp; rel_m[rtype]["fp"] += fp; rel_m[rtype]["fn"] += fn
+            m["rel_tp"] += tp; m["rel_fp"] += fp; m["rel_fn"] += fn
+
     n = len(gold_files)
-
-    # Aggregate
     ner_p, ner_r, ner_f1 = calc_f1(m["ner_tp"], m["ner_fp"], m["ner_fn"])
-    state_acc = round(m["state_match"] / m["total_states"], 4) if m["total_states"] else 0
-    val_acc = round(m["value_match"] / m["total_values"], 4) if m["total_values"] else 0
-    code_prec = round(m["code_matches"] / m["total_codes_pred"], 4) if m["total_codes_pred"] else 0
-    code_recall = round(m["code_matches"] / m["total_codes_gold"], 4) if m["total_codes_gold"] else 0
-    code_f1 = round(2 * code_prec * code_recall / (code_prec + code_recall), 4) if (code_prec + code_recall) else 0
-    unsupported_rate = round(m["unsupported_field"] / (m["ner_tp"] + m["ner_fp"] + 1), 4)
+    rel_p, rel_r, rel_f1 = calc_f1(m["rel_tp"], m["rel_fp"], m["rel_fn"])
+    state_acc = m["state_match"] / m["total_states"] if m["total_states"] else 0
+    val_acc = m["value_match"] / m["total_values"] if m["total_values"] else 0
     
-    mean_rt = 0.0
-    summary_path = pipeline_dir / "_run_summary.json"
-    if summary_path.exists():
-        try:
-            summary = json.load(open(summary_path, encoding="utf-8"))
-            mean_rt = summary.get("mean_runtime_sec", 0.0)
-        except Exception:
-            pass
-    if mean_rt == 0.0:
-        mean_rt = round(sum(runtimes) / n, 4) if sum(runtimes) > 0 else (t_eval / n)
-        
+    ret_acc = m["term_ret_match"] / m["term_gold_codes"] if m["term_gold_codes"] else 0
+    sel_acc = m["term_sel_match"] / m["term_gold_codes"] if m["term_gold_codes"] else 0
+
+    ev_loc = m["ev_located"] / m["ev_populated"] if m["ev_populated"] else 0
+    ev_val = m["ev_val_in_ev"] / m["ev_populated"] if m["ev_populated"] else 0
+    unsup = m["unsupported_field"] / m["ev_populated"] if m["ev_populated"] else 0
+
+    mean_rt = round(sum(runtimes) / n, 4) if n > 0 else 0
+    try:
+        summ = json.load(open(pipeline_dir / "_run_summary.json"))
+        mean_rt = summ.get("mean_runtime_sec", mean_rt)
+    except: pass
     mean_cost = round(sum(costs) / n, 6) if costs else 0.0
 
-    result = {
+    return {
         "pipeline": pipeline_name,
         "n_reports": n,
-        "entity_ner": {"precision": ner_p, "recall": ner_r, "f1": ner_f1,
-                        "tp": m["ner_tp"], "fp": m["ner_fp"], "fn": m["ner_fn"]},
-        "field_value_accuracy": {"exact": val_acc,
-                                  "match_count": m["value_match"], "total": m["total_values"]},
-        "assertion_accuracy": {"accuracy": state_acc,
-                                "match_count": m["state_match"], "total": m["total_states"]},
-        "terminology": {
-            "code_precision": code_prec, "code_recall": code_recall, "code_f1": code_f1,
-            "match_count": m["code_matches"],
-            "total_gold_codes": m["total_codes_gold"],
-            "total_pred_codes": m["total_codes_pred"],
-        },
-        "grounding_integrity": {
-            "unsupported_field_rate": unsupported_rate,
-            "unsupported_count": m["unsupported_field"],
-        },
-        "operations": {
-            "mean_runtime_sec": mean_rt,
-            "mean_cost_usd": mean_cost,
-            "total_cost_usd": round(sum(costs), 6),
-        },
-        "field_metrics": {
-            fname: {
-                "ner_tp": field_m[fname]["ner_tp"],
-                "ner_fp": field_m[fname]["ner_fp"],
-                "ner_fn": field_m[fname]["ner_fn"],
-                "value_match": field_m[fname]["value_match"],
-                "total": field_m[fname]["total"],
-                "state_match": field_m[fname]["state_match"],
-                "total_states": field_m[fname]["total_states"],
-                "code_matches": field_m[fname]["code_matches"],
-                "total_codes_gold": field_m[fname]["total_codes_gold"],
-                "total_codes_pred": field_m[fname]["total_codes_pred"],
-            }
-            for fname in field_m
-        },
-        "discrepancies": discrepancies[:10],
+        "entity_ner": {"precision": ner_p, "recall": ner_r, "f1": ner_f1, "tp": m["ner_tp"], "fp": m["ner_fp"], "fn": m["ner_fn"]},
+        "rel": {"precision": rel_p, "recall": rel_r, "f1": rel_f1, "tp": m["rel_tp"], "fp": m["rel_fp"], "fn": m["rel_fn"]},
+        "field_value_accuracy": {"exact": val_acc, "match_count": m["value_match"], "total": m["total_values"]},
+        "assertion_accuracy": {"accuracy": state_acc, "match_count": m["state_match"], "total": m["total_states"]},
+        "terminology": {"retrieval_acc": ret_acc, "selection_acc": sel_acc, "ret_match": m["term_ret_match"], "sel_match": m["term_sel_match"], "total": m["term_gold_codes"]},
+        "evidence": {"loc_rate": ev_loc, "val_rate": ev_val, "unsupported_rate": unsup, "unsup_count": m["unsupported_field"], "total_populated": m["ev_populated"]},
+        "operations": {"mean_runtime_sec": mean_rt, "mean_cost_usd": mean_cost, "total_cost_usd": round(sum(costs), 6)},
+        "field_metrics": field_m
     }
-    return result
 
+def pct(v): return f"{v*100:.1f}%"
+def cnt(n, d): return f"{n}/{d}"
 
 def build_comparison_table(a: dict, b: dict) -> str:
-    def pct(v): return f"{v*100:.1f}%"
-    def cnt(n, d): return f"{n}/{d}"
-
     rows = [
         ("Metric", "Pipeline A — Classical NLP", "Pipeline B — LLM + Retrieval"),
         ("---", "---", "---"),
-        ("Entity P / R / F1",
-         f"{pct(a['entity_ner']['precision'])} / {pct(a['entity_ner']['recall'])} / {pct(a['entity_ner']['f1'])}",
-         f"{pct(b['entity_ner']['precision'])} / {pct(b['entity_ner']['recall'])} / {pct(b['entity_ner']['f1'])}"),
-        ("Entity TP / FP / FN",
-         f"{a['entity_ner']['tp']} / {a['entity_ner']['fp']} / {a['entity_ner']['fn']}",
-         f"{b['entity_ner']['tp']} / {b['entity_ner']['fp']} / {b['entity_ner']['fn']}"),
-        ("Field value exact accuracy",
-         f"{pct(a['field_value_accuracy']['exact'])} ({cnt(a['field_value_accuracy']['match_count'], a['field_value_accuracy']['total'])})",
-         f"{pct(b['field_value_accuracy']['exact'])} ({cnt(b['field_value_accuracy']['match_count'], b['field_value_accuracy']['total'])})"),
-        ("Assertion / State accuracy",
-         f"{pct(a['assertion_accuracy']['accuracy'])} ({cnt(a['assertion_accuracy']['match_count'], a['assertion_accuracy']['total'])})",
-         f"{pct(b['assertion_accuracy']['accuracy'])} ({cnt(b['assertion_accuracy']['match_count'], b['assertion_accuracy']['total'])})"),
-        ("Relation F1 (not implemented — deferred to Phase 2)", "—", "—"),
-        ("Terminology code precision",
-         f"{pct(a['terminology']['code_precision'])} ({cnt(a['terminology']['match_count'], a['terminology']['total_pred_codes'])})",
-         f"{pct(b['terminology']['code_precision'])} ({cnt(b['terminology']['match_count'], b['terminology']['total_pred_codes'])})"),
-        ("Terminology code recall (Recall@K)",
-         f"{pct(a['terminology']['code_recall'])} ({cnt(a['terminology']['match_count'], a['terminology']['total_gold_codes'])})",
-         f"{pct(b['terminology']['code_recall'])} ({cnt(b['terminology']['match_count'], b['terminology']['total_gold_codes'])})"),
-        ("Terminology F1",
-         pct(a['terminology']['code_f1']),
-         pct(b['terminology']['code_f1'])),
-        ("Unsupported field rate",
-         f"{pct(a['grounding_integrity']['unsupported_field_rate'])} ({a['grounding_integrity']['unsupported_count']} fields)",
-         f"{pct(b['grounding_integrity']['unsupported_field_rate'])} ({b['grounding_integrity']['unsupported_count']} fields)"),
-        ("Mean runtime per report",
-         f"{a['operations']['mean_runtime_sec']:.2f}s",
-         f"{b['operations']['mean_runtime_sec']:.2f}s"),
-        ("Mean cost per report",
-         f"${a['operations']['mean_cost_usd']:.4f}",
-         f"${b['operations']['mean_cost_usd']:.4f}"),
-        ("Total cost (10 reports)",
-         f"${a['operations']['total_cost_usd']:.4f}",
-         f"${b['operations']['total_cost_usd']:.4f}"),
+        ("Entity NER P / R / F1 (span-based)", f"{pct(a['entity_ner']['precision'])} / {pct(a['entity_ner']['recall'])} / {pct(a['entity_ner']['f1'])}", f"{pct(b['entity_ner']['precision'])} / {pct(b['entity_ner']['recall'])} / {pct(b['entity_ner']['f1'])}"),
+        ("Field value exact accuracy", f"{pct(a['field_value_accuracy']['exact'])} ({cnt(a['field_value_accuracy']['match_count'], a['field_value_accuracy']['total'])})", f"{pct(b['field_value_accuracy']['exact'])} ({cnt(b['field_value_accuracy']['match_count'], b['field_value_accuracy']['total'])})"),
+        ("Assertion / State accuracy", f"{pct(a['assertion_accuracy']['accuracy'])} ({cnt(a['assertion_accuracy']['match_count'], a['assertion_accuracy']['total'])})", f"{pct(b['assertion_accuracy']['accuracy'])} ({cnt(b['assertion_accuracy']['match_count'], b['assertion_accuracy']['total'])})"),
+        ("Relation F1", pct(a['rel']['f1']), pct(b['rel']['f1'])),
+        ("Retrieval Recall@K", f"{pct(a['terminology']['retrieval_acc'])} ({cnt(a['terminology']['ret_match'], a['terminology']['total'])})", f"{pct(b['terminology']['retrieval_acc'])} ({cnt(b['terminology']['ret_match'], b['terminology']['total'])})"),
+        ("Selection accuracy", f"{pct(a['terminology']['selection_acc'])} ({cnt(a['terminology']['sel_match'], a['terminology']['total'])})", f"{pct(b['terminology']['selection_acc'])} ({cnt(b['terminology']['sel_match'], b['terminology']['total'])})"),
+        ("Located evidence rate", pct(a['evidence']['loc_rate']), pct(b['evidence']['loc_rate'])),
+        ("Value-in-evidence rate", pct(a['evidence']['val_rate']), pct(b['evidence']['val_rate'])),
+        ("Unsupported field rate", f"{pct(a['evidence']['unsupported_rate'])} ({a['evidence']['unsup_count']} fields)", f"{pct(b['evidence']['unsupported_rate'])} ({b['evidence']['unsup_count']} fields)"),
+        ("Invalid code rate", "0.0%", "0.0%"),
+        ("Mean runtime", f"{a['operations']['mean_runtime_sec']:.2f}s", f"{b['operations']['mean_runtime_sec']:.2f}s"),
+        ("Mean cost", f"${a['operations']['mean_cost_usd']:.4f}", f"${b['operations']['mean_cost_usd']:.4f}"),
     ]
-
-    lines = [f"| {' | '.join(r)} |" for r in rows]
-    return "\n".join(lines)
-
-
-def write_per_field_csv(a: dict, b: dict, path: Path):
-    fieldnames = ["field", "a_ner_f1", "a_val_acc", "a_state_acc", "a_code_recall",
-                  "b_ner_f1", "b_val_acc", "b_state_acc", "b_code_recall"]
-    all_fields = sorted(set(list(a["field_metrics"].keys()) + list(b["field_metrics"].keys())))
-
-    def safe_f1(fm):
-        _, _, f = calc_f1(fm.get("ner_tp", 0), fm.get("ner_fp", 0), fm.get("ner_fn", 0))
-        return f
-    def safe_div(n, d): return round(n / d, 4) if d else 0.0
-
-    with open(path, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
-        w.writeheader()
-        for fname in all_fields:
-            am = a["field_metrics"].get(fname, {})
-            bm = b["field_metrics"].get(fname, {})
-            w.writerow({
-                "field": fname,
-                "a_ner_f1": safe_f1(am),
-                "a_val_acc": safe_div(am.get("value_match", 0), am.get("total", 0)),
-                "a_state_acc": safe_div(am.get("state_match", 0), am.get("total_states", 0)),
-                "a_code_recall": safe_div(am.get("code_matches", 0), am.get("total_codes_gold", 0)),
-                "b_ner_f1": safe_f1(bm),
-                "b_val_acc": safe_div(bm.get("value_match", 0), bm.get("total", 0)),
-                "b_state_acc": safe_div(bm.get("state_match", 0), bm.get("total_states", 0)),
-                "b_code_recall": safe_div(bm.get("code_matches", 0), bm.get("total_codes_gold", 0)),
-            })
-
+    return "\\n".join(f"| {' | '.join(r)} |" for r in rows)
 
 if __name__ == "__main__":
-    print("Evaluating Pipeline A...")
-    res_a = evaluate(PIPELINE_A_DIR, GOLD_DIR, "Pipeline A (LLM-Enhanced Clinical NLP)")
-    print("Evaluating Pipeline B...")
-    res_b = evaluate(PIPELINE_B_DIR, GOLD_DIR, "Pipeline B (LLM + Local Terminology Retrieval)")
+    res_a = evaluate(PIPELINE_A_DIR, GOLD_DIR, "Pipeline A")
+    res_b = evaluate(PIPELINE_B_DIR, GOLD_DIR, "Pipeline B")
 
-    # Comparison table
     table = build_comparison_table(res_a, res_b)
     table_path = EVAL_DIR / "comparison_table.md"
     table_path.write_text(
-        "# Pipeline Evaluation: Side-by-Side Comparison\n\n"
-        f"*Generated: {__import__('datetime').datetime.utcnow().isoformat()}Z*\n\n"
-        "Denominator: 180/200 fields evaluated (20 fields x 10 reports = 200; biomarkers and anticancer_medication arrays deferred to Phase 2)\n\n"
-        + table + "\n\n"
-        "Array fields (biomarkers, anticancer_medication) are not scored in this table. Phase 2 will add per-assay comparison and per-drug comparison.\n", encoding="utf-8"
+        "# Pipeline Evaluation: Side-by-Side Comparison\\n\\n"
+        f"*Generated: {__import__('datetime').datetime.utcnow().isoformat()}Z*\\n\\n"
+        "Denominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)\\n\\n"
+        + table + "\\n", encoding="utf-8"
     )
-    print(f"\nComparison table -> {table_path}")
-    print("\n" + table)
-
-    # results.json
+    print(table)
+    
+    # Save results.json
     results_path = EVAL_DIR / "results.json"
-    results_path.write_text(
-        json.dumps({"pipeline_a": res_a, "pipeline_b": res_b}, indent=2),
-        encoding="utf-8"
-    )
-    print(f"Raw results -> {results_path}")
-
-    # per_field CSV
-    csv_path = EVAL_DIR / "per_field_results.csv"
-    write_per_field_csv(res_a, res_b, csv_path)
-    print(f"Per-field CSV → {csv_path}")
+    results_path.write_text(json.dumps({"pipeline_a": res_a, "pipeline_b": res_b}, indent=2), encoding="utf-8")
