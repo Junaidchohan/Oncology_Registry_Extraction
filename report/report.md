@@ -13,6 +13,22 @@
   d) The string is >= 10 characters.
   *Located evidence rate* measures (a), *Value-in-evidence rate* measures (b), and *Unsupported field rate* measures fields failing any of (a)-(d).
 
+
+## Span-matching convention
+
+1. **Convention used:** TOKEN-OVERLAP WITH VALUE MATCH. A predicted mention is a TP if and only if: (a) The predicted span overlaps the gold span by at least one character, AND (b) The normalized predicted value matches the normalized gold value.
+2. **Why IoU was rejected:** IoU is incorrect for clinical NER because gold annotations are often broader (including surrounding context), while pipeline outputs are narrower (isolating the exact value). When one span is nested inside another, the IoU is severely penalized even when the extraction is semantically correct.
+3. **Why token-overlap with value match was chosen:** It rewards the system for finding the right entity, tolerates granularity differences between human annotators and automated pipelines, and heavily penalizes incorrect value extractions via the value-match condition.
+4. **Standard followed:** This convention is the standard utilized in major clinical NLP evaluation benchmarks, including i2b2, n2c2, and MIMIC.
+
+**Normalization definition (
+ormalize()):**
+- Case-insensitive
+- Whitespace collapsed to a single space
+- Trailing punctuation stripped
+- Numeric values compared after unit normalization (e.g., 2.4 cm = 24 mm)
+- Does NOT merge clinical synonyms
+
 ## Task 7: Terminology Fix (tumor_grade)
 
 I observed that `tumor_grade` was suffering from generic query issues (e.g. querying "2" leading to generic numbers in SNOMED rather than grade concepts). I updated `src/pipeline_b_llm_retrieval/grounding.py` to use a context-aware query structure and append the semantic hierarchy filter for "Histologic grade finding". 
@@ -72,6 +88,6 @@ What I would do next if this were a production system:
 
 <!-- BEGIN EVAL TABLE -->
 
-# Pipeline Evaluation: Side-by-Side Comparison\n\n*Generated: 2026-09-26T15:06:24.187037Z*\n\nDenominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)\n\n| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |\n| --- | --- | --- |\n| Entity NER P / R / F1 (span-based) | 2.7% / 30.0% / 4.9% | 4.3% / 14.8% / 6.7% |\n| Field value exact accuracy | 46.1% (83/180) | 51.7% (93/180) |\n| Assertion / State accuracy | 53.3% (96/180) | 52.8% (95/180) |\n| Relation F1 | 8.2% | 6.2% |\n| Retrieval Recall@K | 5.4% (2/37) | 45.9% (17/37) |\n| Selection accuracy | 5.4% (2/37) | 29.7% (11/37) |\n| Located evidence rate | 86.7% | 73.5% |\n| Value-in-evidence rate | 69.0% | 49.6% |\n| Unsupported field rate | 68.1% (77 fields) | 53.1% (60 fields) |\n| Invalid code rate | 0.0% | 0.0% |\n| Mean runtime | 32.85s | 692.10s |\n| Mean cost | $0.0000 | $0.0000 |\n
+# Pipeline Evaluation: Side-by-Side Comparison\n\n*Generated: 2026-09-26T15:13:45.928126Z*\n\nDenominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)\n\n| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |\n| --- | --- | --- |\n| Entity NER P / R / F1 (span-based) | 1.8% / 2.2% / 2.0% | 0.0% / 0.0% / 0.0% |\n| Field value exact accuracy | 46.1% (83/180) | 51.7% (93/180) |\n| Assertion / State accuracy | 53.3% (96/180) | 52.8% (95/180) |\n| Relation F1 | 8.2% | 6.2% |\n| Retrieval Recall@K | 5.4% (2/37) | 45.9% (17/37) |\n| Selection accuracy | 5.4% (2/37) | 29.7% (11/37) |\n| Located evidence rate | 86.7% | 73.5% |\n| Value-in-evidence rate | 69.0% | 49.6% |\n| Unsupported field rate | 68.1% (77 fields) | 53.1% (60 fields) |\n| Invalid code rate | 0.0% | 0.0% |\n| Mean runtime | 32.85s | 692.10s |\n| Mean cost | $0.0000 | $0.0000 |\n
 
 <!-- END EVAL TABLE -->

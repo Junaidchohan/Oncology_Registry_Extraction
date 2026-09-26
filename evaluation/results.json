@@ -3,12 +3,12 @@
     "pipeline": "Pipeline A",
     "n_reports": 10,
     "entity_ner": {
-      "precision": 0.0268,
-      "recall": 0.3,
-      "f1": 0.0492,
-      "tp": 3,
-      "fp": 109,
-      "fn": 7
+      "precision": 0.0185,
+      "recall": 0.0217,
+      "f1": 0.02,
+      "tp": 1,
+      "fp": 53,
+      "fn": 45
     },
     "rel": {
       "precision": 0.6667,
@@ -49,113 +49,115 @@
     },
     "field_metrics": {
       "primary_tumor_site": {
-        "ner_fp": 10,
+        "ner_fn": 1,
         "total": 10,
         "total_states": 10,
-        "state_match": 9
+        "state_match": 9,
+        "ner_fp": 9
       },
       "histological_type": {
-        "ner_fp": 10,
+        "ner_fn": 1,
         "total": 10,
         "total_states": 10,
-        "state_match": 9
+        "state_match": 9,
+        "ner_fp": 9
       },
       "procedure": {
-        "ner_fp": 7,
+        "ner_fn": 4,
         "total": 10,
         "value_match": 2,
         "total_states": 10,
         "state_match": 7,
-        "ner_fn": 3
+        "ner_fp": 6
       },
       "laterality": {
-        "ner_fp": 8,
+        "ner_fn": 7,
         "total": 10,
         "value_match": 5,
         "total_states": 10,
         "state_match": 9
       },
       "tumor_grade": {
-        "ner_tp": 1,
+        "ner_fn": 2,
         "total": 10,
         "total_states": 10,
         "state_match": 8,
         "ner_fp": 6,
-        "value_match": 4,
-        "ner_fn": 1
+        "value_match": 4
       },
       "tumor_size": {
-        "ner_fp": 10,
+        "ner_fn": 1,
         "total": 10,
         "value_match": 1,
         "total_states": 10,
-        "state_match": 9
+        "state_match": 9,
+        "ner_fp": 9
       },
       "tumor_focality": {
-        "ner_fn": 1,
+        "ner_fn": 9,
         "total": 10,
         "total_states": 10,
-        "ner_fp": 9,
         "state_match": 2
       },
       "lymphovascular_invasion": {
-        "ner_tp": 2,
+        "ner_fn": 2,
         "total": 10,
         "value_match": 4,
         "total_states": 10,
-        "state_match": 5,
-        "ner_fp": 4
+        "state_match": 5
       },
       "perineural_invasion": {
-        "ner_fp": 4,
         "total": 10,
         "value_match": 4,
         "total_states": 10,
+        "ner_fn": 1,
         "state_match": 4
       },
       "surgical_margins": {
-        "ner_fp": 4,
+        "ner_fn": 5,
         "total": 10,
         "total_states": 10,
         "state_match": 5,
-        "value_match": 1,
-        "ner_fn": 1
+        "value_match": 1
       },
       "lymph_nodes_examined": {
-        "ner_fp": 8,
+        "ner_fn": 5,
         "total": 10,
         "value_match": 4,
         "total_states": 10,
         "state_match": 5
       },
       "positive_lymph_nodes": {
-        "ner_fp": 8,
+        "ner_fn": 4,
         "total": 10,
         "value_match": 4,
         "total_states": 10,
-        "state_match": 3,
-        "ner_fn": 1
+        "state_match": 3
       },
       "pathologic_t": {
-        "ner_fp": 7,
+        "ner_fn": 1,
         "total": 10,
         "value_match": 8,
         "total_states": 10,
-        "state_match": 7
+        "state_match": 7,
+        "ner_fp": 4,
+        "ner_tp": 1
       },
       "pathologic_n": {
-        "ner_fp": 7,
+        "ner_fn": 1,
         "total": 10,
         "value_match": 8,
         "total_states": 10,
-        "state_match": 7
+        "state_match": 7,
+        "ner_fp": 5
       },
       "pathologic_m": {
-        "ner_fp": 7,
+        "ner_fn": 1,
         "total": 10,
         "value_match": 8,
         "total_states": 10,
-        "state_match": 7
+        "state_match": 7,
+        "ner_fp": 5
       },
       "specimen": {
         "total": 10,
@@ -178,12 +180,12 @@
     "pipeline": "Pipeline B",
     "n_reports": 10,
     "entity_ner": {
-      "precision": 0.0435,
-      "recall": 0.1481,
-      "f1": 0.0672,
-      "tp": 4,
-      "fp": 88,
-      "fn": 23
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 7,
+      "fn": 82
     },
     "rel": {
       "precision": 0.6,
@@ -224,115 +226,108 @@
     },
     "field_metrics": {
       "primary_tumor_site": {
-        "ner_fp": 7,
+        "ner_fn": 9,
         "total": 10,
         "total_states": 10,
         "state_match": 9,
-        "value_match": 2,
-        "ner_fn": 3
+        "value_match": 2
       },
       "histological_type": {
-        "ner_fp": 7,
+        "ner_fn": 9,
         "total": 10,
         "total_states": 10,
         "state_match": 9,
-        "ner_fn": 3,
         "value_match": 2
       },
       "procedure": {
-        "ner_fp": 7,
+        "ner_fn": 10,
         "total": 10,
         "value_match": 4,
         "total_states": 10,
-        "state_match": 10,
-        "ner_fn": 3
+        "state_match": 10
       },
       "laterality": {
-        "ner_fp": 7,
+        "ner_fn": 7,
         "total": 10,
         "value_match": 7,
         "total_states": 10,
-        "state_match": 7,
-        "ner_fn": 2
+        "state_match": 7
       },
       "tumor_grade": {
-        "ner_fp": 8,
+        "ner_fp": 3,
         "total": 10,
         "total_states": 10,
         "state_match": 8,
-        "ner_tp": 1,
+        "ner_fn": 4,
         "value_match": 2
       },
       "tumor_size": {
-        "ner_fp": 6,
+        "ner_fp": 1,
         "total": 10,
         "total_states": 10,
         "state_match": 9,
-        "value_match": 5,
-        "ner_fn": 3
+        "ner_fn": 8,
+        "value_match": 5
       },
       "tumor_focality": {
-        "ner_fp": 2,
+        "ner_fn": 9,
         "total": 10,
         "total_states": 10,
         "state_match": 5,
-        "ner_fn": 7,
         "value_match": 1
       },
       "lymphovascular_invasion": {
-        "ner_fp": 5,
+        "ner_fn": 2,
         "total": 10,
         "value_match": 3,
         "total_states": 10,
         "state_match": 3
       },
       "perineural_invasion": {
-        "ner_fp": 4,
         "total": 10,
         "value_match": 4,
         "total_states": 10,
+        "ner_fn": 1,
         "state_match": 3
       },
       "surgical_margins": {
-        "ner_fp": 6,
+        "ner_fn": 5,
         "total": 10,
         "total_states": 10,
         "state_match": 8
       },
       "lymph_nodes_examined": {
-        "ner_tp": 2,
+        "ner_fp": 2,
         "total": 10,
         "value_match": 4,
         "total_states": 10,
         "state_match": 6,
-        "ner_fp": 4,
-        "ner_fn": 1
+        "ner_fn": 3
       },
       "positive_lymph_nodes": {
-        "ner_fp": 4,
+        "ner_fp": 1,
         "total": 10,
         "value_match": 5,
         "total_states": 10,
         "state_match": 3,
-        "ner_tp": 1,
-        "ner_fn": 1
+        "ner_fn": 3
       },
       "pathologic_t": {
-        "ner_fp": 7,
+        "ner_fn": 4,
         "total": 10,
         "value_match": 7,
         "total_states": 10,
         "state_match": 5
       },
       "pathologic_n": {
-        "ner_fp": 7,
+        "ner_fn": 4,
         "total": 10,
         "value_match": 8,
         "total_states": 10,
         "state_match": 5
       },
       "pathologic_m": {
-        "ner_fp": 7,
+        "ner_fn": 4,
         "total": 10,
         "value_match": 9,
         "total_states": 10,

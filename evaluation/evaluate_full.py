@@ -33,21 +33,26 @@ def normalize(s):
     s = re.sub(r'[\.,;:!?]+$', '', s).strip()
     return normalize_ws(s)
 
-def get_iou(span1, span2):
-    if not span1 or not span2: return 0.0
-    if len(span1) != 2 or len(span2) != 2: return 0.0
-    b1, e1 = span1
-    b2, e2 = span2
-    if b1 is None or e1 is None or b2 is None or e2 is None: return 0.0
-    intersection = max(0, min(e1, e2) - max(b1, b2))
-    union = (e1 - b1) + (e2 - b2) - intersection
-    return intersection / union if union > 0 else 0.0
-
-def check_span(g_span, p_span, g_ev, p_ev):
-    # Span matching convention: A predicted mention is a TP if both evidence strings are identical after whitespace normalization.
-    if g_ev and p_ev and normalize_ws(g_ev) == normalize_ws(p_ev):
-        return True
-    return False
+def is_ner_true_positive(gold_field, pred_field):
+    if gold_field.get("state") != "present":
+        return False
+    if pred_field.get("state") != "present":
+        return False
+    g_span = gold_field.get("span")
+    p_span = pred_field.get("span")
+    if g_span is None or p_span is None:
+        return False
+    if len(g_span) != 2 or len(p_span) != 2:
+        return False
+    if g_span[0] is None or g_span[1] is None or p_span[0] is None or p_span[1] is None:
+        return False
+    # Any overlap
+    if g_span[1] <= p_span[0] or p_span[1] <= g_span[0]:
+        return False
+    # Value match after normalization
+    if normalize(gold_field.get("value")) != normalize(pred_field.get("value")):
+        return False
+    return True
 
 def validate_evidence(ev, val, full_text):
     if not ev: return False, False, False, False
@@ -122,14 +127,14 @@ def evaluate(pipeline_dir: Path, gold_dir: Path, pipeline_name: str) -> dict:
             
             # NER span-based eval
             if g_state == "present":
-                if p_ev and check_span(g_span, p_span, g_ev, p_ev):
+                if is_ner_true_positive(gf_d, pf_d):
                     m["ner_tp"] += 1; field_m[fname]["ner_tp"] += 1
-                elif not p_ev:
-                    m["ner_fn"] += 1; field_m[fname]["ner_fn"] += 1
-                else:
+                elif p_span and p_span[0] is not None:
                     m["ner_fp"] += 1; field_m[fname]["ner_fp"] += 1
+                else:
+                    m["ner_fn"] += 1; field_m[fname]["ner_fn"] += 1
             else:
-                if p_ev:
+                if p_span and p_span[0] is not None:
                     m["ner_fp"] += 1; field_m[fname]["ner_fp"] += 1
 
             # Value and State
