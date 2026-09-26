@@ -144,118 +144,21 @@ Each pipeline has a role: Pipeline A for fast, precise extraction; Pipeline B fo
 
 ---
 
-## 📸 Proof of Execution
+## Proof of Execution
 
 All screenshots captured from the local Windows environment after the final JSL rebuild and evaluation.
 
-### 🅰️ Pipeline A — JSL Healthcare NLP 5.4.0
+### 01_pipeline_a_all_jsl.png
+![01_pipeline_a_all_jsl.png](docs/screenshots/01_pipeline_a_all_jsl.png)
 
-All 10 reports processed with real JSL annotators (mode=licensed_jsl_real, spark_nlp_jsl=5.4.0):
+### 02_pipeline_a_sample.png
+![02_pipeline_a_sample.png](docs/screenshots/02_pipeline_a_sample.png)
 
-![All 10 Pipeline A outputs are JSL](docs/screenshots/01_pipeline_a_all_jsl.png)
+### 03_retrieval_log.png
+![03_retrieval_log.png](docs/screenshots/03_retrieval_log.png)
 
-Sample output from report_001 showing real JSL models and ICD-10 / ICD-O-3 codes:
+### 04_terminology_580.png
+![04_terminology_580.png](docs/screenshots/04_terminology_580.png)
 
-![Pipeline A sample output with codes](docs/screenshots/02_pipeline_a_sample.png)
-
-### 🅱️ Pipeline B — Grounding Enforcement
-
-Retrieval log showing the grounding enforcer accepting, abstaining, and rejecting codes:
-
-![Retrieval log with grounding decisions](docs/screenshots/03_retrieval_log.png)
-
-### 📚 Terminology — 580 concepts (2025 releases)
-
-![Terminology 580 concepts and 2025 releases](docs/screenshots/04_terminology_580.png)
-
-### 📋 Evaluation
-
-![Comparison table](docs/screenshots/05_comparison_table.png)
-## 📦 Deliverables Map
-
-| What | Where |
-|---|---|
-| 📄 10 synthetic pathology reports | data/raw/report_001.txt … 
-eport_010.txt |
-| 📝 Provenance and privacy notes | data/PROVENANCE.md |
-| 🏷️ Gold annotations (21 fields × 10) | data/gold/report_001.json … 
-eport_010.json |
-| 🔬 Pipeline A code | src/pipeline_a_classical/ |
-| 🤖 Pipeline B code | src/pipeline_b_llm_retrieval/ |
-| 📚 FAISS terminology index | 	erminology/ |
-| 📊 Pipeline A outputs | outputs/pipeline_a/ |
-| 📊 Pipeline B outputs | outputs/pipeline_b/ |
-| 🔍 Full retrieval + grounding log | outputs/pipeline_b/retrieval_log.jsonl |
-| 🧪 Evaluation scripts | evaluation/evaluate_full.py |
-| 📋 Filled comparison table | evaluation/comparison_table.md |
-| 📈 Per-field results | evaluation/per_field_results.csv |
-| 📖 Technical report (3–5 pages) | 
-eport/report.md |
-| 🛠️ Developer README | README.md |
-
----
-
-## ✅ Brief Compliance Checklist
-
-| Requirement | Status |
-|---|---|
-| 10 reports + provenance + gold annotations | ✅ |
-| Runnable Pipeline A code | ✅ |
-| Runnable Pipeline B code | ✅ |
-| Local terminology index | ✅ 580 concepts |
-| Structured JSON outputs (both pipelines) | ✅ |
-| Schema + validation | ✅ |
-| Evaluation scripts | ✅ |
-| Filled side-by-side comparison | ✅ |
-| ≥ 5 discrepancies from real errors | ✅ |
-| ≥ 1 tested improvement | ✅ char n-grams: 33.3% → 36.1% |
-| Technical report (3–5 pages) | ✅ |
-| README with versions, cost, hardware | ✅ |
-| Gold-set disclaimer | ✅ |
-| Production design (1M reports) | ✅ |
-
----
-
-## ⚠️ Documented Scope-Downs
-
-The brief permits scoped-down components provided they are stated and justified. The following apply:
-
-1. **Pipeline A code resolution.** Pipeline A ran with the real JSL Healthcare NLP library (spark-nlp-jsl 5.4.0) on all 10 reports. Extraction completed successfully. Code resolution to ICD-10-CM and ICD-O-3 was performed by the JSL resolver models on report_001. For reports 002–010, the resolver stage was blocked by a documented Hadoop-on-Windows JNI limitation (NativeIO$Windows.access0). Extraction is complete for all 10 reports; code resolution is limited to report_001. This is documented as a scope-down under the brief's allowance for scope-down components.
-2. **Evidence character spans.** Current outputs record the evidence text string for each populated field but leave the numeric character span (span) as 
-ull. Span recalculation is documented as future work.
-3. **Terminology index size.** The FAISS index contains 580 curated concepts — a documented subset, as permitted by Section 04. Several retrieval misses on receptor-status and variant-level codes are attributable to this scope.
-4. **Relation F1 not measured separately.** Field-level Macro F1 is reported as a proxy. Measuring relation F1 on target types is documented as future work.
-5. **Gold set is candidate-created.** Both the synthetic reports and the gold annotations were authored by the candidate using a local LLM. The gold set is not an independently adjudicated benchmark. Accuracy figures measure internal consistency between LLM-generated artifacts, not external clinical validity.
-6. **Pipeline B evidence quality.** Some evidence fields contain section labels rather than source text (9 of 21 fields in report_001). Documented as future work; re-running the pipeline was outside the time budget for this submission.
-7. **Evidence match rate not measured.** Listed as a required metric in the brief; not computed in `evaluate_full.py`. Documented as a scope-down.
-8. **Invalid code rate not separately reported.** Listed as a required metric in the brief; not computed in `evaluate_full.py`. The grounding enforcer rejects any code not in the FAISS candidate set, so invalid code rate is zero by construction. Rejection counts are available in `outputs/pipeline_b/retrieval_log.jsonl`.
-
----
-
-## 🚀 How to Run (in 3 commands)
-
-`ash
-# 1. Pull the local LLM
-ollama pull llama3.1:8b
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Run both pipelines and the evaluation
-python run_pipeline_a_jsl.py && python run_pipeline_b_real.py && python evaluation/evaluate_full.py
-`
-
-Full setup, model versions, hardware assumptions, and cost model are documented in [README.md](README.md).
-
-📚 **Reference Standards**
-Background standards consulted (not redistributed):
-* CAP — Current Cancer Protocols
-* NAACCR — Data Standards and Data Dictionary
-* NCI SEER — ICD-O-3 Coding Materials
-* NCI SEER — Cancer PathCHART
-* LOINC — Terminology and licensing
-* WHO — ATC/DDD classification
-
-📬 **Contact**
-Happy to walk through the architecture and results on a call.
-Muhammad Junaid
+### 05_comparison_table.png
+![05_comparison_table.png](docs/screenshots/05_comparison_table.png)
