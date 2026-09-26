@@ -1,26 +1,28 @@
-{
-  "pipeline": "pipeline_a_classical_jsl",
-  "n_reports": 10,
-  "n_success": 10,
-  "n_failure": 0,
-  "failed_reports": [],
-  "mean_runtime_sec": 32.85,
-  "mean_fields_populated": 13.2,
-  "cost_usd": 0.0,
-  "model_name": "llama3.1:8b",
-  "spark_nlp_version": "5.4.0",
-  "spark_nlp_jsl_version": "5.4.0",
-  "models_used": [
-    "sentence_detector_dl_healthcare",
-    "embeddings_clinical",
-    "ner_oncology_wip",
-    "ner_oncology_biomarker_wip",
-    "ner_oncology_tnm_wip",
-    "assertion_oncology_wip",
-    "re_oncology_wip",
-    "sbiobert_base_cased_mli",
-    "sbiobertresolve_icd10cm",
-    "sbiobertresolve_icdo_base"
-  ],
-  "run_timestamp": "2026-09-25T10:16:36.104879+00:00"
+﻿{
+    "pipeline":  "pipeline_a_classical_jsl",
+    "n_reports":  10,
+    "n_success":  10,
+    "n_failure":  0,
+    "failed_reports":  [
+
+                       ],
+    "mean_runtime_sec":  32.85,
+    "mean_fields_populated":  13.2,
+    "cost_usd":  0.0,
+    "model_name":  "spark-nlp-jsl-5.4.0",
+    "spark_nlp_version":  "5.4.0",
+    "spark_nlp_jsl_version":  "5.4.0",
+    "models_used":  [
+                        "sentence_detector_dl_healthcare",
+                        "embeddings_clinical",
+                        "ner_oncology_wip",
+                        "ner_oncology_biomarker_wip",
+                        "ner_oncology_tnm_wip",
+                        "assertion_oncology_wip",
+                        "re_oncology_wip",
+                        "sbiobert_base_cased_mli",
+                        "sbiobertresolve_icd10cm",
+                        "sbiobertresolve_icdo_base"
+                    ],
+    "run_timestamp":  "2026-09-25T10:16:36.104879+00:00"
 }
