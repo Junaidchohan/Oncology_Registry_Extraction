@@ -1,6 +1,6 @@
 # Pipeline Evaluation: Side-by-Side Comparison
 
-*Generated: 2026-09-26T10:47:12.518332Z*
+*Generated: 2026-09-26T10:53:30.035112Z*
 
 | Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |
 | --- | --- | --- |
@@ -13,6 +13,6 @@
 | Terminology code recall (Recall@K) | 5.6% (2/36) | 30.6% (11/36) |
 | Terminology F1 | 10.0% | 22.4% |
 | Unsupported field rate | 0.0% (0 fields) | 0.0% (0 fields) |
-| Mean runtime per report | 0.00s | 692.10s |
+| Mean runtime per report | 32.85s | 692.10s |
 | Mean cost per report | $0.0000 | $0.0000 |
 | Total cost (10 reports) | $0.0000 | $0.0000 |

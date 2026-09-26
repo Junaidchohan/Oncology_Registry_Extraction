@@ -12,7 +12,7 @@
 
 This project extracts 21-field structured registry records from 10 synthetic oncology pathology reports. I built two independent pipelines for comparison: one using classical clinical NLP (JSL Healthcare) and another using a local LLM backed by retrieval-augmented terminology grounding. Both run entirely on local hardware without sending data to external APIs.
 
-**Candidate:** Muhammad Junaid · **Date:** September 24, 2026 · **Commit:** b9c3377
+**Candidate:** Muhammad Junaid · **Date:** September 24, 2026 · **Commit:** f65b5ab
 
 ---
 
@@ -106,7 +106,7 @@ flowchart TB
 | | 🅰️ Pipeline A | 🅱️ Pipeline B |
 |---|---|---|
 | **Approach** | JSL Healthcare NLP 5.4.0 | LLM extraction + FAISS retrieval + LLM selection |
-| **Strengths** | Fast (33s/report), high code precision (50.0%) | Higher entity F1 (81.0%), higher code recall (30.6%) |
+| **Strengths** | Fast (33s/report), Entity F1 79.0%, high code precision (50.0%) | Higher entity F1 (81.0%), higher code recall (30.6%) |
 | **Trade-off** | Conservative code assignment (5.6% recall) | Slower (692s/report) |
 | **Cost** | $0.00 / report | $0.00 / report |
 | **Runtime** | ~33 s / report (CPU) | ~692 s / report (CPU) |
