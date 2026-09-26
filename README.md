@@ -152,9 +152,6 @@ Create `secrets/jsl_license.json` for JSL-capable environments:
 ### Run Commands
 
 ```bash
-# Verify credentials
-python verify_credentials.py
-
 # Run Pipeline A (real JSL Healthcare NLP)
 python run_pipeline_a_jsl.py
 
@@ -190,35 +187,39 @@ oncology-registry-extraction/
 ├── data/
 │   ├── raw/             # 10 synthetic pathology reports (.txt)
 │   ├── gold/            # Gold-standard annotations (.json)
-│   └── PROVENANCE.md    # Data lineage and gold standard disclaimer
+│   └── PROVENANCE.md
 ├── src/
 │   ├── pipeline_a_classical/
-│   │   ├── pipeline.py          # JSL licensed mode orchestrator
-│   │   ├── pipeline_a_llm.py    # LLM-enhanced mode (when JSL unavailable)
-│   │   └── stages/              # preprocessing, ner, assertion, resolution, assembly
+│   │   ├── pipeline_jsl.py      # JSL Healthcare NLP pipeline
+│   │   └── run_jsl.py           # JSL runner
 │   ├── pipeline_b_llm_retrieval/
-│   │   ├── llm_extractor.py     # OpenAI extraction
-│   │   ├── terminology_index.py # FAISS dual-backend index
+│   │   ├── llm_extractor.py     # LLM extraction via Ollama
+│   │   ├── terminology_index.py # FAISS index
 │   │   ├── grounding.py         # Code grounding enforcement
-│   │   └── pipeline.py          # Orchestrator
+│   │   └── pipeline.py
 │   └── common/
-│       ├── schema.py            # 21-field JSON schema
-│       ├── config.py            # Credential loader
-│       └── validate.py          # Schema validator
+│       ├── schema.py
+│       ├── config.py
+│       └── validate.py
 ├── terminology/
 │   └── oncology_terminology.csv # 580 curated concepts
 ├── evaluation/
-│   ├── evaluate_full.py         # Full evaluation script
-│   ├── comparison_table.md      # Side-by-side metrics
-│   ├── results.json             # Raw numbers
-│   └── per_field_results.csv    # Per-field breakdown
+│   ├── evaluate_full.py
+│   ├── comparison_table.md
+│   ├── results.json
+│   └── per_field_results.csv
 ├── report/
-│   └── report.md                # 5-page technical report
-├── secrets/                     # git-ignored; contains credentials
-├── run_pipeline_a_real.py       # Pipeline A runner
-├── run_pipeline_b_real.py       # Pipeline B runner (with grounding log)
-├── verify_credentials.py        # Credential health check
-└── README.md
+│   └── report.md
+├── docs/
+│   └── screenshots/
+│       └── 13_comparison_table.png
+├── secrets/                     # git-ignored
+├── run_pipeline_a_jsl.py        # Pipeline A runner
+├── run_pipeline_b_real.py       # Pipeline B runner
+├── setup_jsl_env.ps1            # Environment activator
+├── requirements.txt
+├── README.md
+└── SUBMISSION.md
 ```
 
 ---

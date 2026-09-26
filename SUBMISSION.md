@@ -12,7 +12,7 @@
 
 > **Two reproducible pipelines** that transform 10 oncology pathology reports into 21-field structured registry records, evaluated against a gold reference, with full audit trail and quantitative comparison.
 
-**Candidate:** Muhammad Junaid · **Date:** September 24, 2026 · **Commit:** e7f6f2b
+**Candidate:** Muhammad Junaid · **Date:** September 24, 2026 · **Commit:** b9c3377
 
 ---
 
@@ -140,7 +140,6 @@ Each pipeline has a role: Pipeline A for fast, precise extraction; Pipeline B fo
 
 ### What This Shows
 - **Pipeline A wins on code precision when it resolves** — the JSL annotator chain produces higher code precision (50.0%). Pipeline B wins on terminology recall (30.6%) through the 580-concept FAISS retrieval.
-- **Pipeline B wins on terminology grounding** — the FAISS retrieval + code-level enforcement produce more reliable codes.
 - **Neither is universally better.** Each has a role. This is the intended outcome of the comparison.
 
 ---
@@ -240,7 +239,7 @@ ollama pull llama3.1:8b
 pip install -r requirements.txt
 
 # 3. Run both pipelines and the evaluation
-python run_pipeline_a_real.py && python run_pipeline_b_real.py && python evaluation/evaluate_full.py
+python run_pipeline_a_jsl.py && python run_pipeline_b_real.py && python evaluation/evaluate_full.py
 `
 
 Full setup, model versions, hardware assumptions, and cost model are documented in [README.md](README.md).
