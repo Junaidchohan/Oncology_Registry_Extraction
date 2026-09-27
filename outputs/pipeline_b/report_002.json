@@ -1,7 +1,7 @@
 {
   "report_id": "report_002",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-26T06:58:55.011142+00:00",
+  "run_timestamp": "2026-09-26T17:42:51.003821+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,113 +9,94 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 779.222
+    "elapsed_sec": 921.379
   },
   "fields": {
-    "primary_tumor_site": {
-      "value": "sigmoid colon",
+    "specimen": {
+      "value": "Sigmoid colectomy specimen",
       "unit": null,
       "state": "present",
-      "evidence": "sigmoid colectomy specimen",
+      "evidence": "Received: Sigmoid colectomy specimen, 28 cm in length.",
+      "span": [
+        226,
+        280
+      ],
+      "codes": {}
+    },
+    "procedure": {
+      "value": "Sigmoid colectomy",
+      "unit": null,
+      "state": "present",
+      "evidence": "Referred for sigmoid colectomy.",
+      "span": [
+        174,
+        205
+      ],
+      "codes": {}
+    },
+    "primary_tumor_site": {
+      "value": "Sigmoid colon",
+      "unit": null,
+      "state": "present",
+      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy:",
       "span": null,
-      "codes": {
-        "ICD_O_3": "C18.7"
-      }
+      "codes": {}
+    },
+    "laterality": {
+      "value": "null",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": null,
+      "span": null,
+      "codes": {}
     },
     "histological_type": {
-      "value": "moderately differentiated adenocarcinoma",
+      "value": "Moderately differentiated adenocarcinoma",
       "unit": null,
       "state": "present",
-      "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
+      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - Moderately differentiated adenocarcinoma, Grade 2",
       "span": null,
-      "codes": {
-        "ICD_O_3": "8140/3"
-      }
+      "codes": {}
+    },
+    "tumor_behavior": {
+      "value": "null",
+      "unit": null,
+      "state": "not_applicable",
+      "evidence": null,
+      "span": null,
+      "codes": {}
     },
     "tumor_grade": {
       "value": "2",
       "unit": null,
       "state": "present",
-      "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
+      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - Moderately differentiated adenocarcinoma, Grade 2",
       "span": null,
       "codes": {
         "SNOMED_CT": "363346002"
-      }
-    },
-    "clinical_stage": {
-      "value": "IIIB",
-      "unit": null,
-      "state": "present",
-      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
-      "span": null,
-      "codes": {
-        "SNOMED_CT": "1229959004"
-      }
-    },
-    "pathologic_t": {
-      "value": "pT3",
-      "state": "present",
-      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition)",
-      "span": null,
-      "codes": {
-        "SNOMED_CT": "1229951001"
-      }
-    },
-    "pathologic_n": {
-      "value": "pN1b",
-      "state": "present",
-      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition)",
-      "span": null,
-      "codes": {
-        "SNOMED_CT": "1229951001"
-      }
-    },
-    "pathologic_m": {
-      "value": "pM0",
-      "state": "present",
-      "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition)",
-      "span": null,
-      "codes": {
-        "SNOMED_CT": "1229951001"
       }
     },
     "tumor_size": {
       "value": "4.5",
       "unit": "cm",
       "state": "present",
-      "evidence": "Tumor size: 4.5 cm",
+      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - Tumor size: 4.5 cm",
       "span": null,
       "codes": {}
     },
-    "laterality": {
-      "value": "left",
+    "tumor_focality": {
+      "value": "null",
       "unit": null,
-      "state": "present",
-      "evidence": "sigmoid colon",
+      "state": "not_applicable",
+      "evidence": null,
       "span": null,
       "codes": {}
     },
-    "surgical_margins": {
-      "value": "negative",
+    "tumor_extension": {
+      "value": "through muscularis propria into pericolorectal fat",
       "unit": null,
       "state": "present",
-      "evidence": "Margins: all negative (CRM 2.5 mm)",
-      "span": null,
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "24",
-      "unit": null,
-      "state": "present",
-      "evidence": "Of 24 lymph nodes examined",
-      "span": null,
-      "codes": {}
-    },
-    "positive_lymph_nodes": {
-      "value": "3",
-      "unit": null,
-      "state": "present",
-      "evidence": "3 are positive for metastatic adenocarcinoma (pN1b)",
+      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - Invasion: through muscularis propria into pericolorectal fat (pT3)",
       "span": null,
       "codes": {}
     },
@@ -123,7 +104,7 @@
       "value": "present",
       "unit": null,
       "state": "present",
-      "evidence": "Lymphovascular invasion is present.",
+      "evidence": "MICROSCOPIC DESCRIPTION: Lymphovascular invasion is present.",
       "span": null,
       "codes": {
         "SNOMED_CT": "245294001"
@@ -133,73 +114,63 @@
       "value": "present",
       "unit": null,
       "state": "present",
-      "evidence": "Perineural invasion is identified in 2 foci.",
+      "evidence": "MICROSCOPIC DESCRIPTION: Perineural invasion is identified in 2 foci.",
       "span": null,
       "codes": {
         "SNOMED_CT": "245294001"
       }
     },
-    "distant_metastasis": {
-      "value": "absent",
+    "surgical_margins": {
+      "value": "all negative",
       "unit": null,
       "state": "present",
-      "evidence": "No distant metastatic disease was identified in the specimen; CT correlation confirms no metastases.",
+      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - Margins: all negative (CRM 2.5 mm)",
       "span": null,
       "codes": {
-        "SNOMED_CT": "1229966003"
+        "SNOMED_CT": "370053002"
       }
     },
-    "er_status": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pr_status": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "her2_status": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "kras_mutation": {
-      "value": "p.G12D",
+    "lymph_nodes_examined": {
+      "value": "24",
       "unit": null,
       "state": "present",
-      "evidence": "KRAS mutation detected (p.G12D, codon 12)",
+      "evidence": "GROSS DESCRIPTION: Regional mesentery contains 24 lymph nodes, ranging 0.3-2.1 cm.",
       "span": null,
       "codes": {}
     },
-    "egfr_mutation": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "procedure": {
-      "value": "sigmoid colectomy",
+    "positive_lymph_nodes": {
+      "value": "3",
       "unit": null,
       "state": "present",
-      "evidence": "sigmoid colectomy specimen",
+      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - Lymph nodes: 3/24 positive (pN1b)",
       "span": null,
-      "codes": {
-        "SNOMED_CT": "84631004"
-      }
+      "codes": {}
     },
-    "prior_treatment": {
+    "pathologic_t": {
+      "value": "3",
+      "unit": null,
+      "state": "present",
+      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - Invasion: through muscularis propria into pericolorectal fat (pT3)",
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_n": {
+      "value": "1b",
+      "unit": null,
+      "state": "present",
+      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - Lymph nodes: 3/24 positive (pN1b)",
+      "span": null,
+      "codes": {}
+    },
+    "pathologic_m": {
+      "value": "0",
+      "unit": null,
+      "state": "present",
+      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - No distant metastasis",
+      "span": null,
+      "codes": {}
+    },
+    "biomarkers": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",
@@ -207,7 +178,7 @@
       "span": null,
       "codes": {}
     },
-    "tumor_focality": {
+    "anticancer_medication": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",

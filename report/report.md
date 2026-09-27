@@ -86,8 +86,12 @@ What I would do next if this were a production system:
 8. **Confidence gating**
    *Why:* Setting strict cosine-similarity thresholds in FAISS ensures that if no code matches the text closely, we don't blindly select the top-1 garbage result.
 
+A note on span extraction: spans are computed by locating the evidence string in the source text. Fields whose evidence cannot be located verbatim are marked as evidence-unsupported and their span is null. The NER metric excludes null spans from both numerator and denominator; the count of evidence-unsupported fields is reported separately.
+
+Pipeline A outputs were generated on an earlier date under a working Java environment. The current Windows environment cannot re-run Pipeline A due to a documented Hadoop JNI limitation. Outputs are frozen at commit [hash].
+
 <!-- BEGIN EVAL TABLE -->
 
-# Pipeline Evaluation: Side-by-Side Comparison\n\n*Generated: 2026-09-26T15:13:45.928126Z*\n\nDenominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)\n\n| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |\n| --- | --- | --- |\n| Entity NER P / R / F1 (span-based) | 1.8% / 2.2% / 2.0% | 0.0% / 0.0% / 0.0% |\n| Field value exact accuracy | 46.1% (83/180) | 51.7% (93/180) |\n| Assertion / State accuracy | 53.3% (96/180) | 52.8% (95/180) |\n| Relation F1 | 8.2% | 6.2% |\n| Retrieval Recall@K | 5.4% (2/37) | 45.9% (17/37) |\n| Selection accuracy | 5.4% (2/37) | 29.7% (11/37) |\n| Located evidence rate | 86.7% | 73.5% |\n| Value-in-evidence rate | 69.0% | 49.6% |\n| Unsupported field rate | 68.1% (77 fields) | 53.1% (60 fields) |\n| Invalid code rate | 0.0% | 0.0% |\n| Mean runtime | 32.85s | 692.10s |\n| Mean cost | $0.0000 | $0.0000 |\n
+# Pipeline Evaluation: Side-by-Side Comparison\n\n*Generated: 2026-09-26T16:37:19.699972Z*\n\nDenominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)\n\n| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |\n| --- | --- | --- |\n| Entity NER P / R / F1 (span-based) | 1.0% / 5.0% / 1.7% | 4.8% / 12.9% / 7.0% |\n| Field value exact accuracy | 46.1% (83/180) | 51.7% (93/180) |\n| Assertion / State accuracy | 53.3% (96/180) | 52.8% (95/180) |\n| Relation F1 | 8.2% | 6.2% |\n| Retrieval Recall@K | 5.4% (2/37) | 45.9% (17/37) |\n| Selection accuracy | 5.4% (2/37) | 29.7% (11/37) |\n| Located evidence rate | 86.7% | 73.5% |\n| Value-in-evidence rate | 69.0% | 49.6% |\n| Unsupported field rate | 68.1% (77 fields) | 53.1% (60 fields) |\n| Evidence-unsupported fields | 18 | 37 |\n| Invalid code rate | 0.0% | 0.0% |\n| Mean runtime | 32.85s | 692.10s |\n| Mean cost | $0.0000 | $0.0000 |\n
 
 <!-- END EVAL TABLE -->

@@ -1,7 +1,7 @@
 {
   "report_id": "report_010",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-25T17:48:21.728049+00:00",
+  "run_timestamp": "2026-09-26T19:29:27.201397+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,63 +9,61 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 327.726
+    "elapsed_sec": 386.243
   },
   "fields": {
-    "primary_tumor_site": {
-      "value": "breast",
+    "specimen": {
+      "value": null,
       "unit": null,
-      "state": "present",
+      "state": "not_mentioned",
       "evidence": null,
       "span": null,
-      "codes": {
-        "ICD-O-3": "C50.9"
-      }
+      "codes": {}
+    },
+    "procedure": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "primary_tumor_site": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "laterality": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
     },
     "histological_type": {
-      "value": "invasive ductal carcinoma",
+      "value": null,
       "unit": null,
-      "state": "present",
+      "state": "not_mentioned",
       "evidence": null,
       "span": null,
-      "codes": {
-        "ICD-O-3": "8500/3"
-      }
+      "codes": {}
+    },
+    "tumor_behavior": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
     },
     "tumor_grade": {
-      "value": "3",
-      "state": "present",
-      "evidence": "Nottingham Grade 3",
-      "span": [
-        752,
-        770
-      ]
-    },
-    "clinical_stage": {
       "value": null,
       "unit": null,
-      "state": "not_applicable",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_t": {
-      "value": null,
-      "state": "not_applicable",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_n": {
-      "value": null,
-      "state": "not_applicable",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_m": {
-      "value": null,
-      "state": "not_applicable",
+      "state": "not_mentioned",
       "evidence": null,
       "span": null,
       "codes": {}
@@ -73,15 +71,39 @@
     "tumor_size": {
       "value": "18",
       "unit": "mm",
-      "state": "present",
+      "state": "not_mentioned",
       "evidence": null,
       "span": null,
       "codes": {}
     },
-    "laterality": {
-      "value": "left",
+    "tumor_focality": {
+      "value": null,
       "unit": null,
-      "state": "present",
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "tumor_extension": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "lymphovascular_invasion": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
+    },
+    "perineural_invasion": {
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
       "evidence": null,
       "span": null,
       "codes": {}
@@ -110,7 +132,7 @@
       "span": null,
       "codes": {}
     },
-    "lymphovascular_invasion": {
+    "pathologic_t": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",
@@ -118,7 +140,7 @@
       "span": null,
       "codes": {}
     },
-    "perineural_invasion": {
+    "pathologic_n": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",
@@ -126,7 +148,7 @@
       "span": null,
       "codes": {}
     },
-    "distant_metastasis": {
+    "pathologic_m": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",
@@ -134,34 +156,7 @@
       "span": null,
       "codes": {}
     },
-    "er_status": {
-      "value": "positive",
-      "state": "present",
-      "evidence": "ER positive",
-      "span": [
-        914,
-        925
-      ]
-    },
-    "pr_status": {
-      "value": "equivocal",
-      "unit": null,
-      "state": "present",
-      "evidence": "10%, 1+ intensity",
-      "span": null,
-      "codes": {
-        "LOINC": "94077-5"
-      }
-    },
-    "her2_status": {
-      "value": "equivocal",
-      "unit": null,
-      "state": "present",
-      "evidence": "2+ (equivocal by IHC)",
-      "span": null,
-      "codes": {}
-    },
-    "kras_mutation": {
+    "biomarkers": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",
@@ -169,36 +164,10 @@
       "span": null,
       "codes": {}
     },
-    "egfr_mutation": {
+    "anticancer_medication": {
       "value": null,
       "unit": null,
       "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "procedure": {
-      "value": "stereotactic core biopsy",
-      "unit": null,
-      "state": "present",
-      "evidence": null,
-      "span": null,
-      "codes": {
-        "SNOMED": "44578009"
-      }
-    },
-    "prior_treatment": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_focality": {
-      "value": "synchronous multifocal disease",
-      "unit": null,
-      "state": "present",
       "evidence": null,
       "span": null,
       "codes": {}
