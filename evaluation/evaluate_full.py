@@ -33,27 +33,38 @@ def normalize(s):
     s = re.sub(r'[\.,;:!?]+$', '', s).strip()
     return normalize_ws(s)
 
-def is_ner_true_positive(gold_field, pred_field):
+def find_all_occurrences(raw_text, value):
+    # returns a list of [start, end] spans where value appears
+    spans = []
+    start = 0
+    while True:
+        idx = raw_text.find(str(value), start)
+        if idx < 0:
+            break
+        spans.append([idx, idx + len(str(value))])
+        start = idx + 1
+    return spans
+
+def is_ner_true_positive(gold_field, pred_field, raw_text):
     if gold_field.get("state") != "present":
         return False
     if pred_field.get("state") != "present":
         return False
-    g_span = gold_field.get("span")
-    p_span = pred_field.get("span")
-    if g_span is None or p_span is None:
+    if normalize(gold_field.get("value")) != normalize(pred_field.get("value")):
         return False
-    if len(g_span) != 2 or len(p_span) != 2:
+    pred_span = pred_field.get("span")
+    if pred_span is None or len(pred_span) != 2 or pred_span[0] is None or pred_span[1] is None:
         return False
-    if g_span[0] is None or g_span[1] is None or p_span[0] is None or p_span[1] is None:
-        return False
-    # Any-mention pragmatic rule: If value matches perfectly, we tolerate
-    # different span choices (e.g. multi-occurrence).
-    val_match = (normalize(gold_field.get("value")) == normalize(pred_field.get("value")))
-    if val_match:
+    # The predicted span must overlap SOME occurrence of the value 
+    # in the source text (either the gold span, or any other 
+    # occurrence of the gold value)
+    occurrences = find_all_occurrences(raw_text, gold_field.get("value"))
+    if gold_field.get("span"):
+        occurrences.append(gold_field["span"])
+    for occ in occurrences:
+        if occ[1] <= pred_span[0] or pred_span[1] <= occ[0]:
+            continue
         return True
-        
-    # If value doesn't match perfectly, it's not a TP 
-    # (since our span-matching rule requires value match anyway).
     return False
 
 def validate_evidence(ev, val, full_text):
@@ -129,7 +140,7 @@ def evaluate(pipeline_dir: Path, gold_dir: Path, pipeline_name: str) -> dict:
             
             # NER span-based eval
             if g_state == "present":
-                if is_ner_true_positive(gf_d, pf_d):
+                if is_ner_true_positive(gf_d, pf_d, full_text):
                     m["ner_tp"] += 1; field_m[fname]["ner_tp"] += 1
                 elif p_span and p_span[0] is not None:
                     m["ner_fp"] += 1; field_m[fname]["ner_fp"] += 1

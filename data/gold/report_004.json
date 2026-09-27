@@ -4,7 +4,7 @@
         "primary_tumor_site": {
             "value": "Right breast, upper inner quadrant",
             "state": "present",
-            "evidence": "right breast mass... upper inner quadrant",
+            "evidence": "Received: Ultrasound-guided core needle biopsy, right breast, upper inner quadrant.",
             "span": [
                 247,
                 330
@@ -16,7 +16,7 @@
         "histological_type": {
             "value": "Invasive ductal carcinoma, NST",
             "state": "present",
-            "evidence": "invasive ductal carcinoma (IDC), NST, Nottingham Grade 3",
+            "evidence": "- Invasive ductal carcinoma, NST, Nottingham Grade 3",
             "span": [
                 1246,
                 1298
@@ -28,7 +28,7 @@
         "procedure": {
             "value": "Ultrasound-guided core needle biopsy",
             "state": "present",
-            "evidence": "Ultrasound-guided core needle biopsy performed",
+            "evidence": "Received: Ultrasound-guided core needle biopsy, right breast, upper inner quadrant.",
             "span": [
                 247,
                 330
@@ -40,7 +40,7 @@
         "laterality": {
             "value": "Right",
             "state": "present",
-            "evidence": "right breast mass",
+            "evidence": "44-year-old female with incidentally discovered right breast mass on screening mammography, BI-RADS 4C.",
             "span": [
                 18,
                 121
@@ -50,7 +50,7 @@
         "tumor_grade": {
             "value": "Nottingham Grade 3",
             "state": "present",
-            "evidence": "Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9)",
+            "evidence": "invasive ductal carcinoma (IDC), NST, Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic",
             "span": [
                 618,
                 716
@@ -67,9 +67,9 @@
             "lesion_id": "lesion_1"
         },
         "tumor_focality": {
-            "value": "right breast mass",
+            "value": "Single lesion",
             "state": "present",
-            "evidence": "Single right breast mass described",
+            "evidence": "44-year-old female with incidentally discovered right breast mass on screening mammography, BI-RADS 4C.",
             "span": [
                 18,
                 121

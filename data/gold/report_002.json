@@ -4,7 +4,7 @@
         "primary_tumor_site": {
             "value": "Sigmoid colon",
             "state": "present",
-            "evidence": "a 4.5 cm mass at the sigmoid colon",
+            "evidence": "5 cm mass at the sigmoid colon.",
             "span": [
                 61,
                 92
@@ -16,7 +16,7 @@
         "histological_type": {
             "value": "Colorectal adenocarcinoma",
             "state": "present",
-            "evidence": "moderately differentiated (Grade 2) colorectal adenocarcinoma",
+            "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
             "span": [
                 623,
                 699
@@ -28,7 +28,7 @@
         "procedure": {
             "value": "Sigmoid colectomy",
             "state": "present",
-            "evidence": "Sigmoid colectomy specimen",
+            "evidence": "Referred for sigmoid colectomy.",
             "span": [
                 174,
                 205
@@ -45,9 +45,9 @@
             "codes": {}
         },
         "tumor_grade": {
-            "value": "moderately differentiated (Grade 2)",
+            "value": "Grade 2 (moderately differentiated)",
             "state": "present",
-            "evidence": "moderately differentiated (Grade 2)",
+            "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
             "span": [
                 623,
                 699
@@ -58,7 +58,7 @@
         "tumor_size": {
             "value": "4.5",
             "state": "present",
-            "evidence": "ulcerated, fungating tumor measuring 4.5 x 3.8 x 1.2 cm",
+            "evidence": "67-year-old male, colonoscopy revealed a 4.5 cm mass at the sigmoid colon.",
             "span": [
                 18,
                 92
@@ -68,9 +68,9 @@
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "ulcerated, fungating tumor",
+            "value": "Single lesion",
             "state": "present",
-            "evidence": "single ulcerated fungating tumor described",
+            "evidence": "An ulcerated, fungating tumor measuring",
             "span": [
                 281,
                 320
@@ -81,7 +81,7 @@
         "lymphovascular_invasion": {
             "value": "Present",
             "state": "present",
-            "evidence": "Lymphovascular invasion is present",
+            "evidence": "Lymphovascular invasion is present.",
             "span": [
                 813,
                 848
@@ -89,9 +89,9 @@
             "codes": {}
         },
         "perineural_invasion": {
-            "value": "Perineural invasion is identified in 2 foci",
+            "value": "Present (2 foci)",
             "state": "present",
-            "evidence": "Perineural invasion is identified in 2 foci",
+            "evidence": "Perineural invasion is identified in 2 foci.",
             "span": [
                 849,
                 893
@@ -101,7 +101,7 @@
         "surgical_margins": {
             "value": "Negative (CRM 2.5 mm)",
             "state": "present",
-            "evidence": "circumferential radial margin (CRM) is negative (closest point 2.5 mm)",
+            "evidence": "- Margins: all negative (CRM 2.5 mm)",
             "span": [
                 1680,
                 1716
@@ -112,7 +112,7 @@
         "lymph_nodes_examined": {
             "value": "24",
             "state": "present",
-            "evidence": "Of 24 lymph nodes examined",
+            "evidence": "Regional mesentery contains 24 lymph nodes, ranging 0.",
             "span": [
                 505,
                 559
@@ -122,7 +122,7 @@
         "positive_lymph_nodes": {
             "value": "3",
             "state": "present",
-            "evidence": "3 are positive for metastatic adenocarcinoma (pN1b)",
+            "evidence": "5 x 3.",
             "span": [
                 323,
                 329
@@ -132,7 +132,7 @@
         "pathologic_t": {
             "value": "pT3",
             "state": "present",
-            "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
+            "evidence": "through the full thickness of the muscularis propria into pericolorectal adipose tissue (pT3).",
             "span": [
                 718,
                 812
@@ -144,7 +144,7 @@
         "pathologic_n": {
             "value": "pN1b",
             "state": "present",
-            "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
+            "evidence": "nodes examined, 3 are positive for metastatic adenocarcinoma (pN1b).",
             "span": [
                 906,
                 974
@@ -156,7 +156,7 @@
         "pathologic_m": {
             "value": "pM0",
             "state": "present",
-            "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
+            "evidence": "- Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
             "span": [
                 1840,
                 1905

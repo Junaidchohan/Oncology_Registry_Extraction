@@ -2,9 +2,9 @@
     "report_id": "report_001",
     "annotations": {
         "primary_tumor_site": {
-            "value": "left breast mass",
+            "value": "Left breast, upper outer quadrant",
             "state": "present",
-            "evidence": "firm, stellate, grey-white mass... in the upper outer quadrant",
+            "evidence": "58-year-old female with a palpable left breast mass, 2.",
             "span": [
                 18,
                 73
@@ -14,9 +14,9 @@
             }
         },
         "histological_type": {
-            "value": "infiltrating ductal carcinoma (IDC), no special type",
+            "value": "Invasive ductal carcinoma, NST (no special type)",
             "state": "present",
-            "evidence": "infiltrating ductal carcinoma (IDC), no special type (NST)",
+            "evidence": "Sections from the primary mass show infiltrating ductal carcinoma (IDC), no special type (NST),",
             "span": [
                 662,
                 757
@@ -28,7 +28,7 @@
         "procedure": {
             "value": "Modified radical mastectomy",
             "state": "present",
-            "evidence": "Left modified radical mastectomy",
+            "evidence": "Referred for modified radical mastectomy.",
             "span": [
                 165,
                 206
@@ -40,7 +40,7 @@
         "laterality": {
             "value": "Left",
             "state": "present",
-            "evidence": "Left modified radical mastectomy specimen",
+            "evidence": "58-year-old female with a palpable left breast mass, 2.",
             "span": [
                 18,
                 73
@@ -50,7 +50,7 @@
         "tumor_grade": {
             "value": "Nottingham Grade 2",
             "state": "present",
-            "evidence": "Nottingham Grade 2 (tubule formation 3, nuclear pleomorphism 2, mitotic count 1; score 6/9)",
+            "evidence": "Nottingham Grade 2 (tubule formation 3, nuclear pleomorphism 2, mitotic count 1;",
             "span": [
                 758,
                 838
@@ -61,7 +61,7 @@
         "tumor_size": {
             "value": "2.3",
             "state": "present",
-            "evidence": "mass measuring 2.3 x 2.1 x 1.8 cm",
+            "evidence": "58-year-old female with a palpable left breast mass, 2.3 cm on imaging.",
             "span": [
                 18,
                 89
@@ -71,9 +71,9 @@
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "primary mass",
+            "value": "Single lesion",
             "state": "present",
-            "evidence": "a firm, stellate, grey-white mass (single mass described)",
+            "evidence": "Sections from the primary mass show infiltrating ductal carcinoma (IDC), no special type (NST),",
             "span": [
                 662,
                 757
@@ -84,7 +84,7 @@
         "lymphovascular_invasion": {
             "value": "Present",
             "state": "present",
-            "evidence": "Lymphovascular invasion is identified within the tumor periphery",
+            "evidence": "- Lymphovascular invasion: present",
             "span": [
                 1538,
                 1572
@@ -104,7 +104,7 @@
         "surgical_margins": {
             "value": "Negative (closest margin 2.0 cm, deep)",
             "state": "present",
-            "evidence": "all other margins are negative",
+            "evidence": "- Surgical margins: negative (closest margin 2.0 cm, deep)",
             "span": [
                 1603,
                 1661
@@ -115,7 +115,7 @@
         "lymph_nodes_examined": {
             "value": "18",
             "state": "present",
-            "evidence": "Of the 18 axillary lymph nodes examined",
+            "evidence": "Axillary contents contain 18 lymph nodes, the largest measuring 1.",
             "span": [
                 504,
                 570
@@ -125,17 +125,17 @@
         "positive_lymph_nodes": {
             "value": "4",
             "state": "present",
-            "evidence": "4 contain metastatic carcinoma",
+            "evidence": "- Lymph nodes: 4/18 positive for metastatic carcinoma",
             "span": [
-                227,
-                294
+                1662,
+                1715
             ],
             "codes": {}
         },
         "pathologic_t": {
             "value": "pT2",
             "state": "present",
-            "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
+            "evidence": "- Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
             "span": [
                 1772,
                 1836
@@ -147,7 +147,7 @@
         "pathologic_n": {
             "value": "pN1a",
             "state": "present",
-            "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
+            "evidence": "- Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
             "span": [
                 1772,
                 1836
@@ -159,7 +159,7 @@
         "pathologic_m": {
             "value": "pM0",
             "state": "present",
-            "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
+            "evidence": "- Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
             "span": [
                 1772,
                 1836

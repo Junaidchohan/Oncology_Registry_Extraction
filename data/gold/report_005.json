@@ -2,9 +2,9 @@
     "report_id": "report_005",
     "annotations": {
         "primary_tumor_site": {
-            "value": "rectum at 10 cm from the anal verge",
+            "value": "Rectum, 10 cm from anal verge",
             "state": "present",
-            "evidence": "sessile polyp in the rectum at 10 cm from the anal verge",
+            "evidence": "sessile polyp in the rectum at 10 cm from the anal verge.",
             "span": [
                 112,
                 169
@@ -16,7 +16,7 @@
         "histological_type": {
             "value": "Adenocarcinoma",
             "state": "present",
-            "evidence": "well-differentiated (Grade 1) adenocarcinoma of the rectum",
+            "evidence": "Sections show well-differentiated (Grade 1) adenocarcinoma of the rectum.",
             "span": [
                 497,
                 570
@@ -28,7 +28,7 @@
         "procedure": {
             "value": "Endoscopic mucosal resection biopsy",
             "state": "present",
-            "evidence": "Referred for endoscopic mucosal resection biopsy",
+            "evidence": "Referred for endoscopic mucosal resection biopsy.",
             "span": [
                 238,
                 287
@@ -45,9 +45,9 @@
             "codes": {}
         },
         "tumor_grade": {
-            "value": "well-differentiated (Grade 1)",
+            "value": "Grade 1 (well-differentiated)",
             "state": "present",
-            "evidence": "well-differentiated (Grade 1)",
+            "evidence": "Sections show well-differentiated (Grade 1) adenocarcinoma of the rectum.",
             "span": [
                 497,
                 570
@@ -58,7 +58,7 @@
         "tumor_size": {
             "value": "2.8",
             "state": "present",
-            "evidence": "2.8 cm sessile polyp",
+            "evidence": "Colonoscopy showed a 2.8 cm",
             "span": [
                 84,
                 111
@@ -68,9 +68,9 @@
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "sessile polyp",
+            "value": "Single lesion",
             "state": "present",
-            "evidence": "single 2.8 cm sessile polyp described",
+            "evidence": "sessile polyp in the rectum at 10 cm from the anal verge.",
             "span": [
                 112,
                 169

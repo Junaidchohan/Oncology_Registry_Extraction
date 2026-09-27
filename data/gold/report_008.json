@@ -4,7 +4,7 @@
         "primary_tumor_site": {
             "value": "Cecum",
             "state": "present",
-            "evidence": "cecal mass... tumor identified at the cecum",
+            "evidence": "identified at the cecum, 3 cm from the ileocecal valve.",
             "span": [
                 506,
                 561
@@ -16,7 +16,7 @@
         "histological_type": {
             "value": "Colorectal adenocarcinoma",
             "state": "present",
-            "evidence": "moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma",
+            "evidence": "Sections show moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma.",
             "span": [
                 736,
                 831
@@ -28,7 +28,7 @@
         "procedure": {
             "value": "Right hemicolectomy",
             "state": "present",
-            "evidence": "Referred urgently for right hemicolectomy",
+            "evidence": "Referred urgently for right hemicolectomy due to near-obstructing lesion.",
             "span": [
                 226,
                 299
@@ -58,7 +58,7 @@
         "tumor_size": {
             "value": "5.5",
             "state": "present",
-            "evidence": "fungating, partially obstructing tumor measuring 5.5 x 4.8 x 2.1 cm",
+            "evidence": "A fungating, partially obstructing tumor measuring 5.5 x 4.",
             "span": [
                 433,
                 492
@@ -68,9 +68,9 @@
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "obstructing lesion",
+            "value": "Single lesion",
             "state": "present",
-            "evidence": "single fungating mass at cecum",
+            "evidence": "Referred urgently for right hemicolectomy due to near-obstructing lesion.",
             "span": [
                 226,
                 299
@@ -96,9 +96,9 @@
             "codes": {}
         },
         "surgical_margins": {
-            "value": "CRM: involved",
+            "value": "CRM positive (tumor at inked margin <1 mm)",
             "state": "present",
-            "evidence": "CRM: involved (tumor at inked surface, <1 mm)",
+            "evidence": "CRM: involved (tumor at inked surface, <1 mm).",
             "span": [
                 1270,
                 1316
@@ -109,7 +109,7 @@
         "lymph_nodes_examined": {
             "value": "12",
             "state": "present",
-            "evidence": "Of 12 lymph nodes examined",
+            "evidence": "Mesenteric fat contains multiple lymph nodes, 12 identified.",
             "span": [
                 611,
                 671
@@ -119,10 +119,10 @@
         "positive_lymph_nodes": {
             "value": "5",
             "state": "present",
-            "evidence": "5 are positive for metastatic adenocarcinoma with extranodal extension",
+            "evidence": "Of 12 lymph nodes examined: 5 are positive for metastatic adenocarcinoma with extranodal extension.",
             "span": [
-                320,
-                411
+                1317,
+                1416
             ],
             "codes": {}
         },

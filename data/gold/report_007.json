@@ -2,9 +2,9 @@
     "report_id": "report_007",
     "annotations": {
         "primary_tumor_site": {
-            "value": "upper outer quadrant",
+            "value": "Right breast, upper outer quadrant",
             "state": "present",
-            "evidence": "right breast invasive ductal carcinoma... upper outer quadrant",
+            "evidence": "sectioning, the site of the prior tumor (upper outer quadrant, marked with surgical clip) shows a",
             "span": [
                 462,
                 559
@@ -14,9 +14,9 @@
             }
         },
         "histological_type": {
-            "value": "residual invasive carcinoma",
+            "value": "Invasive ductal carcinoma, NST (residual, post-treatment)",
             "state": "present",
-            "evidence": "residual invasive carcinoma with treatment effect (ypT1a)",
+            "evidence": "stroma -- representing residual invasive carcinoma with treatment effect (ypT1a, residual focus",
             "span": [
                 944,
                 1039
@@ -26,9 +26,9 @@
             }
         },
         "procedure": {
-            "value": "mastectomy",
+            "value": "Right mastectomy with sentinel lymph node biopsy",
             "state": "present",
-            "evidence": "Referred for right mastectomy with sentinel lymph node biopsy",
+            "evidence": "Referred for right mastectomy",
             "span": [
                 281,
                 310
@@ -40,7 +40,7 @@
         "laterality": {
             "value": "Right",
             "state": "present",
-            "evidence": "Right mastectomy",
+            "evidence": "55-year-old female with known right breast invasive ductal carcinoma (ER+/PR+/HER2-), diagnosed",
             "span": [
                 18,
                 113
@@ -57,19 +57,19 @@
         "tumor_size": {
             "value": "1",
             "state": "present",
-            "evidence": "residual focus approximately 1 mm",
+            "evidence": "approximately 1 mm).",
             "span": [
-                114,
-                144
+                1040,
+                1060
             ],
             "codes": {},
             "lesion_id": "lesion_1",
             "unit": "mm"
         },
         "tumor_focality": {
-            "value": "residual focus",
+            "value": "Single lesion (residual)",
             "state": "present",
-            "evidence": "single residual focus at clip site",
+            "evidence": "stroma -- representing residual invasive carcinoma with treatment effect (ypT1a, residual focus",
             "span": [
                 944,
                 1039
@@ -95,9 +95,9 @@
             "codes": {}
         },
         "surgical_margins": {
-            "value": "surgical margins are negative",
+            "value": "Negative (closest margin >3 cm)",
             "state": "present",
-            "evidence": "All surgical margins are negative (closest margin >3 cm)",
+            "evidence": "All surgical margins are negative (closest",
             "span": [
                 1094,
                 1136
@@ -106,9 +106,9 @@
             "unit": "cm"
         },
         "lymph_nodes_examined": {
-            "value": "3 nodes identified",
+            "value": "3 (sentinel)",
             "state": "present",
-            "evidence": "Sentinel lymph nodes (3/3): no metastatic carcinoma",
+            "evidence": "Sentinel lymph nodes: 3 nodes identified, 0.",
             "span": [
                 671,
                 715
@@ -128,7 +128,7 @@
         "pathologic_t": {
             "value": "ypT1a",
             "state": "present",
-            "evidence": "Post-treatment pathologic stage: ypT1a ypN0 ypM0",
+            "evidence": "stroma -- representing residual invasive carcinoma with treatment effect (ypT1a, residual focus",
             "span": [
                 944,
                 1039
@@ -138,7 +138,7 @@
         "pathologic_n": {
             "value": "ypN0",
             "state": "present",
-            "evidence": "Post-treatment pathologic stage: ypT1a ypN0 ypM0",
+            "evidence": "treatment effect (fibrosis) noted in 1 node (ypN0).",
             "span": [
                 1264,
                 1315
@@ -148,7 +148,7 @@
         "pathologic_m": {
             "value": "ypM0",
             "state": "present",
-            "evidence": "Post-treatment pathologic stage: ypT1a ypN0 ypM0",
+            "evidence": "- Post-treatment pathologic stage: ypT1a ypN0 ypM0",
             "span": [
                 1959,
                 2009

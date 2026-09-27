@@ -2,9 +2,9 @@
     "report_id": "report_006",
     "annotations": {
         "primary_tumor_site": {
-            "value": "left upper lobe",
+            "value": "Left upper lobe, lung",
             "state": "present",
-            "evidence": "left upper lobe mass on CT (3.5 cm)",
+            "evidence": "61-year-old male, 45-pack-year smoking history, with left upper lobe mass on CT (3.",
             "span": [
                 18,
                 101
@@ -16,7 +16,7 @@
         "histological_type": {
             "value": "Squamous cell carcinoma",
             "state": "present",
-            "evidence": "Poorly differentiated squamous cell carcinoma (SCC)",
+            "evidence": "Primary left upper lobe lesion: Poorly differentiated squamous cell carcinoma (SCC), Nottingham",
             "span": [
                 808,
                 903
@@ -28,7 +28,7 @@
         "procedure": {
             "value": "Left upper lobectomy",
             "state": "present",
-            "evidence": "Left upper lobectomy specimen",
+            "evidence": "Referred for left upper lobectomy.",
             "span": [
                 272,
                 306
@@ -40,7 +40,7 @@
         "laterality": {
             "value": "Left",
             "state": "present",
-            "evidence": "Left upper lobectomy specimen",
+            "evidence": "61-year-old male, 45-pack-year smoking history, with left upper lobe mass on CT (3.",
             "span": [
                 18,
                 101
@@ -48,9 +48,9 @@
             "codes": {}
         },
         "tumor_grade": {
-            "value": "Poorly differentiated",
+            "value": "Grade 3 (poorly differentiated)",
             "state": "present",
-            "evidence": "Poorly differentiated squamous cell carcinoma, Nottingham equivalent Grade 3",
+            "evidence": "Primary left upper lobe lesion: Poorly differentiated squamous cell carcinoma (SCC), Nottingham",
             "span": [
                 808,
                 903
@@ -61,7 +61,7 @@
         "tumor_size": {
             "value": "3.5",
             "state": "present",
-            "evidence": "firm, grey-white tumor measuring 3.5 x 3.2 x 3.0 cm",
+            "evidence": "61-year-old male, 45-pack-year smoking history, with left upper lobe mass on CT (3.5 cm) and",
             "span": [
                 18,
                 110
@@ -71,9 +71,9 @@
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "Satellite nodule",
+            "value": "Multiple (primary + satellite nodule in lingula)",
             "state": "present",
-            "evidence": "second distinct nodule measuring 12 x 10 x 9 mm in the lingula -- satellite nodule",
+            "evidence": "consistent with a satellite nodule of the same primary rather than an independent second primary.",
             "span": [
                 1285,
                 1382
@@ -102,9 +102,9 @@
             "codes": {}
         },
         "surgical_margins": {
-            "value": "Bronchial resection margin: negative",
+            "value": "Negative (bronchial margin 3.5 cm)",
             "state": "present",
-            "evidence": "Bronchial resection margin: negative (3.5 cm from tumor)",
+            "evidence": "Bronchial resection margin: negative (3.",
             "span": [
                 1029,
                 1069
@@ -115,7 +115,7 @@
         "lymph_nodes_examined": {
             "value": "12",
             "state": "present",
-            "evidence": "12 hilar and interlobar lymph nodes examined",
+            "evidence": "A second distinct nodule measuring 12 x 10 x 9 mm is present in the",
             "span": [
                 538,
                 605
@@ -135,7 +135,7 @@
         "pathologic_t": {
             "value": "pT3",
             "state": "present",
-            "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
+            "evidence": "- Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
             "span": [
                 2087,
                 2150
@@ -147,7 +147,7 @@
         "pathologic_n": {
             "value": "pN0",
             "state": "present",
-            "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
+            "evidence": "- Lymph nodes: 0/12 (pN0)",
             "span": [
                 2009,
                 2034
@@ -159,7 +159,7 @@
         "pathologic_m": {
             "value": "pM0",
             "state": "present",
-            "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
+            "evidence": "- Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
             "span": [
                 2087,
                 2150

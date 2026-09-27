@@ -2,9 +2,9 @@
     "report_id": "report_003",
     "annotations": {
         "primary_tumor_site": {
-            "value": "right upper lobe",
+            "value": "Right upper lobe, lung",
             "state": "present",
-            "evidence": "3.1 cm spiculated right upper lobe mass",
+            "evidence": "1 cm spiculated right upper lobe mass with ipsilateral mediastinal lymphadenopathy.",
             "span": [
                 123,
                 206
@@ -16,7 +16,7 @@
         "histological_type": {
             "value": "Pulmonary adenocarcinoma",
             "state": "present",
-            "evidence": "consistent with pulmonary adenocarcinoma",
+            "evidence": "with focal mucin production, consistent with pulmonary adenocarcinoma.",
             "span": [
                 657,
                 727
@@ -28,7 +28,7 @@
         "procedure": {
             "value": "CT-guided core needle biopsy",
             "state": "present",
-            "evidence": "CT-guided core needle biopsy of the lung mass",
+            "evidence": "Referred for CT-guided core needle biopsy of the lung mass.",
             "span": [
                 315,
                 374
@@ -40,7 +40,7 @@
         "laterality": {
             "value": "Right",
             "state": "present",
-            "evidence": "right upper lobe mass",
+            "evidence": "1 cm spiculated right upper lobe mass with ipsilateral mediastinal lymphadenopathy.",
             "span": [
                 123,
                 206
@@ -50,7 +50,7 @@
         "tumor_grade": {
             "value": "Moderately differentiated",
             "state": "present",
-            "evidence": "Pulmonary adenocarcinoma, moderately differentiated",
+            "evidence": "- Pulmonary adenocarcinoma, moderately differentiated",
             "span": [
                 1358,
                 1411
@@ -61,7 +61,7 @@
         "tumor_size": {
             "value": "3.1",
             "state": "present",
-            "evidence": "3.1 cm spiculated right upper lobe mass",
+            "evidence": "a 3.1 cm spiculated right upper lobe mass with ipsilateral mediastinal lymphadenopathy.",
             "span": [
                 119,
                 206
@@ -71,9 +71,9 @@
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "multiple FDG-avid brain lesions",
+            "value": "Single primary; multiple brain metastases",
             "state": "present",
-            "evidence": "single lung primary with multiple brain metastases",
+            "evidence": "showed FDG-avid lesion in the right upper lobe and multiple FDG-avid brain lesions (up to 1.",
             "span": [
                 216,
                 308
@@ -110,9 +110,9 @@
             "codes": {}
         },
         "positive_lymph_nodes": {
-            "value": "ipsilateral mediastinal lymphadenopathy",
+            "value": "Ipsilateral mediastinal adenopathy (imaging)",
             "state": "present",
-            "evidence": "ipsilateral mediastinal lymphadenopathy",
+            "evidence": "1 cm spiculated right upper lobe mass with ipsilateral mediastinal lymphadenopathy.",
             "span": [
                 123,
                 206

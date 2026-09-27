@@ -18,7 +18,7 @@
         "procedure": {
             "value": "CT-guided core needle biopsy",
             "state": "present",
-            "evidence": "Referred for CT-guided core biopsy",
+            "evidence": "Received: CT-guided core needle biopsy, right lower lobe.",
             "span": [
                 427,
                 484
@@ -30,7 +30,7 @@
         "laterality": {
             "value": "Right",
             "state": "present",
-            "evidence": "right lower lobe",
+            "evidence": "69-year-old male, ex-smoker (20 pack-years, quit 15 years ago), with right lower lobe nodule",
             "span": [
                 18,
                 110
@@ -47,7 +47,7 @@
         "tumor_size": {
             "value": "1.8",
             "state": "present",
-            "evidence": "right lower lobe nodule (1.8 cm)",
+            "evidence": "(1.8 cm) found on surveillance CT following prior left lobectomy for squamous cell carcinoma 3 years",
             "span": [
                 111,
                 211
