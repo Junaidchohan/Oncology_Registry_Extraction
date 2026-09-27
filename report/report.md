@@ -141,7 +141,7 @@ Pipeline A was expected to be more reliable because it uses a domain-specific NL
 
 Relation-level evaluation is implemented for three explicit relation types: has_lesion (linking measurements to specific lesion IDs), has_assay (linking biomarker results to assays), and has_stage_system (linking pathologic stage values to the AJCC staging system). The Relation F1 row in the comparison table reports the exact triple-matching F1 score for these relations.
 
-## Error analysis: five discrepancies
+## Error analysis: eight discrepancies
 
 ### Discrepancy 1 - Extraction boundary limitation
 Source excerpt:
@@ -237,3 +237,64 @@ extraction (Both pipelines extracted only the base classification concept rather
 
 Corrective action:
 Narrow the LLM flow to extract the verbatim sentence first, then regex extract the status while retaining the sentence.
+
+### Discrepancy 6 - Missing lesion_id on tumor_size
+Source excerpt:
+"The largest tumor dimension is 2.3 cm."
+
+Gold value:
+"lesion_1" (on tumor_size field) (report_001)
+
+Pipeline A output:
+No lesion_id on tumor_size
+
+Pipeline B output:
+No lesion_id on tumor_size
+
+Root cause:
+wrong relationship (relation evaluation: tumor_size_to_lesion | gold=10 | pred=0 | F1=0.0%). The pipelines were aligned to the schema's top-level keys but not to the lesion-association requirement.
+
+Corrective action:
+Update the pipeline output writers to emit lesion_id on every lesion-scoped field (tumor_size, tumor_grade, tumor_focality, biomarkers entries).
+
+### Discrepancy 7 - Missing lesion_id on biomarker entries
+Source excerpt:
+"ER positive (Allred score 8/8, >95% cells, 3+ intensity)"
+
+Gold value:
+"lesion_1" (on biomarker entry) (report_001)
+
+Pipeline A output:
+No lesion_id on biomarker entries
+
+Pipeline B output:
+No lesion_id on biomarker entries
+
+Root cause:
+wrong relationship (relation evaluation: biomarker_result_to_assay | gold=44 | pred=0 | F1=0.0%). Biomarker entries in pipeline output do not carry lesion_id, so the relation cannot be extracted.
+
+Corrective action:
+Update the pipeline output writers to emit lesion_id on every biomarker entry.
+
+### Discrepancy 8 - Pipeline B stage_to_tumor over-prediction
+Source excerpt:
+"pT2, pN1a, pM0"
+
+Gold value:
+stage_to_tumor relation only when explicitly stated.
+
+Pipeline A output:
+Matches conditionally.
+
+Pipeline B output:
+Emits stage_to_tumor relation for every stage field regardless of presence.
+
+Root cause:
+wrong relationship (relation evaluation: Pipeline B stage_to_tumor | gold=12 | pred=27 | FP=15 | precision=44.4% | recall=100%). Pipeline B emits a stage_to_tumor relation for every pathologic_t, pathologic_n, and pathologic_m field, even when the report does not state a stage for one or more of them.
+
+Corrective action:
+Modify the relation extractor so it only emits a stage_to_tumor relation for stages whose state is "present" (not "not_mentioned").
+
+## Relation-level gaps
+
+The relation-level evaluation reveals 0% F1 for both tumor_size_to_lesion and biomarker_result_to_assay across both pipelines. The reason for this failure is that the pipelines do not emit a lesion_id on any lesion-scoped fields. This aligns with the specific concern the reviewer flagged about the harder parts of the task disappearing - particularly multiple lesions and biomarker-to-lesion relationships. The fix is documented as a corrective action but is not implemented in this iteration. The relation evaluation correctly measures this structural gap.
