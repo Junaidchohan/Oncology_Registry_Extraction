@@ -1,7 +1,7 @@
 {
   "report_id": "report_005",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T03:11:12.966015+00:00",
+  "run_timestamp": "2026-09-27T06:22:47.791793+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,11 +9,12 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 173.523
+    "elapsed_sec": 1645.392
   },
   "fields": {
     "specimen": {
       "value": "Rectal biopsy",
+      "raw_value": "Rectal biopsy",
       "unit": null,
       "state": "present",
       "evidence": "Rectal biopsy, 10 cm from anal verge, multiple fragments aggregating 1.8 x 1.2 x 0.4 cm.",
@@ -25,6 +26,7 @@
     },
     "procedure": {
       "value": "Endoscopic mucosal resection biopsy",
+      "raw_value": "Endoscopic mucosal resection biopsy",
       "unit": null,
       "state": "present",
       "evidence": "Referred for endoscopic mucosal resection biopsy.",
@@ -32,10 +34,13 @@
         238,
         287
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "65801008"
+      }
     },
     "primary_tumor_site": {
       "value": "Right rectum",
+      "raw_value": "Rectum",
       "unit": null,
       "state": "present",
       "evidence": "Rectum, biopsy:",
@@ -43,10 +48,13 @@
         1101,
         1116
       ],
-      "codes": {}
+      "codes": {
+        "ICD_O_3": "C20.9"
+      }
     },
     "laterality": {
       "value": "Right",
+      "raw_value": "Right",
       "unit": null,
       "state": "present",
       "evidence": "Rectum, biopsy:",
@@ -54,10 +62,13 @@
         1101,
         1116
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "73056007"
+      }
     },
     "histological_type": {
       "value": "Adenocarcinoma",
+      "raw_value": "Adenocarcinoma",
       "unit": null,
       "state": "present",
       "evidence": "Sections show well-differentiated (Grade 1) adenocarcinoma of the rectum.",
@@ -65,10 +76,13 @@
         497,
         570
       ],
-      "codes": {}
+      "codes": {
+        "ICD_O_3": "8140/3"
+      }
     },
     "tumor_behavior": {
       "value": "Malignant",
+      "raw_value": "Malignant",
       "unit": null,
       "state": "present",
       "evidence": "Well-differentiated (Grade 1) adenocarcinoma of the rectum.",
@@ -77,6 +91,7 @@
     },
     "tumor_grade": {
       "value": "Nottingham Grade 1",
+      "raw_value": "1",
       "unit": null,
       "state": "present",
       "evidence": "Well-differentiated (Grade 1) adenocarcinoma of the rectum.",
@@ -87,6 +102,7 @@
     },
     "tumor_size": {
       "value": "2.8",
+      "raw_value": "2.8",
       "unit": "cm",
       "state": "present",
       "evidence": "2.8 cm sessile polyp in the rectum at 10 cm from the anal verge.",
@@ -95,6 +111,7 @@
     },
     "tumor_focality": {
       "value": "Multifocal",
+      "raw_value": "Multiple",
       "unit": null,
       "state": "present",
       "evidence": "multiple fragments aggregating 1.8 x 1.2 x 0.4 cm.",
@@ -106,6 +123,7 @@
     },
     "tumor_extension": {
       "value": "Submucosa",
+      "raw_value": "Submucosa",
       "unit": null,
       "state": "present",
       "evidence": "Invasion limited to submucosa (pT1)",
@@ -113,10 +131,13 @@
         1165,
         1200
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "372088000"
+      }
     },
     "lymphovascular_invasion": {
       "value": "Absent",
+      "raw_value": "Absent",
       "unit": null,
       "state": "negative",
       "evidence": "No lymphovascular invasion is identified.",
@@ -127,6 +148,7 @@
     },
     "perineural_invasion": {
       "value": "Absent",
+      "raw_value": "Absent",
       "unit": null,
       "state": "negative",
       "evidence": "Perineural invasion is absent.",
@@ -138,6 +160,7 @@
     },
     "surgical_margins": {
       "value": "Uninvolved",
+      "raw_value": "Uninvolved",
       "unit": null,
       "state": "present",
       "evidence": "The deep biopsy margin appears uninvolved,",
@@ -151,6 +174,7 @@
     },
     "lymph_nodes_examined": {
       "value": "0",
+      "raw_value": "0",
       "unit": null,
       "state": "not_assessed",
       "evidence": "Lymph nodes: not assessed (biopsy specimen)",
@@ -162,6 +186,7 @@
     },
     "positive_lymph_nodes": {
       "value": "0",
+      "raw_value": "0",
       "unit": null,
       "state": "not_assessed",
       "evidence": "Lymph nodes: not assessed (biopsy specimen)",
@@ -173,6 +198,7 @@
     },
     "pathologic_t": {
       "value": "1",
+      "raw_value": "1",
       "unit": null,
       "state": "present",
       "evidence": "Invasion limited to submucosa (pT1)",
@@ -180,10 +206,13 @@
         1165,
         1200
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "363346001"
+      }
     },
     "pathologic_n": {
       "value": "X",
+      "raw_value": "X",
       "unit": null,
       "state": "not_assessed",
       "evidence": "Lymph nodes: not assessed (biopsy specimen)",
@@ -191,10 +220,13 @@
         1403,
         1446
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "109989006"
+      }
     },
     "pathologic_m": {
       "value": "0",
+      "raw_value": "0",
       "unit": null,
       "state": "not_assessed",
       "evidence": "No evidence of metastasis in this specimen.",
@@ -202,10 +234,13 @@
         852,
         895
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "109989006"
+      }
     },
     "biomarkers": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -214,6 +249,7 @@
     },
     "anticancer_medication": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,

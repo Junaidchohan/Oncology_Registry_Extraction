@@ -1,7 +1,7 @@
 {
   "report_id": "report_008",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T03:19:36.383665+00:00",
+  "run_timestamp": "2026-09-27T07:36:25.139009+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,11 +9,12 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 167.068
+    "elapsed_sec": 1445.779
   },
   "fields": {
     "specimen": {
       "value": "Right hemicolectomy",
+      "raw_value": "Right hemicolectomy specimen",
       "unit": null,
       "state": "present",
       "evidence": "Gross Description",
@@ -22,38 +23,51 @@
     },
     "procedure": {
       "value": "Right hemicolectomy",
+      "raw_value": "Right hemicolectomy",
       "unit": null,
       "state": "present",
       "evidence": "Clinical History",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "173171007"
+      }
     },
     "primary_tumor_site": {
       "value": "Right cecum",
+      "raw_value": "Cecum",
       "unit": null,
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD_O_3": "C18.0"
+      }
     },
     "laterality": {
       "value": "Right",
+      "raw_value": "Right",
       "unit": null,
       "state": "present",
       "evidence": "Gross Description",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "73056007"
+      }
     },
     "histological_type": {
       "value": "Moderately to poorly differentiated adenocarcinoma",
+      "raw_value": "Moderately to poorly differentiated adenocarcinoma",
       "unit": null,
       "state": "present",
       "evidence": "Microscopic Description",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD_O_3": "8140/3"
+      }
     },
     "tumor_behavior": {
       "value": "Malignant",
+      "raw_value": "Malignant",
       "unit": null,
       "state": "present",
       "evidence": "Final Diagnosis",
@@ -62,6 +76,7 @@
     },
     "tumor_grade": {
       "value": "2-3",
+      "raw_value": "2-3",
       "unit": null,
       "state": "present",
       "evidence": "Microscopic Description",
@@ -70,6 +85,7 @@
     },
     "tumor_size": {
       "value": "5.5",
+      "raw_value": "5.5",
       "unit": "cm",
       "state": "present",
       "evidence": "Final Diagnosis",
@@ -78,6 +94,7 @@
     },
     "tumor_focality": {
       "value": "Single lesion",
+      "raw_value": "Single",
       "unit": null,
       "state": "present",
       "evidence": "Gross Description",
@@ -86,14 +103,18 @@
     },
     "tumor_extension": {
       "value": "Pt3",
+      "raw_value": "pT3",
       "unit": null,
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "1229951001"
+      }
     },
     "lymphovascular_invasion": {
       "value": "Indeterminate",
+      "raw_value": "Indeterminate",
       "unit": null,
       "state": "ambiguous",
       "evidence": "Microscopic Description",
@@ -102,6 +123,7 @@
     },
     "perineural_invasion": {
       "value": "Absent",
+      "raw_value": "Absent",
       "unit": null,
       "state": "present",
       "evidence": "Microscopic Description",
@@ -110,6 +132,7 @@
     },
     "surgical_margins": {
       "value": "Negative",
+      "raw_value": "Negative",
       "unit": null,
       "state": "present",
       "evidence": "Microscopic Description",
@@ -118,6 +141,7 @@
     },
     "lymph_nodes_examined": {
       "value": "12",
+      "raw_value": "12",
       "unit": null,
       "state": "present",
       "evidence": "Gross Description",
@@ -126,6 +150,7 @@
     },
     "positive_lymph_nodes": {
       "value": "5",
+      "raw_value": "5",
       "unit": null,
       "state": "present",
       "evidence": "Final Diagnosis",
@@ -134,30 +159,40 @@
     },
     "pathologic_t": {
       "value": "pT3",
+      "raw_value": "pT3",
       "unit": null,
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "1229951001"
+      }
     },
     "pathologic_n": {
       "value": "pN2a",
+      "raw_value": "pN2a",
       "unit": null,
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "1229963006"
+      }
     },
     "pathologic_m": {
       "value": "pMx",
+      "raw_value": "pMx",
       "unit": null,
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "1229966003"
+      }
     },
     "biomarkers": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -166,6 +201,7 @@
     },
     "anticancer_medication": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,

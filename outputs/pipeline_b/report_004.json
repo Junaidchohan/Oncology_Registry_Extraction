@@ -1,7 +1,7 @@
 {
   "report_id": "report_004",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T03:08:19.438219+00:00",
+  "run_timestamp": "2026-09-27T05:55:22.374989+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,11 +9,12 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 62.686
+    "elapsed_sec": 1445.649
   },
   "fields": {
     "specimen": {
       "value": "Ultrasound-guided core needle biopsy",
+      "raw_value": "Ultrasound-guided core needle biopsy",
       "unit": null,
       "state": "present",
       "evidence": "Received: Ultrasound-guided core needle biopsy, right breast, upper inner quadrant. 4 cores, each 1.2-1.4 x 0.1 cm. Cores are grey-white and firm.",
@@ -22,6 +23,7 @@
     },
     "procedure": {
       "value": "Ultrasound-guided core biopsy",
+      "raw_value": "Ultrasound-guided core biopsy",
       "unit": null,
       "state": "present",
       "evidence": "Ultrasound-guided core biopsy performed.",
@@ -29,10 +31,13 @@
         122,
         162
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "44578009"
+      }
     },
     "primary_tumor_site": {
       "value": "Right breast, upper inner quadrant",
+      "raw_value": "Right breast, upper inner quadrant",
       "unit": null,
       "state": "present",
       "evidence": "Right breast, upper inner quadrant, core needle biopsy:",
@@ -40,10 +45,13 @@
         1190,
         1245
       ],
-      "codes": {}
+      "codes": {
+        "ICD_O_3": "C50.2"
+      }
     },
     "laterality": {
       "value": "Right",
+      "raw_value": "Right",
       "unit": null,
       "state": "present",
       "evidence": "Right breast, upper inner quadrant, core needle biopsy:",
@@ -51,26 +59,35 @@
         1190,
         1245
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "73056007"
+      }
     },
     "histological_type": {
       "value": "Invasive ductal carcinoma, no special type",
+      "raw_value": "Invasive ductal carcinoma, NST",
       "unit": null,
       "state": "present",
       "evidence": "Invasive ductal carcinoma (IDC), NST, Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9).",
       "span": null,
-      "codes": {}
+      "codes": {
+        "ICD_O_3": "8500/3"
+      }
     },
     "tumor_behavior": {
       "value": "Invasive",
+      "raw_value": "Invasive",
       "unit": null,
       "state": "present",
       "evidence": "Invasive ductal carcinoma (IDC), NST, Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9).",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "413448000"
+      }
     },
     "tumor_grade": {
       "value": "Nottingham Grade 3",
+      "raw_value": "3",
       "unit": null,
       "state": "present",
       "evidence": "Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9).",
@@ -81,6 +98,7 @@
     },
     "tumor_size": {
       "value": "1.2-1.4",
+      "raw_value": "1.2-1.4",
       "unit": "cm",
       "state": "present",
       "evidence": "Received: Ultrasound-guided core needle biopsy, right breast, upper inner quadrant. 4 cores, each 1.2-1.4 x 0.1 cm. Cores are grey-white and firm.",
@@ -89,6 +107,7 @@
     },
     "tumor_focality": {
       "value": "Multifocal",
+      "raw_value": "Multiple",
       "unit": null,
       "state": "present",
       "evidence": "Sections show a high-grade invasive carcinoma with solid growth pattern, marked nuclear pleomorphism, and brisk mitotic activity (>20/10 HPF).",
@@ -97,14 +116,18 @@
     },
     "tumor_extension": {
       "value": "Invasive",
+      "raw_value": "Invasive",
       "unit": null,
       "state": "present",
       "evidence": "Invasive ductal carcinoma (IDC), NST, Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9).",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "413448000"
+      }
     },
     "lymphovascular_invasion": {
       "value": null,
+      "raw_value": "Not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -113,6 +136,7 @@
     },
     "perineural_invasion": {
       "value": null,
+      "raw_value": "Not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -121,6 +145,7 @@
     },
     "surgical_margins": {
       "value": "Not applicable",
+      "raw_value": "Not applicable",
       "unit": null,
       "state": "not_applicable",
       "evidence": "Note: Clinical staging, margins, lymph node status: not applicable on core biopsy specimen",
@@ -132,6 +157,7 @@
     },
     "lymph_nodes_examined": {
       "value": "0",
+      "raw_value": "0",
       "unit": null,
       "state": "present",
       "evidence": "Note: Clinical staging, margins, lymph node status: not applicable on core biopsy specimen",
@@ -143,6 +169,7 @@
     },
     "positive_lymph_nodes": {
       "value": "0",
+      "raw_value": "0",
       "unit": null,
       "state": "present",
       "evidence": "Note: Clinical staging, margins, lymph node status: not applicable on core biopsy specimen",
@@ -154,6 +181,7 @@
     },
     "pathologic_t": {
       "value": "3",
+      "raw_value": "3",
       "unit": null,
       "state": "present",
       "evidence": "Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9).",
@@ -162,6 +190,7 @@
     },
     "pathologic_n": {
       "value": "0",
+      "raw_value": "0",
       "unit": null,
       "state": "present",
       "evidence": "Note: Clinical staging, margins, lymph node status: not applicable on core biopsy specimen",
@@ -169,10 +198,13 @@
         1506,
         1596
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "109989006"
+      }
     },
     "pathologic_m": {
       "value": null,
+      "raw_value": "Not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -181,6 +213,7 @@
     },
     "biomarkers": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -189,6 +222,7 @@
     },
     "anticancer_medication": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,

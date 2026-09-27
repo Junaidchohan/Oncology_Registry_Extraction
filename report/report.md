@@ -103,6 +103,32 @@ Pipeline A outputs were generated on an earlier date under a working Java enviro
 
 <!-- BEGIN EVAL TABLE -->
 
-# Pipeline Evaluation: Side-by-Side Comparison\n\n*Generated: 2026-09-27T04:12:50.090320Z*\n\nDenominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)\n\n| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |\n| --- | --- | --- |\n| Entity NER P / R / F1 (span-based) | 14.8% / 15.1% / 14.9% | 18.4% / 25.8% / 21.5% |\n| Field value exact accuracy | 46.1% (83/180) | 31.1% (56/180) |\n| Assertion / State accuracy | 53.3% (96/180) | 55.0% (99/180) |\n| Relation F1 | 8.2% | 7.9% |\n| Retrieval Recall@K | 5.4% (2/37) | 0.0% (0/37) |\n| Selection accuracy | 5.4% (2/37) | 0.0% (0/37) |\n| Located evidence rate | 86.7% | 70.4% |\n| Value-in-evidence rate | 69.0% | 45.9% |\n| Unsupported field rate | 68.1% (77 fields) | 64.8% (103 fields) |\n| Evidence-unsupported fields | 67 | 73 |\n| Invalid code rate | 0.0% | 0.0% |\n| Mean runtime | 32.85s | 156.34s |\n| Mean cost | $0.0000 | $0.0000 |\n
+# Pipeline Evaluation: Side-by-Side Comparison\n\n*Generated: 2026-09-27T08:10:34.181689Z*\n\nDenominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)\n\n| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |\n| --- | --- | --- |\n| Entity NER P / R / F1 (span-based) | 14.8% / 15.1% / 14.9% | 15.5% / 15.9% / 15.7% |\n| Field value exact accuracy | 46.1% (83/180) | 27.8% (50/180) |\n| Assertion / State accuracy | 53.3% (96/180) | 48.9% (88/180) |\n| Relation F1 | 8.2% | 6.0% |\n| Retrieval Recall@K | 5.4% (2/37) | 37.8% (14/37) |\n| Selection accuracy | 5.4% (2/37) | 27.0% (10/37) |\n| Located evidence rate | 86.7% | 68.8% |\n| Value-in-evidence rate | 69.0% | 42.6% |\n| Unsupported field rate | 68.1% (77 fields) | 66.0% (93 fields) |\n| Evidence-unsupported fields | 67 | 70 |\n| Invalid code rate | 0.0% | 0.0% |\n| Mean runtime | 32.85s | 1327.69s |\n| Mean cost | $0.0000 | $0.0000 |\n
 
 <!-- END EVAL TABLE -->
+
+## LLM specificity limitation
+
+The LLM extracts the base clinical concept for each field but does not 
+always capture the full specificity the schema expects. Examples:
+
+  primary_tumor_site:
+    LLM:  \'breast\'
+    Gold: \'Left breast, upper outer quadrant\'
+    Cause: the LLM chose the organ name but not the subsite.
+
+  histological_type:
+    LLM:  \'infiltrating ductal carcinoma\'
+    Gold: \'Invasive ductal carcinoma, NST (no special type)\'
+    Cause: the LLM missed the NST designation.
+
+  tumor_grade:
+    LLM:  \'2\'
+    Gold: \'Nottingham Grade 2\'
+    Cause: the LLM returned the grade number only.
+
+The deterministic normalizer bridges some of these gaps (e.g., mapping 
+\'2\' to \'Nottingham Grade 2\' when the grading system is known), but it 
+cannot invent specificity the LLM did not extract. Under a strict 
+value-equality metric, these score as False Negatives. Under a base-
+concept metric, they would score as True Positives.

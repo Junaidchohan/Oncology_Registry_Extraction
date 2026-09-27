@@ -1,7 +1,7 @@
 {
   "report_id": "report_001",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T03:01:20.398877+00:00",
+  "run_timestamp": "2026-09-27T04:37:44.307777+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,203 +9,151 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 211.074
+    "elapsed_sec": 539.628
   },
   "fields": {
     "specimen": {
-      "value": "Left modified radical mastectomy",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Received: Left modified radical mastectomy specimen weighing 412 g.",
-      "span": [
-        227,
-        294
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "procedure": {
-      "value": "Modified radical mastectomy",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Referred for modified radical mastectomy.",
-      "span": [
-        165,
-        206
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "primary_tumor_site": {
-      "value": "Left breast",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Left breast, modified radical mastectomy:",
-      "span": [
-        1401,
-        1442
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "laterality": {
-      "value": "Left",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Left breast, modified radical mastectomy:",
-      "span": [
-        1401,
-        1442
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "histological_type": {
-      "value": "Invasive ductal carcinoma",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Invasive ductal carcinoma, NST, Nottingham Grade 2",
-      "span": [
-        1445,
-        1495
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "tumor_behavior": {
-      "value": "Invasive",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Invasive ductal carcinoma, NST, Nottingham Grade 2",
-      "span": [
-        1445,
-        1495
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "tumor_grade": {
-      "value": "Nottingham Grade 2",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Nottingham Grade 2",
-      "span": [
-        758,
-        776
-      ],
-      "codes": {
-        "SNOMED_CT": "369783002"
-      }
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
     },
     "tumor_size": {
-      "value": "2.3",
-      "unit": "cm",
-      "state": "present",
-      "evidence": "Tumor size: 2.3 cm (greatest dimension)",
-      "span": [
-        1498,
-        1537
-      ],
+      "value": null,
+      "unit": null,
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "tumor_focality": {
-      "value": "Single lesion",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "The breast measures 17.0 x 13.0 x 5.5 cm.",
+      "state": "not_mentioned",
+      "evidence": null,
       "span": null,
       "codes": {}
     },
     "tumor_extension": {
-      "value": "Infiltrating",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Invasive ductal carcinoma, NST, Nottingham Grade 2",
-      "span": [
-        1445,
-        1495
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "Present",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Lymphovascular invasion is identified within the tumor periphery.",
-      "span": [
-        851,
-        916
-      ],
-      "codes": {
-        "SNOMED_CT": "245294001"
-      }
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
     },
     "perineural_invasion": {
-      "value": "Absent",
+      "value": null,
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "No perineural invasion is seen.",
+      "state": "not_mentioned",
+      "evidence": null,
       "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": "Negative",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "The deep surgical margin is 2.0 cm from the tumor; all other margins are negative.",
-      "span": [
-        949,
-        1031
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "lymph_nodes_examined": {
-      "value": "18",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Axillary contents contain 18 lymph nodes,",
-      "span": [
-        504,
-        545
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "positive_lymph_nodes": {
-      "value": "4",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "Of the 18 axillary lymph nodes examined, 4 contain metastatic carcinoma",
-      "span": [
-        1032,
-        1103
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "pathologic_t": {
-      "value": "2",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "pT2",
-      "span": [
-        1792,
-        1795
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "pathologic_n": {
-      "value": "1a",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "pN1a",
-      "span": [
-        1796,
-        1800
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "pathologic_m": {
-      "value": "0",
+      "value": null,
       "unit": null,
-      "state": "present",
-      "evidence": "pM0",
-      "span": [
-        1801,
-        1804
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "biomarkers": {

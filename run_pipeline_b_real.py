@@ -65,22 +65,21 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 RETRIEVAL_LOG = OUTPUT_DIR / "retrieval_log.jsonl"
 
 FIELD_TERMINOLOGIES = {
-    "primary_site":             ["ICD_O_3", "SNOMED_CT"],
-    "histology_type":           ["ICD_O_3", "ICD_10_CM"],
-    "tumor_grade":              ["SNOMED_CT"],
-    "clinical_stage":           ["SNOMED_CT"],
-    "pathologic_stage":         ["SNOMED_CT"],
-    "surgical_margins":         ["SNOMED_CT"],
-    "lymphovascular_invasion":  ["SNOMED_CT"],
-    "perineural_invasion":      ["SNOMED_CT"],
-    "distant_metastasis":       ["ICD_10_CM", "SNOMED_CT"],
-    "er_status":                ["LOINC"],
-    "pr_status":                ["LOINC"],
-    "her2_status":              ["LOINC"],
-    "kras_mutation":            ["LOINC"],
-    "egfr_mutation":            ["LOINC"],
-    "procedure_type":           ["SNOMED_CT"],
-    "prior_treatment":          ["ATC", "SNOMED_CT"],
+    "primary_tumor_site":  ["ICD_O_3", "SNOMED_CT"],
+    "histological_type":   ["ICD_O_3", "SNOMED_CT"],
+    "procedure":           ["SNOMED_CT"],
+    "laterality":          ["SNOMED_CT"],
+    "tumor_grade":         ["SNOMED_CT"],
+    "tumor_behavior":      ["SNOMED_CT"],
+    "tumor_extension":     ["SNOMED_CT"],
+    "lymphovascular_invasion": ["SNOMED_CT"],
+    "perineural_invasion":     ["SNOMED_CT"],
+    "surgical_margins":        ["SNOMED_CT"],
+    "pathologic_t":            ["SNOMED_CT"],
+    "pathologic_n":            ["SNOMED_CT"],
+    "pathologic_m":            ["SNOMED_CT"],
+    "biomarkers":              ["LOINC", "SNOMED_CT"],
+    "anticancer_medication":   ["ATC"],
 }
 
 _GROUNDING_SYSTEM = """\
@@ -342,12 +341,13 @@ def main():
                         span = compute_span(ev, text)
 
                 output["fields"][fname] = {
-                    "value":    fd.get("value"),
-                    "unit":     fd.get("unit"),
-                    "state":    fd.get("state", "not_mentioned"),
-                    "evidence": fd.get("evidence"),
-                    "span":     span,
-                    "codes":    fd.get("codes", {}),
+                    "value":     fd.get("value"),
+                    "raw_value": fd.get("raw_value"),
+                    "unit":      fd.get("unit"),
+                    "state":     fd.get("state", "not_mentioned"),
+                    "evidence":  fd.get("evidence"),
+                    "span":      span,
+                    "codes":     fd.get("codes", {}),
                 }
 
         output["run_timestamp"] = datetime.now(timezone.utc).isoformat()

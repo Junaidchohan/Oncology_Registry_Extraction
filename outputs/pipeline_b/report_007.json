@@ -1,7 +1,7 @@
 {
   "report_id": "report_007",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T03:16:49.314737+00:00",
+  "run_timestamp": "2026-09-27T07:12:19.337962+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,11 +9,12 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 213.52
+    "elapsed_sec": 1456.689
   },
   "fields": {
     "specimen": {
       "value": "Right mastectomy",
+      "raw_value": "Right mastectomy specimen",
       "unit": null,
       "state": "present",
       "evidence": "GROSS DESCRIPTION",
@@ -25,6 +26,7 @@
     },
     "procedure": {
       "value": "Mastectomy with sentinel lymph node biopsy",
+      "raw_value": "Mastectomy with sentinel lymph node biopsy",
       "unit": null,
       "state": "present",
       "evidence": "CLINICAL HISTORY",
@@ -32,10 +34,13 @@
         0,
         16
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "396487001"
+      }
     },
     "primary_tumor_site": {
       "value": "Right breast",
+      "raw_value": "Right breast",
       "unit": null,
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
@@ -43,10 +48,13 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "73056007"
+      }
     },
     "laterality": {
       "value": "Right",
+      "raw_value": "Right",
       "unit": null,
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
@@ -54,10 +62,13 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "73056007"
+      }
     },
     "histological_type": {
       "value": "Invasive ductal carcinoma, no special type",
+      "raw_value": "Invasive ductal carcinoma, NST",
       "unit": null,
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
@@ -65,10 +76,13 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {
+        "ICD_O_3": "8500/3"
+      }
     },
     "tumor_behavior": {
       "value": "Invasive",
+      "raw_value": "Residual invasive carcinoma with treatment effect",
       "unit": null,
       "state": "present",
       "evidence": "MICROSCOPIC DESCRIPTION",
@@ -76,10 +90,13 @@
         726,
         749
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "413448000"
+      }
     },
     "tumor_grade": {
       "value": "Miller-Payne Grade 4",
+      "raw_value": "Miller-Payne Grade 4",
       "unit": null,
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
@@ -93,6 +110,7 @@
     },
     "tumor_size": {
       "value": "1 mm",
+      "raw_value": "1 mm",
       "unit": "mm",
       "state": "present",
       "evidence": "MICROSCOPIC DESCRIPTION",
@@ -104,6 +122,7 @@
     },
     "tumor_focality": {
       "value": "Residual focus approximately 1 mm",
+      "raw_value": "Residual focus approximately 1 mm",
       "unit": null,
       "state": "present",
       "evidence": "MICROSCOPIC DESCRIPTION",
@@ -115,6 +134,7 @@
     },
     "tumor_extension": {
       "value": "Treatment effect present",
+      "raw_value": "Treatment effect present",
       "unit": null,
       "state": "present",
       "evidence": "MICROSCOPIC DESCRIPTION",
@@ -126,6 +146,7 @@
     },
     "lymphovascular_invasion": {
       "value": "No lymphovascular invasion",
+      "raw_value": "No lymphovascular invasion",
       "unit": null,
       "state": "negative",
       "evidence": "FINAL DIAGNOSIS",
@@ -139,17 +160,16 @@
     },
     "perineural_invasion": {
       "value": null,
+      "raw_value": "Not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": "MICROSCOPIC DESCRIPTION",
-      "span": [
-        726,
-        749
-      ],
+      "span": null,
       "codes": {}
     },
     "surgical_margins": {
       "value": "All negative",
+      "raw_value": "All negative",
       "unit": null,
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
@@ -161,6 +181,7 @@
     },
     "lymph_nodes_examined": {
       "value": "3",
+      "raw_value": "3",
       "unit": null,
       "state": "present",
       "evidence": "MICROSCOPIC DESCRIPTION",
@@ -172,6 +193,7 @@
     },
     "positive_lymph_nodes": {
       "value": "0",
+      "raw_value": "0",
       "unit": null,
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
@@ -183,6 +205,7 @@
     },
     "pathologic_t": {
       "value": "ypT1a",
+      "raw_value": "ypT1a",
       "unit": null,
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
@@ -190,10 +213,13 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "1229946007"
+      }
     },
     "pathologic_n": {
       "value": "ypN0",
+      "raw_value": "ypN0",
       "unit": null,
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
@@ -201,10 +227,13 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "1229953003"
+      }
     },
     "pathologic_m": {
       "value": "ypM0",
+      "raw_value": "ypM0",
       "unit": null,
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
@@ -212,10 +241,13 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "1229965004"
+      }
     },
     "biomarkers": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -224,6 +256,7 @@
     },
     "anticancer_medication": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,

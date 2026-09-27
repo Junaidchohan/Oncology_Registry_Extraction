@@ -1,7 +1,7 @@
 {
   "report_id": "report_003",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T03:07:16.748891+00:00",
+  "run_timestamp": "2026-09-27T05:31:16.701384+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,11 +9,12 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 199.361
+    "elapsed_sec": 1631.032
   },
   "fields": {
     "specimen": {
       "value": "Ct-guided core needle biopsy",
+      "raw_value": "CT-guided core needle biopsy",
       "unit": null,
       "state": "present",
       "evidence": "CT-guided core needle biopsy, right upper lobe, 3 cores each measuring approximately 1.5 x 0.1 cm.",
@@ -22,14 +23,18 @@
     },
     "procedure": {
       "value": "Ct-guided core needle biopsy",
+      "raw_value": "CT-guided core needle biopsy",
       "unit": null,
       "state": "present",
       "evidence": "CT-guided core needle biopsy, right upper lobe, 3 cores each measuring approximately 1.5 x 0.1 cm.",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "44578009"
+      }
     },
     "primary_tumor_site": {
       "value": "Right upper lobe",
+      "raw_value": "right upper lobe",
       "unit": null,
       "state": "present",
       "evidence": "Right upper lobe, CT-guided core needle biopsy",
@@ -37,10 +42,13 @@
         1310,
         1356
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "72481006"
+      }
     },
     "laterality": {
       "value": "Right",
+      "raw_value": "right",
       "unit": null,
       "state": "present",
       "evidence": "Right upper lobe, CT-guided core needle biopsy",
@@ -48,18 +56,24 @@
         1310,
         1356
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "73056007"
+      }
     },
     "histological_type": {
       "value": "Pulmonary adenocarcinoma",
+      "raw_value": "pulmonary adenocarcinoma",
       "unit": null,
       "state": "present",
       "evidence": "Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns with focal mucin production, consistent with pulmonary adenocarcinoma.",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "254637007"
+      }
     },
     "tumor_behavior": {
       "value": "Malignant",
+      "raw_value": "malignant",
       "unit": null,
       "state": "present",
       "evidence": "Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns with focal mucin production, consistent with pulmonary adenocarcinoma.",
@@ -68,6 +82,7 @@
     },
     "tumor_grade": {
       "value": "Nottingham Grade 2 (moderately differentiated)",
+      "raw_value": "moderately differentiated",
       "unit": null,
       "state": "present",
       "evidence": "Pulmonary adenocarcinoma, moderately differentiated",
@@ -81,6 +96,7 @@
     },
     "tumor_size": {
       "value": "3.1",
+      "raw_value": "3.1",
       "unit": "cm",
       "state": "present",
       "evidence": "CT chest revealed a 3.1 cm spiculated right upper lobe mass",
@@ -89,6 +105,7 @@
     },
     "tumor_focality": {
       "value": "Multifocal",
+      "raw_value": "multiple",
       "unit": null,
       "state": "present",
       "evidence": "PET scan showed FDG-avid lesion in the right upper lobe and multiple FDG-avid brain lesions",
@@ -97,14 +114,18 @@
     },
     "tumor_extension": {
       "value": "Infiltrative",
+      "raw_value": "infiltrative",
       "unit": null,
       "state": "present",
       "evidence": "Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns with focal mucin production, consistent with pulmonary adenocarcinoma.",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "416940007"
+      }
     },
     "lymphovascular_invasion": {
       "value": "Absent",
+      "raw_value": "absent",
       "unit": null,
       "state": "not_assessed",
       "evidence": null,
@@ -115,6 +136,7 @@
     },
     "perineural_invasion": {
       "value": "Absent",
+      "raw_value": "absent",
       "unit": null,
       "state": "not_assessed",
       "evidence": null,
@@ -123,6 +145,7 @@
     },
     "surgical_margins": {
       "value": "Negative",
+      "raw_value": "negative",
       "unit": null,
       "state": "not_applicable",
       "evidence": null,
@@ -131,6 +154,7 @@
     },
     "lymph_nodes_examined": {
       "value": "0",
+      "raw_value": "0",
       "unit": null,
       "state": "not_applicable",
       "evidence": null,
@@ -139,6 +163,7 @@
     },
     "positive_lymph_nodes": {
       "value": "0",
+      "raw_value": "0",
       "unit": null,
       "state": "not_applicable",
       "evidence": null,
@@ -147,6 +172,7 @@
     },
     "pathologic_t": {
       "value": "2",
+      "raw_value": "2",
       "unit": null,
       "state": "present",
       "evidence": "Clinical stage: cT2a",
@@ -154,26 +180,35 @@
         1511,
         1531
       ],
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "363346002"
+      }
     },
     "pathologic_n": {
       "value": "2",
+      "raw_value": "2",
       "unit": null,
       "state": "present",
       "evidence": "Clinical stage: cN2",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "363346002"
+      }
     },
     "pathologic_m": {
       "value": "1",
+      "raw_value": "1",
       "unit": null,
       "state": "present",
       "evidence": "Clinical stage: cM1b",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "363346001"
+      }
     },
     "biomarkers": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -182,6 +217,7 @@
     },
     "anticancer_medication": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
