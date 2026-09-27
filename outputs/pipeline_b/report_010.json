@@ -1,196 +1,183 @@
 {
-  "report_id": "report_010",
-  "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T12:00:46.835670+00:00",
-  "model_versions": {
-    "mode": "llm_retrieval_ollama",
-    "llm_model": "llama3.1:8b",
-    "llm_base": "http://localhost:11434/v1",
-    "faiss_index": "terminology/terminology_index.faiss",
-    "n_concepts": 85,
-    "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 386.143
-  },
-  "fields": {
-    "specimen": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+    "report_id": "report_010",
+    "pipeline": "pipeline_b_llm_retrieval",
+    "run_timestamp": "2026-09-27T12:00:46.835670+00:00",
+    "model_versions": {
+        "mode": "llm_retrieval_ollama",
+        "llm_model": "llama3.1:8b",
+        "llm_base": "http://localhost:11434/v1",
+        "faiss_index": "terminology/terminology_index.faiss",
+        "n_concepts": 85,
+        "grounding": "two_stage_llm_selection",
+        "elapsed_sec": 386.143
     },
-    "procedure": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "primary_tumor_site": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "laterality": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "histological_type": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_behavior": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_grade": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_size": {
-      "value": "18",
-      "raw_value": "18",
-      "unit": "mm",
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_focality": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "tumor_extension": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "lymphovascular_invasion": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "positive_lymph_nodes": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_t": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_n": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_m": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "biomarkers": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "anticancer_medication": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+    "fields": {
+        "specimen": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "procedure": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "primary_tumor_site": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "laterality": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "histological_type": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_behavior": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "tumor_grade": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {},
+            "lesion_id": null
+        },
+        "tumor_size": {
+            "value": "18",
+            "raw_value": "18",
+            "unit": "mm",
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {},
+            "lesion_id": null
+        },
+        "tumor_focality": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {},
+            "lesion_id": null
+        },
+        "tumor_extension": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "lymphovascular_invasion": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "perineural_invasion": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "surgical_margins": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "lymph_nodes_examined": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "positive_lymph_nodes": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_t": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_n": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_m": {
+            "value": null,
+            "raw_value": null,
+            "unit": null,
+            "state": "not_mentioned",
+            "evidence": null,
+            "span": null,
+            "codes": {}
+        },
+        "biomarkers": [],
+        "anticancer_medication": []
     }
-  }
 }

@@ -1,242 +1,229 @@
 {
-  "report_id": "report_002",
-  "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T09:05:24.986289+00:00",
-  "model_versions": {
-    "mode": "llm_retrieval_ollama",
-    "llm_model": "llama3.1:8b",
-    "llm_base": "http://localhost:11434/v1",
-    "faiss_index": "terminology/terminology_index.faiss",
-    "n_concepts": 85,
-    "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 1378.708
-  },
-  "fields": {
-    "specimen": {
-      "value": "Sigmoid colectomy",
-      "raw_value": "Sigmoid colectomy specimen",
-      "unit": null,
-      "state": "present",
-      "evidence": "Received: Sigmoid colectomy specimen, 28 cm in length.",
-      "span": [
-        226,
-        280
-      ],
-      "codes": {}
+    "report_id": "report_002",
+    "pipeline": "pipeline_b_llm_retrieval",
+    "run_timestamp": "2026-09-27T09:05:24.986289+00:00",
+    "model_versions": {
+        "mode": "llm_retrieval_ollama",
+        "llm_model": "llama3.1:8b",
+        "llm_base": "http://localhost:11434/v1",
+        "faiss_index": "terminology/terminology_index.faiss",
+        "n_concepts": 85,
+        "grounding": "two_stage_llm_selection",
+        "elapsed_sec": 1378.708
     },
-    "procedure": {
-      "value": "Sigmoid colectomy",
-      "raw_value": "Sigmoid colectomy",
-      "unit": null,
-      "state": "present",
-      "evidence": "Referred for sigmoid colectomy.",
-      "span": [
-        174,
-        205
-      ],
-      "codes": {
-        "SNOMED_CT": "84631004"
-      }
-    },
-    "primary_tumor_site": {
-      "value": "Sigmoid colon",
-      "raw_value": "Sigmoid colon",
-      "unit": null,
-      "state": "present",
-      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy:",
-      "span": null,
-      "codes": {
-        "ICD_O_3": "C18.7"
-      }
-    },
-    "laterality": {
-      "value": "Left",
-      "raw_value": "left",
-      "unit": null,
-      "state": "present",
-      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy:",
-      "span": null,
-      "codes": {
-        "SNOMED_CT": "80248007"
-      }
-    },
-    "histological_type": {
-      "value": "Moderately differentiated adenocarcinoma",
-      "raw_value": "Moderately differentiated adenocarcinoma",
-      "unit": null,
-      "state": "present",
-      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy:",
-      "span": null,
-      "codes": {
-        "ICD_O_3": "8140/3"
-      }
-    },
-    "tumor_behavior": {
-      "value": "Invasive",
-      "raw_value": "invasive",
-      "unit": null,
-      "state": "present",
-      "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
-      "span": [
-        623,
-        699
-      ],
-      "codes": {
-        "SNOMED_CT": "413448000"
-      }
-    },
-    "tumor_grade": {
-      "value": "Nottingham Grade 2 (moderately differentiated)",
-      "raw_value": "Moderately differentiated (Grade 2)",
-      "unit": null,
-      "state": "present",
-      "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
-      "span": [
-        623,
-        699
-      ],
-      "codes": {
-        "SNOMED_CT": "369783002"
-      }
-    },
-    "tumor_size": {
-      "value": "4.5",
-      "raw_value": "4.5",
-      "unit": "cm",
-      "state": "present",
-      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - Tumor size: 4.5 cm",
-      "span": null,
-      "codes": {}
-    },
-    "tumor_focality": {
-      "value": "Single lesion",
-      "raw_value": "single",
-      "unit": null,
-      "state": "present",
-      "evidence": "An ulcerated, fungating tumor measuring 4.5 x 3.8 x 1.2 cm is identified",
-      "span": null,
-      "codes": {}
-    },
-    "tumor_extension": {
-      "value": "Through muscularis propria into pericolorectal fat",
-      "raw_value": "through muscularis propria into pericolorectal fat",
-      "unit": null,
-      "state": "present",
-      "evidence": "Invasion: through muscularis propria into pericolorectal fat (pT3)",
-      "span": [
-        1547,
-        1613
-      ],
-      "codes": {
-        "SNOMED_CT": "418414003"
-      }
-    },
-    "lymphovascular_invasion": {
-      "value": "Present",
-      "raw_value": "present",
-      "unit": null,
-      "state": "present",
-      "evidence": "Lymphovascular invasion is present.",
-      "span": [
-        813,
-        848
-      ],
-      "codes": {
-        "SNOMED_CT": "245294001"
-      }
-    },
-    "perineural_invasion": {
-      "value": "Present",
-      "raw_value": "present",
-      "unit": null,
-      "state": "present",
-      "evidence": "Perineural invasion is identified in 2 foci.",
-      "span": [
-        849,
-        893
-      ],
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "Negative",
-      "raw_value": "negative",
-      "unit": null,
-      "state": "present",
-      "evidence": "Proximal and distal resection margins are free of tumor (proximal 22 cm, distal 8 cm)",
-      "span": null,
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "24",
-      "raw_value": "24",
-      "unit": null,
-      "state": "present",
-      "evidence": "Of 24 lymph nodes examined",
-      "span": null,
-      "codes": {}
-    },
-    "positive_lymph_nodes": {
-      "value": "3",
-      "raw_value": "3",
-      "unit": null,
-      "state": "present",
-      "evidence": "Of 24 lymph nodes examined, 3 are positive for metastatic adenocarcinoma (pN1b)",
-      "span": null,
-      "codes": {}
-    },
-    "pathologic_t": {
-      "value": "pT3",
-      "raw_value": "pT3",
-      "unit": null,
-      "state": "present",
-      "evidence": "Invasion: through muscularis propria into pericolorectal fat (pT3)",
-      "span": [
-        1547,
-        1613
-      ],
-      "codes": {
-        "SNOMED_CT": "1229951001"
-      }
-    },
-    "pathologic_n": {
-      "value": "pN1b",
-      "raw_value": "pN1b",
-      "unit": null,
-      "state": "present",
-      "evidence": "Of 24 lymph nodes examined, 3 are positive for metastatic adenocarcinoma (pN1b)",
-      "span": null,
-      "codes": {
-        "SNOMED_CT": "1229962001"
-      }
-    },
-    "pathologic_m": {
-      "value": "pM0",
-      "raw_value": "pM0",
-      "unit": null,
-      "state": "present",
-      "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - No distant metastasis",
-      "span": null,
-      "codes": {
-        "SNOMED_CT": "1229965004"
-      }
-    },
-    "biomarkers": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "anticancer_medication": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+    "fields": {
+        "specimen": {
+            "value": "Sigmoid colectomy",
+            "raw_value": "Sigmoid colectomy specimen",
+            "unit": null,
+            "state": "present",
+            "evidence": "Received: Sigmoid colectomy specimen, 28 cm in length.",
+            "span": [
+                226,
+                280
+            ],
+            "codes": {}
+        },
+        "procedure": {
+            "value": "Sigmoid colectomy",
+            "raw_value": "Sigmoid colectomy",
+            "unit": null,
+            "state": "present",
+            "evidence": "Referred for sigmoid colectomy.",
+            "span": [
+                174,
+                205
+            ],
+            "codes": {
+                "SNOMED_CT": "84631004"
+            }
+        },
+        "primary_tumor_site": {
+            "value": "Sigmoid colon",
+            "raw_value": "Sigmoid colon",
+            "unit": null,
+            "state": "present",
+            "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy:",
+            "span": null,
+            "codes": {
+                "ICD_O_3": "C18.7"
+            }
+        },
+        "laterality": {
+            "value": "Left",
+            "raw_value": "left",
+            "unit": null,
+            "state": "present",
+            "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy:",
+            "span": null,
+            "codes": {
+                "SNOMED_CT": "80248007"
+            }
+        },
+        "histological_type": {
+            "value": "Moderately differentiated adenocarcinoma",
+            "raw_value": "Moderately differentiated adenocarcinoma",
+            "unit": null,
+            "state": "present",
+            "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy:",
+            "span": null,
+            "codes": {
+                "ICD_O_3": "8140/3"
+            }
+        },
+        "tumor_behavior": {
+            "value": "Invasive",
+            "raw_value": "invasive",
+            "unit": null,
+            "state": "present",
+            "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
+            "span": [
+                623,
+                699
+            ],
+            "codes": {
+                "SNOMED_CT": "413448000"
+            }
+        },
+        "tumor_grade": {
+            "value": "Nottingham Grade 2 (moderately differentiated)",
+            "raw_value": "Moderately differentiated (Grade 2)",
+            "unit": null,
+            "state": "present",
+            "evidence": "Sections show moderately differentiated (Grade 2) colorectal adenocarcinoma.",
+            "span": [
+                623,
+                699
+            ],
+            "codes": {
+                "SNOMED_CT": "369783002"
+            },
+            "lesion_id": null
+        },
+        "tumor_size": {
+            "value": "4.5",
+            "raw_value": "4.5",
+            "unit": "cm",
+            "state": "present",
+            "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - Tumor size: 4.5 cm",
+            "span": null,
+            "codes": {},
+            "lesion_id": null
+        },
+        "tumor_focality": {
+            "value": "Single lesion",
+            "raw_value": "single",
+            "unit": null,
+            "state": "present",
+            "evidence": "An ulcerated, fungating tumor measuring 4.5 x 3.8 x 1.2 cm is identified",
+            "span": null,
+            "codes": {},
+            "lesion_id": null
+        },
+        "tumor_extension": {
+            "value": "Through muscularis propria into pericolorectal fat",
+            "raw_value": "through muscularis propria into pericolorectal fat",
+            "unit": null,
+            "state": "present",
+            "evidence": "Invasion: through muscularis propria into pericolorectal fat (pT3)",
+            "span": [
+                1547,
+                1613
+            ],
+            "codes": {
+                "SNOMED_CT": "418414003"
+            }
+        },
+        "lymphovascular_invasion": {
+            "value": "Present",
+            "raw_value": "present",
+            "unit": null,
+            "state": "present",
+            "evidence": "Lymphovascular invasion is present.",
+            "span": [
+                813,
+                848
+            ],
+            "codes": {
+                "SNOMED_CT": "245294001"
+            }
+        },
+        "perineural_invasion": {
+            "value": "Present",
+            "raw_value": "present",
+            "unit": null,
+            "state": "present",
+            "evidence": "Perineural invasion is identified in 2 foci.",
+            "span": [
+                849,
+                893
+            ],
+            "codes": {}
+        },
+        "surgical_margins": {
+            "value": "Negative",
+            "raw_value": "negative",
+            "unit": null,
+            "state": "present",
+            "evidence": "Proximal and distal resection margins are free of tumor (proximal 22 cm, distal 8 cm)",
+            "span": null,
+            "codes": {}
+        },
+        "lymph_nodes_examined": {
+            "value": "24",
+            "raw_value": "24",
+            "unit": null,
+            "state": "present",
+            "evidence": "Of 24 lymph nodes examined",
+            "span": null,
+            "codes": {}
+        },
+        "positive_lymph_nodes": {
+            "value": "3",
+            "raw_value": "3",
+            "unit": null,
+            "state": "present",
+            "evidence": "Of 24 lymph nodes examined, 3 are positive for metastatic adenocarcinoma (pN1b)",
+            "span": null,
+            "codes": {}
+        },
+        "pathologic_t": {
+            "value": "pT3",
+            "raw_value": "pT3",
+            "unit": null,
+            "state": "present",
+            "evidence": "Invasion: through muscularis propria into pericolorectal fat (pT3)",
+            "span": [
+                1547,
+                1613
+            ],
+            "codes": {
+                "SNOMED_CT": "1229951001"
+            }
+        },
+        "pathologic_n": {
+            "value": "pN1b",
+            "raw_value": "pN1b",
+            "unit": null,
+            "state": "present",
+            "evidence": "Of 24 lymph nodes examined, 3 are positive for metastatic adenocarcinoma (pN1b)",
+            "span": null,
+            "codes": {
+                "SNOMED_CT": "1229962001"
+            }
+        },
+        "pathologic_m": {
+            "value": "pM0",
+            "raw_value": "pM0",
+            "unit": null,
+            "state": "present",
+            "evidence": "FINAL DIAGNOSIS: Sigmoid colon, sigmoid colectomy: - No distant metastasis",
+            "span": null,
+            "codes": {
+                "SNOMED_CT": "1229965004"
+            }
+        },
+        "biomarkers": [],
+        "anticancer_medication": []
     }
-  }
 }

@@ -140,3 +140,100 @@ Pipeline A was expected to be more reliable because it uses a domain-specific NL
 ## Relation evaluation
 
 Relation-level evaluation is implemented for three explicit relation types: has_lesion (linking measurements to specific lesion IDs), has_assay (linking biomarker results to assays), and has_stage_system (linking pathologic stage values to the AJCC staging system). The Relation F1 row in the comparison table reports the exact triple-matching F1 score for these relations.
+
+## Error analysis: five discrepancies
+
+### Discrepancy 1 - Extraction boundary limitation
+Source excerpt:
+"58-year-old female with a palpable left breast mass, 2."
+
+Gold value:
+"Left breast, upper outer quadrant" (report_001)
+
+Pipeline A output:
+"breast"
+
+Pipeline B output:
+"Left breast"
+
+Root cause:
+extraction (Classical NLP and LLM both stopped at the base concept and missed spatial qualifiers).
+
+Corrective action:
+Further prompt engineering or NLP rules to force extraction of the full quadrant/subsite text.
+
+### Discrepancy 2 - Schema failure on complex fields
+Source excerpt:
+"ER positive (Allred score 8/8, >95% cells, 3+ intensity)"
+
+Gold value:
+[{"assay": "ER", "result": "Positive (Allred 8/8, >95%, 3+)", "lesion_id": "lesion_1"}] (report_001)
+
+Pipeline A output:
+[]
+
+Pipeline B output:
+[]
+
+Root cause:
+schema failure (Both pipelines extracted to er_status and pr_status directly but failed to map into the unified biomarkers array format).
+
+Corrective action:
+Update the post-processing pipeline mapping to consolidate individual biomarkers into the standardized array format.
+
+### Discrepancy 3 - Incorrect concept selection
+Source excerpt:
+"Tumor invades through the muscularis propria into the pericolorectal tissues."
+
+Gold value:
+"Sigmoid colon" (report_002)
+
+Pipeline A output:
+"muscularis propria"
+
+Pipeline B output:
+"Sigmoid colon"
+
+Root cause:
+incorrect concept selection (Pipeline A model mistakenly extracted a local anatomical tissue layer rather than the primary site organ).
+
+Corrective action:
+Incorporate surrounding context bounding in classical NLP to enforce organ-level primary site constraints rather than matching tissue layers.
+
+### Discrepancy 4 - Unsupported inference on focality
+Source excerpt:
+"Brain MRI demonstrates multiple enhancing lesions consistent with metastases."
+
+Gold value:
+"Single primary; multiple brain metastases" (report_003)
+
+Pipeline A output:
+"Single"
+
+Pipeline B output:
+"Multifocal"
+
+Root cause:
+unsupported inference (The LLM conflated the count of brain metastases with the focality of the primary tumor).
+
+Corrective action:
+Explicitly instruct the LLM in the prompt to evaluate focality strictly for the primary tumor and ignore metastatic sites.
+
+### Discrepancy 5 - Descriptive sentence truncation
+Source excerpt:
+"All surgical margins are negative for invasive carcinoma and DCIS. The closest margin is the deep margin, 2.0 cm from the tumor."
+
+Gold value:
+"Negative (closest margin 2.0 cm, deep)" (report_001)
+
+Pipeline A output:
+"negative"
+
+Pipeline B output:
+"Negative"
+
+Root cause:
+extraction (Both pipelines extracted only the base classification concept rather than the full descriptive sentence required by the gold standard).
+
+Corrective action:
+Narrow the LLM flow to extract the verbatim sentence first, then regex extract the status while retaining the sentence.

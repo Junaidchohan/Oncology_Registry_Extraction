@@ -174,27 +174,35 @@ def evaluate(pipeline_dir: Path, gold_dir: Path, pipeline_name: str) -> dict:
                 if not (a and b and c and d):
                     m["unsupported_field"] += 1
 
-        # Relations (has_lesion, has_assay, has_stage_system)
+        # Relations (tumor_size_to_lesion, biomarker_result_to_assay, stage_to_tumor)
         def get_g_rels():
             rels = []
+            if g_fields.get("tumor_size", {}).get("lesion_id"):
+                rels.append(("tumor_size_to_lesion", g_fields["tumor_size"]["lesion_id"], "tumor_size"))
             for b in g_fields.get("biomarkers", []):
-                if "lesion_id" in b: rels.append(("has_lesion", b.get("assay", ""), b["lesion_id"]))
-                if "assay" in b: rels.append(("has_assay", b.get("result", ""), b["assay"]))
-            if g_fields.get("pathologic_t", {}).get("value"): rels.append(("has_stage_system", "pathologic_t", "AJCC"))
+                if "assay" in b: rels.append(("biomarker_result_to_assay", b.get("result", ""), b["assay"]))
+            # stage_to_tumor
+            for t in ["pathologic_t", "pathologic_n", "pathologic_m"]:
+                if g_fields.get(t, {}).get("value"):
+                    # usually lesion_1
+                    rels.append(("stage_to_tumor", t, "lesion_1"))
             return set(rels)
             
         def get_p_rels():
             rels = []
+            if p_fields.get("tumor_size", {}).get("lesion_id"):
+                rels.append(("tumor_size_to_lesion", p_fields["tumor_size"]["lesion_id"], "tumor_size"))
             for b in p_fields.get("biomarkers", []):
-                if "lesion_id" in b: rels.append(("has_lesion", b.get("assay", ""), b["lesion_id"]))
-                if "assay" in b: rels.append(("has_assay", b.get("result", ""), b["assay"]))
-            if p_fields.get("pathologic_t", {}).get("value"): rels.append(("has_stage_system", "pathologic_t", "AJCC"))
+                if "assay" in b: rels.append(("biomarker_result_to_assay", b.get("result", ""), b["assay"]))
+            for t in ["pathologic_t", "pathologic_n", "pathologic_m"]:
+                if p_fields.get(t, {}).get("value"):
+                    rels.append(("stage_to_tumor", t, "lesion_1"))
             return set(rels)
 
         g_rels = get_g_rels()
         p_rels = get_p_rels()
 
-        for rtype in ["has_lesion", "has_assay", "has_stage_system"]:
+        for rtype in ["tumor_size_to_lesion", "biomarker_result_to_assay", "stage_to_tumor"]:
             g_r = {r for r in g_rels if r[0] == rtype}
             p_r = {r for r in p_rels if r[0] == rtype}
             tp = len(g_r & p_r)
@@ -244,11 +252,19 @@ def evaluate(pipeline_dir: Path, gold_dir: Path, pipeline_name: str) -> dict:
     except: pass
     mean_cost = round(sum(costs) / n, 6) if costs else 0.0
 
+    print(f"\n--- {pipeline_name} ---")
+    for r, v in rel_m.items():
+        tp, fp, fn = v['tp'], v['fp'], v['fn']
+        p = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+        r_ = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+        f1 = 2 * p * r_ / (p + r_) if (p + r_) > 0 else 0.0
+        print(f"{r} | {tp+fn} | {tp+fp} | {tp} | {fp} | {fn} | {p:.1%} | {r_:.1%} | {f1:.1%}")
+    
     return {
         "pipeline": pipeline_name,
         "n_reports": n,
         "entity_ner": {"precision": ner_p, "recall": ner_r, "f1": ner_f1, "tp": m["ner_tp"], "fp": m["ner_fp"], "fn": m["ner_fn"]},
-        "rel": {"precision": rel_p, "recall": rel_r, "f1": rel_f1, "tp": m["rel_tp"], "fp": m["rel_fp"], "fn": m["rel_fn"]},
+        "rel": {"precision": rel_p, "recall": rel_r, "f1": rel_f1, "tp": m["rel_tp"], "fp": m["rel_fp"], "fn": m["rel_fn"], "per_type": rel_m},
         "field_value_accuracy": {"exact": val_acc, "match_count": m["value_match"], "total": m["total_values"]},
         "assertion_accuracy": {"accuracy": state_acc, "match_count": m["state_match"], "total": m["total_states"]},
         "terminology": {"retrieval_acc": ret_acc, "selection_acc": sel_acc, "ret_match": m["term_ret_match"], "sel_match": m["term_sel_match"], "total": m["term_gold_codes"]},

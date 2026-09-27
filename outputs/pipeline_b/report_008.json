@@ -1,261 +1,248 @@
 {
-  "report_id": "report_008",
-  "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T11:39:04.205240+00:00",
-  "model_versions": {
-    "mode": "llm_retrieval_ollama",
-    "llm_model": "llama3.1:8b",
-    "llm_base": "http://localhost:11434/v1",
-    "faiss_index": "terminology/terminology_index.faiss",
-    "n_concepts": 85,
-    "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 1362.526
-  },
-  "fields": {
-    "specimen": {
-      "value": "Right hemicolectomy",
-      "raw_value": "Right hemicolectomy specimen",
-      "unit": null,
-      "state": "present",
-      "evidence": "Received: Right hemicolectomy specimen, 35 cm in length including terminal ileum (8 cm) and right colon (27 cm).",
-      "span": null,
-      "codes": {}
+    "report_id": "report_008",
+    "pipeline": "pipeline_b_llm_retrieval",
+    "run_timestamp": "2026-09-27T11:39:04.205240+00:00",
+    "model_versions": {
+        "mode": "llm_retrieval_ollama",
+        "llm_model": "llama3.1:8b",
+        "llm_base": "http://localhost:11434/v1",
+        "faiss_index": "terminology/terminology_index.faiss",
+        "n_concepts": 85,
+        "grounding": "two_stage_llm_selection",
+        "elapsed_sec": 1362.526
     },
-    "procedure": {
-      "value": "Right hemicolectomy",
-      "raw_value": "Right hemicolectomy",
-      "unit": null,
-      "state": "present",
-      "evidence": "Referred urgently for right hemicolectomy due to near-obstructing lesion.",
-      "span": [
-        226,
-        299
-      ],
-      "codes": {
-        "SNOMED_CT": "173171007"
-      }
-    },
-    "primary_tumor_site": {
-      "value": "Right cecum",
-      "raw_value": "Cecum",
-      "unit": null,
-      "state": "present",
-      "evidence": "Cecum, right hemicolectomy:",
-      "span": [
-        1592,
-        1619
-      ],
-      "codes": {
-        "ICD_O_3": "C18.0"
-      }
-    },
-    "laterality": {
-      "value": "Right",
-      "raw_value": "Right",
-      "unit": null,
-      "state": "present",
-      "evidence": "Right hemicolectomy specimen",
-      "span": [
-        330,
-        358
-      ],
-      "codes": {
-        "SNOMED_CT": "73056007"
-      }
-    },
-    "histological_type": {
-      "value": "Moderately to poorly differentiated adenocarcinoma",
-      "raw_value": "Moderately to poorly differentiated adenocarcinoma",
-      "unit": null,
-      "state": "present",
-      "evidence": "Sections show moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma.",
-      "span": [
-        736,
-        831
-      ],
-      "codes": {
-        "ICD_O_3": "8140/3"
-      }
-    },
-    "tumor_behavior": {
-      "value": "Invasive",
-      "raw_value": "Invasive",
-      "unit": null,
-      "state": "present",
-      "evidence": "Tumor invades through the muscularis propria into the pericolorectal adipose tissue with a focus suspicious for involvement of the mesocolic fascia surface,",
-      "span": null,
-      "codes": {
-        "SNOMED_CT": "413448000"
-      }
-    },
-    "tumor_grade": {
-      "value": "Nottingham Grade 2-3",
-      "raw_value": "Nottingham Grade 2-3",
-      "unit": null,
-      "state": "present",
-      "evidence": "Sections show moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma.",
-      "span": [
-        736,
-        831
-      ],
-      "codes": {
-        "SNOMED_CT": "369783002"
-      }
-    },
-    "tumor_size": {
-      "value": "5.5",
-      "raw_value": "5.5",
-      "unit": "cm",
-      "state": "present",
-      "evidence": "Tumor size: 5.5 cm",
-      "span": [
-        1687,
-        1705
-      ],
-      "codes": {}
-    },
-    "tumor_focality": {
-      "value": "Single lesion",
-      "raw_value": "Single",
-      "unit": null,
-      "state": "present",
-      "evidence": "A fungating, partially obstructing tumor measuring 5.5 x 4.8 x 2.1 cm is identified at the cecum,",
-      "span": null,
-      "codes": {}
-    },
-    "tumor_extension": {
-      "value": "Pt3",
-      "raw_value": "pT3",
-      "unit": null,
-      "state": "present",
-      "evidence": "Invasion: pT3 (pericolorectal fat involved; serosal involvement uncertain/indeterminate)",
-      "span": [
-        1708,
-        1796
-      ],
-      "codes": {
-        "SNOMED_CT": "1229951001"
-      }
-    },
-    "lymphovascular_invasion": {
-      "value": "Indeterminate",
-      "raw_value": "Indeterminate",
-      "unit": null,
-      "state": "ambiguous",
-      "evidence": "Lymphovascular invasion: indeterminate (suspicious but not confirmed)",
-      "span": [
-        1799,
-        1868
-      ],
-      "codes": {}
-    },
-    "perineural_invasion": {
-      "value": "Absent",
-      "raw_value": "Absent",
-      "unit": null,
-      "state": "present",
-      "evidence": "Perineural invasion: absent",
-      "span": [
-        1871,
-        1898
-      ],
-      "codes": {}
-    },
-    "surgical_margins": {
-      "value": "Negative",
-      "raw_value": "Negative",
-      "unit": null,
-      "state": "present",
-      "evidence": "Proximal and distal margins: negative",
-      "span": [
-        1231,
-        1268
-      ],
-      "codes": {}
-    },
-    "lymph_nodes_examined": {
-      "value": "12",
-      "raw_value": "12",
-      "unit": null,
-      "state": "present",
-      "evidence": "Of 12 lymph nodes examined:",
-      "span": [
-        1317,
-        1344
-      ],
-      "codes": {}
-    },
-    "positive_lymph_nodes": {
-      "value": "5",
-      "raw_value": "5",
-      "unit": null,
-      "state": "present",
-      "evidence": "5 are positive for metastatic adenocarcinoma with extranodal extension.",
-      "span": [
-        1345,
-        1416
-      ],
-      "codes": {}
-    },
-    "pathologic_t": {
-      "value": "pT3",
-      "raw_value": "pT3",
-      "unit": null,
-      "state": "present",
-      "evidence": "Invasion: pT3 (pericolorectal fat involved; serosal involvement uncertain/indeterminate)",
-      "span": [
-        1708,
-        1796
-      ],
-      "codes": {
-        "SNOMED_CT": "1229951001"
-      }
-    },
-    "pathologic_n": {
-      "value": "pN2a",
-      "raw_value": "pN2a",
-      "unit": null,
-      "state": "present",
-      "evidence": "Lymph nodes: 5/12 positive with extranodal extension (pN2a)",
-      "span": [
-        1935,
-        1994
-      ],
-      "codes": {
-        "SNOMED_CT": "1229963006"
-      }
-    },
-    "pathologic_m": {
-      "value": "pMx",
-      "raw_value": "pMx",
-      "unit": null,
-      "state": "not_assessed",
-      "evidence": "Distant metastasis: not assessed (no pre-op chest CT; tissue-based M stage unknown)",
-      "span": [
-        1997,
-        2080
-      ],
-      "codes": {
-        "SNOMED_CT": "1229966003"
-      }
-    },
-    "biomarkers": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
-    },
-    "anticancer_medication": {
-      "value": null,
-      "raw_value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+    "fields": {
+        "specimen": {
+            "value": "Right hemicolectomy",
+            "raw_value": "Right hemicolectomy specimen",
+            "unit": null,
+            "state": "present",
+            "evidence": "Received: Right hemicolectomy specimen, 35 cm in length including terminal ileum (8 cm) and right colon (27 cm).",
+            "span": null,
+            "codes": {}
+        },
+        "procedure": {
+            "value": "Right hemicolectomy",
+            "raw_value": "Right hemicolectomy",
+            "unit": null,
+            "state": "present",
+            "evidence": "Referred urgently for right hemicolectomy due to near-obstructing lesion.",
+            "span": [
+                226,
+                299
+            ],
+            "codes": {
+                "SNOMED_CT": "173171007"
+            }
+        },
+        "primary_tumor_site": {
+            "value": "Right cecum",
+            "raw_value": "Cecum",
+            "unit": null,
+            "state": "present",
+            "evidence": "Cecum, right hemicolectomy:",
+            "span": [
+                1592,
+                1619
+            ],
+            "codes": {
+                "ICD_O_3": "C18.0"
+            }
+        },
+        "laterality": {
+            "value": "Right",
+            "raw_value": "Right",
+            "unit": null,
+            "state": "present",
+            "evidence": "Right hemicolectomy specimen",
+            "span": [
+                330,
+                358
+            ],
+            "codes": {
+                "SNOMED_CT": "73056007"
+            }
+        },
+        "histological_type": {
+            "value": "Moderately to poorly differentiated adenocarcinoma",
+            "raw_value": "Moderately to poorly differentiated adenocarcinoma",
+            "unit": null,
+            "state": "present",
+            "evidence": "Sections show moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma.",
+            "span": [
+                736,
+                831
+            ],
+            "codes": {
+                "ICD_O_3": "8140/3"
+            }
+        },
+        "tumor_behavior": {
+            "value": "Invasive",
+            "raw_value": "Invasive",
+            "unit": null,
+            "state": "present",
+            "evidence": "Tumor invades through the muscularis propria into the pericolorectal adipose tissue with a focus suspicious for involvement of the mesocolic fascia surface,",
+            "span": null,
+            "codes": {
+                "SNOMED_CT": "413448000"
+            }
+        },
+        "tumor_grade": {
+            "value": "Nottingham Grade 2-3",
+            "raw_value": "Nottingham Grade 2-3",
+            "unit": null,
+            "state": "present",
+            "evidence": "Sections show moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma.",
+            "span": [
+                736,
+                831
+            ],
+            "codes": {
+                "SNOMED_CT": "369783002"
+            },
+            "lesion_id": null
+        },
+        "tumor_size": {
+            "value": "5.5",
+            "raw_value": "5.5",
+            "unit": "cm",
+            "state": "present",
+            "evidence": "Tumor size: 5.5 cm",
+            "span": [
+                1687,
+                1705
+            ],
+            "codes": {},
+            "lesion_id": null
+        },
+        "tumor_focality": {
+            "value": "Single lesion",
+            "raw_value": "Single",
+            "unit": null,
+            "state": "present",
+            "evidence": "A fungating, partially obstructing tumor measuring 5.5 x 4.8 x 2.1 cm is identified at the cecum,",
+            "span": null,
+            "codes": {},
+            "lesion_id": null
+        },
+        "tumor_extension": {
+            "value": "Pt3",
+            "raw_value": "pT3",
+            "unit": null,
+            "state": "present",
+            "evidence": "Invasion: pT3 (pericolorectal fat involved; serosal involvement uncertain/indeterminate)",
+            "span": [
+                1708,
+                1796
+            ],
+            "codes": {
+                "SNOMED_CT": "1229951001"
+            }
+        },
+        "lymphovascular_invasion": {
+            "value": "Indeterminate",
+            "raw_value": "Indeterminate",
+            "unit": null,
+            "state": "ambiguous",
+            "evidence": "Lymphovascular invasion: indeterminate (suspicious but not confirmed)",
+            "span": [
+                1799,
+                1868
+            ],
+            "codes": {}
+        },
+        "perineural_invasion": {
+            "value": "Absent",
+            "raw_value": "Absent",
+            "unit": null,
+            "state": "present",
+            "evidence": "Perineural invasion: absent",
+            "span": [
+                1871,
+                1898
+            ],
+            "codes": {}
+        },
+        "surgical_margins": {
+            "value": "Negative",
+            "raw_value": "Negative",
+            "unit": null,
+            "state": "present",
+            "evidence": "Proximal and distal margins: negative",
+            "span": [
+                1231,
+                1268
+            ],
+            "codes": {}
+        },
+        "lymph_nodes_examined": {
+            "value": "12",
+            "raw_value": "12",
+            "unit": null,
+            "state": "present",
+            "evidence": "Of 12 lymph nodes examined:",
+            "span": [
+                1317,
+                1344
+            ],
+            "codes": {}
+        },
+        "positive_lymph_nodes": {
+            "value": "5",
+            "raw_value": "5",
+            "unit": null,
+            "state": "present",
+            "evidence": "5 are positive for metastatic adenocarcinoma with extranodal extension.",
+            "span": [
+                1345,
+                1416
+            ],
+            "codes": {}
+        },
+        "pathologic_t": {
+            "value": "pT3",
+            "raw_value": "pT3",
+            "unit": null,
+            "state": "present",
+            "evidence": "Invasion: pT3 (pericolorectal fat involved; serosal involvement uncertain/indeterminate)",
+            "span": [
+                1708,
+                1796
+            ],
+            "codes": {
+                "SNOMED_CT": "1229951001"
+            }
+        },
+        "pathologic_n": {
+            "value": "pN2a",
+            "raw_value": "pN2a",
+            "unit": null,
+            "state": "present",
+            "evidence": "Lymph nodes: 5/12 positive with extranodal extension (pN2a)",
+            "span": [
+                1935,
+                1994
+            ],
+            "codes": {
+                "SNOMED_CT": "1229963006"
+            }
+        },
+        "pathologic_m": {
+            "value": "pMx",
+            "raw_value": "pMx",
+            "unit": null,
+            "state": "not_assessed",
+            "evidence": "Distant metastasis: not assessed (no pre-op chest CT; tissue-based M stage unknown)",
+            "span": [
+                1997,
+                2080
+            ],
+            "codes": {
+                "SNOMED_CT": "1229966003"
+            }
+        },
+        "biomarkers": [],
+        "anticancer_medication": []
     }
-  }
 }

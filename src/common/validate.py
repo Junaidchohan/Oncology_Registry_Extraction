@@ -178,6 +178,16 @@ def compute_agreement(
         pred_f = pred_fields.get(fname, {})
         gold_f = gold_fields.get(fname, {})
 
+        if isinstance(pred_f, list) and len(pred_f) > 0:
+            pred_f = pred_f[0]
+        elif isinstance(pred_f, list):
+            pred_f = {}
+
+        if isinstance(gold_f, list) and len(gold_f) > 0:
+            gold_f = gold_f[0]
+        elif isinstance(gold_f, list):
+            gold_f = {}
+
         pred_state = pred_f.get("state", "not_mentioned")
         gold_state = gold_f.get("state", "not_mentioned")
 

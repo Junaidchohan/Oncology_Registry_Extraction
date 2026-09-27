@@ -136,6 +136,7 @@ _FIELD_SCHEMA: Dict[str, Any] = {
             ]
         },
         "codes": {"type": "object", "additionalProperties": {"type": "string"}},
+        "lesion_id": {"type": ["string", "null"]},
     },
 }
 

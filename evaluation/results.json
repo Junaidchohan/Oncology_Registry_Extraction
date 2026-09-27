@@ -11,12 +11,29 @@
       "fn": 45
     },
     "rel": {
-      "precision": 0.6667,
-      "recall": 0.0435,
-      "f1": 0.0816,
-      "tp": 4,
+      "precision": 0.8,
+      "recall": 0.1212,
+      "f1": 0.2105,
+      "tp": 8,
       "fp": 2,
-      "fn": 88
+      "fn": 58,
+      "per_type": {
+        "tumor_size_to_lesion": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 10
+        },
+        "biomarker_result_to_assay": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 44
+        },
+        "stage_to_tumor": {
+          "tp": 8,
+          "fp": 2,
+          "fn": 4
+        }
+      }
     },
     "field_value_accuracy": {
       "exact": 0.46111111111111114,
@@ -24,8 +41,8 @@
       "total": 180
     },
     "assertion_accuracy": {
-      "accuracy": 0.5333333333333333,
-      "match_count": 96,
+      "accuracy": 0.7,
+      "match_count": 126,
       "total": 180
     },
     "terminology": {
@@ -41,7 +58,7 @@
       "unsupported_rate": 0.6814159292035398,
       "unsup_count": 77,
       "total_populated": 113,
-      "null_span_count": 67
+      "null_span_count": 59
     },
     "operations": {
       "mean_runtime_sec": 32.85,
@@ -167,17 +184,20 @@
       "specimen": {
         "total": 10,
         "value_match": 10,
-        "total_states": 10
+        "total_states": 10,
+        "state_match": 10
       },
       "tumor_behavior": {
         "total": 10,
         "value_match": 10,
-        "total_states": 10
+        "total_states": 10,
+        "state_match": 10
       },
       "tumor_extension": {
         "total": 10,
         "value_match": 10,
-        "total_states": 10
+        "total_states": 10,
+        "state_match": 10
       }
     }
   },
@@ -194,11 +214,28 @@
     },
     "rel": {
       "precision": 0.4444,
-      "recall": 0.0435,
-      "f1": 0.0792,
-      "tp": 4,
-      "fp": 5,
-      "fn": 88
+      "recall": 0.1818,
+      "f1": 0.2581,
+      "tp": 12,
+      "fp": 15,
+      "fn": 54,
+      "per_type": {
+        "tumor_size_to_lesion": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 10
+        },
+        "biomarker_result_to_assay": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 44
+        },
+        "stage_to_tumor": {
+          "tp": 12,
+          "fp": 15,
+          "fn": 0
+        }
+      }
     },
     "field_value_accuracy": {
       "exact": 0.35555555555555557,
