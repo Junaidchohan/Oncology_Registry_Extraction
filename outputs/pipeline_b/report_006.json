@@ -1,7 +1,7 @@
 {
   "report_id": "report_006",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T06:48:02.593453+00:00",
+  "run_timestamp": "2026-09-27T10:48:10.748158+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,24 +9,24 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 1514.738
+    "elapsed_sec": 2015.207
   },
   "fields": {
     "specimen": {
       "value": "Left upper lobectomy",
-      "raw_value": "Left upper lobectomy specimen",
+      "raw_value": "Left upper lobectomy",
       "unit": null,
       "state": "present",
-      "evidence": "Received: Left upper lobectomy specimen weighing 290 g.",
+      "evidence": "Left upper lobectomy specimen weighing 290 g.",
       "span": [
-        327,
+        337,
         382
       ],
       "codes": {}
     },
     "procedure": {
-      "value": "Left upper lobectomy",
-      "raw_value": "Left upper lobectomy",
+      "value": "Lobectomy",
+      "raw_value": "Lobectomy",
       "unit": null,
       "state": "present",
       "evidence": "Referred for left upper lobectomy.",
@@ -39,12 +39,15 @@
       }
     },
     "primary_tumor_site": {
-      "value": "Left lung",
-      "raw_value": "Left lung",
+      "value": "Left lung, left upper lobe",
+      "raw_value": "Left lung, left upper lobe",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS: Left lung, left upper lobectomy:",
-      "span": null,
+      "evidence": "Left lung, left upper lobectomy:",
+      "span": [
+        1696,
+        1728
+      ],
       "codes": {
         "SNOMED_CT": "41224006"
       }
@@ -64,8 +67,8 @@
       }
     },
     "histological_type": {
-      "value": "Squamous cell carcinoma",
-      "raw_value": "Squamous cell carcinoma",
+      "value": "Poorly differentiated squamous cell carcinoma",
+      "raw_value": "Poorly differentiated squamous cell carcinoma",
       "unit": null,
       "state": "present",
       "evidence": "Primary left upper lobe lesion: Poorly differentiated squamous cell carcinoma (SCC), Nottingham equivalent Grade 3.",
@@ -85,7 +88,7 @@
     },
     "tumor_grade": {
       "value": "Nottingham Grade 3",
-      "raw_value": "3",
+      "raw_value": "Nottingham Grade 3",
       "unit": null,
       "state": "present",
       "evidence": "Primary left upper lobe lesion: Poorly differentiated squamous cell carcinoma (SCC), Nottingham equivalent Grade 3.",
@@ -99,7 +102,7 @@
       "raw_value": "3.5",
       "unit": "cm",
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS: Left lung, left upper lobectomy: - Lesion 1: Poorly differentiated squamous cell carcinoma, 3.5 cm,",
+      "evidence": "A firm, grey-white tumor measuring 3.5 x 3.2 x 3.0 cm is identified in the upper lobe, 2.5 cm from the bronchial margin.",
       "span": null,
       "codes": {}
     },
@@ -108,29 +111,29 @@
       "raw_value": "Unifocal",
       "unit": null,
       "state": "present",
-      "evidence": "A firm, grey-white tumor measuring 3.5 x 3.2 x 3.0 cm is identified in the upper lobe,",
-      "span": [
-        417,
-        503
-      ],
+      "evidence": "A firm, grey-white tumor measuring 3.5 x 3.2 x 3.0 cm is identified in the upper lobe, 2.5 cm from the bronchial margin.",
+      "span": null,
       "codes": {}
     },
     "tumor_extension": {
-      "value": "T3",
-      "raw_value": "T3",
+      "value": "Visceral pleura",
+      "raw_value": "Visceral pleura",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS: Left lung, left upper lobectomy: - Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
-      "span": null,
+      "evidence": "Visceral pleura appears involved by the primary tumor (pleural puckering noted).",
+      "span": [
+        701,
+        781
+      ],
       "codes": {
-        "SNOMED_CT": "1229951001"
+        "SNOMED_CT": "254645005"
       }
     },
     "lymphovascular_invasion": {
       "value": "Absent",
       "raw_value": "Absent",
       "unit": null,
-      "state": "negative",
+      "state": "present",
       "evidence": "No lymphovascular invasion identified.",
       "span": [
         961,
@@ -144,7 +147,7 @@
       "value": "Absent",
       "raw_value": "Absent",
       "unit": null,
-      "state": "negative",
+      "state": "present",
       "evidence": "Perineural invasion: absent.",
       "span": [
         1000,
@@ -189,19 +192,22 @@
       "codes": {}
     },
     "pathologic_t": {
-      "value": "3",
-      "raw_value": "3",
+      "value": "pT3",
+      "raw_value": "pT3",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS: Left lung, left upper lobectomy: - Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
-      "span": null,
+      "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
+      "span": [
+        2089,
+        2150
+      ],
       "codes": {
-        "SNOMED_CT": "363346003"
+        "SNOMED_CT": "1229951001"
       }
     },
     "pathologic_n": {
-      "value": "0",
-      "raw_value": "0",
+      "value": "pN0",
+      "raw_value": "pN0",
       "unit": null,
       "state": "present",
       "evidence": "Lymph nodes: 0/12 (pN0)",
@@ -210,18 +216,21 @@
         2034
       ],
       "codes": {
-        "SNOMED_CT": "109989006"
+        "SNOMED_CT": "1229953003"
       }
     },
     "pathologic_m": {
-      "value": "0",
-      "raw_value": "0",
+      "value": "pM0",
+      "raw_value": "pM0",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS: Left lung, left upper lobectomy: - No evidence of distant metastasis",
-      "span": null,
+      "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
+      "span": [
+        2089,
+        2150
+      ],
       "codes": {
-        "SNOMED_CT": "109989006"
+        "SNOMED_CT": "1229965004"
       }
     },
     "biomarkers": {

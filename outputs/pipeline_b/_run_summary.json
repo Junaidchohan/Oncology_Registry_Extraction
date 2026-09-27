@@ -3,54 +3,54 @@
   "llm_model": "llama3.1:8b",
   "llm_base": "http://localhost:11434/v1",
   "n_reports": 10,
-  "mean_runtime_sec": 1327.686,
-  "mean_fields_populated": 14.1,
-  "mean_fields_coded": 7.3,
+  "mean_runtime_sec": 1354.278,
+  "mean_fields_populated": 15.7,
+  "mean_fields_coded": 8.7,
   "per_report": [
     {
       "report_id": "report_001",
-      "fields_populated": 0,
-      "fields_coded": 0,
-      "grounding_accepted": 0,
-      "grounding_abstained": 0,
-      "grounding_rejected": 0,
-      "elapsed_sec": 539.628
+      "fields_populated": 18,
+      "fields_coded": 11,
+      "grounding_accepted": 11,
+      "grounding_abstained": 1,
+      "grounding_rejected": 1,
+      "elapsed_sec": 1642.443
     },
     {
       "report_id": "report_002",
       "fields_populated": 18,
-      "fields_coded": 10,
-      "grounding_accepted": 10,
+      "fields_coded": 11,
+      "grounding_accepted": 11,
       "grounding_abstained": 1,
-      "grounding_rejected": 0,
-      "elapsed_sec": 1581.323
+      "grounding_rejected": 1,
+      "elapsed_sec": 1378.708
     },
     {
       "report_id": "report_003",
-      "fields_populated": 18,
-      "fields_coded": 10,
-      "grounding_accepted": 10,
-      "grounding_abstained": 1,
+      "fields_populated": 16,
+      "fields_coded": 9,
+      "grounding_accepted": 9,
+      "grounding_abstained": 0,
       "grounding_rejected": 1,
-      "elapsed_sec": 1631.032
+      "elapsed_sec": 1273.877
     },
     {
       "report_id": "report_004",
-      "fields_populated": 15,
-      "fields_coded": 8,
-      "grounding_accepted": 8,
+      "fields_populated": 17,
+      "fields_coded": 9,
+      "grounding_accepted": 9,
       "grounding_abstained": 0,
-      "grounding_rejected": 1,
-      "elapsed_sec": 1445.649
+      "grounding_rejected": 0,
+      "elapsed_sec": 1097.735
     },
     {
       "report_id": "report_005",
       "fields_populated": 18,
       "fields_coded": 11,
       "grounding_accepted": 11,
-      "grounding_abstained": 1,
-      "grounding_rejected": 1,
-      "elapsed_sec": 1645.392
+      "grounding_abstained": 2,
+      "grounding_rejected": 0,
+      "elapsed_sec": 1778.855
     },
     {
       "report_id": "report_006",
@@ -59,34 +59,34 @@
       "grounding_accepted": 10,
       "grounding_abstained": 1,
       "grounding_rejected": 2,
-      "elapsed_sec": 1514.738
+      "elapsed_sec": 2015.207
     },
     {
       "report_id": "report_007",
       "fields_populated": 17,
-      "fields_coded": 10,
-      "grounding_accepted": 10,
-      "grounding_abstained": 1,
+      "fields_coded": 11,
+      "grounding_accepted": 11,
+      "grounding_abstained": 0,
       "grounding_rejected": 1,
-      "elapsed_sec": 1456.689
+      "elapsed_sec": 1690.875
     },
     {
       "report_id": "report_008",
       "fields_populated": 18,
-      "fields_coded": 8,
-      "grounding_accepted": 8,
-      "grounding_abstained": 3,
-      "grounding_rejected": 2,
-      "elapsed_sec": 1445.779
+      "fields_coded": 10,
+      "grounding_accepted": 10,
+      "grounding_abstained": 2,
+      "grounding_rejected": 1,
+      "elapsed_sec": 1362.526
     },
     {
       "report_id": "report_009",
-      "fields_populated": 18,
-      "fields_coded": 6,
-      "grounding_accepted": 6,
-      "grounding_abstained": 7,
+      "fields_populated": 16,
+      "fields_coded": 5,
+      "grounding_accepted": 5,
+      "grounding_abstained": 0,
       "grounding_rejected": 0,
-      "elapsed_sec": 1631.013
+      "elapsed_sec": 916.41
     },
     {
       "report_id": "report_010",
@@ -95,7 +95,7 @@
       "grounding_accepted": 0,
       "grounding_abstained": 0,
       "grounding_rejected": 0,
-      "elapsed_sec": 385.62
+      "elapsed_sec": 386.143
     }
   ]
 }

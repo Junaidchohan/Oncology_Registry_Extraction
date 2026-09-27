@@ -1,7 +1,7 @@
 {
   "report_id": "report_010",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T08:10:01.931107+00:00",
+  "run_timestamp": "2026-09-27T12:00:46.835670+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 385.62
+    "elapsed_sec": 386.143
   },
   "fields": {
     "specimen": {

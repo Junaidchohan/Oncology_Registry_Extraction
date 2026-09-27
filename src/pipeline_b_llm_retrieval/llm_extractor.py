@@ -71,6 +71,12 @@ For lymph node counts: integers only. Do NOT generate codes."""
 _USER_PROMPT_TEMPLATE = """Extract these 20 fields from the oncology pathology report below.
 Return ONLY a flat JSON object (with biomarkers and anticancer_medication as arrays). Use null for missing values.
 
+SPECIFICITY RULES:
+For each field, extract the most specific and complete phrase present in the report. If the report says 'upper outer quadrant of the left breast', extract the full phrase, not just 'breast'. If the report says 'invasive ductal carcinoma, no special type', extract the full phrase including 'no special type'. If the report says 'Nottingham Grade 2', extract 'Nottingham Grade 2', not just '2'.
+- Site fields: Include laterality when the report mentions it.
+- tumor_grade: Include the grading system when known.
+- histological_type: Include the subtype designation (NST, NOS, mucinous, etc.).
+
 Fields: specimen, procedure, primary_tumor_site, laterality, histological_type,
 tumor_behavior, tumor_grade, tumor_size (value+unit), tumor_focality,
 tumor_extension, lymphovascular_invasion, perineural_invasion, surgical_margins,

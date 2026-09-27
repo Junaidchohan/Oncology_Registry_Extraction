@@ -1,7 +1,7 @@
 {
   "report_id": "report_009",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T08:03:36.290526+00:00",
+  "run_timestamp": "2026-09-27T11:54:20.630042+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 1631.013
+    "elapsed_sec": 916.41
   },
   "fields": {
     "specimen": {
@@ -25,22 +25,22 @@
       "codes": {}
     },
     "procedure": {
-      "value": "Biopsy",
-      "raw_value": "Biopsy",
+      "value": "Ct-guided core needle biopsy",
+      "raw_value": "CT-guided core needle biopsy",
       "unit": null,
       "state": "present",
-      "evidence": "CT-guided core needle biopsy",
+      "evidence": "CT-guided core needle biopsy, right lower lobe",
       "span": [
         437,
-        465
+        483
       ],
       "codes": {
-        "SNOMED_CT": "65801008"
+        "SNOMED_CT": "44578009"
       }
     },
     "primary_tumor_site": {
       "value": "Right lower lobe",
-      "raw_value": "Right lower lobe",
+      "raw_value": "right lower lobe",
       "unit": null,
       "state": "present",
       "evidence": "Right lower lobe, CT-guided core needle biopsy",
@@ -54,7 +54,7 @@
     },
     "laterality": {
       "value": "Right",
-      "raw_value": "Right",
+      "raw_value": "right",
       "unit": null,
       "state": "present",
       "evidence": "Right lower lobe, CT-guided core needle biopsy",
@@ -68,21 +68,18 @@
     },
     "histological_type": {
       "value": "Atypical epithelial proliferation, suspicious for adenocarcinoma",
-      "raw_value": "Atypical epithelial proliferation, suspicious for adenocarcinoma",
+      "raw_value": "atypical epithelial proliferation, suspicious for adenocarcinoma",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1485,
-        1500
-      ],
+      "evidence": "Sections show atypical epithelial proliferation with architectural disarray, nuclear enlargement, and focal nucleolar prominence within a background of fibrosis and chronic inflammation.",
+      "span": null,
       "codes": {
         "ICD_O_3": "8140/3"
       }
     },
     "tumor_behavior": {
       "value": "Suspicious for malignancy",
-      "raw_value": "Suspicious for malignancy",
+      "raw_value": "suspicious for malignancy",
       "unit": null,
       "state": "present",
       "evidence": "Radiologist comment: \"suspicious for malignancy, though inflammatory etiology cannot be excluded.\"",
@@ -92,146 +89,111 @@
       }
     },
     "tumor_grade": {
-      "value": "Not assessed",
-      "raw_value": "Not assessed",
+      "value": "Nottingham Grade 2",
+      "raw_value": "Nottingham Grade 2",
       "unit": null,
-      "state": "not_assessed",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1485,
-        1500
-      ],
-      "codes": {
-        "SNOMED_CT": "369783002"
-      }
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
+      "codes": {}
     },
     "tumor_size": {
-      "value": "1.8",
-      "raw_value": "1.8",
+      "value": "1.1",
+      "raw_value": "1.1",
       "unit": "cm",
       "state": "present",
-      "evidence": "69-year-old male, ex-smoker (20 pack-years, quit 15 years ago), with right lower lobe nodule (1.8 cm) found on surveillance CT following prior left lobectomy for squamous cell carcinoma 3 years ago.",
+      "evidence": "2 cores measuring 1.1 x 0.1 cm and 0.9 x 0.1 cm",
       "span": null,
       "codes": {}
     },
     "tumor_focality": {
       "value": "Multifocal",
-      "raw_value": "Multiple",
+      "raw_value": "multifocal",
       "unit": null,
-      "state": "present",
-      "evidence": "GROSS DESCRIPTION",
-      "span": [
-        408,
-        425
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "tumor_extension": {
-      "value": "Not assessed",
-      "raw_value": "Not assessed",
+      "value": "Not mentioned",
+      "raw_value": "not mentioned",
       "unit": null,
-      "state": "not_assessed",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1485,
-        1500
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "lymphovascular_invasion": {
-      "value": "Not assessed",
-      "raw_value": "Not assessed",
+      "value": null,
+      "raw_value": "not mentioned",
       "unit": null,
-      "state": "not_assessed",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1485,
-        1500
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "perineural_invasion": {
-      "value": "Not assessed",
-      "raw_value": "Not assessed",
+      "value": null,
+      "raw_value": "not mentioned",
       "unit": null,
-      "state": "not_assessed",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1485,
-        1500
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": "Not assessed",
-      "raw_value": "Not assessed",
+      "value": "not mentioned",
+      "raw_value": "not mentioned",
       "unit": null,
-      "state": "not_assessed",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1485,
-        1500
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "0",
       "raw_value": "0",
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1485,
-        1500
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "positive_lymph_nodes": {
       "value": "0",
       "raw_value": "0",
       "unit": null,
-      "state": "not_applicable",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1485,
-        1500
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "pathologic_t": {
-      "value": "Not assessed",
-      "raw_value": "Not assessed",
+      "value": "T0",
+      "raw_value": "T0",
       "unit": null,
-      "state": "not_assessed",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1485,
-        1500
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "pathologic_n": {
-      "value": "Not assessed",
-      "raw_value": "Not assessed",
+      "value": "N0",
+      "raw_value": "N0",
       "unit": null,
-      "state": "not_assessed",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1485,
-        1500
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "pathologic_m": {
-      "value": "Not assessed",
-      "raw_value": "Not assessed",
+      "value": "M0",
+      "raw_value": "M0",
       "unit": null,
-      "state": "not_assessed",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1485,
-        1500
-      ],
+      "state": "not_mentioned",
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "biomarkers": {

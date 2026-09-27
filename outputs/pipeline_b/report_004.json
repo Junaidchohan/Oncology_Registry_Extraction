@@ -1,7 +1,7 @@
 {
   "report_id": "report_004",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T05:55:22.374989+00:00",
+  "run_timestamp": "2026-09-27T09:44:56.654221+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,27 +9,27 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 1445.649
+    "elapsed_sec": 1097.735
   },
   "fields": {
     "specimen": {
-      "value": "Ultrasound-guided core needle biopsy",
-      "raw_value": "Ultrasound-guided core needle biopsy",
+      "value": "Core needle biopsy",
+      "raw_value": "core needle biopsy",
       "unit": null,
       "state": "present",
-      "evidence": "Received: Ultrasound-guided core needle biopsy, right breast, upper inner quadrant. 4 cores, each 1.2-1.4 x 0.1 cm. Cores are grey-white and firm.",
+      "evidence": "Ultrasound-guided core needle biopsy, right breast, upper inner quadrant. 4 cores, each 1.2-1.4 x 0.1 cm.",
       "span": null,
       "codes": {}
     },
     "procedure": {
-      "value": "Ultrasound-guided core biopsy",
-      "raw_value": "Ultrasound-guided core biopsy",
+      "value": "Core needle biopsy",
+      "raw_value": "core needle biopsy",
       "unit": null,
       "state": "present",
-      "evidence": "Ultrasound-guided core biopsy performed.",
+      "evidence": "Ultrasound-guided core needle biopsy",
       "span": [
-        122,
-        162
+        257,
+        293
       ],
       "codes": {
         "SNOMED_CT": "44578009"
@@ -37,13 +37,13 @@
     },
     "primary_tumor_site": {
       "value": "Right breast, upper inner quadrant",
-      "raw_value": "Right breast, upper inner quadrant",
+      "raw_value": "right breast, upper inner quadrant",
       "unit": null,
       "state": "present",
-      "evidence": "Right breast, upper inner quadrant, core needle biopsy:",
+      "evidence": "Right breast, upper inner quadrant, core needle biopsy",
       "span": [
         1190,
-        1245
+        1244
       ],
       "codes": {
         "ICD_O_3": "C50.2"
@@ -51,13 +51,13 @@
     },
     "laterality": {
       "value": "Right",
-      "raw_value": "Right",
+      "raw_value": "right",
       "unit": null,
       "state": "present",
-      "evidence": "Right breast, upper inner quadrant, core needle biopsy:",
+      "evidence": "Right breast, upper inner quadrant, core needle biopsy",
       "span": [
         1190,
-        1245
+        1244
       ],
       "codes": {
         "SNOMED_CT": "73056007"
@@ -65,32 +65,38 @@
     },
     "histological_type": {
       "value": "Invasive ductal carcinoma, no special type",
-      "raw_value": "Invasive ductal carcinoma, NST",
+      "raw_value": "invasive ductal carcinoma, no special type",
       "unit": null,
       "state": "present",
-      "evidence": "Invasive ductal carcinoma (IDC), NST, Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9).",
-      "span": null,
+      "evidence": "Invasive ductal carcinoma, NST, Nottingham Grade 3",
+      "span": [
+        1248,
+        1298
+      ],
       "codes": {
         "ICD_O_3": "8500/3"
       }
     },
     "tumor_behavior": {
       "value": "Invasive",
-      "raw_value": "Invasive",
+      "raw_value": "invasive",
       "unit": null,
       "state": "present",
-      "evidence": "Invasive ductal carcinoma (IDC), NST, Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9).",
-      "span": null,
+      "evidence": "high-grade invasive carcinoma",
+      "span": [
+        436,
+        465
+      ],
       "codes": {
         "SNOMED_CT": "413448000"
       }
     },
     "tumor_grade": {
       "value": "Nottingham Grade 3",
-      "raw_value": "3",
+      "raw_value": "Nottingham Grade 3",
       "unit": null,
       "state": "present",
-      "evidence": "Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9).",
+      "evidence": "Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9)",
       "span": null,
       "codes": {
         "SNOMED_CT": "369784008"
@@ -101,42 +107,48 @@
       "raw_value": "1.2-1.4",
       "unit": "cm",
       "state": "present",
-      "evidence": "Received: Ultrasound-guided core needle biopsy, right breast, upper inner quadrant. 4 cores, each 1.2-1.4 x 0.1 cm. Cores are grey-white and firm.",
-      "span": null,
+      "evidence": "each 1.2-1.4 x 0.1 cm",
+      "span": [
+        340,
+        361
+      ],
       "codes": {}
     },
     "tumor_focality": {
       "value": "Multifocal",
-      "raw_value": "Multiple",
+      "raw_value": "multiple",
       "unit": null,
       "state": "present",
-      "evidence": "Sections show a high-grade invasive carcinoma with solid growth pattern, marked nuclear pleomorphism, and brisk mitotic activity (>20/10 HPF).",
-      "span": null,
+      "evidence": "4 cores",
+      "span": [
+        331,
+        338
+      ],
       "codes": {}
     },
     "tumor_extension": {
-      "value": "Invasive",
-      "raw_value": "Invasive",
-      "unit": null,
-      "state": "present",
-      "evidence": "Invasive ductal carcinoma (IDC), NST, Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9).",
-      "span": null,
-      "codes": {
-        "SNOMED_CT": "413448000"
-      }
-    },
-    "lymphovascular_invasion": {
-      "value": null,
-      "raw_value": "Not mentioned",
+      "value": "Not specified",
+      "raw_value": "not specified",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
       "span": null,
       "codes": {}
     },
+    "lymphovascular_invasion": {
+      "value": "Present",
+      "raw_value": "present",
+      "unit": null,
+      "state": "present",
+      "evidence": "lymphovascular invasion",
+      "span": null,
+      "codes": {
+        "SNOMED_CT": "245294001"
+      }
+    },
     "perineural_invasion": {
       "value": null,
-      "raw_value": "Not mentioned",
+      "raw_value": "not mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -144,13 +156,13 @@
       "codes": {}
     },
     "surgical_margins": {
-      "value": "Not applicable",
-      "raw_value": "Not applicable",
+      "value": "not applicable",
+      "raw_value": "not applicable",
       "unit": null,
       "state": "not_applicable",
-      "evidence": "Note: Clinical staging, margins, lymph node status: not applicable on core biopsy specimen",
+      "evidence": "not applicable on core biopsy specimen",
       "span": [
-        1506,
+        1558,
         1596
       ],
       "codes": {}
@@ -160,11 +172,8 @@
       "raw_value": "0",
       "unit": null,
       "state": "present",
-      "evidence": "Note: Clinical staging, margins, lymph node status: not applicable on core biopsy specimen",
-      "span": [
-        1506,
-        1596
-      ],
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "positive_lymph_nodes": {
@@ -172,11 +181,8 @@
       "raw_value": "0",
       "unit": null,
       "state": "present",
-      "evidence": "Note: Clinical staging, margins, lymph node status: not applicable on core biopsy specimen",
-      "span": [
-        1506,
-        1596
-      ],
+      "evidence": null,
+      "span": null,
       "codes": {}
     },
     "pathologic_t": {
@@ -184,31 +190,36 @@
       "raw_value": "3",
       "unit": null,
       "state": "present",
-      "evidence": "Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9).",
-      "span": null,
-      "codes": {}
+      "evidence": "Nottingham Grade 3",
+      "span": [
+        656,
+        674
+      ],
+      "codes": {
+        "SNOMED_CT": "363346003"
+      }
     },
     "pathologic_n": {
       "value": "0",
       "raw_value": "0",
       "unit": null,
       "state": "present",
-      "evidence": "Note: Clinical staging, margins, lymph node status: not applicable on core biopsy specimen",
-      "span": [
-        1506,
-        1596
-      ],
+      "evidence": null,
+      "span": null,
       "codes": {
         "SNOMED_CT": "109989006"
       }
     },
     "pathologic_m": {
-      "value": null,
-      "raw_value": "Not mentioned",
+      "value": "not applicable",
+      "raw_value": "not applicable",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "not_applicable",
+      "evidence": "cannot be determined on biopsy alone",
+      "span": [
+        1467,
+        1503
+      ],
       "codes": {}
     },
     "biomarkers": {

@@ -1,7 +1,7 @@
 {
   "report_id": "report_001",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T04:37:44.307777+00:00",
+  "run_timestamp": "2026-09-27T08:42:26.157466+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,155 +9,241 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 539.628
+    "elapsed_sec": 1642.443
   },
   "fields": {
     "specimen": {
-      "value": null,
+      "value": "Left modified radical mastectomy",
+      "raw_value": "Left modified radical mastectomy specimen",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "present",
+      "evidence": "Received: Left modified radical mastectomy specimen weighing 412 g.",
+      "span": [
+        227,
+        294
+      ],
       "codes": {}
     },
     "procedure": {
-      "value": null,
+      "value": "Modified radical mastectomy",
+      "raw_value": "Modified radical mastectomy",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Referred for modified radical mastectomy.",
+      "span": [
+        165,
+        206
+      ],
+      "codes": {
+        "SNOMED_CT": "172456002"
+      }
     },
     "primary_tumor_site": {
-      "value": null,
+      "value": "Left breast",
+      "raw_value": "Left breast",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Left breast, modified radical mastectomy:",
+      "span": [
+        1401,
+        1442
+      ],
+      "codes": {
+        "SNOMED_CT": "80248007"
+      }
     },
     "laterality": {
-      "value": null,
+      "value": "Left",
+      "raw_value": "Left",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Left breast, modified radical mastectomy:",
+      "span": [
+        1401,
+        1442
+      ],
+      "codes": {
+        "SNOMED_CT": "80248007"
+      }
     },
     "histological_type": {
-      "value": null,
+      "value": "Invasive ductal carcinoma, no special type (no special type)",
+      "raw_value": "Invasive ductal carcinoma, no special type (NST)",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Invasive ductal carcinoma, NST, Nottingham Grade 2",
+      "span": [
+        1445,
+        1495
+      ],
+      "codes": {
+        "ICD_O_3": "8500/3"
+      }
     },
     "tumor_behavior": {
-      "value": null,
+      "value": "Invasive",
+      "raw_value": "Invasive",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Invasive ductal carcinoma, NST, Nottingham Grade 2",
+      "span": [
+        1445,
+        1495
+      ],
+      "codes": {
+        "SNOMED_CT": "413448000"
+      }
     },
     "tumor_grade": {
-      "value": null,
+      "value": "Nottingham Grade 2",
+      "raw_value": "Nottingham Grade 2",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Nottingham Grade 2 (tubule formation 3, nuclear pleomorphism 2, mitotic count 1; score 6/9)",
+      "span": [
+        758,
+        849
+      ],
+      "codes": {
+        "SNOMED_CT": "369783002"
+      }
     },
     "tumor_size": {
-      "value": null,
-      "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "value": "2.3",
+      "raw_value": "2.3",
+      "unit": "cm",
+      "state": "present",
+      "evidence": "Tumor size: 2.3 cm (greatest dimension)",
+      "span": [
+        1498,
+        1537
+      ],
       "codes": {}
     },
     "tumor_focality": {
-      "value": null,
+      "value": "Single lesion",
+      "raw_value": "Single",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "present",
+      "evidence": "A firm, stellate, grey-white mass measuring 2.3 x 2.1 x 1.8 cm is identified in the upper outer quadrant",
       "span": null,
       "codes": {}
     },
     "tumor_extension": {
-      "value": null,
+      "value": "Infiltrative",
+      "raw_value": "Infiltrative",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "present",
+      "evidence": "Infiltrating ductal carcinoma (IDC), no special type (NST)",
       "span": null,
-      "codes": {}
+      "codes": {
+        "SNOMED_CT": "416940007"
+      }
     },
     "lymphovascular_invasion": {
-      "value": null,
+      "value": "Present",
+      "raw_value": "Present",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Lymphovascular invasion is identified within the tumor periphery.",
+      "span": [
+        851,
+        916
+      ],
+      "codes": {
+        "SNOMED_CT": "245294001"
+      }
     },
     "perineural_invasion": {
-      "value": null,
+      "value": "Absent",
+      "raw_value": "Absent",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
+      "state": "present",
+      "evidence": "No perineural invasion is seen.",
       "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": null,
+      "value": "Negative",
+      "raw_value": "Negative",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "present",
+      "evidence": "The deep surgical margin is 2.0 cm from the tumor; all other margins are negative.",
+      "span": [
+        949,
+        1031
+      ],
       "codes": {}
     },
     "lymph_nodes_examined": {
-      "value": null,
+      "value": "18",
+      "raw_value": "18",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "present",
+      "evidence": "Axillary contents contain 18 lymph nodes",
+      "span": [
+        504,
+        544
+      ],
       "codes": {}
     },
     "positive_lymph_nodes": {
-      "value": null,
+      "value": "4",
+      "raw_value": "4",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
+      "state": "present",
+      "evidence": "Of the 18 axillary lymph nodes examined, 4 contain metastatic carcinoma",
+      "span": [
+        1032,
+        1103
+      ],
       "codes": {}
     },
     "pathologic_t": {
-      "value": null,
+      "value": "pT2",
+      "raw_value": "pT2",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition)",
+      "span": [
+        1774,
+        1823
+      ],
+      "codes": {
+        "SNOMED_CT": "1229950000"
+      }
     },
     "pathologic_n": {
-      "value": null,
+      "value": "pN1a",
+      "raw_value": "pN1a",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition)",
+      "span": [
+        1774,
+        1823
+      ],
+      "codes": {
+        "SNOMED_CT": "1229962001"
+      }
     },
     "pathologic_m": {
-      "value": null,
+      "value": "pM0",
+      "raw_value": "pM0",
       "unit": null,
-      "state": "not_mentioned",
-      "evidence": null,
-      "span": null,
-      "codes": {}
+      "state": "present",
+      "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition)",
+      "span": [
+        1774,
+        1823
+      ],
+      "codes": {
+        "SNOMED_CT": "1229965004"
+      }
     },
     "biomarkers": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -166,6 +252,7 @@
     },
     "anticancer_medication": {
       "value": null,
+      "raw_value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,

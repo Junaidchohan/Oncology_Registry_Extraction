@@ -1,7 +1,7 @@
 {
   "report_id": "report_007",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T07:12:19.337962+00:00",
+  "run_timestamp": "2026-09-27T11:16:21.650140+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 1456.689
+    "elapsed_sec": 1690.875
   },
   "fields": {
     "specimen": {
@@ -17,10 +17,10 @@
       "raw_value": "Right mastectomy specimen",
       "unit": null,
       "state": "present",
-      "evidence": "GROSS DESCRIPTION",
+      "evidence": "Received: Right mastectomy specimen weighing 378 g.",
       "span": [
-        345,
-        362
+        364,
+        415
       ],
       "codes": {}
     },
@@ -29,11 +29,8 @@
       "raw_value": "Mastectomy with sentinel lymph node biopsy",
       "unit": null,
       "state": "present",
-      "evidence": "CLINICAL HISTORY",
-      "span": [
-        0,
-        16
-      ],
+      "evidence": "Referred for right mastectomy with sentinel lymph node biopsy.",
+      "span": null,
       "codes": {
         "SNOMED_CT": "396487001"
       }
@@ -43,10 +40,10 @@
       "raw_value": "Right breast",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
+      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy):",
       "span": [
-        1514,
-        1529
+        1531,
+        1583
       ],
       "codes": {
         "SNOMED_CT": "73056007"
@@ -57,24 +54,24 @@
       "raw_value": "Right",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
+      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy):",
       "span": [
-        1514,
-        1529
+        1531,
+        1583
       ],
       "codes": {
         "SNOMED_CT": "73056007"
       }
     },
     "histological_type": {
-      "value": "Invasive ductal carcinoma, no special type",
-      "raw_value": "Invasive ductal carcinoma, NST",
+      "value": "Residual invasive ductal carcinoma, no special type",
+      "raw_value": "Residual invasive ductal carcinoma, NST",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
+      "evidence": "Right breast, mastectomy (post-neoadjuvant therapy):",
       "span": [
-        1514,
-        1529
+        1531,
+        1583
       ],
       "codes": {
         "ICD_O_3": "8500/3"
@@ -85,11 +82,8 @@
       "raw_value": "Residual invasive carcinoma with treatment effect",
       "unit": null,
       "state": "present",
-      "evidence": "MICROSCOPIC DESCRIPTION",
-      "span": [
-        726,
-        749
-      ],
+      "evidence": "Sections from the clip site and surrounding fibrotic area show extensive hyalinized fibrosis, foamy histiocytes, hemosiderin deposits, and occasional clusters of tumor cells within the fibrous stroma -- representing residual invasive carcinoma with treatment effect (ypT1a, residual focus approximately 1 mm).",
+      "span": null,
       "codes": {
         "SNOMED_CT": "413448000"
       }
@@ -99,25 +93,22 @@
       "raw_value": "Miller-Payne Grade 4",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
+      "evidence": "Near-complete pathologic response; Miller-Payne Grade 4",
       "span": [
-        1514,
-        1529
+        1759,
+        1814
       ],
       "codes": {
         "SNOMED_CT": "369782007"
       }
     },
     "tumor_size": {
-      "value": "1 mm",
-      "raw_value": "1 mm",
+      "value": "1",
+      "raw_value": "1",
       "unit": "mm",
       "state": "present",
-      "evidence": "MICROSCOPIC DESCRIPTION",
-      "span": [
-        726,
-        749
-      ],
+      "evidence": "Sections from the clip site and surrounding fibrotic area show extensive hyalinized fibrosis, foamy histiocytes, hemosiderin deposits, and occasional clusters of tumor cells within the fibrous stroma -- representing residual invasive carcinoma with treatment effect (ypT1a, residual focus approximately 1 mm).",
+      "span": null,
       "codes": {}
     },
     "tumor_focality": {
@@ -125,37 +116,33 @@
       "raw_value": "Residual focus approximately 1 mm",
       "unit": null,
       "state": "present",
-      "evidence": "MICROSCOPIC DESCRIPTION",
-      "span": [
-        726,
-        749
-      ],
+      "evidence": "Sections from the clip site and surrounding fibrotic area show extensive hyalinized fibrosis, foamy histiocytes, hemosiderin deposits, and occasional clusters of tumor cells within the fibrous stroma -- representing residual invasive carcinoma with treatment effect (ypT1a, residual focus approximately 1 mm).",
+      "span": null,
       "codes": {}
     },
     "tumor_extension": {
-      "value": "Treatment effect present",
-      "raw_value": "Treatment effect present",
+      "value": "No grossly visible residual tumor",
+      "raw_value": "No grossly visible residual tumor",
       "unit": null,
       "state": "present",
-      "evidence": "MICROSCOPIC DESCRIPTION",
-      "span": [
-        726,
-        749
-      ],
-      "codes": {}
+      "evidence": "The breast measures 15 x 12 x 5 cm. On serial sectioning, the site of the prior tumor (upper outer quadrant, marked with surgical clip) shows a 3.0 x 2.5 cm area of fibrosis and scarring, but no grossly visible residual tumor.",
+      "span": null,
+      "codes": {
+        "SNOMED_CT": "370053002"
+      }
     },
     "lymphovascular_invasion": {
-      "value": "No lymphovascular invasion",
-      "raw_value": "No lymphovascular invasion",
+      "value": "No",
+      "raw_value": "No",
       "unit": null,
       "state": "negative",
-      "evidence": "FINAL DIAGNOSIS",
+      "evidence": "No lymphovascular invasion in current specimen.",
       "span": [
-        1514,
-        1529
+        1152,
+        1199
       ],
       "codes": {
-        "SNOMED_CT": "1254905005"
+        "SNOMED_CT": "1229965004"
       }
     },
     "perineural_invasion": {
@@ -163,7 +150,7 @@
       "raw_value": "Not mentioned",
       "unit": null,
       "state": "not_mentioned",
-      "evidence": "MICROSCOPIC DESCRIPTION",
+      "evidence": null,
       "span": null,
       "codes": {}
     },
@@ -172,11 +159,8 @@
       "raw_value": "All negative",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1514,
-        1529
-      ],
+      "evidence": "All surgical margins are negative (closest margin >3 cm).",
+      "span": null,
       "codes": {}
     },
     "lymph_nodes_examined": {
@@ -184,10 +168,10 @@
       "raw_value": "3",
       "unit": null,
       "state": "present",
-      "evidence": "MICROSCOPIC DESCRIPTION",
+      "evidence": "Sentinel lymph nodes: 3 nodes identified, 0.8-1.5 cm.",
       "span": [
-        726,
-        749
+        671,
+        724
       ],
       "codes": {}
     },
@@ -196,11 +180,8 @@
       "raw_value": "0",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1514,
-        1529
-      ],
+      "evidence": "Sentinel lymph nodes (3/3): no metastatic carcinoma identified; treatment effect (fibrosis) noted in 1 node (ypN0).",
+      "span": null,
       "codes": {}
     },
     "pathologic_t": {
@@ -208,11 +189,8 @@
       "raw_value": "ypT1a",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1514,
-        1529
-      ],
+      "evidence": "Sections from the clip site and surrounding fibrotic area show extensive hyalinized fibrosis, foamy histiocytes, hemosiderin deposits, and occasional clusters of tumor cells within the fibrous stroma -- representing residual invasive carcinoma with treatment effect (ypT1a, residual focus approximately 1 mm).",
+      "span": null,
       "codes": {
         "SNOMED_CT": "1229946007"
       }
@@ -222,11 +200,8 @@
       "raw_value": "ypN0",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
-      "span": [
-        1514,
-        1529
-      ],
+      "evidence": "Sentinel lymph nodes (3/3): no metastatic carcinoma identified; treatment effect (fibrosis) noted in 1 node (ypN0).",
+      "span": null,
       "codes": {
         "SNOMED_CT": "1229953003"
       }
@@ -236,10 +211,10 @@
       "raw_value": "ypM0",
       "unit": null,
       "state": "present",
-      "evidence": "FINAL DIAGNOSIS",
+      "evidence": "Post-treatment pathologic stage: ypT1a ypN0 ypM0",
       "span": [
-        1514,
-        1529
+        1961,
+        2009
       ],
       "codes": {
         "SNOMED_CT": "1229965004"

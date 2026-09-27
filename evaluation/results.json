@@ -185,196 +185,200 @@
     "pipeline": "Pipeline B",
     "n_reports": 10,
     "entity_ner": {
-      "precision": 0.1549,
-      "recall": 0.1594,
-      "f1": 0.1571,
-      "tp": 11,
+      "precision": 0.3258,
+      "recall": 0.4328,
+      "f1": 0.3718,
+      "tp": 29,
       "fp": 60,
-      "fn": 58
+      "fn": 38
     },
     "rel": {
-      "precision": 0.375,
-      "recall": 0.0326,
-      "f1": 0.06,
-      "tp": 3,
+      "precision": 0.4444,
+      "recall": 0.0435,
+      "f1": 0.0792,
+      "tp": 4,
       "fp": 5,
-      "fn": 89
+      "fn": 88
     },
     "field_value_accuracy": {
-      "exact": 0.2777777777777778,
-      "match_count": 50,
+      "exact": 0.35555555555555557,
+      "match_count": 64,
       "total": 180
     },
     "assertion_accuracy": {
-      "accuracy": 0.4888888888888889,
-      "match_count": 88,
+      "accuracy": 0.5388888888888889,
+      "match_count": 97,
       "total": 180
     },
     "terminology": {
-      "retrieval_acc": 0.3783783783783784,
-      "selection_acc": 0.2702702702702703,
-      "ret_match": 14,
-      "sel_match": 10,
+      "retrieval_acc": 0.43243243243243246,
+      "selection_acc": 0.2972972972972973,
+      "ret_match": 16,
+      "sel_match": 11,
       "total": 37
     },
     "evidence": {
-      "loc_rate": 0.6879432624113475,
-      "val_rate": 0.425531914893617,
-      "unsupported_rate": 0.6595744680851063,
-      "unsup_count": 93,
-      "total_populated": 141,
-      "null_span_count": 70
+      "loc_rate": 0.802547770700637,
+      "val_rate": 0.6114649681528662,
+      "unsupported_rate": 0.4267515923566879,
+      "unsup_count": 67,
+      "total_populated": 157,
+      "null_span_count": 68
     },
     "operations": {
-      "mean_runtime_sec": 1327.686,
+      "mean_runtime_sec": 1354.278,
       "mean_cost_usd": 0.0,
       "total_cost_usd": 0
     },
     "field_metrics": {
       "primary_tumor_site": {
-        "ner_fn": 5,
+        "ner_fp": 7,
         "total": 10,
         "total_states": 10,
+        "state_match": 8,
+        "ner_fn": 2,
         "value_match": 2,
-        "state_match": 7,
-        "ner_fp": 4,
         "ner_tp": 1
       },
       "histological_type": {
-        "ner_fn": 7,
+        "ner_fp": 5,
         "total": 10,
         "total_states": 10,
-        "state_match": 7,
-        "value_match": 3,
-        "ner_tp": 1,
-        "ner_fp": 2
-      },
-      "procedure": {
-        "ner_fn": 4,
-        "total": 10,
-        "total_states": 10,
-        "ner_tp": 3,
-        "value_match": 5,
         "state_match": 8,
-        "ner_fp": 3
-      },
-      "laterality": {
-        "ner_fn": 2,
-        "total": 10,
-        "total_states": 10,
-        "state_match": 6,
-        "ner_tp": 4,
-        "value_match": 5,
-        "ner_fp": 2
-      },
-      "tumor_grade": {
-        "ner_fn": 6,
-        "total": 10,
-        "total_states": 10,
-        "state_match": 5,
-        "ner_fp": 3,
+        "ner_fn": 4,
         "value_match": 1
       },
-      "tumor_size": {
-        "ner_fn": 8,
+      "procedure": {
+        "ner_tp": 5,
         "total": 10,
-        "total_states": 10,
         "value_match": 6,
+        "total_states": 10,
+        "state_match": 9,
+        "ner_fn": 3,
+        "ner_fp": 2
+      },
+      "laterality": {
+        "ner_tp": 6,
+        "total": 10,
+        "value_match": 6,
+        "total_states": 10,
+        "state_match": 6,
+        "ner_fp": 2,
+        "ner_fn": 1
+      },
+      "tumor_grade": {
+        "ner_tp": 1,
+        "total": 10,
+        "value_match": 2,
+        "total_states": 10,
         "state_match": 7,
+        "ner_fp": 4,
+        "ner_fn": 4
+      },
+      "tumor_size": {
+        "ner_tp": 2,
+        "total": 10,
+        "value_match": 7,
+        "total_states": 10,
+        "state_match": 8,
+        "ner_fn": 7,
         "ner_fp": 1
       },
       "tumor_focality": {
-        "ner_fn": 6,
+        "ner_fn": 8,
         "total": 10,
+        "value_match": 4,
         "total_states": 10,
-        "state_match": 6,
-        "ner_fp": 4,
-        "value_match": 1
+        "state_match": 9,
+        "ner_fp": 1
       },
       "lymphovascular_invasion": {
-        "ner_fn": 2,
+        "ner_fp": 4,
         "total": 10,
+        "value_match": 4,
         "total_states": 10,
-        "value_match": 3,
-        "state_match": 4,
-        "ner_fp": 3
+        "state_match": 3,
+        "ner_tp": 1
       },
       "perineural_invasion": {
         "total": 10,
+        "value_match": 5,
         "total_states": 10,
-        "ner_fn": 1,
-        "state_match": 4,
-        "ner_fp": 3,
-        "value_match": 4
+        "ner_fp": 4,
+        "state_match": 2
       },
       "surgical_margins": {
-        "ner_fn": 3,
+        "ner_fp": 5,
         "total": 10,
         "total_states": 10,
         "state_match": 6,
-        "ner_fp": 5
+        "ner_fn": 2
       },
       "lymph_nodes_examined": {
-        "ner_fn": 2,
+        "ner_tp": 3,
         "total": 10,
-        "total_states": 10,
-        "ner_tp": 2,
-        "value_match": 3,
-        "state_match": 6,
-        "ner_fp": 4
-      },
-      "positive_lymph_nodes": {
-        "ner_fn": 4,
-        "total": 10,
-        "total_states": 10,
         "value_match": 4,
-        "state_match": 3,
-        "ner_fp": 5
-      },
-      "pathologic_t": {
-        "ner_fn": 3,
-        "total": 10,
-        "total_states": 10,
-        "state_match": 4,
-        "ner_fp": 4,
-        "value_match": 2
-      },
-      "pathologic_n": {
-        "ner_fn": 2,
-        "total": 10,
-        "total_states": 10,
-        "state_match": 4,
-        "ner_fp": 5,
-        "value_match": 2
-      },
-      "pathologic_m": {
-        "ner_fn": 3,
-        "total": 10,
         "total_states": 10,
         "state_match": 5,
-        "value_match": 3,
+        "ner_fn": 1,
+        "ner_fp": 2
+      },
+      "positive_lymph_nodes": {
+        "ner_tp": 2,
+        "total": 10,
+        "value_match": 5,
+        "total_states": 10,
+        "state_match": 3,
+        "ner_fn": 2,
+        "ner_fp": 2
+      },
+      "pathologic_t": {
+        "ner_tp": 3,
+        "total": 10,
+        "value_match": 5,
+        "total_states": 10,
+        "state_match": 6,
+        "ner_fp": 3,
+        "ner_fn": 1
+      },
+      "pathologic_n": {
+        "ner_tp": 2,
+        "total": 10,
+        "value_match": 5,
+        "total_states": 10,
+        "state_match": 6,
+        "ner_fn": 2,
+        "ner_fp": 2
+      },
+      "pathologic_m": {
+        "ner_tp": 3,
+        "total": 10,
+        "value_match": 5,
+        "total_states": 10,
+        "state_match": 6,
+        "ner_fn": 1,
         "ner_fp": 3
       },
       "specimen": {
+        "ner_fp": 6,
         "total": 10,
-        "value_match": 2,
         "total_states": 10,
-        "state_match": 2,
-        "ner_fp": 5
+        "value_match": 1,
+        "state_match": 1
       },
       "tumor_behavior": {
+        "ner_fp": 3,
         "total": 10,
-        "value_match": 2,
         "total_states": 10,
-        "state_match": 2,
-        "ner_fp": 1
+        "value_match": 1,
+        "state_match": 1
       },
       "tumor_extension": {
         "total": 10,
-        "value_match": 2,
         "total_states": 10,
-        "state_match": 2,
-        "ner_fp": 3
+        "ner_fp": 4,
+        "state_match": 3,
+        "value_match": 1
       }
     }
   }

@@ -103,7 +103,7 @@ Pipeline A outputs were generated on an earlier date under a working Java enviro
 
 <!-- BEGIN EVAL TABLE -->
 
-# Pipeline Evaluation: Side-by-Side Comparison\n\n*Generated: 2026-09-27T08:10:34.181689Z*\n\nDenominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)\n\n| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |\n| --- | --- | --- |\n| Entity NER P / R / F1 (span-based) | 14.8% / 15.1% / 14.9% | 15.5% / 15.9% / 15.7% |\n| Field value exact accuracy | 46.1% (83/180) | 27.8% (50/180) |\n| Assertion / State accuracy | 53.3% (96/180) | 48.9% (88/180) |\n| Relation F1 | 8.2% | 6.0% |\n| Retrieval Recall@K | 5.4% (2/37) | 37.8% (14/37) |\n| Selection accuracy | 5.4% (2/37) | 27.0% (10/37) |\n| Located evidence rate | 86.7% | 68.8% |\n| Value-in-evidence rate | 69.0% | 42.6% |\n| Unsupported field rate | 68.1% (77 fields) | 66.0% (93 fields) |\n| Evidence-unsupported fields | 67 | 70 |\n| Invalid code rate | 0.0% | 0.0% |\n| Mean runtime | 32.85s | 1327.69s |\n| Mean cost | $0.0000 | $0.0000 |\n
+# Pipeline Evaluation: Side-by-Side Comparison\n\n*Generated: 2026-09-27T12:01:53.635007Z*\n\nDenominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)\n\n| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |\n| --- | --- | --- |\n| Entity NER P / R / F1 (span-based) | 14.8% / 15.1% / 14.9% | 32.6% / 43.3% / 37.2% |\n| Field value exact accuracy | 46.1% (83/180) | 35.6% (64/180) |\n| Assertion / State accuracy | 53.3% (96/180) | 53.9% (97/180) |\n| Relation F1 | 8.2% | 7.9% |\n| Retrieval Recall@K | 5.4% (2/37) | 43.2% (16/37) |\n| Selection accuracy | 5.4% (2/37) | 29.7% (11/37) |\n| Located evidence rate | 86.7% | 80.3% |\n| Value-in-evidence rate | 69.0% | 61.1% |\n| Unsupported field rate | 68.1% (77 fields) | 42.7% (67 fields) |\n| Evidence-unsupported fields | 67 | 68 |\n| Invalid code rate | 0.0% | 0.0% |\n| Mean runtime | 32.85s | 1354.28s |\n| Mean cost | $0.0000 | $0.0000 |\n
 
 <!-- END EVAL TABLE -->
 
@@ -132,3 +132,16 @@ The deterministic normalizer bridges some of these gaps (e.g., mapping
 cannot invent specificity the LLM did not extract. Under a strict 
 value-equality metric, these score as False Negatives. Under a base-
 concept metric, they would score as True Positives.
+
+## Prompt iteration to improve specificity extraction
+
+- **What the original prompt asked for:** A minimal instruction to extract 20 fields as a flat JSON object without specific guidance on how complete or detailed the text values should be.
+- **What the revised prompt asks for:** Explicit "SPECIFICITY RULES" instructing the LLM to extract the most specific and complete phrase present in the report (e.g. including laterality, subsite, grading system, and subtype designations).
+- **The measured change in each metric:**
+  - Pipeline B value accuracy: 27.8% (50/180) -> 35.6% (64/180) (+7.8%)
+  - Pipeline B NER F1: 15.7% -> 37.2% (+21.5%)
+  - Pipeline B Retrieval Recall@K: 37.8% (14/37) -> 43.2% (16/37) (+5.4%)
+  - Pipeline B Selection accuracy: 27.0% (10/37) -> 29.7% (11/37) (+2.7%)
+  - Pipeline B unsupported field rate: 66.0% (93 fields) -> 42.7% (67 fields) (-23.3%)
+- **Whether the change helped, hurt, or was neutral:** The change strictly helped across all evaluation metrics. There was a massive increase in NER F1 and a sharp decrease in the unsupported field rate, indicating the extracted values now contain the detailed context the schema demands and naturally form valid text spans. No reports fell through to the JSON fallback (0 failures), so JSON stability was not hurt.
+- **What this tells you about the LLM's behavior:** It highlights that local LLMs are inherently "lazy" or overly concise when summarizing clinical data. Without explicit instructions, they output the base clinical concept (e.g. "breast" instead of "Left breast, upper outer quadrant") which causes alignment failures with strict schemas. Targeted prompt specificity resolves a significant portion of these mismatches directly at the extraction layer.

@@ -1,7 +1,7 @@
 {
   "report_id": "report_003",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-27T05:31:16.701384+00:00",
+  "run_timestamp": "2026-09-27T09:26:38.892153+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 1631.032
+    "elapsed_sec": 1273.877
   },
   "fields": {
     "specimen": {
@@ -17,7 +17,7 @@
       "raw_value": "CT-guided core needle biopsy",
       "unit": null,
       "state": "present",
-      "evidence": "CT-guided core needle biopsy, right upper lobe, 3 cores each measuring approximately 1.5 x 0.1 cm.",
+      "evidence": "Received: CT-guided core needle biopsy...",
       "span": null,
       "codes": {}
     },
@@ -26,7 +26,7 @@
       "raw_value": "CT-guided core needle biopsy",
       "unit": null,
       "state": "present",
-      "evidence": "CT-guided core needle biopsy, right upper lobe, 3 cores each measuring approximately 1.5 x 0.1 cm.",
+      "evidence": "Received: CT-guided core needle biopsy...",
       "span": null,
       "codes": {
         "SNOMED_CT": "44578009"
@@ -37,10 +37,10 @@
       "raw_value": "right upper lobe",
       "unit": null,
       "state": "present",
-      "evidence": "Right upper lobe, CT-guided core needle biopsy",
+      "evidence": "Right upper lobe, CT-guided core needle biopsy:",
       "span": [
         1310,
-        1356
+        1357
       ],
       "codes": {
         "SNOMED_CT": "72481006"
@@ -51,10 +51,10 @@
       "raw_value": "right",
       "unit": null,
       "state": "present",
-      "evidence": "Right upper lobe, CT-guided core needle biopsy",
+      "evidence": "Right upper lobe, CT-guided core needle biopsy:",
       "span": [
         1310,
-        1356
+        1357
       ],
       "codes": {
         "SNOMED_CT": "73056007"
@@ -65,7 +65,7 @@
       "raw_value": "pulmonary adenocarcinoma",
       "unit": null,
       "state": "present",
-      "evidence": "Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns with focal mucin production, consistent with pulmonary adenocarcinoma.",
+      "evidence": "Sections show a malignant epithelial neoplasm...",
       "span": null,
       "codes": {
         "SNOMED_CT": "254637007"
@@ -76,7 +76,7 @@
       "raw_value": "malignant",
       "unit": null,
       "state": "present",
-      "evidence": "Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns with focal mucin production, consistent with pulmonary adenocarcinoma.",
+      "evidence": "Sections show a malignant epithelial neoplasm...",
       "span": null,
       "codes": {}
     },
@@ -85,10 +85,10 @@
       "raw_value": "moderately differentiated",
       "unit": null,
       "state": "present",
-      "evidence": "Pulmonary adenocarcinoma, moderately differentiated",
+      "evidence": "Right upper lobe, CT-guided core needle biopsy:",
       "span": [
-        1360,
-        1411
+        1310,
+        1357
       ],
       "codes": {
         "SNOMED_CT": "369783002"
@@ -99,7 +99,7 @@
       "raw_value": "3.1",
       "unit": "cm",
       "state": "present",
-      "evidence": "CT chest revealed a 3.1 cm spiculated right upper lobe mass",
+      "evidence": "CT chest revealed a 3.1 cm spiculated right upper lobe mass...",
       "span": null,
       "codes": {}
     },
@@ -108,46 +108,44 @@
       "raw_value": "multiple",
       "unit": null,
       "state": "present",
-      "evidence": "PET scan showed FDG-avid lesion in the right upper lobe and multiple FDG-avid brain lesions",
+      "evidence": "PET scan showed FDG-avid lesion in the right upper lobe...",
       "span": null,
       "codes": {}
     },
     "tumor_extension": {
-      "value": "Infiltrative",
-      "raw_value": "infiltrative",
+      "value": "Ipsilateral mediastinal lymphadenopathy",
+      "raw_value": "ipsilateral mediastinal lymphadenopathy",
       "unit": null,
       "state": "present",
-      "evidence": "Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns with focal mucin production, consistent with pulmonary adenocarcinoma.",
+      "evidence": "CT chest revealed a 3.1 cm spiculated right upper lobe mass...",
       "span": null,
       "codes": {
-        "SNOMED_CT": "416940007"
+        "SNOMED_CT": "62683002"
       }
     },
     "lymphovascular_invasion": {
-      "value": "Absent",
-      "raw_value": "absent",
+      "value": null,
+      "raw_value": "not mentioned",
       "unit": null,
-      "state": "not_assessed",
+      "state": "not_mentioned",
       "evidence": null,
       "span": null,
-      "codes": {
-        "SNOMED_CT": "245294001"
-      }
+      "codes": {}
     },
     "perineural_invasion": {
-      "value": "Absent",
-      "raw_value": "absent",
+      "value": null,
+      "raw_value": "not mentioned",
       "unit": null,
-      "state": "not_assessed",
+      "state": "not_mentioned",
       "evidence": null,
       "span": null,
       "codes": {}
     },
     "surgical_margins": {
-      "value": "Negative",
-      "raw_value": "negative",
+      "value": "not mentioned",
+      "raw_value": "not mentioned",
       "unit": null,
-      "state": "not_applicable",
+      "state": "not_mentioned",
       "evidence": null,
       "span": null,
       "codes": {}
@@ -156,7 +154,7 @@
       "value": "0",
       "raw_value": "0",
       "unit": null,
-      "state": "not_applicable",
+      "state": "not_mentioned",
       "evidence": null,
       "span": null,
       "codes": {}
@@ -165,7 +163,7 @@
       "value": "0",
       "raw_value": "0",
       "unit": null,
-      "state": "not_applicable",
+      "state": "not_mentioned",
       "evidence": null,
       "span": null,
       "codes": {}
@@ -175,11 +173,8 @@
       "raw_value": "2",
       "unit": null,
       "state": "present",
-      "evidence": "Clinical stage: cT2a",
-      "span": [
-        1511,
-        1531
-      ],
+      "evidence": "FINAL DIAGNOSIS: Right upper lobe, CT-guided core needle biopsy:",
+      "span": null,
       "codes": {
         "SNOMED_CT": "363346002"
       }
@@ -189,7 +184,7 @@
       "raw_value": "2",
       "unit": null,
       "state": "present",
-      "evidence": "Clinical stage: cN2",
+      "evidence": "FINAL DIAGNOSIS: Right upper lobe, CT-guided core needle biopsy:",
       "span": null,
       "codes": {
         "SNOMED_CT": "363346002"
@@ -200,7 +195,7 @@
       "raw_value": "1",
       "unit": null,
       "state": "present",
-      "evidence": "Clinical stage: cM1b",
+      "evidence": "FINAL DIAGNOSIS: Right upper lobe, CT-guided core needle biopsy:",
       "span": null,
       "codes": {
         "SNOMED_CT": "363346001"
