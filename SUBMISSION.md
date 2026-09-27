@@ -141,7 +141,7 @@ The metrics below measure extraction accuracy and code resolution performance ac
 
 ### What This Shows
 
-If you need fast, highly precise code mapping and can afford to miss some edge cases, the JSL annotator chain is the better architectural choice. It only mapped four codes, but two were exact matches, yielding a 0.0% precision rate. However, if capturing a broader context is the priority, the LLM-based Pipeline B consistently finds more values (35.6% field accuracy vs. 46.1%) and grounds them against the local terminology index (43.2% code recall vs 5.4%). Pipeline B fails primarily on speed and vector space noise, mapping 62 codes but only hitting exact target matches 29.7% of the time. The choice between them depends entirely on whether the target application prioritizes precision and latency over recall and context.
+If you need fast, highly precise code mapping and can afford to miss some edge cases, the JSL annotator chain is the better architectural choice. It only mapped four codes, but two were exact matches, yielding a 50.0% precision rate. However, if capturing a broader context is the priority, the LLM-based Pipeline B consistently finds more values (35.6% field accuracy vs. 46.1%) and grounds them against the local terminology index (43.2% code recall vs 5.4%). Pipeline B fails primarily on speed and vector space noise, mapping 62 codes but only hitting exact target matches 29.7% of the time. The choice between them depends entirely on whether the target application prioritizes precision and latency over recall and context.
 
 ---
 
