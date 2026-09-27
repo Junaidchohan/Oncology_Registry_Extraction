@@ -2,12 +2,12 @@
     "report_id": "report_006",
     "annotations": {
         "primary_tumor_site": {
-            "value": "Left upper lobe, lung",
+            "value": "left upper lobe",
             "state": "present",
             "evidence": "left upper lobe mass on CT (3.5 cm)",
             "span": [
-                1696,
-                1727
+                18,
+                101
             ],
             "codes": {
                 "ICD-O-3": "C34.1"
@@ -18,8 +18,8 @@
             "state": "present",
             "evidence": "Poorly differentiated squamous cell carcinoma (SCC)",
             "span": [
-                862,
-                885
+                808,
+                903
             ],
             "codes": {
                 "ICD-O-3-M": "8070/3"
@@ -30,8 +30,8 @@
             "state": "present",
             "evidence": "Left upper lobectomy specimen",
             "span": [
-                337,
-                357
+                272,
+                306
             ],
             "codes": {
                 "CPT": "32480"
@@ -42,18 +42,18 @@
             "state": "present",
             "evidence": "Left upper lobectomy specimen",
             "span": [
-                337,
-                341
+                18,
+                101
             ],
             "codes": {}
         },
         "tumor_grade": {
-            "value": "Grade 3 (poorly differentiated)",
+            "value": "Poorly differentiated",
             "state": "present",
             "evidence": "Poorly differentiated squamous cell carcinoma, Nottingham equivalent Grade 3",
             "span": [
-                840,
-                861
+                808,
+                903
             ],
             "codes": {},
             "lesion_id": "lesion_1"
@@ -63,20 +63,20 @@
             "state": "present",
             "evidence": "firm, grey-white tumor measuring 3.5 x 3.2 x 3.0 cm",
             "span": [
-                99,
-                102
+                18,
+                110
             ],
             "codes": {},
             "lesion_id": "lesion_1",
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "Multiple (primary + satellite nodule in lingula)",
+            "value": "Satellite nodule",
             "state": "present",
             "evidence": "second distinct nodule measuring 12 x 10 x 9 mm in the lingula -- satellite nodule",
             "span": [
-                1840,
-                1856
+                1285,
+                1382
             ],
             "codes": {},
             "lesion_id": "lesion_1"
@@ -102,12 +102,12 @@
             "codes": {}
         },
         "surgical_margins": {
-            "value": "Negative (bronchial margin 3.5 cm)",
+            "value": "Bronchial resection margin: negative",
             "state": "present",
             "evidence": "Bronchial resection margin: negative (3.5 cm from tumor)",
             "span": [
                 1029,
-                1065
+                1069
             ],
             "codes": {},
             "unit": "cm"
@@ -117,8 +117,8 @@
             "state": "present",
             "evidence": "12 hilar and interlobar lymph nodes examined",
             "span": [
-                573,
-                575
+                538,
+                605
             ],
             "codes": {}
         },
@@ -137,8 +137,8 @@
             "state": "present",
             "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
             "span": [
-                2107,
-                2110
+                2087,
+                2150
             ],
             "codes": {
                 "AJCC": "Stage IIB"
@@ -149,8 +149,8 @@
             "state": "present",
             "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
             "span": [
-                2030,
-                2033
+                2009,
+                2034
             ],
             "codes": {
                 "AJCC": "Stage IIB"
@@ -161,8 +161,8 @@
             "state": "present",
             "evidence": "Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
             "span": [
-                2115,
-                2118
+                2087,
+                2150
             ],
             "codes": {
                 "AJCC": "Stage IIB"

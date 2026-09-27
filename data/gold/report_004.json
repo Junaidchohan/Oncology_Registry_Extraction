@@ -6,8 +6,8 @@
             "state": "present",
             "evidence": "right breast mass... upper inner quadrant",
             "span": [
-                1190,
-                1224
+                247,
+                330
             ],
             "codes": {
                 "ICD-O-3": "C50.2"
@@ -18,8 +18,8 @@
             "state": "present",
             "evidence": "invasive ductal carcinoma (IDC), NST, Nottingham Grade 3",
             "span": [
-                1248,
-                1278
+                1246,
+                1298
             ],
             "codes": {
                 "ICD-O-3-M": "8500/3"
@@ -30,8 +30,8 @@
             "state": "present",
             "evidence": "Ultrasound-guided core needle biopsy performed",
             "span": [
-                257,
-                293
+                247,
+                330
             ],
             "codes": {
                 "CPT": "19083"
@@ -42,8 +42,8 @@
             "state": "present",
             "evidence": "right breast mass",
             "span": [
-                1190,
-                1195
+                18,
+                121
             ],
             "codes": {}
         },
@@ -52,8 +52,8 @@
             "state": "present",
             "evidence": "Nottingham Grade 3 (tubule score 3, nuclear score 3, mitotic score 3; total 9/9)",
             "span": [
-                656,
-                674
+                618,
+                716
             ],
             "codes": {},
             "lesion_id": "lesion_1"
@@ -67,12 +67,12 @@
             "lesion_id": "lesion_1"
         },
         "tumor_focality": {
-            "value": "Single lesion",
+            "value": "right breast mass",
             "state": "present",
             "evidence": "Single right breast mass described",
             "span": [
-                79,
-                83
+                18,
+                121
             ],
             "codes": {},
             "lesion_id": "lesion_1"

@@ -6,8 +6,8 @@
             "state": "present",
             "evidence": "cecal mass... tumor identified at the cecum",
             "span": [
-                1592,
-                1597
+                506,
+                561
             ],
             "codes": {
                 "ICD-O-3": "C18.0"
@@ -18,8 +18,8 @@
             "state": "present",
             "evidence": "moderately to poorly differentiated (Grade 2-3, mixed) colorectal adenocarcinoma",
             "span": [
-                805,
-                830
+                736,
+                831
             ],
             "codes": {
                 "ICD-O-3-M": "8140/3"
@@ -30,8 +30,8 @@
             "state": "present",
             "evidence": "Referred urgently for right hemicolectomy",
             "span": [
-                330,
-                349
+                226,
+                299
             ],
             "codes": {
                 "CPT": "44160"
@@ -60,20 +60,20 @@
             "state": "present",
             "evidence": "fungating, partially obstructing tumor measuring 5.5 x 4.8 x 2.1 cm",
             "span": [
-                484,
-                487
+                433,
+                492
             ],
             "codes": {},
             "lesion_id": "lesion_1",
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "Single lesion",
+            "value": "obstructing lesion",
             "state": "present",
             "evidence": "single fungating mass at cecum",
             "span": [
-                280,
-                298
+                226,
+                299
             ],
             "codes": {},
             "lesion_id": "lesion_1"
@@ -96,12 +96,12 @@
             "codes": {}
         },
         "surgical_margins": {
-            "value": "CRM positive (tumor at inked margin <1 mm)",
+            "value": "CRM: involved",
             "state": "present",
             "evidence": "CRM: involved (tumor at inked surface, <1 mm)",
             "span": [
                 1270,
-                1283
+                1316
             ],
             "codes": {},
             "unit": "mm"
@@ -111,8 +111,8 @@
             "state": "present",
             "evidence": "Of 12 lymph nodes examined",
             "span": [
-                1320,
-                1343
+                611,
+                671
             ],
             "codes": {}
         },
@@ -121,8 +121,8 @@
             "state": "present",
             "evidence": "5 are positive for metastatic adenocarcinoma with extranodal extension",
             "span": [
-                1345,
-                1359
+                320,
+                411
             ],
             "codes": {}
         },

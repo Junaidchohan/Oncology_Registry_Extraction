@@ -2,24 +2,24 @@
     "report_id": "report_001",
     "annotations": {
         "primary_tumor_site": {
-            "value": "Left breast, upper outer quadrant",
+            "value": "left breast mass",
             "state": "present",
             "evidence": "firm, stellate, grey-white mass... in the upper outer quadrant",
             "span": [
-                53,
-                64
+                18,
+                73
             ],
             "codes": {
                 "ICD-O-3": "C50.4"
             }
         },
         "histological_type": {
-            "value": "Invasive ductal carcinoma, NST (no special type)",
+            "value": "infiltrating ductal carcinoma (IDC), no special type",
             "state": "present",
             "evidence": "infiltrating ductal carcinoma (IDC), no special type (NST)",
             "span": [
-                698,
-                750
+                662,
+                757
             ],
             "codes": {
                 "ICD-O-3-M": "8500/3"
@@ -30,8 +30,8 @@
             "state": "present",
             "evidence": "Left modified radical mastectomy",
             "span": [
-                178,
-                205
+                165,
+                206
             ],
             "codes": {
                 "CPT": "19307"
@@ -42,8 +42,8 @@
             "state": "present",
             "evidence": "Left modified radical mastectomy specimen",
             "span": [
-                237,
-                241
+                18,
+                73
             ],
             "codes": {}
         },
@@ -53,7 +53,7 @@
             "evidence": "Nottingham Grade 2 (tubule formation 3, nuclear pleomorphism 2, mitotic count 1; score 6/9)",
             "span": [
                 758,
-                776
+                838
             ],
             "codes": {},
             "lesion_id": "lesion_1"
@@ -63,20 +63,20 @@
             "state": "present",
             "evidence": "mass measuring 2.3 x 2.1 x 1.8 cm",
             "span": [
-                71,
-                74
+                18,
+                89
             ],
             "codes": {},
             "lesion_id": "lesion_1",
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "Single lesion",
+            "value": "primary mass",
             "state": "present",
             "evidence": "a firm, stellate, grey-white mass (single mass described)",
             "span": [
-                680,
-                692
+                662,
+                757
             ],
             "codes": {},
             "lesion_id": "lesion_1"
@@ -86,7 +86,7 @@
             "state": "present",
             "evidence": "Lymphovascular invasion is identified within the tumor periphery",
             "span": [
-                1540,
+                1538,
                 1572
             ],
             "codes": {}
@@ -106,7 +106,7 @@
             "state": "present",
             "evidence": "all other margins are negative",
             "span": [
-                1623,
+                1603,
                 1661
             ],
             "codes": {},
@@ -117,8 +117,8 @@
             "state": "present",
             "evidence": "Of the 18 axillary lymph nodes examined",
             "span": [
-                530,
-                532
+                504,
+                570
             ],
             "codes": {}
         },
@@ -127,8 +127,8 @@
             "state": "present",
             "evidence": "4 contain metastatic carcinoma",
             "span": [
-                288,
-                289
+                227,
+                294
             ],
             "codes": {}
         },
@@ -137,8 +137,8 @@
             "state": "present",
             "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
             "span": [
-                1792,
-                1795
+                1772,
+                1836
             ],
             "codes": {
                 "AJCC": "Stage IIB"
@@ -149,8 +149,8 @@
             "state": "present",
             "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
             "span": [
-                1796,
-                1800
+                1772,
+                1836
             ],
             "codes": {
                 "AJCC": "Stage IIB"
@@ -161,8 +161,8 @@
             "state": "present",
             "evidence": "Pathologic stage: pT2 pN1a pM0 (AJCC 8th edition) -- Stage IIB",
             "span": [
-                1801,
-                1804
+                1772,
+                1836
             ],
             "codes": {
                 "AJCC": "Stage IIB"

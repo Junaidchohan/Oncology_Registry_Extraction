@@ -2,12 +2,12 @@
     "report_id": "report_005",
     "annotations": {
         "primary_tumor_site": {
-            "value": "Rectum, 10 cm from anal verge",
+            "value": "rectum at 10 cm from the anal verge",
             "state": "present",
             "evidence": "sessile polyp in the rectum at 10 cm from the anal verge",
             "span": [
-                133,
-                168
+                112,
+                169
             ],
             "codes": {
                 "ICD-O-3": "C20.9"
@@ -18,8 +18,8 @@
             "state": "present",
             "evidence": "well-differentiated (Grade 1) adenocarcinoma of the rectum",
             "span": [
-                541,
-                555
+                497,
+                570
             ],
             "codes": {
                 "ICD-O-3-M": "8140/3"
@@ -30,8 +30,8 @@
             "state": "present",
             "evidence": "Referred for endoscopic mucosal resection biopsy",
             "span": [
-                251,
-                286
+                238,
+                287
             ],
             "codes": {
                 "CPT": "45171"
@@ -45,12 +45,12 @@
             "codes": {}
         },
         "tumor_grade": {
-            "value": "Grade 1 (well-differentiated)",
+            "value": "well-differentiated (Grade 1)",
             "state": "present",
             "evidence": "well-differentiated (Grade 1)",
             "span": [
-                511,
-                540
+                497,
+                570
             ],
             "codes": {},
             "lesion_id": "lesion_1"
@@ -60,20 +60,20 @@
             "state": "present",
             "evidence": "2.8 cm sessile polyp",
             "span": [
-                105,
-                108
+                84,
+                111
             ],
             "codes": {},
             "lesion_id": "lesion_1",
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "Single lesion",
+            "value": "sessile polyp",
             "state": "present",
             "evidence": "single 2.8 cm sessile polyp described",
             "span": [
                 112,
-                125
+                169
             ],
             "codes": {},
             "lesion_id": "lesion_1"

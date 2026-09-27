@@ -6,8 +6,8 @@
             "state": "present",
             "evidence": "a 4.5 cm mass at the sigmoid colon",
             "span": [
-                1438,
-                1451
+                61,
+                92
             ],
             "codes": {
                 "ICD-O-3": "C18.7"
@@ -18,8 +18,8 @@
             "state": "present",
             "evidence": "moderately differentiated (Grade 2) colorectal adenocarcinoma",
             "span": [
-                673,
-                698
+                623,
+                699
             ],
             "codes": {
                 "ICD-O-3-M": "8140/3"
@@ -30,8 +30,8 @@
             "state": "present",
             "evidence": "Sigmoid colectomy specimen",
             "span": [
-                236,
-                253
+                174,
+                205
             ],
             "codes": {
                 "CPT": "44210"
@@ -45,12 +45,12 @@
             "codes": {}
         },
         "tumor_grade": {
-            "value": "Grade 2 (moderately differentiated)",
+            "value": "moderately differentiated (Grade 2)",
             "state": "present",
             "evidence": "moderately differentiated (Grade 2)",
             "span": [
-                637,
-                672
+                623,
+                699
             ],
             "codes": {},
             "lesion_id": "lesion_1"
@@ -60,20 +60,20 @@
             "state": "present",
             "evidence": "ulcerated, fungating tumor measuring 4.5 x 3.8 x 1.2 cm",
             "span": [
-                59,
-                62
+                18,
+                92
             ],
             "codes": {},
             "lesion_id": "lesion_1",
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "Single lesion",
+            "value": "ulcerated, fungating tumor",
             "state": "present",
             "evidence": "single ulcerated fungating tumor described",
             "span": [
-                330,
-                360
+                281,
+                320
             ],
             "codes": {},
             "lesion_id": "lesion_1"
@@ -84,17 +84,17 @@
             "evidence": "Lymphovascular invasion is present",
             "span": [
                 813,
-                847
+                848
             ],
             "codes": {}
         },
         "perineural_invasion": {
-            "value": "Present (2 foci)",
+            "value": "Perineural invasion is identified in 2 foci",
             "state": "present",
             "evidence": "Perineural invasion is identified in 2 foci",
             "span": [
                 849,
-                892
+                893
             ],
             "codes": {}
         },
@@ -103,7 +103,7 @@
             "state": "present",
             "evidence": "circumferential radial margin (CRM) is negative (closest point 2.5 mm)",
             "span": [
-                1695,
+                1680,
                 1716
             ],
             "codes": {},
@@ -114,8 +114,8 @@
             "state": "present",
             "evidence": "Of 24 lymph nodes examined",
             "span": [
-                533,
-                535
+                505,
+                559
             ],
             "codes": {}
         },
@@ -124,8 +124,8 @@
             "state": "present",
             "evidence": "3 are positive for metastatic adenocarcinoma (pN1b)",
             "span": [
-                327,
-                328
+                323,
+                329
             ],
             "codes": {}
         },
@@ -134,8 +134,8 @@
             "state": "present",
             "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
             "span": [
-                807,
-                810
+                718,
+                812
             ],
             "codes": {
                 "AJCC": "Stage IIIB"
@@ -146,8 +146,8 @@
             "state": "present",
             "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
             "span": [
-                968,
-                972
+                906,
+                974
             ],
             "codes": {
                 "AJCC": "Stage IIIB"
@@ -158,8 +158,8 @@
             "state": "present",
             "evidence": "Pathologic stage: pT3 pN1b pM0 (AJCC 8th edition) -- Stage IIIB",
             "span": [
-                1869,
-                1872
+                1840,
+                1905
             ],
             "codes": {
                 "AJCC": "Stage IIIB"

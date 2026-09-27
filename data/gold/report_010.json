@@ -2,36 +2,36 @@
     "report_id": "report_010",
     "annotations": {
         "primary_tumor_site": {
-            "value": "Left breast (upper outer and lower outer quadrants)",
+            "value": "left breast",
             "state": "present",
             "evidence": "two distinct suspicious lesions... upper outer quadrant; lower outer quadrant",
             "span": [
-                196,
-                216
+                18,
+                119
             ],
             "codes": {
                 "ICD-O-3": "C50.4"
             }
         },
         "histological_type": {
-            "value": "Specimen A: IDC NST + DCIS; Specimen B: DCIS only",
+            "value": "invasive ductal carcinoma (IDC), NST",
             "state": "present",
             "evidence": "Specimen A: invasive ductal carcinoma + high-grade DCIS; Specimen B: high-grade DCIS only",
             "span": [
-                714,
-                739
+                700,
+                783
             ],
             "codes": {
                 "ICD-O-3-M": "8500/3 (IDC); 8500/2 (DCIS)"
             }
         },
         "procedure": {
-            "value": "Stereotactic core biopsy (two separate specimens)",
+            "value": "stereotactic core biopsy",
             "state": "present",
             "evidence": "Stereotactic core biopsy performed of both lesions separately",
             "span": [
-                1630,
-                1654
+                389,
+                413
             ],
             "codes": {
                 "CPT": "19081"
@@ -42,41 +42,41 @@
             "state": "present",
             "evidence": "left breast microcalcifications",
             "span": [
-                1617,
-                1621
+                18,
+                119
             ],
             "codes": {}
         },
         "tumor_grade": {
-            "value": "Specimen A: Grade 3 (Nottingham 8/9); Specimen B: high-grade DCIS",
+            "value": "Grade 3",
             "state": "present",
             "evidence": "Nottingham Grade 3 (score 8/9); high-grade DCIS",
             "span": [
-                752,
-                770
+                700,
+                783
             ],
             "codes": {},
             "lesion_id": "lesion_1"
         },
         "tumor_size": {
-            "value": "Specimen A: 18 mm; Specimen B: 9 mm (imaging)",
+            "value": "18 mm",
             "state": "present",
             "evidence": "Lesion A -- 18 mm mass; Lesion B -- 9 mm mass",
             "span": [
-                178,
-                180
+                120,
+                217
             ],
             "codes": {},
             "lesion_id": "lesion_1",
             "unit": "mm"
         },
         "tumor_focality": {
-            "value": "Multifocal (two lesions, 4 cm apart)",
+            "value": "two distinct suspicious lesions",
             "state": "present",
             "evidence": "Synchronous multifocal disease: present (two lesions, 4 cm apart)",
             "span": [
-                2121,
-                2151
+                120,
+                217
             ],
             "codes": {},
             "lesion_id": "lesion_1"

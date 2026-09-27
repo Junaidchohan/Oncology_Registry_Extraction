@@ -2,12 +2,12 @@
     "report_id": "report_003",
     "annotations": {
         "primary_tumor_site": {
-            "value": "Right upper lobe, lung",
+            "value": "right upper lobe",
             "state": "present",
             "evidence": "3.1 cm spiculated right upper lobe mass",
             "span": [
-                1310,
-                1326
+                123,
+                206
             ],
             "codes": {
                 "ICD-O-3": "C34.1"
@@ -18,8 +18,8 @@
             "state": "present",
             "evidence": "consistent with pulmonary adenocarcinoma",
             "span": [
-                1360,
-                1384
+                657,
+                727
             ],
             "codes": {
                 "ICD-O-3-M": "8140/3"
@@ -30,8 +30,8 @@
             "state": "present",
             "evidence": "CT-guided core needle biopsy of the lung mass",
             "span": [
-                328,
-                356
+                315,
+                374
             ],
             "codes": {
                 "CPT": "32405"
@@ -42,8 +42,8 @@
             "state": "present",
             "evidence": "right upper lobe mass",
             "span": [
-                1310,
-                1315
+                123,
+                206
             ],
             "codes": {}
         },
@@ -52,7 +52,7 @@
             "state": "present",
             "evidence": "Pulmonary adenocarcinoma, moderately differentiated",
             "span": [
-                1386,
+                1358,
                 1411
             ],
             "codes": {},
@@ -63,20 +63,20 @@
             "state": "present",
             "evidence": "3.1 cm spiculated right upper lobe mass",
             "span": [
-                121,
-                124
+                119,
+                206
             ],
             "codes": {},
             "lesion_id": "lesion_1",
             "unit": "cm"
         },
         "tumor_focality": {
-            "value": "Single primary; multiple brain metastases",
+            "value": "multiple FDG-avid brain lesions",
             "state": "present",
             "evidence": "single lung primary with multiple brain metastases",
             "span": [
-                1555,
-                1571
+                216,
+                308
             ],
             "codes": {},
             "lesion_id": "lesion_1"
@@ -110,12 +110,12 @@
             "codes": {}
         },
         "positive_lymph_nodes": {
-            "value": "Ipsilateral mediastinal adenopathy (imaging)",
+            "value": "ipsilateral mediastinal lymphadenopathy",
             "state": "present",
             "evidence": "ipsilateral mediastinal lymphadenopathy",
             "span": [
-                166,
-                205
+                123,
+                206
             ],
             "codes": {}
         },

@@ -20,8 +20,8 @@
             "state": "present",
             "evidence": "Referred for CT-guided core biopsy",
             "span": [
-                437,
-                465
+                427,
+                484
             ],
             "codes": {
                 "CPT": "32405"
@@ -32,8 +32,8 @@
             "state": "present",
             "evidence": "right lower lobe",
             "span": [
-                1502,
-                1507
+                18,
+                110
             ],
             "codes": {}
         },
@@ -49,8 +49,8 @@
             "state": "present",
             "evidence": "right lower lobe nodule (1.8 cm)",
             "span": [
-                112,
-                115
+                111,
+                211
             ],
             "codes": {},
             "lesion_id": "lesion_1",
