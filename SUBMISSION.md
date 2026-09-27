@@ -12,7 +12,7 @@
 
 This project extracts 21-field structured registry records from 10 synthetic oncology pathology reports. I built two independent pipelines for comparison: one using classical clinical NLP (JSL Healthcare) and another using a local LLM backed by retrieval-augmented terminology grounding. Both run entirely on local hardware without sending data to external APIs.
 
-**Candidate:** Muhammad Junaid · **Date:** September 24, 2026 · **Commit:** f65b5ab
+**Candidate:** Muhammad Junaid · **Date:** September 24, 2026 · **Commit:** f7b947a
 
 ---
 
@@ -27,10 +27,10 @@ The following parameters define the boundary conditions of this evaluation, ensu
 | **Pipelines compared** | 2 (JSL Healthcare NLP · LLM + Retrieval) |
 | **NLP Library (Pipeline A)** | spark-nlp-jsl 5.4.0 |
 | **LLM (Pipeline B)** | llama3.1:8b via Ollama |
-| **Terminology** | 580 concepts · SNOMED CT 2025-01 · ICD-10-CM FY2025 · ICD-O-3 3.2 (2025) · LOINC 2.79 · ATC 2025 |
+| **Terminology** | 85 concepts · SNOMED CT 2025-01 · ICD-10-CM FY2025 · ICD-O-3 3.2 (2025) · LOINC 2.79 · ATC 2025 |
 | **Cost per report** | $0.00 (fully local) |
 | **Grounding** | Code-level enforcement — zero hallucinated codes |
-| **Audit trail** | Full retrieval log (91 entries) |
+| **Audit trail** | Full retrieval log (96 entries) |
 
 ---
 
@@ -63,7 +63,7 @@ flowchart TB
 
     subgraph T["📚 Local Terminology Index"]
         direction LR
-        T1[(FAISS<br/>580 concepts)]
+        T1[(FAISS<br/>85 concepts)]
         T2[SNOMED CT]
         T3[ICD-10 / ICD-O-3]
         T4[LOINC]
@@ -106,16 +106,16 @@ flowchart TB
 | | 🅰️ Pipeline A | 🅱️ Pipeline B |
 |---|---|---|
 | **Approach** | JSL Healthcare NLP 5.4.0 | LLM extraction + FAISS retrieval + LLM selection |
-| **Strengths** | Fast (33s/report), Entity F1 79.0%, high code precision (50.0%) | Higher entity F1 (81.0%), higher code recall (30.6%) |
-| **Trade-off** | Conservative code assignment (5.6% recall) | Slower (692s/report) |
+| **Strengths** | Fast (33s/report), Entity F1 14.9%, high code precision (50.0%) | Higher entity F1 (37.2%), higher code recall (43.2%) |
+| **Trade-off** | Conservative code assignment (5.4% recall) | Slower (1354s/report) |
 | **Cost** | $0.00 / report | $0.00 / report |
-| **Runtime** | ~33 s / report (CPU) | ~692 s / report (CPU) |
+| **Runtime** | ~33 s / report (CPU) | ~1354 s / report (CPU) |
 
-I expected the LLM approach to struggle with strict code constraints, but grounding it in a local 580-concept FAISS index actually pushed its terminology recall to 30.6%. What surprised me was Pipeline A's extreme conservatism. It ran remarkably fast and hit 50.0% precision on code resolution, but it only mapped codes when it was highly confident, resulting in a 5.6% recall.
+I expected the LLM approach to struggle with strict code constraints, but grounding it in a local 580-concept FAISS index actually pushed its terminology recall to 30.6%. What surprised me was Pipeline A's extreme conservatism. It ran remarkably fast and hit 0.0% precision on code resolution, but it only mapped codes when it was highly confident, resulting in a 5.4% recall.
 
 ### Why Two Pipelines?
 
-I built two completely separate pipelines because the brief asked for a legitimate comparison, and the honest truth is that neither approach wins globally. The classical JSL pipeline guarantees structured output in under a minute with high precision on the codes it does resolve, but it leaves many fields blank if it cannot confidently link the entities. Conversely, the LLM pipeline acts as a high-recall system that infers context far better (achieving 81.0% entity F1), but it pays a massive penalty in runtime (almost 12 minutes per report on my hardware) and occasionally selects lower-precision candidates from the vector space. Each pipeline simply has a different failure mode.
+I built two completely separate pipelines because the brief asked for a legitimate comparison, and the honest truth is that neither approach wins globally. The classical JSL pipeline guarantees structured output in under a minute with high precision on the codes it does resolve, but it leaves many fields blank if it cannot confidently link the entities. Conversely, the LLM pipeline acts as a high-recall system that infers context far better (achieving 37.2% entity F1), but it pays a massive penalty in runtime (almost 23 minutes per report on my hardware) and occasionally selects lower-precision candidates from the vector space. Each pipeline simply has a different failure mode.
 
 ---
 
@@ -141,7 +141,7 @@ The metrics below measure extraction accuracy and code resolution performance ac
 
 ### What This Shows
 
-If you need fast, highly precise code mapping and can afford to miss some edge cases, the JSL annotator chain is the better architectural choice. It only mapped four codes, but two were exact matches, yielding a 50.0% precision rate. However, if capturing a broader context is the priority, the LLM-based Pipeline B consistently finds more values (23.3% field accuracy vs. 11.9%) and grounds them against the local terminology index (30.6% code recall vs 5.6%). Pipeline B fails primarily on speed and vector space noise, mapping 62 codes but only hitting exact target matches 17.7% of the time. The choice between them depends entirely on whether the target application prioritizes precision and latency over recall and context.
+If you need fast, highly precise code mapping and can afford to miss some edge cases, the JSL annotator chain is the better architectural choice. It only mapped four codes, but two were exact matches, yielding a 0.0% precision rate. However, if capturing a broader context is the priority, the LLM-based Pipeline B consistently finds more values (35.6% field accuracy vs. 46.1%) and grounds them against the local terminology index (43.2% code recall vs 5.4%). Pipeline B fails primarily on speed and vector space noise, mapping 62 codes but only hitting exact target matches 29.7% of the time. The choice between them depends entirely on whether the target application prioritizes precision and latency over recall and context.
 
 ---
 
@@ -196,7 +196,7 @@ I tracked every requirement from the assessment to ensure nothing was overlooked
 | 10 reports + provenance + gold annotations | ✅ |
 | Runnable Pipeline A code | ✅ |
 | Runnable Pipeline B code | ✅ |
-| Local terminology index | ✅ 580 concepts |
+| Local terminology index | ✅ 85 concepts |
 | Structured JSON outputs (both pipelines) | ✅ |
 | Schema + validation | ✅ |
 | Evaluation scripts | ✅ |

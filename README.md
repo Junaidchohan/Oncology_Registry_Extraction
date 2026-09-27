@@ -37,7 +37,7 @@ Two-stage RAG approach:
 | ICD-O-3 | Edition 3.2 (WHO 2025) | 105 codes |
 | LOINC | Version 2.79 (Dec 2024) | 53 codes |
 | ATC | WHO ATC 2025 | 50 codes |
-| **Total** | | **580 concepts** |
+| **Total** | | **85 concepts** |
 
 ---
 
@@ -53,25 +53,28 @@ Two-stage RAG approach:
 | Pipeline A embeddings | embeddings_clinical (200d), sbiobert_base_cased_mli |
 | Pipeline B LLM | llama3.1:8b via Ollama 0.34.2 |
 | FAISS index backend | sentence-transformers / sklearn TF-IDF char n-grams (3-5) |
-| FAISS index size | 580 concepts |
+| FAISS index size | 85 concepts |
 
 ## Final Evaluation Results
 
 Both pipelines ran on all 10 reports. Metrics are computed against the gold reference set.
 
-| Metric | Pipeline A (JSL) | Pipeline B (LLM + Retrieval) |
-|---|---|---|
-| Entity P / R / F1 | 100.0% / 65.2% / 79.0% | 100.0% / 68.1% / 81.0% |
-| Entity TP / FP / FN | 137 / 0 / 73 | 143 / 0 / 67 |
-| Field value exact accuracy | 11.9% (25/210) | 23.3% (49/210) |
-| Assertion / State accuracy | 49.0% (103/210) | 55.7% (117/210) |
-| Relation / Macro F1 | 79.0% | 81.0% |
-| Terminology code precision | 50.0% (2/4) | 17.7% (11/62) |
-| Terminology code recall | 5.6% (2/36) | 30.6% (11/36) |
-| Terminology F1 | 10.0% | 22.4% |
-| Unsupported field rate | 0.0% | 0.0% |
-| Mean runtime per report | 32.85s | 692.10s |
-| Cost per report | .00 | .00 |
+| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |
+| --- | --- | --- |
+| Entity NER P / R / F1 (span-based) | 14.8% / 15.1% / 14.9% | 32.6% / 43.3% / 37.2% |
+| Field value exact accuracy | 46.1% (83/180) | 35.6% (64/180) |
+| Assertion / State accuracy | 53.3% (96/180) | 53.9% (97/180) |
+| Relation F1 | 8.2% | 7.9% |
+| Retrieval Recall@K | 5.4% (2/37) | 43.2% (16/37) |
+| Selection accuracy | 5.4% (2/37) | 29.7% (11/37) |
+| Located evidence rate | 86.7% | 80.3% |
+| Value-in-evidence rate | 69.0% | 61.1% |
+| Unsupported field rate | 68.1% (77 fields) | 42.7% (67 fields) |
+| Evidence-unsupported fields | 67 | 68 |
+| Invalid code rate | 0.0% | 0.0% |
+| Mean runtime | 32.85s | 1354.28s |
+| Mean cost | $0.0000 | $0.0000 |
+
 
 
 
@@ -104,7 +107,7 @@ cd "E:\AI Projects\Oncology Registry Extraction"
 | Pipeline | Model | Runtime per report | Cost per report |
 |---|---|---|---|
 | Pipeline A | spark-nlp-jsl 5.4.0 (local CPU) | ~33 s | .00 |
-| Pipeline B | llama3.1:8b via Ollama (local CPU) | ~692 s | .00 |
+| Pipeline B | llama3.1:8b via Ollama (local CPU) | ~1354 s | .00 |
 
 ---
 
@@ -211,7 +214,7 @@ oncology-registry-extraction/
 - **Endpoint:** http://localhost:11434/v1 (Pipeline B only)
 - **Cost per report:** $0.00 for both pipelines (fully local)
 - **Mean runtime:** 32.85s (Pipeline A) / 692.10s (Pipeline B)
-- **Terminology index:** 580 concepts across SNOMED CT 2025-01, ICD-10-CM FY2025, ICD-O-3 3.2 (2025), LOINC 2.79, ATC 2025
+- **Terminology index:** 85 concepts across SNOMED CT 2025-01, ICD-10-CM FY2025, ICD-O-3 3.2 (2025), LOINC 2.79, ATC 2025
 
 ## Proof of Execution
 
