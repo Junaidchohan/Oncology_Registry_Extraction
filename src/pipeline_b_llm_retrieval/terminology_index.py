@@ -35,6 +35,13 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 
+try:
+    import faiss
+    HAS_FAISS = True
+except ImportError:
+    HAS_FAISS = False
+    faiss = None
+
 logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
@@ -179,7 +186,8 @@ class TerminologyIndex:
 
     def build(self) -> None:
         """Encode all concepts and build the FAISS index. Saves to disk."""
-        import faiss
+        if not HAS_FAISS:
+            raise RuntimeError("faiss is required. Install with: pip install faiss-cpu")
         import pickle
 
         concepts = _load_concepts()
@@ -226,7 +234,8 @@ class TerminologyIndex:
 
     def load(self) -> None:
         """Load a pre-built FAISS index from disk."""
-        import faiss
+        if not HAS_FAISS:
+            raise RuntimeError("faiss is required. Install with: pip install faiss-cpu")
 
         if not _INDEX_PATH.exists() or not _META_PATH.exists():
             raise FileNotFoundError(

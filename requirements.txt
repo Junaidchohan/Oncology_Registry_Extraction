@@ -1,3 +1,5 @@
+﻿# Spark NLP for Healthcare (JSL) is installed separately.
+# See setup_jsl_env.ps1 for the JSL installation step.
 spark-nlp==5.4.0
 pyspark==3.4.0
 spark-nlp-display
@@ -10,3 +12,5 @@ scikit-learn
 numpy
 tqdm
 pyyaml
+ollama
+requests
