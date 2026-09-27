@@ -18,7 +18,7 @@
   },
   "fields": {
     "primary_tumor_site": {
-      "value": "breast",
+      "value": "Left breast",
       "unit": null,
       "state": "present",
       "evidence": "Left breast, modified radical mastectomy",
@@ -29,10 +29,11 @@
       "codes": {
         "ICD-O-3": "8500/3",
         "ICD-10": "C50.4"
-      }
+      },
+      "raw_value": "breast"
     },
     "histological_type": {
-      "value": "infiltrating ductal carcinoma",
+      "value": "Infiltrating ductal carcinoma",
       "unit": null,
       "state": "present",
       "evidence": "Sections from the primary mass show infiltrating ductal carcinoma (IDC), no special type (NST)",
@@ -43,10 +44,11 @@
       "codes": {
         "ICD-O-3": "8500/3",
         "ICD-10": "C50.4"
-      }
+      },
+      "raw_value": "infiltrating ductal carcinoma"
     },
     "tumor_grade": {
-      "value": "2",
+      "value": "Nottingham Grade 2",
       "unit": null,
       "state": "present",
       "evidence": "Nottingham Grade 2 (tubule formation 3, nuclear pleomorphism 2, mitotic count 1; score 6/9)",
@@ -54,7 +56,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "2"
     },
     "clinical_stage": {
       "value": "IIB",
@@ -65,7 +68,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "IIB"
     },
     "pathologic_t": {
       "value": "pT2",
@@ -75,7 +79,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "pT2"
     },
     "pathologic_n": {
       "value": "pN1a",
@@ -85,7 +90,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "pN1a"
     },
     "pathologic_m": {
       "value": "pM0",
@@ -95,7 +101,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "pM0"
     },
     "tumor_size": {
       "value": "2.3",
@@ -106,10 +113,11 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "2.3"
     },
     "laterality": {
-      "value": "left",
+      "value": "Left",
       "unit": null,
       "state": "present",
       "evidence": "Left breast, modified radical mastectomy",
@@ -117,10 +125,11 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "left"
     },
     "surgical_margins": {
-      "value": "negative",
+      "value": "Negative",
       "unit": null,
       "state": "present",
       "evidence": "Surgical margins: negative (closest margin 2.0 cm, deep)",
@@ -128,7 +137,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "negative"
     },
     "lymph_nodes_examined": {
       "value": "18",
@@ -139,7 +149,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "18"
     },
     "positive_lymph_nodes": {
       "value": "4",
@@ -150,10 +161,11 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "4"
     },
     "lymphovascular_invasion": {
-      "value": "present",
+      "value": "Present",
       "unit": null,
       "state": "present",
       "evidence": "Lymphovascular invasion is identified within the tumor periphery",
@@ -161,10 +173,11 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "present"
     },
     "perineural_invasion": {
-      "value": "absent",
+      "value": "Absent",
       "unit": null,
       "state": "present",
       "evidence": "No perineural invasion is seen",
@@ -172,7 +185,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "absent"
     },
     "distant_metastasis": {
       "value": "absent",
@@ -183,7 +197,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "absent"
     },
     "er_status": {
       "value": "positive",
@@ -194,7 +209,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "positive"
     },
     "pr_status": {
       "value": "positive",
@@ -205,7 +221,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "positive"
     },
     "her2_status": {
       "value": "negative",
@@ -216,7 +233,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "negative"
     },
     "kras_mutation": {
       "value": "not_mentioned",
@@ -227,7 +245,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "not_mentioned"
     },
     "egfr_mutation": {
       "value": "not_mentioned",
@@ -238,10 +257,11 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "not_mentioned"
     },
     "procedure": {
-      "value": "modified radical mastectomy",
+      "value": "Modified radical mastectomy",
       "unit": null,
       "state": "present",
       "evidence": "Referred for modified radical mastectomy",
@@ -249,7 +269,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "modified radical mastectomy"
     },
     "prior_treatment": {
       "value": "not_applicable",
@@ -260,10 +281,11 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "not_applicable"
     },
     "tumor_focality": {
-      "value": "not_mentioned",
+      "value": "Not_mentioned",
       "unit": null,
       "state": "not_mentioned",
       "evidence": null,
@@ -271,7 +293,8 @@
         null,
         null
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "not_mentioned"
     }
   }
 }

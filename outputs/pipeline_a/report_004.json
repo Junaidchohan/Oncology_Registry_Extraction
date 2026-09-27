@@ -18,7 +18,7 @@
   },
   "fields": {
     "primary_tumor_site": {
-      "value": "breast",
+      "value": "Right breast",
       "unit": null,
       "state": "present",
       "evidence": "breast",
@@ -26,10 +26,11 @@
         72,
         77
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "breast"
     },
     "histological_type": {
-      "value": "mass",
+      "value": "Mass",
       "unit": null,
       "state": "present",
       "evidence": "mass",
@@ -37,7 +38,8 @@
         79,
         82
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "mass"
     },
     "tumor_grade": {
       "value": "Nottingham Grade 3",
@@ -48,7 +50,8 @@
         656,
         673
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Nottingham Grade 3"
     },
     "clinical_stage": {
       "value": null,
@@ -88,7 +91,8 @@
         345,
         360
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "1.0"
     },
     "laterality": {
       "value": "Right",
@@ -96,7 +100,8 @@
       "state": "present",
       "evidence": "Laterality from report text",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Right"
     },
     "surgical_margins": {
       "value": null,
@@ -112,7 +117,8 @@
       "state": "present",
       "evidence": "20/10",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "10"
     },
     "positive_lymph_nodes": {
       "value": "20",
@@ -120,7 +126,8 @@
       "state": "present",
       "evidence": "20/10",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "20"
     },
     "lymphovascular_invasion": {
       "value": null,
@@ -155,7 +162,8 @@
         819,
         820
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "ER"
     },
     "pr_status": {
       "value": "PR",
@@ -166,7 +174,8 @@
         977,
         978
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "PR"
     },
     "her2_status": {
       "value": null,
@@ -209,12 +218,13 @@
       "codes": {}
     },
     "tumor_focality": {
-      "value": "Single",
+      "value": "Single lesion",
       "unit": null,
       "state": "negative",
       "evidence": "No multiplicity cues detected",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Single"
     }
   }
 }

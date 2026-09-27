@@ -18,7 +18,7 @@
   },
   "fields": {
     "primary_tumor_site": {
-      "value": "breast",
+      "value": "Left breast",
       "unit": null,
       "state": "present",
       "evidence": "breast",
@@ -26,10 +26,11 @@
         100,
         105
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "breast"
     },
     "histological_type": {
-      "value": "lesions",
+      "value": "Lesions",
       "unit": null,
       "state": "present",
       "evidence": "lesions",
@@ -37,7 +38,8 @@
         157,
         163
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "lesions"
     },
     "tumor_grade": {
       "value": null,
@@ -85,7 +87,8 @@
         178,
         182
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "18"
     },
     "laterality": {
       "value": "Left",
@@ -93,7 +96,8 @@
       "state": "present",
       "evidence": "Laterality from report text",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Left"
     },
     "surgical_margins": {
       "value": null,
@@ -109,7 +113,8 @@
       "state": "present",
       "evidence": "8/9",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "9"
     },
     "positive_lymph_nodes": {
       "value": "8",
@@ -117,7 +122,8 @@
       "state": "present",
       "evidence": "8/9",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "8"
     },
     "lymphovascular_invasion": {
       "value": null,
@@ -152,7 +158,8 @@
         914,
         915
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "ER"
     },
     "pr_status": {
       "value": "PR",
@@ -163,7 +170,8 @@
         959,
         960
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "PR"
     },
     "her2_status": {
       "value": null,
@@ -206,12 +214,13 @@
       "codes": {}
     },
     "tumor_focality": {
-      "value": "Multiple",
+      "value": "Multifocal",
       "unit": null,
       "state": "present",
       "evidence": "Lesion A",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Multiple"
     }
   }
 }

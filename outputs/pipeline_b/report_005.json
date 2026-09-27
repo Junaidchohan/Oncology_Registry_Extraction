@@ -21,7 +21,8 @@
         318,
         406
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Rectal biopsy"
     },
     "procedure": {
       "value": "Endoscopic mucosal resection biopsy",
@@ -32,10 +33,11 @@
         238,
         287
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Endoscopic mucosal resection biopsy"
     },
     "primary_tumor_site": {
-      "value": "Rectum",
+      "value": "Right rectum",
       "unit": null,
       "state": "present",
       "evidence": "Rectum, biopsy:",
@@ -43,7 +45,8 @@
         1101,
         1116
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Rectum"
     },
     "laterality": {
       "value": "Right",
@@ -54,7 +57,8 @@
         1101,
         1116
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Right"
     },
     "histological_type": {
       "value": "Adenocarcinoma",
@@ -65,7 +69,8 @@
         497,
         570
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Adenocarcinoma"
     },
     "tumor_behavior": {
       "value": "Malignant",
@@ -73,17 +78,19 @@
       "state": "present",
       "evidence": "Well-differentiated (Grade 1) adenocarcinoma of the rectum.",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Malignant"
     },
     "tumor_grade": {
-      "value": "1",
+      "value": "Nottingham Grade 1",
       "unit": null,
       "state": "present",
       "evidence": "Well-differentiated (Grade 1) adenocarcinoma of the rectum.",
       "span": null,
       "codes": {
         "SNOMED_CT": "363346001"
-      }
+      },
+      "raw_value": "1"
     },
     "tumor_size": {
       "value": "2.8",
@@ -91,10 +98,11 @@
       "state": "present",
       "evidence": "2.8 cm sessile polyp in the rectum at 10 cm from the anal verge.",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "2.8"
     },
     "tumor_focality": {
-      "value": "Multiple",
+      "value": "Multifocal",
       "unit": null,
       "state": "present",
       "evidence": "multiple fragments aggregating 1.8 x 1.2 x 0.4 cm.",
@@ -102,7 +110,8 @@
         356,
         406
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Multiple"
     },
     "tumor_extension": {
       "value": "Submucosa",
@@ -113,7 +122,8 @@
         1165,
         1200
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Submucosa"
     },
     "lymphovascular_invasion": {
       "value": "Absent",
@@ -123,7 +133,8 @@
       "span": null,
       "codes": {
         "SNOMED_CT": "245294001"
-      }
+      },
+      "raw_value": "Absent"
     },
     "perineural_invasion": {
       "value": "Absent",
@@ -134,7 +145,8 @@
         707,
         737
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Absent"
     },
     "surgical_margins": {
       "value": "Uninvolved",
@@ -147,7 +159,8 @@
       ],
       "codes": {
         "SNOMED_CT": "370052007"
-      }
+      },
+      "raw_value": "Uninvolved"
     },
     "lymph_nodes_examined": {
       "value": "0",
@@ -158,7 +171,8 @@
         1403,
         1446
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "0"
     },
     "positive_lymph_nodes": {
       "value": "0",
@@ -169,7 +183,8 @@
         1403,
         1446
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "0"
     },
     "pathologic_t": {
       "value": "1",
@@ -180,7 +195,8 @@
         1165,
         1200
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "1"
     },
     "pathologic_n": {
       "value": "X",
@@ -191,7 +207,8 @@
         1403,
         1446
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "X"
     },
     "pathologic_m": {
       "value": "0",
@@ -202,7 +219,8 @@
         852,
         895
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "0"
     },
     "biomarkers": {
       "value": null,

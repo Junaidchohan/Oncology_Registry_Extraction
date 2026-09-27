@@ -251,6 +251,29 @@ def main():
             logger.info("[%s] Stage 1: LLM field extraction...", rid)
             fields = extractor.extract(text)  # raises RuntimeError if LLM fails
 
+        # Stage 1.5: Normalization
+        from src.common.normalizer import normalize_to_schema
+        for fname, fval in fields.items():
+            if fname in ["biomarkers", "anticancer_medication"]:
+                if isinstance(fval, list):
+                    for item in fval:
+                        if item.get("state") == "present":
+                            raw = item.get("result") if fname == "biomarkers" else item.get("value")
+                            if raw is not None:
+                                item["raw_value"] = raw
+                                item["result" if fname == "biomarkers" else "value"] = normalize_to_schema(fname, raw, {})
+            else:
+                if isinstance(fval, dict) and (fval.get("value") is not None or fval.get("state") == "present"):
+                    raw = fval.get("value")
+                    if raw is not None:
+                        fval["raw_value"] = raw
+                        ctx = {}
+                        if fields.get("laterality", {}).get("value"):
+                            ctx["laterality"] = str(fields["laterality"]["value"])
+                        if fields.get("tumor_grade", {}).get("value"):
+                            ctx["grading_system"] = "Nottingham"
+                        fval["value"] = normalize_to_schema(fname, raw, ctx)
+
         # --- Stage 2+3: FAISS retrieval + LLM grounding per codeable field ---
         logger.info("[%s] Stage 2-3: Terminology retrieval + grounding...", rid)
         grounded_fields = {}

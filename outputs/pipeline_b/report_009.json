@@ -13,7 +13,7 @@
   },
   "fields": {
     "specimen": {
-      "value": "CT-guided core needle biopsy",
+      "value": "Ct-guided core needle biopsy",
       "unit": null,
       "state": "present",
       "evidence": "CT-guided core needle biopsy, right lower lobe",
@@ -21,7 +21,8 @@
         437,
         483
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "CT-guided core needle biopsy"
     },
     "procedure": {
       "value": "Biopsy",
@@ -32,7 +33,8 @@
         437,
         465
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Biopsy"
     },
     "primary_tumor_site": {
       "value": "Right lower lobe",
@@ -43,7 +45,8 @@
         1502,
         1548
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Right lower lobe"
     },
     "laterality": {
       "value": "Right",
@@ -54,7 +57,8 @@
         1502,
         1548
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Right"
     },
     "histological_type": {
       "value": "Atypical epithelial proliferation, suspicious for adenocarcinoma",
@@ -65,7 +69,8 @@
         1485,
         1500
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Atypical epithelial proliferation, suspicious for adenocarcinoma"
     },
     "tumor_behavior": {
       "value": "Suspicious for malignancy",
@@ -73,7 +78,8 @@
       "state": "present",
       "evidence": "Radiologist comment: \"suspicious for malignancy, though inflammatory etiology cannot be excluded.\"",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Suspicious for malignancy"
     },
     "tumor_grade": {
       "value": "Not assessed",
@@ -86,7 +92,8 @@
       ],
       "codes": {
         "SNOMED_CT": "369783002"
-      }
+      },
+      "raw_value": "Not assessed"
     },
     "tumor_size": {
       "value": "1.8",
@@ -94,10 +101,11 @@
       "state": "present",
       "evidence": "69-year-old male, ex-smoker (20 pack-years, quit 15 years ago), with right lower lobe nodule (1.8 cm) found on surveillance CT following prior left lobectomy for squamous cell carcinoma 3 years ago.",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "1.8"
     },
     "tumor_focality": {
-      "value": "Multiple",
+      "value": "Multifocal",
       "unit": null,
       "state": "present",
       "evidence": "GROSS DESCRIPTION",
@@ -105,7 +113,8 @@
         408,
         425
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Multiple"
     },
     "tumor_extension": {
       "value": "Not assessed",
@@ -116,7 +125,8 @@
         1485,
         1500
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Not assessed"
     },
     "lymphovascular_invasion": {
       "value": "Not assessed",
@@ -127,7 +137,8 @@
         1485,
         1500
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Not assessed"
     },
     "perineural_invasion": {
       "value": "Not assessed",
@@ -138,7 +149,8 @@
         1485,
         1500
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Not assessed"
     },
     "surgical_margins": {
       "value": "Not assessed",
@@ -149,7 +161,8 @@
         1485,
         1500
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Not assessed"
     },
     "lymph_nodes_examined": {
       "value": "0",
@@ -160,7 +173,8 @@
         1485,
         1500
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "0"
     },
     "positive_lymph_nodes": {
       "value": "0",
@@ -171,7 +185,8 @@
         1485,
         1500
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "0"
     },
     "pathologic_t": {
       "value": "Not assessed",
@@ -182,7 +197,8 @@
         1485,
         1500
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Not assessed"
     },
     "pathologic_n": {
       "value": "Not assessed",
@@ -193,7 +209,8 @@
         1485,
         1500
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Not assessed"
     },
     "pathologic_m": {
       "value": "Not assessed",
@@ -204,7 +221,8 @@
         1485,
         1500
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Not assessed"
     },
     "biomarkers": {
       "value": null,

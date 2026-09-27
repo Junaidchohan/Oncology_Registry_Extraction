@@ -18,7 +18,7 @@
   },
   "fields": {
     "primary_tumor_site": {
-      "value": "muscularis propria",
+      "value": "Muscularis propria",
       "unit": null,
       "state": "present",
       "evidence": "muscularis propria",
@@ -26,10 +26,11 @@
         752,
         769
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "muscularis propria"
     },
     "histological_type": {
-      "value": "mass",
+      "value": "Mass",
       "unit": null,
       "state": "present",
       "evidence": "mass",
@@ -37,10 +38,11 @@
         66,
         69
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "mass"
     },
     "tumor_grade": {
-      "value": "moderately differentiated",
+      "value": "Nottingham Grade 2 (moderately differentiated)",
       "unit": null,
       "state": "present",
       "evidence": "moderately differentiated",
@@ -48,7 +50,8 @@
         637,
         661
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "moderately differentiated"
     },
     "clinical_stage": {
       "value": null,
@@ -66,7 +69,8 @@
         807,
         809
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "pT3"
     },
     "pathologic_n": {
       "value": null,
@@ -97,7 +101,8 @@
         59,
         64
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "45.0"
     },
     "laterality": {
       "value": null,
@@ -113,7 +118,8 @@
       "state": "present",
       "evidence": "margins are free",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Negative"
     },
     "lymph_nodes_examined": {
       "value": "24",
@@ -121,7 +127,8 @@
       "state": "present",
       "evidence": "3/24",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "24"
     },
     "positive_lymph_nodes": {
       "value": "3",
@@ -129,7 +136,8 @@
       "state": "present",
       "evidence": "3/24",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "3"
     },
     "lymphovascular_invasion": {
       "value": "Present",
@@ -137,7 +145,8 @@
       "state": "present",
       "evidence": "Lymphovascular invasion is present",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Present"
     },
     "perineural_invasion": {
       "value": "Present",
@@ -145,7 +154,8 @@
       "state": "present",
       "evidence": "Perineural invasion is identified",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Present"
     },
     "distant_metastasis": {
       "value": "metastases",
@@ -156,7 +166,8 @@
         135,
         144
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "metastases"
     },
     "er_status": {
       "value": null,
@@ -191,7 +202,8 @@
         1250,
         1253
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "KRAS"
     },
     "egfr_mutation": {
       "value": null,
@@ -202,7 +214,7 @@
       "codes": {}
     },
     "procedure": {
-      "value": "sigmoid colectomy",
+      "value": "Sigmoid colectomy",
       "unit": null,
       "state": "present",
       "evidence": "sigmoid colectomy",
@@ -210,7 +222,8 @@
         187,
         203
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "sigmoid colectomy"
     },
     "prior_treatment": {
       "value": null,
@@ -221,12 +234,13 @@
       "codes": {}
     },
     "tumor_focality": {
-      "value": "Single",
+      "value": "Single lesion",
       "unit": null,
       "state": "negative",
       "evidence": "No multiplicity cues detected",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Single"
     }
   }
 }

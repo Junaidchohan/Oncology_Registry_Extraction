@@ -28,6 +28,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Optional
 
+sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
+from src.common.normalizer import normalize_to_schema
+
 logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
@@ -83,6 +86,37 @@ def run_pipeline_b(
     except Exception as exc:
         logger.error("[%s] Extraction failed: %s", report_id, exc)
         return empty_output(report_id, PIPELINE_B)
+
+    # -----------------------------------------------------------------------
+    # Step 1.5: Normalization
+    # -----------------------------------------------------------------------
+    logger.debug("[%s] Step 1.5: Normalizing LLM output", report_id)
+    for fname, fval in extracted_fields.items():
+        if fname in ["biomarkers", "anticancer_medication"]:
+            if isinstance(fval, list):
+                for item in fval:
+                    if item.get("state") == "present":
+                        raw = item.get("result") if fname == "biomarkers" else item.get("value")
+                        if raw is not None:
+                            item["raw_value"] = raw
+                            norm_val = normalize_to_schema(fname, raw, {})
+                            if fname == "biomarkers":
+                                item["result"] = norm_val
+                                if item.get("assay"):
+                                    item["assay"] = normalize_to_schema(fname, item["assay"], {"is_assay": True})
+                            else:
+                                item["value"] = norm_val
+        else:
+            if isinstance(fval, dict) and (fval.get("value") is not None or fval.get("state") == "present"):
+                raw = fval.get("value")
+                if raw is not None:
+                    fval["raw_value"] = raw
+                    ctx = {}
+                    if extracted_fields.get("laterality", {}).get("value"):
+                        ctx["laterality"] = str(extracted_fields["laterality"]["value"])
+                    if extracted_fields.get("tumor_grade", {}).get("value"):
+                        ctx["grading_system"] = "Nottingham"
+                    fval["value"] = normalize_to_schema(fname, raw, ctx)
 
     # -----------------------------------------------------------------------
     # Step 2 + 3: Terminology Retrieval + Grounding
@@ -149,6 +183,7 @@ def run_pipeline_b(
 
             output["fields"][fname] = {
                 "value": fval.get("value"),
+                "raw_value": fval.get("raw_value"),
                 "unit": fval.get("unit"),
                 "state": fval.get("state", "not_mentioned"),
                 "evidence": fval.get("evidence"),

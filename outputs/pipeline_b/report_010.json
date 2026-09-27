@@ -74,7 +74,8 @@
       "state": "not_mentioned",
       "evidence": null,
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "18"
     },
     "tumor_focality": {
       "value": null,

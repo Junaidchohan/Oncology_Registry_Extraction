@@ -43,8 +43,12 @@ import re
 import sys
 import time
 from datetime import datetime, timezone
-from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
+from src.common.normalizer import normalize_to_schema
 
 # ---------------------------------------------------------------------------
 # Path setup
@@ -609,10 +613,38 @@ def assemble(
                     item["span"] = _fix_span(item["evidence"], item.get("span"))
                 else:
                     item["span"] = None
+                    
+                # Normalize biomarker/medication array items
+                if item.get("state") == "present":
+                    # Keep raw extraction for audit
+                    raw = item.get("result") if fname == "biomarkers" else item.get("value")
+                    if raw is not None:
+                        item["raw_value"] = raw
+                        norm_val = normalize_to_schema(fname, raw, {})
+                        if fname == "biomarkers":
+                            item["result"] = norm_val
+                            if item.get("assay"):
+                                item["assay"] = normalize_to_schema(fname, item["assay"], {"is_assay": True})
+                        else:
+                            item["value"] = norm_val
             continue
+            
         if fval.get("value") is not None or fval.get("state") == "present":
             ev = fval.get("evidence")
             fval["span"] = _fix_span(ev, fval.get("span"))
+            
+            # Normalize schema concept
+            raw = fval.get("value")
+            if raw is not None:
+                fval["raw_value"] = raw
+                # build a simple context from extracted fields
+                ctx = {}
+                if fields.get("laterality", {}).get("value"):
+                    ctx["laterality"] = str(fields["laterality"]["value"])
+                if fields.get("tumor_grade", {}).get("value"):
+                    ctx["grading_system"] = "Nottingham" # Default for breast in this dataset
+                    
+                fval["value"] = normalize_to_schema(fname, raw, ctx)
 
     return output
 

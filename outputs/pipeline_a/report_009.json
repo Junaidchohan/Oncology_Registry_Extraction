@@ -18,7 +18,7 @@
   },
   "fields": {
     "primary_tumor_site": {
-      "value": "lower lobe",
+      "value": "Lower lobe",
       "unit": null,
       "state": "present",
       "evidence": "lower lobe",
@@ -26,10 +26,11 @@
         93,
         102
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "lower lobe"
     },
     "histological_type": {
-      "value": "nodule",
+      "value": "Nodule",
       "unit": null,
       "state": "present",
       "evidence": "nodule",
@@ -37,7 +38,8 @@
         104,
         109
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "nodule"
     },
     "tumor_grade": {
       "value": null,
@@ -85,7 +87,8 @@
         503,
         514
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "1.0"
     },
     "laterality": {
       "value": "Left",
@@ -93,7 +96,8 @@
       "state": "present",
       "evidence": "Laterality from report text",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Left"
     },
     "surgical_margins": {
       "value": null,
@@ -144,7 +148,8 @@
         1929,
         1938
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "metastasis"
     },
     "er_status": {
       "value": null,
@@ -179,7 +184,8 @@
         1419,
         1422
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "KRAS"
     },
     "egfr_mutation": {
       "value": "EGFR",
@@ -190,10 +196,11 @@
         1334,
         1337
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "EGFR"
     },
     "procedure": {
-      "value": "lobectomy",
+      "value": "Lobectomy",
       "unit": null,
       "state": "present",
       "evidence": "lobectomy",
@@ -201,7 +208,8 @@
         166,
         174
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "lobectomy"
     },
     "prior_treatment": {
       "value": null,
@@ -212,12 +220,13 @@
       "codes": {}
     },
     "tumor_focality": {
-      "value": "Single",
+      "value": "Single lesion",
       "unit": null,
       "state": "negative",
       "evidence": "No multiplicity cues detected",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Single"
     }
   }
 }

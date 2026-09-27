@@ -13,12 +13,13 @@
   },
   "fields": {
     "specimen": {
-      "value": "Right hemicolectomy specimen",
+      "value": "Right hemicolectomy",
       "unit": null,
       "state": "present",
       "evidence": "Gross Description",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Right hemicolectomy specimen"
     },
     "procedure": {
       "value": "Right hemicolectomy",
@@ -26,15 +27,17 @@
       "state": "present",
       "evidence": "Clinical History",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Right hemicolectomy"
     },
     "primary_tumor_site": {
-      "value": "Cecum",
+      "value": "Right cecum",
       "unit": null,
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Cecum"
     },
     "laterality": {
       "value": "Right",
@@ -42,7 +45,8 @@
       "state": "present",
       "evidence": "Gross Description",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Right"
     },
     "histological_type": {
       "value": "Moderately to poorly differentiated adenocarcinoma",
@@ -50,7 +54,8 @@
       "state": "present",
       "evidence": "Microscopic Description",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Moderately to poorly differentiated adenocarcinoma"
     },
     "tumor_behavior": {
       "value": "Malignant",
@@ -58,7 +63,8 @@
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Malignant"
     },
     "tumor_grade": {
       "value": "2-3",
@@ -66,7 +72,8 @@
       "state": "present",
       "evidence": "Microscopic Description",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "2-3"
     },
     "tumor_size": {
       "value": "5.5",
@@ -74,23 +81,26 @@
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "5.5"
     },
     "tumor_focality": {
-      "value": "Single",
+      "value": "Single lesion",
       "unit": null,
       "state": "present",
       "evidence": "Gross Description",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Single"
     },
     "tumor_extension": {
-      "value": "pT3",
+      "value": "Pt3",
       "unit": null,
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "pT3"
     },
     "lymphovascular_invasion": {
       "value": "Indeterminate",
@@ -98,7 +108,8 @@
       "state": "ambiguous",
       "evidence": "Microscopic Description",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Indeterminate"
     },
     "perineural_invasion": {
       "value": "Absent",
@@ -106,7 +117,8 @@
       "state": "present",
       "evidence": "Microscopic Description",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Absent"
     },
     "surgical_margins": {
       "value": "Negative",
@@ -114,7 +126,8 @@
       "state": "present",
       "evidence": "Microscopic Description",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Negative"
     },
     "lymph_nodes_examined": {
       "value": "12",
@@ -122,7 +135,8 @@
       "state": "present",
       "evidence": "Gross Description",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "12"
     },
     "positive_lymph_nodes": {
       "value": "5",
@@ -130,7 +144,8 @@
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "5"
     },
     "pathologic_t": {
       "value": "pT3",
@@ -138,7 +153,8 @@
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "pT3"
     },
     "pathologic_n": {
       "value": "pN2a",
@@ -146,7 +162,8 @@
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "pN2a"
     },
     "pathologic_m": {
       "value": "pMx",
@@ -154,7 +171,8 @@
       "state": "present",
       "evidence": "Final Diagnosis",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "pMx"
     },
     "biomarkers": {
       "value": null,

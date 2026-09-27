@@ -13,7 +13,7 @@
   },
   "fields": {
     "specimen": {
-      "value": "Right mastectomy specimen",
+      "value": "Right mastectomy",
       "unit": null,
       "state": "present",
       "evidence": "GROSS DESCRIPTION",
@@ -21,7 +21,8 @@
         345,
         362
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Right mastectomy specimen"
     },
     "procedure": {
       "value": "Mastectomy with sentinel lymph node biopsy",
@@ -32,7 +33,8 @@
         0,
         16
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Mastectomy with sentinel lymph node biopsy"
     },
     "primary_tumor_site": {
       "value": "Right breast",
@@ -43,7 +45,8 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Right breast"
     },
     "laterality": {
       "value": "Right",
@@ -54,10 +57,11 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Right"
     },
     "histological_type": {
-      "value": "Invasive ductal carcinoma, NST",
+      "value": "Invasive ductal carcinoma, no special type",
       "unit": null,
       "state": "present",
       "evidence": "FINAL DIAGNOSIS",
@@ -65,10 +69,11 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Invasive ductal carcinoma, NST"
     },
     "tumor_behavior": {
-      "value": "Residual invasive carcinoma with treatment effect",
+      "value": "Invasive",
       "unit": null,
       "state": "present",
       "evidence": "MICROSCOPIC DESCRIPTION",
@@ -76,7 +81,8 @@
         726,
         749
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Residual invasive carcinoma with treatment effect"
     },
     "tumor_grade": {
       "value": "Miller-Payne Grade 4",
@@ -89,7 +95,8 @@
       ],
       "codes": {
         "SNOMED_CT": "369782007"
-      }
+      },
+      "raw_value": "Miller-Payne Grade 4"
     },
     "tumor_size": {
       "value": "1 mm",
@@ -100,7 +107,8 @@
         726,
         749
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "1 mm"
     },
     "tumor_focality": {
       "value": "Residual focus approximately 1 mm",
@@ -111,7 +119,8 @@
         726,
         749
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Residual focus approximately 1 mm"
     },
     "tumor_extension": {
       "value": "Treatment effect present",
@@ -122,7 +131,8 @@
         726,
         749
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Treatment effect present"
     },
     "lymphovascular_invasion": {
       "value": "No lymphovascular invasion",
@@ -135,10 +145,11 @@
       ],
       "codes": {
         "SNOMED_CT": "1254905005"
-      }
+      },
+      "raw_value": "No lymphovascular invasion"
     },
     "perineural_invasion": {
-      "value": "Not mentioned",
+      "value": null,
       "unit": null,
       "state": "not_mentioned",
       "evidence": "MICROSCOPIC DESCRIPTION",
@@ -146,7 +157,8 @@
         726,
         749
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Not mentioned"
     },
     "surgical_margins": {
       "value": "All negative",
@@ -157,7 +169,8 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "All negative"
     },
     "lymph_nodes_examined": {
       "value": "3",
@@ -168,7 +181,8 @@
         726,
         749
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "3"
     },
     "positive_lymph_nodes": {
       "value": "0",
@@ -179,7 +193,8 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "0"
     },
     "pathologic_t": {
       "value": "ypT1a",
@@ -190,7 +205,8 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "ypT1a"
     },
     "pathologic_n": {
       "value": "ypN0",
@@ -201,7 +217,8 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "ypN0"
     },
     "pathologic_m": {
       "value": "ypM0",
@@ -212,7 +229,8 @@
         1514,
         1529
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "ypM0"
     },
     "biomarkers": {
       "value": null,

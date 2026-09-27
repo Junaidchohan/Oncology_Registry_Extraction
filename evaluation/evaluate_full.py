@@ -13,25 +13,17 @@ if sys.platform == "win32":
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from src.common.normalizer import normalize_for_comparison as normalize
+from src.common.normalizer import normalize_ws
+
 GOLD_DIR = ROOT / "data" / "gold"
 PIPELINE_A_DIR = ROOT / "outputs" / "pipeline_a"
 PIPELINE_B_DIR = ROOT / "outputs" / "pipeline_b"
 EVAL_DIR = ROOT / "evaluation"
 EVAL_DIR.mkdir(exist_ok=True)
 
-def normalize_ws(s):
-    if not s: return ""
-    return " ".join(str(s).strip().split())
 
-def normalize(s):
-    if not s: return ""
-    s = str(s).lower().strip()
-    m = re.match(r"^([\d\.]+)\s*cm$", s)
-    if m:
-        try: return f"{float(m.group(1)) * 10:g} mm"
-        except: pass
-    s = re.sub(r'[\.,;:!?]+$', '', s).strip()
-    return normalize_ws(s)
 
 def find_all_occurrences(raw_text, value):
     # returns a list of [start, end] spans where value appears

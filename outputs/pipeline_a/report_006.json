@@ -18,7 +18,7 @@
   },
   "fields": {
     "primary_tumor_site": {
-      "value": "interlobar lymph nodes",
+      "value": "Interlobar lymph nodes",
       "unit": null,
       "state": "present",
       "evidence": "interlobar lymph nodes",
@@ -26,10 +26,11 @@
         666,
         687
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "interlobar lymph nodes"
     },
     "histological_type": {
-      "value": "nodule",
+      "value": "Nodule",
       "unit": null,
       "state": "present",
       "evidence": "nodule",
@@ -37,10 +38,11 @@
         129,
         134
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "nodule"
     },
     "tumor_grade": {
-      "value": "Poorly differentiated",
+      "value": "Nottingham Grade 3 (poorly differentiated)",
       "unit": null,
       "state": "present",
       "evidence": "Poorly differentiated",
@@ -48,7 +50,8 @@
         840,
         860
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Poorly differentiated"
     },
     "clinical_stage": {
       "value": null,
@@ -66,7 +69,8 @@
         2107,
         2117
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "pT3"
     },
     "pathologic_n": {
       "value": "pN0",
@@ -76,7 +80,8 @@
         2107,
         2117
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "pN0"
     },
     "pathologic_m": {
       "value": "pM0",
@@ -86,7 +91,8 @@
         2107,
         2117
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "pM0"
     },
     "tumor_size": {
       "value": "35.0",
@@ -97,7 +103,8 @@
         99,
         104
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "35.0"
     },
     "laterality": {
       "value": "Left",
@@ -105,7 +112,8 @@
       "state": "present",
       "evidence": "Laterality from report text",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Left"
     },
     "surgical_margins": {
       "value": null,
@@ -121,7 +129,8 @@
       "state": "present",
       "evidence": "0/12",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "12"
     },
     "positive_lymph_nodes": {
       "value": "0",
@@ -129,7 +138,8 @@
       "state": "present",
       "evidence": "0/12",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "0"
     },
     "lymphovascular_invasion": {
       "value": "Absent",
@@ -137,7 +147,8 @@
       "state": "negative",
       "evidence": "No lymphovascular invasion",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Absent"
     },
     "perineural_invasion": {
       "value": "Absent",
@@ -145,7 +156,8 @@
       "state": "negative",
       "evidence": "No perineural invasion",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Absent"
     },
     "distant_metastasis": {
       "value": "metastases",
@@ -156,7 +168,8 @@
         260,
         269
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "metastases"
     },
     "er_status": {
       "value": "ER",
@@ -167,7 +180,8 @@
         2153,
         2154
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "ER"
     },
     "pr_status": {
       "value": "PR",
@@ -178,7 +192,8 @@
         2157,
         2158
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "PR"
     },
     "her2_status": {
       "value": null,
@@ -197,7 +212,8 @@
         1617,
         1620
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "KRAS"
     },
     "egfr_mutation": {
       "value": "EGFR",
@@ -208,10 +224,11 @@
         1611,
         1614
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "EGFR"
     },
     "procedure": {
-      "value": "upper lobectomy",
+      "value": "Upper lobectomy",
       "unit": null,
       "state": "present",
       "evidence": "upper lobectomy",
@@ -219,7 +236,8 @@
         290,
         304
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "upper lobectomy"
     },
     "prior_treatment": {
       "value": null,
@@ -230,12 +248,13 @@
       "codes": {}
     },
     "tumor_focality": {
-      "value": "Multiple",
+      "value": "Multifocal",
       "unit": null,
       "state": "present",
       "evidence": "satellite nodule",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Multiple"
     }
   }
 }

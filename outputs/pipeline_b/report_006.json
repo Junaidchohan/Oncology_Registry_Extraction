@@ -13,7 +13,7 @@
   },
   "fields": {
     "specimen": {
-      "value": "Left upper lobectomy specimen",
+      "value": "Left upper lobectomy",
       "unit": null,
       "state": "present",
       "evidence": "Received: Left upper lobectomy specimen weighing 290 g.",
@@ -21,7 +21,8 @@
         327,
         382
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Left upper lobectomy specimen"
     },
     "procedure": {
       "value": "Left upper lobectomy",
@@ -32,7 +33,8 @@
         272,
         306
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Left upper lobectomy"
     },
     "primary_tumor_site": {
       "value": "Left lung",
@@ -40,7 +42,8 @@
       "state": "present",
       "evidence": "FINAL DIAGNOSIS: Left lung, left upper lobectomy:",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Left lung"
     },
     "laterality": {
       "value": "Left",
@@ -51,7 +54,8 @@
         1696,
         1728
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Left"
     },
     "histological_type": {
       "value": "Squamous cell carcinoma",
@@ -59,7 +63,8 @@
       "state": "present",
       "evidence": "Primary left upper lobe lesion: Poorly differentiated squamous cell carcinoma (SCC), Nottingham equivalent Grade 3.",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Squamous cell carcinoma"
     },
     "tumor_behavior": {
       "value": "Malignant",
@@ -67,17 +72,19 @@
       "state": "present",
       "evidence": "FINAL DIAGNOSIS: Left lung, left upper lobectomy:",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Malignant"
     },
     "tumor_grade": {
-      "value": "3",
+      "value": "Nottingham Grade 3",
       "unit": null,
       "state": "present",
       "evidence": "Primary left upper lobe lesion: Poorly differentiated squamous cell carcinoma (SCC), Nottingham equivalent Grade 3.",
       "span": null,
       "codes": {
         "SNOMED_CT": "363346003"
-      }
+      },
+      "raw_value": "3"
     },
     "tumor_size": {
       "value": "3.5",
@@ -85,10 +92,11 @@
       "state": "present",
       "evidence": "FINAL DIAGNOSIS: Left lung, left upper lobectomy: - Lesion 1: Poorly differentiated squamous cell carcinoma, 3.5 cm,",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "3.5"
     },
     "tumor_focality": {
-      "value": "Unifocal",
+      "value": "Single lesion",
       "unit": null,
       "state": "present",
       "evidence": "A firm, grey-white tumor measuring 3.5 x 3.2 x 3.0 cm is identified in the upper lobe,",
@@ -96,7 +104,8 @@
         417,
         503
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Unifocal"
     },
     "tumor_extension": {
       "value": "T3",
@@ -104,7 +113,8 @@
       "state": "present",
       "evidence": "FINAL DIAGNOSIS: Left lung, left upper lobectomy: - Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "T3"
     },
     "lymphovascular_invasion": {
       "value": "Absent",
@@ -117,7 +127,8 @@
       ],
       "codes": {
         "SNOMED_CT": "245294001"
-      }
+      },
+      "raw_value": "Absent"
     },
     "perineural_invasion": {
       "value": "Absent",
@@ -128,7 +139,8 @@
         1000,
         1028
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Absent"
     },
     "surgical_margins": {
       "value": "Negative",
@@ -139,7 +151,8 @@
         1029,
         1086
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "Negative"
     },
     "lymph_nodes_examined": {
       "value": "12",
@@ -150,7 +163,8 @@
         1383,
         1441
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "12"
     },
     "positive_lymph_nodes": {
       "value": "0",
@@ -161,7 +175,8 @@
         2011,
         2034
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "0"
     },
     "pathologic_t": {
       "value": "3",
@@ -169,7 +184,8 @@
       "state": "present",
       "evidence": "FINAL DIAGNOSIS: Left lung, left upper lobectomy: - Pathologic stage: pT3 pN0 pM0 (satellite nodule) -- Stage IIB",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "3"
     },
     "pathologic_n": {
       "value": "0",
@@ -180,7 +196,8 @@
         2011,
         2034
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "0"
     },
     "pathologic_m": {
       "value": "0",
@@ -188,7 +205,8 @@
       "state": "present",
       "evidence": "FINAL DIAGNOSIS: Left lung, left upper lobectomy: - No evidence of distant metastasis",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "0"
     },
     "biomarkers": {
       "value": null,

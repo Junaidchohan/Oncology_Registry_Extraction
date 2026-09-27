@@ -18,7 +18,7 @@
   },
   "fields": {
     "primary_tumor_site": {
-      "value": "pericolorectal adipose tissue",
+      "value": "Pericolorectal adipose tissue",
       "unit": null,
       "state": "present",
       "evidence": "pericolorectal adipose tissue",
@@ -26,10 +26,11 @@
         886,
         914
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "pericolorectal adipose tissue"
     },
     "histological_type": {
-      "value": "mass",
+      "value": "Mass",
       "unit": null,
       "state": "present",
       "evidence": "mass",
@@ -37,10 +38,11 @@
         70,
         73
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "mass"
     },
     "tumor_grade": {
-      "value": "poorly differentiated",
+      "value": "Nottingham Grade 3 (poorly differentiated)",
       "unit": null,
       "state": "present",
       "evidence": "poorly differentiated",
@@ -48,7 +50,8 @@
         764,
         784
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "poorly differentiated"
     },
     "clinical_stage": {
       "value": null,
@@ -66,7 +69,8 @@
         1059,
         1061
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "pT3"
     },
     "pathologic_n": {
       "value": null,
@@ -97,7 +101,8 @@
         402,
         405
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "80.0"
     },
     "laterality": {
       "value": "Right",
@@ -105,7 +110,8 @@
       "state": "present",
       "evidence": "Laterality from report text",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Right"
     },
     "surgical_margins": {
       "value": "Positive",
@@ -113,7 +119,8 @@
       "state": "present",
       "evidence": "tumor at inked",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Positive"
     },
     "lymph_nodes_examined": {
       "value": "12",
@@ -121,7 +128,8 @@
       "state": "present",
       "evidence": "5/12",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "12"
     },
     "positive_lymph_nodes": {
       "value": "5",
@@ -129,7 +137,8 @@
       "state": "present",
       "evidence": "5/12",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "5"
     },
     "lymphovascular_invasion": {
       "value": "Present",
@@ -137,7 +146,8 @@
       "state": "present",
       "evidence": "lymphovascular invasion\nidentified",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Present"
     },
     "perineural_invasion": {
       "value": null,
@@ -156,7 +166,8 @@
         1364,
         1373
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "metastatic"
     },
     "er_status": {
       "value": null,
@@ -191,7 +202,8 @@
         1535,
         1538
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "KRAS"
     },
     "egfr_mutation": {
       "value": null,
@@ -202,7 +214,7 @@
       "codes": {}
     },
     "procedure": {
-      "value": "surgery",
+      "value": "Surgery",
       "unit": null,
       "state": "present",
       "evidence": "surgery",
@@ -210,7 +222,8 @@
         168,
         174
       ],
-      "codes": {}
+      "codes": {},
+      "raw_value": "surgery"
     },
     "prior_treatment": {
       "value": null,
@@ -221,12 +234,13 @@
       "codes": {}
     },
     "tumor_focality": {
-      "value": "Single",
+      "value": "Single lesion",
       "unit": null,
       "state": "negative",
       "evidence": "No multiplicity cues detected",
       "span": null,
-      "codes": {}
+      "codes": {},
+      "raw_value": "Single"
     }
   }
 }
