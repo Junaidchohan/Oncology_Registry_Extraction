@@ -97,6 +97,20 @@ def run_pipeline_b(
     # -----------------------------------------------------------------------
     # Step 4: Schema Assembly
     # -----------------------------------------------------------------------
+    def compute_span(evidence: Optional[str], raw_text: str) -> Optional[list]:
+        if not evidence:
+            return None
+        idx = raw_text.find(evidence)
+        if idx < 0:
+            import re
+            normalized = re.sub(r"\\s+", " ", raw_text)
+            ev_norm = re.sub(r"\\s+", " ", evidence)
+            idx_norm = normalized.find(ev_norm)
+            if idx_norm < 0:
+                return None
+            return [idx_norm, idx_norm + len(ev_norm)]
+        return [idx, idx + len(evidence)]
+
     # Strip internal grounding metadata before final output
     clean_fields = strip_grounding_metadata(grounded_fields)
 
@@ -105,13 +119,40 @@ def run_pipeline_b(
     for fname in FIELD_NAMES:
         if fname in clean_fields:
             fval = clean_fields[fname]
-            # Ensure required keys
+            
+            if isinstance(fval, list):
+                for item in fval:
+                    span = item.get("span")
+                    if item.get("evidence"):
+                        ev = item.get("evidence")
+                        if span and len(span) == 2 and span[0] is not None and span[1] is not None:
+                            if report_text[span[0]:span[1]] != ev:
+                                item["span"] = compute_span(ev, report_text)
+                        else:
+                            item["span"] = compute_span(ev, report_text)
+                    else:
+                        item["span"] = None
+                output["fields"][fname] = fval
+                continue
+
+            span = fval.get("span")
+            
+            # Apply compute_span if needed
+            if fval.get("value") is not None or fval.get("state") == "present":
+                ev = fval.get("evidence")
+                # Ensure span matches exactly if it exists
+                if span and len(span) == 2 and span[0] is not None and span[1] is not None:
+                    if report_text[span[0]:span[1]] != ev:
+                        span = compute_span(ev, report_text)
+                else:
+                    span = compute_span(ev, report_text)
+
             output["fields"][fname] = {
                 "value": fval.get("value"),
                 "unit": fval.get("unit"),
                 "state": fval.get("state", "not_mentioned"),
                 "evidence": fval.get("evidence"),
-                "span": fval.get("span"),
+                "span": span,
                 "codes": fval.get("codes", {}),
             }
 

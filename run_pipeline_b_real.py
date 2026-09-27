@@ -274,17 +274,56 @@ def main():
         all_log_entries.extend(rid_log)
         t_elapsed = time.time() - t_start
 
+        def compute_span(evidence: str, raw_text: str) -> list:
+            if not evidence:
+                return None
+            idx = raw_text.find(evidence)
+            if idx < 0:
+                import re as _re
+                normalized = _re.sub(r"\\s+", " ", raw_text)
+                ev_norm = _re.sub(r"\\s+", " ", evidence)
+                idx_norm = normalized.find(ev_norm)
+                if idx_norm < 0:
+                    return None
+                return [idx_norm, idx_norm + len(ev_norm)]
+            return [idx, idx + len(evidence)]
+
         # Build schema-compliant output
         output = _schema_mod.empty_output(rid, PIPELINE_B)
         for fname in FIELD_NAMES:
             if fname in grounded_fields:
                 fd = grounded_fields[fname]
+                
+                if isinstance(fd, list):
+                    for item in fd:
+                        span = item.get("span")
+                        ev = item.get("evidence")
+                        if item.get("value") is not None or item.get("state") == "present":
+                            if span and len(span) == 2 and span[0] is not None and span[1] is not None:
+                                if text[span[0]:span[1]] != ev:
+                                    item["span"] = compute_span(ev, text)
+                            else:
+                                item["span"] = compute_span(ev, text)
+                        else:
+                            item["span"] = None
+                    output["fields"][fname] = fd
+                    continue
+
+                span = fd.get("span")
+                if fd.get("value") is not None or fd.get("state") == "present":
+                    ev = fd.get("evidence")
+                    if span and len(span) == 2 and span[0] is not None and span[1] is not None:
+                        if text[span[0]:span[1]] != ev:
+                            span = compute_span(ev, text)
+                    else:
+                        span = compute_span(ev, text)
+
                 output["fields"][fname] = {
                     "value":    fd.get("value"),
                     "unit":     fd.get("unit"),
                     "state":    fd.get("state", "not_mentioned"),
                     "evidence": fd.get("evidence"),
-                    "span":     fd.get("span"),
+                    "span":     span,
                     "codes":    fd.get("codes", {}),
                 }
 

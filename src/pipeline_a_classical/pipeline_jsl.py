@@ -346,7 +346,8 @@ def _size_to_mm(value: str, unit: str) -> Tuple[str, str]:
 
 def assemble(
     report_id: str,
-    text: str,
+    raw_text: str,
+    preprocessed_text: str,
     annotation: Dict[str, Any],
     preprocessed: Dict[str, str],
 ) -> Dict[str, Any]:
@@ -477,7 +478,7 @@ def assemble(
 
     # Tumor size from gross text
     if not fields["tumor_size"]["value"]:
-        size_info = _extract_tumor_size(gross or text)
+        size_info = _extract_tumor_size(gross or preprocessed_text)
         if size_info:
             raw_val, raw_unit = size_info
             norm_val, norm_unit = _size_to_mm(raw_val, raw_unit)
@@ -554,7 +555,7 @@ def assemble(
 
     # Tumor multiplicity
     if not fields["tumor_focality"]["value"]:
-        m = _MULTI_RE.search(text)
+        m = _MULTI_RE.search(preprocessed_text)
         if m:
             fields["tumor_focality"] = make_field(
                 value="Multiple", state="present", evidence=m.group(0)
@@ -581,6 +582,37 @@ def assemble(
             fields["clinical_stage"] = make_field(
                 value=ajcc, state="present", evidence=ajcc
             )
+
+    def _fix_span(ev: str, current_span: Optional[List[int]]) -> Optional[List[int]]:
+        if not ev: return None
+        if current_span and len(current_span) == 2 and current_span[0] is not None and current_span[1] is not None:
+            # Verify
+            if raw_text[current_span[0]:current_span[1]] == ev:
+                return current_span
+        # Fallback 1: raw_text.find
+        idx = raw_text.find(ev)
+        if idx >= 0:
+            return [idx, idx + len(ev)]
+        # Fallback 2: ignore whitespace
+        import re
+        norm_raw = re.sub(r"\\s+", " ", raw_text)
+        norm_ev = re.sub(r"\\s+", " ", ev)
+        idx_norm = norm_raw.find(norm_ev)
+        if idx_norm >= 0:
+            return [idx_norm, idx_norm + len(norm_ev)]
+        return None
+
+    for fname, fval in fields.items():
+        if fname in ["biomarkers", "anticancer_medication"]:
+            for item in fval:
+                if item.get("evidence"):
+                    item["span"] = _fix_span(item["evidence"], item.get("span"))
+                else:
+                    item["span"] = None
+            continue
+        if fval.get("value") is not None or fval.get("state") == "present":
+            ev = fval.get("evidence")
+            fval["span"] = _fix_span(ev, fval.get("span"))
 
     return output
 
@@ -679,7 +711,7 @@ def run_report(
     t0 = time.perf_counter()
     preprocessed = preprocess(report_text)
     annotation   = annotate(light_pipeline, preprocessed["full_text"])
-    output       = assemble(report_id, preprocessed["full_text"], annotation, preprocessed)
+    output       = assemble(report_id, report_text, preprocessed["full_text"], annotation, preprocessed)
     elapsed      = time.perf_counter() - t0
 
     output["run_timestamp"] = datetime.now(timezone.utc).isoformat()
