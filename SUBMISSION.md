@@ -5,7 +5,7 @@
 - Reports: 10
 - Fields: 21
 - Pipelines: 2
-- Commit: 936d7d0
+- Commit: v1.0-final (tag)
 
 ## Pipeline A - Classical NLP
 
