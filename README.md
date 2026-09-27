@@ -37,7 +37,7 @@ Two-stage RAG approach:
 | ICD-O-3 | Edition 3.2 (WHO 2025) | 105 codes |
 | LOINC | Version 2.79 (Dec 2024) | 53 codes |
 | ATC | WHO ATC 2025 | 50 codes |
-| **Total** | | **85 concepts** |
+| **Total** | | **580 concepts** |
 
 ---
 
@@ -53,7 +53,7 @@ Two-stage RAG approach:
 | Pipeline A embeddings | embeddings_clinical (200d), sbiobert_base_cased_mli |
 | Pipeline B LLM | llama3.1:8b via Ollama 0.34.2 |
 | FAISS index backend | sentence-transformers / sklearn TF-IDF char n-grams (3-5) |
-| FAISS index size | 85 concepts |
+| FAISS index size | 580 concepts |
 
 ## Final Evaluation Results
 
@@ -214,7 +214,7 @@ oncology-registry-extraction/
 - **Endpoint:** http://localhost:11434/v1 (Pipeline B only)
 - **Cost per report:** $0.00 for both pipelines (fully local)
 - **Mean runtime:** 32.85s (Pipeline A) / 692.10s (Pipeline B)
-- **Terminology index:** 85 concepts across SNOMED CT 2025-01, ICD-10-CM FY2025, ICD-O-3 3.2 (2025), LOINC 2.79, ATC 2025
+- **Terminology index:** 580 concepts across SNOMED CT 2025-01, ICD-10-CM FY2025, ICD-O-3 3.2 (2025), LOINC 2.79, ATC 2025
 
 ## Proof of Execution
 

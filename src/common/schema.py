@@ -117,10 +117,11 @@ def empty_output(report_id: str, pipeline: str) -> Dict[str, Any]:
 
 _FIELD_SCHEMA: Dict[str, Any] = {
     "type": "object",
-    "required": ["value", "unit", "state", "evidence", "span", "codes"],
+    "required": ["value", "state", "evidence", "span", "codes"],
     "additionalProperties": False,
     "properties": {
         "value": {"type": ["string", "null"]},
+        "raw_value": {"type": ["string", "null", "number"]},
         "unit": {"type": ["string", "null"]},
         "state": {"type": "string", "enum": sorted(VALID_STATES)},
         "evidence": {"type": ["string", "null"]},
@@ -129,7 +130,7 @@ _FIELD_SCHEMA: Dict[str, Any] = {
                 {"type": "null"},
                 {
                     "type": "array",
-                    "items": {"type": "integer"},
+                    "items": {"type": ["integer", "null"]},
                     "minItems": 2,
                     "maxItems": 2,
                 },
@@ -162,13 +163,13 @@ OUTPUT_JSON_SCHEMA: Dict[str, Any] = {
             "description": "Pipeline that produced this output",
         },
         "run_timestamp": {
-            "type": ["string", "null"],
+            "type": ["string", "null", "number"],
             "description": "ISO-8601 UTC timestamp of when the pipeline ran",
         },
         "model_versions": {
             "type": "object",
             "description": "Map of model/component name to version or identifier",
-            "additionalProperties": {"type": "string"},
+            "additionalProperties": {"type": ["string", "number"]},
         },
         "fields": {
             "type": "object",

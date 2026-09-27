@@ -91,6 +91,27 @@ A note on span extraction: spans are computed by locating the evidence string in
 
 Pipeline A outputs were generated on an earlier date under a working Java environment. The current Windows environment cannot re-run Pipeline A due to a documented Hadoop JNI limitation. Outputs are frozen at commit 16e665e.
 
+## Production design at 1M-report scale
+
+Accuracy - the observed NER F1 of 14.9% / 37.2% means the system cannot be trusted for unattended use. At 1M reports, even a 1% error rate is 10,000 misclassified records. The accuracy strategy must be human-in-the-loop, with automated extraction producing a draft that a certified tumor registrar reviews.
+
+Review/abstention - the pipeline should abstain when the retrieval top-1 score is below a threshold, when evidence cannot be located in the source, or when the state label is "ambiguous." Abstained fields route to a review queue. Target: <10% abstention rate at 1M.
+
+Terminology maintenance - version the terminology index per release. When SNOMED CT, ICD-10-CM, or LOINC publish updates, run a differential re-index and re-resolve all previously coded mentions. Track every code change with a diff so audits can verify the re-coding.
+
+Auditability - every field carries evidence with span offsets into the source text. Any reviewer can click a field and jump to the sentence that supports it. The audit log records: query string, top-K candidates, selected code, terminology release, and the pipeline version that produced the output.
+
+Throughput - at 1M reports, single-node LLM inference is not feasible. Pipeline B's runtime of 1354s per report does not scale. The design would use a hybrid: deterministic extraction for structured and numeric fields, and GPU-batched LLM inference for free-text narrative. Target: 100-1000 reports per hour per inference node.
+
+Operational cost - GPU inference cost dominates. At .50 per report for LLM inference and .10 for a reviewer spot check, the cost per report is approximately .60. At 1M reports, that is . Pipeline A (deterministic) costs near zero and handles the numeric and structured fields; Pipeline B handles narrative.
+
+Protected data - the current pipeline runs entirely local. At 1M scale, this continues to be the default: on-device or on-premise inference, no external API calls, no PHI leaving the network boundary. If an external model is used, the data must be de-identified first under HIPAA Safe Harbor.
+
+Failure escalation - reject invalid codes; flag ambiguous or conflicting extractions for review; do not silently overwrite. Track rejection and review rates weekly. A spike in either indicates a terminology change or a data drift.
+
+*Note: Treat this as a reasoned architecture proposal, not a required implementation.*
+
+
 ## Deterministic normalization to schema concepts
 
 1. **Why the pipelines were producing literal text:** The pipelines extracted exactly what was written in the clinical text (e.g., "infiltrating ductal carcinoma", "1", "left breast"). They were behaving as simple string extractors rather than concept mappers.
@@ -102,28 +123,7 @@ Pipeline A outputs were generated on an earlier date under a working Java enviro
 
 <!-- BEGIN EVAL TABLE -->
 
-# Pipeline Evaluation: Side-by-Side Comparison
-
-*Generated: 2026-09-27T12:42:14.628242Z*
-
-Denominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)
-
-| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |
-| --- | --- | --- |
-| Entity NER P / R / F1 (span-based) | 14.8% / 15.1% / 14.9% | 32.6% / 43.3% / 37.2% |
-| Field value exact accuracy | 46.1% (83/180) | 35.6% (64/180) |
-| Assertion / State accuracy | 70.0% (126/180) | 53.9% (97/180) |
-| Relation F1 | 21.1% | 25.8% |
-| Retrieval Recall@K | 5.4% (2/37) | 43.2% (16/37) |
-| Selection accuracy | 5.4% (2/37) | 29.7% (11/37) |
-| Located evidence rate | 86.7% | 80.3% |
-| Value-in-evidence rate | 69.0% | 61.1% |
-| Unsupported field rate | 68.1% (77 fields) | 42.7% (67 fields) |
-| Evidence-unsupported fields | 59 | 68 |
-| Invalid code rate | 0.0% | 0.0% |
-| Mean runtime | 32.85s | 1354.28s |
-| Mean cost | $0.0000 | $0.0000 |
-
+# Pipeline Evaluation: Side-by-Side Comparison\n\n*Generated: 2026-09-27T12:42:14.628242Z*\n\nDenominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)\n\n| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |\n| --- | --- | --- |\n| Entity NER P / R / F1 (span-based) | 14.8% / 15.1% / 14.9% | 32.6% / 43.3% / 37.2% |\n| Field value exact accuracy | 46.1% (83/180) | 35.6% (64/180) |\n| Assertion / State accuracy | 70.0% (126/180) | 53.9% (97/180) |\n| Relation F1 | 21.1% | 25.8% |\n| Retrieval Recall@K | 5.4% (2/37) | 43.2% (16/37) |\n| Selection accuracy | 5.4% (2/37) | 29.7% (11/37) |\n| Located evidence rate | 86.7% | 80.3% |\n| Value-in-evidence rate | 69.0% | 61.1% |\n| Unsupported field rate | 68.1% (77 fields) | 42.7% (67 fields) |\n| Evidence-unsupported fields | 59 | 68 |\n| Invalid code rate | 0.0% | 0.0% |\n| Mean runtime | 32.85s | 1354.28s |\n| Mean cost | $0.0000 | $0.0000 |\n
 
 <!-- END EVAL TABLE -->
 
