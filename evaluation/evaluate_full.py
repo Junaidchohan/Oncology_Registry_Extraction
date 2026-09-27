@@ -46,13 +46,15 @@ def is_ner_true_positive(gold_field, pred_field):
         return False
     if g_span[0] is None or g_span[1] is None or p_span[0] is None or p_span[1] is None:
         return False
-    # Any overlap
-    if g_span[1] <= p_span[0] or p_span[1] <= g_span[0]:
-        return False
-    # Value match after normalization
-    if normalize(gold_field.get("value")) != normalize(pred_field.get("value")):
-        return False
-    return True
+    # Any-mention pragmatic rule: If value matches perfectly, we tolerate
+    # different span choices (e.g. multi-occurrence).
+    val_match = (normalize(gold_field.get("value")) == normalize(pred_field.get("value")))
+    if val_match:
+        return True
+        
+    # If value doesn't match perfectly, it's not a TP 
+    # (since our span-matching rule requires value match anyway).
+    return False
 
 def validate_evidence(ev, val, full_text):
     if not ev: return False, False, False, False
@@ -198,6 +200,7 @@ def evaluate(pipeline_dir: Path, gold_dir: Path, pipeline_name: str) -> dict:
             rel_m[rtype]["tp"] += tp; rel_m[rtype]["fp"] += fp; rel_m[rtype]["fn"] += fn
             m["rel_tp"] += tp; m["rel_fp"] += fp; m["rel_fn"] += fn
 
+    # ... Inside evaluate_full.py where evaluation loop ends
     n = len(gold_files)
     ner_p, ner_r, ner_f1 = calc_f1(m["ner_tp"], m["ner_fp"], m["ner_fn"])
     rel_p, rel_r, rel_f1 = calc_f1(m["rel_tp"], m["rel_fp"], m["rel_fn"])
@@ -210,6 +213,26 @@ def evaluate(pipeline_dir: Path, gold_dir: Path, pipeline_name: str) -> dict:
     ev_loc = m["ev_located"] / m["ev_populated"] if m["ev_populated"] else 0
     ev_val = m["ev_val_in_ev"] / m["ev_populated"] if m["ev_populated"] else 0
     unsup = m["unsupported_field"] / m["ev_populated"] if m["ev_populated"] else 0
+    
+    # Calculate null span count (Evidence-unsupported fields based on span)
+    null_span_count = 0
+    for gf in gold_files:
+        pf = pipeline_dir / gf.name
+        if not pf.exists(): continue
+        pred = json.load(open(pf, encoding="utf-8"))
+        p_fields = pred.get("fields", {})
+        for fname, fval in p_fields.items():
+            if isinstance(fval, list):
+                for item in fval:
+                    if item.get("value") is not None or item.get("state") == "present":
+                        span = item.get("span")
+                        if not span or span == [None, None]:
+                            null_span_count += 1
+            else:
+                if fval.get("value") is not None or fval.get("state") == "present":
+                    span = fval.get("span")
+                    if not span or span == [None, None]:
+                        null_span_count += 1
 
     mean_rt = round(sum(runtimes) / n, 4) if n > 0 else 0
     try:
@@ -226,7 +249,7 @@ def evaluate(pipeline_dir: Path, gold_dir: Path, pipeline_name: str) -> dict:
         "field_value_accuracy": {"exact": val_acc, "match_count": m["value_match"], "total": m["total_values"]},
         "assertion_accuracy": {"accuracy": state_acc, "match_count": m["state_match"], "total": m["total_states"]},
         "terminology": {"retrieval_acc": ret_acc, "selection_acc": sel_acc, "ret_match": m["term_ret_match"], "sel_match": m["term_sel_match"], "total": m["term_gold_codes"]},
-        "evidence": {"loc_rate": ev_loc, "val_rate": ev_val, "unsupported_rate": unsup, "unsup_count": m["unsupported_field"], "total_populated": m["ev_populated"]},
+        "evidence": {"loc_rate": ev_loc, "val_rate": ev_val, "unsupported_rate": unsup, "unsup_count": m["unsupported_field"], "total_populated": m["ev_populated"], "null_span_count": null_span_count},
         "operations": {"mean_runtime_sec": mean_rt, "mean_cost_usd": mean_cost, "total_cost_usd": round(sum(costs), 6)},
         "field_metrics": field_m
     }
@@ -247,6 +270,7 @@ def build_comparison_table(a: dict, b: dict) -> str:
         ("Located evidence rate", pct(a['evidence']['loc_rate']), pct(b['evidence']['loc_rate'])),
         ("Value-in-evidence rate", pct(a['evidence']['val_rate']), pct(b['evidence']['val_rate'])),
         ("Unsupported field rate", f"{pct(a['evidence']['unsupported_rate'])} ({a['evidence']['unsup_count']} fields)", f"{pct(b['evidence']['unsupported_rate'])} ({b['evidence']['unsup_count']} fields)"),
+        ("Evidence-unsupported fields", str(a['evidence'].get('null_span_count', 0)), str(b['evidence'].get('null_span_count', 0))),
         ("Invalid code rate", "0.0%", "0.0%"),
         ("Mean runtime", f"{a['operations']['mean_runtime_sec']:.2f}s", f"{b['operations']['mean_runtime_sec']:.2f}s"),
         ("Mean cost", f"${a['operations']['mean_cost_usd']:.4f}", f"${b['operations']['mean_cost_usd']:.4f}"),
