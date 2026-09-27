@@ -5,7 +5,7 @@
 - Reports: 10
 - Fields: 21
 - Pipelines: 2
-- Commit: f8736c8
+- Commit: 936d7d0
 
 ## Pipeline A - Classical NLP
 
@@ -36,7 +36,7 @@ Pipeline B relies on a local LLM to extract field values while enforcing strict 
 | Mean runtime | 32.85s | 1354.28s |
 | Mean cost | $0.0000 | $0.0000 |
 
-If precision and latency are paramount, Pipeline A is the better architectural choice. It mapped four codes with two exact matches (50.0% precision). However, if capturing a broader context is the priority, the LLM-based Pipeline B consistently finds more values (35.6% field accuracy vs. 46.1%) and grounds them against the local terminology index (43.2% code recall vs 5.4%). Pipeline B fails primarily on speed and vector space noise, mapping 62 codes but only hitting exact target matches 29.7% of the time. This is a research prototype with documented limitations, not a production-ready system.
+If precision and latency are paramount, Pipeline A is the better architectural choice. It mapped four codes with two exact matches (50.0% precision). However, if capturing a broader context is the priority, the LLM-based Pipeline B consistently finds more values (35.6% field accuracy vs. 46.1%) and grounds them against the local terminology index (43.2% Retrieval Recall@K vs 5.4%). Pipeline B fails primarily on speed and vector space noise, mapping 62 codes but only hitting exact target matches 29.7% of the time. This is a research prototype with documented limitations, not a production-ready system.
 
 ## Documented Scope-Downs
 

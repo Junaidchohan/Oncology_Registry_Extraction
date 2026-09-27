@@ -49,7 +49,9 @@ oncology-registry-extraction/
    `git clone https://github.com/Junaidchohan/Oncology_Registry_Extraction.git`
 2. Create and activate environment:
    `python -m venv .venv`
-   `.venv\Scriptsctivate` (Windows)
+      `python -m venv .venv`
+   `.venv/Scripts/activate` (Windows)
+   `source .venv/bin/activate` (macOS/Linux)
 3. Install dependencies:
    `pip install -r requirements.txt`
 4. Place JSL license:
@@ -62,17 +64,17 @@ oncology-registry-extraction/
 
 Pipeline A (Classical NLP):
 `python run_pipeline_a_jsl.py`
-- Expected runtime: ~33s per report.
+- Expected runtime: ~33s per report (~5.5 minutes for 10 reports).
 - Scope-down note: If Pipeline A crashes on Windows with Hadoop JNI error (NativeIO$Windows.access0), note that execution is frozen at commit 16e665e.
 
 Pipeline B (LLM + Retrieval):
 `python run_pipeline_b_real.py`
-- Expected runtime: ~1354s per report.
+- Expected runtime: ~1354s per report (~3.75 hours for 10 reports).
 
 ## Running the evaluation
 
-`python evaluation\evaluate_full.py`
-`python evaluationender_report.py`
+`python evaluation/evaluate_full.py`
+`python evaluation/render_report.py`
 
 ## Terminology
 
