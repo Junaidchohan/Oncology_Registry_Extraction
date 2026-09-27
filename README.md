@@ -4,6 +4,32 @@ This project extracts 21-field structured registry records from unstructured onc
 
 This README contains the full submission: setup, methodology, results, scope-downs, and pipeline summaries. The technical report with eight discrepancies, production safeguards, and 1M-report design is in report/report.md.
 
+## Architecture
+
+```mermaid
+flowchart TD
+    A[Raw report] --> B[Pipeline A]
+    A --> C[Pipeline B]
+
+    B --> B1[Preprocessing + Section detection]
+    B1 --> B2[JSL NER - oncology models]
+    B2 --> B3[Assertion + Context]
+    B3 --> B4[Relation Extraction]
+    B4 --> B5[Entity Resolution]
+    B5 --> B6[Field Assembly + Validation]
+
+    C --> C1[LLM Extraction with evidence]
+    C1 --> C2[Terminology Query Builder]
+    C2 --> C3[FAISS Retrieval - 580 concepts]
+    C3 --> C4[LLM Selection from candidates]
+    C4 --> C5[Deterministic Code Validation]
+    C5 --> C6[Grounded JSON Output]
+
+    B6 --> E[Evaluation vs Gold]
+    C6 --> E
+    E --> F[Comparison Table]
+```
+
 ## Project Structure
 
 ```
@@ -103,6 +129,21 @@ Pipeline B (LLM + Retrieval):
 
 If precision and latency are paramount, Pipeline A is the better architectural choice. It mapped four codes with two exact matches (50.0% precision). However, if capturing a broader context is the priority, the LLM-based Pipeline B consistently finds more values (35.6% field accuracy vs. 46.1%) and grounds them against the local terminology index (43.2% Retrieval Recall@K vs 5.4%). Pipeline B fails primarily on speed and vector space noise, mapping 62 codes but only hitting exact target matches 29.7% of the time. This is a research prototype with documented limitations, not a production-ready system.
 
+### Data Visualizations
+
+![Pipeline A vs Pipeline B — key metrics](docs/figures/01_pipeline_comparison.png)
+*Figure 1: Pipeline A vs Pipeline B — key metrics*
+
+![Per-field accuracy by pipeline](docs/figures/02_per_field_heatmap.png)
+*Figure 2: Per-field accuracy by pipeline*
+
+![State label distribution by pipeline](docs/figures/04_state_accuracy.png)
+*Figure 4: State label distribution by pipeline. This shows which pipeline is more willing to abstain versus fill fields.*
+
+![Mean runtime per report (log scale)](docs/figures/05_runtime_comparison.png)
+*Figure 5: Mean runtime per report (log scale). Pipeline B's runtime reflects CPU-only inference. GPU would reduce this substantially.*
+
+
 ## Documented Scope-Downs
 
 - Pipeline A is frozen at 16e665e.
@@ -110,6 +151,11 @@ If precision and latency are paramount, Pipeline A is the better architectural c
 - 580-concept curated subset for the terminology index.
 - lesion_id not emitted, causing 0% for two relation types.
 - Pipeline B over-predicts stage_to_tumor.
+
+### Error Analysis
+
+![Error distribution across eight documented discrepancies](docs/figures/03_error_distribution.png)
+*Figure 3: Error distribution across eight documented discrepancies*
 
 ## Pipeline Summaries
 
