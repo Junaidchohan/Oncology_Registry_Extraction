@@ -137,6 +137,6 @@ cannot invent specificity the LLM did not extract. However, this fundamental lim
 
 Pipeline A was expected to be more reliable because it uses a domain-specific NLP library with clinical models. However, Pipeline A's outputs are frozen at commit 16e665e; they cannot be regenerated in this environment. Because Pipeline A's frozen outputs predate the span-extraction fix, 51 of its 129 populated fields have null spans. After adding the normalizer and the specificity prompt, Pipeline B is now the stronger pipeline on NER (37.2% vs 14.9%). This is a real outcome, not a metric artifact -- but it is qualified by the fact that Pipeline A could not be re-run.
 
-## Relation evaluation scope-down
+## Relation evaluation
 
-Relation-level evaluation is not implemented in this iteration. The Relation F1 row in the comparison table reports the field-level F1 as a proxy. Real relation extraction (linking measurements to lesions, biomarkers to assays) is documented as a scope-down for a future iteration.
+Relation-level evaluation is implemented for three explicit relation types: has_lesion (linking measurements to specific lesion IDs), has_assay (linking biomarker results to assays), and has_stage_system (linking pathologic stage values to the AJCC staging system). The Relation F1 row in the comparison table reports the exact triple-matching F1 score for these relations.

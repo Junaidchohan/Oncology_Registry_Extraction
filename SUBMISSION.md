@@ -12,7 +12,7 @@
 
 This project extracts 21-field structured registry records from 10 synthetic oncology pathology reports. I built two independent pipelines for comparison: one using classical clinical NLP (JSL Healthcare) and another using a local LLM backed by retrieval-augmented terminology grounding. Both run entirely on local hardware without sending data to external APIs.
 
-**Candidate:** Muhammad Junaid · **Date:** September 24, 2026 · **Commit:** f7b947a
+**Candidate:** Muhammad Junaid · **Date:** September 24, 2026 · **Commit:** 7e542f1
 
 ---
 
