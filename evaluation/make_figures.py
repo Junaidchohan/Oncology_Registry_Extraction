@@ -14,18 +14,17 @@ def make_fig1():
     with open("evaluation/results.json", "r") as f:
         results = json.load(f)
     
-    # metrics: NER F1, Field value exact accuracy, Retrieval Recall@K, Selection accuracy
     metrics = ["NER F1", "Field value exact accuracy", "Retrieval Recall@K", "Selection accuracy"]
     
-    pa_f1 = results.get("pipeline_a", {}).get("overall", {}).get("entity", {}).get("f1", 0) * 100
-    pa_field = results.get("pipeline_a", {}).get("overall", {}).get("field", {}).get("accuracy", 0) * 100
-    pa_recall = results.get("pipeline_a", {}).get("overall", {}).get("terminology", {}).get("recall_at_k", 0) * 100
-    pa_sel = results.get("pipeline_a", {}).get("overall", {}).get("terminology", {}).get("selection_accuracy", 0) * 100
+    pa_f1 = results.get("pipeline_a", {}).get("entity_ner", {}).get("f1", 0) * 100
+    pa_field = results.get("pipeline_a", {}).get("field_value_accuracy", {}).get("exact", 0) * 100
+    pa_recall = results.get("pipeline_a", {}).get("terminology", {}).get("retrieval_acc", 0) * 100
+    pa_sel = results.get("pipeline_a", {}).get("terminology", {}).get("selection_acc", 0) * 100
     
-    pb_f1 = results.get("pipeline_b", {}).get("overall", {}).get("entity", {}).get("f1", 0) * 100
-    pb_field = results.get("pipeline_b", {}).get("overall", {}).get("field", {}).get("accuracy", 0) * 100
-    pb_recall = results.get("pipeline_b", {}).get("overall", {}).get("terminology", {}).get("recall_at_k", 0) * 100
-    pb_sel = results.get("pipeline_b", {}).get("overall", {}).get("terminology", {}).get("selection_accuracy", 0) * 100
+    pb_f1 = results.get("pipeline_b", {}).get("entity_ner", {}).get("f1", 0) * 100
+    pb_field = results.get("pipeline_b", {}).get("field_value_accuracy", {}).get("exact", 0) * 100
+    pb_recall = results.get("pipeline_b", {}).get("terminology", {}).get("retrieval_acc", 0) * 100
+    pb_sel = results.get("pipeline_b", {}).get("terminology", {}).get("selection_acc", 0) * 100
     
     pa_vals = [pa_f1, pa_field, pa_recall, pa_sel]
     pb_vals = [pb_f1, pb_field, pb_recall, pb_sel]
@@ -57,27 +56,19 @@ def make_fig2():
     pa_accs = []
     pb_accs = []
     
+    if not os.path.exists("evaluation/per_field_results.csv"):
+        return
+
     with open("evaluation/per_field_results.csv", "r") as f:
         reader = csv.DictReader(f)
         for row in reader:
             fields.append(row["field"])
-            # The CSV might just have Pipeline A / Pipeline B columns or we might have to parse
-            # Let's check results.json for fields instead if CSV is harder to parse without knowing format.
-            pass
+            pa_accs.append(float(row.get("a_val_acc", 0)) * 100)
+            pb_accs.append(float(row.get("b_val_acc", 0)) * 100)
             
-    # Reading from results.json directly is safer since we know its structure from before.
-    with open("evaluation/results.json", "r") as f:
-        results = json.load(f)
-        
-    pa_fields = results.get("pipeline_a", {}).get("per_field", {})
-    pb_fields = results.get("pipeline_b", {}).get("per_field", {})
-    
-    fields = sorted(list(set(pa_fields.keys()).union(set(pb_fields.keys()))))
-    
-    for f in fields:
-        pa_accs.append(pa_fields.get(f, {}).get("field", {}).get("accuracy", 0) * 100)
-        pb_accs.append(pb_fields.get(f, {}).get("field", {}).get("accuracy", 0) * 100)
-        
+    if not fields:
+        return
+
     data = np.array([pa_accs, pb_accs]).T
     
     fig, ax = plt.subplots(figsize=(8, 10))
@@ -112,7 +103,8 @@ def make_fig3():
     if os.path.exists("report/report.md"):
         with open("report/report.md", "r") as f:
             content = f.read()
-            for m in re.finditer(r"\*\*Root cause\*\*:\s*([^<]+)", content, re.IGNORECASE):
+            # The format is: Root cause:\n  <cause> (<explanation>)
+            for m in re.finditer(r"Root cause:\s*\n\s*([^(]+?)\s*\(", content, re.IGNORECASE):
                 val = m.group(1).strip().lower()
                 matched = False
                 for c in causes_map.keys():
@@ -120,14 +112,15 @@ def make_fig3():
                         causes_map[c] += 1
                         matched = True
                         break
-                if not matched:
-                    print(f"Unmatched root cause: {val}")
                     
     # Sorting
     sorted_causes = sorted(causes_map.items(), key=lambda x: x[1])
     labels = [x[0] for x in sorted_causes]
     vals = [x[1] for x in sorted_causes]
     
+    if sum(vals) == 0:
+        return
+        
     fig, ax = plt.subplots(figsize=(10, 6))
     bars = ax.barh(labels, vals)
     ax.set_xlabel('Count')
@@ -152,18 +145,18 @@ def make_fig4():
         for f in glob.glob(os.path.join(pipeline_dir, "report_*.json")):
             with open(f, "r") as fp:
                 data = json.load(fp)
-                for ann in data.get("annotations", []):
-                    # check top-level annotations
-                    state = ann.get("state")
-                    if state in counts:
-                        counts[state] += 1
-                    
-                    # check biomarkers specifically as they are repeatable
-                    if ann.get("field_name") == "biomarkers":
-                        for b in ann.get("value", []):
-                            s = b.get("state")
-                            if s in counts:
-                                counts[s] += 1
+                fields = data.get("fields", {})
+                for field_name, ann in fields.items():
+                    if isinstance(ann, dict):
+                        state = ann.get("state")
+                        if state in counts:
+                            counts[state] += 1
+                    elif isinstance(ann, list): # Like biomarkers
+                        for b in ann:
+                            if isinstance(b, dict):
+                                s = b.get("state")
+                                if s in counts:
+                                    counts[s] += 1
         return counts
 
     c_a = get_state_counts("outputs/pipeline_a")
@@ -171,6 +164,9 @@ def make_fig4():
     
     states = ["present", "negative", "not_mentioned", "not_assessed", "not_applicable", "ambiguous"]
     
+    if sum(c_a.values()) == 0 and sum(c_b.values()) == 0:
+        return
+        
     fig, ax = plt.subplots(figsize=(10, 6))
     
     bottom_a = 0
@@ -198,14 +194,10 @@ def make_fig4():
 
 # FIGURE 5: Runtime Comparison
 def make_fig5():
-    # Mean runtime per report for each pipeline:
-    # Pipeline A: 32.85s
-    # Pipeline B: 1354.28s
-    
     with open("evaluation/results.json", "r") as f:
         results = json.load(f)
-        pa_time = results.get("pipeline_a", {}).get("overall", {}).get("runtime", 32.85)
-        pb_time = results.get("pipeline_b", {}).get("overall", {}).get("runtime", 1354.28)
+        pa_time = results.get("pipeline_a", {}).get("operations", {}).get("mean_runtime_sec", 32.85)
+        pb_time = results.get("pipeline_b", {}).get("operations", {}).get("mean_runtime_sec", 1354.28)
         
     labels = ["Pipeline A", "Pipeline B"]
     vals = [pa_time, pb_time]
