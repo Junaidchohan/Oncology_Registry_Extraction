@@ -234,7 +234,3 @@ Pipeline B relies on a local LLM to extract field values while enforcing strict 
 - NCI SEER ICD-O-3 Coding
 - LOINC Terminology
 - WHO ATC classification
-
-## Contact
-
-Muhammad Junaid
