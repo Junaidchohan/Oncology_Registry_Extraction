@@ -46,14 +46,6 @@ If precision and latency are paramount, Pipeline A is the better architectural c
 - lesion_id not emitted, causing 0% for two relation types.
 - Pipeline B over-predicts stage_to_tumor.
 
-## Proof of Execution
-
-All execution was captured locally on a Windows environment.
-- ![01_pipeline_a_all_jsl.png](docs/screenshots/01_pipeline_a_all_jsl.png)
-- ![02_pipeline_a_sample.png](docs/screenshots/02_pipeline_a_sample.png)
-- ![03_retrieval_log.png](docs/screenshots/03_retrieval_log.png)
-- ![04_terminology_580.png](docs/screenshots/04_terminology_580.png)
-- ![05_comparison_table.png](docs/screenshots/05_comparison_table.png)
 
 ## How to Run
 

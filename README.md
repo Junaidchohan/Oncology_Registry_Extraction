@@ -24,8 +24,6 @@ oncology-registry-extraction/
 |   \-- per_field_results.csv
 |-- report/
 |   \-- report.md
-|-- docs/
-|   \-- screenshots/
 |-- README.md
 |-- SUBMISSION.md
 |-- requirements.txt
