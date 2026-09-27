@@ -203,16 +203,11 @@ def _parse_llm_json(raw: str) -> Dict[str, Any]:
             try:
                 data = json.loads(m.group(0))
             except json.JSONDecodeError as exc:
-                raise RuntimeError(
-                    f"LLM output could not be parsed as JSON.\n"
-                    f"Raw output (first 500 chars): {raw[:500]}\n"
-                    f"Parse error: {exc}"
-                ) from exc
+                logger.error(f"LLM output could not be parsed as JSON. Error: {exc}")
+                return {}
         else:
-            raise RuntimeError(
-                f"LLM output contains no JSON object.\n"
-                f"Raw output (first 500 chars): {raw[:500]}"
-            )
+            logger.error(f"LLM output contains no JSON object.")
+            return {}
 
     # Normalise: ensure all 21 fields are present with correct keys
     normalised: Dict[str, Any] = {}
