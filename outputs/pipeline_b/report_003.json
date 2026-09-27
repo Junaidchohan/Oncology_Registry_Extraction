@@ -1,7 +1,7 @@
 {
   "report_id": "report_003",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-26T17:58:34.641899+00:00",
+  "run_timestamp": "2026-09-27T03:07:16.748891+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 943.578
+    "elapsed_sec": 199.361
   },
   "fields": {
     "specimen": {
@@ -18,8 +18,7 @@
       "state": "present",
       "evidence": "CT-guided core needle biopsy, right upper lobe, 3 cores each measuring approximately 1.5 x 0.1 cm.",
       "span": null,
-      "codes": {},
-      "raw_value": "CT-guided core needle biopsy"
+      "codes": {}
     },
     "procedure": {
       "value": "Ct-guided core needle biopsy",
@@ -27,8 +26,7 @@
       "state": "present",
       "evidence": "CT-guided core needle biopsy, right upper lobe, 3 cores each measuring approximately 1.5 x 0.1 cm.",
       "span": null,
-      "codes": {},
-      "raw_value": "CT-guided core needle biopsy"
+      "codes": {}
     },
     "primary_tumor_site": {
       "value": "Right upper lobe",
@@ -39,8 +37,7 @@
         1310,
         1356
       ],
-      "codes": {},
-      "raw_value": "right upper lobe"
+      "codes": {}
     },
     "laterality": {
       "value": "Right",
@@ -51,8 +48,7 @@
         1310,
         1356
       ],
-      "codes": {},
-      "raw_value": "right"
+      "codes": {}
     },
     "histological_type": {
       "value": "Pulmonary adenocarcinoma",
@@ -60,8 +56,7 @@
       "state": "present",
       "evidence": "Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns with focal mucin production, consistent with pulmonary adenocarcinoma.",
       "span": null,
-      "codes": {},
-      "raw_value": "pulmonary adenocarcinoma"
+      "codes": {}
     },
     "tumor_behavior": {
       "value": "Malignant",
@@ -69,8 +64,7 @@
       "state": "present",
       "evidence": "Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns with focal mucin production, consistent with pulmonary adenocarcinoma.",
       "span": null,
-      "codes": {},
-      "raw_value": "malignant"
+      "codes": {}
     },
     "tumor_grade": {
       "value": "Nottingham Grade 2 (moderately differentiated)",
@@ -83,8 +77,7 @@
       ],
       "codes": {
         "SNOMED_CT": "369783002"
-      },
-      "raw_value": "moderately differentiated"
+      }
     },
     "tumor_size": {
       "value": "3.1",
@@ -92,8 +85,7 @@
       "state": "present",
       "evidence": "CT chest revealed a 3.1 cm spiculated right upper lobe mass",
       "span": null,
-      "codes": {},
-      "raw_value": "3.1"
+      "codes": {}
     },
     "tumor_focality": {
       "value": "Multifocal",
@@ -101,8 +93,7 @@
       "state": "present",
       "evidence": "PET scan showed FDG-avid lesion in the right upper lobe and multiple FDG-avid brain lesions",
       "span": null,
-      "codes": {},
-      "raw_value": "multiple"
+      "codes": {}
     },
     "tumor_extension": {
       "value": "Infiltrative",
@@ -110,8 +101,7 @@
       "state": "present",
       "evidence": "Sections show a malignant epithelial neoplasm arranged in lepidic, acinar, and papillary patterns with focal mucin production, consistent with pulmonary adenocarcinoma.",
       "span": null,
-      "codes": {},
-      "raw_value": "infiltrative"
+      "codes": {}
     },
     "lymphovascular_invasion": {
       "value": "Absent",
@@ -121,8 +111,7 @@
       "span": null,
       "codes": {
         "SNOMED_CT": "245294001"
-      },
-      "raw_value": "absent"
+      }
     },
     "perineural_invasion": {
       "value": "Absent",
@@ -130,8 +119,7 @@
       "state": "not_assessed",
       "evidence": null,
       "span": null,
-      "codes": {},
-      "raw_value": "absent"
+      "codes": {}
     },
     "surgical_margins": {
       "value": "Negative",
@@ -139,8 +127,7 @@
       "state": "not_applicable",
       "evidence": null,
       "span": null,
-      "codes": {},
-      "raw_value": "negative"
+      "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "0",
@@ -148,8 +135,7 @@
       "state": "not_applicable",
       "evidence": null,
       "span": null,
-      "codes": {},
-      "raw_value": "0"
+      "codes": {}
     },
     "positive_lymph_nodes": {
       "value": "0",
@@ -157,8 +143,7 @@
       "state": "not_applicable",
       "evidence": null,
       "span": null,
-      "codes": {},
-      "raw_value": "0"
+      "codes": {}
     },
     "pathologic_t": {
       "value": "2",
@@ -169,8 +154,7 @@
         1511,
         1531
       ],
-      "codes": {},
-      "raw_value": "2"
+      "codes": {}
     },
     "pathologic_n": {
       "value": "2",
@@ -178,8 +162,7 @@
       "state": "present",
       "evidence": "Clinical stage: cN2",
       "span": null,
-      "codes": {},
-      "raw_value": "2"
+      "codes": {}
     },
     "pathologic_m": {
       "value": "1",
@@ -187,8 +170,7 @@
       "state": "present",
       "evidence": "Clinical stage: cM1b",
       "span": null,
-      "codes": {},
-      "raw_value": "1"
+      "codes": {}
     },
     "biomarkers": {
       "value": null,

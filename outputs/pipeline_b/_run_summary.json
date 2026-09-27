@@ -3,9 +3,9 @@
   "llm_model": "llama3.1:8b",
   "llm_base": "http://localhost:11434/v1",
   "n_reports": 10,
-  "mean_runtime_sec": 800.296,
-  "mean_fields_populated": 16.3,
-  "mean_fields_coded": 1.7,
+  "mean_runtime_sec": 156.345,
+  "mean_fields_populated": 15.9,
+  "mean_fields_coded": 1.6,
   "per_report": [
     {
       "report_id": "report_001",
@@ -14,16 +14,16 @@
       "grounding_accepted": 2,
       "grounding_abstained": 0,
       "grounding_rejected": 1,
-      "elapsed_sec": 685.742
+      "elapsed_sec": 211.074
     },
     {
       "report_id": "report_002",
       "fields_populated": 18,
-      "fields_coded": 4,
-      "grounding_accepted": 4,
-      "grounding_abstained": 0,
+      "fields_coded": 3,
+      "grounding_accepted": 3,
+      "grounding_abstained": 1,
       "grounding_rejected": 0,
-      "elapsed_sec": 921.379
+      "elapsed_sec": 156.98
     },
     {
       "report_id": "report_003",
@@ -32,16 +32,16 @@
       "grounding_accepted": 2,
       "grounding_abstained": 1,
       "grounding_rejected": 0,
-      "elapsed_sec": 943.578
+      "elapsed_sec": 199.361
     },
     {
       "report_id": "report_004",
-      "fields_populated": 18,
+      "fields_populated": 15,
       "fields_coded": 1,
       "grounding_accepted": 1,
       "grounding_abstained": 0,
       "grounding_rejected": 0,
-      "elapsed_sec": 784.263
+      "elapsed_sec": 62.686
     },
     {
       "report_id": "report_005",
@@ -50,7 +50,7 @@
       "grounding_accepted": 3,
       "grounding_abstained": 1,
       "grounding_rejected": 0,
-      "elapsed_sec": 1092.775
+      "elapsed_sec": 173.523
     },
     {
       "report_id": "report_006",
@@ -59,16 +59,16 @@
       "grounding_accepted": 2,
       "grounding_abstained": 1,
       "grounding_rejected": 1,
-      "elapsed_sec": 773.34
+      "elapsed_sec": 122.821
     },
     {
       "report_id": "report_007",
-      "fields_populated": 18,
+      "fields_populated": 17,
       "fields_coded": 2,
       "grounding_accepted": 2,
       "grounding_abstained": 0,
       "grounding_rejected": 1,
-      "elapsed_sec": 735.739
+      "elapsed_sec": 213.52
     },
     {
       "report_id": "report_008",
@@ -77,7 +77,7 @@
       "grounding_accepted": 0,
       "grounding_abstained": 3,
       "grounding_rejected": 1,
-      "elapsed_sec": 723.559
+      "elapsed_sec": 167.068
     },
     {
       "report_id": "report_009",
@@ -86,7 +86,7 @@
       "grounding_accepted": 1,
       "grounding_abstained": 3,
       "grounding_rejected": 0,
-      "elapsed_sec": 956.335
+      "elapsed_sec": 256.404
     },
     {
       "report_id": "report_010",
@@ -95,7 +95,7 @@
       "grounding_accepted": 0,
       "grounding_abstained": 0,
       "grounding_rejected": 0,
-      "elapsed_sec": 386.243
+      "elapsed_sec": 0.015
     }
   ]
 }

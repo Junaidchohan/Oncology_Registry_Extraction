@@ -18,7 +18,7 @@
   },
   "fields": {
     "primary_tumor_site": {
-      "value": "Sentinel lymph node",
+      "value": "sentinel lymph node",
       "unit": null,
       "state": "present",
       "evidence": "sentinel lymph node",
@@ -26,11 +26,10 @@
         316,
         334
       ],
-      "codes": {},
-      "raw_value": "sentinel lymph node"
+      "codes": {}
     },
     "histological_type": {
-      "value": "Invasive",
+      "value": "invasive",
       "unit": null,
       "state": "present",
       "evidence": "invasive",
@@ -38,8 +37,7 @@
         61,
         68
       ],
-      "codes": {},
-      "raw_value": "invasive"
+      "codes": {}
     },
     "tumor_grade": {
       "value": null,
@@ -65,8 +63,7 @@
         1018,
         1022
       ],
-      "codes": {},
-      "raw_value": "ypT1a"
+      "codes": {}
     },
     "pathologic_n": {
       "value": null,
@@ -97,8 +94,7 @@
         436,
         449
       ],
-      "codes": {},
-      "raw_value": "150.0"
+      "codes": {}
     },
     "laterality": {
       "value": "Right",
@@ -106,8 +102,7 @@
       "state": "present",
       "evidence": "Laterality from report text",
       "span": null,
-      "codes": {},
-      "raw_value": "Right"
+      "codes": {}
     },
     "surgical_margins": {
       "value": "Negative",
@@ -115,8 +110,7 @@
       "state": "present",
       "evidence": "All surgical margins are negative",
       "span": null,
-      "codes": {},
-      "raw_value": "Negative"
+      "codes": {}
     },
     "lymph_nodes_examined": {
       "value": "3",
@@ -124,8 +118,7 @@
       "state": "present",
       "evidence": "3/3",
       "span": null,
-      "codes": {},
-      "raw_value": "3"
+      "codes": {}
     },
     "positive_lymph_nodes": {
       "value": "3",
@@ -133,8 +126,7 @@
       "state": "present",
       "evidence": "3/3",
       "span": null,
-      "codes": {},
-      "raw_value": "3"
+      "codes": {}
     },
     "lymphovascular_invasion": {
       "value": "Absent",
@@ -142,8 +134,7 @@
       "state": "negative",
       "evidence": "No lymphovascular invasion",
       "span": null,
-      "codes": {},
-      "raw_value": "Absent"
+      "codes": {}
     },
     "perineural_invasion": {
       "value": null,
@@ -162,8 +153,7 @@
         1231,
         1240
       ],
-      "codes": {},
-      "raw_value": "metastatic"
+      "codes": {}
     },
     "er_status": {
       "value": "ER",
@@ -174,8 +164,7 @@
         1356,
         1357
       ],
-      "codes": {},
-      "raw_value": "ER"
+      "codes": {}
     },
     "pr_status": {
       "value": "PR",
@@ -186,8 +175,7 @@
         1401,
         1402
       ],
-      "codes": {},
-      "raw_value": "PR"
+      "codes": {}
     },
     "her2_status": {
       "value": null,
@@ -214,7 +202,7 @@
       "codes": {}
     },
     "procedure": {
-      "value": "Mastectomy",
+      "value": "mastectomy",
       "unit": null,
       "state": "present",
       "evidence": "mastectomy",
@@ -222,8 +210,7 @@
         300,
         309
       ],
-      "codes": {},
-      "raw_value": "mastectomy"
+      "codes": {}
     },
     "prior_treatment": {
       "value": "neoadjuvant chemotherapy",
@@ -234,17 +221,15 @@
         158,
         181
       ],
-      "codes": {},
-      "raw_value": "neoadjuvant chemotherapy"
+      "codes": {}
     },
     "tumor_focality": {
-      "value": "Single lesion",
+      "value": "Single",
       "unit": null,
       "state": "negative",
       "evidence": "No multiplicity cues detected",
       "span": null,
-      "codes": {},
-      "raw_value": "Single"
+      "codes": {}
     }
   }
 }

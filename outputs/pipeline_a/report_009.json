@@ -18,7 +18,7 @@
   },
   "fields": {
     "primary_tumor_site": {
-      "value": "Lower lobe",
+      "value": "lower lobe",
       "unit": null,
       "state": "present",
       "evidence": "lower lobe",
@@ -26,11 +26,10 @@
         93,
         102
       ],
-      "codes": {},
-      "raw_value": "lower lobe"
+      "codes": {}
     },
     "histological_type": {
-      "value": "Nodule",
+      "value": "nodule",
       "unit": null,
       "state": "present",
       "evidence": "nodule",
@@ -38,8 +37,7 @@
         104,
         109
       ],
-      "codes": {},
-      "raw_value": "nodule"
+      "codes": {}
     },
     "tumor_grade": {
       "value": null,
@@ -87,8 +85,7 @@
         503,
         514
       ],
-      "codes": {},
-      "raw_value": "1.0"
+      "codes": {}
     },
     "laterality": {
       "value": "Left",
@@ -96,8 +93,7 @@
       "state": "present",
       "evidence": "Laterality from report text",
       "span": null,
-      "codes": {},
-      "raw_value": "Left"
+      "codes": {}
     },
     "surgical_margins": {
       "value": null,
@@ -148,8 +144,7 @@
         1929,
         1938
       ],
-      "codes": {},
-      "raw_value": "metastasis"
+      "codes": {}
     },
     "er_status": {
       "value": null,
@@ -184,8 +179,7 @@
         1419,
         1422
       ],
-      "codes": {},
-      "raw_value": "KRAS"
+      "codes": {}
     },
     "egfr_mutation": {
       "value": "EGFR",
@@ -196,11 +190,10 @@
         1334,
         1337
       ],
-      "codes": {},
-      "raw_value": "EGFR"
+      "codes": {}
     },
     "procedure": {
-      "value": "Lobectomy",
+      "value": "lobectomy",
       "unit": null,
       "state": "present",
       "evidence": "lobectomy",
@@ -208,8 +201,7 @@
         166,
         174
       ],
-      "codes": {},
-      "raw_value": "lobectomy"
+      "codes": {}
     },
     "prior_treatment": {
       "value": null,
@@ -220,13 +212,12 @@
       "codes": {}
     },
     "tumor_focality": {
-      "value": "Single lesion",
+      "value": "Single",
       "unit": null,
       "state": "negative",
       "evidence": "No multiplicity cues detected",
       "span": null,
-      "codes": {},
-      "raw_value": "Single"
+      "codes": {}
     }
   }
 }

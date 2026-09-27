@@ -18,7 +18,7 @@
   },
   "fields": {
     "primary_tumor_site": {
-      "value": "Upper lobe",
+      "value": "upper lobe",
       "unit": null,
       "state": "present",
       "evidence": "upper lobe",
@@ -26,11 +26,10 @@
         145,
         154
       ],
-      "codes": {},
-      "raw_value": "upper lobe"
+      "codes": {}
     },
     "histological_type": {
-      "value": "Mass",
+      "value": "mass",
       "unit": null,
       "state": "present",
       "evidence": "mass",
@@ -38,11 +37,10 @@
         156,
         159
       ],
-      "codes": {},
-      "raw_value": "mass"
+      "codes": {}
     },
     "tumor_grade": {
-      "value": "Nottingham Grade 2 (moderately differentiated)",
+      "value": "moderately differentiated",
       "unit": null,
       "state": "present",
       "evidence": "moderately differentiated",
@@ -50,8 +48,7 @@
         1386,
         1410
       ],
-      "codes": {},
-      "raw_value": "moderately differentiated"
+      "codes": {}
     },
     "clinical_stage": {
       "value": "cT2a cN2 cM1b",
@@ -62,8 +59,7 @@
         1527,
         1539
       ],
-      "codes": {},
-      "raw_value": "cT2a cN2 cM1b"
+      "codes": {}
     },
     "pathologic_t": {
       "value": null,
@@ -95,8 +91,7 @@
         121,
         126
       ],
-      "codes": {},
-      "raw_value": "31.0"
+      "codes": {}
     },
     "laterality": {
       "value": "Left",
@@ -104,8 +99,7 @@
       "state": "present",
       "evidence": "Laterality from report text",
       "span": null,
-      "codes": {},
-      "raw_value": "Left"
+      "codes": {}
     },
     "surgical_margins": {
       "value": null,
@@ -156,8 +150,7 @@
         1272,
         1289
       ],
-      "codes": {},
-      "raw_value": "metastatic disease"
+      "codes": {}
     },
     "er_status": {
       "value": "ER",
@@ -168,8 +161,7 @@
         1604,
         1605
       ],
-      "codes": {},
-      "raw_value": "ER"
+      "codes": {}
     },
     "pr_status": {
       "value": "PR",
@@ -180,8 +172,7 @@
         1608,
         1609
       ],
-      "codes": {},
-      "raw_value": "PR"
+      "codes": {}
     },
     "her2_status": {
       "value": null,
@@ -200,8 +191,7 @@
         1087,
         1090
       ],
-      "codes": {},
-      "raw_value": "KRAS"
+      "codes": {}
     },
     "egfr_mutation": {
       "value": "EGFR",
@@ -212,8 +202,7 @@
         1039,
         1042
       ],
-      "codes": {},
-      "raw_value": "EGFR"
+      "codes": {}
     },
     "procedure": {
       "value": null,
@@ -232,13 +221,12 @@
       "codes": {}
     },
     "tumor_focality": {
-      "value": "Single lesion",
+      "value": "Single",
       "unit": null,
       "state": "negative",
       "evidence": "No multiplicity cues detected",
       "span": null,
-      "codes": {},
-      "raw_value": "Single"
+      "codes": {}
     }
   }
 }

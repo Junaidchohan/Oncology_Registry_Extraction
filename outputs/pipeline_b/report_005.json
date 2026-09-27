@@ -1,7 +1,7 @@
 {
   "report_id": "report_005",
   "pipeline": "pipeline_b_llm_retrieval",
-  "run_timestamp": "2026-09-26T18:29:51.876309+00:00",
+  "run_timestamp": "2026-09-27T03:11:12.966015+00:00",
   "model_versions": {
     "mode": "llm_retrieval_ollama",
     "llm_model": "llama3.1:8b",
@@ -9,7 +9,7 @@
     "faiss_index": "terminology/terminology_index.faiss",
     "n_concepts": 85,
     "grounding": "two_stage_llm_selection",
-    "elapsed_sec": 1092.775
+    "elapsed_sec": 173.523
   },
   "fields": {
     "specimen": {
@@ -21,8 +21,7 @@
         318,
         406
       ],
-      "codes": {},
-      "raw_value": "Rectal biopsy"
+      "codes": {}
     },
     "procedure": {
       "value": "Endoscopic mucosal resection biopsy",
@@ -33,8 +32,7 @@
         238,
         287
       ],
-      "codes": {},
-      "raw_value": "Endoscopic mucosal resection biopsy"
+      "codes": {}
     },
     "primary_tumor_site": {
       "value": "Right rectum",
@@ -45,8 +43,7 @@
         1101,
         1116
       ],
-      "codes": {},
-      "raw_value": "Rectum"
+      "codes": {}
     },
     "laterality": {
       "value": "Right",
@@ -57,8 +54,7 @@
         1101,
         1116
       ],
-      "codes": {},
-      "raw_value": "Right"
+      "codes": {}
     },
     "histological_type": {
       "value": "Adenocarcinoma",
@@ -69,8 +65,7 @@
         497,
         570
       ],
-      "codes": {},
-      "raw_value": "Adenocarcinoma"
+      "codes": {}
     },
     "tumor_behavior": {
       "value": "Malignant",
@@ -78,8 +73,7 @@
       "state": "present",
       "evidence": "Well-differentiated (Grade 1) adenocarcinoma of the rectum.",
       "span": null,
-      "codes": {},
-      "raw_value": "Malignant"
+      "codes": {}
     },
     "tumor_grade": {
       "value": "Nottingham Grade 1",
@@ -88,9 +82,8 @@
       "evidence": "Well-differentiated (Grade 1) adenocarcinoma of the rectum.",
       "span": null,
       "codes": {
-        "SNOMED_CT": "363346001"
-      },
-      "raw_value": "1"
+        "SNOMED_CT": "369782007"
+      }
     },
     "tumor_size": {
       "value": "2.8",
@@ -98,8 +91,7 @@
       "state": "present",
       "evidence": "2.8 cm sessile polyp in the rectum at 10 cm from the anal verge.",
       "span": null,
-      "codes": {},
-      "raw_value": "2.8"
+      "codes": {}
     },
     "tumor_focality": {
       "value": "Multifocal",
@@ -110,8 +102,7 @@
         356,
         406
       ],
-      "codes": {},
-      "raw_value": "Multiple"
+      "codes": {}
     },
     "tumor_extension": {
       "value": "Submucosa",
@@ -122,8 +113,7 @@
         1165,
         1200
       ],
-      "codes": {},
-      "raw_value": "Submucosa"
+      "codes": {}
     },
     "lymphovascular_invasion": {
       "value": "Absent",
@@ -133,8 +123,7 @@
       "span": null,
       "codes": {
         "SNOMED_CT": "245294001"
-      },
-      "raw_value": "Absent"
+      }
     },
     "perineural_invasion": {
       "value": "Absent",
@@ -145,8 +134,7 @@
         707,
         737
       ],
-      "codes": {},
-      "raw_value": "Absent"
+      "codes": {}
     },
     "surgical_margins": {
       "value": "Uninvolved",
@@ -159,8 +147,7 @@
       ],
       "codes": {
         "SNOMED_CT": "370052007"
-      },
-      "raw_value": "Uninvolved"
+      }
     },
     "lymph_nodes_examined": {
       "value": "0",
@@ -171,8 +158,7 @@
         1403,
         1446
       ],
-      "codes": {},
-      "raw_value": "0"
+      "codes": {}
     },
     "positive_lymph_nodes": {
       "value": "0",
@@ -183,8 +169,7 @@
         1403,
         1446
       ],
-      "codes": {},
-      "raw_value": "0"
+      "codes": {}
     },
     "pathologic_t": {
       "value": "1",
@@ -195,8 +180,7 @@
         1165,
         1200
       ],
-      "codes": {},
-      "raw_value": "1"
+      "codes": {}
     },
     "pathologic_n": {
       "value": "X",
@@ -207,8 +191,7 @@
         1403,
         1446
       ],
-      "codes": {},
-      "raw_value": "X"
+      "codes": {}
     },
     "pathologic_m": {
       "value": "0",
@@ -219,8 +202,7 @@
         852,
         895
       ],
-      "codes": {},
-      "raw_value": "0"
+      "codes": {}
     },
     "biomarkers": {
       "value": null,

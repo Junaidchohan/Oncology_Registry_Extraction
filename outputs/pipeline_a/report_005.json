@@ -26,11 +26,10 @@
         1403,
         1413
       ],
-      "codes": {},
-      "raw_value": "Lymph nodes"
+      "codes": {}
     },
     "histological_type": {
-      "value": "Polyp",
+      "value": "polyp",
       "unit": null,
       "state": "present",
       "evidence": "polyp",
@@ -38,8 +37,7 @@
         120,
         124
       ],
-      "codes": {},
-      "raw_value": "polyp"
+      "codes": {}
     },
     "tumor_grade": {
       "value": "Grade 1",
@@ -50,8 +48,7 @@
         532,
         538
       ],
-      "codes": {},
-      "raw_value": "Grade 1"
+      "codes": {}
     },
     "clinical_stage": {
       "value": null,
@@ -69,8 +66,7 @@
         659,
         661
       ],
-      "codes": {},
-      "raw_value": "pT1"
+      "codes": {}
     },
     "pathologic_n": {
       "value": null,
@@ -101,8 +97,7 @@
         105,
         110
       ],
-      "codes": {},
-      "raw_value": "28.0"
+      "codes": {}
     },
     "laterality": {
       "value": null,
@@ -126,8 +121,7 @@
       "state": "present",
       "evidence": "12/13",
       "span": null,
-      "codes": {},
-      "raw_value": "13"
+      "codes": {}
     },
     "positive_lymph_nodes": {
       "value": "12",
@@ -135,8 +129,7 @@
       "state": "present",
       "evidence": "12/13",
       "span": null,
-      "codes": {},
-      "raw_value": "12"
+      "codes": {}
     },
     "lymphovascular_invasion": {
       "value": "Absent",
@@ -144,8 +137,7 @@
       "state": "negative",
       "evidence": "No lymphovascular invasion",
       "span": null,
-      "codes": {},
-      "raw_value": "Absent"
+      "codes": {}
     },
     "perineural_invasion": {
       "value": "Absent",
@@ -153,8 +145,7 @@
       "state": "negative",
       "evidence": "Perineural invasion is absent",
       "span": null,
-      "codes": {},
-      "raw_value": "Absent"
+      "codes": {}
     },
     "distant_metastasis": {
       "value": "metastatic disease",
@@ -165,8 +156,7 @@
         218,
         235
       ],
-      "codes": {},
-      "raw_value": "metastatic disease"
+      "codes": {}
     },
     "er_status": {
       "value": "ER",
@@ -177,8 +167,7 @@
         1016,
         1017
       ],
-      "codes": {},
-      "raw_value": "ER"
+      "codes": {}
     },
     "pr_status": {
       "value": "PR",
@@ -189,8 +178,7 @@
         1020,
         1021
       ],
-      "codes": {},
-      "raw_value": "PR"
+      "codes": {}
     },
     "her2_status": {
       "value": null,
@@ -209,8 +197,7 @@
         907,
         922
       ],
-      "codes": {},
-      "raw_value": "KRAS codon 12/13"
+      "codes": {}
     },
     "egfr_mutation": {
       "value": null,
@@ -221,7 +208,7 @@
       "codes": {}
     },
     "procedure": {
-      "value": "Resection",
+      "value": "resection",
       "unit": null,
       "state": "present",
       "evidence": "resection",
@@ -229,8 +216,7 @@
         1502,
         1510
       ],
-      "codes": {},
-      "raw_value": "resection"
+      "codes": {}
     },
     "prior_treatment": {
       "value": null,
@@ -241,13 +227,12 @@
       "codes": {}
     },
     "tumor_focality": {
-      "value": "Single lesion",
+      "value": "Single",
       "unit": null,
       "state": "negative",
       "evidence": "No multiplicity cues detected",
       "span": null,
-      "codes": {},
-      "raw_value": "Single"
+      "codes": {}
     }
   }
 }
