@@ -2,6 +2,8 @@
 
 This project extracts 21-field structured registry records from unstructured oncology pathology reports. It compares two independent architectures: a classical clinical NLP pipeline (JSL Healthcare) and a large language model pipeline grounded by FAISS terminology retrieval.
 
+This README contains the full submission: setup, methodology, results, scope-downs, and pipeline summaries. The technical report with eight discrepancies, production safeguards, and 1M-report design is in report/report.md.
+
 ## Project Structure
 
 ```
@@ -25,7 +27,6 @@ oncology-registry-extraction/
 |-- report/
 |   \-- report.md
 |-- README.md
-|-- SUBMISSION.md
 |-- requirements.txt
 |-- config.yaml
 |-- setup_jsl_env.ps1
@@ -47,7 +48,6 @@ oncology-registry-extraction/
    `git clone https://github.com/Junaidchohan/Oncology_Registry_Extraction.git`
 2. Create and activate environment:
    `python -m venv .venv`
-      `python -m venv .venv`
    `.venv/Scripts/activate` (Windows)
    `source .venv/bin/activate` (macOS/Linux)
 3. Install dependencies:
@@ -83,7 +83,7 @@ Pipeline B (LLM + Retrieval):
 - ATC WHO 2025
 - Index size: 580 concepts
 
-## Results
+## Results Dashboard
 
 | Metric | Pipeline A - Classical NLP | Pipeline B - LLM + Retrieval |
 | --- | --- | --- |
@@ -101,16 +101,46 @@ Pipeline B (LLM + Retrieval):
 | Mean runtime | 32.85s | 1354.28s |
 | Mean cost | $0.0000 | $0.0000 |
 
-## Scope-downs and limitations
+If precision and latency are paramount, Pipeline A is the better architectural choice. It mapped four codes with two exact matches (50.0% precision). However, if capturing a broader context is the priority, the LLM-based Pipeline B consistently finds more values (35.6% field accuracy vs. 46.1%) and grounds them against the local terminology index (43.2% Retrieval Recall@K vs 5.4%). Pipeline B fails primarily on speed and vector space noise, mapping 62 codes but only hitting exact target matches 29.7% of the time. This is a research prototype with documented limitations, not a production-ready system.
 
-- Pipeline A code resolution is frozen at commit 16e665e due to a Hadoop JNI limitation on Windows.
-- Gold annotations are candidate-created, not independently adjudicated.
-- Terminology index is a curated subset of 580 concepts.
-- tumor_size_to_lesion and biomarker_result_to_assay relation scores are 0% because lesion_id is not emitted.
+## Documented Scope-Downs
+
+- Pipeline A is frozen at 16e665e.
+- Gold set is candidate-created.
+- 580-concept curated subset for the terminology index.
+- lesion_id not emitted, causing 0% for two relation types.
+- Pipeline B over-predicts stage_to_tumor.
+
+## Pipeline Summaries
+
+### Pipeline A - Classical NLP
+
+Pipeline A applies a deterministic chain of pre-trained clinical annotators to extract entities and relations. It uses JSL Healthcare NLP to resolve concepts and build structural relationships.
+- Version: spark-nlp-jsl 5.4.0
+- Scope-down: frozen at commit 16e665e due to local environment limitations.
+
+### Pipeline B - LLM + Retrieval
+
+Pipeline B relies on a local LLM to extract field values while enforcing strict coding boundaries via FAISS-based terminology retrieval, rejecting codes not present in the vector search results.
+- Version: llama3.1:8b
 
 ## Model and API cost
 
 - $0.00 per report (fully local inference).
+
+## How to Run
+
+1. `ollama pull llama3.1:8b`
+2. `pip install -r requirements.txt`
+3. `python run_pipeline_a_jsl.py && python run_pipeline_b_real.py && python evaluation/evaluate_full.py`
+
+## Reference Standards
+
+- CAP Cancer Protocols
+- NAACCR Data Standards
+- NCI SEER ICD-O-3 Coding
+- LOINC Terminology
+- WHO ATC classification
 
 ## Contact
 
