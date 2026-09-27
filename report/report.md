@@ -52,7 +52,17 @@ By forcing the LLM to only find the source sentence for certain fields, we entir
 
 The slight drop in field value exact accuracy (by 1 field) is simply a constraint of our simple regex parser missing an edge case the LLM caught. This highlights the exact boundary tradeoff: deterministic harnesses provide **100% grounding guarantees** but are brittle to varied text formats, whereas the LLM is highly flexible but prone to ungrounded hallucination. 
 
-For a production registry system, the boundary should sit exactly here: LLMs provide semantic search (finding the needle), and deterministic parsers extract the structured data (measuring the needle). 
+For a production registry system, the boundary should sit exactly here: LLMs provide semantic search (finding the needle), and deterministic parsers extract the structured data (measuring the needle).
+
+The narrowed-flow redesign was introduced in the same iteration as the prompt specificity change. The two changes cannot be cleanly isolated on this small dataset. The combined effect is a +21.5 point NER F1 improvement for Pipeline B overall. Qualitatively, the errors that disappeared with the narrowed flow are: hallucinated evidence boundaries (the LLM was producing sentences not present in the source), missing evidence spans (fields populated without a locatable span), and section-header evidence (evidence strings that were section titles rather than content). The errors that remain are: base-concept under-extraction on fields outside the narrowed set, and missing lesion_id associations (documented as Discrepancy 6 and 7).
+
+What belongs to the model versus the harness:
+
+The model owns semantic search. Given a field name and a report, it finds the sentence that contains the field's value. This is where the LLM's flexibility helps - it can recognize paraphrases, handle section-level variation, and locate the sentence even when its wording differs from the schema.
+
+The harness owns deterministic interpretation. Given the sentence, it extracts the value via regex, normalizes it to a schema concept, and resolves it to a terminology code. This is where the LLM is unreliable - arithmetic, unit conversion, and code selection are better handled by deterministic logic.
+
+The boundary sits where the model stops needing to reason about clinical correctness and starts producing strings that must be exact.
 
 ## Production Safeguards
 
@@ -92,7 +102,28 @@ Pipeline A outputs were generated on an earlier date under a working Java enviro
 
 <!-- BEGIN EVAL TABLE -->
 
-# Pipeline Evaluation: Side-by-Side Comparison\n\n*Generated: 2026-09-27T12:01:53.635007Z*\n\nDenominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)\n\n| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |\n| --- | --- | --- |\n| Entity NER P / R / F1 (span-based) | 14.8% / 15.1% / 14.9% | 32.6% / 43.3% / 37.2% |\n| Field value exact accuracy | 46.1% (83/180) | 35.6% (64/180) |\n| Assertion / State accuracy | 53.3% (96/180) | 53.9% (97/180) |\n| Relation F1 | 8.2% | 7.9% |\n| Retrieval Recall@K | 5.4% (2/37) | 43.2% (16/37) |\n| Selection accuracy | 5.4% (2/37) | 29.7% (11/37) |\n| Located evidence rate | 86.7% | 80.3% |\n| Value-in-evidence rate | 69.0% | 61.1% |\n| Unsupported field rate | 68.1% (77 fields) | 42.7% (67 fields) |\n| Evidence-unsupported fields | 67 | 68 |\n| Invalid code rate | 0.0% | 0.0% |\n| Mean runtime | 32.85s | 1354.28s |\n| Mean cost | $0.0000 | $0.0000 |\n
+# Pipeline Evaluation: Side-by-Side Comparison
+
+*Generated: 2026-09-27T12:42:14.628242Z*
+
+Denominator: 180/200 fields evaluated (20 fields x 10 reports = 200; array counts differ)
+
+| Metric | Pipeline A — Classical NLP | Pipeline B — LLM + Retrieval |
+| --- | --- | --- |
+| Entity NER P / R / F1 (span-based) | 14.8% / 15.1% / 14.9% | 32.6% / 43.3% / 37.2% |
+| Field value exact accuracy | 46.1% (83/180) | 35.6% (64/180) |
+| Assertion / State accuracy | 70.0% (126/180) | 53.9% (97/180) |
+| Relation F1 | 21.1% | 25.8% |
+| Retrieval Recall@K | 5.4% (2/37) | 43.2% (16/37) |
+| Selection accuracy | 5.4% (2/37) | 29.7% (11/37) |
+| Located evidence rate | 86.7% | 80.3% |
+| Value-in-evidence rate | 69.0% | 61.1% |
+| Unsupported field rate | 68.1% (77 fields) | 42.7% (67 fields) |
+| Evidence-unsupported fields | 59 | 68 |
+| Invalid code rate | 0.0% | 0.0% |
+| Mean runtime | 32.85s | 1354.28s |
+| Mean cost | $0.0000 | $0.0000 |
+
 
 <!-- END EVAL TABLE -->
 
