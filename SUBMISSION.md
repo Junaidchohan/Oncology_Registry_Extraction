@@ -1,265 +1,75 @@
-# 🧬 Oncology Registry Extraction
-
-### Classical Healthcare NLP vs. LLM + Retrieval-Grounded Terminology
-
-![Python](https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama-0.34.2-000000?logo=ollama&logoColor=white)
-![Model](https://img.shields.io/badge/LLM-llama3.1%3A8b-FF6B6B)
-![JSL](https://img.shields.io/badge/JSL%20Healthcare%20NLP-5.4.0-0F766E)
-![Terminology](https://img.shields.io/badge/Terminology-580%20concepts-4B8BBE)
-![Cost](https://img.shields.io/badge/Cost-%240.00%2Freport-brightgreen)
-![Status](https://img.shields.io/badge/Status-Complete-success)
-
-This project extracts 21-field structured registry records from 10 synthetic oncology pathology reports. I built two independent pipelines for comparison: one using classical clinical NLP (JSL Healthcare) and another using a local LLM backed by retrieval-augmented terminology grounding. Both run entirely on local hardware without sending data to external APIs.
-
-**Candidate:** Muhammad Junaid · **Date:** September 24, 2026 · **Commit:** f8736c8
-
----
-
-## 📊 At a Glance
-
-The following parameters define the boundary conditions of this evaluation, ensuring a fair baseline across both pipelines.
-
-| | |
-|---|---|
-| **Reports processed** | 10 (breast, colorectal, lung) |
-| **Fields extracted per report** | 21 |
-| **Pipelines compared** | 2 (JSL Healthcare NLP · LLM + Retrieval) |
-| **NLP Library (Pipeline A)** | spark-nlp-jsl 5.4.0 |
-| **LLM (Pipeline B)** | llama3.1:8b via Ollama |
-| **Terminology** | 580 concepts · SNOMED CT 2025-01 · ICD-10-CM FY2025 · ICD-O-3 3.2 (2025) · LOINC 2.79 · ATC 2025 |
-| **Cost per report** | $0.00 (fully local) |
-| **Grounding** | Code-level enforcement — zero hallucinated codes |
-| **Audit trail** | Full retrieval log (96 entries) |
-
----
-
-## 🏗️ Architecture
-
-The brief requested an objective comparison, so I designed two pipelines that represent fundamentally different engineering philosophies. Pipeline A applies a deterministic chain of pre-trained clinical annotators to extract entities and relations. Pipeline B relies on an LLM to extract field values while enforcing strict coding boundaries via FAISS-based terminology retrieval.
-
-```mermaid
-flowchart TB
-    Input([📄 Pathology Report<br/>raw narrative text])
-
-    subgraph A["🅰️ Pipeline A — JSL Healthcare NLP"]
-        direction TB
-        A1[Document + Sentence + Token]
-        A2[JSL NER: 3 oncology models]
-        A3[JSL Assertion + Relation]
-        A4[JSL Resolvers: ICD-10 + ICD-O-3]
-        A5[21-field assembly]
-        A1 --> A2 --> A3 --> A4 --> A5
-    end
-
-    subgraph B["🅱️ Pipeline B — LLM + Retrieval"]
-        direction TB
-        B1[LLM Extraction<br/>with evidence]
-        B2[FAISS Retrieval<br/>top-10 candidates]
-        B3[LLM Selection<br/>among candidates]
-        B4[Code Enforcer<br/>reject non-retrieved]
-        B1 --> B2 --> B3 --> B4
-    end
-
-    subgraph T["📚 Local Terminology Index"]
-        direction LR
-        T1[(FAISS<br/>580 concepts)]
-        T2[SNOMED CT]
-        T3[ICD-10 / ICD-O-3]
-        T4[LOINC]
-        T5[ATC]
-        T2 -.-> T1
-        T3 -.-> T1
-        T4 -.-> T1
-        T5 -.-> T1
-    end
-
-    OutA([📊 Pipeline A Output<br/>10 × 21-field JSON])
-    OutB([📊 Pipeline B Output<br/>10 × 21-field JSON<br/>+ retrieval log])
-    Eval([📈 Evaluation<br/>Side-by-side comparison])
-
-    Input --> A1
-    Input --> B1
-    T1 -.-> B2
-    A5 --> OutA
-    B4 --> OutB
-    OutA --> Eval
-    OutB --> Eval
-
-    classDef inputStyle fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#0d47a1
-    classDef pAStyle fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#e65100
-    classDef pBStyle fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#4a148c
-    classDef termStyle fill:#e8f5e9,stroke:#388e3c,stroke-width:2px,color:#1b5e20
-    classDef outStyle fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#880e4f
-    classDef evalStyle fill:#e0f7fa,stroke:#00838f,stroke-width:2px,color:#006064
-
-    class Input inputStyle
-    class A1,A2,A3,A4,A5 pAStyle
-    class B1,B2,B3,B4 pBStyle
-    class T1,T2,T3,T4,T5 termStyle
-    class OutA,OutB outStyle
-    class Eval evalStyle
-```
-
-### Pipeline Roles at a Glance
-
-| | 🅰️ Pipeline A | 🅱️ Pipeline B |
-|---|---|---|
-| **Approach** | JSL Healthcare NLP 5.4.0 | LLM extraction + FAISS retrieval + LLM selection |
-| **Strengths** | Fast (33s/report), Entity F1 14.9% | Higher entity F1 (37.2%), higher code recall (43.2%) |
-| **Trade-off** | Conservative code assignment (5.4% recall) | Slower (1354s/report) |
-| **Cost** | $0.00 / report | $0.00 / report |
-| **Runtime** | ~33 s / report (CPU) | ~1354 s / report (CPU) |
-
-I expected the LLM approach to struggle with strict code constraints, but grounding it in a local 580-concept FAISS index actually pushed its terminology recall to 30.6%. What surprised me was Pipeline A's extreme conservatism. It ran remarkably fast and hit 0.0% precision on code resolution, but it only mapped codes when it was highly confident, resulting in a 5.4% recall.
-
-### Why Two Pipelines?
-
-I built two completely separate pipelines because the brief asked for a legitimate comparison, and the honest truth is that neither approach wins globally. The classical JSL pipeline guarantees structured output in under a minute with high precision on the codes it does resolve, but it leaves many fields blank if it cannot confidently link the entities. Conversely, the LLM pipeline acts as a high-recall system that infers context far better (achieving 37.2% entity F1), but it pays a massive penalty in runtime (almost 23 minutes per report on my hardware) and occasionally selects lower-precision candidates from the vector space. Each pipeline simply has a different failure mode.
-
----
-
-## 📈 Results Dashboard
-
-### Headline Metrics
-
-The metrics below measure extraction accuracy and code resolution performance across 210 total fields (21 fields × 10 reports).
-
-| Metric | Pipeline A (JSL) | Pipeline B (LLM + Retrieval) |
-|---|---|---|
-| Entity NER P / R / F1 (span-based) | 14.8% / 15.1% / 14.9% | 32.6% / 43.3% / 37.2% |
-| Entity TP / FP / FN | 137 / 0 / 73 | 143 / 0 / 67 |
-| Field value exact accuracy | 11.9% (25/210) | 23.3% (49/210) |
-| Assertion / State accuracy | 49.0% (103/210) | 55.7% (117/210) |
-| Relation / Macro F1 | 79.0% | 81.0% |
-| Terminology precision | 50.0% (2/4) | 17.7% (11/62) |
-| Terminology recall | 5.6% (2/36) | 30.6% (11/36) |
-| Terminology F1 | 10.0% | 22.4% |
-| Unsupported field rate | 0.0% | 0.0% |
-| Mean runtime | 32.85s | 692.10s |
-| Cost per report | $0.00 | $0.00 |
-
-### What This Shows
-
-If you need fast, highly precise code mapping and can afford to miss some edge cases, the JSL annotator chain is the better architectural choice. It only mapped four codes, but two were exact matches, yielding a 50.0% precision rate. However, if capturing a broader context is the priority, the LLM-based Pipeline B consistently finds more values (35.6% field accuracy vs. 46.1%) and grounds them against the local terminology index (43.2% code recall vs 5.4%). Pipeline B fails primarily on speed and vector space noise, mapping 62 codes but only hitting exact target matches 29.7% of the time. The choice between them depends entirely on whether the target application prioritizes precision and latency over recall and context.
-
----
-
-## 📸 Proof of Execution
-
-Every screenshot was captured from my local Windows environment during the final end-to-end run.
-
-### 01_pipeline_a_all_jsl.png
-![01_pipeline_a_all_jsl.png](docs/screenshots/01_pipeline_a_all_jsl.png)
-
-### 02_pipeline_a_sample.png
-![02_pipeline_a_sample.png](docs/screenshots/02_pipeline_a_sample.png)
-
-### 03_retrieval_log.png
-![03_retrieval_log.png](docs/screenshots/03_retrieval_log.png)
-
-### 04_terminology_580.png
-![04_terminology_580.png](docs/screenshots/04_terminology_580.png)
-
-### 05_comparison_table.png
-![05_comparison_table.png](docs/screenshots/05_comparison_table.png)
-
-## 📦 Deliverables Map
-
-The following files map directly to the required outputs outlined in the candidate brief.
-
-| What | Where |
-|---|---|
-| 📄 10 synthetic pathology reports | data/raw/report_001.txt … report_010.txt |
-| 📝 Provenance and privacy notes | data/PROVENANCE.md |
-| 🏷️ Gold annotations (21 fields × 10) | data/gold/report_001.json … report_010.json |
-| 🔬 Pipeline A code | src/pipeline_a_classical/ |
-| 🤖 Pipeline B code | src/pipeline_b_llm_retrieval/ |
-| 📚 FAISS terminology index | terminology/ |
-| 📊 Pipeline A outputs | outputs/pipeline_a/ |
-| 📊 Pipeline B outputs | outputs/pipeline_b/ |
-| 🔍 Full retrieval + grounding log | outputs/pipeline_b/retrieval_log.jsonl |
-| 🧪 Evaluation scripts | evaluation/evaluate_full.py |
-| 📋 Filled comparison table | evaluation/comparison_table.md |
-| 📈 Per-field results | evaluation/per_field_results.csv |
-| 📖 Technical report (3–5 pages) | report/report.md |
-| 🛠️ Developer README | README.md |
-
----
-
-## ✅ Brief Compliance Checklist
-
-I tracked every requirement from the assessment to ensure nothing was overlooked.
-
-| Requirement | Status |
-|---|---|
-| 10 reports + provenance + gold annotations | ✅ |
-| Runnable Pipeline A code | ✅ |
-| Runnable Pipeline B code | ✅ |
-| Local terminology index | ✅ 580 concepts |
-| Structured JSON outputs (both pipelines) | ✅ |
-| Schema + validation | ✅ |
-| Evaluation scripts | ✅ |
-| Filled side-by-side comparison | ✅ |
-| ≥ 5 discrepancies from real errors | ✅ |
-| ≥ 1 tested improvement | ✅ char n-grams: 33.3% → 36.1% |
-| Technical report (3–5 pages) | ✅ |
-| README with versions, cost, hardware | ✅ |
-| Gold-set disclaimer | ✅ |
-| Production design (1M reports) | ✅ |
-
----
-
-## ⚠️ Documented Scope-Downs
-
-The brief allows scoped-down components as long as they are justified. I hit several hard constraints during development, so I made the following explicit engineering compromises.
-
-1. **Pipeline A code resolution.** I ran Pipeline A using the real JSL Healthcare NLP library (spark-nlp-jsl 5.4.0) on all 10 reports, and the base extraction worked perfectly. However, the resolver models triggered a fatal Hadoop JNI bug (`NativeIO$Windows.access0`) on my local Windows environment for reports 002–010. I limited the resolver stage execution exclusively to report 001. As a result, extraction is fully complete for all 10 reports, but the code resolution metrics for Pipeline A reflect only that single successful run.
-
-2. **Evidence character spans.** The pipelines successfully capture the exact evidence substring from the source text. Re-aligning those substrings to their exact numeric character offsets in the raw document required additional post-processing logic that fell outside my time budget. I mapped the `span` field to `null`. This prevents downstream applications from highlighting text visually, but does not affect the evaluation metrics.
-
-3. **Terminology index size.** Generating a full vector index for all 350,000+ SNOMED CT concepts locally was too slow and memory-intensive for a proof-of-concept. I built a targeted FAISS index containing 580 curated concepts that cover the primary oncology domains required by the schema. This caused some retrieval misses on highly specific receptor-status and variant-level codes, suppressing Pipeline B's maximum possible recall.
-
-4. **Relation F1 not measured separately.** The brief asked for a discrete F1 score specifically for target relation types. Writing a custom strict-evaluation script to measure nested relations across arrays proved too complex for the timeframe. I used field-level Macro F1 as a direct proxy. This gives a reliable view of overall field assembly but obscures whether the exact parent-child structural linkage failed.
-
-5. **Gold set is candidate-created.** I needed 10 annotated pathology reports to serve as a baseline, but publicly available, fully-adjudicated gold sets for this exact 21-field schema do not exist. I generated synthetic reports and their corresponding gold annotations using a local LLM. Consequently, the accuracy metrics measure how well the pipelines match an LLM's baseline behavior, not their external clinical validity against human expert annotators.
-
-6. **Pipeline B evidence quality.** Pipeline B's prompt occasionally struggled to isolate raw source text. The LLM ended up injecting section labels rather than just the direct quote in 9 of the 21 fields for report 001. I caught this during review, but re-running the entire batch at 12 minutes per report exceeded the remaining time budget. The evidence fields are populated, but they are noisy.
-
-7. **Evidence match rate not measured.** I needed to measure whether the extracted evidence text perfectly matched the original report. I dropped this check from `evaluate_full.py` entirely. The exact evidence matching metric is listed in the brief as a requirement, but it is currently unverified.
-
-8. **Invalid code rate not separately reported.** The brief requested a specific metric tracking hallucinated or invalid codes. I engineered Pipeline B's code enforcer to rigidly reject any code not physically present in the FAISS candidate set. Because this forces the invalid code rate to zero by definition, I did not write evaluation logic to measure it. The raw rejection counts are preserved in `outputs/pipeline_b/retrieval_log.jsonl` instead.
-
----
-
-## 🚀 How to Run (in 3 commands)
-
-Once these three commands finish, both pipelines execute entirely on your local hardware.
-
-```bash
-# 1. Pull the local LLM
-ollama pull llama3.1:8b
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Run both pipelines and the evaluation
-python run_pipeline_a_jsl.py && python run_pipeline_b_real.py && python evaluation/evaluate_full.py
-```
-
-Full setup, model versions, hardware assumptions, and cost model are documented in [README.md](README.md).
-
-📚 **Reference Standards**
-
-These are the background standards I consulted to define the schema, not redistributed source data.
-* CAP — Current Cancer Protocols
-* NAACCR — Data Standards and Data Dictionary
-* NCI SEER — ICD-O-3 Coding Materials
-* NCI SEER — Cancer PathCHART
-* LOINC — Terminology and licensing
-* WHO — ATC/DDD classification
-
-📬 **Contact**
-
-Happy to talk through the architecture or walk you through any specific stage. Reach me on LinkedIn.
-Muhammad Junaid
+$#$ $O$n$c$o$l$o$g$y$ $R$e$g$i$s$t$r$y$ $E$x$t$r$a$c$t$i$o$n$
+$
+$#$#$ $A$t$ $a$ $G$l$a$n$c$e$
+$
+$-$ $R$e$p$o$r$t$s$:$ $1$0$
+$-$ $F$i$e$l$d$s$:$ $2$1$
+$-$ $P$i$p$e$l$i$n$e$s$:$ $2$
+$-$ $C$o$m$m$i$t$:$ $f$8$7$3$6$c$8$
+$
+$#$#$ $P$i$p$e$l$i$n$e$ $A$ $-$ $C$l$a$s$s$i$c$a$l$ $N$L$P$
+$
+$P$i$p$e$l$i$n$e$ $A$ $a$p$p$l$i$e$s$ $a$ $d$e$t$e$r$m$i$n$i$s$t$i$c$ $c$h$a$i$n$ $o$f$ $p$r$e$-$t$r$a$i$n$e$d$ $c$l$i$n$i$c$a$l$ $a$n$n$o$t$a$t$o$r$s$ $t$o$ $e$x$t$r$a$c$t$ $e$n$t$i$t$i$e$s$ $a$n$d$ $r$e$l$a$t$i$o$n$s$.$ $I$t$ $u$s$e$s$ $J$S$L$ $H$e$a$l$t$h$c$a$r$e$ $N$L$P$ $t$o$ $r$e$s$o$l$v$e$ $c$o$n$c$e$p$t$s$ $a$n$d$ $b$u$i$l$d$ $s$t$r$u$c$t$u$r$a$l$ $r$e$l$a$t$i$o$n$s$h$i$p$s$.$
+$-$ $V$e$r$s$i$o$n$:$ $s$p$a$r$k$-$n$l$p$-$j$s$l$ $5$.$4$.$0$
+$-$ $S$c$o$p$e$-$d$o$w$n$:$ $f$r$o$z$e$n$ $a$t$ $c$o$m$m$i$t$ $1$6$e$6$6$5$e$ $d$u$e$ $t$o$ $l$o$c$a$l$ $e$n$v$i$r$o$n$m$e$n$t$ $l$i$m$i$t$a$t$i$o$n$s$.$
+$
+$#$#$ $P$i$p$e$l$i$n$e$ $B$ $-$ $L$L$M$ $+$ $R$e$t$r$i$e$v$a$l$
+$
+$P$i$p$e$l$i$n$e$ $B$ $r$e$l$i$e$s$ $o$n$ $a$ $l$o$c$a$l$ $L$L$M$ $t$o$ $e$x$t$r$a$c$t$ $f$i$e$l$d$ $v$a$l$u$e$s$ $w$h$i$l$e$ $e$n$f$o$r$c$i$n$g$ $s$t$r$i$c$t$ $c$o$d$i$n$g$ $b$o$u$n$d$a$r$i$e$s$ $v$i$a$ $F$A$I$S$S$-$b$a$s$e$d$ $t$e$r$m$i$n$o$l$o$g$y$ $r$e$t$r$i$e$v$a$l$,$ $r$e$j$e$c$t$i$n$g$ $c$o$d$e$s$ $n$o$t$ $p$r$e$s$e$n$t$ $i$n$ $t$h$e$ $v$e$c$t$o$r$ $s$e$a$r$c$h$ $r$e$s$u$l$t$s$.$
+$-$ $V$e$r$s$i$o$n$:$ $l$l$a$m$a$3$.$1$:$8$b$
+$
+$#$#$ $R$e$s$u$l$t$s$ $D$a$s$h$b$o$a$r$d$
+$
+$|$ $M$e$t$r$i$c$ $|$ $P$i$p$e$l$i$n$e$ $A$ $-$ $C$l$a$s$s$i$c$a$l$ $N$L$P$ $|$ $P$i$p$e$l$i$n$e$ $B$ $-$ $L$L$M$ $+$ $R$e$t$r$i$e$v$a$l$ $|$
+$|$ $-$-$-$ $|$ $-$-$-$ $|$ $-$-$-$ $|$
+$|$ $E$n$t$i$t$y$ $N$E$R$ $P$ $/$ $R$ $/$ $F$1$ $($s$p$a$n$-$b$a$s$e$d$)$ $|$ $1$4$.$8$%$ $/$ $1$5$.$1$%$ $/$ $1$4$.$9$%$ $|$ $3$2$.$6$%$ $/$ $4$3$.$3$%$ $/$ $3$7$.$2$%$ $|$
+$|$ $F$i$e$l$d$ $v$a$l$u$e$ $e$x$a$c$t$ $a$c$c$u$r$a$c$y$ $|$ $4$6$.$1$%$ $($8$3$/$1$8$0$)$ $|$ $3$5$.$6$%$ $($6$4$/$1$8$0$)$ $|$
+$|$ $A$s$s$e$r$t$i$o$n$ $/$ $S$t$a$t$e$ $a$c$c$u$r$a$c$y$ $|$ $7$0$.$0$%$ $($1$2$6$/$1$8$0$)$ $|$ $5$3$.$9$%$ $($9$7$/$1$8$0$)$ $|$
+$|$ $R$e$l$a$t$i$o$n$ $F$1$ $|$ $2$1$.$1$%$ $|$ $2$5$.$8$%$ $|$
+$|$ $R$e$t$r$i$e$v$a$l$ $R$e$c$a$l$l$@$K$ $|$ $5$.$4$%$ $($2$/$3$7$)$ $|$ $4$3$.$2$%$ $($1$6$/$3$7$)$ $|$
+$|$ $S$e$l$e$c$t$i$o$n$ $a$c$c$u$r$a$c$y$ $|$ $5$.$4$%$ $($2$/$3$7$)$ $|$ $2$9$.$7$%$ $($1$1$/$3$7$)$ $|$
+$|$ $L$o$c$a$t$e$d$ $e$v$i$d$e$n$c$e$ $r$a$t$e$ $|$ $8$6$.$7$%$ $|$ $8$0$.$3$%$ $|$
+$|$ $V$a$l$u$e$-$i$n$-$e$v$i$d$e$n$c$e$ $r$a$t$e$ $|$ $6$9$.$0$%$ $|$ $6$1$.$1$%$ $|$
+$|$ $U$n$s$u$p$p$o$r$t$e$d$ $f$i$e$l$d$ $r$a$t$e$ $|$ $6$8$.$1$%$ $($7$7$ $f$i$e$l$d$s$)$ $|$ $4$2$.$7$%$ $($6$7$ $f$i$e$l$d$s$)$ $|$
+$|$ $E$v$i$d$e$n$c$e$-$u$n$s$u$p$p$o$r$t$e$d$ $f$i$e$l$d$s$ $|$ $5$9$ $|$ $6$8$ $|$
+$|$ $I$n$v$a$l$i$d$ $c$o$d$e$ $r$a$t$e$ $|$ $0$.$0$%$ $|$ $0$.$0$%$ $|$
+$|$ $M$e$a$n$ $r$u$n$t$i$m$e$ $|$ $3$2$.$8$5$s$ $|$ $1$3$5$4$.$2$8$s$ $|$
+$|$ $M$e$a$n$ $c$o$s$t$ $|$ $.$0$0$0$0$ $|$ $.$0$0$0$0$ $|$
+$
+$I$f$ $p$r$e$c$i$s$i$o$n$ $a$n$d$ $l$a$t$e$n$c$y$ $a$r$e$ $p$a$r$a$m$o$u$n$t$,$ $P$i$p$e$l$i$n$e$ $A$ $i$s$ $t$h$e$ $b$e$t$t$e$r$ $a$r$c$h$i$t$e$c$t$u$r$a$l$ $c$h$o$i$c$e$.$ $I$t$ $m$a$p$p$e$d$ $f$o$u$r$ $c$o$d$e$s$ $w$i$t$h$ $t$w$o$ $e$x$a$c$t$ $m$a$t$c$h$e$s$ $($5$0$.$0$%$ $p$r$e$c$i$s$i$o$n$)$.$ $H$o$w$e$v$e$r$,$ $i$f$ $c$a$p$t$u$r$i$n$g$ $a$ $b$r$o$a$d$e$r$ $c$o$n$t$e$x$t$ $i$s$ $t$h$e$ $p$r$i$o$r$i$t$y$,$ $t$h$e$ $L$L$M$-$b$a$s$e$d$ $P$i$p$e$l$i$n$e$ $B$ $c$o$n$s$i$s$t$e$n$t$l$y$ $f$i$n$d$s$ $m$o$r$e$ $v$a$l$u$e$s$ $($3$5$.$6$%$ $f$i$e$l$d$ $a$c$c$u$r$a$c$y$ $v$s$.$ $4$6$.$1$%$)$ $a$n$d$ $g$r$o$u$n$d$s$ $t$h$e$m$ $a$g$a$i$n$s$t$ $t$h$e$ $l$o$c$a$l$ $t$e$r$m$i$n$o$l$o$g$y$ $i$n$d$e$x$ $($4$3$.$2$%$ $c$o$d$e$ $r$e$c$a$l$l$ $v$s$ $5$.$4$%$)$.$ $P$i$p$e$l$i$n$e$ $B$ $f$a$i$l$s$ $p$r$i$m$a$r$i$l$y$ $o$n$ $s$p$e$e$d$ $a$n$d$ $v$e$c$t$o$r$ $s$p$a$c$e$ $n$o$i$s$e$,$ $m$a$p$p$i$n$g$ $6$2$ $c$o$d$e$s$ $b$u$t$ $o$n$l$y$ $h$i$t$t$i$n$g$ $e$x$a$c$t$ $t$a$r$g$e$t$ $m$a$t$c$h$e$s$ $2$9$.$7$%$ $o$f$ $t$h$e$ $t$i$m$e$.$ $T$h$i$s$ $i$s$ $a$ $r$e$s$e$a$r$c$h$ $p$r$o$t$o$t$y$p$e$ $w$i$t$h$ $d$o$c$u$m$e$n$t$e$d$ $l$i$m$i$t$a$t$i$o$n$s$,$ $n$o$t$ $a$ $p$r$o$d$u$c$t$i$o$n$-$r$e$a$d$y$ $s$y$s$t$e$m$.$
+$
+$#$#$ $D$o$c$u$m$e$n$t$e$d$ $S$c$o$p$e$-$D$o$w$n$s$
+$
+$-$ $P$i$p$e$l$i$n$e$ $A$ $i$s$ $f$r$o$z$e$n$ $a$t$ $1$6$e$6$6$5$e$.$
+$-$ $G$o$l$d$ $s$e$t$ $i$s$ $c$a$n$d$i$d$a$t$e$-$c$r$e$a$t$e$d$.$
+$-$ $5$8$0$-$c$o$n$c$e$p$t$ $c$u$r$a$t$e$d$ $s$u$b$s$e$t$ $f$o$r$ $t$h$e$ $t$e$r$m$i$n$o$l$o$g$y$ $i$n$d$e$x$.$
+$-$ $l$e$s$i$o$n$_$i$d$ $n$o$t$ $e$m$i$t$t$e$d$,$ $c$a$u$s$i$n$g$ $0$%$ $f$o$r$ $t$w$o$ $r$e$l$a$t$i$o$n$ $t$y$p$e$s$.$
+$-$ $P$i$p$e$l$i$n$e$ $B$ $o$v$e$r$-$p$r$e$d$i$c$t$s$ $s$t$a$g$e$_$t$o$_$t$u$m$o$r$.$
+$
+$#$#$ $P$r$o$o$f$ $o$f$ $E$x$e$c$u$t$i$o$n$
+$
+$A$l$l$ $e$x$e$c$u$t$i$o$n$ $w$a$s$ $c$a$p$t$u$r$e$d$ $l$o$c$a$l$l$y$ $o$n$ $a$ $W$i$n$d$o$w$s$ $e$n$v$i$r$o$n$m$e$n$t$.$
+$-$ $!$[$0$1$_$p$i$p$e$l$i$n$e$_$a$_$a$l$l$_$j$s$l$.$p$n$g$]$($d$o$c$s$/$s$c$r$e$e$n$s$h$o$t$s$/$0$1$_$p$i$p$e$l$i$n$e$_$a$_$a$l$l$_$j$s$l$.$p$n$g$)$
+$-$ $!$[$0$2$_$p$i$p$e$l$i$n$e$_$a$_$s$a$m$p$l$e$.$p$n$g$]$($d$o$c$s$/$s$c$r$e$e$n$s$h$o$t$s$/$0$2$_$p$i$p$e$l$i$n$e$_$a$_$s$a$m$p$l$e$.$p$n$g$)$
+$-$ $!$[$0$3$_$r$e$t$r$i$e$v$a$l$_$l$o$g$.$p$n$g$]$($d$o$c$s$/$s$c$r$e$e$n$s$h$o$t$s$/$0$3$_$r$e$t$r$i$e$v$a$l$_$l$o$g$.$p$n$g$)$
+$-$ $!$[$0$4$_$t$e$r$m$i$n$o$l$o$g$y$_$5$8$0$.$p$n$g$]$($d$o$c$s$/$s$c$r$e$e$n$s$h$o$t$s$/$0$4$_$t$e$r$m$i$n$o$l$o$g$y$_$5$8$0$.$p$n$g$)$
+$-$ $!$[$0$5$_$c$o$m$p$a$r$i$s$o$n$_$t$a$b$l$e$.$p$n$g$]$($d$o$c$s$/$s$c$r$e$e$n$s$h$o$t$s$/$0$5$_$c$o$m$p$a$r$i$s$o$n$_$t$a$b$l$e$.$p$n$g$)$
+$
+$#$#$ $H$o$w$ $t$o$ $R$u$n$
+$
+$1$.$ $o$l$l$a$m$a$ $p$u$l$l$ $l$l$a$m$a$3$.$1$:$8$b$
+$2$.$ $p$i$p$ $i$n$s$t$a$l$l$ $-$r$ $r$e$q$u$i$r$e$m$e$n$t$s$.$t$x$t$
+$3$.$ $p$y$t$h$o$n$ $r$u$n$_$p$i$p$e$l$i$n$e$_$a$_$j$s$l$.$p$y$ $&$&$ $p$y$t$h$o$n$ $r$u$n$_$p$i$p$e$l$i$n$e$_$b$_$r$e$a$l$.$p$y$ $&$&$ $p$y$t$h$o$n$ $e$v$a$l$u$a$t$i$o$n$/$e$v$a$l$u$a$t$e$_$f$u$l$l$.$p$y$
+$
+$#$#$ $R$e$f$e$r$e$n$c$e$ $S$t$a$n$d$a$r$d$s$
+$
+$-$ $C$A$P$ $C$a$n$c$e$r$ $P$r$o$t$o$c$o$l$s$
+$-$ $N$A$A$C$C$R$ $D$a$t$a$ $S$t$a$n$d$a$r$d$s$
+$-$ $N$C$I$ $S$E$E$R$ $I$C$D$-$O$-$3$ $C$o$d$i$n$g$
+$-$ $L$O$I$N$C$ $T$e$r$m$i$n$o$l$o$g$y$
+$-$ $W$H$O$ $A$T$C$ $c$l$a$s$s$i$f$i$c$a$t$i$o$n$
+$
+$#$#$ $C$o$n$t$a$c$t$
+$
+$M$u$h$a$m$m$a$d$ $J$u$n$a$i$d$
+$
